@@ -1,0 +1,143 @@
+baseURL = "/"
+title = "PDI"
+description = "PDI: the parallel data interface"
+
+enableRobotsTXT = true
+
+# Hugo allows theme composition (and inheritance). The precedence is from left to right.
+theme = ["docsy"]
+
+# Will give values to .Lastmod etc.
+enableGitInfo = true
+
+# Language settings
+contentDir = "content"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+# Highlighting config
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = "friendly"
+
+# Configure how URLs look like per section.
+[permalinks]
+blog = "/:section/:year/:month/:day/:slug/"
+
+# Image processing configuration.
+[imaging]
+resampleFilter = "CatmullRom"
+quality = 75
+anchor = "smart"
+
+# Language configuration
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Everything below this are Site Params
+
+[params]
+copyright = "The PDI team"
+# privacy_policy = "https://policies.google.com/privacy"
+
+# First one is picked as the Twitter card image if not set on page.
+# images = ["images/project-illustration.png"]
+
+# Menu title if your navbar has a versions selector to access old versions of your site.
+# This menu appears only if you have at least one [params.versions] set.
+version_menu = "Versions"
+
+# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+# github_repo = "https://gitlab.maisondelasimulation.fr/pdidev/website/"
+# An optional link to a related project repo. For example, the sibling repository where your product code lives.
+github_project_repo = "https://gitlab.maisondelasimulation.fr/pdidev/pdi/"
+
+# Specify a value here if your content directory is not in your repo's root directory
+# github_subdir = ""
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+
+# Enable Algolia DocSearch
+algolia_docsearch = true
+
+# Enable Lunr.js offline search
+offlineSearch = true
+
+# User interface configuration
+[params.ui]
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = true
+#  Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+sidebar_search_disable = false
+#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+navbar_logo = true
+# Set to true to disable the About link in the site footer
+footer_about_disable = true
+
+[[params.versions]]
+  version = "git master"
+  url = "/master/"
+
+[[params.versions]]
+  version = "latest release (0.5.1)"
+  url = "/"
+
+[[params.versions]]
+  version = "release 0.5.0"
+  url = "/0.5.0/"
+
+[[params.versions]]
+  version = "release 0.4.1"
+  url = "/0.4.1/"
+
+[params.links]
+# End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+	name = "Slack for users"
+	url = "https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk"
+	icon = "fab fa-slack"
+	desc = "Get support on Slack!"
+[[params.links.user]]
+	name = "Gitlab for users"
+	url = "https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tags"
+	icon = "fab fa-gitlab"
+	desc = "Get the code from Gitlab!"
+
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+	name = "GitLab"
+	url = "https://gitlab.maisondelasimulation.fr/pdidev/"
+	icon = "fab fa-gitlab"
+	desc = "Contribute on Gitlab!"
+[[params.links.developer]]
+	name = "Slack"
+	url = "https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk"
+	icon = "fab fa-slack"
+	desc = "Discuss with developpers on Slack!"
+[[params.links.developer]]
+	name = "Jenkins"
+	url = "https://ci.inria.fr/ah5/"
+	icon = "fab fa-jenkins"
+	desc = "Check test results on Jenkins!"
+[[params.links.developer]]
+	name = "GitHub"
+	url = "https://github.com/pdidev"
+	icon = "fab fa-github"
+	desc = "Check repository mirrors on GitHub!"
+[[params.links.developer]]
+	name = "DockerHub"
+	url = "https://hub.docker.com/orgs/pdidev"
+	icon = "fab fa-docker"
+	desc = "Try our Docker images from DockerHub!"

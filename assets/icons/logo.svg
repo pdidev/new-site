@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 40 40">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient846">
+      <stop
+         id="stop842"
+         offset="0"
+         style="stop-color:#3a82c2;stop-opacity:1" />
+      <stop
+         style="stop-color:#073763;stop-opacity:1"
+         offset="0.4946366"
+         id="stop850" />
+      <stop
+         id="stop844"
+         offset="1"
+         style="stop-color:#3a82c2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(1.1064998,0,0,1.1064998,-2.8109111,-3.2500611)"
+       gradientUnits="userSpaceOnUse"
+       y2="6.0482411"
+       x2="25.209953"
+       y1="41.294521"
+       x1="25.249392"
+       id="linearGradient848"
+       xlink:href="#linearGradient846" />
+    <filter
+       id="filter1270"
+       style="color-interpolation-filters:sRGB;">
+      <feFlood
+         id="feFlood1260"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.498039" />
+      <feComposite
+         id="feComposite1262"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur1264"
+         result="blur"
+         stdDeviation="1"
+         in="composite1" />
+      <feOffset
+         id="feOffset1266"
+         result="offset"
+         dy="0.6"
+         dx="0.6" />
+      <feComposite
+         id="feComposite1268"
+         result="composite2"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-4.6772165,-3.1371543)"
+     id="layer1">
+    <circle
+       r="19.5"
+       cy="22.994598"
+       cx="24.687487"
+       id="path840"
+       style="opacity:1;fill:url(#linearGradient848);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,4.6772165,3.1371543)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot852"
+       xml:space="preserve"><flowRegion
+         id="flowRegion854"><rect
+           y="55.823959"
+           x="32.857143"
+           height="43.92857"
+           width="94.285713"
+           id="rect856" /></flowRegion><flowPara
+         id="flowPara858">PPd</flowPara></flowRoot>    <text
+       transform="matrix(1.0723861,0,0,1.0723861,-1.9406576,-2.4256035)"
+       id="text862"
+       y="30.191469"
+       x="10.006681"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.24672395;filter:url(#filter1270)"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.63888931px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#ffffff;fill-opacity:1;stroke-width:0.24672395"
+         y="30.191469"
+         x="10.006681"
+         id="tspan860">PDI</tspan></text>
+  </g>
+</svg>
