@@ -1,6 +1,5 @@
 #!/bin/env python3
 
-import os.path
 import re
 
 PNCT_RE = re.compile(r'([-\\!\[\]"#$%&\'\(\)*+,-./:;<=>?@^_`{|}~])')
@@ -10,70 +9,59 @@ BRCK_RE = re.compile(r'([<>])')
 BLNK_RE = re.compile(r'^\s*$', re.MULTILINE)
 BQS_RE = re.compile(r'`+')
 DQ_RE = re.compile(r'"')
+END_SP_RE = re.compile(r'\s+$')
 
 EXTRACT_SP_RE = re.compile(r'^(\s*)(.*[^\s])(\s*)$')
 
-class BlockContainer:
+class BlockContainer(list):
     def __init__(self, blocks=None):
         if blocks is None:
-            self._blocks = []
+            list.__init__(self)
         else:
-            self._blocks = blocks
-        
-    def append(self, block):
-        self._blocks.append(block)
-        
-    def extend(self, blocks):
-        self._blocks.extend(blocks)
+            list.__init__(self, blocks)
     
     def render(self, indent):
-        return "\n\n".join([re.sub(r'\s+$', '', b.render(indent)) for b in self._blocks])
+        return ("\n\n").join([END_SP_RE.sub('', b.render(indent)) for b in self if b.render(indent).strip() != ''])
 
-class InlineContainer:
+class InlineContainer(list):
     def __init__(self, inlines=None):
         if inlines is None:
-            self._inlines = []
+            list.__init__(self)
         else:
-            self._inlines = inlines
-    
-    def append(self, inline):
-        self._inlines.append(inline)
-        
-    def extend(self, inlines):
-        self._inlines.extend(inlines)
+            list.__init__(self, inlines)
     
     def render(self, indent):
-        return "".join([i.render(indent) for i in self._inlines])
+        return "".join([i.render(indent) for i in self]).strip()
 
-class ItemContainer:
-    def __init__(self, loose=False, items=None):
-        if items is None:
-            self._items = []
-        else:
-            self._items = items
-        self._loose = loose
-        
-    def append(self, item):
-        self._items.append(item)
-    
+class List(BlockContainer):
     def render(self, prefix, indent):
-        return indent+("\n\n"+indent if self._loose else "\n"+indent).join([prefix + i.render(' '*max(prefix+1, 4))[len(prefix):] for i in self._items])
+        items = []
+        for i in self:
+            p = prefix()
+            items.append(indent + p + i.render(' '*max(len(p)+1, 4))[len(p):])
+        return "\n".join(items)
 
 class BlockQuote(BlockContainer):
     def render(self, indent):
         return super().render(' >' + indent)
 
-class UnorderedList(ItemContainer):
+class UnorderedList(List):
     def render(self, indent):
-        super().render('-', indent)
+        return super().render(lambda: '-', indent)
 
-class OrderedList(ItemContainer):
-    def __init__(self, start=1, loose=False, items=None):
-        super().__init__(loose, items)
+class OrderedList(List):
+    def __init__(self, start=1, items=None):
+        super().__init__(items)
         self._start = start
     
     def render(self, indent):
-        super().render(len(self._start)+'.', indent)
+        val = self._start
+        def prefix():
+            nonlocal val
+            res = str(val)+'.'
+            val = val+1
+            return res
+        return super().render(prefix, indent)
 
 class ThematicBreak:
     def render(self, indent):
@@ -86,8 +74,8 @@ class CodeBlock:
     
     def render(self, indent):
         return ( indent + '```\n' +
-            indent + NL_RE.sub(re.escape(indent), self._content) +
-            indent + '```\n' )
+            indent + NL_RE.sub('\n'+indent, self._content) +'\n'+
+            indent + '```' )
 
 class RawHTML:
     def __init__(self, content):
@@ -99,6 +87,10 @@ class RawHTML:
 class Paragraph(InlineContainer):
     def render(self, indent):
         return indent + super().render(indent)
+
+class LooseItem(BlockContainer):
+    def render(self, indent):
+        return super().render(indent)+'\n'
 
 class Heading(InlineContainer):
     def __init__(self, level=1, inlines=None):
@@ -120,23 +112,29 @@ class CodeSpan:
         self._content = content
     
     def render(self, indent):
-        nticks = max([len(s) for s in BQS_RE.findall(self._content)]) + 1
+        nticks = max([len(s) for s in BQS_RE.findall(self._content)]+[0]) + 1
         return r'`'*nticks + ' ' + self._content + ' ' + r'`'*nticks
 
 class Strong(InlineContainer):
     def render(self, indent):
         text = super().render(indent)
         match = EXTRACT_SP_RE.fullmatch(text)
-        return match.group(1) + '**' + match.group(2) + '**' + match.group(3)
+        if match:
+            return match.group(1) + '**' + match.group(2) + '**' + match.group(3)
+        else:
+            return ''
 
 class Emph(InlineContainer):
     def render(self, indent):
         text = super().render(indent)
         match = EXTRACT_SP_RE.fullmatch(text)
-        return match.group(1) + '*' + match.group(2) + '*' + match.group(3)
+        if match:
+            return match.group(1) + '*' + match.group(2) + '*' + match.group(3)
+        else:
+            return ''
 
 class Link(InlineContainer):
-    def __init__(self, url, title=None, inlines=None):
+    def __init__(self, url=None, title=None, inlines=None):
         super().__init__(inlines)
         self._url = url
         self._title = title
@@ -145,13 +143,13 @@ class Link(InlineContainer):
         
     def render(self, indent):
         return (
-            '[' + super().render(indent) + '](' +
-            BRCK_RE.sub(r'\\\1', self._url) +
+            '[' + super().render(indent) + ']( ' +
+            ( '<' + BRCK_RE.sub(r'\\\1', self._url) + '>' if self._url is not None else '' ) +
             ( ' "' + DQ_RE.sub(r'\\"', self._title) + '"' if self._title is not None else '' ) +
             ' )' )
 
 class Image(InlineContainer):
-    def __init__(self, url, title=None, inlines=None):
+    def __init__(self, url=None, title=None, inlines=None):
         super().__init__(inlines)
         self._url = url
         self._title = title
