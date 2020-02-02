@@ -1,0 +1,55 @@
+{{ $ns_def := dict }}
+{{ $ns_data := $.Site.Data.docs.doxdata }}
+{{ with .Get 0 }}
+{{   range (split . ".") }}
+{{     $ns_def = (index $ns_data "namespaces" .) }}
+{{     $ns_data = (index $ns_def "defined") }}
+{{   end }}
+{{ end }}
+
+{{ with $ns_def.briefdescription }}
+{{ . }}
+{{ end }}
+
+{{ with $ns_def.detaileddescription }}
+{{ . }}
+{{ end }}
+
+{{ with $ns_data }}
+{{ with .namespaces }}
+<h2>Namespaces:</h2>
+<ul>
+{{ range $name, $content := . }}
+<li><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}">{{ $name }}</a></li>
+{{ end }}
+</ul>
+{{ end }}
+
+{{ with .types }}
+<h2>Types:</h2>
+<ul>
+{{ range $name, $content := . }}
+<li><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}">{{ $name }}</a></li>
+{{ end }}
+</ul>
+{{ end }}
+
+{{ with .functions }}
+<h2>Functions:</h2>
+<ul>
+{{ range $name, $content := . }}
+<li><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}">{{ $name }}</a></li>
+{{ end }}
+</ul>
+{{ end }}
+
+{{ with .variables }}
+<h2>Global variables:</h2>
+<ul>
+{{ range $name, $content := . }}
+<li><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}">{{ $name }}</a></li>
+{{ end }}
+</ul>
+{{ end }}
+
+{{ end }}

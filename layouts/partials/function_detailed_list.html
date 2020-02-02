@@ -1,0 +1,32 @@
+{{ range $name, $content := . }}{{ range $content }}
+{{ $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
+{{ $full_url := (delimit (slice .name | append $param_types) " ") | anchorize }}
+
+<h3 id="{{ $full_url }}">{{ .defined.result.type }} {{.name }}(
+{{- with .defined.parameters }}{{ $n_params := len .}} {{ $id := 0 }}{{ range $name, $param := . -}}
+{{ $param.defined.type }} <a href="#{{ $full_url }}-_-{{ $param.name }}">{{ $param.name }}</a>{{if lt $id $n_params}}, {{end -}}
+{{- $id = (add $id 1) }}{{ end }} {{ end -}}
+)</h3>
+
+{{ with .briefdescription }}
+{{ . | markdownify }}
+{{ end }}
+
+{{ with .detaileddescription }}
+{{ . | markdownify  }}
+{{ end }}
+
+
+<h4>Parameters and result:</h4>
+<dl>
+{{ range $name, $param := .defined.parameters }}
+<dt id="{{ $full_url }}-_-{{ $param.name }}">{{ $param.name }}</dt>
+<dd>{{ $param.briefdescription | markdownify }}{{ $param.detaileddescription | markdownify }}</dd>
+{{ end }}
+{{ with .defined.result }}{{ if .type }}
+<dt>Result</dt>
+<dd>{{ .briefdescription | markdownify }}{{ .detaileddescription | markdownify }}</dd>
+{{ end }}{{ end }}
+</dl>
+
+{{ end }}{{ end }}

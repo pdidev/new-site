@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-from collections import defaultdict
+import yaml
 
 """
 A simplified C++ metamodel for documentation purpose only.
@@ -9,10 +9,12 @@ We do not take into account the distinction between declaration and definition
 here.
 """
 
-class Macro:
+class Macro(yaml.YAMLObject):
     """
     A macro found in the C++ include files
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
     
     def __init__(self):
         self.briefdescription = None
@@ -21,15 +23,19 @@ class Macro:
         self.location = None
 
 def Template(Templated):
-    class TemplatedTemplate(Templated):
+    class TemplatedTemplate(yaml.YAMLObject, Templated):
         """
         A C++ template
         """
         
-        class Parameter:
+        yaml_tag = 'tag:yaml.org,2002:map'
+        
+        class Parameter(yaml.YAMLObject):
             """
             A type parameter as used in template 
             """
+            
+            yaml_tag = 'tag:yaml.org,2002:map'
             
             def __init__(self):
                 self.default = None
@@ -39,21 +45,28 @@ def Template(Templated):
             self.parameters = []
             self.templated = None
 
-class Variable:
+class Variable(yaml.YAMLObject):
     """
     A variable, constant, constexpr, etc...
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
     
     def __init__(self):
         self.type = None
         self.initializer = None
 
-class Function:
+class Function(yaml.YAMLObject):
     """
     A function
     """
     
-    class Parameter:
+    yaml_tag = 'tag:yaml.org,2002:map'
+    
+    class Parameter(yaml.YAMLObject):
+        
+        yaml_tag = 'tag:yaml.org,2002:map'
+        
         def __init__(self):
             self.briefdescription = None
             self.detaileddescription = None
@@ -62,7 +75,10 @@ class Function:
             self.type = None
             self.default_value = None
     
-    class Result:
+    class Result(yaml.YAMLObject):
+        
+        yaml_tag = 'tag:yaml.org,2002:map'
+        
         def __init__(self):
             self.briefdescription = None
             self.detaileddescription = None
@@ -72,15 +88,19 @@ class Function:
         self.parameters = {}
         self.result = Function.Result()
 
-class Enum_:
+class Enum_(yaml.YAMLObject):
     """
     A C++ enum
     """
     
-    class Value:
+    yaml_tag = 'tag:yaml.org,2002:map'
+    
+    class Value(yaml.YAMLObject):
         """
         An enum value
         """
+        
+        yaml_tag = 'tag:yaml.org,2002:map'
         
         def __init__(self, name=None):
             self.briefdescription = None
@@ -90,23 +110,29 @@ class Enum_:
             self.initializer = None
 
     def __init__(self):
+        self.kind = 'enum'
         self.type = None
         self.values = []
         self.strongly_typed = False
 
-class TypeRef:
+class TypeRef(yaml.YAMLObject):
     """
     An element of C++ that references a type
     """
     
-    def __init__(self):
-        self.type = None
+    yaml_tag = 'tag:yaml.org,2002:map'
+    
+    def __init__(self, type=None):
+        self.kind = 'typedef'
+        self.type = type
 
 class ReferenceTypeRef(TypeRef):
     """
     A way to type something by referencing an existing type and adding it the 
     C++ reference modifier (&)
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
     
     def __init__(self):
         TypeRef.__init__(self)
@@ -116,6 +142,9 @@ class ConstTypeRef(TypeRef):
     A way to type something by referencing an existing type and adding it the 
     const modifier
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
+    
     def __init__(self):
         TypeRef.__init__(self)
 
@@ -124,6 +153,9 @@ class PointerTypeRef(TypeRef):
     A way to type something by referencing an existing type and adding it the 
     pointer modifier (*)
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
+    
     def __init__(self):
         TypeRef.__init__(self)
 
@@ -132,6 +164,9 @@ class RvalueReferenceTypeRef(TypeRef):
     A way to type something by referencing an existing type and adding it the 
     C++ rvalue-reference modifier (&&)
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
+    
     def __init__(self):
         TypeRef.__init__(self)
 
@@ -140,6 +175,8 @@ class TemplateRef:
     A way to type something by referencing a type template and associating
     arguments to the template parameters, i.e. a template instanciation.
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
     
     class Argument:
         """
@@ -153,10 +190,12 @@ class TemplateRef:
         self.template = None
         self.arguments = []
 
-class Class_:
+class Class_(yaml.YAMLObject):
     """
     A class or struct
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
 
     class Function(Function):
         """
@@ -175,13 +214,17 @@ class Class_:
         on a class instance.
         """
         
+        yaml_tag = 'tag:yaml.org,2002:map'
+        
         def __init__(self):
             Variable.__init__(self)
     
-    class Definition:
+    class Definition(yaml.YAMLObject):
         """
         A definition in a class, with a visibility attribute
         """
+    
+        yaml_tag = 'tag:yaml.org,2002:map'
         
         def __init__(self, name=None, defined=None):
             self.briefdescription = None
@@ -193,23 +236,25 @@ class Class_:
 
     def __init__(self):
         self.kind = 'class'
-        self.classes = {}
-        self.typedefs = {}
-        self.enums = {}
+        self.types = {}
         self.functions = {}
         self.variables = {}
         self.member_functions = {}
         self.member_variables = {}
 
-class Namespace:
+class Namespace(yaml.YAMLObject):
     """
     A C++ namespace
     """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
 
-    class Definition:
+    class Definition(yaml.YAMLObject):
         """
         A named (namespaced) definition of a C++ element that can be referenced.
         """
+    
+        yaml_tag = 'tag:yaml.org,2002:map'
         
         def __init__(self, name=None, defined=None):
             self.briefdescription = None
@@ -220,8 +265,6 @@ class Namespace:
 
     def __init__(self):
         self.namespaces = {}
-        self.classes = {}
-        self.typedefs = {}
-        self.enums = {}
+        self.types = {}
         self.functions = {}
         self.variables = {}

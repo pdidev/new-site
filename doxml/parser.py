@@ -71,15 +71,16 @@ class Doxml:
         self.root_namespace = Namespace()
         self.ids = {}
         for compounddef in self.tree.findall('compounddef[@kind="class"]'):
-            self.parse_class(compounddef)
+            self.parse_definition(compounddef, self.parse_class, nametag='compoundname', out=self.root_namespace.types)
         for compounddef in self.tree.findall('compounddef[@kind="struct"]'):
-            self.parse_class(compounddef)
+            self.parse_definition(compounddef, self.parse_class, nametag='compoundname', out=self.root_namespace.types)
         for compounddef in self.tree.findall('compounddef[@kind="union"]'):
             pass
         for compounddef in self.tree.findall('compounddef[@kind="type"]'):
             pass
         for compounddef in self.tree.findall('compounddef[@kind="namespace"]'):
-            self.parse_namespace(compounddef)
+            if '@' not in compounddef.findtext('compoundname'):
+                self.parse_namespace(compounddef)
         for compounddef in self.tree.findall('compounddef[@kind="group"]'):
             pass
         for compounddef in self.tree.findall('compounddef[@kind="example"]'):
@@ -102,17 +103,17 @@ class Doxml:
         for sn in node.findall('innerclass'):
             try:
                 cl = self.ids[sn.get('refid')]
-                del self.root_namespace.classes[cl.name]
+                del self.root_namespace.types[cl.name]
                 cl.name = cl.name[len(node.findtext('compoundname'))+2:]
-                result.defined.classes[cl.name] = cl
+                result.defined.types[cl.name] = cl
             except KeyError:
                 pass
         for sn in node.findall('sectiondef[@kind="typedef"]/memberdef'):
             td = self.parse_definition(sn, self.parse_typedef)
-            result.defined.typedefs[td.name] = td
+            result.defined.types[td.name] = td
         for sn in node.findall('sectiondef[@kind="enum"]/memberdef'):
             en = self.parse_definition(sn, self.parse_enum)
-            result.defined.enums[en.name] = en
+            result.defined.types[en.name] = en
         for sn in node.findall('sectiondef[@kind="func"]/memberdef'):
             fn = self.parse_definition(sn, self.parse_function)
             funclist = result.defined.functions.setdefault(fn.name, []).append(fn)
@@ -120,10 +121,13 @@ class Doxml:
             var = self.parse_definition(sn, self.parse_variable)
             result.defined.variables[var.name] = var
 
-    def parse_definition(self, node: ET.Element, parse_defined):
-        result = Namespace.Definition()
-        result.name = node.findtext('name')
-        self.ids[node.get('id')] = result
+    def parse_definition(self, node: ET.Element, parse_defined, nametag='name', out=None):
+        result = self.ids.setdefault(node.get('id'), Namespace.Definition())
+        if result.name is None:
+            result.name = node.findtext(nametag)
+            self.ids[node.get('id')] = result
+            if out is not None:
+                out[result.name] = result
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'detaileddescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'location', 'file')
@@ -134,7 +138,7 @@ class Doxml:
         return "".join(node.itertext())
 
     def parse_typedef(self, node: ET.Element):
-        return self.parse_type(node.find('type'))
+        return TypeRef(self.parse_type(node.find('type')))
 
     def parse_enum(self, node: ET.Element):
         result = Enum_()
@@ -146,14 +150,13 @@ class Doxml:
         return result
 
     def parse_enum_value(self, out, node: ET.Element):
-        result = Namespace.Definition()
+        result = Enum_.Value()
         result.name = node.findtext('name')
         out.values.append(result)
         self.ids[node.get('id')] = result
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'detaileddescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'location', 'file')
-        result.defined=Variable()
 
     def parse_function(self, node: ET.Element):
         result = Function()
@@ -189,37 +192,42 @@ class Doxml:
         return result
     
     def parse_class(self, node: ET.Element):
-        result = self.ids.setdefault(node.get('id'), Namespace.Definition(defined=Class_()))
-        if result.name is None:
-            result.name = node.findtext('compoundname')
-            self.root_namespace.classes[result.name] = result
+        result = Class_()
+        result.kind = node.get("kind")
         for sn in node.findall('innerclass'):
-            cl = self.ids.setdefault(sn.get('refid'), Class_.Definition())
-            if cl.name is not None:
-                del self.root_namespace.classes[cl.name]
-                cl = Class_.Definition(defined=cl.defined)
-            else:
-                cl.defined = Class_()
+            try:
+                cl = self.ids[sn.get('refid')]
+                del self.ids[sn.get('refid')]
+                del self.root_namespace.types[cl.name]
+                newcl = Class_.Definition(defined=cl.defined)
+                newcl.briefdescription = cl.briefdescription
+                newcl.detaileddescription = cl.detaileddescription
+                newcl.location = cl.location
+                cl = newcl
+            except KeyError:
+                cl = Class_.Definition()
             cl.name = self.parse_type(sn)[len(node.findtext('compoundname'))+2:]
-            result.defined.classes[cl.name] = cl
+            self.ids[sn.get('refid')] = cl
+            result.types[cl.name] = cl
         for sn in node.findall('sectiondef/memberdef[@kind="typedef"]'):
             td = self.parse_member_definition(sn, self.parse_typedef)
-            result.defined.typedefs[td.name] = td
+            result.types[td.name] = td
         for sn in node.findall('sectiondef/memberdef[@kind="enum"]'):
             en = self.parse_member_definition(sn, self.parse_enum)
-            result.defined.enums[en.name] = en
+            result.types[en.name] = en
         for sn in node.findall('sectiondef/memberdef[@kind="function"][@static="yes"]'):
             fn = self.parse_member_definition(sn, self.parse_function)
-            result.defined.functions.setdefault(fn.name, []).append(fn)
+            result.functions.setdefault(fn.name, []).append(fn)
         for sn in node.findall('sectiondef/memberdef[@kind="function"][@static="no"]'):
             fn = self.parse_member_definition(sn, self.parse_function)
-            result.defined.functions.setdefault(fn.name, []).append(fn)
+            result.functions.setdefault(fn.name, []).append(fn)
         for sn in node.findall('sectiondef/memberdef[@kind="variable"][@static="yes"]'):
             var = self.parse_member_definition(sn, self.parse_variable)
-            result.defined.variables[var.name] = var
+            result.variables[var.name] = var
         for sn in node.findall('sectiondef/memberdef[@kind="variable"][@static="no"]'):
             var = self.parse_member_definition(sn, self.parse_variable)
-            result.defined.variables[var.name] = var
+            result.variables[var.name] = var
+        return result
     
     def parse_member_definition(self, node: ET.Element, parse_defined):
         result = Class_.Definition()
@@ -304,7 +312,7 @@ class Doxml:
             'table': lambda n: self.doc_table(subout.get_out(), n),
             'variablelist': lambda n: self.doc_variable_list(subout.get_out(), n),
             }, 
-        text_handler=lambda t: out.append(Text(t)),
+        text_handler=lambda t: subout.get_para().append(Text(t)),
         catchall = lambda n: self.doc_title_cmd_group(subout.get_para(), n)
         )
 
@@ -386,7 +394,7 @@ class Doxml:
         self.images.append(node.get('name'))
         img = Image(url=self.imgpath+node.get('name'))
         para.append(img)
-        itertag(node, text_handler = lambda t: out.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(img, n))
+        itertag(node, text_handler = lambda t: img.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(img, n))
         
     def listing(self, out: BlockContainer, node: ET.Element):
         listing = []
@@ -409,7 +417,7 @@ class Doxml:
     def doc_url_link(self, out: InlineContainer, node: ET.Element):
         subout = Link(node.get('url'))
         out.append(subout)
-        itertag(node, text_handler = lambda t: out.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(subout, n))
+        itertag(node, text_handler = lambda t: subout.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(subout, n))
 
     def doc_simplesect(self, out: BlockContainer, node: ET.Element):
         subout = Alert(node.get('title'))
@@ -435,7 +443,7 @@ class Doxml:
     def doc_ref_text(self, out: InlineContainer, node: ET.Element):
         subout = Link(node.get('kindref').strip()+':'+node.get('refid').strip()) #TODO: replace by hugo
         out.append(subout)
-        itertag(node, text_handler = lambda t: out.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(subout, n))
+        itertag(node, text_handler = lambda t: subout.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(subout, n))
 
 if __name__ == '__main__':
     import sys
@@ -444,5 +452,5 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         x = Doxml(sys.argv[1])
     else:
-        x = Doxml("../data/combined.xml")
+        x = Doxml("../dox/combined.xml")
     yaml.dump(x.root_namespace, sys.stdout)

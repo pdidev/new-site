@@ -20,7 +20,7 @@ class Alert(BlockContainer):
 
 class DefinitionList(BlockContainer):
     def render(self, indent):
-        return ("\n").join([END_SP_RE.sub('', b.render(indent)) for b in self._blocks if b.render(indent).strip() != ''])
+        return ("\n").join([END_SP_RE.sub('', b.render(indent)) for b in self if b.render(indent).strip() != ''])
 
 class TermItem(Paragraph):
     pass
@@ -42,10 +42,10 @@ class Table(BlockContainer):
             self.aligns = aligns
     
     def render(self, indent):
-        while len(self.aligns) < len(self._blocks[0]._blocks):
+        while len(self.aligns) < len(self[0]):
             self.aligns.append('')
         return (
-            self._blocks[0].render(indent) + '\n'
+            self[0].render(indent) + '\n'
           + indent+'| '+ ' | '.join([
               ':--' if a == 'l' else
               ':-:' if a == 'c' else
@@ -55,10 +55,10 @@ class Table(BlockContainer):
             ]) + ' |\n'
           + '\n'.join([
               r.render(indent)
-              for r in self._blocks[1:]
+              for r in self[1:]
             ])
           )
 
 class TableRow(BlockContainer):
     def render(self, indent):
-        return indent+'| '+ ' | '.join([b.render('') for b in self._blocks]) + ' |'
+        return indent+'| '+ ' | '.join([b.render('') for b in self]) + ' |'

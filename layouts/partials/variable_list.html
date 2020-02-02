@@ -1,0 +1,8 @@
+{{ with . }}
+<dl>
+{{ range $name, $content := . }}
+{{ with $name }}<dt><a href="#{{ . | urlize }}">{{ . }}</a></dt>{{ end }}
+{{ with $content }}<dd>{{ .briefdescription | markdownify }}</dd>{{ end }}
+{{ end }}
+</dl>
+{{ end }}
