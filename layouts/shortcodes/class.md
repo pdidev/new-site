@@ -12,38 +12,32 @@
 {{   end }}
 {{ end }}
 
-{{ with (index $ns_def "briefdescription") }}
-{{ . | markdownify }}
-{{ end }}
+{{ with $ns_def.briefdescription }}{{ . | markdownify }}{{ end }}
 
-{{ with $ns_def.detaileddescription }}
-{{ . | markdownify  }}
-{{ end }}
+{{ with $ns_def.detaileddescription }}{{ . | markdownify  }}{{ end }}
 
 {{ with $ns_data }}
 
 {{ with .types }}
-<h2>Member types:</h2>
-<ul>
+## Member types
 {{ range $name, $content := . }}
-<li>{{ $content.defined.kind }} <a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}">{{ $name }}</a></li>
-{{ end }}
-</ul>
-{{ end }}
+[`{{ $content.defined.kind }} {{ $name }}`]( {{ $name | lower | replaceRE "[^a-z0-9]" "_" }} )
+:    {{ with $content.briefdescription }}{{ . }}{{ end }}
+{{- end }}{{ end }}
 
 {{ with .functions }}
-<h2>Member functions:</h2>
+## Member Functions
 {{ partial "function_list.html" . }}
 {{ end }}
 
-{{ with .variables }}
-<h2>Member variables:</h2>
+{{ with .variables }}{{ with where . "visibility" "public" }}
+## Member Variables
 {{ partial "variable_list.html" . }}
-{{ end }}
+{{ end }}{{ end }}
 
 {{ with .functions }}
-<h2>Member functions description:</h2>
-{{ partial "function_detailed_list.html" . }}
+## Member Function Documentation
+{{ partial "function_detailed_list.md" . }}
 {{ end }}
 
 {{ end }}

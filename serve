@@ -2,14 +2,17 @@
 
 cd "$(dirname "$0")"
 
-
-
 function finish {
-  rm -r resources
+  rm -rf resources
+  rm -rf content/docs/
+  rm -rf static/docs
+  rm -rf data/docs
 }
 trap finish EXIT
 
 if [ "$#" -eq 0 ]; then
+    rm -r content/docs/ static/docs data/docs
+    python3 doxml/dumper.py dox/combined.xml .
     docker run -u1000:1000 --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:0.61.0-ext-alpine server
 else
     docker run -u1000:1000 --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:0.61.0-ext-alpine $@

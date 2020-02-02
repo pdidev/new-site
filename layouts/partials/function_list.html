@@ -1,12 +1,7 @@
-{{ with . }}
-<dl>
-{{ range $name, $content := . }}
-{{ range $content }}
+{{ range $name, $content := . }}{{ range where $content "visibility" "public" }}
 {{ $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
 {{ $full_url := (delimit (slice .name | append $param_types) " ") | anchorize }}
-<dt><a href="#{{ $full_url }}">{{ .name }} ({{ with $param_types }} {{ delimit . ", " }} {{end }})</a></dt>
-<dd>{{ with .briefdescription }}{{ . | markdownify }}{{ end }} <a href="#{{ $full_url }}">More…</a></dd>
+[`{{ with .defined.result.type }}{{.}}{{end}} {{ .name }} ({{ with $param_types }} {{ delimit . ", " }} {{end }})`]( #{{ $full_url }} )
+:    {{ with .briefdescription }}{{ . | markdownify }}{{ end }} <a href="#{{ $full_url }}">More…</a>
 {{ end }}
-{{ end }}
-</dl>
 {{ end }}

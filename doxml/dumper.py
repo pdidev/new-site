@@ -16,13 +16,11 @@ def page_name(name):
     return name.lower()+'.md'
 
 def dump_class(outdir, path, cls):
-    print("dumping "+cls.name)
-    print("dumping "+cls.defined.kind+" "+cls.name)
     dir = os.path.join(outdir, *[re.sub(r'[^a-zA-Z0-9]', '_', n) for n in path])
     os.makedirs(dir, exist_ok=True)
     data = {
         'linkTitle': cls.name,
-        'title': "the "+"::".join(path)+" "+cls.defined.kind,
+        'title': "::".join(path)+" "+cls.defined.kind+" reference",
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
@@ -40,7 +38,7 @@ def dump_ns(outdir, path, ns):
     os.makedirs(dir, exist_ok=True)
     data = {
         'linkTitle': ns.name,
-        'title': "the "+"::".join(path)+" namespace",
+        'title': "::".join(path)+" namespace reference",
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
@@ -55,7 +53,7 @@ def dump_ns(outdir, path, ns):
 def dump_root_ns(outdir, ns):
     os.makedirs(outdir, exist_ok=True)
     data = {
-        'title': "Reference",
+        'title': "Full API reference",
     }
     with open(os.path.join(outdir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
