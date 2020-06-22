@@ -14,7 +14,7 @@
 {{ with $ns_data }}
 
 {{ with .namespaces }}
-## Namespaces:
+## Sub-namespaces:
 {{ range $name, $content := . }}
 [`{{ $name }}`]({{ $name | lower | replaceRE "[^a-z0-9]" "_" }})
 :    {{ with $content.briefdescription }}{{ . }}{{ end }}

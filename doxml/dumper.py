@@ -21,12 +21,13 @@ def dump_class(outdir, path, cls):
     data = {
         'linkTitle': cls.name,
         'title': "::".join(path)+" "+cls.defined.kind+" reference",
+        'doc_path': ".".join(path),
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
         yaml.dump(data, outfile)
         print("---", file=outfile)
-        print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
+        print("{{% class %}}", file=outfile)
     try:
         for sub_cls in cls.defined.types.values():
             dump_class(outdir, path+[sub_cls.name], sub_cls)
@@ -39,6 +40,7 @@ def dump_ns(outdir, path, ns):
     data = {
         'linkTitle': ns.name,
         'title': "::".join(path)+" namespace reference",
+        'doc_path': ".".join(path),
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
@@ -54,6 +56,7 @@ def dump_root_ns(outdir, ns):
     os.makedirs(outdir, exist_ok=True)
     data = {
         'title': "Full API reference",
+        'doc_path': "",
     }
     with open(os.path.join(outdir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)

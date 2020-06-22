@@ -1,0 +1,22 @@
+
+.memitem {
+	header {
+		h1 {
+			margin-top: 4rem;
+			font-size: $h3-font-size;
+		}
+	}
+	.parameters {
+		> dl {
+			> dt {
+				display: inline;
+			}
+			> dd {
+				display: inline;
+			}
+		}
+	}
+	h1 {
+		font-size: $h4-font-size;
+	}
+}

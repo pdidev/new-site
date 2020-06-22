@@ -1,6 +1,7 @@
 {{ $ns_def := dict }}
+
 {{ $ns_data := $.Site.Data.docs.doxdata }}
-{{ with .Get 0 }}
+{{ with .Page.Params.doc_path }}
 {{   range ($ns := (split . ".")) }}
 {{     if and (isset $ns_data "namespaces") (isset (index $ns_data "namespaces") .) }}
 {{       $ns_def = (index $ns_data "namespaces" .) }}
@@ -19,25 +20,26 @@
 {{ with $ns_data }}
 
 {{ with .types }}
-## Member types
+<h2 id="member-types-list">Member Types</h2>
+<dl>
 {{ range $name, $content := . }}
-[`{{ $content.defined.kind }} {{ $name }}`]( {{ $name | lower | replaceRE "[^a-z0-9]" "_" }} )
-:    {{ with $content.briefdescription }}{{ . }}{{ end }}
-{{- end }}{{ end }}
+<dt><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}"><code>{{ $content.defined.kind }} {{ $name }}</code></a></dt>
+<dd>{{ with $content.briefdescription }}{{ . }}{{ end }}</dd>
+{{ end }}
+</dl>
+{{ end }}
 
 {{ with .functions }}
-## Member Functions
+<h2 id="member-functions-list">Member Functions</h2>
 {{ partial "function_list.html" . }}
 {{ end }}
 
 {{ with .variables }}{{ with where . "visibility" "public" }}
-## Member Variables
+<h2 id="member-variables-list">Member Variables</h2>
 {{ partial "variable_list.html" . }}
 {{ end }}{{ end }}
 
-{{ with .functions }}
-## Member Function Documentation
-{{ partial "function_detailed_list.md" . }}
-{{ end }}
+<h2 id="detailed-documentation">Detailed Documentation</h2>
+{{ partial "function_detailed_list" .functions }}
 
 {{ end }}
