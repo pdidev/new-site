@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Actions
+
+name: publish
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master
+      uses: actions/checkout@v2
+    - name: Checkout gh-pages
+      run: |
+        rm -rf public
+        mkdir public
+        git worktree prune
+        rm -rf .git/worktrees/public/
+        git worktree add -B gh-pages public origin/gh-pages
+    - name: Build site
+      run: ./build -e github
+    - name: Push
+      run: |
+        cd public
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@noreply.example.com"
+        git add -A .
+        git commit -m "New version deployed by ${GITHUB_EVENT_NAME} ${GITHUB_RUN_NUMBER}"
+        git push -f
