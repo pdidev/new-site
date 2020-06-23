@@ -1,0 +1,4 @@
+baseURL = "http://pdi.julien-bigot.fr/new-site/"
+publishDir = "/src/public"
+
+enableRobotsTXT = true
