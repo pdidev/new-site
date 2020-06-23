@@ -39,4 +39,4 @@ jobs:
         git config user.email "${GITHUB_ACTOR}@noreply.example.com"
         git add -A .
         git commit -m "New version deployed by ${GITHUB_EVENT_NAME} ${GITHUB_RUN_NUMBER}"
-        git push -f gh-pages
+        git push -f origin gh-pages
