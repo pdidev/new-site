@@ -16,14 +16,14 @@ jobs:
     steps:
     - name: Checkout master
       uses: actions/checkout@v2
+      with: 
+        submodules: recursive
     - name: Checkout gh-pages
       run: |
-        rm -rf public
-        mkdir public
-        git worktree prune
-        rm -rf .git/worktrees/public/
-        git submodule update --init --recursive
         git fetch --all -p
+        pwd
+        ls -la
+        mkdir public
         git remote -v
         git branch -a
         git worktree add -B gh-pages public remotes/origin/gh-pages
@@ -39,4 +39,4 @@ jobs:
         git config user.email "${GITHUB_ACTOR}@noreply.example.com"
         git add -A .
         git commit -m "New version deployed by ${GITHUB_EVENT_NAME} ${GITHUB_RUN_NUMBER}"
-        git push -f
+        git push -f gh-pages
