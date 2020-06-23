@@ -22,6 +22,8 @@ jobs:
         mkdir public
         git worktree prune
         rm -rf .git/worktrees/public/
+        git remote -v
+        git branch -a
         git worktree add -B gh-pages public origin/gh-pages
     - name: Build site
       run: ./build -e github
