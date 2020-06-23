@@ -22,7 +22,7 @@ jobs:
         mkdir public
         git worktree prune
         rm -rf .git/worktrees/public/
-        git submodules update --init --recursive
+        git submodule update --init --recursive
         git remote -v
         git branch -a
         git worktree add -b gh-pages public origin/gh-pages
