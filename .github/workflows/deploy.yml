@@ -23,9 +23,10 @@ jobs:
         git worktree prune
         rm -rf .git/worktrees/public/
         git submodule update --init --recursive
+        git fetch --all -p
         git remote -v
         git branch -a
-        git worktree add -b gh-pages public origin/gh-pages
+        git worktree add -b gh-pages public remotes/origin/master
     - name: Build site
       run: ./build -e github
     - name: Push
