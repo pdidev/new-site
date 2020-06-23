@@ -1,0 +1,91 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDI – PDI::Context class reference</title>
+    <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/</link>
+    <description>Recent content in PDI::Context class reference on PDI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: PDI::Context::Datatype_template_parser typedef reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/datatype_template_parser/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/datatype_template_parser/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A function that parses a PC_tree_t to create a datatype_template.&lt;/p&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::Context::Iterator class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/iterator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/iterator/</guid>
+      <description>
+        
+        
+        &lt;p&gt;An iterator used to go through the descriptor store.&lt;/p&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator-const-iterator-&#34;&gt;&lt;code&gt;bool operator!= ( const Iterator &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#operator-const-iterator-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; operator* ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#operator&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator&#34;&gt;&lt;code&gt;Iterator &amp;amp; operator&amp;#43;&amp;#43; ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#operator&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator-&#34;&gt;&lt;code&gt;Data_descriptor * operator-&amp;gt; ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#operator-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator-const-iterator-&#34;&gt;operator!=&lt;/h1&gt;
+&lt;code&gt;bool operator!= (    const Iterator &amp;amp;   )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;operator-const-iterator--_-&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator&#34;&gt;operator*&lt;/h1&gt;
+&lt;code&gt;Data_descriptor &amp;amp; operator* (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator&#34;&gt;operator&amp;#43;&amp;#43;&lt;/h1&gt;
+&lt;code&gt;Iterator &amp;amp; operator&amp;#43;&amp;#43; (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator-&#34;&gt;operator-&amp;gt;&lt;/h1&gt;
+&lt;code&gt;Data_descriptor * operator-&amp;gt; (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

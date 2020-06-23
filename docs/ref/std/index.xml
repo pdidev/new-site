@@ -1,0 +1,48 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDI – std namespace reference</title>
+    <link>http://pdi.julien-bigot.fr/new-site/docs/ref/std/</link>
+    <description>Recent content in std namespace reference on PDI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/std/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: std::hash&lt; PDI::Ref_any&lt; R, W &gt; &gt; struct reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator-const-pdiref_any-r-w--&#34;&gt;&lt;code&gt;size_t operator() ( const PDI::Ref_any&lt; R, W &gt; &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#operator-const-pdiref_any-r-w--&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator-const-pdiref_any-r-w--&#34;&gt;operator()&lt;/h1&gt;
+&lt;code&gt;size_t operator() (    const PDI::Ref_any&amp;lt; R, W &amp;gt; &amp;amp; r  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;operator-const-pdiref_any-r-w---_-r&#34;&gt;&lt;code&gt;r&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.72.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/new-site/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
+
+<title>Installation | PDI</title><meta property="og:title" content="Installation" />
+<meta property="og:description" content="PDI is distributed along some plugins and most of its dependencies in what is known as the PDI distribution. It can be easily compiled from its source code.
+Default PDI installation Installing the default PDI distribution is fairly easy. Most dependencies are embedded in the distribution and the only required external dependencies are:
+ a POSIX compatible OS with a python interpreter, CMake-3.5 compilers for C (99), C&#43;&#43; (14) and Fortran (2003), MPI  For example, release 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/installation/" />
+
+<meta itemprop="name" content="Installation">
+<meta itemprop="description" content="PDI is distributed along some plugins and most of its dependencies in what is known as the PDI distribution. It can be easily compiled from its source code.
+Default PDI installation Installing the default PDI distribution is fairly easy. Most dependencies are embedded in the distribution and the only required external dependencies are:
+ a POSIX compatible OS with a python interpreter, CMake-3.5 compilers for C (99), C&#43;&#43; (14) and Fortran (2003), MPI  For example, release 0.">
+
+<meta itemprop="wordCount" content="807">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installation"/>
+<meta name="twitter:description" content="PDI is distributed along some plugins and most of its dependencies in what is known as the PDI distribution. It can be easily compiled from its source code.
+Default PDI installation Installing the default PDI distribution is fairly easy. Most dependencies are embedded in the distribution and the only required external dependencies are:
+ a POSIX compatible OS with a python interpreter, CMake-3.5 compilers for C (99), C&#43;&#43; (14) and Fortran (2003), MPI  For example, release 0."/>
+
+
+
+
+
+<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
+<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/new-site/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg8" viewBox="0 0 40 40"><defs id="defs2"><linearGradient id="linearGradient846"><stop id="stop842" offset="0" style="stop-color:#3a82c2;stop-opacity:1"/><stop style="stop-color:#073763;stop-opacity:1" offset=".4946366" id="stop850"/><stop id="stop844" offset="1" style="stop-color:#3a82c2;stop-opacity:1"/></linearGradient><linearGradient gradientTransform="matrix(1.1064998,0,0,1.1064998,-2.8109111,-3.2500611)" gradientUnits="userSpaceOnUse" y2="6.0482411" x2="25.209953" y1="41.294521" x1="25.249392" id="linearGradient848" xlink:href="#linearGradient846"/><filter id="filter1270" style="color-interpolation-filters:sRGB"><feFlood id="feFlood1260" result="flood" flood-color="rgb(0,0,0)" flood-opacity=".498039"/><feComposite id="feComposite1262" result="composite1" operator="in" in2="SourceGraphic" in="flood"/><feGaussianBlur id="feGaussianBlur1264" result="blur" stdDeviation="1" in="composite1"/><feOffset id="feOffset1266" result="offset" dy=".6" dx=".6"/><feComposite id="feComposite1268" result="composite2" operator="over" in2="offset" in="SourceGraphic"/></filter></defs><g transform="translate(-4.6772165,-3.1371543)" id="layer1"><circle r="19.5" cy="22.994598" cx="24.687487" id="path840" style="opacity:1;fill:url(#linearGradient848);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><flowRoot transform="matrix(0.26458333,0,0,0.26458333,4.6772165,3.1371543)" style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#000;fill-opacity:1;stroke:none" id="flowRoot852"><flowRegion id="flowRegion854"><rect y="55.823959" x="32.857143" height="43.92857" width="94.285713" id="rect856"/></flowRegion><flowPara id="flowPara858">PPd</flowPara></flowRoot><text transform="matrix(1.0723861,0,0,1.0723861,-1.9406576,-2.4256035)" id="text862" y="30.191469" x="10.006681" style="font-style:normal;font-weight:400;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.24672395;filter:url(#filter1270)"><tspan style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:17.63888931px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#fff;fill-opacity:1;stroke-width:.24672395" y="30.191469" x="10.006681" id="tspan860">PDI</tspan></text></g></svg></span><span class="text-uppercase font-weight-bold">PDI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/new-site/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/master/">git master</a>
+	
+	<a class="dropdown-item" href="/">latest release (0.5.1)</a>
+	
+	<a class="dropdown-item" href="/0.5.0/">release 0.5.0</a>
+	
+	<a class="dropdown-item" href="/0.4.1/">release 0.4.1</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocs">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsconcepts" href="/new-site/docs/concepts/">Core Concepts</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdeprecated" href="/new-site/docs/deprecated/">Deprecated List</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Full API reference</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsref">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/array_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Array_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiarray_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/datatype_template_parser/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_parser</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextdatatype_template_parser">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/iterator/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Iterator</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextiterator">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context_proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context_proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext_proxy">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/data_descriptor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Data_descriptor</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidata_descriptor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/error/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Error</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdierror">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/expression/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Expression</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiexpression">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/logger_sptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Logger_sptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdilogger_sptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/paraconf_wrapper/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Paraconf_wrapper</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiparaconf_wrapper">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/plugin/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Plugin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiplugin">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatype">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/member/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Member</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatypemember">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_any/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_any</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_any">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_base</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_base/referenced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_basereferenced">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_r">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_rw/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_rw</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_rw">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_w/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_w</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_w">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_kind/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_kind</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_kind">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi_errhandler_t/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_t</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_t">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/spdlog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">spdlog</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefspdlog">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">std</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstd">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">hash&lt; PDI::Ref_any&lt; R, W &gt; &gt;</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstdhash__pdi__ref_any__r__w____">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshow_to_create_plugin" href="/new-site/docs/how_to_create_plugin/">How to create a plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsphilosophy" href="/new-site/docs/philosophy/">Philosophy of PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsspecification_tree_ref" href="/new-site/docs/specification_tree_ref/">Specification tree Reference</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdecl_hdf5_plugin" href="/new-site/docs/decl_hdf5_plugin/">The Decl&#39;HDF5 plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsflowvr_plugin" href="/new-site/docs/flowvr_plugin/">The FlowVR plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsuser_code_plugin" href="/new-site/docs/user_code_plugin/">The user-code plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocstrace_plugin" href="/new-site/docs/trace_plugin/">Trace plugin</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="TableOfContents"><ul>
+
+
+<li><a href="#member-types-list">Member Types</a><li>
+
+
+
+
+
+
+<li><a href="#detailed-documentation">Detailed Documentation</a><li>
+<ul>
+
+</ul>
+
+</li></div>
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/installation/">Installation</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Installation</h1>
+    
+	       
+	<p><a href="compound:namespacePDI">PDI</a> is distributed along some plugins and most of its dependencies in what is known as the <strong><a href="compound:namespacePDI">PDI</a> distribution</strong>. It can be easily compiled from its source code.</p>
+<h2 id="default-pdi-installation">Default PDI installation</h2>
+<p>Installing the <em>default <a href="compound:namespacePDI">PDI</a> distribution</em> is fairly easy. Most dependencies are embedded in the distribution and the only required external dependencies are:</p>
+<ul>
+<li>a POSIX compatible OS with a python interpreter,</li>
+<li>CMake-3.5</li>
+<li>compilers for C (99), C++ (14) and Fortran (2003),</li>
+<li>MPI</li>
+</ul>
+<p>For example, release 0.5.1 can be installed by following these instructions (but look for the latest release at <a href="https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags">https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags</a>)</p>
+<pre><code># download
+wget https://gitlab.maisondelasimulation.fr/jbigot/pdi/-/archive/0.5.1/pdi-0.5.1.tar.bz2
+tar -xjf pdi-0.5.1.tar.bz2
+cd pdi-0.5.1
+# configuration
+cmake -DCMAKE_INSTALL_PREFIX=/usr/ .
+# compilation and installation
+make install
+</code></pre><p>If the default installation fails or if you need an installation better tailored to your needs, keep reading.</p>
+<h2 id="downloading-the-distribution">Downloading the distribution</h2>
+<p>As of now, <a href="compound:namespacePDI">PDI</a> must be compiled from source.</p>
+<p>To download the sources, have a look at the list of all releases from: <a href="https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags">https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags</a></p>
+<p>For example, release 0.5.1 can be downloaded and extracted by following these instructions:</p>
+<pre><code>wget https://gitlab.maisondelasimulation.fr/jbigot/pdi/-/archive/0.5.1/pdi-0.5.1.tar.bz2
+tar -xjf pdi-master.tar.bz2
+cd pdi-0.5.1
+</code></pre><h2 id="configuration-and-compilation">Configuration and compilation</h2>
+<p>The <a href="compound:namespacePDI">PDI</a> distribution is compiled using Cmake. In addition to <a href="compound:namespacePDI">PDI</a> itself, the distribution includes <a href="compound:namespacePDI">PDI</a> plugins.</p>
+<p><a href="compound:namespacePDI">PDI</a> depends on:</p>
+<ul>
+<li><a href="https://cmake.org">cmake</a>, version &gt;= 3.5</li>
+<li>a C-99 and C++-14 compiler (<a href="https://gcc.gnu.org/">gcc</a> 5.4 is tested)</li>
+<li>a POSIX compatible OS (<a href="https://www.kernel.org/">linux</a> with <a href="https://www.gnu.org/software/libc/">GNU libc</a> 2.27 is tested)</li>
+<li><a href="https://gitlab.maisondelasimulation.fr/jbigot/libparaconf">paraconf</a> (distributed with <a href="compound:namespacePDI">PDI</a>, see below)</li>
+<li><a href="https://pyyaml.org/wiki/LibYAML">libyaml</a> (distributed with <a href="compound:namespacePDI">PDI</a>, see below)</li>
+<li><a href="https://github.com/gabime/spdlog">spdlog</a> (distributed with <a href="compound:namespacePDI">PDI</a>, see below)</li>
+</ul>
+<p>Once inside <code>pdi</code> directory, the compilation can be done using the following commands:</p>
+<pre><code>mkdir build
+cd build
+cmake ..
+make -j
+make install
+</code></pre><p>The <code>cmake</code> command is used for configuration. It accepts options to enable or disable each element of the distribution and to configure them with the <code>-D</code> syntax.</p>
+<p>For example, the installation directory can be changed with the following command:</p>
+<pre><code>cmake -DCMAKE_INSTALL_PREFIX=/usr/ ..
+</code></pre>
+
+<div class="alert alert-primary" role="alert">
+
+the <code>cmake</code> command must be followed by the path to the <code>pdi</code> directory, here <code>..</code> because we have just created and moved to the <code>build</code> subdirectory.
+</div>
+
+<p>The following boolean build options are available, each option should be set to either <code>ON</code> or <code>OFF</code>:</p>
+<dl>
+<dt><code>BUILD_UNSTABLE</code></dt>
+<dd>Build all features by default including those not stable yet
+<code>BUILD_CFG_VALIDATOR</code></dd>
+<dd>Build config validation script
+<code>BUILD_DECL_HDF5_PLUGIN</code></dd>
+<dd>Build decl'HDF5 plug-in
+<code>BUILD_DECL_SION_PLUGIN</code></dd>
+<dd>Build decl'SION plug-in
+<code>BUILD_DOCUMENTATION</code></dd>
+<dd>Build documentation
+<code>BUILD_MPI_PLUGIN</code></dd>
+<dd>Build MPI plug-in
+<code>BUILD_FLOWVR_PLUGIN</code></dd>
+<dd>Build FlowVR plug-in
+<code>BUILD_TESTING</code></dd>
+<dd>Build tests
+<code>BUILD_FORTRAN</code></dd>
+<dd>Enable Fortran support
+<code>BUILD_PYTHON</code></dd>
+<dd>Enable Python support</dd>
+</dl>
+<p>The following dependency inclusion options are available, each one can be set to either <code>SYSTEM</code>, <code>EMBEDDED</code> or a path:</p>
+<dl>
+<dt><code>USE_DEFAULT</code></dt>
+<dd>Default version of libraries to use
+<code>USE_BPP</code></dd>
+<dd>version of BPP to use
+<code>USE_FLOWVR</code></dd>
+<dd>version of FlowVR to use
+<code>USE_GTEST</code></dd>
+<dd>version of Gtest to use
+<code>USE_PARACONF</code></dd>
+<dd>version of paraconf to use
+<code>USE_PYBIND11</code></dd>
+<dd>version of pybind11 to use
+<code>USE_PYYAML</code></dd>
+<dd>version of PyYAML to use
+<code>USE_SPDLOG</code></dd>
+<dd>version of spdlog to use
+<code>USE_YAML</code></dd>
+<dd>version of yaml to use</dd>
+</dl>
+<h3 id="fortran-support">Fortran support</h3>
+<p>Fortran support is enabled by default, pass the <code>-DBUILD_FORTRAN=OFF</code> option to cmake to disable it.</p>
+<p><a href="compound:namespacePDI">PDI</a> Fortran support depends on:</p>
+<ul>
+<li>a Fortran-2003 compiler (<a href="https://gcc.gnu.org/fortran/">GNU Fortran</a> 5.4 is tested)</li>
+<li>a <a href="https://www.python.org/">python</a> and <a href="https://www.gnu.org/software/bash/">bash</a> interpreter at compilation</li>
+<li><a href="https://gitlab.maisondelasimulation.fr/jbigot/bpp">BPP</a> (distributed with <a href="compound:namespacePDI">PDI</a>, pass the <code>-DUSE_DEFAULT=EMBEDDED</code> or <code>-DUSE_BPP=EMBEDDED</code> option to cmake to use the embedded version)</li>
+</ul>
+<h3 id="pdi-configuration-validation-tool">PDI configuration validation tool</h3>
+<p><a href="compound:namespacePDI">PDI</a> configuration validation tool (pdicfg_validate) is enabled by default, pass the <code>-DBUILD_CFG_VALIDATOR=OFF</code> option to cmake to disable it.</p>
+<p><a href="compound:namespacePDI">PDI</a> configuration validation tool depends on:</p>
+<ul>
+<li>a <a href="https://www.python.org/">python</a>3 interpreter</li>
+<li><a href="https://pyyaml.org/">python YAML</a> support (distributed with <a href="compound:namespacePDI">PDI</a>, pass the <code>-DUSE_DEFAULT=EMBEDDED</code> or <code>-DUSE_PYYAML=EMBEDDED</code> option to cmake to use the embedded version)</li>
+</ul>
+<h3 id="tests">Tests</h3>
+<p>Tests are enabled by default, pass the <code>-DBUILD_TESTING=OFF</code> option to cmake to disable them.</p>
+<p>Tests depend on:</p>
+<ul>
+<li><a href="https://cmake.org">cmake</a>, version &gt;= 3.10</li>
+<li><a href="https://github.com/google/googletest">Google Test framework</a> (the embedded version is used by default, pass the <code>-DUSE_GTEST=SYSTEM</code> option to cmake to use the system version)</li>
+</ul>
+<h3 id="python-support">Python support</h3>
+<p>Python support is <strong>not marked stable yet</strong>. Pass the <code>-DBUILD_UNSTABLE=ON</code> or <code>-DBUILD_PYTHON=ON</code> option to cmake to enable it.</p>
+<p><a href="compound:namespacePDI">PDI</a> Fortran support depends on:</p>
+<ul>
+<li>a <a href="https://www.python.org/">python</a>3 installation with development headers</li>
+<li><a href="https://pybind11.readthedocs.io/en/stable/">pybind11</a> (distributed with <a href="compound:namespacePDI">PDI</a>, pass the <code>-DUSE_DEFAULT=EMBEDDED</code> or <code>-DUSE_PYBIND11=EMBEDDED</code> option to cmake to use the embedded version)</li>
+</ul>
+<h3 id="declhdf5-plugin">Decl'HDF5 plugin</h3>
+<p>The decl'HDF5 plugin is enabled by default, pass the <code>-DBUILD_DECL_HDF5_PLUGIN=OFF</code> option to cmake to disable it.</p>
+<p>The decl'HDF5 plugin depends on:</p>
+<ul>
+<li>HDF5 (either sequential or parallel compatible with the chosen MPI)</li>
+</ul>
+<h3 id="declsion-plugin">Decl'SION plugin</h3>
+<p>The decl'SION plugin is not marked stable yet. Pass the <code>-DBUILD_UNSTABLE=ON</code> or <code>-DBUILD_DECL_SION_PLUGIN=ON</code> option to cmake to enable it.</p>
+<p>The decl'SION plugin depends on:</p>
+<ul>
+<li>SIONlib compatible with the chosen MPI</li>
+</ul>
+<h3 id="fti-plugin">FTI plugin</h3>
+<p>FTI support is currently disabled waiting for the new-style FTI plugin. Pass the <code>-DBUILD_FTI_PLUGIN=ON</code> option to cmake to enable it anyway (at your own risk).</p>
+<p>The FTI plugin depends on:</p>
+<ul>
+<li>FTI (distributed with <a href="compound:namespacePDI">PDI</a>, pass the <code>-DUSE_DEFAULT=EMBEDDED</code> or <code>-DUSE_FTI=EMBEDDED</code> option to cmake to use the embedded version)</li>
+</ul>
+<h3 id="mpi-plugin">MPI plugin</h3>
+<p>The MPI plugin is enabled by default, pass the <code>-DBUILD_MPI_PLUGIN=OFF</code> option to cmake to disable it.</p>
+<p>The MPI plugin depends on:</p>
+<ul>
+<li>a MPI-2 library (openmpi-1.10.2 is tested)</li>
+</ul>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack for users" aria-label="Slack for users">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Gitlab for users" aria-label="Gitlab for users">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tags">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitLab" aria-label="GitLab">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Jenkins" aria-label="Jenkins">
+    <a class="text-white" target="_blank" href="https://ci.inria.fr/ah5/">
+      <i class="fab fa-jenkins"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/pdidev">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="DockerHub" aria-label="DockerHub">
+    <a class="text-white" target="_blank" href="https://hub.docker.com/orgs/pdidev">
+      <i class="fab fa-docker"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 The PDI team All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/new-site/js/main.min.b6dfd66b2d261380250c517fd39bc9d8659709e9fc924b00d8fed92e8d9df768.js" integrity="sha256-tt/Way0mE4AlDFF/05vJ2GWXCen8kksA2P7ZLo2d92g=" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>

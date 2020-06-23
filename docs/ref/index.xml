@@ -1,0 +1,162 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDI – Full API reference</title>
+    <link>http://pdi.julien-bigot.fr/new-site/docs/ref/</link>
+    <description>Recent content in Full API reference on PDI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: PDI namespace reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;types&#34;&gt;Types:&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;array_datatype&#34;&gt;&lt;code&gt;class Array_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;an &lt;a href=&#34;%3Ccompound:classPDI_1_1Array__datatype%3E&#34;&gt;Array_datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; that represents an array: i.e storage of multiple elements of the same type continuously in memory.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;context&#34;&gt;&lt;code&gt;class Context&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;context_proxy&#34;&gt;&lt;code&gt;class Context_proxy&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;data_descriptor&#34;&gt;&lt;code&gt;class Data_descriptor&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;datatype&#34;&gt;&lt;code&gt;class Datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype__template%3E&#34;&gt;Datatype_template&lt;/a&gt; that accepts no argument.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;datatype_template&#34;&gt;&lt;code&gt;class Datatype_template&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;datatype_template_uptr&#34;&gt;&lt;code&gt;typedef Datatype_template_uptr&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;datatype_uptr&#34;&gt;&lt;code&gt;typedef Datatype_uptr&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;error&#34;&gt;&lt;code&gt;class Error&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;expression&#34;&gt;&lt;code&gt;class Expression&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;logger_sptr&#34;&gt;&lt;code&gt;typedef Logger_sptr&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A shared pointer to a logger instance.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;paraconf_wrapper&#34;&gt;&lt;code&gt;struct Paraconf_wrapper&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Automatically installs a paraconf error-handler that ignores errors and uninstalls it on destruction.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;plugin&#34;&gt;&lt;code&gt;class Plugin&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;The class &lt;a href=&#34;%3Ccompound:namespacePDI%3E&#34;&gt;PDI&lt;/a&gt; plugins should implement.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;record_datatype&#34;&gt;&lt;code&gt;class Record_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A &lt;a href=&#34;%3Ccompound:classPDI_1_1Record__datatype%3E&#34;&gt;Record_datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; that represents a fixed number of elements of potentially different types layed out in a specific way in memory.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;ref&#34;&gt;&lt;code&gt;typedef Ref&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;ref_any&#34;&gt;&lt;code&gt;class Ref_any&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A dynamically typed reference to data with automatic memory management and read/write locking semantic.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;ref_base&#34;&gt;&lt;code&gt;class Ref_base&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A common base for all references, whatever their access privileges in order to ensure they share the same Data_content and can access each others.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;ref_r&#34;&gt;&lt;code&gt;typedef Ref_r&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;ref_rw&#34;&gt;&lt;code&gt;typedef Ref_rw&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;ref_w&#34;&gt;&lt;code&gt;typedef Ref_w&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;scalar_datatype&#34;&gt;&lt;code&gt;class Scalar_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;scalar_kind&#34;&gt;&lt;code&gt;enum Scalar_kind&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Different possible interpretations for a scalar.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;functions&#34;&gt;Functions:&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#configure_logger&#34;&gt;&lt;code&gt;configure_logger&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Reads configuration tree and sets up the logger.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#each&#34;&gt;&lt;code&gt;each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC list.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#each&#34;&gt;&lt;code&gt;each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC mapping.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#len&#34;&gt;&lt;code&gt;len&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#len&#34;&gt;&lt;code&gt;len&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#opt_each&#34;&gt;&lt;code&gt;opt_each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#plugin_api_version&#34;&gt;&lt;code&gt;plugin_api_version&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks compatibility with a plugin API.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_bool&#34;&gt;&lt;code&gt;to_bool&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the boolean value of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_bool&#34;&gt;&lt;code&gt;to_bool&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the boolean value of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_double&#34;&gt;&lt;code&gt;to_double&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the floating point value of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_double&#34;&gt;&lt;code&gt;to_double&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the floating point value of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_long&#34;&gt;&lt;code&gt;to_long&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the int value of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_long&#34;&gt;&lt;code&gt;to_long&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the int value of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_string&#34;&gt;&lt;code&gt;to_string&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the string content of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_string&#34;&gt;&lt;code&gt;to_string&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the string content of a scalar node.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;global-variables&#34;&gt;Global variables:&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#undef_type&#34;&gt;&lt;code&gt;UNDEF_TYPE&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI_errhandler_t struct reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Definition of an error handler.&lt;/p&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: spdlog namespace reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/spdlog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/spdlog/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: std namespace reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/std/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/std/</guid>
+      <description>
+        
+        
+        &lt;p&gt;STL namespace.&lt;/p&gt;
+&lt;h2 id=&#34;types&#34;&gt;Types:&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;hash__pdi__ref_any__r__w____&#34;&gt;&lt;code&gt;struct hash&amp;amp;lt; PDI::Ref_any&amp;amp;lt; R, W &amp;amp;gt; &amp;amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

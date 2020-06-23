@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.72.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/new-site/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
+
+<title>PDI::Ref_base class reference | PDI</title><meta property="og:title" content="PDI::Ref_base class reference" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/" />
+
+<meta itemprop="name" content="PDI::Ref_base class reference">
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PDI::Ref_base class reference"/>
+<meta name="twitter:description" content=""/>
+
+
+
+
+
+<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
+<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/new-site/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg8" viewBox="0 0 40 40"><defs id="defs2"><linearGradient id="linearGradient846"><stop id="stop842" offset="0" style="stop-color:#3a82c2;stop-opacity:1"/><stop style="stop-color:#073763;stop-opacity:1" offset=".4946366" id="stop850"/><stop id="stop844" offset="1" style="stop-color:#3a82c2;stop-opacity:1"/></linearGradient><linearGradient gradientTransform="matrix(1.1064998,0,0,1.1064998,-2.8109111,-3.2500611)" gradientUnits="userSpaceOnUse" y2="6.0482411" x2="25.209953" y1="41.294521" x1="25.249392" id="linearGradient848" xlink:href="#linearGradient846"/><filter id="filter1270" style="color-interpolation-filters:sRGB"><feFlood id="feFlood1260" result="flood" flood-color="rgb(0,0,0)" flood-opacity=".498039"/><feComposite id="feComposite1262" result="composite1" operator="in" in2="SourceGraphic" in="flood"/><feGaussianBlur id="feGaussianBlur1264" result="blur" stdDeviation="1" in="composite1"/><feOffset id="feOffset1266" result="offset" dy=".6" dx=".6"/><feComposite id="feComposite1268" result="composite2" operator="over" in2="offset" in="SourceGraphic"/></filter></defs><g transform="translate(-4.6772165,-3.1371543)" id="layer1"><circle r="19.5" cy="22.994598" cx="24.687487" id="path840" style="opacity:1;fill:url(#linearGradient848);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><flowRoot transform="matrix(0.26458333,0,0,0.26458333,4.6772165,3.1371543)" style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#000;fill-opacity:1;stroke:none" id="flowRoot852"><flowRegion id="flowRegion854"><rect y="55.823959" x="32.857143" height="43.92857" width="94.285713" id="rect856"/></flowRegion><flowPara id="flowPara858">PPd</flowPara></flowRoot><text transform="matrix(1.0723861,0,0,1.0723861,-1.9406576,-2.4256035)" id="text862" y="30.191469" x="10.006681" style="font-style:normal;font-weight:400;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.24672395;filter:url(#filter1270)"><tspan style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:17.63888931px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#fff;fill-opacity:1;stroke-width:.24672395" y="30.191469" x="10.006681" id="tspan860">PDI</tspan></text></g></svg></span><span class="text-uppercase font-weight-bold">PDI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/new-site/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/master/">git master</a>
+	
+	<a class="dropdown-item" href="/">latest release (0.5.1)</a>
+	
+	<a class="dropdown-item" href="/0.5.0/">release 0.5.0</a>
+	
+	<a class="dropdown-item" href="/0.4.1/">release 0.4.1</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocs">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsconcepts" href="/new-site/docs/concepts/">Core Concepts</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdeprecated" href="/new-site/docs/deprecated/">Deprecated List</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Full API reference</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocsref">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">PDI</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocsrefpdi">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/array_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Array_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiarray_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/datatype_template_parser/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_parser</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextdatatype_template_parser">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/iterator/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Iterator</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextiterator">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context_proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context_proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext_proxy">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/data_descriptor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Data_descriptor</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidata_descriptor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/error/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Error</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdierror">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/expression/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Expression</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiexpression">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/logger_sptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Logger_sptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdilogger_sptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/paraconf_wrapper/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Paraconf_wrapper</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiparaconf_wrapper">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/plugin/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Plugin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiplugin">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatype">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/member/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Member</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatypemember">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_any/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_any</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_any">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_base/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Ref_base</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocsrefpdiref_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_base/referenced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_basereferenced">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_r">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_rw/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_rw</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_rw">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_w/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_w</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_w">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_kind/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_kind</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_kind">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi_errhandler_t/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_t</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_t">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/spdlog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">spdlog</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefspdlog">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">std</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstd">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">hash&lt; PDI::Ref_any&lt; R, W &gt; &gt;</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstdhash__pdi__ref_any__r__w____">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshow_to_create_plugin" href="/new-site/docs/how_to_create_plugin/">How to create a plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsphilosophy" href="/new-site/docs/philosophy/">Philosophy of PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsspecification_tree_ref" href="/new-site/docs/specification_tree_ref/">Specification tree Reference</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdecl_hdf5_plugin" href="/new-site/docs/decl_hdf5_plugin/">The Decl&#39;HDF5 plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsflowvr_plugin" href="/new-site/docs/flowvr_plugin/">The FlowVR plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsuser_code_plugin" href="/new-site/docs/user_code_plugin/">The user-code plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocstrace_plugin" href="/new-site/docs/trace_plugin/">Trace plugin</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="TableOfContents"><ul>
+
+
+<li><a href="#member-types-list">Member Types</a><li>
+
+
+
+<li><a href="#member-functions-list">Member Functions</a><li>
+
+
+
+
+<li><a href="#detailed-documentation">Detailed Documentation</a><li>
+<ul>
+
+
+
+<li><a href="#hash">hash</a><li>
+
+
+
+<li><a href="#type">type</a><li>
+
+</ul>
+
+</li></div>
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/">Full API reference</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/">PDI</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/">Ref_base</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>PDI::Ref_base class reference</h1>
+        
+	
+	<p>A common base for all references, whatever their access privileges in order to ensure they share the same Data_content and can access each others.</p>
+<h2 id="member-types-list">Member Types</h2>
+<dl>
+<dt><a href="referenced"><code>struct Referenced</code></a></dt>
+<dd>Manipulate and grant access to a buffer depending on the remaining right access \(read\/write\)\.
+</dd>
+</dl>
+<h2 id="member-functions-list">Member Functions</h2>
+<dl>
+<dt> <a href="#hash"><code>size_t hash ()</code></a></dt>
+<dd> <a href="#hash">More…</a></dd>
+<dt> <a href="#type"><code>const Datatype &amp; type ()</code></a></dt>
+<dd>accesses the type of the referenced raw data <a href="#type">More…</a></dd>
+</dl>
+<h2 id="detailed-documentation">Detailed Documentation</h2>
+<article class="memitem td-content">
+<header class="memproto"><h1 id="hash">hash</h1>
+<code>size_t hash (  )</code>
+</header>
+<h1>Description</h1>
+</section>
+</article><hr>
+<article class="memitem td-content">
+<header class="memproto"><h1 id="type">type</h1>
+<code>const Datatype &amp; type (  )</code>
+</header>
+<h1>Description</h1>
+accesses the type of the referenced raw data
+</section>
+</article><hr>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/new-site/docs/ref/pdi/ref_base/referenced/">PDI::Ref_base::Referenced struct reference</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack for users" aria-label="Slack for users">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Gitlab for users" aria-label="Gitlab for users">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tags">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitLab" aria-label="GitLab">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Jenkins" aria-label="Jenkins">
+    <a class="text-white" target="_blank" href="https://ci.inria.fr/ah5/">
+      <i class="fab fa-jenkins"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/pdidev">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="DockerHub" aria-label="DockerHub">
+    <a class="text-white" target="_blank" href="https://hub.docker.com/orgs/pdidev">
+      <i class="fab fa-docker"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 The PDI team All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/new-site/js/main.min.b6dfd66b2d261380250c517fd39bc9d8659709e9fc924b00d8fed92e8d9df768.js" integrity="sha256-tt/Way0mE4AlDFF/05vJ2GWXCen8kksA2P7ZLo2d92g=" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>

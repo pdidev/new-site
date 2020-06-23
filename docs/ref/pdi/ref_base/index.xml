@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDI – PDI::Ref_base class reference</title>
+    <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/</link>
+    <description>Recent content in PDI::Ref_base class reference on PDI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: PDI::Ref_base::Referenced struct reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/referenced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/referenced/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Manipulate and grant access to a buffer depending on the remaining right access (read/write).&lt;/p&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt; &lt;a href=&#34;#referenced&#34;&gt;&lt;code&gt; Referenced ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#referenced&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#referenced-const-referenced-&#34;&gt;&lt;code&gt; Referenced ( const Referenced &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#referenced-const-referenced-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#referenced-referenced-&#34;&gt;&lt;code&gt; Referenced ( Referenced &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#referenced-referenced-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool&#34;&gt;&lt;code&gt; Referenced ( void *, std::function&lt; void(void *)&gt;, bool, Datatype_uptr, bool )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Constructs the content. &lt;a href=&#34;#referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#referenced&#34;&gt;&lt;code&gt; ~Referenced ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt; &lt;a href=&#34;#referenced&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;referenced&#34;&gt;Referenced&lt;/h1&gt;
+&lt;code&gt; Referenced (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;referenced-const-referenced-&#34;&gt;Referenced&lt;/h1&gt;
+&lt;code&gt; Referenced (    const Referenced &amp;amp;   )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;referenced-const-referenced--_-&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;referenced-referenced-&#34;&gt;Referenced&lt;/h1&gt;
+&lt;code&gt; Referenced (    Referenced &amp;amp;&amp;amp;   )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;referenced-referenced--_-&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool&#34;&gt;Referenced&lt;/h1&gt;
+&lt;code&gt; Referenced (    void * buffer,   std::function&amp;lt; void(void *)&amp;gt; deleter,   bool readable,   Datatype_uptr type,   bool writable  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-buffer&#34;&gt;&lt;code&gt;buffer&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;the actual content&lt;/dd&gt;
+&lt;dt id=&#34;referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-deleter&#34;&gt;&lt;code&gt;deleter&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;the function to use to deallocate the buffer memory&lt;/dd&gt;
+&lt;dt id=&#34;referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-readable&#34;&gt;&lt;code&gt;readable&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;whether it is allowed to read the content&lt;/dd&gt;
+&lt;dt id=&#34;referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-type&#34;&gt;&lt;code&gt;type&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;the content type, this takes ownership of the type&lt;/dd&gt;
+&lt;dt id=&#34;referenced-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-writable&#34;&gt;&lt;code&gt;writable&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;whether it is allowed to write the content&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Constructs the content.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;referenced&#34;&gt;~Referenced&lt;/h1&gt;
+&lt;code&gt; ~Referenced (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

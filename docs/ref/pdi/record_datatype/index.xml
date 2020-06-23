@@ -1,0 +1,139 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDI – PDI::Record_datatype class reference</title>
+    <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/</link>
+    <description>Recent content in PDI::Record_datatype class reference on PDI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: PDI::Record_datatype::Member class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A &lt;a href=&#34;compound:classPDI_1_1Record__datatype_1_1Member&#34;&gt;Member&lt;/a&gt; is one of the elements inside a &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt; &lt;a href=&#34;#member-size_t-const-stdstring--datatype_uptr&#34;&gt;&lt;code&gt; Member ( size_t, const std::string &amp;, Datatype_uptr )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Construct a new member. &lt;a href=&#34;#member-size_t-const-stdstring--datatype_uptr&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#member-const-member-&#34;&gt;&lt;code&gt; Member ( const Member &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Construct a new member by copy. &lt;a href=&#34;#member-const-member-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#displacement&#34;&gt;&lt;code&gt;size_t displacement ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Access the offset or distance in byte from the &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; start. &lt;a href=&#34;#displacement&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#name&#34;&gt;&lt;code&gt;const std::string &amp;amp; name ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Access the name of this specific member. &lt;a href=&#34;#name&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator-const-member-&#34;&gt;&lt;code&gt;bool operator!= ( const Member &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Tests another member for inequality. &lt;a href=&#34;#operator-const-member-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#operator-const-member-&#34;&gt;&lt;code&gt;bool operator== ( const Member &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Tests another member for equality. &lt;a href=&#34;#operator-const-member-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt; &lt;a href=&#34;#type&#34;&gt;&lt;code&gt;const Datatype &amp;amp; type ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Access the type of the contained member. &lt;a href=&#34;#type&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;member-size_t-const-stdstring--datatype_uptr&#34;&gt;Member&lt;/h1&gt;
+&lt;code&gt; Member (    size_t displacement,   const std::string &amp;amp; name,   Datatype_uptr type  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;member-size_t-const-stdstring--datatype_uptr-_-displacement&#34;&gt;&lt;code&gt;displacement&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;offset or distance in byte from the &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; start&lt;/dd&gt;
+&lt;dt id=&#34;member-size_t-const-stdstring--datatype_uptr-_-name&#34;&gt;&lt;code&gt;name&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;name of this specific member&lt;/dd&gt;
+&lt;dt id=&#34;member-size_t-const-stdstring--datatype_uptr-_-type&#34;&gt;&lt;code&gt;type&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;type of the contained member&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Construct a new member.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;member-const-member-&#34;&gt;Member&lt;/h1&gt;
+&lt;code&gt; Member (    const Member &amp;amp; o  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;member-const-member--_-o&#34;&gt;&lt;code&gt;o&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;the &lt;a href=&#34;compound:classPDI_1_1Record__datatype_1_1Member&#34;&gt;Member&lt;/a&gt; to copy&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Construct a new member by copy.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;displacement&#34;&gt;displacement&lt;/h1&gt;
+&lt;code&gt;size_t displacement (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Result&lt;/h1&gt;
+&lt;p&gt;the offset or distance in byte from the &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; start&lt;/p&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Access the offset or distance in byte from the &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; start.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;name&#34;&gt;name&lt;/h1&gt;
+&lt;code&gt;const std::string &amp;amp; name (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Result&lt;/h1&gt;
+&lt;p&gt;the name of this specific member&lt;/p&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Access the name of this specific member.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator-const-member-&#34;&gt;operator!=&lt;/h1&gt;
+&lt;code&gt;bool operator!= (    const Member &amp;amp; rhs  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;operator-const-member--_-rhs&#34;&gt;&lt;code&gt;rhs&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;the other member to compare&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Result&lt;/h1&gt;
+&lt;p&gt;true if the members are different&lt;/p&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Tests another member for inequality.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator-const-member-&#34;&gt;operator==&lt;/h1&gt;
+&lt;code&gt;bool operator== (    const Member &amp;amp; rhs  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;dl&gt;
+&lt;dt id=&#34;operator-const-member--_-rhs&#34;&gt;&lt;code&gt;rhs&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;the other member to compare&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;Result&lt;/h1&gt;
+&lt;p&gt;true if the members are equal&lt;/p&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Tests another member for equality.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+&lt;article class=&#34;memitem td-content&#34;&gt;
+&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;type&#34;&gt;type&lt;/h1&gt;
+&lt;code&gt;const Datatype &amp;amp; type (  )&lt;/code&gt;
+&lt;/header&gt;
+&lt;h1&gt;Result&lt;/h1&gt;
+&lt;p&gt;the type of the contained member&lt;/p&gt;
+&lt;h1&gt;Description&lt;/h1&gt;
+Access the type of the contained member.
+&lt;/section&gt;
+&lt;/article&gt;&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

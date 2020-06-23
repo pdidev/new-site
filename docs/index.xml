@@ -1,0 +1,2856 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDI – About</title>
+    <link>http://pdi.julien-bigot.fr/new-site/docs/</link>
+    <description>Recent content in About on PDI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Core Concepts</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/concepts/</guid>
+      <description>
+        
+        
+        &lt;p&gt;PDI offers to exchange data between the application code and various external data handlers, such as for example the file-system for I/O or another code for code-coupling.&lt;/p&gt;
+&lt;p&gt;Before using PDI, it is however a good idea to understand the three core concepts that make this possible.&lt;/p&gt;
+&lt;p&gt;Each data exchange is a two-step process. The PDI-enabled application makes its data available through the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt;. The &lt;a href=&#34;member:Concepts_1Event_subsystem&#34;&gt;event subsystem&lt;/a&gt; then notifies interested external data handlers about this change in the store. Once notified, each data handler (implemented as a plugin) can look in the store and use the data accessible from there.&lt;/p&gt;
+&lt;p&gt;The orchestration of these exchanges, the description of what data can be put in the store, what each handler should do with it, etc. is described in the &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;specification tree&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_schema.jpg&#34; alt=&#34;PDI structure schema&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;data-store&#34;&gt;Data store&lt;/h2&gt;
+&lt;p&gt;The data store is the mechanism offered by PDI to handle &lt;em&gt;data transfer&lt;/em&gt; between the application code and external data handlers. Data transfer is the action of making data available to another part of the code. For example, in a function call the list of parameters determines data transfer.&lt;/p&gt;
+&lt;p&gt;PDI data store is somewhat similar to a file-system or a document store with some specific properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;unlike in traditional file-systems, data stored in PDI store is typed, one can differentiate between a record with named members and an array for example;&lt;/li&gt;
+&lt;li&gt;each process contains a distinct instance of the store, inter-process communications might be offered by data handlers accessing objects in the store and exchanging them between process boundaries, but not by PDI itself;&lt;/li&gt;
+&lt;li&gt;storing an object in PDI store is cheap as it does not triggers any copy, instead the store holds a reference to the exact same object in memory as that manipulated by the code;&lt;/li&gt;
+&lt;li&gt;to prevent invalid concurrent accesses to the objects, the stores offers a mutual exclusion mechanism where only one handler can access the object for write but concurrent read access is possible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This approach makes it possible to exchange data between very weakly coupled code modules. Each module can add or access objects in the store and does not need to know which other module created it or how.&lt;/p&gt;
+&lt;p&gt;In summary, the store hold a set of object references, each identified by a name and that contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the address of the buffer storing the data (a pointer),&lt;/li&gt;
+&lt;li&gt;the description of the type of the data (memory layout and interpretation),&lt;/li&gt;
+&lt;li&gt;a RW-lock to ensure exclusive access.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;event-subsystem&#34;&gt;Event subsystem&lt;/h2&gt;
+&lt;p&gt;While the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt; handles data transfer between the application code and external data handlers, the event subsystem handles &lt;em&gt;control&lt;/em&gt; transfer. Control transfer is the action of passing the CPU control to another part of the code. For example, calling a function is a way to transfer control, creating a thread is another way.&lt;/p&gt;
+&lt;p&gt;The event subsystem makes it possible to observe the store and to be notified when it is accessed; thus complementing the store with a way for data handler to implement their expected behavior. Notifications are emitted when:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a reference becomes available in the store,&lt;/li&gt;
+&lt;li&gt;a reference ceases to be available in the store,&lt;/li&gt;
+&lt;li&gt;someone accesses a reference that is not in the store,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:group__annotation_1gab21d59fd8d6532f6b8d7a4ac69a2388b&#34;&gt;named event&lt;/a&gt; is emitted.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To ensure minimal overhead, the PDI event subsystem is synchronous by default (like a function call). Plugins can implement other behaviors on top of that. For example, a plugin could create a thread for asynchronous execution.&lt;/p&gt;
+&lt;p&gt;This approach makes it possible to exchange data between very weakly coupled code modules. Each module can execute specific code when the required data becomes available and does not need to know which other module created it or how.&lt;/p&gt;
+&lt;h2 id=&#34;specification-tree&#34;&gt;Specification tree&lt;/h2&gt;
+&lt;p&gt;The combination of data transfer offered by the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt; and control transfer offered by the &lt;a href=&#34;member:Concepts_1Event_subsystem&#34;&gt;event subsystem&lt;/a&gt; offers the basis for weak coupling of multiple independent modules. The specification tree builds on this basis and orchestrates the interaction between the multiple modules used in an execution.&lt;/p&gt;
+&lt;p&gt;The specification tree is specified in a file written in the &lt;a href=&#34;https://en.wikipedia.org/wiki/YAML&#34;&gt;YAML&lt;/a&gt; format and provided to PDI at &lt;a href=&#34;member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0&#34;&gt;initialization&lt;/a&gt;. This makes it possible to change the list of modules to load and their interactions without having to recompile any code.&lt;/p&gt;
+&lt;p&gt;The specification tree structure is described in details in its &lt;a href=&#34;compound:Specification_tree_ref&#34;&gt;reference documentation&lt;/a&gt;. It contains two main subparts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the data types description,&lt;/li&gt;
+&lt;li&gt;the plugin list configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The data types description defines the type of data expected in the store. This is most useful for non-reflexive statically typed languages (C, C++, Fortran) for which this information can not be automatically extracted at execution. The types can be expressed in function of the value of other data through &lt;code&gt;$-expressions&lt;/code&gt;. For example, a given object might be described as an array of &lt;code&gt;N&lt;/code&gt; &lt;code&gt;doubles&lt;/code&gt; where &lt;code&gt;N&lt;/code&gt; is an integer available elsewhere in the store.&lt;/p&gt;
+&lt;p&gt;The plugin list configuration defines the list of plugins to load and a configuration for each of them. Each plugin can accept a different way of specifying the configuration, but in any case, this is where the orchestration of interactions is specified. The &lt;a href=&#34;compound:user_code_plugin&#34;&gt;user-code plugin&lt;/a&gt; is somewhat specific in that instead of providing a service itself, it enables the application to react to events and implement specific code handle data from the store.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;To summarize, interactions between weakly coupled modules in PDI go through the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt; that acts somewhat like a file-system. One can share data buffers in this store to make them available to other modules. When a buffer becomes available in the store, the &lt;a href=&#34;member:Concepts_1Event_subsystem&#34;&gt;event subsystem&lt;/a&gt; notifies interested modules so that they can use the data. The plugins loaded and configured through the &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;specification tree&lt;/a&gt; offer various reusable services through that mechanism such as data write to disk, fault tolerance, code coupling, etc.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Deprecated List</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/deprecated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/deprecated/</guid>
+      <description>
+        
+        
+        &lt;dl&gt;
+&lt;dt&gt;Member &lt;a href=&#34;member:group__hl__annotation_1ga39bceccdb0528be91cc79df784a161bc&#34;&gt;PDI_transaction_begin&lt;/a&gt; (const char *name)&lt;/dt&gt;
+&lt;dd&gt;the transaction part of the API is deprecated, the PDI_multi_expose function should be used instead.
+Member &lt;a href=&#34;member:group__hl__annotation_1gac11c4c2885e34660a40f789f049d3d34&#34;&gt;PDI_transaction_end&lt;/a&gt; (void)&lt;/dd&gt;
+&lt;dd&gt;the transaction part of the API is deprecated, the PDI_multi_expose function should be used instead.&lt;/dd&gt;
+&lt;/dl&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: First steps with PDI</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/first_steps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/first_steps/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Here we will introduce you to the PDI functions and what you should expect them to do.&lt;/p&gt;
+&lt;h2 id=&#34;hello-event&#34;&gt;Hello Event&lt;/h2&gt;
+&lt;p&gt;As mentioned in &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;Specification tree&lt;/a&gt; we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace plugin&lt;/a&gt;, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named &lt;code&gt;hello_event.yml&lt;/code&gt; that will load trace plugin:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  trace: ~
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yes, that is whole specification tree. Trace plugin prints everything, so there is no need to specify what we want it to do.&lt;/p&gt;
+&lt;p&gt;We need to write a source code of our application:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
+
+int main(int argc, char* argv[]) {
+    PDI_init(PC_parse_path(&amp;quot;hello_event.yml&amp;quot;));
+    PDI_event(&amp;quot;Hello World Event&amp;quot;);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&#39;s analyze what happens in each line. Firstly we have &lt;a href=&#34;member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0&#34;&gt;PDI_init()&lt;/a&gt; function which take parameter of type &lt;code&gt;PC_tree_t&lt;/code&gt;. It&#39;s a tree structure parsed from some YAML file, in our case we parse it with &lt;code&gt;paraconf&lt;/code&gt; library build in PDI. To parse a file we need to call &lt;code&gt;PC_parse_path&lt;/code&gt; function passing file path as argument. The next step is to call an event in PDI named &amp;quot;Hello World Event&amp;quot;. At the end we have to call &lt;a href=&#34;member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969&#34;&gt;PDI_finalize()&lt;/a&gt;. The output from this program is presented below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][Trace-plugin][10:25:28] *** info: Welcome!
+[PDI][10:25:28] *** info: Initialization successful
+[PDI][Trace-plugin][10:25:28] *** info: !!!                            named event: Hello World Event
+[PDI][10:25:28] *** info: Finalization
+[PDI][Trace-plugin][10:25:28] *** info: Goodbye!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first line indicates that plugin has loaded successfully. The second is PDI message, that tells it managed to create all descriptors and load all defined plugins. Then we have message from loaded trace plugin which printed the event name it has received. The next information is from PDI and indicates that finalization has started and now it will deallocate resources. Last message is from trace plugin destructor.&lt;/p&gt;
+&lt;h3 id=&#34;hello-data&#34;&gt;Hello Data&lt;/h3&gt;
+&lt;p&gt;In &lt;a href=&#34;member:First_steps_1fs_hello_event&#34;&gt;Hello Event&lt;/a&gt; we learned how to call an event. In this chapter we will see how to share and reclaim data.&lt;/p&gt;
+&lt;p&gt;Firstly we have to create a specification tree named &lt;code&gt;hello_data.yml&lt;/code&gt; with &lt;code&gt;data&lt;/code&gt; and trace plugin tree declared:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  world: int
+plugins:
+  trace: ~
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We have declared trace plugin and one descriptor named &lt;code&gt;world&lt;/code&gt; of integer type. Now let&#39;s write our program:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
+
+int main(int argc, char* argv[]) {
+    PDI_init(PC_parse_path(&amp;quot;hello_data.yml&amp;quot;));
+    int my_world = 42;
+    PDI_share(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
+    //variable my_world is shared with PDI
+
+    PDI_reclaim(&amp;quot;world&amp;quot;);
+    //variable my_world is no longer shared with PDI
+
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&#39;s analyze new functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PDI_share&lt;/code&gt; shares access to the variable with PDI. The first argument is a descriptor name and indicates what data we are sharing. The second one is pointer to our variable and the last one is access direction. &lt;code&gt;PDI_OUT&lt;/code&gt; means data direction from application to PDI, &lt;code&gt;PDI_IN&lt;/code&gt; is a direction from PDI to the program, &lt;code&gt;PDI_INOUT&lt;/code&gt; includes both directions.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PDI_reclaim&lt;/code&gt; reclaims the share which means that PDI will no longer have access to shared variable. As an argument it takes name of the descriptor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The output from our application:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][Trace-plugin][10:59:35] *** info: Welcome!
+[PDI][10:59:35] *** info: Initialization successful
+[PDI][Trace-plugin][10:59:35] *** info: =&amp;gt;&amp;gt;   data becoming available in the store: world
+[PDI][Trace-plugin][10:59:35] *** info: &amp;lt;&amp;lt;= data stop being available in the store: world
+[PDI][10:59:35] *** info: Finalization
+[PDI][Trace-plugin][10:59:35] *** info: Goodbye!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As we can see from the logs above, when we called &lt;code&gt;PDI_share&lt;/code&gt; plugin gained access to the shared variable and after &lt;code&gt;PDI_reclaim&lt;/code&gt; the variable has become no longer available for the plugin. The share notification gives plugin possibility to operate on data dependently what has been declared in specification tree.&lt;/p&gt;
+&lt;p&gt;The same exact result we can achieve with &lt;code&gt;PDI_expose&lt;/code&gt; which is just &lt;code&gt;PDI_share&lt;/code&gt; call and right after &lt;code&gt;PDI_reclaim&lt;/code&gt; is called.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PDI_share(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
+PDI_reclaim(&amp;quot;world&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is the same a1s:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PDI_expose(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;hello-access&#34;&gt;Hello Access&lt;/h3&gt;
+&lt;p&gt;Now we will try to access a descriptor we share with PDI. In this case we won&#39;t need any plugin. We want to define string in our &lt;code&gt;world_access.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  my_message: {type: array, subtype: char, size: 32}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now let&#39;s write some simple program:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void print_secret_msg() {
+    char* message;
+    PDI_access(&amp;quot;my_message&amp;quot;, (void**)&amp;amp;message, PDI_IN);
+    printf(&amp;quot;%s\n&amp;quot;, message);
+    PDI_release(&amp;quot;my_message&amp;quot;);
+}
+
+int main(int argc, char* argv[]) {
+    PDI_init(PC_parse_path(&amp;quot;hello_data.yml&amp;quot;));
+    char* secret_msg = &amp;quot;Watermelon is the tastiest fruit&amp;quot;;
+    PDI_share(&amp;quot;my_message&amp;quot;, secret_msg, PDI_OUT);
+
+    print_secret_msg();
+
+    PDI_reclaim(&amp;quot;my_message&amp;quot;);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We will focus on &lt;code&gt;print_secret_msg&lt;/code&gt; function. If you don&#39;t understand what happens in &lt;code&gt;main&lt;/code&gt; function, please see &lt;a href=&#34;member:First_steps_1fs_hello_data&#34;&gt;Hello Data&lt;/a&gt; example. &lt;code&gt;PDI_access&lt;/code&gt; sets our pointer to the data location. We need to pass &lt;code&gt;PDI_IN&lt;/code&gt; because data flows from PDI to our application. We also want to use &lt;code&gt;PDI_release&lt;/code&gt;, because &lt;code&gt;PDI_reclaim&lt;/code&gt; would end the sharing status of this descriptor and we reclaim this data later in &lt;code&gt;main&lt;/code&gt; function. Output from the program:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][13:42:31] *** info: Initialization successful
+Watermelon is the tastiest fruit
+[PDI][13:42:31] *** info: Finalization
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can see, we manage to access data descriptor from function only by passing its name and correct direction access.&lt;/p&gt;
+&lt;h3 id=&#34;hello-multi-expose&#34;&gt;Hello multi expose&lt;/h3&gt;
+&lt;p&gt;In some cases we would want to expose many descriptors at once. For this we have multi expose which shares all the given descriptors, then call given event and then reclaim all passed data. Let&#39;s look at the example.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  my_int: int
+  my_float: float
+  my_string: {type: array, subtype: char, size: 32}
+
+plugin:
+  trace: ~
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We have defined 3 descriptors and trace plugin. Now it&#39;s time for our application:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;int main(int argc, char* argv[]) {
+    PDI_init(PC_parse_path(&amp;quot;hello_multi_expose.yml&amp;quot;));
+    int x = 0;
+    float y = 0;
+    char* z = &amp;quot;RGB = Really Gawky Biscuit&amp;quot;;
+
+    PDI_multi_expose(&amp;quot;event_between&amp;quot;,
+                     &amp;quot;my_int&amp;quot;, &amp;amp;x, PDI_OUT,
+                     &amp;quot;my_float&amp;quot;, &amp;amp;y, PDI_OUT,
+                     &amp;quot;my_string&amp;quot;, &amp;amp;z, PDI_OUT,
+                     NULL);
+
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;First argument of the &lt;code&gt;PDI_multi_expose&lt;/code&gt; is the event name we want to call when all the descriptors are shared. After this we pass in loop:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name of the descriptor&lt;/li&gt;
+&lt;li&gt;pointer to the data&lt;/li&gt;
+&lt;li&gt;direction access As the last argument we have to pass &lt;code&gt;NULL&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The output of the execution:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][Trace-plugin][14:14:51] *** info: Welcome!
+[PDI][14:14:51] *** info: Initialization successful
+[PDI][Trace-plugin][14:14:51] *** info: =&amp;gt;&amp;gt;   data becoming available in the store: my_int
+[PDI][Trace-plugin][14:14:51] *** info: =&amp;gt;&amp;gt;   data becoming available in the store: my_float
+[PDI][Trace-plugin][14:14:51] *** info: =&amp;gt;&amp;gt;   data becoming available in the store: my_string
+[PDI][Trace-plugin][14:14:51] *** info: !!!                            named event: event_between
+[PDI][Trace-plugin][14:14:51] *** info: &amp;lt;&amp;lt;= data stop being available in the store: my_string
+[PDI][Trace-plugin][14:14:51] *** info: &amp;lt;&amp;lt;= data stop being available in the store: my_float
+[PDI][Trace-plugin][14:14:51] *** info: &amp;lt;&amp;lt;= data stop being available in the store: my_int
+[PDI][14:14:51] *** info: Finalization
+[PDI][Trace-plugin][14:14:51] *** info: Goodbye!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The logs from trace plugin confirm the execution order we were expecting.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Hands-on</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/hands_on/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/hands_on/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;environment&#34;&gt;Environment&lt;/h2&gt;
+&lt;p&gt;This hands-on has been tested on the &lt;a href=&#34;https://groupes.renater.fr/wiki/poincare/&#34;&gt;Poincare&lt;/a&gt; machine but it should be easy to adapt to another machine.&lt;/p&gt;
+&lt;h3 id=&#34;poincare-machine&#34;&gt;Poincare machine&lt;/h3&gt;
+&lt;p&gt;You should load the file &lt;code&gt;/gpfslocal/pub/pdi/training-env.bash&lt;/code&gt; in your environment. To do that, you must source it in every shell you open.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$  source /gpfslocal/pub/pdi/training-env.bash
+(load) gnu version 7.3.0
+Using gnu compiler to configure openmpi wrappers...
+(load) openmpi version 2.1.3_gnu73
+(load) hdf5 version 1.10.2_gnu73_openmpi2
+(load) PDI version 0.4.0_gnu73_openmpi2
+(load) git version 2.19.1
+(load) cmake version 3.9.4
+PDI training environment loaded!
+$ pdi
+PDI training environment is available!
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;p&gt;When PDI is correctly loaded, you can proceed with getting the sources for the hands-on tutorial from &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/PDI/PDI_hands-on&#34;&gt;gitlab&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://gitlab.maisondelasimulation.fr/PDI/PDI_hands-on.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Setup the compilation by detecting all dependencies (MPI, paraconf, PDI, ...) using cmake:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd PDI_hands-on
+cmake .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you&#39;re ready to work, &lt;strong&gt;good luck&lt;/strong&gt;!&lt;/p&gt;
+&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;h3 id=&#34;ex1-getting-started&#34;&gt;Ex1. Getting started&lt;/h3&gt;
+&lt;p&gt;Ex1 is a simple MPI stencil code. There is no output in the code yet, so we can not see its result. Examine the source code, compile it and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex1        # compile the code
+llsubmit ex1.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Play with and understand the code parameters in ex1.yml&lt;/p&gt;
+&lt;p&gt;Run the code with 3 MPI processes.&lt;/p&gt;
+&lt;h3 id=&#34;ex2-now-with-some-pdi&#34;&gt;Ex2. Now with some PDI&lt;/h3&gt;
+&lt;p&gt;Ex2 is the same code as ex1 with PDI calls added. The PDI test plugin is used to trace PDI calls.&lt;/p&gt;
+&lt;p&gt;Examine the source code, compile it and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex2        # compile the code
+llsubmit ex2.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add the required &lt;code&gt;PDI_share&lt;/code&gt; and &lt;code&gt;PDI_reclaim&lt;/code&gt; calls to match the output of &lt;code&gt;ex2.out&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Notice that some share/reclaim pairs come one after the other while others are interlaced. Is one better than the other?&lt;/p&gt;
+&lt;h3 id=&#34;ex3-hdf5-through-pdi&#34;&gt;Ex3. HDF5 through PDI&lt;/h3&gt;
+&lt;p&gt;Let&#39;s take the code from ex2 and make it output some HDF5 data. No need to touch the C code here, the PDI yaml file should be enough. We have replaced the PDI test plugin by the Decl&#39;HDF5 plugin.&lt;/p&gt;
+&lt;p&gt;Examine the yaml, compile the code and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex3        # compile the code
+llsubmit ex3.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We need to fill 2 sections in the yaml file:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;data&lt;/code&gt; section to indicate to PDI the type of the fields that are exposed,&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;decl_hdf5&lt;/code&gt; for the configuration of the Decl&#39;HDF5 plugin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Only dsize is written as of now, let&#39;s add &lt;code&gt;psize&lt;/code&gt; and &lt;code&gt;pcoord&lt;/code&gt; to match the content expected described in &lt;code&gt;ex3.out&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;ex4-writing-some-real-data&#34;&gt;Ex4. Writing some real data&lt;/h3&gt;
+&lt;p&gt;We keep the same code and touch only the yaml file again.&lt;/p&gt;
+&lt;p&gt;This time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we will write the real 2D data contained in &lt;code&gt;main_field&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;we will use 2 MPI processes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notice that we use a list to write multiple files in the decl_hdf5 section instead of a single mapping as before.&lt;/p&gt;
+&lt;p&gt;Examine the yaml, compile the code and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex4        # compile the code
+llsubmit ex4.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Unlike the other fields we manipulated until now, the type of &lt;code&gt;main_field&lt;/code&gt; is not fully known, its size is dynamic. By moving other fields in the &lt;code&gt;metadata&lt;/code&gt; section, we can reference them from &amp;quot;$ expressions&amp;quot; in the configuration file. This can be used to specify a dynamic size for &lt;code&gt;main_field&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Unlike the other fields we manipulated until now, &lt;code&gt;main_field&lt;/code&gt; is exposed multiple times. In order not to overwrite it every time it is exposed, we can add a &lt;code&gt;when&lt;/code&gt; condition to restrict its output. Only write &lt;code&gt;main_field&lt;/code&gt; at the second iteration (when &lt;code&gt;ii==0&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Change the parallelism degree to 2 in height (don&#39;t forget to use 2 processes in ex4.sh) and try to match the expected content described in &lt;code&gt;ex4.out&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;ex5-introducing-events&#34;&gt;Ex5. Introducing events&lt;/h3&gt;
+&lt;p&gt;In ex4, we wrote 2 pieces of data to &lt;code&gt;ex4-data*.h5&lt;/code&gt;, but the file is opened and closed for each and every write. Since Decl&#39;HDF5 only sees the data appear one after the other, it does not keep the file open. Since &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt; are shared in an interlaced way, they are both available at the same time and could be written without opening the file twice. We have to use events for that.&lt;/p&gt;
+&lt;p&gt;Examine the yaml and source code, compile and run.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex5        # compile the code
+llsubmit ex5.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add a &lt;code&gt;PDI_event&lt;/code&gt; call to the code when both &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt; are available. With the test plugin, check that the event is indeed triggered at the expected time as described in &lt;code&gt;ex5-trace.out&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Use the &lt;code&gt;on_event&lt;/code&gt; mechanism to trigger the write of &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt;. This mechanism can be combined with a &lt;code&gt;when&lt;/code&gt; directive, in that case the write is only executed when both mechanisms agree.&lt;/p&gt;
+&lt;p&gt;Also notice the extended syntax that make it possible to write data to a dataset with a name different from the data in PDI. Use this mechanism to write main_field at iterations 1 and 2, in two distinct groups. Match the content as expected in &lt;code&gt;ex5-hdf5.out&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;ex6-simplifying-the-code&#34;&gt;Ex6. Simplifying the code&lt;/h3&gt;
+&lt;p&gt;As you can notice, the PDI code is quite redundant. In this exercise, we will use &lt;code&gt;PDI_expose&lt;/code&gt; and &lt;code&gt;PDI_multi_expose&lt;/code&gt; to simplify the code while keeping the exact same behaviour.&lt;/p&gt;
+&lt;p&gt;Examine the source code, compile it and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex6        # compile the code
+llsubmit ex6.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There are lots of matched &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; in the code. Replace these by &lt;code&gt;PDI_expose&lt;/code&gt; that is the exact equivalent of a &lt;code&gt;PDI_share&lt;/code&gt; followed by a matching &lt;code&gt;PDI_reclaim&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This replacement is not possible for interlaced &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; with events in the middle. This case is however handled by &lt;code&gt;PDI_multi_expose&lt;/code&gt; call that exposes all data, then triggers an event and finally does all the reclaim in reverse order. Replace the remaining &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; by &lt;code&gt;PDI_expose&lt;/code&gt;s and &lt;code&gt;PDI_multi_expose&lt;/code&gt;s.&lt;/p&gt;
+&lt;p&gt;Ensure that your code keeps the exact same behaviour by comparing its trace to &lt;code&gt;ex6.out&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ex7-writing-a-selection&#34;&gt;Ex7. writing a selection&lt;/h3&gt;
+&lt;p&gt;In this exercise, we will only write a selection of the data to the HDF5 file.&lt;/p&gt;
+&lt;p&gt;Examine the yaml, compile the code and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex7        # compile the code
+llsubmit ex7.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can notice, we now independantly describe the dataset in the file. We also use two directives to specify a selection from the data to write and a selection in the dataset where to write.&lt;/p&gt;
+&lt;p&gt;Restrict the selection to the second line from the data and write it to a one-dimensional dataset in file. Match the expected output described in &lt;code&gt;ex7.out&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can also add dimensions, write the 2D array excluding ghosts as a slab of a 3D dataset including a dimension for the time-iteration. Write iterations 1 to 3 inclusive into dimensions 0 to 2. Match the expected output described in &lt;code&gt;ex7-bis.out&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;ex8-going-parallel&#34;&gt;Ex8. going parallel&lt;/h3&gt;
+&lt;p&gt;Running the current code in parallel should already work and yield one file per process containing the local data block. In this exercise we will write one single file with parallel HDF5 whose content should be independent from the number of processes used.&lt;/p&gt;
+&lt;p&gt;Examine the yaml, compile the code and run it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex8        # compile the code
+llsubmit ex8.sh # run the code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We loaded the &lt;code&gt;mpi&lt;/code&gt; plugin to make sharing MPI communicators possible.&lt;/p&gt;
+&lt;p&gt;By uncommenting the &lt;code&gt;communicator&lt;/code&gt; directive of the Decl&#39;HDF5 plugin, we can now switch to parallel I/O.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change the file name so all processes open the same file.&lt;/li&gt;
+&lt;li&gt;Change the dataset dimension to take the full parallel size into account.&lt;/li&gt;
+&lt;li&gt;Ensure the dataset selection of each process does not overlap with the others.&lt;/li&gt;
+&lt;li&gt;Try to match the output from &lt;code&gt;ex8.out&lt;/code&gt; that should be independant from the number of processes used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-next-&#34;&gt;What next ?&lt;/h2&gt;
+&lt;p&gt;You can experiment with other &lt;a href=&#34;compound:Plugins&#34;&gt;plugins&lt;/a&gt;. Why not try &lt;a href=&#34;compound:FlowVR_plugin&#34;&gt;FlowVR&lt;/a&gt; for example?&lt;/p&gt;
+&lt;p&gt;Take a look at the examples in the PDI repository: &lt;code&gt;https://gitlab.maisondelasimulation.fr/jbigot/pdi/tree/0.5/example&lt;/code&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: How to create a plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;plugin-class&#34;&gt;Plugin class&lt;/h2&gt;
+&lt;p&gt;Plugin is a class, that handles shared data and triggered events to perform an I/O operations. It is dynamically linked to the user program by &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;. Behavior of each plugin is defined by specification tree in plugins subtree.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  example:
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.&lt;/p&gt;
+&lt;p&gt;The plugin has to inherit from &lt;a href=&#34;compound:classPDI_1_1Plugin&#34;&gt;PDI::Plugin&lt;/a&gt; and have a constructor with arguments &lt;a href=&#34;compound:classPDI_1_1Context&#34;&gt;PDI::Context&lt;/a&gt;&amp;amp; and PC_tree_t.&lt;/p&gt;
+&lt;h3 id=&#34;example-plugin&#34;&gt;Example plugin&lt;/h3&gt;
+&lt;p&gt;Example of the simplest plugin, that does nothing:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi/context.h&amp;gt;
+#include &amp;lt;pdi/paraconf_wrapper.h&amp;gt;
+#include &amp;lt;pdi/plugin.h&amp;gt;
+
+struct example_plugin : public PDI::Plugin
+{
+    example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {}
+}
+
+PDI_PLUGIN(example)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;adding-a-callback&#34;&gt;Adding a callback&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Context&#34;&gt;PDI::Context&lt;/a&gt; has a container with all the functions (callbacks) that are called when user is sharing the data (calls PDI_share). To add a new function to this container the plugin must call add_data_callback.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;std::function&amp;lt;void()&amp;gt; add_data_callback(const std::function&amp;lt;void(const std::string&amp;amp;, Ref)&amp;gt;&amp;amp; callback, const std::string&amp;amp; name = {}))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first argument is the function to be called when user shares the data. If the second parameter (name) is given, the function will be called only on a specified data name. Returns a function that removes the callback from &lt;a href=&#34;compound:classPDI_1_1Context&#34;&gt;PDI::Context&lt;/a&gt; container.&lt;/p&gt;
+&lt;p&gt;Example of adding new callback:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi/context.h&amp;gt;
+#include &amp;lt;pdi/paraconf_wrapper.h&amp;gt;
+#include &amp;lt;pdi/plugin.h&amp;gt;
+#include &amp;lt;pdi/ref_any.h&amp;gt;
+
+struct example_plugin : public PDI::Plugin
+{
+    example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {
+        ctx.add_data_callback([](const std::string&amp;amp; data_name, PDI::Ref ref){
+            std::cout &amp;lt;&amp;lt; &amp;quot;User has shared a data named &amp;quot; &amp;lt;&amp;lt; data_name &amp;lt;&amp;lt; std::endl;
+        });
+    }
+}
+
+PDI_PLUGIN(example)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If user create specification tree:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+    some_integer: int
+
+plugins:
+    example: ~
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And a program:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
+
+int main()
+{
+    PDI_init(PC_parse_path(&amp;quot;spec_tree.yaml&amp;quot;));
+    int some_integer = 0;
+    PDI_expose(&amp;quot;some_integer&amp;quot;, &amp;amp;some_integer, PDI_OUT);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The console will display:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][13:42:41] *** info: Initialization successful
+User has shared a data named some_integer
+[PDI][13:42:42] *** info: Finalization
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;reading-and-writing-data&#34;&gt;Reading and writing data&lt;/h3&gt;
+&lt;p&gt;Example of reading and writing data:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi/context.h&amp;gt;
+#include &amp;lt;pdi/paraconf_wrapper.h&amp;gt;
+#include &amp;lt;pdi/plugin.h&amp;gt;
+#include &amp;lt;pdi/ref_any.h&amp;gt;
+
+struct example_plugin : public PDI::Plugin
+{
+    example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {
+        ctx.add_data_callback([](const std::string&amp;amp; data_name, PDI::Ref ref){
+            if(PDI::Ref_rw ref_rw{ref}) {
+                //Plugin can read and write
+                int* some_integer = ref_rw.get();
+            } else if(PDI::Ref_r ref_r{ref}) {
+                //Plugin can read
+                const int* some_integer = ref_r.get();
+            } else if(PDI::Ref_w ref_w{ref}) {
+                //Plugin can write
+                int* some_integer = ref_w.get();
+            } else {
+                //Plugin cannot read nor write
+            }
+        });
+    }
+}
+
+PDI_PLUGIN(example)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;handling-events&#34;&gt;Handling events&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi/context.h&amp;gt;
+#include &amp;lt;pdi/paraconf_wrapper.h&amp;gt;
+#include &amp;lt;pdi/plugin.h&amp;gt;
+#include &amp;lt;pdi/ref_any.h&amp;gt;
+
+struct example_plugin : public PDI::Plugin
+{
+    example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {
+        ctx.add_event_callback([this](const std::string&amp;amp; event_name){
+            this-&amp;gt;handle_event(event_name);
+        });
+        ctx.add_event_callback([this](const std::string&amp;amp; event_name){
+            this-&amp;gt;handle_special_event(event_name);
+        }, &amp;quot;special_event&amp;quot;);
+    }
+private:
+    void handle_event(const std::string&amp;amp; event_name) {
+        std::cout &amp;lt;&amp;lt; &amp;quot;Event&amp;quot; &amp;lt;&amp;lt; event_name &amp;lt;&amp;lt; &amp;quot;called.&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+
+    void handle_special_event(const std::string&amp;amp; event_name) {
+        std::cout &amp;lt;&amp;lt; &amp;quot;Special event `&amp;quot; &amp;lt;&amp;lt; event_name &amp;lt;&amp;lt; &amp;quot;&#39; called.&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+}
+
+PDI_PLUGIN(example)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;reading-scalar-and-array-from-specification-tree&#34;&gt;Reading scalar and array from specification tree&lt;/h3&gt;
+&lt;p&gt;Specification tree:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  example:
+    scalar: some_string
+    array: [0, 1, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Reading a scalar and an array:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi/context.h&amp;gt;
+#include &amp;lt;pdi/paraconf_wrapper.h&amp;gt;
+#include &amp;lt;pdi/plugin.h&amp;gt;
+#include &amp;lt;pdi/ref_any.h&amp;gt;
+
+struct example_plugin : public PDI::Plugin
+{
+    example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {
+        //scalar
+        PC_tree_t scalar_tree = PC_get(spec_tree, &amp;quot;.scalar&amp;quot;);
+        std::string string_scalar = PDI::to_string(scalar_tree);
+
+        //array
+        PC_tree_t array_tree = PC_get(spec_tree, &amp;quot;.array&amp;quot;);
+        int array_size = PDI::len(array_tree);
+        std::vector&amp;lt;long&amp;gt; array;
+        for (int i = 0; i &amp;lt; array_size; i++) {
+            PC_tree_t array_element = PC_get(array_tree, &amp;quot;[%d]&amp;quot;, i);
+            array.emplace_back(PDI::to_long(array_element));
+        }
+    }
+}
+
+PDI_PLUGIN(example)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;reading-maps-from-specification-tree&#34;&gt;Reading maps from specification tree&lt;/h3&gt;
+&lt;p&gt;Specification tree:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  example:
+    custom_subtree:
+        here: 0
+        can: 1
+        be: 2
+        any: 3
+        subtree: 4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Reading a scalar and an array:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;unordered_map&amp;gt;
+
+#include &amp;lt;pdi/context.h&amp;gt;
+#include &amp;lt;pdi/paraconf_wrapper.h&amp;gt;
+#include &amp;lt;pdi/plugin.h&amp;gt;
+#include &amp;lt;pdi/ref_any.h&amp;gt;
+
+struct example_plugin : public PDI::Plugin
+{
+    example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {
+        PC_tree_t subtree = PC_get(spec_tree, &amp;quot;.custom_subtree&amp;quot;);
+        int subtree_size = PDI::len(subtree);
+        std::unordered_map&amp;lt;std::string, long&amp;gt; custom_map;
+
+        for (int i = 0; i &amp;lt; subtree_size; i++) {
+            PC_tree_t key = PC_get(subtree, &amp;quot;{%d}&amp;quot;, i);
+            PC_tree_t value = PC_get(subtree, &amp;quot;&amp;lt;%d&amp;gt;&amp;quot;, i);
+            custom_map.emplace_back(PDI::to_string(key), PDI::to_long(value));
+        }
+    }
+}
+
+PDI_PLUGIN(example)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;creating-a-true-plugin-posix-plugin&#34;&gt;Creating a true plugin: POSIX plugin&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-think-what-your-plugin-will-be-for&#34;&gt;Step 1: Think what your plugin will be for.&lt;/h3&gt;
+&lt;p&gt;Simple checkpointing. Each data will be saved in separate file. User can check the status of all files at once and then recover the data.&lt;/p&gt;
+&lt;h3 id=&#34;step-2-prepare-your-specification-tree-schema&#34;&gt;Step 2: Prepare your specification tree schema.&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  some_data: {type: array, subtype: int, size: 64}
+  can_recover_data: int
+
+plugins:
+  posix:
+    data:
+      some_data: /file_path/
+    can_recover_all: can_recover_data
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;/file_path/ is a path where to save and load from some_data. can_recover_data is a flag that indicates if the recover is possible.&lt;/p&gt;
+&lt;p&gt;The fastest way to learn is by examples. To show how to create a plugin, we will create &amp;quot;posix plugin&amp;quot;. It won&#39;t do anything special, but give you a basic knowledge how to create one.&lt;/p&gt;
+&lt;h3 id=&#34;step-3-write-your-plugin&#34;&gt;Step 3: Write your plugin.&lt;/h3&gt;
+&lt;p&gt;Members and constructor:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class posix_plugin : public PDI::Plugin
+{
+    std::string m_can_recover_data;
+    std::unordered_map&amp;lt;std::string, std::string&amp;gt; m_data_to_path_map;
+
+public:
+    posix_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {}
+}
+
+PDI_PLUGIN(posix)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Read recover tree:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void read_recover_tree(PC_tree_t spec_tree) {
+    PC_tree_t recover_tree = PC_get(spec_tree, &amp;quot;.can_recover_all&amp;quot;);
+    if(!PC_status(recover_tree)) {
+        m_can_recover_data = PDI::to_string(recover_tree);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Read data tree:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void read_data_tree(PC_tree_t spec_tree) {
+    PC_tree_t data_tree = PC_get(spec_tree, &amp;quot;.data&amp;quot;);
+    if (!PC_status(data_tree)) {
+        int data_tree_size = PDI::len(data_tree);
+        for (int i = 0; i &amp;lt; data_tree_size; i++) {
+            PC_tree_t key = PC_get(data_tree, &amp;quot;{%d}&amp;quot;, i);
+            PC_tree_t value = PC_get(data_tree, &amp;quot;&amp;lt;%d&amp;gt;&amp;quot;, i);
+            m_data_to_path_map.emplace_back(PDI::to_string(key), PDI::to_string(value));
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a function that writes data to temporary file and check if file was created, size is correct and then replace old file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void write_data(const std::string&amp;amp; data_name, PDI::Ref_r ref_r) {
+    if(!ref_r) {
+        return;
+    }
+    std::string tmp_path = m_data_to_path_map[data_name] + &amp;quot;.tmp&amp;quot;;
+    std::ofstream file{tmp_path, std::ios::binary};
+    if (ref_r.type().buffersize() == ref_r.type().datasize()) {
+        //dense data
+        file.write((const char*)ref_r.get(), ref_r.type().buffersize());
+    } else {
+        //sparse data
+        std::unique_ptr&amp;lt;char&amp;gt; data_copy {new char[ref_r.type().dataSize()]};
+        ref_r.type().data_to_dense_copy(data_copy.get(), ref_r.get());
+        file.write(data_copy.get(), ref_r.type().datasize());
+    }
+    file.close();
+
+    //replace old file
+    struct stat status;
+    if (!stat(tmp_path.c_str(), &amp;amp;status) &amp;amp;&amp;amp; status.st_size == ref_r.type().datasize()) {
+        if (!stat(m_data_to_path_map[data_name].c_str()) &amp;amp;&amp;amp; std::remove(m_data_to_path_map[data_name].c_str())) {
+            throw PDI::Error {PDI_ERR_SYSTEM, &amp;quot;Cannot remove old file {}&amp;quot;, m_data_to_path_map[data_name]};
+        }
+        if (std::rename(tmp_path.c_str(), m_data_to_path_map[data_name].c_str())) {
+            throw PDI::Error {PDI_ERR_SYSTEM, &amp;quot;Cannot rename temporary file {}&amp;quot;, tmp_path};
+        }
+    } else {
+        throw PDI::Error {PDI_ERR_SYSTEM, &amp;quot;Data write not complete&amp;quot;};
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a function that reads data from file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void read_data(const std::string&amp;amp; data_name, PDI::Ref_w ref_w) {
+    if(!ref_w) {
+        return;
+    }
+    std::ifstream file{m_data_to_path_map[data_name], std::ios::binary};
+    if (ref_w.type().buffersize() == ref_w.type().datasize()) {
+        //dense data
+        file.read((char*)ref_w.get(), ref_w.type().buffersize());
+    } else {
+        //sparse data
+        std::unique_ptr&amp;lt;char&amp;gt; data_copy {new char[ref_w.type().dataSize()]};
+        file.read(data_copy.get(), ref_w.type().datasize());
+        ref_w.type().data_from_dense_copy(ref_w.get(), data_copy.get());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Handle can_recover_all data:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void can_recover(const std::string&amp;amp; data_name, PDI::Ref_w ref_w) {
+    if (!ref_w) {
+        throw PDI::Error {PDI_ERR_RIGHT, &amp;quot;Cannot write to `can_recover_all&#39; data&amp;quot;};
+    }
+    for (const auto&amp;amp; data_path_pair : m_data_to_path_map) {
+        struct stat status;
+        if (stat(data_path_pair.second.c_str(), &amp;amp;status)) {
+            *static_cast&amp;lt;int*&amp;gt;(ref_w.get()) = 0;
+            return;
+        }
+    }
+    *static_cast&amp;lt;int*&amp;gt;(ref_w.get()) = 1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add created functions to callbacks:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class posix_plugin : public PDI::Plugin
+{
+    std::string m_can_recover_data;
+    std::unordered_map&amp;lt;std::string, std::string&amp;gt; m_data_to_path_map;
+
+public:
+    posix_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
+        Plugin{ctx}
+    {
+        read_recover_tree(spec_tree);
+        read_data_tree(spec_tree);
+        for (const auto&amp;amp; data_path_pair : m_data_to_path_map) {
+            ctx.add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
+                this-&amp;gt;write_data(data_name, ref);
+            }, data_path_pair.first);
+            ctx.add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
+                this-&amp;gt;read_data(data_name, ref);
+            }, data_path_pair.first);
+        }
+        if (!m_can_recover_data.empty()) {
+            ctx.add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
+                this-&amp;gt;can_recover(data_name, ref);
+            }, m_can_recover_all_data);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;next-steps&#34;&gt;Next steps&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Compile: g++ posix.cxx -o libpdi_posix_plugin.so -lpdi -shared -fPIC -std=c++11&lt;/li&gt;
+&lt;li&gt;Copy created file to path where dynamic linker can find it. For example: sudo cp libpdi_posix_plugin.so /usr/local/lib/&lt;/li&gt;
+&lt;li&gt;Configure dynamic linker run-time bindings: sudo ldconfig&lt;/li&gt;
+&lt;li&gt;Create program that uses posix plugin.&lt;/li&gt;
+&lt;li&gt;Compile your test program: gcc example_use.cxx -o example_use -lpdi -lparaconf&lt;/li&gt;
+&lt;li&gt;Run your test program: ./example_use&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can see example of the program that uses this plugin on these &lt;a href=&#34;https://docs.google.com/presentation/d/1jT416oALDkquBBgq_XkVrU48o4qx72wGHUPb4emXJw4&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Installation</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/installation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; is distributed along some plugins and most of its dependencies in what is known as the &lt;strong&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; distribution&lt;/strong&gt;. It can be easily compiled from its source code.&lt;/p&gt;
+&lt;h2 id=&#34;default-pdi-installation&#34;&gt;Default PDI installation&lt;/h2&gt;
+&lt;p&gt;Installing the &lt;em&gt;default &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; distribution&lt;/em&gt; is fairly easy. Most dependencies are embedded in the distribution and the only required external dependencies are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a POSIX compatible OS with a python interpreter,&lt;/li&gt;
+&lt;li&gt;CMake-3.5&lt;/li&gt;
+&lt;li&gt;compilers for C (99), C++ (14) and Fortran (2003),&lt;/li&gt;
+&lt;li&gt;MPI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, release 0.5.1 can be installed by following these instructions (but look for the latest release at &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags&#34;&gt;https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags&lt;/a&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# download
+wget https://gitlab.maisondelasimulation.fr/jbigot/pdi/-/archive/0.5.1/pdi-0.5.1.tar.bz2
+tar -xjf pdi-0.5.1.tar.bz2
+cd pdi-0.5.1
+# configuration
+cmake -DCMAKE_INSTALL_PREFIX=/usr/ .
+# compilation and installation
+make install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If the default installation fails or if you need an installation better tailored to your needs, keep reading.&lt;/p&gt;
+&lt;h2 id=&#34;downloading-the-distribution&#34;&gt;Downloading the distribution&lt;/h2&gt;
+&lt;p&gt;As of now, &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; must be compiled from source.&lt;/p&gt;
+&lt;p&gt;To download the sources, have a look at the list of all releases from: &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags&#34;&gt;https://gitlab.maisondelasimulation.fr/jbigot/pdi/tags&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For example, release 0.5.1 can be downloaded and extracted by following these instructions:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://gitlab.maisondelasimulation.fr/jbigot/pdi/-/archive/0.5.1/pdi-0.5.1.tar.bz2
+tar -xjf pdi-master.tar.bz2
+cd pdi-0.5.1
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;configuration-and-compilation&#34;&gt;Configuration and compilation&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; distribution is compiled using Cmake. In addition to &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; itself, the distribution includes &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; plugins.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cmake.org&#34;&gt;cmake&lt;/a&gt;, version &amp;gt;= 3.5&lt;/li&gt;
+&lt;li&gt;a C-99 and C++-14 compiler (&lt;a href=&#34;https://gcc.gnu.org/&#34;&gt;gcc&lt;/a&gt; 5.4 is tested)&lt;/li&gt;
+&lt;li&gt;a POSIX compatible OS (&lt;a href=&#34;https://www.kernel.org/&#34;&gt;linux&lt;/a&gt; with &lt;a href=&#34;https://www.gnu.org/software/libc/&#34;&gt;GNU libc&lt;/a&gt; 2.27 is tested)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitlab.maisondelasimulation.fr/jbigot/libparaconf&#34;&gt;paraconf&lt;/a&gt; (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, see below)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pyyaml.org/wiki/LibYAML&#34;&gt;libyaml&lt;/a&gt; (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, see below)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gabime/spdlog&#34;&gt;spdlog&lt;/a&gt; (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, see below)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once inside &lt;code&gt;pdi&lt;/code&gt; directory, the compilation can be done using the following commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir build
+cd build
+cmake ..
+make -j
+make install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;cmake&lt;/code&gt; command is used for configuration. It accepts options to enable or disable each element of the distribution and to configure them with the &lt;code&gt;-D&lt;/code&gt; syntax.&lt;/p&gt;
+&lt;p&gt;For example, the installation directory can be changed with the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cmake -DCMAKE_INSTALL_PREFIX=/usr/ ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+
+the &lt;code&gt;cmake&lt;/code&gt; command must be followed by the path to the &lt;code&gt;pdi&lt;/code&gt; directory, here &lt;code&gt;..&lt;/code&gt; because we have just created and moved to the &lt;code&gt;build&lt;/code&gt; subdirectory.
+&lt;/div&gt;
+
+&lt;p&gt;The following boolean build options are available, each option should be set to either &lt;code&gt;ON&lt;/code&gt; or &lt;code&gt;OFF&lt;/code&gt;:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;BUILD_UNSTABLE&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;Build all features by default including those not stable yet
+&lt;code&gt;BUILD_CFG_VALIDATOR&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build config validation script
+&lt;code&gt;BUILD_DECL_HDF5_PLUGIN&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build decl&#39;HDF5 plug-in
+&lt;code&gt;BUILD_DECL_SION_PLUGIN&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build decl&#39;SION plug-in
+&lt;code&gt;BUILD_DOCUMENTATION&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build documentation
+&lt;code&gt;BUILD_MPI_PLUGIN&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build MPI plug-in
+&lt;code&gt;BUILD_FLOWVR_PLUGIN&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build FlowVR plug-in
+&lt;code&gt;BUILD_TESTING&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Build tests
+&lt;code&gt;BUILD_FORTRAN&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Enable Fortran support
+&lt;code&gt;BUILD_PYTHON&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;Enable Python support&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;The following dependency inclusion options are available, each one can be set to either &lt;code&gt;SYSTEM&lt;/code&gt;, &lt;code&gt;EMBEDDED&lt;/code&gt; or a path:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;USE_DEFAULT&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;Default version of libraries to use
+&lt;code&gt;USE_BPP&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of BPP to use
+&lt;code&gt;USE_FLOWVR&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of FlowVR to use
+&lt;code&gt;USE_GTEST&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of Gtest to use
+&lt;code&gt;USE_PARACONF&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of paraconf to use
+&lt;code&gt;USE_PYBIND11&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of pybind11 to use
+&lt;code&gt;USE_PYYAML&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of PyYAML to use
+&lt;code&gt;USE_SPDLOG&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of spdlog to use
+&lt;code&gt;USE_YAML&lt;/code&gt;&lt;/dd&gt;
+&lt;dd&gt;version of yaml to use&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id=&#34;fortran-support&#34;&gt;Fortran support&lt;/h3&gt;
+&lt;p&gt;Fortran support is enabled by default, pass the &lt;code&gt;-DBUILD_FORTRAN=OFF&lt;/code&gt; option to cmake to disable it.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; Fortran support depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a Fortran-2003 compiler (&lt;a href=&#34;https://gcc.gnu.org/fortran/&#34;&gt;GNU Fortran&lt;/a&gt; 5.4 is tested)&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt; and &lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; interpreter at compilation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitlab.maisondelasimulation.fr/jbigot/bpp&#34;&gt;BPP&lt;/a&gt; (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, pass the &lt;code&gt;-DUSE_DEFAULT=EMBEDDED&lt;/code&gt; or &lt;code&gt;-DUSE_BPP=EMBEDDED&lt;/code&gt; option to cmake to use the embedded version)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pdi-configuration-validation-tool&#34;&gt;PDI configuration validation tool&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; configuration validation tool (pdicfg_validate) is enabled by default, pass the &lt;code&gt;-DBUILD_CFG_VALIDATOR=OFF&lt;/code&gt; option to cmake to disable it.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; configuration validation tool depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt;3 interpreter&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pyyaml.org/&#34;&gt;python YAML&lt;/a&gt; support (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, pass the &lt;code&gt;-DUSE_DEFAULT=EMBEDDED&lt;/code&gt; or &lt;code&gt;-DUSE_PYYAML=EMBEDDED&lt;/code&gt; option to cmake to use the embedded version)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tests&#34;&gt;Tests&lt;/h3&gt;
+&lt;p&gt;Tests are enabled by default, pass the &lt;code&gt;-DBUILD_TESTING=OFF&lt;/code&gt; option to cmake to disable them.&lt;/p&gt;
+&lt;p&gt;Tests depend on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cmake.org&#34;&gt;cmake&lt;/a&gt;, version &amp;gt;= 3.10&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/google/googletest&#34;&gt;Google Test framework&lt;/a&gt; (the embedded version is used by default, pass the &lt;code&gt;-DUSE_GTEST=SYSTEM&lt;/code&gt; option to cmake to use the system version)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;python-support&#34;&gt;Python support&lt;/h3&gt;
+&lt;p&gt;Python support is &lt;strong&gt;not marked stable yet&lt;/strong&gt;. Pass the &lt;code&gt;-DBUILD_UNSTABLE=ON&lt;/code&gt; or &lt;code&gt;-DBUILD_PYTHON=ON&lt;/code&gt; option to cmake to enable it.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; Fortran support depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt;3 installation with development headers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pybind11.readthedocs.io/en/stable/&#34;&gt;pybind11&lt;/a&gt; (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, pass the &lt;code&gt;-DUSE_DEFAULT=EMBEDDED&lt;/code&gt; or &lt;code&gt;-DUSE_PYBIND11=EMBEDDED&lt;/code&gt; option to cmake to use the embedded version)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;declhdf5-plugin&#34;&gt;Decl&#39;HDF5 plugin&lt;/h3&gt;
+&lt;p&gt;The decl&#39;HDF5 plugin is enabled by default, pass the &lt;code&gt;-DBUILD_DECL_HDF5_PLUGIN=OFF&lt;/code&gt; option to cmake to disable it.&lt;/p&gt;
+&lt;p&gt;The decl&#39;HDF5 plugin depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HDF5 (either sequential or parallel compatible with the chosen MPI)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;declsion-plugin&#34;&gt;Decl&#39;SION plugin&lt;/h3&gt;
+&lt;p&gt;The decl&#39;SION plugin is not marked stable yet. Pass the &lt;code&gt;-DBUILD_UNSTABLE=ON&lt;/code&gt; or &lt;code&gt;-DBUILD_DECL_SION_PLUGIN=ON&lt;/code&gt; option to cmake to enable it.&lt;/p&gt;
+&lt;p&gt;The decl&#39;SION plugin depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SIONlib compatible with the chosen MPI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fti-plugin&#34;&gt;FTI plugin&lt;/h3&gt;
+&lt;p&gt;FTI support is currently disabled waiting for the new-style FTI plugin. Pass the &lt;code&gt;-DBUILD_FTI_PLUGIN=ON&lt;/code&gt; option to cmake to enable it anyway (at your own risk).&lt;/p&gt;
+&lt;p&gt;The FTI plugin depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;FTI (distributed with &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;, pass the &lt;code&gt;-DUSE_DEFAULT=EMBEDDED&lt;/code&gt; or &lt;code&gt;-DUSE_FTI=EMBEDDED&lt;/code&gt; option to cmake to use the embedded version)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mpi-plugin&#34;&gt;MPI plugin&lt;/h3&gt;
+&lt;p&gt;The MPI plugin is enabled by default, pass the &lt;code&gt;-DBUILD_MPI_PLUGIN=OFF&lt;/code&gt; option to cmake to disable it.&lt;/p&gt;
+&lt;p&gt;The MPI plugin depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a MPI-2 library (openmpi-1.10.2 is tested)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Philosophy of PDI</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/philosophy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/philosophy/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Similarly to &lt;a href=&#34;https://en.wikipedia.org/wiki/Aspect-oriented_programming&#34;&gt;aspect-oriented programming&lt;/a&gt;, PDI distinguishes between core concerns and cross-cutting concerns.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Core_concern&#34;&gt;Core concerns&lt;/a&gt; are the aspects of the code that fulfill its main goal. We consider as core concerns of a simulation code the aspects handled in the main loop that generate elements needed as input of the next iteration of the loop.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Cross-cutting_concern&#34;&gt;Cross-cutting concerns&lt;/a&gt; are the aspect of the code that are not core concerns. We consider as cross-cutting concerns of a simulation code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the aspects handled before the simulation main loop such as parameters reading, data initialization, etc,&lt;/li&gt;
+&lt;li&gt;the aspects handled after the simulation main loop, such as result post-processing, storage to disk, visualization, etc,&lt;/li&gt;
+&lt;li&gt;the aspects handled during the simulation main loop, &lt;strong&gt;but&lt;/strong&gt; whose execution is not required for the next iteration of the loop, such as fault tolerance, logging, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The simulation could run with none of the cross-cutting concerns implemented (even if this would be completely useless with no result ever saved). The deactivation of a core concern on the other hand would lead to a failure of the simulation.&lt;/p&gt;
+&lt;p&gt;PDI supports calling libraries from the &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;specification tree&lt;/a&gt; instead of from the code. This is well suited for cross-cutting concerns but means that the code has no control over what and how these aspects are handled which does not fit the needs of core concerns.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Plugins</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/plugins/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Here is a list of PDI plugins:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;compound:Decl_HDF5_plugin&#34;&gt;Decl&#39;HDF5 plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Decl&#39;SION plugin&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;compound:FlowVR_plugin&#34;&gt;FlowVR plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;FTI plugin&lt;/li&gt;
+&lt;li&gt;MPI plugin&lt;/li&gt;
+&lt;li&gt;Pycall plugin&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;compound:trace_plugin&#34;&gt;trace plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;compound:user_code_plugin&#34;&gt;user-code plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;compound:how_to_create_plugin&#34;&gt;How to create a plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Specification tree Reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The PDI specification tree is expressed in &lt;a href=&#34;https://en.wikipedia.org/wiki/YAML&#34;&gt;YAML&lt;/a&gt;. As such, it is a tree that contains 3 distinct kinds of nodes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;scalars,&lt;/li&gt;
+&lt;li&gt;sequences,&lt;/li&gt;
+&lt;li&gt;mappings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A &lt;strong&gt;scalar&lt;/strong&gt; is a leaf in the tree, represented as a string. Some form of scalars can be interpreted as a boolean, integer or floating-point valued. Simple examples of scalars include for example (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2760844&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;hello&amp;quot;&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;world&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5.7&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A &lt;strong&gt;sequence&lt;/strong&gt; is an ordered list of sub-nodes (that can themselves be scalars, sequences or mappings). Two main syntaxes are available for sequences (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in-line sequence: &lt;code&gt;[1, 2, 3, hello, &amp;quot;world&amp;quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;multi-line sequence:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 1
+- 2
+- 3
+- hello
+- world
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A &lt;strong&gt;mapping&lt;/strong&gt; is an unordered list of key-value pairs (whose elements can themselves be scalars, sequences or mappings). Two main syntaxes are available for mapping (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in-line mapping: &lt;code&gt;{1: one, 2: &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;: 3}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;multi-line mapping:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1: one
+2: two
+&amp;quot;three&amp;quot;: 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;specification-tree-root&#34;&gt;specification tree root&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;specification tree root&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;data&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1data_map_node&#34;&gt;data_map&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;metadata&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1data_map_node&#34;&gt;data_map&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;plugins&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1plugin_map_node&#34;&gt;plugin_map&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;anything&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;metadata&lt;/code&gt; sections specify the type of the data in buffers exposed by the application; for &lt;code&gt;metadata&lt;/code&gt;, PDI keeps a copy while it only keeps references for &lt;code&gt;data&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;plugin&lt;/code&gt; section specifies the list of plugins to load and their configuration,&lt;/li&gt;
+&lt;li&gt;additional sections are ignored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;metadata:
+  my_metadata: int
+data:
+  my_data:
+    type: array
+    subtype: double
+    size: 5
+plugins:
+  decl_hdf5: #...
+  mpi: #...
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;array_type&#34;&gt;array_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;array_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;array&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;size&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1intexpr_or_seq_node&#34;&gt;intexpr_or_seq&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;subtype&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;subsize&amp;quot;&lt;/code&gt; (&lt;em&gt;optional, deprecated&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1intexpr_or_seq_node&#34;&gt;intexpr_or_seq&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;start&amp;quot;&lt;/code&gt; (&lt;em&gt;optional, deprecated&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1intexpr_or_seq_node&#34;&gt;intexpr_or_seq&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;array_type_node&lt;/em&gt; represents a potentially multi-dimensional array where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;size&lt;/code&gt; key represents the size of the array in each dimension (C order),&lt;/li&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;subtype&lt;/code&gt; key represents the type of the elements in the array,&lt;/li&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;subsize&lt;/code&gt; key represents the number of elements to actually use in each dimension (slicing), if specified it &lt;strong&gt;must&lt;/strong&gt; have the same number of elements as &lt;code&gt;size&lt;/code&gt;, this defaults to the full array size in each dimension,&lt;/li&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;start&lt;/code&gt; key represents the index of the first element to actually use in each dimension (slicing), if specified it &lt;strong&gt;must&lt;/strong&gt; have the same number of elements as &lt;code&gt;size&lt;/code&gt;, this defaults to the first (0) element in each dimension.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: array
+subtype: double
+size: 5
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: array
+subtype: { type: character, kind: 4 }
+size: [ &#39;$size_1d&#39;, &#39;$size_2d&#39; ]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;char_type&#34;&gt;char_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;char_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;char&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;char_type&lt;/em&gt; represents the C &lt;code&gt;char&lt;/code&gt; datatype; it accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: char
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;character_type&#34;&gt;character_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;character_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;character&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;kind&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;character_type_node&lt;/em&gt; represents the Fortran &lt;code&gt;character&lt;/code&gt; datatype. The value associated to the &lt;code&gt;kind&lt;/code&gt; key corresponds to the Fortran &lt;em&gt;kind&lt;/em&gt; parameter (&lt;code&gt;character(kind=...)&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: character
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: character
+kind: 4
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;datatype&#34;&gt;datatype&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;datatype&lt;/em&gt; can be &lt;strong&gt;any of&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1array_type_node&#34;&gt;array_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1char_type_node&#34;&gt;char_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1character_type_node&#34;&gt;character_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1double_type_node&#34;&gt;double_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1float_type_node&#34;&gt;float_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1int_type_node&#34;&gt;int_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1int16_type_node&#34;&gt;int16_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1int32_type_node&#34;&gt;int32_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1int64_type_node&#34;&gt;int64_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1int8_type_node&#34;&gt;int8_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1integer_type_node&#34;&gt;integer_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1logical_type_node&#34;&gt;logical_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1real_type_node&#34;&gt;real_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1simple_datatype_node&#34;&gt;simple_datatype&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Amongst these, &lt;a href=&#34;member:Specification_tree_ref_1simple_datatype_node&#34;&gt;simple_datatype&lt;/a&gt; is the only scalar. All others are dictionaries with a &lt;code&gt;type&lt;/code&gt; key used for disambiguation between them. Plugins can add new options that follow the same pattern.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;datatype&lt;/em&gt; represents the memory layout and interpretation for data exposed by the user in the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;data_map&#34;&gt;data_map&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;data_map&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a buffer exposed to PDI associated to its type.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;my_data_1: int
+my_data_2: {type: array, subtype: double, size: 5}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;double_type&#34;&gt;double_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;double_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;double&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;double_type&lt;/em&gt; represents the C &lt;code&gt;double&lt;/code&gt; type. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: double
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-expression&#34;&gt;$-expression&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;$-expression&lt;/em&gt; is a &lt;strong&gt;scalar&lt;/strong&gt; whose content matches the following grammar:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/* parsing as a REFERENCE is preferred over OPERATION
+   parsing as an OPERATION is preferred over STRING_LITERAL
+*/
+EXPRESSION     := REFERENCE | OPERATION | STRING_LITERAL
+
+STRING_LITERAL := ( CHAR | &#39;\&#39; &#39;\&#39; | &#39;\&#39; &#39;$&#39;
+                  | REFERENCE
+                  | &#39;$&#39; &#39;(&#39; OPERATION &#39;)&#39;
+                  )*
+
+/* The operator descending precedence order is:
+   1. *, /, %: multiplication, division and modulo,
+   2. +, -: addition and subtraction,
+   3. &amp;lt;, &amp;gt;: less than and greater than,
+   4. =: equality,
+   5. &amp;amp;: logical AND,
+   6. |: logical OR.
+*/
+OPERATION      := TERM ( OPERATOR TERM )*
+
+TERM           := ( INT_LITERAL | REFERENCE | &#39;(&#39; OPERATION &#39;)&#39; )
+
+REFERENCE      := &#39;$&#39; ( IREFERENCE | &#39;{&#39; IREFERENCE &#39;}&#39; )
+
+IREFERENCE     := ID ( &#39;[&#39; OPERATION &#39;]&#39; )*
+
+
+
+INT_LITERAL ~= (0x)? [0-9]+ ( \.  )
+ID          ~= [a-zA-Z_][a-zA-Z0-9_]*
+CHAR        ~= [^$\\]
+OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The rules for evaluating an expression are close to those of BASH for example.&lt;/p&gt;
+&lt;p&gt;In addition to raw text, a &lt;code&gt;STRING_LITERAL&lt;/code&gt; can contain references to the string value of some data in the store as well as the result of an operation by enclosing it inside a dollar-parenthesis &lt;code&gt;$()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;An &lt;code&gt;OPERATION&lt;/code&gt; can include logical and arithmetic operators grouped by parenthesis. The basic terms manipulated in an operation can be integer literals or references to the integer value of some data in the store.&lt;/p&gt;
+&lt;p&gt;A &lt;code&gt;REFERENCE&lt;/code&gt; is introduced by a dollar &lt;code&gt;$&lt;/code&gt; sign and optionally enclosed in curly braces &lt;code&gt;{&lt;/code&gt;, &lt;code&gt;}&lt;/code&gt;. Its value is that of the data or metadata with the associated name. It is always a good idea to have referenced values in the metadata section as it prevents dangling references. A direct reference is possible as well as sub-references to array elements using the square brackets &lt;code&gt;[&lt;/code&gt;, &lt;code&gt;]&lt;/code&gt; operator.&lt;/p&gt;
+&lt;p&gt;The value-type of an &lt;code&gt;EXPRESSION&lt;/code&gt; is as follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if it&#39;s a &lt;code&gt;REFERENCE&lt;/code&gt;, it has the type of the referenced data in the store,&lt;/li&gt;
+&lt;li&gt;if it&#39;s a &lt;code&gt;OPERATION&lt;/code&gt;, it is integer-valued,&lt;/li&gt;
+&lt;li&gt;if it&#39;s a &lt;code&gt;STRING_LITERAL&lt;/code&gt;, it is string-valued.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, an integer can be interpreted as a string or as a boolean value where zero is interpreted as false and any other value as true.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&#39;$my_data&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&#39;($my_data + 3) % 6&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&#39;my name is ${my_name}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;float_type&#34;&gt;float_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;float_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;float&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1float_type_node&#34;&gt;float_type&lt;/a&gt; represents the C &lt;code&gt;float&lt;/code&gt; type. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: float
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;int_type&#34;&gt;int_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;int_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;int&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1int_type_node&#34;&gt;int_type&lt;/a&gt; represents the C &lt;code&gt;int&lt;/code&gt; type. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: int
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;int16_type&#34;&gt;int16_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;int16_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;int16&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1int16_type_node&#34;&gt;int16_type&lt;/a&gt; represents the C &lt;code&gt;int16_t&lt;/code&gt; type from the &lt;code&gt;&amp;lt;stdtypes.h&amp;gt;&lt;/code&gt; header. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: int16
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;int32_type&#34;&gt;int32_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;int32_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;int32&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1int32_type_node&#34;&gt;int32_type&lt;/a&gt; represents the C &lt;code&gt;int32_t&lt;/code&gt; type from the &lt;code&gt;&amp;lt;stdtypes.h&amp;gt;&lt;/code&gt; header. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: int32
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;int64_type&#34;&gt;int64_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;int64_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;int64&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;int64_type&lt;/em&gt; represents the C &lt;code&gt;int64_t&lt;/code&gt; type from the &lt;code&gt;&amp;lt;stdtypes.h&amp;gt;&lt;/code&gt; header. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: int64
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;int8_type&#34;&gt;int8_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;int8_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;int8&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1int8_type_node&#34;&gt;int8_type&lt;/a&gt; represents the C &lt;code&gt;int8_t&lt;/code&gt; type from the &lt;code&gt;&amp;lt;stdtypes.h&amp;gt;&lt;/code&gt; header. It accepts no parameter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: int8
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;integer_type&#34;&gt;integer_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;integer_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;integer&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;kind&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;integer_type&lt;/em&gt; represents the Fortran &lt;code&gt;integer&lt;/code&gt; datatype. The value associated to the &lt;code&gt;kind&lt;/code&gt; key corresponds to the Fortran &lt;em&gt;kind&lt;/em&gt; parameter (&lt;code&gt;integer(kind=...)&lt;/code&gt;). If missing, the default kind of the Fortran implementation is used.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: integer
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: integer
+kind: 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;intexpr_seq&#34;&gt;intexpr_seq&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;intexpr_seq&lt;/em&gt; is a &lt;strong&gt;sequence&lt;/strong&gt; where each element of the sequence is a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[ 1, &#39;2&#39;, &#39;$size&#39;, &#39;$other_size + 2&#39; ]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;intexpr_or_seq&#34;&gt;intexpr_or_seq&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;intexpr_or_seq&lt;/em&gt; can be &lt;strong&gt;any of&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1intexpr_seq_node&#34;&gt;intexpr_seq&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In that context, a simple &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;$-expression&lt;/a&gt; is interpreted as a shortcut for a sequence containing a single &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;$-expression&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For example, the following value:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;$x + 2&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is interpreted as if it was:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[ &amp;quot;$x + 2&amp;quot; ]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;logical_type&#34;&gt;logical_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;logical_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;logical&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;kind&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;logical_type&lt;/em&gt; represents the Fortran &lt;code&gt;logical&lt;/code&gt; datatype. The value associated to the &lt;code&gt;kind&lt;/code&gt; key corresponds to the Fortran &lt;em&gt;kind&lt;/em&gt; parameter (&lt;code&gt;logical(kind=...)&lt;/code&gt;). If missing, the default kind of the Fortran implementation is used.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: logical
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: logical
+kind: 1
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;member_desc&#34;&gt;member_desc&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;member_desc&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;disp&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;code&gt;scalar&lt;/code&gt;, &lt;code&gt;array&lt;/code&gt; or &lt;code&gt;record&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;anything&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;disp&lt;/code&gt; key identifies the displacement in bytes from the base address of the record and the address of this specific member,&lt;/li&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;type&lt;/code&gt; key identifies the &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;type&lt;/a&gt; of this record, all other keys required for this &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt; must be present.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;my_char:
+      disp: 0
+      type: int64
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;my_array:
+  disp: 8
+  type: array
+  subtype: int64
+  size: [10, 10]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt; for more examples.&lt;/p&gt;
+&lt;h2 id=&#34;members_map&#34;&gt;members_map&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;members_map&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1member_desc_node&#34;&gt;member_desc&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a member of the record and the value associated to it describes the member itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt; for an example.&lt;/p&gt;
+&lt;h2 id=&#34;plugin_map&#34;&gt;plugin_map&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;plugin_map&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;anything&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a plugin to load associated to its configuration; the content of the configuration depends on the plugin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Have a look at the &lt;a href=&#34;compound:Plugins&#34;&gt;plugins&lt;/a&gt; documentation to see the specification tree they accept.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;member:Specification_tree_ref_1root_node&#34;&gt;specification tree root&lt;/a&gt; for an example.&lt;/p&gt;
+&lt;h2 id=&#34;real_type&#34;&gt;real_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;real_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;real&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;kind&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;em&gt;real_type&lt;/em&gt; represents the Fortran &lt;code&gt;real&lt;/code&gt; datatype. The value associated to the &lt;code&gt;kind&lt;/code&gt; key corresponds to the Fortran &lt;em&gt;kind&lt;/em&gt; parameter (&lt;code&gt;real(kind=...)&lt;/code&gt;). If missing, the default kind of the Fortran implementation is used.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: real
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: real
+kind: 8
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;record_type&#34;&gt;record_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;record_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;record&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;buffersize&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1expression_node&#34;&gt;integer-valued $-expression&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;members&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1members_map_node&#34;&gt;members_map&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt; represents a &amp;quot;record&amp;quot;, &lt;em&gt;aka&lt;/em&gt; C &amp;quot;struct&amp;quot;, C++ &amp;quot;class&amp;quot;, Fortran &amp;quot;derived type&amp;quot; where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;buffersize&lt;/code&gt; key represents the overall size of the record, including potential padding,&lt;/li&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;members&lt;/code&gt; key lists all members of the record.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: record
+buffersize: 8
+members:
+  first_int:
+    disp: 0
+    type: int32
+  seconf_int:
+    disp: 4
+    type: int32
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;simple_datatype&#34;&gt;simple_datatype&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;simple_datatype&lt;/em&gt; is a &lt;strong&gt;scalar&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;It is interpreted as a shortcut for a mapping with a single key &lt;code&gt;type&lt;/code&gt; whose value is the provided scalar and therefore another &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For example, the following value:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;my_type&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is interpreted as if it was:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{ type: &amp;quot;my_type&amp;quot; }
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: The Decl&#39;HDF5 plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt; This documentation is a work in progress and does not reflect the full Decl&#39;HDF5 potential.&lt;/p&gt;
+&lt;p&gt;The Decl&#39;HDF5 plugin enables one to read and write data from HDF5 files in a declarative way. Decl&#39;HDF5 does not support the full HDF5 feature set but offers a simple declarative interface to access a large subset of it.&lt;/p&gt;
+&lt;h2 id=&#34;configuration-grammar&#34;&gt;Configuration grammar&lt;/h2&gt;
+&lt;p&gt;At its root, the Decl&#39;HDF5 configuration is made of either a single &lt;code&gt;FILE_DESC&lt;/code&gt; or a list of &lt;code&gt;FILE_DESC&lt;/code&gt;s.&lt;/p&gt;
+&lt;h3 id=&#34;ttfile_desctt&#34;&gt;&amp;lt;tt&amp;gt;FILE_DESC&amp;lt;/tt&amp;gt;&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;FILE_DESC&lt;/code&gt; specifies a list of actions to execute in one file. It is specified by a key/value map that contains at least the &lt;code&gt;file&lt;/code&gt; key. Other keys are optional. The possible values for the keys are as follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;file&lt;/code&gt;: a string that can contain $-expressions and specified the name of the file this &lt;code&gt;FILE_DESC&lt;/code&gt; refers to.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;write&lt;/code&gt;: a &lt;code&gt;DATA_SECTION&lt;/code&gt; that defaults to an empty one. This &lt;code&gt;DATA_SECTION&lt;/code&gt; describes writes to execute.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;write&lt;/code&gt;: a &lt;code&gt;DATA_SECTION&lt;/code&gt; that defaults to an empty one. This &lt;code&gt;DATA_SECTION&lt;/code&gt; describes reads to execute.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;on_event&lt;/code&gt;: a string identifying an event when the whole file is accessed. If not specified, each data is written when it is exposed and the file is opened and closed every time.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;when&lt;/code&gt;: a $-expression specifying a default condition to test before executing the reads and writes of this &lt;code&gt;FILE_DESC&lt;/code&gt;. This can be replaced by a more specific condition inside the &lt;code&gt;DATA_SECTION&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;communicator&lt;/code&gt;: a $-expression referencing a MPI communicator to use for HDF5 parallel synchronized reads and writes. It defaults to MPI_COMM_SELF which stands for sequential writes. In case of data-triggered (vs. event-triggered) reads and writes, this can be replaced inside the &lt;code&gt;DATA_SECTION&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;datasets&lt;/code&gt;: a key-value map associating a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; type to string keys. Each string is the name of a dataset to create in the file on first access, with the type described in the value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ttdata_sectiontt&#34;&gt;&amp;lt;tt&amp;gt;DATA_SECTION&amp;lt;/tt&amp;gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;DATA_SECTION&lt;/code&gt; describes a set of I/O (read or write) to execute. A data section can take multiple forms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a list of strings, each being the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write&lt;/li&gt;
+&lt;li&gt;a key-value map where each key is the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write and the value is either a single &lt;code&gt;DATA_IO_DESC&lt;/code&gt; or a list of &lt;code&gt;DATA_IO_DESC&lt;/code&gt;s describing the I/O (read or write) to execute.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first case behaves as if each data had its &lt;code&gt;DATA_IO_DESC&lt;/code&gt; specified with all default values.&lt;/p&gt;
+&lt;h3 id=&#34;ttdata_io_desctt&#34;&gt;&amp;lt;tt&amp;gt;DATA_IO_DESC&amp;lt;/tt&amp;gt;&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;DATA_IO_DESC&lt;/code&gt; is a key-velue map describing one I/O (read or write) to execute. All keys are optional and have default values. The possible values for the keys are as follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dataset&lt;/code&gt;: a $-expression identifying the name of the dataset to access in the file. If not specified this defaults to the name of the data. On writing, if the dataset does not exist in the file and is not specified in the &lt;code&gt;FILE_DESC&lt;/code&gt; then a dataset with the same size as the memory selection is automatically created.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;when&lt;/code&gt;: a $-expression specifying a condition to test before executing the I/O operation (read or write). This defaults to the value specified in the &lt;code&gt;FILE_DESC&lt;/code&gt; if present or to unconditional I/O otherwise.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;communicator&lt;/code&gt;: a $-expression referencing a MPI communicator to use for HDF5 parallel synchronized I/O operation (read or write). Specifying communicator at this level is incompatible with event-triggered (vs. data-triggered) This defaults to the value specified in the &lt;code&gt;FILE_DESC&lt;/code&gt; if present or to sequential (MPI_COMM_SELF) I/O otherwise.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;memory_selection&lt;/code&gt;: a &lt;code&gt;SELECTION_DESC&lt;/code&gt; specifying the selection of data in memory to read or write. It defaults to selecting the whole data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataset_selection&lt;/code&gt;: a &lt;code&gt;SELECTION_DESC&lt;/code&gt; specifying the selection of data in the file data to write or read. This is only valid if the&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ttselection_desctt&#34;&gt;&amp;lt;tt&amp;gt;SELECTION_DESC&amp;lt;/tt&amp;gt;&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;SELECTION_DESC&lt;/code&gt; is a key-value map that describes the selection of a subset of data from a larger set. All keys are optional and have default values. The possible values for the keys are as follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;size&lt;/code&gt; is either a single $-expression or a list of $-expressions. It describes the size of the selection in each dimension. If not specified, it defaults to the dimension of the whole data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;start&lt;/code&gt; is either a single $-expression or a list of $-expressions. It describes the number of point to skip in each dimension. If not specified it defaults to 0 in all dimensions. In practice, it can only be specified if &lt;code&gt;size&lt;/code&gt; is also.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;full-configuration-example&#34;&gt;full configuration example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;metadata: # small values for which PDI keeps a copy
+  width:   int                    # per proc. width including ghost
+  height:  int                    # per proc. height including ghost
+  pwidth:  int                    # nb proc. in the x dim
+  pheight: int                    # nb proc. in the y dim
+  iter:    int                    # curent iteration id
+  coord:   { type: array, subtype: int, size: 2 } # coordinate of the process as [x, y]
+data:     # values that are not copied by PDI
+  main_field:
+    type: array
+    subtype: double
+    size: [$width, $height]
+plugins:
+  mpi: # loading MPI_Comm predefines (e.g. $MPI_COMM_WORLD)
+  decl_hdf5: # a list of file to write to (can be a single element)
+    file: data${coord[0]}x${coord[1]}.h5 # the file in which to write the data (required)
+    on_event: newiter                    # the event that triggers these actions (default: trigger on data expose)
+    when: &amp;quot;$iter&amp;gt;0 &amp;amp; $iter&amp;lt;11&amp;quot;           # a condition when to actually trigger the actions (default: always true)
+    communicator: $MPI_COMM_SELF         # the MPI communicator used for HDF5 parallel synchronized write (default: $MPI_COMM_SELF, sequential write)
+    datasets:                            # a list of datasets inside the file created on first access
+      data/array: # a dataset name, datasets referenced but not defined are created just big enough to fit the data
+        type: array
+        subtype: double                # type of the data in the dataset
+        size: [10, $width-2, $width-2] # size of the dataset
+    write: # a list or map of data to write (default: empty)
+      main_field: # name of the data, it contains either a list or a single write to execute
+        - dataset: data/array      # a dataset name (default: the data name)
+          when: &amp;quot;$iter&amp;gt;0&amp;amp;$iter&amp;lt;11&amp;quot; # an additional condition when to actually trigger the actions (default: always true)
+          communicator: $MPI_COMM_SELF   # the MPI communicator used for HDF5 parallel synchronized write (default: that of the file)
+          memory_selection:
+            size:  [$width-2, $height-2] # number of elements to transfer in each dimension (default: size of the full data)
+            start: [1, 1]                # coordinate of the start point in memory relative to the shared data (default: 0 in each dimensions)
+          dataset_selection:
+            size:  [1, $width-2, $width-2] # number of elements to transfer in each dimension, must amount to the same number as the memory selection (default: size of memory slab)
+            start: [$iter, 0, 0]           # coordinate of the start point in the file relative to the dataset (default: 0 in each dimensions)
+    read: # a list or map of data to read, similar to write (default: empty)
+      - another_value
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: The FlowVR plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The &lt;a href=&#34;http://flowvr.sourceforge.net&#34;&gt;FlowVR&lt;/a&gt; plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.&lt;/p&gt;
+&lt;h2 id=&#34;configuration-elements&#34;&gt;Configuration elements&lt;/h2&gt;
+&lt;h3 id=&#34;flowvr-plugin-tree&#34;&gt;FlowVR plugin tree&lt;/h3&gt;
+&lt;p&gt;The root of FlowVR plugin configuration (named &lt;code&gt;flowvr&lt;/code&gt;), is a dictionary that contains the following keys:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1component_node&#34;&gt;component&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1wait_on_data_node&#34;&gt;wait_on_data&lt;/a&gt; (&lt;em&gt;recommended&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1wait_on_node&#34;&gt;wait_on&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1status_node&#34;&gt;status&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1abort_on_node&#34;&gt;abort_on&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1init_on_node&#34;&gt;init_on&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1input_ports&#34;&gt;input_ports&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1output_ports&#34;&gt;output_ports&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;component&#34;&gt;component&lt;/h4&gt;
+&lt;p&gt;For now only available component is &lt;code&gt;module&lt;/code&gt;, but this can be expanded to &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;synchronizer&lt;/code&gt; in the future. Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  flowvr:
+    component: module
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;wait_on_data&#34;&gt;wait_on_data&lt;/h4&gt;
+&lt;p&gt;The plugin will call &lt;code&gt;wait&lt;/code&gt; funciton every time given descriptors will be shared with &lt;code&gt;PDI_IN&lt;/code&gt; access direction. This descriptor must be an integer type and the status returned from this call will be written as a response. Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;wait_on&#34;&gt;wait_on&lt;/h4&gt;
+&lt;p&gt;Defines on which events the plugin calls the &lt;code&gt;wait&lt;/code&gt; function. The value can be either single event name or the array of events names (both examples presented below). This method of calling &lt;code&gt;wait&lt;/code&gt; should be avoided if possible, because it&#39;s not returning the wait status. Configuration examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  flowvr:
+    component: module
+    wait_on: &amp;quot;wait_event&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;plugins:
+  flowvr:
+    component: module
+    wait_on: [&amp;quot;wait_event_1&amp;quot;, &amp;quot;wait_event_2&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;status&#34;&gt;status&lt;/h4&gt;
+&lt;p&gt;PDI will copy the status of the module to the given descriptor. The same as the &lt;code&gt;wait_on&lt;/code&gt; it can be a single name or an array of names. Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_desc: int
+  status_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+    status: status_desc
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;abort_on&#34;&gt;abort_on&lt;/h4&gt;
+&lt;p&gt;Defines on which events the plugin calls the &lt;code&gt;abort&lt;/code&gt; function which will stop the flowvr application. The value can be either single event name or the array of events names. Configuration examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_desc: int
+
+plugins:
+  flowvr:
+   component: module
+    wait_on_data: wait_desc
+    abort_on: &amp;quot;abort_event&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;init_on&#34;&gt;init_on&lt;/h4&gt;
+&lt;p&gt;Defining this subtree tells PDI that the plugin should be initialized not on &lt;code&gt;PDI_init&lt;/code&gt;, but on given event.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_desc: int
+
+plugins:
+  flowvr:
+   component: module
+    wait_on_data: wait_desc
+    init_on: &amp;quot;init_event&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;parallel&#34;&gt;parallel&lt;/h4&gt;
+&lt;p&gt;This node can be for reading rank and size of the world, but also can be for setting this values. &lt;code&gt;get_rank&lt;/code&gt; will copy process&#39;s rank to given descriptor on share, &lt;code&gt;get_size&lt;/code&gt; will save the world size the same way. Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_desc: int
+  rank_desc: int
+  size_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+    parallel:
+      get_rank: rank_desc
+      get_size: size_desc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Values (use &lt;code&gt;$&lt;/code&gt; expression) from descriptors defined in &lt;code&gt;set_rank&lt;/code&gt; and &lt;code&gt;set_size&lt;/code&gt; will be passed to flowvr and set the environment. Setting this parameters must occur before plugin initialization. For this you need to use &lt;code&gt;init_on&lt;/code&gt; event and call this event after setting rank and size.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_desc: int
+  rank_desc: int
+  size_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+    parallel:
+      set_rank: $rank_desc
+      set_size: $size_desc
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;several-modules&#34;&gt;Several modules&lt;/h4&gt;
+&lt;p&gt;Single program can run several modules at once. To make it work just create array of modules in &lt;code&gt;flowvr&lt;/code&gt; tree. Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  wait_1: int
+  wait_2: int
+
+flowvr:
+  - component: module
+    wait_on_data: wait_1
+    ...
+  - component: module
+    wait_on_data: wait_2
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;ports&#34;&gt;Ports&lt;/h3&gt;
+&lt;h4 id=&#34;input_ports&#34;&gt;input_ports&lt;/h4&gt;
+&lt;p&gt;Input ports are defined in &lt;code&gt;input_ports&lt;/code&gt; tree. Each port is defined by name and &lt;a href=&#34;member:FlowVR_plugin_1message&#34;&gt;Message&lt;/a&gt; it will receive. You can add &lt;code&gt;event_port: true&lt;/code&gt; to define this as event port (non-blocking).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flowvr:
+  ...
+  input_ports:
+    port_name_1:
+      ...
+    port_name_2:
+      event_port: true
+      ...
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;output_ports&#34;&gt;output_ports&lt;/h4&gt;
+&lt;p&gt;Output ports are defined in &lt;code&gt;output_ports&lt;/code&gt; tree. Each port is defined by name and &lt;a href=&#34;member:FlowVR_plugin_1message&#34;&gt;Message&lt;/a&gt; it will send.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flowvr:
+  ...
+  output_ports:
+    port_name_1: ...
+    port_name_2: ...
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;message&#34;&gt;Message&lt;/h3&gt;
+&lt;p&gt;Flowvr message consists of payload and stamps. The &lt;code&gt;payload&lt;/code&gt; is defined by user by a specific key in port definition:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;message type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;quot;data&amp;quot;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:FlowVR_plugin_1data_payload&#34;&gt;Data payload&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;quot;chunks&amp;quot;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:FlowVR_plugin_1chunks_payload&#34;&gt;Chunk payload&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;quot;event_button&amp;quot;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:FlowVR_plugin_1button_payload&#34;&gt;Event button payload&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;quot;event_mouse&amp;quot;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:FlowVR_plugin_1mouse_payload&#34;&gt;Event mouse payload&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If none of the message type will be given, plugin will create a STAMP port (message has no payload). &lt;code&gt;stamps&lt;/code&gt; are described in &lt;a href=&#34;member:FlowVR_plugin_1stamp&#34;&gt;Stamp&lt;/a&gt; section.&lt;/p&gt;
+&lt;h4 id=&#34;data-payload&#34;&gt;Data payload&lt;/h4&gt;
+&lt;p&gt;Requires &lt;code&gt;data&lt;/code&gt; key in a port tree. This configuration means that module will send simple buffer. The plugin doesn&#39;t know the type of sending data. The value of &lt;code&gt;data&lt;/code&gt; key is the name of the descriptor where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;for input port - FlowVR plugin will write to received data&lt;/li&gt;
+&lt;li&gt;for output port - FlowVR plugin will read from to send data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Example of &lt;code&gt;data&lt;/code&gt; in output port:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  data_desc: {type: array, subtype: int, size: 32}
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      data: data_desc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The user can not always predict how many data will receive. In this case &lt;code&gt;size&lt;/code&gt; node type must be a name of metadata where to write the size of received payload. This metadata will hold the size of received array. The &lt;code&gt;size&lt;/code&gt; property of descriptor should be divided by size of single element. Example of receiving unknown payload size:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;metadata:
+  received_size : int
+data:
+  data_descriptor_name: {type: array, subtype: int, size: $received_size/4}
+
+plugins:
+  flowvr:
+    ...
+    input_ports:
+      port_name:
+        data: data_descriptor_name
+        size: received_size
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In case that you want to send only a part of the data from descriptor you can specify it in &lt;code&gt;copy_data_selection&lt;/code&gt; tree defining datatype the same way as for descriptors. Simple example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  data_descriptor_name:  {type: array, subtype: int, size: [32, 32]}
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      data: data_descriptor_name
+      copy_data_selection:
+        type: array
+        subtype: int
+        size: [32, 32]
+        subsize: [30, 30]
+        start: [1, 1]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;chunk-payload&#34;&gt;Chunk payload&lt;/h3&gt;
+&lt;p&gt;Requires &lt;code&gt;chunks&lt;/code&gt; key in a port tree. This configuration means that module will send several buffers in one payload. Value of the &lt;code&gt;chunks&lt;/code&gt; key is the list of &lt;a href=&#34;member:FlowVR_plugin_1data_payload&#34;&gt;Data payload&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;WARNING&lt;/p&gt;
+&lt;p&gt;After each wait, the first access to the any descriptor (that belongs to the chunks) will allocate the memory for the all descriptors. This means that all sizes (if stored as metadata) should be set before first access to any of the descriptors.&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  chunk_1_name: int
+  chunk_2_name: {type: array, subtype: char, size: 255}
+  chunk_3_name: float
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      chunks:
+        - data: chunk_1_name
+        - data: chunk_2_name
+        - data: chunk_3_name
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;event-button-payload&#34;&gt;Event button payload&lt;/h3&gt;
+&lt;p&gt;Requires &lt;code&gt;event_button&lt;/code&gt; key in a port tree. The payload holds the values of the keyboard keys pressed during iteration.&lt;/p&gt;
+&lt;p&gt;The full list of predefined keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key in configuration&lt;/th&gt;
+&lt;th&gt;key on keyboard&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F1&lt;/td&gt;
+&lt;td&gt;F1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F2&lt;/td&gt;
+&lt;td&gt;F2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F3&lt;/td&gt;
+&lt;td&gt;F3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F4&lt;/td&gt;
+&lt;td&gt;F4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F5&lt;/td&gt;
+&lt;td&gt;F5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F6&lt;/td&gt;
+&lt;td&gt;F6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F7&lt;/td&gt;
+&lt;td&gt;F7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F8&lt;/td&gt;
+&lt;td&gt;F8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F9&lt;/td&gt;
+&lt;td&gt;F9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F10&lt;/td&gt;
+&lt;td&gt;F10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F11&lt;/td&gt;
+&lt;td&gt;F11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_F12&lt;/td&gt;
+&lt;td&gt;F12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_UP&lt;/td&gt;
+&lt;td&gt;Up Arrow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_DOWN&lt;/td&gt;
+&lt;td&gt;Down Arrow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_LEFT&lt;/td&gt;
+&lt;td&gt;Left Arrow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_RIGHT&lt;/td&gt;
+&lt;td&gt;Right Arrow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_PAGE_UP&lt;/td&gt;
+&lt;td&gt;Page Up&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_PAGE_DOWN&lt;/td&gt;
+&lt;td&gt;Page Down&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_HOME&lt;/td&gt;
+&lt;td&gt;Home&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_END&lt;/td&gt;
+&lt;td&gt;End&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KEY_INSERT&lt;/td&gt;
+&lt;td&gt;Insert&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Value for each key in configuration is a descriptor of integer type. You need to make sure that you are setting this descriptors with correct values on each iteration. Example of configuration with arrow buttons:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  up: int
+  down: int
+  left: int
+  right: int
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      event_button:
+        KEY_UP: up
+        KEY_DOWN: down
+        KEY_LEFT: left
+        KEY_RIGHT: right
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;event-mouse-payload&#34;&gt;Event mouse payload&lt;/h3&gt;
+&lt;p&gt;Requires &lt;code&gt;event_mouse&lt;/code&gt; key in a port tree. The payload holds the values of the mouse keys pressed and cursor position during iteration. The button state is saved in descriptors of integer type and a cursor position in an array of 2 floats.&lt;/p&gt;
+&lt;p&gt;Available keys in &lt;code&gt;event_mouse&lt;/code&gt; tree:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;POS_XY&lt;/td&gt;
+&lt;td&gt;cursor position&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LEFT_BUTTON&lt;/td&gt;
+&lt;td&gt;left mouse button&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MIDDLE_BUTTON&lt;/td&gt;
+&lt;td&gt;middle mouse button&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RIGHT_BUTTON&lt;/td&gt;
+&lt;td&gt;right mouse button&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Example of configuration with all keys defined:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  pos_xy: {type: array, subtype: float, size: 2}
+  left_button: int
+  right_button: int
+  middle_button: int
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      event_mouse:
+        POS_XY: pos_xy
+        LEFT_BUTTON: left_button
+        RIGHT_BUTTON: right_button
+        MIDDLE_BUTTON: middle_button
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stamp&#34;&gt;Stamp&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;stamps&lt;/code&gt; key must be defined in a port tree. The value of &lt;code&gt;stamps&lt;/code&gt; is simply a map with the stamp name and descriptor name. The given descriptor must have a valid PDI type, limited to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;float&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;array of ints&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;array of floats&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;array of chars&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Example of message with &lt;a href=&#34;member:FlowVR_plugin_1data_payload&#34;&gt;Data payload&lt;/a&gt; and 2 stamps:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  data_desc: {type: array, subtype: int, size: 256}
+  stamp_1_desc: int
+  stamp_2_desc: {type: array, subtype: float, size: 2}
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      data: data_desc
+      stamps:
+        stamp_1_name: stamp_1_desc
+        stamp_2_name: stamp_2_desc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For output port stamp can be also define as an expression, but stamp will need type definition in this case. Example of expression stamp:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;metadata:
+  value_desc: int
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      stamps:
+        stamp_name:
+          type: int
+          expression: ($value_desc/2) * 3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For now only int and string stamps are supported as expression.&lt;/p&gt;
+&lt;h2 id=&#34;reading-and-writing-data-examples&#34;&gt;Reading and writing data examples&lt;/h2&gt;
+&lt;p&gt;FlowVR plugin uses 2 ways to handle data reading and writing:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Access the shared memory - the fastest way, user operates on flowvr shared memory.&lt;/li&gt;
+&lt;li&gt;Copy the data from shared memory to descriptor - needs the data copy (convenient for small messages or sparse data types).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;read-data-from-flowvr-message-by-access-the-shared-memory&#34;&gt;Read data from FlowVR message by access the shared memory&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  text_shr: {type: array, subtype: char, size: 4}
+
+...
+    input_ports:
+      text:
+        data: text_shr
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;char* text_shr;
+PDI_access(&amp;quot;text_shr&amp;quot;, (void**)&amp;amp;text_shr, PDI_IN);
+
+// do something with text_shr or copy data to local buffer
+
+PDI_release(&amp;quot;text_shr&amp;quot;); // really important to release descriptors
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;write-data-from-flowvr-message-by-access-the-shared-memory&#34;&gt;Write data from FlowVR message by access the shared memory&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  text_shr: {type: array, subtype: char, size: 4}
+
+...
+    output_ports:
+      text:
+        data: text_shr
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;char* text_shr;
+PDI_access(&amp;quot;text_shr&amp;quot;, (void**)&amp;amp;text_shr, PDI_OUT);
+
+// do something with text_shr or copy data from local buffer
+
+PDI_release(&amp;quot;text_shr&amp;quot;); // really important to release descriptors
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;read-data-from-flowvr-message-by-copy-from-the-shared-memory&#34;&gt;Read data from FlowVR message by copy from the shared memory&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  text: {type: array, subtype: char, size: 4}
+
+...
+    input_ports:
+      text:
+        data: text
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;char text[4];
+PDI_expose(&amp;quot;text&amp;quot;, text, PDI_IN);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;write-data-to-flowvr-message-by-copy-to-the-shared-memory&#34;&gt;Write data to FlowVR message by copy to the shared memory&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  text: {type: array, subtype: char, size: 4}
+
+...
+    output_ports:
+      text:
+        data: text
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;char text[4];
+PDI_expose(&amp;quot;text&amp;quot;, text, PDI_OUT);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;write-data-to-flowvr-message-by-copy-the-subset-of-data-to-the-shared-memory&#34;&gt;Write data to FlowVR message by copy the subset of data to the shared memory&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  my_array: {type: array, subtype: int, size: [20, 20]}
+
+...
+    output_ports:
+      text:
+        data: my_array
+        copy_data_selection: {type: array, subtype: int, size: [20, 20], subsize: [10, 10], start: [0, 0]}
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;int my_array[400];
+PDI_expose(&amp;quot;my_array&amp;quot;, my_array, PDI_OUT); // copies only 100 elements
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;and-writing-stamps-examples&#34;&gt;and writing stamps examples&lt;/h2&gt;
+&lt;p&gt;Stamps are always copied from descriptor to flowvr message.&lt;/p&gt;
+&lt;h3 id=&#34;read-stamp-from-flowvr-message&#34;&gt;Read stamp from FlowVR message&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  stamp_it: int
+...
+    input_ports:
+      text:
+        stamps:
+          it: stamp_it
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;int stamp_it = some_value;
+PDI_expose(&amp;quot;stamp_it&amp;quot;, &amp;amp;stamp_it, PDI_IN);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;write-stamp-from-flowvr-message&#34;&gt;Write stamp from FlowVR message&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  user_stamp: int
+
+...
+    output_ports:
+      text:
+        stamps:
+          user_defined_stamp: user_stamp
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;int user_stamp = some_value;
+PDI_expose(&amp;quot;user_stamp&amp;quot;, &amp;amp;user_stamp, PDI_OUT);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;reading-and-writing-mouse-and-button-event-examples&#34;&gt;Reading and writing mouse and button event examples&lt;/h2&gt;
+&lt;h3 id=&#34;write-mouse-event-from-flowvr-message&#34;&gt;Write mouse event from FlowVR message&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  pos_xy: {type: array, subtype: float, size: 2}
+  left_button: int
+
+...
+    output_ports:
+      keysOut:
+        event_mouse:
+          POS_XY: pos_xy
+          LEFT_BUTTON: left_button
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;float pos_xy[2] = {x_pos, y_pos};
+PDI_expose(&amp;quot;pos_xy&amp;quot;, &amp;amp;pos_xy, PDI_OUT);
+
+int left_button = 1;
+PDI_expose(&amp;quot;left_button&amp;quot;, &amp;amp;left_button, PDI_OUT);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;read-mouse-event-from-flowvr-message&#34;&gt;Read mouse event from FlowVR message&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  pos_xy: {type: array, subtype: float, size: 2}
+  left_button: int
+
+...
+input_ports:
+  keysIn:
+    event_mouse:
+      POS_XY: pos_xy
+      LEFT_BUTTON: left_button
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;float pos_xy;
+PDI_expose(&amp;quot;pos_xy&amp;quot;, &amp;amp;pos_xy, PDI_IN);
+
+int left_button;
+PDI_expose(&amp;quot;left_button&amp;quot;, &amp;amp;left_button, PDI_IN);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;write-button-event-from-flowvr-message&#34;&gt;Write button event from FlowVR message&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  up: int
+  down: int
+
+...
+    output_ports:
+      keysOut:
+        event_button:
+          KEY_UP: up
+          KEY_DOWN: down
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;int up_state = 1;
+PDI_expose(&amp;quot;up&amp;quot;, &amp;amp;up_state, PDI_OUT);
+
+int down_state = 1;
+PDI_expose(&amp;quot;down&amp;quot;, &amp;amp;down_state, PDI_OUT);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;read-button-event-from-flowvr-message&#34;&gt;Read button event from FlowVR message&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  up: int
+  down: int
+
+...
+    input_ports:
+      keysIn:
+        event_button:
+          KEY_UP: up
+          KEY_DOWN: down
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;int up_state;
+PDI_expose(&amp;quot;up&amp;quot;, &amp;amp;up_state, PDI_IN);
+
+int down_state;
+PDI_expose(&amp;quot;down&amp;quot;, &amp;amp;down_state, PDI_IN);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;flowvr-examples-reworked-for-pdi&#34;&gt;FlowVR examples reworked for %PDI&lt;/h2&gt;
+&lt;p&gt;Path to the examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pdi/build/pdi_plugin-flowvr/src/FLOWVR_PLUGIN-build/examples/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Original flowvr source files are in directories &lt;code&gt;flowvr_original&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;running-the-application&#34;&gt;Running the application&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to examples folder: &lt;code&gt;cd pdi_plugin-flowvr/src/FLOWVR_PLUGIN-build/examples&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;source flowvr-config.sh&lt;/code&gt;. Now your environment is ready.&lt;/li&gt;
+&lt;li&gt;Run flowvr daemon on your system (best in new terminal, repeat 1. and 2.): &lt;code&gt;flowvrd --top&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Inside &lt;code&gt;$example_name&lt;/code&gt; directory generate the flowvr configuration files by: &lt;code&gt;python $example_name.py&lt;/code&gt; and run example by: &lt;code&gt;flowvr $example_name&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;tictac-example&#34;&gt;Tictac example&lt;/h3&gt;
+&lt;p&gt;Consists of 2 modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;put&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;put.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;put.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;output port&lt;/code&gt; named &lt;code&gt;text&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sends message with:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;data: &lt;code&gt;type: {type: array, subtype: char, size: 4} #&amp;quot;tic&amp;quot; or &amp;quot;tac&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;stamps:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;it (predefined flowvr stamp): &lt;code&gt;type: int&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;my_stamp (user define int array stamp): &lt;code&gt;type: {type: array, subtype: int, size: 2}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;get&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;get.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;get.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;input port&lt;/code&gt; named &lt;code&gt;text&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;receive message sent by &lt;code&gt;put&lt;/code&gt; module&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;additionally has defined &lt;code&gt;stamp&lt;/code&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;source (predefined flowvr stamp): &lt;code&gt;type: {type: array, subtype: char, size: 256}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/tictac_net.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;bundle-example&#34;&gt;Bundle example&lt;/h4&gt;
+&lt;p&gt;Consists of 3 modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;2x &lt;code&gt;putMulitple&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;putMulitple.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;putMulitple.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;first one has &lt;code&gt;output port&lt;/code&gt; named &lt;code&gt;text&lt;/code&gt;, second &lt;code&gt;text2&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sends message with:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;data: &lt;code&gt;type: {type: array, subtype: char, size: 4} # first &amp;quot;tic&amp;quot; or &amp;quot;tac&amp;quot;, second &amp;quot;TIC&amp;quot; or &amp;quot;TAC&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;stamps:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;it&lt;/code&gt; (predefined flowvr stamp): &lt;code&gt;type: int&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;getMulitple&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;getMulitple.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;getMulitple.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;input ports&lt;/code&gt; named &lt;code&gt;text&lt;/code&gt; and &lt;code&gt;text2&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;receive message sent by &lt;code&gt;putMulitple&lt;/code&gt; modules&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;additionally has defined &lt;code&gt;stamp&lt;/code&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;source (predefined flowvr stamp): &lt;code&gt;type: {type: array, subtype: char, size: 256}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/bundle_net.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;primes-example&#34;&gt;Primes example&lt;/h3&gt;
+&lt;p&gt;Consists of 3 modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;capture&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;capture.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;capture.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;output port&lt;/code&gt; named &lt;code&gt;keysOut&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sends message with:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;event_button&lt;/code&gt; (payload):&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;KEY_UP: up&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;KEY_DOWN: down&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;KEY_LEFT: left&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;KEY_RIGHT: right&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;compute&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;compute.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;compute.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;output port&lt;/code&gt; named &lt;code&gt;primesOut&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sends message with:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;data (payload): &lt;code&gt;type: {type: array, subtype: int, size: $tempPrimeNumbersMaxCount}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;stamps:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;computationTimeIt: &lt;code&gt;type: int&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;visu&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;source file: &lt;code&gt;visu.cxx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;configuration file: &lt;code&gt;visu.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;has &lt;code&gt;input ports&lt;/code&gt; named &lt;code&gt;primesIn&lt;/code&gt; and &lt;code&gt;keysIn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;receive message sent by &lt;code&gt;capture&lt;/code&gt; and &lt;code&gt;compute&lt;/code&gt; modules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/primes_net.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;fluid-example&#34;&gt;Fluid example&lt;/h3&gt;
+&lt;p&gt;Consists of 2 modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;fluid&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;fluid.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;fluid.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;input port&lt;/code&gt; named &lt;code&gt;position&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;received message sent by &lt;code&gt;gldens&lt;/code&gt; module&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;output ports&lt;/code&gt; named &lt;code&gt;velocity&lt;/code&gt; and &lt;code&gt;density&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;velocity&lt;/code&gt; and &lt;code&gt;density&lt;/code&gt; both sends message with:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;data (payload): &lt;code&gt;type: {type: array, subtype: char, size: [$NX * 2, $NY]} # where NX and NY is metadata&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;stamps:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;P: &lt;code&gt;type: {type: array, subtype: int, size: 2}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;N: &lt;code&gt;type: {type: array, subtype: int, size: 2}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;gldens&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;source file: &lt;code&gt;gldens.cxx&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;configuration file: &lt;code&gt;gldens.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;input ports&lt;/code&gt; named &lt;code&gt;velocity&lt;/code&gt; and &lt;code&gt;density&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;received message sent by &lt;code&gt;fluid&lt;/code&gt; module&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;has &lt;code&gt;output port&lt;/code&gt; named &lt;code&gt;position&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sends message with:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;data (payload): &lt;code&gt;type: {type: array, subtype: float, size: 3}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;very important is how to get a number of elements received by &lt;code&gt;velocity&lt;/code&gt; and &lt;code&gt;density&lt;/code&gt; ports:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;type: {type: array, subtype: char, size: $velocitySize} # velocitySize is defined as metadata&lt;/code&gt; Here &lt;code&gt;velocitySize&lt;/code&gt; must be preceded with &lt;code&gt;$&lt;/code&gt; to let plugin to write the size there. The &lt;code&gt;velocitySize&lt;/code&gt; descriptor will store a valid size &lt;strong&gt;after&lt;/strong&gt; accessing the &lt;code&gt;velocity&lt;/code&gt; descriptor, because only then plugin will write size.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/fluid_net.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: The user-code plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The &lt;code&gt;user-code&lt;/code&gt; plugin enables one to call a user-defined function when a specified event occur or certain data becomes available.&lt;/p&gt;
+&lt;h2 id=&#34;important-notes&#34;&gt;Important notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure to compile your program with &lt;code&gt;Wl,--export-dynamic&lt;/code&gt; or &lt;code&gt;-rdynamic&lt;/code&gt; flag (in CMake set &lt;code&gt;ENABLE_EXPORTS&lt;/code&gt; to &lt;code&gt;TRUE&lt;/code&gt; using &lt;code&gt;set_target_properties&lt;/code&gt; command) in order to generate necessary symbols.&lt;/li&gt;
+&lt;li&gt;Make sure you use the proper access rights in your function in &lt;a href=&#34;member:group__annotation_1ga8dcd0c81d7697ea473a55bd57efb717d&#34;&gt;PDI_access&lt;/a&gt; (PDI_IN for reading, PDI_OUT for writing).&lt;/li&gt;
+&lt;li&gt;Descriptor aliases enables one to use different descriptors without the need to recompile the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dependencies-between-the-code-and-the-specification-tree&#34;&gt;Dependencies between the code and the specification tree&lt;/h2&gt;
+&lt;p&gt;To ensure proper work of the &lt;code&gt;user-code&lt;/code&gt; plugin, there are several conventions to follow in the application code and the specification tree.&lt;/p&gt;
+&lt;p&gt;First, each function name in specification tree must be a valid function name (watch out for &lt;a href=&#34;https://en.wikipedia.org/wiki/Name_mangling&#34;&gt;name mangling&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Second, these functions &lt;strong&gt;can not&lt;/strong&gt; take any arguments or return any value (i.e. their type must be &lt;code&gt;void(void)&lt;/code&gt;). Use descriptors for passing input/output variables instead.&lt;/p&gt;
+&lt;p&gt;Third, function&#39;s symbols &lt;strong&gt;must&lt;/strong&gt; be exported to make them accessible by &lt;code&gt;user-code&lt;/code&gt; plugin. To do this, compile your program as described in &lt;a href=&#34;member:user_code_plugin_1important_notes_node&#34;&gt;Important notes&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;use-examples&#34;&gt;Use examples&lt;/h2&gt;
+&lt;p&gt;This section shows a simple examples with the use of a &lt;code&gt;user-code&lt;/code&gt; plugin.&lt;/p&gt;
+&lt;h3 id=&#34;hello-world&#34;&gt;Hello world!&lt;/h3&gt;
+&lt;p&gt;First, we will call simple function without the use of descriptors to print &amp;quot;Hello world!&amp;quot; on &amp;quot;print&amp;quot; event.&lt;/p&gt;
+&lt;p&gt;hello_world.c:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;pdi.h&amp;gt;
+
+void hello_world(void)
+{
+    printf(&amp;quot;Hello world!\n&amp;quot;);
+}
+
+int main(int argc, char* argv[])
+{
+    PC_tree_t conf = PC_parse_path(&amp;quot;hello_world.yml&amp;quot;);
+    PDI_init(conf);
+    PDI_event(&amp;quot;print&amp;quot;);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;hello_world.yml:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+    user_code:
+        on_event:
+            print:
+                hello_world: {}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][User-code][13:40:55] *** info: Plugin loaded successfully
+[PDI][13:40:55] *** info: Initialization successful
+Hello world!
+[PDI][13:40:55] *** info: Finalization
+[PDI][User-code][13:40:55] *** info: Closing plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;handling-input&#34;&gt;Handling input&lt;/h3&gt;
+&lt;p&gt;Now we will pass some input data to the function.&lt;/p&gt;
+&lt;p&gt;print_number.c:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;pdi.h&amp;gt;
+
+void print_number(void)
+{
+    void* input; PDI_access(&amp;quot;input&amp;quot;, &amp;amp;input, PDI_IN);
+    printf(&amp;quot;I&#39;ve got number %d.\n&amp;quot;, *((int*)input));
+    PDI_release(&amp;quot;input&amp;quot;);
+}
+
+int main(int argc, char* argv[])
+{
+    PC_tree_t conf = PC_parse_path(&amp;quot;print_number.yml&amp;quot;);
+    PDI_init(conf);
+    int number = 42;
+    PDI_share(&amp;quot;number&amp;quot;, &amp;amp;number, PDI_OUT);
+    PDI_event(&amp;quot;print&amp;quot;);
+    PDI_reclaim(&amp;quot;number&amp;quot;);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;print_number.yml:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+    number: int
+plugins:
+    user_code:
+        on_event:
+            print:
+                print_number: {input: $number}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][User-code][13:49:30] *** info: Plugin loaded successfully
+[PDI][13:49:30] *** info: Initialization successful
+I&#39;ve got number 42.
+[PDI][13:49:30] *** info: Finalization
+[PDI][User-code][13:49:30] *** info: Closing plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We can simplify this example by using &lt;code&gt;on_data&lt;/code&gt; to print value of number when it is shared to PDI.&lt;/p&gt;
+&lt;p&gt;print_number.c:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;pdi.h&amp;gt;
+
+void print_number(void)
+{
+    void* input; PDI_access(&amp;quot;input&amp;quot;, &amp;amp;input, PDI_IN);
+    printf(&amp;quot;I&#39;ve got number %d.\n&amp;quot;, *((int*)input));
+    PDI_release(&amp;quot;input&amp;quot;);
+}
+
+int main(int argc, char* argv[])
+{
+    PC_tree_t conf = PC_parse_path(&amp;quot;print_number.yml&amp;quot;);
+    PDI_init(conf);
+    int number = 42;
+    PDI_expose(&amp;quot;number&amp;quot;, &amp;amp;number, PDI_OUT);
+    //PDI_event is no longer necessary and PDI_share/PDI_reclaim can be simplified to PDI_expose
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;print_number.yml:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+    number: int
+plugins:
+    user_code:
+        on_data:
+            number:
+                print_number: {input: $number}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;output does not change:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][User-code][13:52:15] *** info: Plugin loaded successfully
+[PDI][13:52:15] *** info: Initialization successful
+I&#39;ve got number 42.
+[PDI][13:52:15] *** info: Finalization
+[PDI][User-code][13:52:15] *** info: Closing plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;handling-output&#34;&gt;Handling output&lt;/h3&gt;
+&lt;p&gt;Output handling is very similar to the input handling, the only difference are the access rights. In this example we will call &lt;code&gt;add_ten&lt;/code&gt; function when &lt;code&gt;number&lt;/code&gt; is shared to PDI.&lt;/p&gt;
+&lt;p&gt;adding_to_number.c:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;pdi.h&amp;gt;
+
+void add_ten(void)
+{
+    void* input; PDI_access(&amp;quot;input&amp;quot;, &amp;amp;input, PDI_OUT);
+    *((int*)input) += 10;
+    PDI_release(&amp;quot;input&amp;quot;);
+}
+
+int main(int argc, char* argv[])
+{
+    PC_tree_t conf = PC_parse_path(&amp;quot;adding_to_number.yml&amp;quot;);
+    PDI_init(conf);
+    int number = 42;
+    printf(&amp;quot;Before expose, number = %d.\n&amp;quot;, number);
+    PDI_expose(&amp;quot;number&amp;quot;, &amp;amp;number, PDI_IN);
+    printf(&amp;quot;After expose, number = %d.\n&amp;quot;, number);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;adding_to_number.yml:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+    number: int
+plugins:
+    user_code:
+        on_data:
+            number:
+                add_ten: {input: $number}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][User-code][13:53:51] *** info: Plugin loaded successfully
+[PDI][13:53:51] *** info: Initialization successful
+Before expose, number = 42.
+After expose, number = 52.
+[PDI][13:53:51] *** info: Finalization
+[PDI][User-code][13:53:51] *** info: Closing plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;multiple-inputoutput-data&#34;&gt;Multiple input/output data&lt;/h3&gt;
+&lt;p&gt;In this example we will use multiple data in function. We will add and multiply two given numbers and return the results on event &amp;quot;calculate&amp;quot;.&lt;/p&gt;
+&lt;p&gt;calculate.c:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;pdi.h&amp;gt;
+
+void sum_and_multiply(void)
+{
+    void* number1; PDI_access(&amp;quot;number1&amp;quot;, &amp;amp;number1, PDI_IN);
+    void* number2; PDI_access(&amp;quot;number2&amp;quot;, &amp;amp;number2, PDI_IN);
+    void* sum;     PDI_access(&amp;quot;sum&amp;quot;, &amp;amp;sum, PDI_OUT);
+    void* product; PDI_access(&amp;quot;product&amp;quot;, &amp;amp;product, PDI_OUT);
+    *((int*)sum) = *((int*)number1) + *((int*)number2);
+    *((int*)product) = *((int*)number1) * *((int*)number2);
+    PDI_release(&amp;quot;number1&amp;quot;);
+    PDI_release(&amp;quot;number2&amp;quot;);
+    PDI_release(&amp;quot;sum&amp;quot;);
+    PDI_release(&amp;quot;product&amp;quot;);
+}
+
+int main(int argc, char* argv[])
+{
+    PC_tree_t conf = PC_parse_path(&amp;quot;calculate.yml&amp;quot;);
+    PDI_init(conf);
+    int foo = 4, bar = 5, res1 = 0, res2 = 0;
+    printf(&amp;quot;Before calculation, foo = %d, bar = %d, res1 = %d, res2 = %d.\n&amp;quot;, foo, bar, res1, res2);
+    PDI_multi_expose(&amp;quot;calculate&amp;quot;,
+        &amp;quot;foo&amp;quot;, &amp;amp;foo, PDI_OUT,
+        &amp;quot;bar&amp;quot;, &amp;amp;bar, PDI_OUT,
+        &amp;quot;res1&amp;quot;, &amp;amp;res1, PDI_IN,
+        &amp;quot;res2&amp;quot;, &amp;amp;res2, PDI_IN, NULL);
+    printf(&amp;quot;After calculation, foo = %d, bar = %d, res1 = %d, res2 = %d.\n&amp;quot;, foo, bar, res1, res2);
+    PDI_finalize();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;calculate.yml:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+    foo: int
+    bar: int
+    res1: int
+    res2: int
+plugins:
+    user_code:
+        on_event:
+            calculate:
+                sum_and_multiply: {number1: $foo, number2: $bar, sum: $res1, product: $res2}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][User-code][13:58:20] *** info: Plugin loaded successfully
+[PDI][13:58:20] *** info: Initialization successful
+Before calculation, foo = 4, bar = 5, res1 = 0, res2 = 0.
+After calculation, foo = 4, bar = 5, res1 = 9, res2 = 20.
+[PDI][13:58:20] *** info: Finalization
+[PDI][User-code][13:58:20] *** info: Closing plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;configuration-grammar&#34;&gt;Configuration grammar&lt;/h2&gt;
+&lt;p&gt;The root of &lt;code&gt;user-code&lt;/code&gt; plugin is a dictionary that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;on_data&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:user_code_plugin_1on_data_node&#34;&gt;on_data&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;on_event&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:user_code_plugin_1on_event_node&#34;&gt;on_event&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;anything&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;on_data&lt;/code&gt; key specifies the list of descriptors that, when they become available, will cause the specified functions to be called,&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;on_event&lt;/code&gt; key specifies the list of events on which to call the specified functions,&lt;/li&gt;
+&lt;li&gt;additional keys are ignored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;on_data&#34;&gt;on_data&lt;/h3&gt;
+&lt;p&gt;A &lt;a href=&#34;member:user_code_plugin_1on_data_node&#34;&gt;on_data&lt;/a&gt; is a dictionary that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:user_code_plugin_1function_list_node&#34;&gt;function_list&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a descriptor, which will trigger specified functions when it becomes available.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;on_event&#34;&gt;on_event&lt;/h3&gt;
+&lt;p&gt;A &lt;a href=&#34;member:user_code_plugin_1on_event_node&#34;&gt;on_event&lt;/a&gt; is a dictionary that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:user_code_plugin_1function_list_node&#34;&gt;function_list&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of an event, which will trigger specified functions when it occurs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;function_list&#34;&gt;function_list&lt;/h3&gt;
+&lt;p&gt;A &lt;a href=&#34;member:user_code_plugin_1function_list_node&#34;&gt;function_list&lt;/a&gt; is a dictionary that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:user_code_plugin_1function_param_list_node&#34;&gt;function_param_list&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a function, which will be called on specified event or data,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: these functions &lt;strong&gt;can not&lt;/strong&gt; take any arguments or return any value (i.e. their type must be &lt;code&gt;void(void)&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;function_param_list&#34;&gt;function_param_list&lt;/h3&gt;
+&lt;p&gt;A &lt;a href=&#34;member:user_code_plugin_1function_param_list_node&#34;&gt;function_param_list&lt;/a&gt; is a dictionary that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a $-expression referencing a data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a descriptor alias, which will be available during function execution.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;specification-tree-example&#34;&gt;Specification tree example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;data:
+    desc1: int
+    desc2: float
+    desc3: double
+plugins:
+    user_code:
+        on_data:
+            desc1:
+                fun1: {in: $desc2, out: $desc3}
+            desc2:
+                fun2: {}
+                fun3: {out: $desc2}
+        on_event:
+            event1:
+                fun2: {}
+            event2:
+                fun4: {param1: $desc2, param2: $desc1, param3: $desc3}
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Trace plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The trace plugin is intended to generate a trace of what happens in &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;PDI data store&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The plugin is very simple; just list its name in the &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;specification tree&lt;/a&gt; and you&#39;re done.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data: #...
+metadata: #...
+plugins:
+  trace:
+  #...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The plugin then generates a (somewhat verbose) trace on the standard error.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[PDI][Test-plugin][00:00:00] *** info: Welcome!
+[PDI][Test-plugin][00:00:00] *** info: =&amp;gt;&amp;gt;   data becoming available in the store: my_data
+[PDI][Test-plugin][00:00:00] *** info: &amp;lt;&amp;lt;= data stop being available in the store: my_data
+[PDI][Test-plugin][00:00:00] *** info: !!!                            named event: my_event
+[PDI][Test-plugin][00:00:00] *** info: Goodbye!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each line starting by &lt;code&gt;=&amp;gt;&amp;gt; data becoming available in the store&lt;/code&gt; means a new piece of data has been shared.&lt;/p&gt;
+&lt;p&gt;Each line starting by &lt;code&gt;&amp;lt;&amp;lt;= data stop being available in the store&lt;/code&gt; means a piece of data is being removed from the store.&lt;/p&gt;
+&lt;p&gt;Each line starting by &lt;code&gt;!!! named event&lt;/code&gt; means a named event has been emitted.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

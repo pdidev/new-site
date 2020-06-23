@@ -1,0 +1,2004 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.72.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/new-site/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
+
+<title>The FlowVR plugin | PDI</title><meta property="og:title" content="The FlowVR plugin" />
+<meta property="og:description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
+Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
+ component wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now only available component is module, but this can be expanded to filter and synchronizer in the future." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/" />
+
+<meta itemprop="name" content="The FlowVR plugin">
+<meta itemprop="description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
+Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
+ component wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now only available component is module, but this can be expanded to filter and synchronizer in the future.">
+
+<meta itemprop="wordCount" content="2286">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The FlowVR plugin"/>
+<meta name="twitter:description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
+Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
+ component wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now only available component is module, but this can be expanded to filter and synchronizer in the future."/>
+
+
+
+
+
+<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
+<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/new-site/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg8" viewBox="0 0 40 40"><defs id="defs2"><linearGradient id="linearGradient846"><stop id="stop842" offset="0" style="stop-color:#3a82c2;stop-opacity:1"/><stop style="stop-color:#073763;stop-opacity:1" offset=".4946366" id="stop850"/><stop id="stop844" offset="1" style="stop-color:#3a82c2;stop-opacity:1"/></linearGradient><linearGradient gradientTransform="matrix(1.1064998,0,0,1.1064998,-2.8109111,-3.2500611)" gradientUnits="userSpaceOnUse" y2="6.0482411" x2="25.209953" y1="41.294521" x1="25.249392" id="linearGradient848" xlink:href="#linearGradient846"/><filter id="filter1270" style="color-interpolation-filters:sRGB"><feFlood id="feFlood1260" result="flood" flood-color="rgb(0,0,0)" flood-opacity=".498039"/><feComposite id="feComposite1262" result="composite1" operator="in" in2="SourceGraphic" in="flood"/><feGaussianBlur id="feGaussianBlur1264" result="blur" stdDeviation="1" in="composite1"/><feOffset id="feOffset1266" result="offset" dy=".6" dx=".6"/><feComposite id="feComposite1268" result="composite2" operator="over" in2="offset" in="SourceGraphic"/></filter></defs><g transform="translate(-4.6772165,-3.1371543)" id="layer1"><circle r="19.5" cy="22.994598" cx="24.687487" id="path840" style="opacity:1;fill:url(#linearGradient848);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><flowRoot transform="matrix(0.26458333,0,0,0.26458333,4.6772165,3.1371543)" style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#000;fill-opacity:1;stroke:none" id="flowRoot852"><flowRegion id="flowRegion854"><rect y="55.823959" x="32.857143" height="43.92857" width="94.285713" id="rect856"/></flowRegion><flowPara id="flowPara858">PPd</flowPara></flowRoot><text transform="matrix(1.0723861,0,0,1.0723861,-1.9406576,-2.4256035)" id="text862" y="30.191469" x="10.006681" style="font-style:normal;font-weight:400;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.24672395;filter:url(#filter1270)"><tspan style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:17.63888931px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#fff;fill-opacity:1;stroke-width:.24672395" y="30.191469" x="10.006681" id="tspan860">PDI</tspan></text></g></svg></span><span class="text-uppercase font-weight-bold">PDI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/new-site/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/master/">git master</a>
+	
+	<a class="dropdown-item" href="/">latest release (0.5.1)</a>
+	
+	<a class="dropdown-item" href="/0.5.0/">release 0.5.0</a>
+	
+	<a class="dropdown-item" href="/0.4.1/">release 0.4.1</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocs">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsconcepts" href="/new-site/docs/concepts/">Core Concepts</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdeprecated" href="/new-site/docs/deprecated/">Deprecated List</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Full API reference</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsref">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/array_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Array_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiarray_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/datatype_template_parser/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_parser</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextdatatype_template_parser">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/iterator/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Iterator</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextiterator">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context_proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context_proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext_proxy">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/data_descriptor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Data_descriptor</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidata_descriptor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/error/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Error</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdierror">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/expression/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Expression</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiexpression">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/logger_sptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Logger_sptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdilogger_sptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/paraconf_wrapper/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Paraconf_wrapper</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiparaconf_wrapper">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/plugin/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Plugin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiplugin">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatype">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/member/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Member</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatypemember">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_any/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_any</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_any">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_base</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_base/referenced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_basereferenced">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_r">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_rw/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_rw</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_rw">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_w/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_w</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_w">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_kind/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_kind</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_kind">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi_errhandler_t/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_t</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_t">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/spdlog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">spdlog</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefspdlog">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">std</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstd">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">hash&lt; PDI::Ref_any&lt; R, W &gt; &gt;</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstdhash__pdi__ref_any__r__w____">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshow_to_create_plugin" href="/new-site/docs/how_to_create_plugin/">How to create a plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsphilosophy" href="/new-site/docs/philosophy/">Philosophy of PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsspecification_tree_ref" href="/new-site/docs/specification_tree_ref/">Specification tree Reference</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdecl_hdf5_plugin" href="/new-site/docs/decl_hdf5_plugin/">The Decl&#39;HDF5 plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocsflowvr_plugin" href="/new-site/docs/flowvr_plugin/">The FlowVR plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsuser_code_plugin" href="/new-site/docs/user_code_plugin/">The user-code plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocstrace_plugin" href="/new-site/docs/trace_plugin/">Trace plugin</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="TableOfContents"><ul>
+
+
+<li><a href="#member-types-list">Member Types</a><li>
+
+
+
+
+
+
+<li><a href="#detailed-documentation">Detailed Documentation</a><li>
+<ul>
+
+</ul>
+
+</li></div>
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/">The FlowVR plugin</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>The FlowVR plugin</h1>
+    
+	       
+	<p>The <a href="http://flowvr.sourceforge.net">FlowVR</a> plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.</p>
+<h2 id="configuration-elements">Configuration elements</h2>
+<h3 id="flowvr-plugin-tree">FlowVR plugin tree</h3>
+<p>The root of FlowVR plugin configuration (named <code>flowvr</code>), is a dictionary that contains the following keys:</p>
+<ul>
+<li><a href="member:FlowVR_plugin_1component_node">component</a></li>
+<li><a href="member:FlowVR_plugin_1wait_on_data_node">wait_on_data</a> (<em>recommended</em>)</li>
+<li><a href="member:FlowVR_plugin_1wait_on_node">wait_on</a> (<em>optional</em>)</li>
+<li><a href="member:FlowVR_plugin_1status_node">status</a> (<em>optional</em>)</li>
+<li><a href="member:FlowVR_plugin_1abort_on_node">abort_on</a> (<em>optional</em>)</li>
+<li><a href="member:FlowVR_plugin_1init_on_node">init_on</a> (<em>optional</em>)</li>
+<li><a href="member:FlowVR_plugin_1input_ports">input_ports</a> (<em>optional</em>)</li>
+<li><a href="member:FlowVR_plugin_1output_ports">output_ports</a> (<em>optional</em>)</li>
+</ul>
+<h4 id="component">component</h4>
+<p>For now only available component is <code>module</code>, but this can be expanded to <code>filter</code> and <code>synchronizer</code> in the future. Configuration example:</p>
+<pre><code>plugins:
+  flowvr:
+    component: module
+</code></pre><h4 id="wait_on_data">wait_on_data</h4>
+<p>The plugin will call <code>wait</code> funciton every time given descriptors will be shared with <code>PDI_IN</code> access direction. This descriptor must be an integer type and the status returned from this call will be written as a response. Configuration example:</p>
+<pre><code>data:
+  wait_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+</code></pre><h4 id="wait_on">wait_on</h4>
+<p>Defines on which events the plugin calls the <code>wait</code> function. The value can be either single event name or the array of events names (both examples presented below). This method of calling <code>wait</code> should be avoided if possible, because it's not returning the wait status. Configuration examples:</p>
+<pre><code>plugins:
+  flowvr:
+    component: module
+    wait_on: &quot;wait_event&quot;
+</code></pre><pre><code>plugins:
+  flowvr:
+    component: module
+    wait_on: [&quot;wait_event_1&quot;, &quot;wait_event_2&quot;]
+</code></pre><h4 id="status">status</h4>
+<p>PDI will copy the status of the module to the given descriptor. The same as the <code>wait_on</code> it can be a single name or an array of names. Configuration example:</p>
+<pre><code>data:
+  wait_desc: int
+  status_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+    status: status_desc
+</code></pre><h4 id="abort_on">abort_on</h4>
+<p>Defines on which events the plugin calls the <code>abort</code> function which will stop the flowvr application. The value can be either single event name or the array of events names. Configuration examples:</p>
+<pre><code>data:
+  wait_desc: int
+
+plugins:
+  flowvr:
+   component: module
+    wait_on_data: wait_desc
+    abort_on: &quot;abort_event&quot;
+</code></pre><h4 id="init_on">init_on</h4>
+<p>Defining this subtree tells PDI that the plugin should be initialized not on <code>PDI_init</code>, but on given event.</p>
+<pre><code>data:
+  wait_desc: int
+
+plugins:
+  flowvr:
+   component: module
+    wait_on_data: wait_desc
+    init_on: &quot;init_event&quot;
+</code></pre><h4 id="parallel">parallel</h4>
+<p>This node can be for reading rank and size of the world, but also can be for setting this values. <code>get_rank</code> will copy process's rank to given descriptor on share, <code>get_size</code> will save the world size the same way. Example:</p>
+<pre><code>data:
+  wait_desc: int
+  rank_desc: int
+  size_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+    parallel:
+      get_rank: rank_desc
+      get_size: size_desc
+</code></pre><p>Values (use <code>$</code> expression) from descriptors defined in <code>set_rank</code> and <code>set_size</code> will be passed to flowvr and set the environment. Setting this parameters must occur before plugin initialization. For this you need to use <code>init_on</code> event and call this event after setting rank and size.</p>
+<pre><code>data:
+  wait_desc: int
+  rank_desc: int
+  size_desc: int
+
+plugins:
+  flowvr:
+    component: module
+    wait_on_data: wait_desc
+    parallel:
+      set_rank: $rank_desc
+      set_size: $size_desc
+</code></pre><h4 id="several-modules">Several modules</h4>
+<p>Single program can run several modules at once. To make it work just create array of modules in <code>flowvr</code> tree. Configuration example:</p>
+<pre><code>data:
+  wait_1: int
+  wait_2: int
+
+flowvr:
+  - component: module
+    wait_on_data: wait_1
+    ...
+  - component: module
+    wait_on_data: wait_2
+    ...
+</code></pre><h3 id="ports">Ports</h3>
+<h4 id="input_ports">input_ports</h4>
+<p>Input ports are defined in <code>input_ports</code> tree. Each port is defined by name and <a href="member:FlowVR_plugin_1message">Message</a> it will receive. You can add <code>event_port: true</code> to define this as event port (non-blocking).</p>
+<pre><code>flowvr:
+  ...
+  input_ports:
+    port_name_1:
+      ...
+    port_name_2:
+      event_port: true
+      ...
+</code></pre><h4 id="output_ports">output_ports</h4>
+<p>Output ports are defined in <code>output_ports</code> tree. Each port is defined by name and <a href="member:FlowVR_plugin_1message">Message</a> it will send.</p>
+<pre><code>flowvr:
+  ...
+  output_ports:
+    port_name_1: ...
+    port_name_2: ...
+</code></pre><h3 id="message">Message</h3>
+<p>Flowvr message consists of payload and stamps. The <code>payload</code> is defined by user by a specific key in port definition:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>message type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;data&quot;</td>
+<td><a href="member:FlowVR_plugin_1data_payload">Data payload</a></td>
+</tr>
+<tr>
+<td>&quot;chunks&quot;</td>
+<td><a href="member:FlowVR_plugin_1chunks_payload">Chunk payload</a></td>
+</tr>
+<tr>
+<td>&quot;event_button&quot;</td>
+<td><a href="member:FlowVR_plugin_1button_payload">Event button payload</a></td>
+</tr>
+<tr>
+<td>&quot;event_mouse&quot;</td>
+<td><a href="member:FlowVR_plugin_1mouse_payload">Event mouse payload</a></td>
+</tr>
+</tbody>
+</table>
+<p>If none of the message type will be given, plugin will create a STAMP port (message has no payload). <code>stamps</code> are described in <a href="member:FlowVR_plugin_1stamp">Stamp</a> section.</p>
+<h4 id="data-payload">Data payload</h4>
+<p>Requires <code>data</code> key in a port tree. This configuration means that module will send simple buffer. The plugin doesn't know the type of sending data. The value of <code>data</code> key is the name of the descriptor where:</p>
+<ul>
+<li>for input port - FlowVR plugin will write to received data</li>
+<li>for output port - FlowVR plugin will read from to send data</li>
+</ul>
+<p>Example of <code>data</code> in output port:</p>
+<pre><code>data:
+  data_desc: {type: array, subtype: int, size: 32}
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      data: data_desc
+</code></pre><p>The user can not always predict how many data will receive. In this case <code>size</code> node type must be a name of metadata where to write the size of received payload. This metadata will hold the size of received array. The <code>size</code> property of descriptor should be divided by size of single element. Example of receiving unknown payload size:</p>
+<pre><code>metadata:
+  received_size : int
+data:
+  data_descriptor_name: {type: array, subtype: int, size: $received_size/4}
+
+plugins:
+  flowvr:
+    ...
+    input_ports:
+      port_name:
+        data: data_descriptor_name
+        size: received_size
+</code></pre><p>In case that you want to send only a part of the data from descriptor you can specify it in <code>copy_data_selection</code> tree defining datatype the same way as for descriptors. Simple example:</p>
+<pre><code>data:
+  data_descriptor_name:  {type: array, subtype: int, size: [32, 32]}
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      data: data_descriptor_name
+      copy_data_selection:
+        type: array
+        subtype: int
+        size: [32, 32]
+        subsize: [30, 30]
+        start: [1, 1]
+</code></pre><h3 id="chunk-payload">Chunk payload</h3>
+<p>Requires <code>chunks</code> key in a port tree. This configuration means that module will send several buffers in one payload. Value of the <code>chunks</code> key is the list of <a href="member:FlowVR_plugin_1data_payload">Data payload</a>.</p>
+<hr>
+<p>WARNING</p>
+<p>After each wait, the first access to the any descriptor (that belongs to the chunks) will allocate the memory for the all descriptors. This means that all sizes (if stored as metadata) should be set before first access to any of the descriptors.</p>
+<hr>
+<pre><code>data:
+  chunk_1_name: int
+  chunk_2_name: {type: array, subtype: char, size: 255}
+  chunk_3_name: float
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      chunks:
+        - data: chunk_1_name
+        - data: chunk_2_name
+        - data: chunk_3_name
+</code></pre><h3 id="event-button-payload">Event button payload</h3>
+<p>Requires <code>event_button</code> key in a port tree. The payload holds the values of the keyboard keys pressed during iteration.</p>
+<p>The full list of predefined keys:</p>
+<table>
+<thead>
+<tr>
+<th>key in configuration</th>
+<th>key on keyboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEY_F1</td>
+<td>F1</td>
+</tr>
+<tr>
+<td>KEY_F2</td>
+<td>F2</td>
+</tr>
+<tr>
+<td>KEY_F3</td>
+<td>F3</td>
+</tr>
+<tr>
+<td>KEY_F4</td>
+<td>F4</td>
+</tr>
+<tr>
+<td>KEY_F5</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>KEY_F6</td>
+<td>F6</td>
+</tr>
+<tr>
+<td>KEY_F7</td>
+<td>F7</td>
+</tr>
+<tr>
+<td>KEY_F8</td>
+<td>F8</td>
+</tr>
+<tr>
+<td>KEY_F9</td>
+<td>F9</td>
+</tr>
+<tr>
+<td>KEY_F10</td>
+<td>F10</td>
+</tr>
+<tr>
+<td>KEY_F11</td>
+<td>F11</td>
+</tr>
+<tr>
+<td>KEY_F12</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>KEY_UP</td>
+<td>Up Arrow</td>
+</tr>
+<tr>
+<td>KEY_DOWN</td>
+<td>Down Arrow</td>
+</tr>
+<tr>
+<td>KEY_LEFT</td>
+<td>Left Arrow</td>
+</tr>
+<tr>
+<td>KEY_RIGHT</td>
+<td>Right Arrow</td>
+</tr>
+<tr>
+<td>KEY_PAGE_UP</td>
+<td>Page Up</td>
+</tr>
+<tr>
+<td>KEY_PAGE_DOWN</td>
+<td>Page Down</td>
+</tr>
+<tr>
+<td>KEY_HOME</td>
+<td>Home</td>
+</tr>
+<tr>
+<td>KEY_END</td>
+<td>End</td>
+</tr>
+<tr>
+<td>KEY_INSERT</td>
+<td>Insert</td>
+</tr>
+</tbody>
+</table>
+<p>Value for each key in configuration is a descriptor of integer type. You need to make sure that you are setting this descriptors with correct values on each iteration. Example of configuration with arrow buttons:</p>
+<pre><code>data:
+  up: int
+  down: int
+  left: int
+  right: int
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      event_button:
+        KEY_UP: up
+        KEY_DOWN: down
+        KEY_LEFT: left
+        KEY_RIGHT: right
+</code></pre><h3 id="event-mouse-payload">Event mouse payload</h3>
+<p>Requires <code>event_mouse</code> key in a port tree. The payload holds the values of the mouse keys pressed and cursor position during iteration. The button state is saved in descriptors of integer type and a cursor position in an array of 2 floats.</p>
+<p>Available keys in <code>event_mouse</code> tree:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POS_XY</td>
+<td>cursor position</td>
+</tr>
+<tr>
+<td>LEFT_BUTTON</td>
+<td>left mouse button</td>
+</tr>
+<tr>
+<td>MIDDLE_BUTTON</td>
+<td>middle mouse button</td>
+</tr>
+<tr>
+<td>RIGHT_BUTTON</td>
+<td>right mouse button</td>
+</tr>
+</tbody>
+</table>
+<p>Example of configuration with all keys defined:</p>
+<pre><code>data:
+  pos_xy: {type: array, subtype: float, size: 2}
+  left_button: int
+  right_button: int
+  middle_button: int
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      event_mouse:
+        POS_XY: pos_xy
+        LEFT_BUTTON: left_button
+        RIGHT_BUTTON: right_button
+        MIDDLE_BUTTON: middle_button
+</code></pre><h3 id="stamp">Stamp</h3>
+<p>The <code>stamps</code> key must be defined in a port tree. The value of <code>stamps</code> is simply a map with the stamp name and descriptor name. The given descriptor must have a valid PDI type, limited to:</p>
+<ul>
+<li><code>int</code></li>
+<li><code>float</code></li>
+<li><code>array of ints</code></li>
+<li><code>array of floats</code></li>
+<li><code>array of chars</code></li>
+</ul>
+<p>Example of message with <a href="member:FlowVR_plugin_1data_payload">Data payload</a> and 2 stamps:</p>
+<pre><code>data:
+  data_desc: {type: array, subtype: int, size: 256}
+  stamp_1_desc: int
+  stamp_2_desc: {type: array, subtype: float, size: 2}
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      data: data_desc
+      stamps:
+        stamp_1_name: stamp_1_desc
+        stamp_2_name: stamp_2_desc
+</code></pre><p>For output port stamp can be also define as an expression, but stamp will need type definition in this case. Example of expression stamp:</p>
+<pre><code>metadata:
+  value_desc: int
+
+flowvr:
+  ...
+  output_ports:
+    port_name:
+      stamps:
+        stamp_name:
+          type: int
+          expression: ($value_desc/2) * 3
+</code></pre><p>For now only int and string stamps are supported as expression.</p>
+<h2 id="reading-and-writing-data-examples">Reading and writing data examples</h2>
+<p>FlowVR plugin uses 2 ways to handle data reading and writing:</p>
+<ol>
+<li>Access the shared memory - the fastest way, user operates on flowvr shared memory.</li>
+<li>Copy the data from shared memory to descriptor - needs the data copy (convenient for small messages or sparse data types).</li>
+</ol>
+<h3 id="read-data-from-flowvr-message-by-access-the-shared-memory">Read data from FlowVR message by access the shared memory</h3>
+<pre><code>data:
+  text_shr: {type: array, subtype: char, size: 4}
+
+...
+    input_ports:
+      text:
+        data: text_shr
+</code></pre><pre><code>char* text_shr;
+PDI_access(&quot;text_shr&quot;, (void**)&amp;text_shr, PDI_IN);
+
+// do something with text_shr or copy data to local buffer
+
+PDI_release(&quot;text_shr&quot;); // really important to release descriptors
+</code></pre><h3 id="write-data-from-flowvr-message-by-access-the-shared-memory">Write data from FlowVR message by access the shared memory</h3>
+<pre><code>data:
+  text_shr: {type: array, subtype: char, size: 4}
+
+...
+    output_ports:
+      text:
+        data: text_shr
+</code></pre><pre><code>char* text_shr;
+PDI_access(&quot;text_shr&quot;, (void**)&amp;text_shr, PDI_OUT);
+
+// do something with text_shr or copy data from local buffer
+
+PDI_release(&quot;text_shr&quot;); // really important to release descriptors
+</code></pre><h3 id="read-data-from-flowvr-message-by-copy-from-the-shared-memory">Read data from FlowVR message by copy from the shared memory</h3>
+<pre><code>data:
+  text: {type: array, subtype: char, size: 4}
+
+...
+    input_ports:
+      text:
+        data: text
+</code></pre><pre><code>char text[4];
+PDI_expose(&quot;text&quot;, text, PDI_IN);
+</code></pre><h3 id="write-data-to-flowvr-message-by-copy-to-the-shared-memory">Write data to FlowVR message by copy to the shared memory</h3>
+<pre><code>data:
+  text: {type: array, subtype: char, size: 4}
+
+...
+    output_ports:
+      text:
+        data: text
+</code></pre><pre><code>char text[4];
+PDI_expose(&quot;text&quot;, text, PDI_OUT);
+</code></pre><h3 id="write-data-to-flowvr-message-by-copy-the-subset-of-data-to-the-shared-memory">Write data to FlowVR message by copy the subset of data to the shared memory</h3>
+<pre><code>data:
+  my_array: {type: array, subtype: int, size: [20, 20]}
+
+...
+    output_ports:
+      text:
+        data: my_array
+        copy_data_selection: {type: array, subtype: int, size: [20, 20], subsize: [10, 10], start: [0, 0]}
+</code></pre><pre><code>int my_array[400];
+PDI_expose(&quot;my_array&quot;, my_array, PDI_OUT); // copies only 100 elements
+</code></pre><h2 id="and-writing-stamps-examples">and writing stamps examples</h2>
+<p>Stamps are always copied from descriptor to flowvr message.</p>
+<h3 id="read-stamp-from-flowvr-message">Read stamp from FlowVR message</h3>
+<pre><code>data:
+  stamp_it: int
+...
+    input_ports:
+      text:
+        stamps:
+          it: stamp_it
+</code></pre><pre><code>int stamp_it = some_value;
+PDI_expose(&quot;stamp_it&quot;, &amp;stamp_it, PDI_IN);
+</code></pre><h3 id="write-stamp-from-flowvr-message">Write stamp from FlowVR message</h3>
+<pre><code>data:
+  user_stamp: int
+
+...
+    output_ports:
+      text:
+        stamps:
+          user_defined_stamp: user_stamp
+</code></pre><pre><code>int user_stamp = some_value;
+PDI_expose(&quot;user_stamp&quot;, &amp;user_stamp, PDI_OUT);
+</code></pre><h2 id="reading-and-writing-mouse-and-button-event-examples">Reading and writing mouse and button event examples</h2>
+<h3 id="write-mouse-event-from-flowvr-message">Write mouse event from FlowVR message</h3>
+<pre><code>data:
+  pos_xy: {type: array, subtype: float, size: 2}
+  left_button: int
+
+...
+    output_ports:
+      keysOut:
+        event_mouse:
+          POS_XY: pos_xy
+          LEFT_BUTTON: left_button
+</code></pre><pre><code>float pos_xy[2] = {x_pos, y_pos};
+PDI_expose(&quot;pos_xy&quot;, &amp;pos_xy, PDI_OUT);
+
+int left_button = 1;
+PDI_expose(&quot;left_button&quot;, &amp;left_button, PDI_OUT);
+</code></pre><h3 id="read-mouse-event-from-flowvr-message">Read mouse event from FlowVR message</h3>
+<pre><code>data:
+  pos_xy: {type: array, subtype: float, size: 2}
+  left_button: int
+
+...
+input_ports:
+  keysIn:
+    event_mouse:
+      POS_XY: pos_xy
+      LEFT_BUTTON: left_button
+</code></pre><pre><code>float pos_xy;
+PDI_expose(&quot;pos_xy&quot;, &amp;pos_xy, PDI_IN);
+
+int left_button;
+PDI_expose(&quot;left_button&quot;, &amp;left_button, PDI_IN);
+</code></pre><h3 id="write-button-event-from-flowvr-message">Write button event from FlowVR message</h3>
+<pre><code>data:
+  up: int
+  down: int
+
+...
+    output_ports:
+      keysOut:
+        event_button:
+          KEY_UP: up
+          KEY_DOWN: down
+</code></pre><pre><code>int up_state = 1;
+PDI_expose(&quot;up&quot;, &amp;up_state, PDI_OUT);
+
+int down_state = 1;
+PDI_expose(&quot;down&quot;, &amp;down_state, PDI_OUT);
+</code></pre><h3 id="read-button-event-from-flowvr-message">Read button event from FlowVR message</h3>
+<pre><code>data:
+  up: int
+  down: int
+
+...
+    input_ports:
+      keysIn:
+        event_button:
+          KEY_UP: up
+          KEY_DOWN: down
+</code></pre><pre><code>int up_state;
+PDI_expose(&quot;up&quot;, &amp;up_state, PDI_IN);
+
+int down_state;
+PDI_expose(&quot;down&quot;, &amp;down_state, PDI_IN);
+</code></pre><h2 id="flowvr-examples-reworked-for-pdi">FlowVR examples reworked for %PDI</h2>
+<p>Path to the examples:</p>
+<pre><code>pdi/build/pdi_plugin-flowvr/src/FLOWVR_PLUGIN-build/examples/
+</code></pre><p>Original flowvr source files are in directories <code>flowvr_original</code>.</p>
+<h3 id="running-the-application">Running the application</h3>
+<ol>
+<li>Go to examples folder: <code>cd pdi_plugin-flowvr/src/FLOWVR_PLUGIN-build/examples</code></li>
+<li>Run <code>source flowvr-config.sh</code>. Now your environment is ready.</li>
+<li>Run flowvr daemon on your system (best in new terminal, repeat 1. and 2.): <code>flowvrd --top</code></li>
+<li>Inside <code>$example_name</code> directory generate the flowvr configuration files by: <code>python $example_name.py</code> and run example by: <code>flowvr $example_name</code></li>
+</ol>
+<h3 id="tictac-example">Tictac example</h3>
+<p>Consists of 2 modules:</p>
+<ul>
+<li>
+<p><code>put</code></p>
+<ul>
+<li>
+<p>source file: <code>put.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>put.yml</code></p>
+</li>
+<li>
+<p>has <code>output port</code> named <code>text</code></p>
+</li>
+<li>
+<p>sends message with:</p>
+</li>
+<li>
+<p>data: <code>type: {type: array, subtype: char, size: 4} #&quot;tic&quot; or &quot;tac&quot;</code></p>
+</li>
+<li>
+<p>stamps:</p>
+</li>
+<li>
+<p>it (predefined flowvr stamp): <code>type: int</code></p>
+</li>
+<li>
+<p>my_stamp (user define int array stamp): <code>type: {type: array, subtype: int, size: 2}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>get</code></p>
+<ul>
+<li>
+<p>source file: <code>get.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>get.yml</code></p>
+</li>
+<li>
+<p>has <code>input port</code> named <code>text</code></p>
+</li>
+<li>
+<p>receive message sent by <code>put</code> module</p>
+</li>
+<li>
+<p>additionally has defined <code>stamp</code>:</p>
+</li>
+<li>
+<p>source (predefined flowvr stamp): <code>type: {type: array, subtype: char, size: 256}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Network of the application:</strong></p>
+<p><img src="/docs/imgs/tictac_net.jpg" alt=""></p>
+<h4 id="bundle-example">Bundle example</h4>
+<p>Consists of 3 modules:</p>
+<ul>
+<li>
+<p>2x <code>putMulitple</code></p>
+<ul>
+<li>
+<p>source file: <code>putMulitple.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>putMulitple.yml</code></p>
+</li>
+<li>
+<p>first one has <code>output port</code> named <code>text</code>, second <code>text2</code></p>
+</li>
+<li>
+<p>sends message with:</p>
+</li>
+<li>
+<p>data: <code>type: {type: array, subtype: char, size: 4} # first &quot;tic&quot; or &quot;tac&quot;, second &quot;TIC&quot; or &quot;TAC&quot;</code></p>
+</li>
+<li>
+<p>stamps:</p>
+</li>
+<li>
+<p><code>it</code> (predefined flowvr stamp): <code>type: int</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>getMulitple</code></p>
+<ul>
+<li>
+<p>source file: <code>getMulitple.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>getMulitple.yml</code></p>
+</li>
+<li>
+<p>has <code>input ports</code> named <code>text</code> and <code>text2</code></p>
+</li>
+<li>
+<p>receive message sent by <code>putMulitple</code> modules</p>
+</li>
+<li>
+<p>additionally has defined <code>stamp</code>:</p>
+</li>
+<li>
+<p>source (predefined flowvr stamp): <code>type: {type: array, subtype: char, size: 256}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Network of the application:</strong></p>
+<p><img src="/docs/imgs/bundle_net.jpg" alt=""></p>
+<h3 id="primes-example">Primes example</h3>
+<p>Consists of 3 modules:</p>
+<ul>
+<li>
+<p><code>capture</code></p>
+<ul>
+<li>
+<p>source file: <code>capture.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>capture.yml</code></p>
+</li>
+<li>
+<p>has <code>output port</code> named <code>keysOut</code></p>
+</li>
+<li>
+<p>sends message with:</p>
+</li>
+<li>
+<p><code>event_button</code> (payload):</p>
+</li>
+<li>
+<p>KEY_UP: up</p>
+</li>
+<li>
+<p>KEY_DOWN: down</p>
+</li>
+<li>
+<p>KEY_LEFT: left</p>
+</li>
+<li>
+<p>KEY_RIGHT: right</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>compute</code></p>
+<ul>
+<li>
+<p>source file: <code>compute.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>compute.yml</code></p>
+</li>
+<li>
+<p>has <code>output port</code> named <code>primesOut</code></p>
+</li>
+<li>
+<p>sends message with:</p>
+</li>
+<li>
+<p>data (payload): <code>type: {type: array, subtype: int, size: $tempPrimeNumbersMaxCount}</code></p>
+</li>
+<li>
+<p>stamps:</p>
+</li>
+<li>
+<p>computationTimeIt: <code>type: int</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>visu</code></p>
+<ul>
+<li>source file: <code>visu.cxx</code></li>
+<li>configuration file: <code>visu.yml</code></li>
+<li>has <code>input ports</code> named <code>primesIn</code> and <code>keysIn</code></li>
+<li>receive message sent by <code>capture</code> and <code>compute</code> modules</li>
+</ul>
+</li>
+</ul>
+<p><strong>Network of the application:</strong></p>
+<p><img src="/docs/imgs/primes_net.jpg" alt=""></p>
+<h3 id="fluid-example">Fluid example</h3>
+<p>Consists of 2 modules:</p>
+<ul>
+<li>
+<p><code>fluid</code></p>
+<ul>
+<li>
+<p>source file: <code>fluid.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>fluid.yml</code></p>
+</li>
+<li>
+<p>has <code>input port</code> named <code>position</code></p>
+</li>
+<li>
+<p>received message sent by <code>gldens</code> module</p>
+</li>
+<li>
+<p>has <code>output ports</code> named <code>velocity</code> and <code>density</code></p>
+</li>
+<li>
+<p><code>velocity</code> and <code>density</code> both sends message with:</p>
+</li>
+<li>
+<p>data (payload): <code>type: {type: array, subtype: char, size: [$NX * 2, $NY]} # where NX and NY is metadata</code></p>
+</li>
+<li>
+<p>stamps:</p>
+</li>
+<li>
+<p>P: <code>type: {type: array, subtype: int, size: 2}</code></p>
+</li>
+<li>
+<p>N: <code>type: {type: array, subtype: int, size: 2}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>gldens</code></p>
+<ul>
+<li>
+<p>source file: <code>gldens.cxx</code></p>
+</li>
+<li>
+<p>configuration file: <code>gldens.yml</code></p>
+</li>
+<li>
+<p>has <code>input ports</code> named <code>velocity</code> and <code>density</code></p>
+</li>
+<li>
+<p>received message sent by <code>fluid</code> module</p>
+</li>
+<li>
+<p>has <code>output port</code> named <code>position</code></p>
+</li>
+<li>
+<p>sends message with:</p>
+</li>
+<li>
+<p>data (payload): <code>type: {type: array, subtype: float, size: 3}</code></p>
+</li>
+<li>
+<p>very important is how to get a number of elements received by <code>velocity</code> and <code>density</code> ports:</p>
+</li>
+<li>
+<p><code>type: {type: array, subtype: char, size: $velocitySize} # velocitySize is defined as metadata</code> Here <code>velocitySize</code> must be preceded with <code>$</code> to let plugin to write the size there. The <code>velocitySize</code> descriptor will store a valid size <strong>after</strong> accessing the <code>velocity</code> descriptor, because only then plugin will write size.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Network of the application:</strong></p>
+<p><img src="/docs/imgs/fluid_net.jpg" alt=""></p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack for users" aria-label="Slack for users">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Gitlab for users" aria-label="Gitlab for users">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tags">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitLab" aria-label="GitLab">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Jenkins" aria-label="Jenkins">
+    <a class="text-white" target="_blank" href="https://ci.inria.fr/ah5/">
+      <i class="fab fa-jenkins"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/pdidev">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="DockerHub" aria-label="DockerHub">
+    <a class="text-white" target="_blank" href="https://hub.docker.com/orgs/pdidev">
+      <i class="fab fa-docker"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 The PDI team All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/new-site/js/main.min.b6dfd66b2d261380250c517fd39bc9d8659709e9fc924b00d8fed92e8d9df768.js" integrity="sha256-tt/Way0mE4AlDFF/05vJ2GWXCen8kksA2P7ZLo2d92g=" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>
