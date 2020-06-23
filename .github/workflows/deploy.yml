@@ -26,10 +26,12 @@ jobs:
         git fetch --all -p
         git remote -v
         git branch -a
-        git worktree add -b gh-pages public remotes/origin/gh-pages
+        git worktree add -B gh-pages public remotes/origin/gh-pages
         ls -la
     - name: Build site
-      run: ./build -e github
+      run: |
+        cd "${GITHUB_WORKSPACE}"
+        "${GITHUB_WORKSPACE}/build" -e github
     - name: Push
       run: |
         cd public
