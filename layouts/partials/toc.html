@@ -1,6 +1,8 @@
 {{ partial "page-meta-links.html" . }}
 {{ if not .Params.notoc }}
 
+{{ if .Page.Params.doc_path }}
+
 {{ $ns_data := $.Site.Data.docs.doxdata }}
 {{ with .Page.Params.doc_path }}
 {{   range ($ns := (split . ".")) }}
@@ -39,6 +41,16 @@
 </ul>
 
 </li></div>
+{{ end }}
+
+{{ else }}
+
+{{ with .TableOfContents }}
+{{ if ge (len .) 200 }}
+{{ . }}
+{{ end }}
+{{ end }}
+
 {{ end }}
 
 {{ end }}

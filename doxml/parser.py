@@ -57,7 +57,7 @@ def itertag(node, handlers=None, text_handler=(lambda t: None), catchall=None):
             if catchall is not None:
                 catchall(sn)
             else:
-                raise AssertionError("Warning, unhandled tag: "+sn.tag)
+                raise AssertionError("Warning, unhandled tag: "+sn.tag+", expected tags: ["+", ".join(handlers)+"]")
         if sn.tail is not None:
             text_handler(sn.tail)
     
@@ -272,7 +272,10 @@ class Doxml:
             'title': lambda n: None,
             'internal': lambda n: None,
             'para': lambda n: self.doc_para(out, n),
-            'sect'+str(level+1): lambda n: self.doc_sect(out, n, level+1),
+            'sect1': lambda n: self.doc_sect(out, n, 1),
+            'sect2': lambda n: self.doc_sect(out, n, 2),
+            'sect3': lambda n: self.doc_sect(out, n, 3),
+            'sect4': lambda n: self.doc_sect(out, n, 4),
             })
 
     def doc_para(self, out: BlockContainer, node: ET.Element):
@@ -320,7 +323,9 @@ class Doxml:
         itertag(node, text_handler = lambda t: out.append(Text(t)), catchall = lambda n: self.doc_title_cmd_group(out, n))
 
     def doc_title_cmd_group(self, out: InlineContainer, node: ET.Element):
-        if node.tag == 'lsquo':
+        if node.tag == 'xrefsect':
+            pass
+        elif node.tag == 'lsquo':
             out.append(Text("‘"))
         elif node.tag == 'rsquo':
             out.append(Text("’"))
