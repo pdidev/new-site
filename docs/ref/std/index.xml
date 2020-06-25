@@ -24,22 +24,18 @@
         
         &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
-&lt;dt&gt; &lt;a href=&#34;#operator-const-pdiref_any-r-w--&#34;&gt;&lt;code&gt;size_t operator() ( const PDI::Ref_any&lt; R, W &gt; &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt; &lt;a href=&#34;#operator-const-pdiref_any-r-w--&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-pdiref_any-r-w--&#34;&gt;&lt;code&gt;size_t operator() ( const PDI::Ref_any&lt; R, W &gt; &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
-&lt;article class=&#34;memitem td-content&#34;&gt;
-&lt;header class=&#34;memproto&#34;&gt;&lt;h1 id=&#34;operator-const-pdiref_any-r-w--&#34;&gt;operator()&lt;/h1&gt;
-&lt;code&gt;size_t operator() (    const PDI::Ref_any&amp;lt; R, W &amp;gt; &amp;amp; r  )&lt;/code&gt;
-&lt;/header&gt;
-&lt;h1&gt;Parameters&lt;/h1&gt;
-&lt;dl&gt;
-&lt;dt id=&#34;operator-const-pdiref_any-r-w---_-r&#34;&gt;&lt;code&gt;r&lt;/code&gt;&lt;/dt&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-pdiref_any-r-w--&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;size_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator()&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const PDI::Ref_any&amp;lt; R, W &amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator-const-pdiref_any-r-w---_-r&#34;&gt;&lt;var class=&#34;nv&#34;&gt;r&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-pdiref_any-r-w---_-r&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;r&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h1&gt;Description&lt;/h1&gt;
-&lt;/section&gt;
-&lt;/article&gt;&lt;hr&gt;
+&lt;/article&gt;
 
       </description>
     </item>

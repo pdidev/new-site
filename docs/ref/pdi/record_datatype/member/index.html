@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
-<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1124,112 +1124,101 @@
 	<p>A <a href="compound:classPDI_1_1Record__datatype_1_1Member">Member</a> is one of the elements inside a <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a>.</p>
 <h2 id="member-functions-list">Member Functions</h2>
 <dl>
-<dt> <a href="#member-size_t-const-stdstring--datatype_uptr"><code> Member ( size_t, const std::string &, Datatype_uptr )</code></a></dt>
-<dd>Construct a new member. <a href="#member-size_t-const-stdstring--datatype_uptr">More…</a></dd>
-<dt> <a href="#member-const-member-"><code> Member ( const Member & )</code></a></dt>
-<dd>Construct a new member by copy. <a href="#member-const-member-">More…</a></dd>
-<dt> <a href="#displacement"><code>size_t displacement ()</code></a></dt>
-<dd>Access the offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start. <a href="#displacement">More…</a></dd>
-<dt> <a href="#name"><code>const std::string &amp; name ()</code></a></dt>
-<dd>Access the name of this specific member. <a href="#name">More…</a></dd>
-<dt> <a href="#operator-const-member-"><code>bool operator!= ( const Member & )</code></a></dt>
-<dd>Tests another member for inequality. <a href="#operator-const-member-">More…</a></dd>
-<dt> <a href="#operator-const-member-"><code>bool operator== ( const Member & )</code></a></dt>
-<dd>Tests another member for equality. <a href="#operator-const-member-">More…</a></dd>
-<dt> <a href="#type"><code>const Datatype &amp; type ()</code></a></dt>
-<dd>Access the type of the contained member. <a href="#type">More…</a></dd>
+<dt><a href="#member-size_t-const-stdstring--datatype_uptr"><code> Member ( size_t, const std::string &, Datatype_uptr )</code></a></dt>
+<dd>Construct a new member. </dd>
+<dt><a href="#member-const-member-"><code> Member ( const Member & )</code></a></dt>
+<dd>Construct a new member by copy. </dd>
+<dt><a href="#displacement"><code>size_t displacement ()</code></a></dt>
+<dd>Access the offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start. </dd>
+<dt><a href="#name"><code>const std::string &amp; name ()</code></a></dt>
+<dd>Access the name of this specific member. </dd>
+<dt><a href="#operator-const-member-"><code>bool operator!= ( const Member & )</code></a></dt>
+<dd>Tests another member for inequality. </dd>
+<dt><a href="#operator-const-member-"><code>bool operator== ( const Member & )</code></a></dt>
+<dd>Tests another member for equality. </dd>
+<dt><a href="#type"><code>const Datatype &amp; type ()</code></a></dt>
+<dd>Access the type of the contained member. </dd>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h2>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="member-size_t-const-stdstring--datatype_uptr">Member</h1>
-<code> Member (    size_t displacement,   const std::string &amp; name,   Datatype_uptr type  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="member-size_t-const-stdstring--datatype_uptr-_-displacement"><code>displacement</code></dt>
+<article class="td-content member-function">
+<h3 id="member-size_t-const-stdstring--datatype_uptr" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Member</nf> (    <span class="kt">size_t</span> <a href="#member-size_t-const-stdstring--datatype_uptr-_-displacement"><var class="nv">displacement</var></a>,   <span class="kt">const std::string &amp;</span> <a href="#member-size_t-const-stdstring--datatype_uptr-_-name"><var class="nv">name</var></a>,   <span class="kt">Datatype_uptr</span> <a href="#member-size_t-const-stdstring--datatype_uptr-_-type"><var class="nv">type</var></a>  )</code></h3>
+<p>Construct a new member.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="member-size_t-const-stdstring--datatype_uptr-_-displacement" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">displacement</var></code></h5></dt>
 <dd>offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start</dd>
-<dt id="member-size_t-const-stdstring--datatype_uptr-_-name"><code>name</code></dt>
+<dt><h5 id="member-size_t-const-stdstring--datatype_uptr-_-name" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></h5></dt>
 <dd>name of this specific member</dd>
-<dt id="member-size_t-const-stdstring--datatype_uptr-_-type"><code>type</code></dt>
+<dt><h5 id="member-size_t-const-stdstring--datatype_uptr-_-type" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">type</var></code></h5></dt>
 <dd>type of the contained member</dd>
 </dl>
-<h1>Description</h1>
-Construct a new member.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="member-const-member-">Member</h1>
-<code> Member (    const Member &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="member-const-member--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="member-const-member-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Member</nf> (    <span class="kt">const Member &amp;</span> <a href="#member-const-member--_-o"><var class="nv">o</var></a>  )</code></h3>
+<p>Construct a new member by copy.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="member-const-member--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd>the <a href="compound:classPDI_1_1Record__datatype_1_1Member">Member</a> to copy</dd>
 </dl>
-<h1>Description</h1>
-Construct a new member by copy.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="displacement">displacement</h1>
-<code>size_t displacement (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="displacement" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">size_t</span> <span class="nf">displacement</nf> (  )</code></h3>
+<p>Access the offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start</p>
-<h1>Description</h1>
-Access the offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="name">name</h1>
-<code>const std::string &amp; name (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="name" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">const std::string &amp;</span> <span class="nf">name</nf> (  )</code></h3>
+<p>Access the name of this specific member.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the name of this specific member</p>
-<h1>Description</h1>
-Access the name of this specific member.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-member-">operator!=</h1>
-<code>bool operator!= (    const Member &amp; rhs  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-member--_-rhs"><code>rhs</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-member-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator!=</nf> (    <span class="kt">const Member &amp;</span> <a href="#operator-const-member--_-rhs"><var class="nv">rhs</var></a>  )</code></h3>
+<p>Tests another member for inequality.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-member--_-rhs" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">rhs</var></code></h5></dt>
 <dd>the other member to compare</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>true if the members are different</p>
-<h1>Description</h1>
-Tests another member for inequality.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-member-">operator==</h1>
-<code>bool operator== (    const Member &amp; rhs  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-member--_-rhs"><code>rhs</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-member-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator==</nf> (    <span class="kt">const Member &amp;</span> <a href="#operator-const-member--_-rhs"><var class="nv">rhs</var></a>  )</code></h3>
+<p>Tests another member for equality.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-member--_-rhs" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">rhs</var></code></h5></dt>
 <dd>the other member to compare</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>true if the members are equal</p>
-<h1>Description</h1>
-Tests another member for equality.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="type">type</h1>
-<code>const Datatype &amp; type (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="type" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">const Datatype &amp;</span> <span class="nf">type</nf> (  )</code></h3>
+<p>Access the type of the contained member.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the type of the contained member</p>
-<h1>Description</h1>
-Access the type of the contained member.
 </section>
-</article><hr>
+</article>
 
         <div class="section-index">
     

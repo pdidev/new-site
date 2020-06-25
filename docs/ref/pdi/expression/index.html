@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
-<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1132,79 +1132,75 @@
 	
 	<h2 id="member-functions-list">Member Functions</h2>
 <dl>
-<dt> <a href="#expression"><code> Expression ()</code></a></dt>
+<dt><a href="#expression"><code> Expression ()</code></a></dt>
 <dd>Builds an empty expression. <a href="#expression">More…</a></dd>
-<dt> <a href="#expression-const-expression-"><code> Expression ( const Expression & )</code></a></dt>
-<dd>Copies an expression. <a href="#expression-const-expression-">More…</a></dd>
-<dt> <a href="#expression-expression-"><code> Expression ( Expression && )</code></a></dt>
-<dd>Moves an expression. <a href="#expression-expression-">More…</a></dd>
-<dt> <a href="#expression-const-char-"><code> Expression ( const char * )</code></a></dt>
+<dt><a href="#expression-const-expression-"><code> Expression ( const Expression & )</code></a></dt>
+<dd>Copies an expression. </dd>
+<dt><a href="#expression-expression-"><code> Expression ( Expression && )</code></a></dt>
+<dd>Moves an expression. </dd>
+<dt><a href="#expression-const-char-"><code> Expression ( const char * )</code></a></dt>
 <dd>Builds (i.e. <a href="#expression-const-char-">More…</a></dd>
-<dt> <a href="#expression-const-stdstring-"><code> Expression ( const std::string & )</code></a></dt>
+<dt><a href="#expression-const-stdstring-"><code> Expression ( const std::string & )</code></a></dt>
 <dd>Builds (i.e. <a href="#expression-const-stdstring-">More…</a></dd>
-<dt> <a href="#expression-long"><code> Expression ( long )</code></a></dt>
-<dd>Builds an expression that represents an integer. <a href="#expression-long">More…</a></dd>
-<dt> <a href="#operator-bool"><code> operator bool ()</code></a></dt>
-<dd>Checks whether this is an empty expression. <a href="#operator-bool">More…</a></dd>
-<dt> <a href="#operator-const-expression-"><code>Expression &amp; operator= ( const Expression & )</code></a></dt>
-<dd>Copies an expression. <a href="#operator-const-expression-">More…</a></dd>
-<dt> <a href="#operator-expression-"><code>Expression &amp; operator= ( Expression && )</code></a></dt>
-<dd>Moves an expression. <a href="#operator-expression-">More…</a></dd>
-<dt> <a href="#to_long-context-"><code>long to_long ( Context & )</code></a></dt>
-<dd>Evaluates an expression as an integer. <a href="#to_long-context-">More…</a></dd>
-<dt> <a href="#to_ref-context-"><code>Ref to_ref ( Context & )</code></a></dt>
-<dd>Evaluates an expression as a data reference. <a href="#to_ref-context-">More…</a></dd>
-<dt> <a href="#to_string-context-"><code>std::string to_string ( Context & )</code></a></dt>
-<dd>Evaluates an expression as a string. <a href="#to_string-context-">More…</a></dd>
-<dt> <a href="#expression"><code> ~Expression ()</code></a></dt>
-<dd>Destroys an expression. <a href="#expression">More…</a></dd>
+<dt><a href="#expression-long"><code> Expression ( long )</code></a></dt>
+<dd>Builds an expression that represents an integer. </dd>
+<dt><a href="#operator-bool"><code> operator bool ()</code></a></dt>
+<dd>Checks whether this is an empty expression. </dd>
+<dt><a href="#operator-const-expression-"><code>Expression &amp; operator= ( const Expression & )</code></a></dt>
+<dd>Copies an expression. </dd>
+<dt><a href="#operator-expression-"><code>Expression &amp; operator= ( Expression && )</code></a></dt>
+<dd>Moves an expression. </dd>
+<dt><a href="#to_long-context-"><code>long to_long ( Context & )</code></a></dt>
+<dd>Evaluates an expression as an integer. </dd>
+<dt><a href="#to_ref-context-"><code>Ref to_ref ( Context & )</code></a></dt>
+<dd>Evaluates an expression as a data reference. </dd>
+<dt><a href="#to_string-context-"><code>std::string to_string ( Context & )</code></a></dt>
+<dd>Evaluates an expression as a string. </dd>
+<dt><a href="#expression"><code> ~Expression ()</code></a></dt>
+<dd>Destroys an expression. </dd>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h2>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression">Expression</h1>
-<code> Expression (  )</code>
-</header>
-<h1>Description</h1>
+<article class="td-content member-function">
+<h3 id="expression" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Expression</nf> (  )</code></h3>
+<p>Builds an empty expression.</p>
+<h4>Description</h4>
+<section class="description">
 Builds an empty expression.
 No operation can be used on an empty expression, it can only be assigned to
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression-const-expression-">Expression</h1>
-<code> Expression (    const Expression &amp; expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="expression-const-expression--_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="expression-const-expression-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Expression</nf> (    <span class="kt">const Expression &amp;</span> <a href="#expression-const-expression--_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Copies an expression.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="expression-const-expression--_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the expression to copy</dd>
 </dl>
-<h1>Description</h1>
-Copies an expression.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression-expression-">Expression</h1>
-<code> Expression (    Expression &amp;&amp; expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="expression-expression--_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="expression-expression-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Expression</nf> (    <span class="kt">Expression &amp;&amp;</span> <a href="#expression-expression--_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Moves an expression.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="expression-expression--_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the expression to move`</dd>
 </dl>
-<h1>Description</h1>
-Moves an expression.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression-const-char-">Expression</h1>
-<code> Expression (    const char * expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="expression-const-char--_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="expression-const-char-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Expression</nf> (    <span class="kt">const char *</span> <a href="#expression-const-char--_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Builds (i.e.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="expression-const-char--_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the string to parse</dd>
 </dl>
-<h1>Description</h1>
+<h4>Description</h4>
+<section class="description">
 Builds (i.e.
 <p>parse) an expression from a string</p>
 <p>The grammar of an expression is as follow:</p>
@@ -1236,17 +1232,18 @@ CHAR        ~= [^$\]
 OPERATOR    ~= [|&amp;=&lt;&gt;+-*/%]
 </code></pre></p>
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression-const-stdstring-">Expression</h1>
-<code> Expression (    const std::string &amp; expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="expression-const-stdstring--_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="expression-const-stdstring-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Expression</nf> (    <span class="kt">const std::string &amp;</span> <a href="#expression-const-stdstring--_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Builds (i.e.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="expression-const-stdstring--_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the string to parse</dd>
 </dl>
-<h1>Description</h1>
+<h4>Description</h4>
+<section class="description">
 Builds (i.e.
 <p>parse) an expression from a string</p>
 <p>The grammar of an expression is as follow:</p>
@@ -1278,111 +1275,97 @@ CHAR        ~= [^$\]
 OPERATOR    ~= [|&amp;=&lt;&gt;+-*/%]
 </code></pre></p>
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression-long">Expression</h1>
-<code> Expression (    long expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="expression-long-_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="expression-long" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Expression</nf> (    <span class="kt">long</span> <a href="#expression-long-_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Builds an expression that represents an integer.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="expression-long-_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the integer value</dd>
 </dl>
-<h1>Description</h1>
-Builds an expression that represents an integer.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-bool">operator bool</h1>
-<code> operator bool (  )</code>
-</header>
-<h1>Description</h1>
-Checks whether this is an empty expression.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-expression-">operator=</h1>
-<code>Expression &amp; operator= (    const Expression &amp; expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-expression--_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-bool" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">operator bool</nf> (  )</code></h3>
+<p>Checks whether this is an empty expression.</p>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-expression-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Expression &amp;</span> <span class="nf">operator=</nf> (    <span class="kt">const Expression &amp;</span> <a href="#operator-const-expression--_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Copies an expression.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-expression--_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the expression to copy</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>*this</p>
-<h1>Description</h1>
-Copies an expression.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-expression-">operator=</h1>
-<code>Expression &amp; operator= (    Expression &amp;&amp; expr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-expression--_-expr"><code>expr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-expression-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Expression &amp;</span> <span class="nf">operator=</nf> (    <span class="kt">Expression &amp;&amp;</span> <a href="#operator-expression--_-expr"><var class="nv">expr</var></a>  )</code></h3>
+<p>Moves an expression.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-expression--_-expr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expr</var></code></h5></dt>
 <dd>the expression to move`</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>*this</p>
-<h1>Description</h1>
-Moves an expression.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="to_long-context-">to_long</h1>
-<code>long to_long (    Context &amp; ctx  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="to_long-context--_-ctx"><code>ctx</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="to_long-context-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">long</span> <span class="nf">to_long</nf> (    <span class="kt">Context &amp;</span> <a href="#to_long-context--_-ctx"><var class="nv">ctx</var></a>  )</code></h3>
+<p>Evaluates an expression as an integer.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_long-context--_-ctx" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>the integer value</p>
-<h1>Description</h1>
-Evaluates an expression as an integer.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="to_ref-context-">to_ref</h1>
-<code>Ref to_ref (    Context &amp; ctx  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="to_ref-context--_-ctx"><code>ctx</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="to_ref-context-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Ref</span> <span class="nf">to_ref</nf> (    <span class="kt">Context &amp;</span> <a href="#to_ref-context--_-ctx"><var class="nv">ctx</var></a>  )</code></h3>
+<p>Evaluates an expression as a data reference.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_ref-context--_-ctx" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>the data reference</p>
-<h1>Description</h1>
-Evaluates an expression as a data reference.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="to_string-context-">to_string</h1>
-<code>std::string to_string (    Context &amp; ctx  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="to_string-context--_-ctx"><code>ctx</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="to_string-context-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">std::string</span> <span class="nf">to_string</nf> (    <span class="kt">Context &amp;</span> <a href="#to_string-context--_-ctx"><var class="nv">ctx</var></a>  )</code></h3>
+<p>Evaluates an expression as a string.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_string-context--_-ctx" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>the string value</p>
-<h1>Description</h1>
-Evaluates an expression as a string.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="expression">~Expression</h1>
-<code> ~Expression (  )</code>
-</header>
-<h1>Description</h1>
-Destroys an expression.
-</section>
-</article><hr>
+</article>
+<article class="td-content member-function">
+<h3 id="expression" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">~Expression</nf> (  )</code></h3>
+<p>Destroys an expression.</p>
+</article>
 
         <div class="section-index">
     

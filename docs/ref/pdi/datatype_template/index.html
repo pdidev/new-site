@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
-<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1096,62 +1096,54 @@
 	
 	<h2 id="member-functions-list">Member Functions</h2>
 <dl>
-<dt> <a href="#clone"><code>Datatype_template_uptr clone ()</code></a></dt>
-<dd>Creates a new datatype as an exact copy of this one. <a href="#clone">More…</a></dd>
-<dt> <a href="#evaluate-context-"><code>Datatype_uptr evaluate ( Context & )</code></a></dt>
-<dd>Creates a new datatype by resolving the value of all metadata references. <a href="#evaluate-context-">More…</a></dd>
-<dt> <a href="#load_basic_datatypes-context-"><code>void load_basic_datatypes ( Context & )</code></a></dt>
-<dd>Adds to the context the basic Array, Record, C and Fortran datatypes. <a href="#load_basic_datatypes-context-">More…</a></dd>
-<dt> <a href="#datatype_template"><code> ~Datatype_template ()</code></a></dt>
-<dd>Destroys the template. <a href="#datatype_template">More…</a></dd>
+<dt><a href="#clone"><code>Datatype_template_uptr clone ()</code></a></dt>
+<dd>Creates a new datatype as an exact copy of this one. </dd>
+<dt><a href="#evaluate-context-"><code>Datatype_uptr evaluate ( Context & )</code></a></dt>
+<dd>Creates a new datatype by resolving the value of all metadata references. </dd>
+<dt><a href="#load_basic_datatypes-context-"><code>void load_basic_datatypes ( Context & )</code></a></dt>
+<dd>Adds to the context the basic Array, Record, C and Fortran datatypes. </dd>
+<dt><a href="#datatype_template"><code> ~Datatype_template ()</code></a></dt>
+<dd>Destroys the template. </dd>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h2>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="clone">clone</h1>
-<code>Datatype_template_uptr clone (  )</code>
-</header>
-<h1>Result</h1>
+<article class="td-content member-function">
+<h3 id="clone" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Datatype_template_uptr</span> <span class="nf">clone</nf> (  )</code></h3>
+<p>Creates a new datatype as an exact copy of this one.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the dense type that is produced</p>
-<h1>Description</h1>
-Creates a new datatype as an exact copy of this one.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="evaluate-context-">evaluate</h1>
-<code>Datatype_uptr evaluate (    Context &amp; ctx  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="evaluate-context--_-ctx"><code>ctx</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="evaluate-context-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Datatype_uptr</span> <span class="nf">evaluate</nf> (    <span class="kt">Context &amp;</span> <a href="#evaluate-context--_-ctx"><var class="nv">ctx</var></a>  )</code></h3>
+<p>Creates a new datatype by resolving the value of all metadata references.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="evaluate-context--_-ctx" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></h5></dt>
 <dd>the context in which to evaluate this template</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>the evaluated type that is produced</p>
-<h1>Description</h1>
-Creates a new datatype by resolving the value of all metadata references.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="load_basic_datatypes-context-">load_basic_datatypes</h1>
-<code>void load_basic_datatypes (    Context &amp; ctx  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="load_basic_datatypes-context--_-ctx"><code>ctx</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="load_basic_datatypes-context-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">load_basic_datatypes</nf> (    <span class="kt">Context &amp;</span> <a href="#load_basic_datatypes-context--_-ctx"><var class="nv">ctx</var></a>  )</code></h3>
+<p>Adds to the context the basic Array, Record, C and Fortran datatypes.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="load_basic_datatypes-context--_-ctx" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></h5></dt>
 <dd>the context where to add the datatypes</dd>
 </dl>
-<h1>Description</h1>
-Adds to the context the basic Array, Record, C and Fortran datatypes.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="datatype_template">~Datatype_template</h1>
-<code> ~Datatype_template (  )</code>
-</header>
-<h1>Description</h1>
-Destroys the template.
-</section>
-</article><hr>
+</article>
+<article class="td-content member-function">
+<h3 id="datatype_template" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">~Datatype_template</nf> (  )</code></h3>
+<p>Destroys the template.</p>
+</article>
 
         <div class="section-index">
     

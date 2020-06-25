@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
-<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1154,231 +1154,213 @@
 </dl>
 <h2 id="member-functions-list">Member Functions</h2>
 <dl>
-<dt> <a href="#record_datatype-stdvector-member---size_t"><code> Record_datatype ( std::vector< Member > &&, size_t )</code></a></dt>
-<dd>Constructs a new <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a>. <a href="#record_datatype-stdvector-member---size_t">More…</a></dd>
-<dt> <a href="#alignment"><code>size_t alignment ()</code></a></dt>
-<dd>Returns the required alignment for a type. <a href="#alignment">More…</a></dd>
-<dt> <a href="#buffersize"><code>size_t buffersize ()</code></a></dt>
-<dd>Computes the data size of a type, including potentially unused memory from a sparse type. <a href="#buffersize">More…</a></dd>
-<dt> <a href="#clone"><code>Datatype_template_uptr clone ()</code></a></dt>
-<dd>Creates a new datatype as an exact copy of this one. <a href="#clone">More…</a></dd>
-<dt> <a href="#clone_type"><code>Datatype_uptr clone_type ()</code></a></dt>
-<dd>Creates a new datatype as an exact copy of this one. <a href="#clone_type">More…</a></dd>
-<dt> <a href="#data_from_dense_copy-const-void--void-"><code>void * data_from_dense_copy ( const void *, void * )</code></a></dt>
-<dd>Creates a sparse deep copy of dense data. <a href="#data_from_dense_copy-const-void--void-">More…</a></dd>
-<dt> <a href="#data_to_dense_copy-const-void--void-"><code>void * data_to_dense_copy ( const void *, void * )</code></a></dt>
-<dd>Creates a dense deep copy of data. <a href="#data_to_dense_copy-const-void--void-">More…</a></dd>
-<dt> <a href="#datasize"><code>size_t datasize ()</code></a></dt>
-<dd>Computes the data size of a type, excluding potentially unused memory from a sparse type. <a href="#datasize">More…</a></dd>
-<dt> <a href="#debug_string"><code>std::string debug_string ()</code></a></dt>
-<dd>Returns the datatype yaml representation as a string. <a href="#debug_string">More…</a></dd>
-<dt> <a href="#dense"><code>bool dense ()</code></a></dt>
-<dd>Indicate if the datatype is dense or not. <a href="#dense">More…</a></dd>
-<dt> <a href="#densify"><code>Datatype_uptr densify ()</code></a></dt>
-<dd>Creates a new datatype as the dense copy of this one. <a href="#densify">More…</a></dd>
-<dt> <a href="#destroy_data-void-"><code>void destroy_data ( void * )</code></a></dt>
+<dt><a href="#record_datatype-stdvector-member---size_t"><code> Record_datatype ( std::vector< Member > &&, size_t )</code></a></dt>
+<dd>Constructs a new <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a>. </dd>
+<dt><a href="#alignment"><code>size_t alignment ()</code></a></dt>
+<dd>Returns the required alignment for a type. </dd>
+<dt><a href="#buffersize"><code>size_t buffersize ()</code></a></dt>
+<dd>Computes the data size of a type, including potentially unused memory from a sparse type. </dd>
+<dt><a href="#clone"><code>Datatype_template_uptr clone ()</code></a></dt>
+<dd>Creates a new datatype as an exact copy of this one. </dd>
+<dt><a href="#clone_type"><code>Datatype_uptr clone_type ()</code></a></dt>
+<dd>Creates a new datatype as an exact copy of this one. </dd>
+<dt><a href="#data_from_dense_copy-const-void--void-"><code>void * data_from_dense_copy ( const void *, void * )</code></a></dt>
+<dd>Creates a sparse deep copy of dense data. </dd>
+<dt><a href="#data_to_dense_copy-const-void--void-"><code>void * data_to_dense_copy ( const void *, void * )</code></a></dt>
+<dd>Creates a dense deep copy of data. </dd>
+<dt><a href="#datasize"><code>size_t datasize ()</code></a></dt>
+<dd>Computes the data size of a type, excluding potentially unused memory from a sparse type. </dd>
+<dt><a href="#debug_string"><code>std::string debug_string ()</code></a></dt>
+<dd>Returns the datatype yaml representation as a string. </dd>
+<dt><a href="#dense"><code>bool dense ()</code></a></dt>
+<dd>Indicate if the datatype is dense or not. </dd>
+<dt><a href="#densify"><code>Datatype_uptr densify ()</code></a></dt>
+<dd>Creates a new datatype as the dense copy of this one. </dd>
+<dt><a href="#destroy_data-void-"><code>void destroy_data ( void * )</code></a></dt>
 <dd>Function used to delete the data behind the datatype. <a href="#destroy_data-void-">More…</a></dd>
-<dt> <a href="#evaluate-context-"><code>Datatype_uptr evaluate ( Context & )</code></a></dt>
-<dd>Creates a new datatype by resolving the value of all metadata references. <a href="#evaluate-context-">More…</a></dd>
-<dt> <a href="#members"><code>const std::vector&lt; Member &gt; &amp; members ()</code></a></dt>
-<dd>Accesses the members in increasing displacement order. <a href="#members">More…</a></dd>
-<dt> <a href="#operator-const-datatype-"><code>bool operator== ( const Datatype & )</code></a></dt>
-<dd>Test for equality. <a href="#operator-const-datatype-">More…</a></dd>
-<dt> <a href="#simple"><code>bool simple ()</code></a></dt>
-<dd>Tells if data can be copied as bytes (if type is dense) and doesn't need a destroyer. <a href="#simple">More…</a></dd>
+<dt><a href="#evaluate-context-"><code>Datatype_uptr evaluate ( Context & )</code></a></dt>
+<dd>Creates a new datatype by resolving the value of all metadata references. </dd>
+<dt><a href="#members"><code>const std::vector&lt; Member &gt; &amp; members ()</code></a></dt>
+<dd>Accesses the members in increasing displacement order. </dd>
+<dt><a href="#operator-const-datatype-"><code>bool operator== ( const Datatype & )</code></a></dt>
+<dd>Test for equality. </dd>
+<dt><a href="#simple"><code>bool simple ()</code></a></dt>
+<dd>Tells if data can be copied as bytes (if type is dense) and doesn't need a destroyer. </dd>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h2>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="record_datatype-stdvector-member---size_t">Record_datatype</h1>
-<code> Record_datatype (    std::vector&lt; Member &gt; &amp;&amp; members,   size_t size  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="record_datatype-stdvector-member---size_t-_-members"><code>members</code></dt>
+<article class="td-content member-function">
+<h3 id="record_datatype-stdvector-member---size_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Record_datatype</nf> (    <span class="kt">std::vector&lt; Member &gt; &amp;&amp;</span> <a href="#record_datatype-stdvector-member---size_t-_-members"><var class="nv">members</var></a>,   <span class="kt">size_t</span> <a href="#record_datatype-stdvector-member---size_t-_-size"><var class="nv">size</var></a>  )</code></h3>
+<p>Constructs a new <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a>.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="record_datatype-stdvector-member---size_t-_-members" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">members</var></code></h5></dt>
 <dd>the members for the newly created <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> in increasing displacement order</dd>
-<dt id="record_datatype-stdvector-member---size_t-_-size"><code>size</code></dt>
+<dt><h5 id="record_datatype-stdvector-member---size_t-_-size" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">size</var></code></h5></dt>
 <dd>the total size of the buffer containing all members</dd>
 </dl>
-<h1>Description</h1>
-Constructs a new <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a>.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="alignment">alignment</h1>
-<code>size_t alignment (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="alignment" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">size_t</span> <span class="nf">alignment</nf> (  )</code></h3>
+<p>Returns the required alignment for a type.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the size in bytes</p>
-<h1>Description</h1>
-Returns the required alignment for a type.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="buffersize">buffersize</h1>
-<code>size_t buffersize (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="buffersize" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">size_t</span> <span class="nf">buffersize</nf> (  )</code></h3>
+<p>Computes the data size of a type, including potentially unused memory from a sparse type.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the size in bytes</p>
-<h1>Description</h1>
-Computes the data size of a type, including potentially unused memory from a sparse type.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="clone">clone</h1>
-<code>Datatype_template_uptr clone (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="clone" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Datatype_template_uptr</span> <span class="nf">clone</nf> (  )</code></h3>
+<p>Creates a new datatype as an exact copy of this one.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the dense type that is produced</p>
-<h1>Description</h1>
-Creates a new datatype as an exact copy of this one.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="clone_type">clone_type</h1>
-<code>Datatype_uptr clone_type (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="clone_type" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Datatype_uptr</span> <span class="nf">clone_type</nf> (  )</code></h3>
+<p>Creates a new datatype as an exact copy of this one.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the dense type that is produced</p>
-<h1>Description</h1>
-Creates a new datatype as an exact copy of this one.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="data_from_dense_copy-const-void--void-">data_from_dense_copy</h1>
-<code>void * data_from_dense_copy (    const void * from,   void * to  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="data_from_dense_copy-const-void--void--_-from"><code>from</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="data_from_dense_copy-const-void--void-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void *</span> <span class="nf">data_from_dense_copy</nf> (    <span class="kt">const void *</span> <a href="#data_from_dense_copy-const-void--void--_-from"><var class="nv">from</var></a>,   <span class="kt">void *</span> <a href="#data_from_dense_copy-const-void--void--_-to"><var class="nv">to</var></a>  )</code></h3>
+<p>Creates a sparse deep copy of dense data.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="data_from_dense_copy-const-void--void--_-from" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">from</var></code></h5></dt>
 <dd>the pointer to the copied data (dense data)</dd>
-<dt id="data_from_dense_copy-const-void--void--_-to"><code>to</code></dt>
+<dt><h5 id="data_from_dense_copy-const-void--void--_-to" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">to</var></code></h5></dt>
 <dd>the pointer to the allocated memory to fill (size of buffersize)</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>updated ‘to’ pointer</p>
-<h1>Description</h1>
-Creates a sparse deep copy of dense data.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="data_to_dense_copy-const-void--void-">data_to_dense_copy</h1>
-<code>void * data_to_dense_copy (    const void * from,   void * to  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="data_to_dense_copy-const-void--void--_-from"><code>from</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="data_to_dense_copy-const-void--void-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void *</span> <span class="nf">data_to_dense_copy</nf> (    <span class="kt">const void *</span> <a href="#data_to_dense_copy-const-void--void--_-from"><var class="nv">from</var></a>,   <span class="kt">void *</span> <a href="#data_to_dense_copy-const-void--void--_-to"><var class="nv">to</var></a>  )</code></h3>
+<p>Creates a dense deep copy of data.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="data_to_dense_copy-const-void--void--_-from" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">from</var></code></h5></dt>
 <dd>the pointer to the copied data (size of buffersize)</dd>
-<dt id="data_to_dense_copy-const-void--void--_-to"><code>to</code></dt>
+<dt><h5 id="data_to_dense_copy-const-void--void--_-to" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">to</var></code></h5></dt>
 <dd>the pointer to the allocated memory to fill (dense data)</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>updated ‘to’ pointer</p>
-<h1>Description</h1>
-Creates a dense deep copy of data.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="datasize">datasize</h1>
-<code>size_t datasize (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="datasize" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">size_t</span> <span class="nf">datasize</nf> (  )</code></h3>
+<p>Computes the data size of a type, excluding potentially unused memory from a sparse type.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the size in bytes</p>
-<h1>Description</h1>
-Computes the data size of a type, excluding potentially unused memory from a sparse type.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="debug_string">debug_string</h1>
-<code>std::string debug_string (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="debug_string" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">std::string</span> <span class="nf">debug_string</nf> (  )</code></h3>
+<p>Returns the datatype yaml representation as a string.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the datatype yaml representation as a string</p>
-<h1>Description</h1>
-Returns the datatype yaml representation as a string.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="dense">dense</h1>
-<code>bool dense (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="dense" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">dense</nf> (  )</code></h3>
+<p>Indicate if the datatype is dense or not.</p>
+<h4>Result</h4>
+<section class="result">
 <p>whether the datatype is dense</p>
-<h1>Description</h1>
-Indicate if the datatype is dense or not.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="densify">densify</h1>
-<code>Datatype_uptr densify (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="densify" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Datatype_uptr</span> <span class="nf">densify</nf> (  )</code></h3>
+<p>Creates a new datatype as the dense copy of this one.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the type that is produced</p>
-<h1>Description</h1>
-Creates a new datatype as the dense copy of this one.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="destroy_data-void-">destroy_data</h1>
-<code>void destroy_data (    void * ptr  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="destroy_data-void--_-ptr"><code>ptr</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="destroy_data-void-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">destroy_data</nf> (    <span class="kt">void *</span> <a href="#destroy_data-void--_-ptr"><var class="nv">ptr</var></a>  )</code></h3>
+<p>Function used to delete the data behind the datatype.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="destroy_data-void--_-ptr" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ptr</var></code></h5></dt>
 <dd>to the data to free</dd>
 </dl>
-<h1>Description</h1>
+<h4>Description</h4>
+<section class="description">
 Function used to delete the data behind the datatype.
 This should not deallocate the memory.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="evaluate-context-">evaluate</h1>
-<code>Datatype_uptr evaluate (    Context &amp; ctx  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="evaluate-context--_-ctx"><code>ctx</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="evaluate-context-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Datatype_uptr</span> <span class="nf">evaluate</nf> (    <span class="kt">Context &amp;</span> <a href="#evaluate-context--_-ctx"><var class="nv">ctx</var></a>  )</code></h3>
+<p>Creates a new datatype by resolving the value of all metadata references.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="evaluate-context--_-ctx" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></h5></dt>
 <dd>the context in which to evaluate this template</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>the evaluated type that is produced</p>
-<h1>Description</h1>
-Creates a new datatype by resolving the value of all metadata references.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="members">members</h1>
-<code>const std::vector&lt; Member &gt; &amp; members (  )</code>
-</header>
-<h1>Description</h1>
-Accesses the members in increasing displacement order.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-datatype-">operator==</h1>
-<code>bool operator== (    const Datatype &amp; other  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-datatype--_-other"><code>other</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="members" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">const std::vector&lt; Member &gt; &amp;</span> <span class="nf">members</nf> (  )</code></h3>
+<p>Accesses the members in increasing displacement order.</p>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-datatype-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator==</nf> (    <span class="kt">const Datatype &amp;</span> <a href="#operator-const-datatype--_-other"><var class="nv">other</var></a>  )</code></h3>
+<p>Test for equality.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-datatype--_-other" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></h5></dt>
 <dd>the <a href="compound:classPDI_1_1Datatype">Datatype</a> to compare</dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>true if the <a href="compound:classPDI_1_1Datatype">Datatype</a>'s are equal</p>
-<h1>Description</h1>
-Test for equality.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="simple">simple</h1>
-<code>bool simple (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="simple" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">simple</nf> (  )</code></h3>
+<p>Tells if data can be copied as bytes (if type is dense) and doesn&rsquo;t need a destroyer.</p>
+<h4>Result</h4>
+<section class="result">
 <p>true if data has trivial copier and destroyer, false otherwise</p>
-<h1>Description</h1>
-Tells if data can be copied as bytes (if type is dense) and doesn't need a destroyer.
 </section>
-</article><hr>
+</article>
 
         <div class="section-index">
     

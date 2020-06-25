@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
-<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1172,280 +1172,230 @@ As of now, and unlike std::shared_ptr, the lock system can not be relied upon in
 {{% /alert %}}</p>
 <h2 id="member-functions-list">Member Functions</h2>
 <dl>
-<dt> <a href="#ref_any"><code> Ref_any ()</code></a></dt>
-<dd>Constructs a null reference. <a href="#ref_any">More…</a></dd>
-<dt> <a href="#ref_any-const-ref_any-"><code> Ref_any ( const Ref_any & )</code></a></dt>
+<dt><a href="#ref_any"><code> Ref_any ()</code></a></dt>
+<dd>Constructs a null reference. </dd>
+<dt><a href="#ref_any-const-ref_any-"><code> Ref_any ( const Ref_any & )</code></a></dt>
 <dd>Copies an existing reference. <a href="#ref_any-const-ref_any-">More…</a></dd>
-<dt> <a href="#ref_any-const-ref_any-or-ow--"><code> Ref_any ( const Ref_any< OR, OW > & )</code></a></dt>
+<dt><a href="#ref_any-const-ref_any-or-ow--"><code> Ref_any ( const Ref_any< OR, OW > & )</code></a></dt>
 <dd>Copies an existing reference with different privileges. <a href="#ref_any-const-ref_any-or-ow--">More…</a></dd>
-<dt> <a href="#ref_any-ref_any-"><code> Ref_any ( Ref_any && )</code></a></dt>
-<dd>Moves an existing reference. <a href="#ref_any-ref_any-">More…</a></dd>
-<dt> <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool"><code> Ref_any ( void *, std::function< void(void *)>, bool, Datatype_uptr, bool )</code></a></dt>
-<dd>Creates a reference to currently unreferenced data. <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool">More…</a></dd>
-<dt> <a href="#copy"><code>Ref copy ()</code></a></dt>
-<dd>Makes a copy of the raw content behind this reference and returns a new reference. <a href="#copy">More…</a></dd>
-<dt> <a href="#get"><code>Ref_access&lt; R, W &gt;::type get ()</code></a></dt>
-<dd>Offers access to the referenced raw data, throws on null references. <a href="#get">More…</a></dd>
-<dt> <a href="#get-stdnothrow_t"><code>Ref_access&lt; R, W &gt;::type get ( std::nothrow_t )</code></a></dt>
-<dd>Offers access to the referenced raw data, returns null for null references. <a href="#get-stdnothrow_t">More…</a></dd>
-<dt> <a href="#on_nullify-stdfunction-voidref"><code>void on_nullify ( std::function< void(Ref)> )</code></a></dt>
-<dd>Registers a nullification callback. <a href="#on_nullify-stdfunction-voidref">More…</a></dd>
-<dt> <a href="#operator-bool"><code> operator bool ()</code></a></dt>
-<dd>Checks whether this is a null reference. <a href="#operator-bool">More…</a></dd>
-<dt> <a href="#operator-typename-ref_access-r-w-type"><code> operator typename Ref_access&lt; R, W &gt;::type ()</code></a></dt>
-<dd>Offers access to the referenced raw data. <a href="#operator-typename-ref_access-r-w-type">More…</a></dd>
-<dt> <a href="#operator-const-ref_base-"><code>bool operator!= ( const Ref_base & )</code></a></dt>
-<dd> <a href="#operator-const-ref_base-">More…</a></dd>
-<dt> <a href="#operator-const-ref_base-"><code>bool operator&lt; ( const Ref_base & )</code></a></dt>
-<dd> <a href="#operator-const-ref_base-">More…</a></dd>
-<dt> <a href="#operator-const-ref_base-"><code>bool operator&lt;= ( const Ref_base & )</code></a></dt>
-<dd> <a href="#operator-const-ref_base-">More…</a></dd>
-<dt> <a href="#operator-const-ref_base-"><code>bool operator== ( const Ref_base & )</code></a></dt>
-<dd> <a href="#operator-const-ref_base-">More…</a></dd>
-<dt> <a href="#operator-const-ref_base-"><code>bool operator&gt; ( const Ref_base & )</code></a></dt>
-<dd> <a href="#operator-const-ref_base-">More…</a></dd>
-<dt> <a href="#operator-const-ref_base-"><code>bool operator&gt;= ( const Ref_base & )</code></a></dt>
-<dd> <a href="#operator-const-ref_base-">More…</a></dd>
-<dt> <a href="#release"><code>void * release ()</code></a></dt>
-<dd>Releases ownership of the referenced raw data by nullifying all existing references. <a href="#release">More…</a></dd>
-<dt> <a href="#reset"><code>void reset ()</code></a></dt>
-<dd>Nullify the reference. <a href="#reset">More…</a></dd>
-<dt> <a href="#ref_any"><code> ~Ref_any ()</code></a></dt>
-<dd>Destructor. <a href="#ref_any">More…</a></dd>
+<dt><a href="#ref_any-ref_any-"><code> Ref_any ( Ref_any && )</code></a></dt>
+<dd>Moves an existing reference. </dd>
+<dt><a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool"><code> Ref_any ( void *, std::function< void(void *)>, bool, Datatype_uptr, bool )</code></a></dt>
+<dd>Creates a reference to currently unreferenced data. </dd>
+<dt><a href="#copy"><code>Ref copy ()</code></a></dt>
+<dd>Makes a copy of the raw content behind this reference and returns a new reference. </dd>
+<dt><a href="#get"><code>Ref_access&lt; R, W &gt;::type get ()</code></a></dt>
+<dd>Offers access to the referenced raw data, throws on null references. </dd>
+<dt><a href="#get-stdnothrow_t"><code>Ref_access&lt; R, W &gt;::type get ( std::nothrow_t )</code></a></dt>
+<dd>Offers access to the referenced raw data, returns null for null references. </dd>
+<dt><a href="#on_nullify-stdfunction-voidref"><code>void on_nullify ( std::function< void(Ref)> )</code></a></dt>
+<dd>Registers a nullification callback. </dd>
+<dt><a href="#operator-bool"><code> operator bool ()</code></a></dt>
+<dd>Checks whether this is a null reference. </dd>
+<dt><a href="#operator-typename-ref_access-r-w-type"><code> operator typename Ref_access&lt; R, W &gt;::type ()</code></a></dt>
+<dd>Offers access to the referenced raw data. </dd>
+<dt><a href="#operator-const-ref_base-"><code>bool operator!= ( const Ref_base & )</code></a></dt>
+<dt><a href="#operator-const-ref_base-"><code>bool operator&lt; ( const Ref_base & )</code></a></dt>
+<dt><a href="#operator-const-ref_base-"><code>bool operator&lt;= ( const Ref_base & )</code></a></dt>
+<dt><a href="#operator-const-ref_base-"><code>bool operator== ( const Ref_base & )</code></a></dt>
+<dt><a href="#operator-const-ref_base-"><code>bool operator&gt; ( const Ref_base & )</code></a></dt>
+<dt><a href="#operator-const-ref_base-"><code>bool operator&gt;= ( const Ref_base & )</code></a></dt>
+<dt><a href="#release"><code>void * release ()</code></a></dt>
+<dd>Releases ownership of the referenced raw data by nullifying all existing references. </dd>
+<dt><a href="#reset"><code>void reset ()</code></a></dt>
+<dd>Nullify the reference. </dd>
+<dt><a href="#ref_any"><code> ~Ref_any ()</code></a></dt>
+<dd>Destructor. </dd>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h2>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="ref_any">Ref_any</h1>
-<code> Ref_any (  )</code>
-</header>
-<h1>Description</h1>
-Constructs a null reference.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="ref_any-const-ref_any-">Ref_any</h1>
-<code> Ref_any (    const Ref_any &amp; other  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="ref_any-const-ref_any--_-other"><code>other</code></dt>
+<article class="td-content member-function">
+<h3 id="ref_any" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Ref_any</nf> (  )</code></h3>
+<p>Constructs a null reference.</p>
+</article>
+<article class="td-content member-function">
+<h3 id="ref_any-const-ref_any-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Ref_any</nf> (    <span class="kt">const Ref_any &amp;</span> <a href="#ref_any-const-ref_any--_-other"><var class="nv">other</var></a>  )</code></h3>
+<p>Copies an existing reference.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="ref_any-const-ref_any--_-other" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></h5></dt>
 <dd>the ref to copy</dd>
 </dl>
-<h1>Description</h1>
+<h4>Description</h4>
+<section class="description">
 Copies an existing reference.
 if the requested rights can not be granted, the reference is made null
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="ref_any-const-ref_any-or-ow--">Ref_any</h1>
-<code> Ref_any (    const Ref_any&lt; OR, OW &gt; &amp; other  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="ref_any-const-ref_any-or-ow---_-other"><code>other</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="ref_any-const-ref_any-or-ow--" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Ref_any</nf> (    <span class="kt">const Ref_any&lt; OR, OW &gt; &amp;</span> <a href="#ref_any-const-ref_any-or-ow---_-other"><var class="nv">other</var></a>  )</code></h3>
+<p>Copies an existing reference with different privileges.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="ref_any-const-ref_any-or-ow---_-other" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></h5></dt>
 <dd>the ref to copy</dd>
 </dl>
-<h1>Description</h1>
+<h4>Description</h4>
+<section class="description">
 Copies an existing reference with different privileges.
 if the requested rights can not be granted, the reference is made null
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="ref_any-ref_any-">Ref_any</h1>
-<code> Ref_any (    Ref_any &amp;&amp; other  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="ref_any-ref_any--_-other"><code>other</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="ref_any-ref_any-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Ref_any</nf> (    <span class="kt">Ref_any &amp;&amp;</span> <a href="#ref_any-ref_any--_-other"><var class="nv">other</var></a>  )</code></h3>
+<p>Moves an existing reference.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="ref_any-ref_any--_-other" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></h5></dt>
 <dd>the ref to copy</dd>
 </dl>
-<h1>Description</h1>
-Moves an existing reference.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool">Ref_any</h1>
-<code> Ref_any (    void * data,   std::function&lt; void(void *)&gt; freefunc,   bool readable,   Datatype_uptr type,   bool writable  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-data"><code>data</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Ref_any</nf> (    <span class="kt">void *</span> <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-data"><var class="nv">data</var></a>,   <span class="kt">std::function&lt; void(void *)&gt;</span> <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-freefunc"><var class="nv">freefunc</var></a>,   <span class="kt">bool</span> <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-readable"><var class="nv">readable</var></a>,   <span class="kt">Datatype_uptr</span> <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-type"><var class="nv">type</var></a>,   <span class="kt">bool</span> <a href="#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-writable"><var class="nv">writable</var></a>  )</code></h3>
+<p>Creates a reference to currently unreferenced data.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-data" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">data</var></code></h5></dt>
 <dd>the raw data to reference</dd>
-<dt id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-freefunc"><code>freefunc</code></dt>
+<dt><h5 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-freefunc" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">freefunc</var></code></h5></dt>
 <dd>the function to use to free the data buffer</dd>
-<dt id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-readable"><code>readable</code></dt>
+<dt><h5 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-readable" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">readable</var></code></h5></dt>
 <dd>the maximum allowed access to the underlying content</dd>
-<dt id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-type"><code>type</code></dt>
+<dt><h5 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-type" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">type</var></code></h5></dt>
 <dd>the type of the referenced data, ownership will be taken</dd>
-<dt id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-writable"><code>writable</code></dt>
+<dt><h5 id="ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool-_-writable" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">writable</var></code></h5></dt>
 <dd>the maximum allowed access to the underlying content</dd>
 </dl>
-<h1>Description</h1>
-Creates a reference to currently unreferenced data.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="copy">copy</h1>
-<code>Ref copy (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="copy" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Ref</span> <span class="nf">copy</nf> (  )</code></h3>
+<p>Makes a copy of the raw content behind this reference and returns a new reference.</p>
+<h4>Result</h4>
+<section class="result">
 <p>a new reference to a copy of the raw data this references</p>
-<h1>Description</h1>
-Makes a copy of the raw content behind this reference and returns a new reference.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="get">get</h1>
-<code>Ref_access&lt; R, W &gt;::type get (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="get" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Ref_access&lt; R, W &gt;::type</span> <span class="nf">get</nf> (  )</code></h3>
+<p>Offers access to the referenced raw data, throws on null references.</p>
+<h4>Result</h4>
+<section class="result">
 <p>a pointer to the referenced raw data</p>
-<h1>Description</h1>
-Offers access to the referenced raw data, throws on null references.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="get-stdnothrow_t">get</h1>
-<code>Ref_access&lt; R, W &gt;::type get (    std::nothrow_t   )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="get-stdnothrow_t-_-"><code></code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="get-stdnothrow_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Ref_access&lt; R, W &gt;::type</span> <span class="nf">get</nf> (    <span class="kt">std::nothrow_t</span> <a href="#get-stdnothrow_t-_-"><var class="nv"></var></a>  )</code></h3>
+<p>Offers access to the referenced raw data, returns null for null references.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="get-stdnothrow_t-_-" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv"></var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Result</h1>
+<h4>Result</h4>
+<section class="result">
 <p>a pointer to the referenced raw data</p>
-<h1>Description</h1>
-Offers access to the referenced raw data, returns null for null references.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="on_nullify-stdfunction-voidref">on_nullify</h1>
-<code>void on_nullify (    std::function&lt; void(Ref)&gt; notifier  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="on_nullify-stdfunction-voidref-_-notifier"><code>notifier</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="on_nullify-stdfunction-voidref" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">on_nullify</nf> (    <span class="kt">std::function&lt; void(Ref)&gt;</span> <a href="#on_nullify-stdfunction-voidref-_-notifier"><var class="nv">notifier</var></a>  )</code></h3>
+<p>Registers a nullification callback.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="on_nullify-stdfunction-voidref-_-notifier" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">notifier</var></code></h5></dt>
 <dd>the function to call when this reference becomes null</dd>
 </dl>
-<h1>Description</h1>
-Registers a nullification callback.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-bool">operator bool</h1>
-<code> operator bool (  )</code>
-</header>
-<h1>Description</h1>
-Checks whether this is a null reference.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-typename-ref_access-r-w-type">operator typename Ref_access&lt; R, W &gt;::type</h1>
-<code> operator typename Ref_access&lt; R, W &gt;::type (  )</code>
-</header>
-<h1>Description</h1>
-Offers access to the referenced raw data.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-ref_base-">operator!=</h1>
-<code>bool operator!= (    const Ref_base &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-ref_base--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-bool" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">operator bool</nf> (  )</code></h3>
+<p>Checks whether this is a null reference.</p>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-typename-ref_access-r-w-type" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">operator typename Ref_access&lt; R, W &gt;::type</nf> (  )</code></h3>
+<p>Offers access to the referenced raw data.</p>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-ref_base-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator!=</nf> (    <span class="kt">const Ref_base &amp;</span> <a href="#operator-const-ref_base--_-o"><var class="nv">o</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-ref_base--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-ref_base-">operator&lt;</h1>
-<code>bool operator&lt; (    const Ref_base &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-ref_base--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-ref_base-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator&lt;</nf> (    <span class="kt">const Ref_base &amp;</span> <a href="#operator-const-ref_base--_-o"><var class="nv">o</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-ref_base--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-ref_base-">operator&lt;=</h1>
-<code>bool operator&lt;= (    const Ref_base &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-ref_base--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-ref_base-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator&lt;=</nf> (    <span class="kt">const Ref_base &amp;</span> <a href="#operator-const-ref_base--_-o"><var class="nv">o</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-ref_base--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-ref_base-">operator==</h1>
-<code>bool operator== (    const Ref_base &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-ref_base--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-ref_base-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator==</nf> (    <span class="kt">const Ref_base &amp;</span> <a href="#operator-const-ref_base--_-o"><var class="nv">o</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-ref_base--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-ref_base-">operator&gt;</h1>
-<code>bool operator&gt; (    const Ref_base &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-ref_base--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-ref_base-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator&gt;</nf> (    <span class="kt">const Ref_base &amp;</span> <a href="#operator-const-ref_base--_-o"><var class="nv">o</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-ref_base--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="operator-const-ref_base-">operator&gt;=</h1>
-<code>bool operator&gt;= (    const Ref_base &amp; o  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="operator-const-ref_base--_-o"><code>o</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="operator-const-ref_base-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">operator&gt;=</nf> (    <span class="kt">const Ref_base &amp;</span> <a href="#operator-const-ref_base--_-o"><var class="nv">o</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="operator-const-ref_base--_-o" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="release">release</h1>
-<code>void * release (  )</code>
-</header>
-<h1>Result</h1>
+</article>
+<article class="td-content member-function">
+<h3 id="release" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void *</span> <span class="nf">release</nf> (  )</code></h3>
+<p>Releases ownership of the referenced raw data by nullifying all existing references.</p>
+<h4>Result</h4>
+<section class="result">
 <p>the previously referenced raw data or nullptr if this was a null reference, i.e. the value which would be returned by <a href="member:classPDI_1_1Ref__any_1ad8d6851233a405e0e1c27d2e762c6cb9">get()</a> before the call.</p>
-<h1>Description</h1>
-Releases ownership of the referenced raw data by nullifying all existing references.
 </section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="reset">reset</h1>
-<code>void reset (  )</code>
-</header>
-<h1>Description</h1>
-Nullify the reference.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="ref_any">~Ref_any</h1>
-<code> ~Ref_any (  )</code>
-</header>
-<h1>Description</h1>
-Destructor.
-</section>
-</article><hr>
+</article>
+<article class="td-content member-function">
+<h3 id="reset" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">reset</nf> (  )</code></h3>
+<p>Nullify the reference.</p>
+</article>
+<article class="td-content member-function">
+<h3 id="ref_any" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">~Ref_any</nf> (  )</code></h3>
+<p>Destructor.</p>
+</article>
 
         <div class="section-index">
     

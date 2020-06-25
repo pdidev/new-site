@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" as="style">
-<link href="/new-site/scss/main.min.92e7364ad64e60fe54b081f8707f04fe121f9a5f333584a6a8f152f11bda50a2.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1096,61 +1096,46 @@
 	
 	<h2 id="member-functions-list">Member Functions</h2>
 <dl>
-<dt> <a href="#error-const-args--pdi_status_t-const-char-"><code> Error ( const Args &..., PDI_status_t, const char * )</code></a></dt>
-<dd>Creates a <a href="compound:namespacePDI">PDI</a> error. <a href="#error-const-args--pdi_status_t-const-char-">More…</a></dd>
-<dt> <a href="#error-pdi_status_t-const-char-"><code> Error ( PDI_status_t, const char * )</code></a></dt>
-<dd> <a href="#error-pdi_status_t-const-char-">More…</a></dd>
-<dt> <a href="#status"><code>PDI_status_t status ()</code></a></dt>
-<dd> <a href="#status">More…</a></dd>
-<dt> <a href="#what"><code>const char * what ()</code></a></dt>
-<dd> <a href="#what">More…</a></dd>
+<dt><a href="#error-const-args--pdi_status_t-const-char-"><code> Error ( const Args &..., PDI_status_t, const char * )</code></a></dt>
+<dd>Creates a <a href="compound:namespacePDI">PDI</a> error. </dd>
+<dt><a href="#error-pdi_status_t-const-char-"><code> Error ( PDI_status_t, const char * )</code></a></dt>
+<dt><a href="#status"><code>PDI_status_t status ()</code></a></dt>
+<dt><a href="#what"><code>const char * what ()</code></a></dt>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h2>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="error-const-args--pdi_status_t-const-char-">Error</h1>
-<code> Error (    const Args &amp;... args,   PDI_status_t errcode,   const char * fmt  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="error-const-args--pdi_status_t-const-char--_-args"><code>args</code></dt>
+<article class="td-content member-function">
+<h3 id="error-const-args--pdi_status_t-const-char-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Error</nf> (    <span class="kt">const Args &amp;...</span> <a href="#error-const-args--pdi_status_t-const-char--_-args"><var class="nv">args</var></a>,   <span class="kt">PDI_status_t</span> <a href="#error-const-args--pdi_status_t-const-char--_-errcode"><var class="nv">errcode</var></a>,   <span class="kt">const char *</span> <a href="#error-const-args--pdi_status_t-const-char--_-fmt"><var class="nv">fmt</var></a>  )</code></h3>
+<p>Creates a <a href="compound:namespacePDI">PDI</a> error.</p>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="error-const-args--pdi_status_t-const-char--_-args" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">args</var></code></h5></dt>
 <dd>the python-style parameters for the message</dd>
-<dt id="error-const-args--pdi_status_t-const-char--_-errcode"><code>errcode</code></dt>
+<dt><h5 id="error-const-args--pdi_status_t-const-char--_-errcode" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">errcode</var></code></h5></dt>
 <dd>the error code of the error to create</dd>
-<dt id="error-const-args--pdi_status_t-const-char--_-fmt"><code>fmt</code></dt>
+<dt><h5 id="error-const-args--pdi_status_t-const-char--_-fmt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">fmt</var></code></h5></dt>
 <dd>an errror message as a python-style format</dd>
 </dl>
-<h1>Description</h1>
-Creates a <a href="compound:namespacePDI">PDI</a> error.
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="error-pdi_status_t-const-char-">Error</h1>
-<code> Error (    PDI_status_t errcode,   const char * fmt  )</code>
-</header>
-<h1>Parameters</h1>
-<dl>
-<dt id="error-pdi_status_t-const-char--_-errcode"><code>errcode</code></dt>
+</article>
+<article class="td-content member-function">
+<h3 id="error-pdi_status_t-const-char-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt"></span> <span class="nf">Error</nf> (    <span class="kt">PDI_status_t</span> <a href="#error-pdi_status_t-const-char--_-errcode"><var class="nv">errcode</var></a>,   <span class="kt">const char *</span> <a href="#error-pdi_status_t-const-char--_-fmt"><var class="nv">fmt</var></a>  )</code></h3>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="error-pdi_status_t-const-char--_-errcode" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">errcode</var></code></h5></dt>
 <dd></dd>
-<dt id="error-pdi_status_t-const-char--_-fmt"><code>fmt</code></dt>
+<dt><h5 id="error-pdi_status_t-const-char--_-fmt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">fmt</var></code></h5></dt>
 <dd></dd>
 </dl>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="status">status</h1>
-<code>PDI_status_t status (  )</code>
-</header>
-<h1>Description</h1>
-</section>
-</article><hr>
-<article class="memitem td-content">
-<header class="memproto"><h1 id="what">what</h1>
-<code>const char * what (  )</code>
-</header>
-<h1>Description</h1>
-</section>
-</article><hr>
+</article>
+<article class="td-content member-function">
+<h3 id="status" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">PDI_status_t</span> <span class="nf">status</nf> (  )</code></h3>
+</article>
+<article class="td-content member-function">
+<h3 id="what" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">const char *</span> <span class="nf">what</nf> (  )</code></h3>
+</article>
 
         <div class="section-index">
     
