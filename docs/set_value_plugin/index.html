@@ -1,0 +1,1551 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.72.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/new-site/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/new-site/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
+
+<title>Set_value plugin | PDI</title><meta property="og:title" content="Set_value plugin" />
+<meta property="og:description" content="The Set_value plugin allows setting values to data and metadata descriptors from the yaml file.
+There are 3 main features:
+ Share data - plugin will share new allocated data with given values Expose data - plugin will expose new allocated data with given values Set data - plugin will set given values to the already shared data  Configuration grammar At its root, the Set_value configuration is made of:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/" />
+
+<meta itemprop="name" content="Set_value plugin">
+<meta itemprop="description" content="The Set_value plugin allows setting values to data and metadata descriptors from the yaml file.
+There are 3 main features:
+ Share data - plugin will share new allocated data with given values Expose data - plugin will expose new allocated data with given values Set data - plugin will set given values to the already shared data  Configuration grammar At its root, the Set_value configuration is made of:">
+
+<meta itemprop="wordCount" content="940">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Set_value plugin"/>
+<meta name="twitter:description" content="The Set_value plugin allows setting values to data and metadata descriptors from the yaml file.
+There are 3 main features:
+ Share data - plugin will share new allocated data with given values Expose data - plugin will expose new allocated data with given values Set data - plugin will set given values to the already shared data  Configuration grammar At its root, the Set_value configuration is made of:"/>
+
+
+
+
+
+<link rel="preload" href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" as="style">
+<link href="/new-site/scss/main.min.09ab6e53fa62c88bcdcdf3da042c6d90582d77ac5999774b851cace99f88b707.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/new-site/">
+		<span class="navbar-logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg8" viewBox="0 0 40 40"><defs id="defs2"><linearGradient id="linearGradient846"><stop id="stop842" offset="0" style="stop-color:#3a82c2;stop-opacity:1"/><stop style="stop-color:#073763;stop-opacity:1" offset=".4946366" id="stop850"/><stop id="stop844" offset="1" style="stop-color:#3a82c2;stop-opacity:1"/></linearGradient><linearGradient gradientTransform="matrix(1.1064998,0,0,1.1064998,-2.8109111,-3.2500611)" gradientUnits="userSpaceOnUse" y2="6.0482411" x2="25.209953" y1="41.294521" x1="25.249392" id="linearGradient848" xlink:href="#linearGradient846"/><filter id="filter1270" style="color-interpolation-filters:sRGB"><feFlood id="feFlood1260" result="flood" flood-color="rgb(0,0,0)" flood-opacity=".498039"/><feComposite id="feComposite1262" result="composite1" operator="in" in2="SourceGraphic" in="flood"/><feGaussianBlur id="feGaussianBlur1264" result="blur" stdDeviation="1" in="composite1"/><feOffset id="feOffset1266" result="offset" dy=".6" dx=".6"/><feComposite id="feComposite1268" result="composite2" operator="over" in2="offset" in="SourceGraphic"/></filter></defs><g transform="translate(-4.6772165,-3.1371543)" id="layer1"><circle r="19.5" cy="22.994598" cx="24.687487" id="path840" style="opacity:1;fill:url(#linearGradient848);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><flowRoot transform="matrix(0.26458333,0,0,0.26458333,4.6772165,3.1371543)" style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#000;fill-opacity:1;stroke:none" id="flowRoot852"><flowRegion id="flowRegion854"><rect y="55.823959" x="32.857143" height="43.92857" width="94.285713" id="rect856"/></flowRegion><flowPara id="flowPara858">PPd</flowPara></flowRoot><text transform="matrix(1.0723861,0,0,1.0723861,-1.9406576,-2.4256035)" id="text862" y="30.191469" x="10.006681" style="font-style:normal;font-weight:400;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.24672395;filter:url(#filter1270)"><tspan style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:17.63888931px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#fff;fill-opacity:1;stroke-width:.24672395" y="30.191469" x="10.006681" id="tspan860">PDI</tspan></text></g></svg></span><span class="text-uppercase font-weight-bold">PDI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/new-site/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/master/">git master</a>
+	
+	<a class="dropdown-item" href="/">latest release (0.5.1)</a>
+	
+	<a class="dropdown-item" href="/0.5.0/">release 0.5.0</a>
+	
+	<a class="dropdown-item" href="/0.4.1/">release 0.4.1</a>
+	
+</div>
+
+			</li>
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="new-sitedocs">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsconcepts" href="/new-site/docs/concepts/">Core Concepts</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdeprecated" href="/new-site/docs/deprecated/">Deprecated List</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfti_plugin" href="/new-site/docs/fti_plugin/">FTI plugin</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Full API reference</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsref">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/array_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Array_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiarray_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/datatype_template_parser/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_parser</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextdatatype_template_parser">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context/iterator/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Iterator</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontextiterator">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/context_proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Context_proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdicontext_proxy">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/data_descriptor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Data_descriptor</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidata_descriptor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_template_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_template_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_template_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/datatype_uptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Datatype_uptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdidatatype_uptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/error/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Error</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdierror">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/expression/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Expression</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiexpression">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/logger_sptr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Logger_sptr</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdilogger_sptr">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/paraconf_wrapper/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Paraconf_wrapper</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiparaconf_wrapper">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/plugin/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Plugin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiplugin">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/pointer_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Pointer_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdipointer_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatype">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/record_datatype/member/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Member</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdirecord_datatypemember">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_any/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_any</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_any">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_r">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_rw/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_rw</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_rw">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/ref_w/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_w</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiref_w">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference_base</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_buffer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_buffer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_buffer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_data/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_data</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_data">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/scalar_kind/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Scalar_kind</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdiscalar_kind">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi_errhandler_s/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_s</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_s">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/spdlog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">spdlog</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefspdlog">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">std</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstd">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">hash&lt; PDI::Ref_any&lt; R, W &gt; &gt;</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefstdhash__pdi__ref_any__r__w____">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on tutorial</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshow_to_create_plugin" href="/new-site/docs/how_to_create_plugin/">How to create a plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation of PDI source distribution</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspdi_example" href="/new-site/docs/pdi_example/">PDI example</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspycall_plugin" href="/new-site/docs/pycall_plugin/">Pycall plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocsset_value_plugin" href="/new-site/docs/set_value_plugin/">Set_value plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsspecification_tree_ref" href="/new-site/docs/specification_tree_ref/">Specification tree Reference</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsdecl_hdf5_plugin" href="/new-site/docs/decl_hdf5_plugin/">The Decl&#39;HDF5 plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsflowvr_plugin" href="/new-site/docs/flowvr_plugin/">The FlowVR plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsuser_code_plugin" href="/new-site/docs/user_code_plugin/">The user-code plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocstrace_plugin" href="/new-site/docs/trace_plugin/">Trace plugin</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#configuration-grammar">Configuration grammar</a>
+      <ul>
+        <li><a href="#on_init">on_init</a></li>
+        <li><a href="#on_event">on_event</a></li>
+        <li><a href="#on_data">on_data</a></li>
+        <li><a href="#value-operation">value operation</a></li>
+        <li><a href="#value-list">value list</a></li>
+        <li><a href="#scalar-value">scalar value</a></li>
+        <li><a href="#array-value">array value</a></li>
+        <li><a href="#record-value">record value</a></li>
+      </ul>
+    </li>
+    <li><a href="#full-configuration-example">full configuration example</a></li>
+    <li><a href="#using-old-values-to-set-new">Using old values to set new</a>
+      <ul>
+        <li><a href="#increment-value">Increment value</a></li>
+        <li><a href="#getting-old-value">Getting old value</a></li>
+        <li><a href="#getting-new-value">Getting new value</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/">Set_value plugin</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Set_value plugin</h1>
+    
+	       
+	<p>The Set_value plugin allows setting values to data and metadata descriptors from the yaml file.</p>
+<p>There are 3 main features:</p>
+<ol>
+<li>Share data - plugin will share new allocated data with given values</li>
+<li>Expose data - plugin will expose new allocated data with given values</li>
+<li>Set data - plugin will set given values to the already shared data</li>
+</ol>
+<h2 id="configuration-grammar">Configuration grammar</h2>
+<p>At its root, the Set_value configuration is made of:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;on_init&quot;</code> (<em>optional</em>)</td>
+<td>a list of <a href="member:set_value_plugin_1value_operation">value operation</a></td>
+</tr>
+<tr>
+<td><code>&quot;on_event&quot;</code> (<em>optional</em>)</td>
+<td>an <a href="member:set_value_plugin_1on_event_map_node">on_event</a></td>
+</tr>
+<tr>
+<td><code>&quot;on_data&quot;</code> (<em>optional</em>)</td>
+<td>an <a href="member:set_value_plugin_1on_data_map_node">on_data</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="on_init">on_init</h3>
+<p>Specifies a list of operation to do in <a href="member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0">PDI_init</a> function. <code>on_init</code> is a list of <a href="member:set_value_plugin_1value_operation">value operation</a> s.</p>
+<pre><code>plugins:
+  set_value:
+    on_init:
+      - set: ... # value_list
+      - share: ... # value_list
+      - expose: ... # value_list
+</code></pre><h3 id="on_event">on_event</h3>
+<p>Specifies a map of events that will trigger the values set. <code>on_event</code> is a map with event name as a key and <a href="member:set_value_plugin_1value_operation">value operation</a> list as map value.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a list of <a href="member:set_value_plugin_1value_operation">value operation</a></td>
+</tr>
+</tbody>
+</table>
+<pre><code>plugins:
+  set_value:
+    on_event:
+      event_1_name:
+        - set: ... # value_list
+        - share: ... # value_list
+        - expose: ... # value_list
+      event_2_name:
+        - set: ... # value_list
+        - share: ... # value_list
+        - expose: ... # value_list
+</code></pre><h3 id="on_data">on_data</h3>
+<p>Specifies a map of data that on share will trigger the values set. <code>on_data</code> is a map with data/metadata name as a key and <a href="member:set_value_plugin_1value_operation">value operation</a> as map value.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a list of <a href="member:set_value_plugin_1value_operation">value operation</a></td>
+</tr>
+</tbody>
+</table>
+<pre><code>metadata:
+  metadata_1_name: ... # metadata_type
+data:
+  data_1_name: ...  # data_type
+plugins:
+  set_value:
+    on_data:
+      data_1_name:
+        - set: ... # value_list
+        - share: ... # value_list
+        - expose: ... # value_list
+      metadata_1_name:
+        - set: ... # value_list
+        - share: ... # value_list
+        - expose: ... # value_list
+</code></pre><h3 id="value-operation">value operation</h3>
+<p>Defines what operation to do with given <a href="member:set_value_plugin_1value_list">value list</a>. The order of the operation is important and will be called in the same order as defined in yaml file.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;set&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:set_value_plugin_1value_list">value list</a></td>
+</tr>
+<tr>
+<td><code>&quot;share&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:set_value_plugin_1value_list">value list</a></td>
+</tr>
+<tr>
+<td><code>&quot;expose&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:set_value_plugin_1value_list">value list</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Share warning</strong></p>
+<p>Share is always done with read and write rights. Plugin allocates memory by <code>malloc</code>. If you reclaim the data, you should free it with <code>free</code> instruction. If you don't reclaim or release data, plugin will try to release all descriptors that has shared before (failure is not an error, so user can reclaim the shared data).</p>
+<h3 id="value-list">value list</h3>
+<p>Is a list of the</p>
+<ul>
+<li><a href="member:set_value_plugin_1scalar_value">scalar value</a>,</li>
+<li><a href="member:set_value_plugin_1array_value">array value</a>,</li>
+<li><a href="member:set_value_plugin_1record_value">record value</a></li>
+</ul>
+<p>as elements. The order of the elements is important. The descriptors will be set in the same order as given in the yaml file.</p>
+<h3 id="scalar-value">scalar value</h3>
+<p>Is a map of descriptor name as a key, and a value to set as a value:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a scalar value to set</td>
+</tr>
+</tbody>
+</table>
+<pre><code>metadata:
+  scalar_name: int
+set_value:
+  on_init:
+    - expose:
+      - scalar_name: 42
+</code></pre><h3 id="array-value">array value</h3>
+<p>Is a map of descriptor name as a key, and a list of values to set as a value:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a list of value to set</td>
+</tr>
+</tbody>
+</table>
+<pre><code>metadata:
+  array_name:
+    type: array
+    size: 4
+    subtype: int
+
+plugins:
+  set_value:
+    on_init:
+      - expose:
+        - array_name: [2, 3, 4, 5]
+</code></pre><h3 id="record-value">record value</h3>
+<p>Is a map of descriptor name as a key, and a list of members to set as a value. Each member consist of an inner <code>value_list</code>. The order of the members is unrestricted, but the plugin will set the values to the members in the same order.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a map with member name as key and a value to set as value</td>
+</tr>
+</tbody>
+</table>
+<pre><code>metadata:
+  record_name:
+    type: record
+    buffersize: 16
+    members:
+      member_1:
+        disp: 0
+        type: array
+        size: 3
+        subtype: int
+      member_2:
+        disp: 12
+        type: int
+
+set_value:
+  on_init:
+    - expose:
+      - record_name:
+          member_2: 3 # int member
+          member_1: [1, 2, 3] # array of ints member
+</code></pre><h2 id="full-configuration-example">full configuration example</h2>
+<pre><code>metadata:
+  array_size: int64
+
+data:
+  record_data:
+    type: record
+    buffersize: 36
+    members:
+      scalar_data:
+        disp: 0
+        type: int
+      array_data:
+        disp: 4
+        type: array
+        size: $array_size
+        subtype: int
+
+plugins:
+  set_value:
+    on_init:
+      - expose:
+        - array_size: 3
+      - share:
+        - record_data:
+          - scalar_data: 0
+          - array_data: [0, 0, 0]
+    on_event:
+      event_1_name:
+        - set:
+          - record_data:
+            - scalar_data: 3
+            - array_data: [1, 2, 3]
+</code></pre><h2 id="using-old-values-to-set-new">Using old values to set new</h2>
+<h3 id="increment-value">Increment value</h3>
+<p>The set_value plugin allows to use the old values to set new values, you can use even the same descriptor, for example to increment a scalar.</p>
+<pre><code>data:
+  value_int:
+    type: int
+  int_array:
+    size: 3
+    subtype: int
+    type: array
+plugins:
+  set_value:
+    on_event:
+      init:
+        - share:
+          - value_int: 0
+          - int_array: [1, 2, 3]
+      increment:
+        - set:
+          - value_int: &quot;$value_int + 1&quot;
+          - int_array: [&quot;$int_array[0] + 1&quot;, &quot;$int_array[1] + 1&quot;, &quot;$int_array[2] + 1&quot;]
+</code></pre><p>After calling <code>init</code> and <code>increment</code> event, <code>value_int</code> will be equal 1, and <code>int_array</code> to [2, 3, 4].</p>
+<h3 id="getting-old-value">Getting old value</h3>
+<p>The new value is set at the end of processing the whole descriptors. This means, that if you want to update the array element depending on other element, the old value will be set:</p>
+<pre><code>metadata:
+  int_array:
+    size: 3
+    subtype: int
+    type: array
+plugins:
+  set_value:
+    on_event:
+      init:
+        - expose:
+          - int_array: [0, 0, 0]
+      increment:
+        - expose:
+          - int_array: [&quot;$int_array[0] + 1&quot;, &quot;$int_array[0] + 1&quot;, &quot;$int_array[1] + 1&quot;]
+</code></pre><p>After calling <code>init</code> and <code>increment</code> event, all values in <code>int_array</code> will equal <code>1</code>. This is because the <code>int_array[0]</code> was updated after setting all the elements.</p>
+<h3 id="getting-new-value">Getting new value</h3>
+<pre><code>metadata:
+  int_scalar: int
+  int_array:
+    size: 3
+    subtype: int
+    type: array
+plugins:
+  set_value:
+    on_event:
+      init:
+        - expose:
+          - int_scalar: 0
+          - int_array: [0, 0, 0]
+      increment:
+        - expose:
+          - int_scalar: $int_scalar+1
+          - int_array: [&quot;$int_scalar&quot;, &quot;$int_scalar&quot;, &quot;$int_scalar&quot;]
+</code></pre><p>After calling <code>init</code> and <code>increment</code> event, all values in <code>int_array</code> will equal <code>1</code>. This is because the <code>int_scalar</code> is set and then the <code>int_array</code> is updated after the <code>int_scalar</code> has a new value.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack for users" aria-label="Slack for users">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Gitlab for users" aria-label="Gitlab for users">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tags">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitLab" aria-label="GitLab">
+    <a class="text-white" target="_blank" href="https://gitlab.maisondelasimulation.fr/pdidev/">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/pdidev/shared_invite/enQtNDk5OTY2MDA0Nzg0LTlkM2U1MGQwZmM3OGM1MjA0M2VlMzUyNWNjODhkNmI4MjMwZmQxMTM1ODc2ODI4MjY4ODNmNDhmY2QzOWI4Nzk">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Jenkins" aria-label="Jenkins">
+    <a class="text-white" target="_blank" href="https://ci.inria.fr/ah5/">
+      <i class="fab fa-jenkins"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/pdidev">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="DockerHub" aria-label="DockerHub">
+    <a class="text-white" target="_blank" href="https://hub.docker.com/orgs/pdidev">
+      <i class="fab fa-docker"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 The PDI team All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/new-site/js/main.min.b6dfd66b2d261380250c517fd39bc9d8659709e9fc924b00d8fed92e8d9df768.js" integrity="sha256-tt/Way0mE4AlDFF/05vJ2GWXCen8kksA2P7ZLo2d92g=" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>

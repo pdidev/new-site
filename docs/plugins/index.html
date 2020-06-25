@@ -21,23 +21,20 @@
 <link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
 
 <title>Plugins | PDI</title><meta property="og:title" content="Plugins" />
-<meta property="og:description" content="Here is a list of PDI plugins:
- Decl&#39;HDF5 plugin Decl&#39;SION plugin FlowVR plugin FTI plugin MPI plugin Pycall plugin trace plugin user-code plugin How to create a plugin  " />
+<meta property="og:description" content="Plugin Description     Decl&#39;HDF5 plugin Read and write data from HDF5 files in a declarative way.   FlowVR plugin Write FlowVR modules without knowing any specific FlowVR API calls.   trace plugin Generate a trace of what happens in PDI data store.   user-code plugin Call your function on event or when data becomes available   set_value plugin Set values to data and metadata from yaml file." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/plugins/" />
 
 <meta itemprop="name" content="Plugins">
-<meta itemprop="description" content="Here is a list of PDI plugins:
- Decl&#39;HDF5 plugin Decl&#39;SION plugin FlowVR plugin FTI plugin MPI plugin Pycall plugin trace plugin user-code plugin How to create a plugin  ">
+<meta itemprop="description" content="Plugin Description     Decl&#39;HDF5 plugin Read and write data from HDF5 files in a declarative way.   FlowVR plugin Write FlowVR modules without knowing any specific FlowVR API calls.   trace plugin Generate a trace of what happens in PDI data store.   user-code plugin Call your function on event or when data becomes available   set_value plugin Set values to data and metadata from yaml file.">
 
-<meta itemprop="wordCount" content="28">
+<meta itemprop="wordCount" content="113">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Plugins"/>
-<meta name="twitter:description" content="Here is a list of PDI plugins:
- Decl&#39;HDF5 plugin Decl&#39;SION plugin FlowVR plugin FTI plugin MPI plugin Pycall plugin trace plugin user-code plugin How to create a plugin  "/>
+<meta name="twitter:description" content="Plugin Description     Decl&#39;HDF5 plugin Read and write data from HDF5 files in a declarative way.   FlowVR plugin Write FlowVR modules without knowing any specific FlowVR API calls.   trace plugin Generate a trace of what happens in PDI data store.   user-code plugin Call your function on event or when data becomes available   set_value plugin Set values to data and metadata from yaml file."/>
 
 
 
@@ -175,6 +172,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfti_plugin" href="/new-site/docs/fti_plugin/">FTI plugin</a>
       
       
       
@@ -566,6 +569,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/pointer_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Pointer_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdipointer_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
   </li>
   <ul>
@@ -658,52 +684,6 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi/ref_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_base</a>
-  </li>
-  <ul>
-    <li class="collapse " id="new-sitedocsrefpdiref_base">
-      
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi/ref_base/referenced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced</a>
-  </li>
-  <ul>
-    <li class="collapse " id="new-sitedocsrefpdiref_basereferenced">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
   </li>
   <ul>
@@ -755,6 +735,75 @@
   <ul>
     <li class="collapse " id="new-sitedocsrefpdiref_w">
       
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference_base</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_buffer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_buffer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_buffer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_data/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_data</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_data">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -825,10 +874,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi_errhandler_t/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_t</a>
+    <a  href="/new-site/docs/ref/pdi_errhandler_s/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_s</a>
   </li>
   <ul>
-    <li class="collapse " id="new-sitedocsrefpdi_errhandler_t">
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_s">
       
       
       
@@ -916,7 +965,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on tutorial</a>
       
       
       
@@ -928,19 +977,31 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation of PDI source distribution</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsphilosophy" href="/new-site/docs/philosophy/">Philosophy of PDI</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspdi_example" href="/new-site/docs/pdi_example/">PDI example</a>
       
       
       
       
       
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspycall_plugin" href="/new-site/docs/pycall_plugin/">Pycall plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsset_value_plugin" href="/new-site/docs/set_value_plugin/">Set_value plugin</a>
       
       
       
@@ -1000,22 +1061,8 @@
 
 
 
-<div id="TableOfContents"><ul>
 
 
-<li><a href="#member-types-list">Member Types</a><li>
-
-
-
-
-
-
-<li><a href="#detailed-documentation">Detailed Documentation</a><li>
-<ul>
-
-</ul>
-
-</li></div>
 
 
 
@@ -1054,18 +1101,53 @@
 	<h1>Plugins</h1>
     
 	       
-	<p>Here is a list of PDI plugins:</p>
-<ul>
-<li><a href="compound:Decl_HDF5_plugin">Decl'HDF5 plugin</a></li>
-<li>Decl'SION plugin</li>
-<li><a href="compound:FlowVR_plugin">FlowVR plugin</a></li>
-<li>FTI plugin</li>
-<li>MPI plugin</li>
-<li>Pycall plugin</li>
-<li><a href="compound:trace_plugin">trace plugin</a></li>
-<li><a href="compound:user_code_plugin">user-code plugin</a></li>
-<li><a href="compound:how_to_create_plugin">How to create a plugin</a></li>
-</ul>
+	<table>
+<thead>
+<tr>
+<th>Plugin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="compound:Decl_HDF5_plugin">Decl'HDF5 plugin</a></td>
+<td>Read and write data from HDF5 files in a declarative way.</td>
+</tr>
+<tr>
+<td><a href="compound:FlowVR_plugin">FlowVR plugin</a></td>
+<td>Write FlowVR modules without knowing any specific FlowVR API calls.</td>
+</tr>
+<tr>
+<td><a href="compound:trace_plugin">trace plugin</a></td>
+<td>Generate a trace of what happens in PDI data store.</td>
+</tr>
+<tr>
+<td><a href="compound:user_code_plugin">user-code plugin</a></td>
+<td>Call your function on event or when data becomes available</td>
+</tr>
+<tr>
+<td><a href="compound:set_value_plugin">set_value plugin</a></td>
+<td>Set values to data and metadata from yaml file.</td>
+</tr>
+<tr>
+<td><a href="compound:FTI_plugin">FTI plugin</a></td>
+<td>Perform checkpoints using FTI library.</td>
+</tr>
+<tr>
+<td><a href="compound:pycall_plugin">Pycall plugin</a></td>
+<td>Call python scripts from C application</td>
+</tr>
+<tr>
+<td>MPI plugin</td>
+<td>Enables MPI support in PDI and plugins.</td>
+</tr>
+<tr>
+<td>Decl'SION plugin</td>
+<td>Read and write data from SIONlib files in a declarative way.</td>
+</tr>
+</tbody>
+</table>
+<p>To learn how to create your own plugin see: <a href="compound:how_to_create_plugin">How to create a plugin</a></p>
 
 	
 	

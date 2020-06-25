@@ -20,27 +20,30 @@
 <link rel="icon" type="image/png" href="/new-site/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
 
-<title>Hands-on | PDI</title><meta property="og:title" content="Hands-on" />
-<meta property="og:description" content="Environment This hands-on has been tested on the Poincare machine but it should be easy to adapt to another machine.
-Poincare machine You should load the file /gpfslocal/pub/pdi/training-env.bash in your environment. To do that, you must source it in every shell you open.
-$ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu compiler to configure openmpi wrappers... (load) openmpi version 2.1.3_gnu73 (load) hdf5 version 1.10.2_gnu73_openmpi2 (load) PDI version 0.4.0_gnu73_openmpi2 (load) git version 2." />
+<title>Hands-on tutorial | PDI</title><meta property="og:title" content="Hands-on tutorial" />
+<meta property="og:description" content="Setup You need to install PDI before proceeding with this tutorial.  After PDI is installed, you can proceed with getting the sources for the hands-on tutorial from github.
+git clone https://github.com/pdidev/tutorial.git Before compilation, configure the tutorial by detecting all dependencies:
+cd tutorial pdirun cmake . Now you&#39;re ready to work, good luck!
+Tutorial For each exercise, once you&#39;ve modified it, you can compile it by running the following command:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/hands_on/" />
 
-<meta itemprop="name" content="Hands-on">
-<meta itemprop="description" content="Environment This hands-on has been tested on the Poincare machine but it should be easy to adapt to another machine.
-Poincare machine You should load the file /gpfslocal/pub/pdi/training-env.bash in your environment. To do that, you must source it in every shell you open.
-$ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu compiler to configure openmpi wrappers... (load) openmpi version 2.1.3_gnu73 (load) hdf5 version 1.10.2_gnu73_openmpi2 (load) PDI version 0.4.0_gnu73_openmpi2 (load) git version 2.">
+<meta itemprop="name" content="Hands-on tutorial">
+<meta itemprop="description" content="Setup You need to install PDI before proceeding with this tutorial.  After PDI is installed, you can proceed with getting the sources for the hands-on tutorial from github.
+git clone https://github.com/pdidev/tutorial.git Before compilation, configure the tutorial by detecting all dependencies:
+cd tutorial pdirun cmake . Now you&#39;re ready to work, good luck!
+Tutorial For each exercise, once you&#39;ve modified it, you can compile it by running the following command:">
 
-<meta itemprop="wordCount" content="1260">
+<meta itemprop="wordCount" content="1430">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hands-on"/>
-<meta name="twitter:description" content="Environment This hands-on has been tested on the Poincare machine but it should be easy to adapt to another machine.
-Poincare machine You should load the file /gpfslocal/pub/pdi/training-env.bash in your environment. To do that, you must source it in every shell you open.
-$ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu compiler to configure openmpi wrappers... (load) openmpi version 2.1.3_gnu73 (load) hdf5 version 1.10.2_gnu73_openmpi2 (load) PDI version 0.4.0_gnu73_openmpi2 (load) git version 2."/>
+<meta name="twitter:title" content="Hands-on tutorial"/>
+<meta name="twitter:description" content="Setup You need to install PDI before proceeding with this tutorial.  After PDI is installed, you can proceed with getting the sources for the hands-on tutorial from github.
+git clone https://github.com/pdidev/tutorial.git Before compilation, configure the tutorial by detecting all dependencies:
+cd tutorial pdirun cmake . Now you&#39;re ready to work, good luck!
+Tutorial For each exercise, once you&#39;ve modified it, you can compile it by running the following command:"/>
 
 
 
@@ -178,6 +181,12 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfti_plugin" href="/new-site/docs/fti_plugin/">FTI plugin</a>
       
       
       
@@ -569,6 +578,29 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/pointer_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Pointer_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdipointer_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
   </li>
   <ul>
@@ -661,52 +693,6 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi/ref_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_base</a>
-  </li>
-  <ul>
-    <li class="collapse " id="new-sitedocsrefpdiref_base">
-      
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi/ref_base/referenced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced</a>
-  </li>
-  <ul>
-    <li class="collapse " id="new-sitedocsrefpdiref_basereferenced">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
   </li>
   <ul>
@@ -758,6 +744,75 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
   <ul>
     <li class="collapse " id="new-sitedocsrefpdiref_w">
       
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference_base</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_buffer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_buffer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_buffer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_data/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_data</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_data">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -828,10 +883,10 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi_errhandler_t/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_t</a>
+    <a  href="/new-site/docs/ref/pdi_errhandler_s/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_s</a>
   </li>
   <ul>
-    <li class="collapse " id="new-sitedocsrefpdi_errhandler_t">
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_s">
       
       
       
@@ -919,7 +974,7 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on tutorial</a>
       
       
       
@@ -931,19 +986,31 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation of PDI source distribution</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsphilosophy" href="/new-site/docs/philosophy/">Philosophy of PDI</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspdi_example" href="/new-site/docs/pdi_example/">PDI example</a>
       
       
       
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspycall_plugin" href="/new-site/docs/pycall_plugin/">Pycall plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsset_value_plugin" href="/new-site/docs/set_value_plugin/">Set_value plugin</a>
       
       
       
@@ -1003,22 +1070,28 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
 
 
 
-<div id="TableOfContents"><ul>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#tutorial">Tutorial</a>
+      <ul>
+        <li><a href="#ex1-getting-started">Ex1. Getting started</a></li>
+        <li><a href="#ex2-now-with-some-pdi">Ex2. Now with some PDI</a></li>
+        <li><a href="#ex3-hdf5-through-pdi">Ex3. HDF5 through PDI</a></li>
+        <li><a href="#ex4-writing-some-real-data">Ex4. Writing some real data</a></li>
+        <li><a href="#ex5-introducing-events">Ex5. Introducing events</a></li>
+        <li><a href="#ex6-simplifying-the-code">Ex6. Simplifying the code</a></li>
+        <li><a href="#ex7-writing-a-selection">Ex7. Writing a selection</a></li>
+        <li><a href="#ex8-writing-an-advanced-selection">Ex8. Writing an advanced selection</a></li>
+        <li><a href="#ex9-going-parallel">Ex9. Going parallel</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-next-">What next ?</a></li>
+  </ul>
+</nav>
 
 
-<li><a href="#member-types-list">Member Types</a><li>
 
-
-
-
-
-
-<li><a href="#detailed-documentation">Detailed Documentation</a><li>
-<ul>
-
-</ul>
-
-</li></div>
 
 
 
@@ -1046,7 +1119,7 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/hands_on/">Hands-on</a>
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/hands_on/">Hands-on tutorial</a>
 </li>
 
 	</ol>
@@ -1054,110 +1127,160 @@ $ source /gpfslocal/pub/pdi/training-env.bash (load) gnu version 7.3.0 Using gnu
 
             
 <div class="td-content">
-	<h1>Hands-on</h1>
+	<h1>Hands-on tutorial</h1>
     
 	       
-	<h2 id="environment">Environment</h2>
-<p>This hands-on has been tested on the <a href="https://groupes.renater.fr/wiki/poincare/">Poincare</a> machine but it should be easy to adapt to another machine.</p>
-<h3 id="poincare-machine">Poincare machine</h3>
-<p>You should load the file <code>/gpfslocal/pub/pdi/training-env.bash</code> in your environment. To do that, you must source it in every shell you open.</p>
-<pre><code>$  source /gpfslocal/pub/pdi/training-env.bash
-(load) gnu version 7.3.0
-Using gnu compiler to configure openmpi wrappers...
-(load) openmpi version 2.1.3_gnu73
-(load) hdf5 version 1.10.2_gnu73_openmpi2
-(load) PDI version 0.4.0_gnu73_openmpi2
-(load) git version 2.19.1
-(load) cmake version 3.9.4
-PDI training environment loaded!
-$ pdi
-PDI training environment is available!
-</code></pre><h2 id="setup">Setup</h2>
-<p>When PDI is correctly loaded, you can proceed with getting the sources for the hands-on tutorial from <a href="https://gitlab.maisondelasimulation.fr/PDI/PDI_hands-on">gitlab</a>.</p>
-<pre><code>git clone https://gitlab.maisondelasimulation.fr/PDI/PDI_hands-on.git
-</code></pre><p>Setup the compilation by detecting all dependencies (MPI, paraconf, PDI, ...) using cmake:</p>
-<pre><code>cd PDI_hands-on
-cmake .
+	<h2 id="setup">Setup</h2>
+
+
+<div class="alert alert-primary" role="alert">
+
+You need to <a href="Installation.html">install</a> PDI before proceeding with this tutorial.
+</div>
+
+<p>After PDI <a href="Installation.html">is installed</a>, you can proceed with getting the sources for the hands-on tutorial from <a href="https://github.com/pdidev/tutorial">github</a>.</p>
+<pre><code>git clone https://github.com/pdidev/tutorial.git
+</code></pre><p>Before compilation, configure the tutorial by detecting all dependencies:</p>
+<pre><code>cd tutorial
+pdirun cmake .
 </code></pre><p>Now you're ready to work, <strong>good luck</strong>!</p>
 <h2 id="tutorial">Tutorial</h2>
+<p>For each exercise, once you've modified it, you can compile it by running the following command:</p>
+<pre><code>Ex4. Writing some real data
+make ex?
+</code></pre><p>Where <code>?</code> is the number of the exercise.</p>
+<p>Then, you can run it with the following command:</p>
+<pre><code>pdirun mpirun -n 1 ./ex?
+</code></pre><p>Where <code>?</code> is again the number of the exercise.</p>
 <h3 id="ex1-getting-started">Ex1. Getting started</h3>
-<p>Ex1 is a simple MPI stencil code. There is no output in the code yet, so we can not see its result. Examine the source code, compile it and run it.</p>
-<pre><code>make ex1        # compile the code
-llsubmit ex1.sh # run the code
-</code></pre><p>Play with and understand the code parameters in ex1.yml</p>
-<p>Run the code with 3 MPI processes.</p>
+<p>Ex1. implements a simple heat equation solver using an explicit forward finite difference scheme parallelized with MPI as described in the <a href="PDI_example.html">PDI example</a>. If you want to better understand what's going on, you should read this description before continuing.</p>
+<p>In the exercises however, PDI will only be used to decouple I/O operations. There is no need to fully dive in the core of the solver implemented in the <code>iter</code> and <code>exchange</code> functions. The specification tree in the <code>.yml</code> files and the <code>main</code> function are the locations where all the I/O-related aspects will be handled and the only ones you will actually need to fully understand or modify.</p>
+<ul>
+<li>Examine the source code, compile it and run it. There is no input/output operations in the code yet, so you can not see any result.</li>
+</ul>
+<p>This example uses the <a href="https://github.com/pdidev/paraconf">paraconf library</a> to read its parameters in <a href="https://yaml.org">yaml format</a> from the <code>ex1.yml</code> file. If you've never heard about yaml, have a quick look at <a href="First_steps.html#Yaml">this example</a>.</p>
+<ul>
+<li>Play with and understand the code parameters in <code>ex1.yml</code>.</li>
+<li>Set values in <code>ex1.yml</code> to be able to run the code with 3 MPI processes.</li>
+</ul>
 <h3 id="ex2-now-with-some-pdi">Ex2. Now with some PDI</h3>
-<p>Ex2 is the same code as ex1 with PDI calls added. The PDI test plugin is used to trace PDI calls.</p>
-<p>Examine the source code, compile it and run it.</p>
-<pre><code>make ex2        # compile the code
-llsubmit ex2.sh # run the code
-</code></pre><p>Add the required <code>PDI_share</code> and <code>PDI_reclaim</code> calls to match the output of <code>ex2.out</code>.</p>
-<p>Notice that some share/reclaim pairs come one after the other while others are interlaced. Is one better than the other?</p>
+<p>Ex2. is the same code as ex1. with PDI calls added in main function. The PDI <a href="tra%60PDIce_plugin.html">Trace plugin</a> is used to trace PDI calls.</p>
+<ul>
+<li>Add the required <code>PDI_share</code> and <code>PDI_reclaim</code> calls to match the output of <code>ex2.log</code> file. Change only the <code>ex2.c</code> file. The calls for now don't need to make any logic, just match output to the <code>ex2.log</code>.</li>
+</ul>
+
+
+<div class="alert alert-primary" role="alert">
+
+Notice that some share/reclaim pairs come one after the other while others are interlaced. Is one better than the other? If you do not know the answer to this question, please wait until Ex5. :)
+</div>
+
 <h3 id="ex3-hdf5-through-pdi">Ex3. HDF5 through PDI</h3>
-<p>Let's take the code from ex2 and make it output some HDF5 data. No need to touch the C code here, the PDI yaml file should be enough. We have replaced the PDI test plugin by the Decl'HDF5 plugin.</p>
-<p>Examine the yaml, compile the code and run it.</p>
-<pre><code>make ex3        # compile the code
-llsubmit ex3.sh # run the code
-</code></pre><p>We need to fill 2 sections in the yaml file:</p>
-<ul>
-<li>the <code>data</code> section to indicate to PDI the type of the fields that are exposed,</li>
-<li>the <code>decl_hdf5</code> for the configuration of the Decl'HDF5 plugin</li>
-</ul>
-<p>Only dsize is written as of now, let's add <code>psize</code> and <code>pcoord</code> to match the content expected described in <code>ex3.out</code>.</p>
+<p>Let's take the code from ex2. and make it output some HDF5 data. No need to touch the C code here, the PDI yaml file should be enough. The <a href="trace_plugin.html">Trace plugin</a> was replaced by the <a href="Decl_HDF5_plugin.html">Dec'HDF5 plugin</a>.</p>
+<p>Fill 2 sections in the yaml file:</p>
+<ol>
+<li>The <code>data</code> section to indicate to PDI the type of the fields that are exposed.</li>
+<li>The <code>decl_hdf5</code> for the configuration of <a href="Decl_HDF5_plugin.html">Dec'HDF5 plugin</a>.</li>
+</ol>
+<p>Only <code>dsize</code> is written as of now, let's add <code>psize</code> and <code>pcoord</code> to match the content expected described in <code>ex3.href 5dump</code> (use <code>h5dump</code> command to see content of HDF5 file).</p>
+
+
+<div class="alert alert-primary" role="alert">
+
+If you rerun the exercise, remember to delete your old <code>ex3.h5</code> file, because the data will not be overwritten.
+</div>
+
 <h3 id="ex4-writing-some-real-data">Ex4. Writing some real data</h3>
-<p>We keep the same code and touch only the yaml file again.</p>
-<p>This time:</p>
-<ul>
-<li>we will write the real 2D data contained in <code>main_field</code>,</li>
-<li>we will use 2 MPI processes.</li>
-</ul>
-<p>Notice that we use a list to write multiple files in the decl_hdf5 section instead of a single mapping as before.</p>
-<p>Examine the yaml, compile the code and run it.</p>
-<pre><code>make ex4        # compile the code
-llsubmit ex4.sh # run the code
-</code></pre><p>Unlike the other fields we manipulated until now, the type of <code>main_field</code> is not fully known, its size is dynamic. By moving other fields in the <code>metadata</code> section, we can reference them from &quot;$ expressions&quot; in the configuration file. This can be used to specify a dynamic size for <code>main_field</code>.</p>
-<p>Unlike the other fields we manipulated until now, <code>main_field</code> is exposed multiple times. In order not to overwrite it every time it is exposed, we can add a <code>when</code> condition to restrict its output. Only write <code>main_field</code> at the second iteration (when <code>ii==0</code>).</p>
-<p>Change the parallelism degree to 2 in height (don't forget to use 2 processes in ex4.sh) and try to match the expected content described in <code>ex4.out</code>.</p>
+<p>In this exercise each MPI process will write its local matrix to separete HDF5 files. Touch only the yaml file again.</p>
+<p>This time write the real 2D data contained in <code>main_field</code> using 2 MPI processes.</p>
+<p>Notice that a list to write multiple files was used in the decl_hdf5 section instead of a single mapping as before.</p>
+<p>Unlike the other fields manipulated until now, the type of <code>main_field</code> is not fully known, its size is dynamic. By moving other fields in the <code>metadata</code> section, you can reference them from &quot;$ expressions&quot; in the configuration file. This can be used to specify a dynamic size for <code>main_field</code>.</p>
+<p>Unlike the other fields manipulated until now, <code>main_field</code> is exposed multiple times. In order not to overwrite it every time it is exposed, you can add a <code>when</code> condition to restrict its output. Only write <code>main_field</code> at the second iteration (when <code>ii==1</code>).</p>
+<p>Set the parallelism degree to 2 in height and try to match the expected content described in <code>ex4.h5dump</code>.</p>
 <h3 id="ex5-introducing-events">Ex5. Introducing events</h3>
-<p>In ex4, we wrote 2 pieces of data to <code>ex4-data*.h5</code>, but the file is opened and closed for each and every write. Since Decl'HDF5 only sees the data appear one after the other, it does not keep the file open. Since <code>ii</code> and <code>main_field</code> are shared in an interlaced way, they are both available at the same time and could be written without opening the file twice. We have to use events for that.</p>
-<p>Examine the yaml and source code, compile and run.</p>
-<pre><code>make ex5        # compile the code
-llsubmit ex5.sh # run the code
-</code></pre><p>Add a <code>PDI_event</code> call to the code when both <code>ii</code> and <code>main_field</code> are available. With the test plugin, check that the event is indeed triggered at the expected time as described in <code>ex5-trace.out</code>.</p>
-<p>Use the <code>on_event</code> mechanism to trigger the write of <code>ii</code> and <code>main_field</code>. This mechanism can be combined with a <code>when</code> directive, in that case the write is only executed when both mechanisms agree.</p>
-<p>Also notice the extended syntax that make it possible to write data to a dataset with a name different from the data in PDI. Use this mechanism to write main_field at iterations 1 and 2, in two distinct groups. Match the content as expected in <code>ex5-hdf5.out</code>.</p>
+<p>In ex4, there were 2 pieces of data to <code>ex4-data*.h5</code>, but the file is opened and closed for each and every write. Since Decl'HDF5 only sees the data appear one after the other, it does not keep the file open. Since <code>ii</code> and <code>main_field</code> are shared in an interlaced way, they are both available at the same time and could be written without opening the file twice. You have to use events for that.</p>
+<p>There are 3 main tasks in this exercise:</p>
+<ol>
+<li>Call PDI event named <code>loop</code> when both <code>ii</code> and <code>main_field</code> are shared. With the <a href="trace_plugin.html">Trace plugin</a>, check that the event is indeed triggered at the expected time as described in <code>ex5.log</code>.</li>
+<li>Use the <code>on_event</code> mechanism to trigger the write of <code>ii</code> and <code>main_field</code>. This mechanism can be combined with a <code>when</code> directive, in that case the write is only executed when both mechanisms agree.</li>
+<li>Also notice the extended syntax that make it possible to write data to a dataset with a name different from the data in PDI. Use this mechanism to write main_field at iterations 1 and 2, in two distinct groups <code>iter1</code> and <code>iter2</code>.</li>
+</ol>
+<p>Match the content as expected in <code>ex5.h5dump</code>.</p>
 <h3 id="ex6-simplifying-the-code">Ex6. Simplifying the code</h3>
-<p>As you can notice, the PDI code is quite redundant. In this exercise, we will use <code>PDI_expose</code> and <code>PDI_multi_expose</code> to simplify the code while keeping the exact same behaviour.</p>
-<p>Examine the source code, compile it and run it.</p>
-<pre><code>make ex6        # compile the code
-llsubmit ex6.sh # run the code
-</code></pre><p>There are lots of matched <code>PDI_share</code>/<code>PDI_reclaim</code> in the code. Replace these by <code>PDI_expose</code> that is the exact equivalent of a <code>PDI_share</code> followed by a matching <code>PDI_reclaim</code>.</p>
-<p>This replacement is not possible for interlaced <code>PDI_share</code>/<code>PDI_reclaim</code> with events in the middle. This case is however handled by <code>PDI_multi_expose</code> call that exposes all data, then triggers an event and finally does all the reclaim in reverse order. Replace the remaining <code>PDI_share</code>/<code>PDI_reclaim</code> by <code>PDI_expose</code>s and <code>PDI_multi_expose</code>s.</p>
-<p>Ensure that your code keeps the exact same behaviour by comparing its trace to <code>ex6.out</code></p>
-<h3 id="ex7-writing-a-selection">Ex7. writing a selection</h3>
-<p>In this exercise, we will only write a selection of the data to the HDF5 file.</p>
-<p>Examine the yaml, compile the code and run it.</p>
-<pre><code>make ex7        # compile the code
-llsubmit ex7.sh # run the code
-</code></pre><p>As you can notice, we now independantly describe the dataset in the file. We also use two directives to specify a selection from the data to write and a selection in the dataset where to write.</p>
-<p>Restrict the selection to the second line from the data and write it to a one-dimensional dataset in file. Match the expected output described in <code>ex7.out</code>.</p>
-<p>You can also add dimensions, write the 2D array excluding ghosts as a slab of a 3D dataset including a dimension for the time-iteration. Write iterations 1 to 3 inclusive into dimensions 0 to 2. Match the expected output described in <code>ex7-bis.out</code>.</p>
-<h3 id="ex8-going-parallel">Ex8. going parallel</h3>
-<p>Running the current code in parallel should already work and yield one file per process containing the local data block. In this exercise we will write one single file with parallel HDF5 whose content should be independent from the number of processes used.</p>
-<p>Examine the yaml, compile the code and run it.</p>
-<pre><code>make ex8        # compile the code
-llsubmit ex8.sh # run the code
-</code></pre><p>We loaded the <code>mpi</code> plugin to make sharing MPI communicators possible.</p>
-<p>By uncommenting the <code>communicator</code> directive of the Decl'HDF5 plugin, we can now switch to parallel I/O.</p>
+<p>As you can notice, the PDI code is quite redundant. In this exercise, you will use <code>PDI_expose</code> and <code>PDI_multi_expose</code> to simplify the code while keeping the exact same behaviour.</p>
+<p>There are lots of matched <code>PDI_share</code>/<code>PDI_reclaim</code> in the code. Replace these by <code>PDI_expose</code> that is the exact equivalent of a <code>PDI_share</code> followed by a matching <code>PDI_reclaim</code>.</p>
+<p>This replacement is not possible for interlaced <code>PDI_share</code>/<code>PDI_reclaim</code> with events in the middle. This case is however handled by <code>PDI_multi_expose</code> call that exposes all data, then triggers an event and finally does all the reclaim in reverse order. Replace the remaining <code>PDI_share</code>/<code>PDI_reclaim</code> by <code>PDI_expose</code>s and <code>PDI_multi_expose</code>s. There is one <code>PDI_share</code>/<code>PDI_reclaim</code> you can not replace.</p>
+<p>Touch only the C file in this exercise.</p>
+<p>Ensure that your code keeps the exact same behaviour by comparing its trace to <code>ex6.log</code>.</p>
+<h3 id="ex7-writing-a-selection">Ex7. Writing a selection</h3>
+<p>In this exercise, you will only write a selection (part) of the data to the HDF5 file.</p>
+<p>As you can notice, now the dataset is independantly described in the file. Use two directives to specify a selection from the data to write and a selection in the dataset where to write.</p>
 <ul>
-<li>Change the file name so all processes open the same file.</li>
-<li>Change the dataset dimension to take the full parallel size into account.</li>
-<li>Ensure the dataset selection of each process does not overlap with the others.</li>
-<li>Try to match the output from <code>ex8.out</code> that should be independant from the number of processes used.</li>
+<li><code>memory_selection</code> tells what part to take from the data.</li>
+<li><code>dataset_selection</code> tells where to write this part of data in file.</li>
 </ul>
+<p>Restrict the selection to the second line from the data and write it to a one-dimensional dataset in file.</p>
+<p>Touch only the yaml file in this exercise.</p>
+<p>Match the expected output described in <code>ex7.out</code>.</p>
+<p>Here is an example:</p>
+<pre><code>data:
+  matrix: {type: array, subtype: int, size: [8,8]}
+
+...
+    datasets:
+      matrix: {type: array, subtype: int, size: 8}
+...
+        memory_selection:
+          size: [1, 8]
+          start: [4, 0]
+        dataset_selection:
+          size: 8
+</code></pre><p>The graphical representation:</p>
+<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
+<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
+<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
+<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
+<h3 id="ex8-writing-an-advanced-selection">Ex8. Writing an advanced selection</h3>
+<p>You can also add dimensions, write the 2D array excluding ghosts as a slab of a 3D dataset including a dimension for the time-iteration. Write iterations 1 to 3 inclusive into dimensions 0 to 2.</p>
+<p>Touch only the yaml file in this exercise.</p>
+<p>Match the expected output described in <code>ex8.h5dump</code>.</p>
+<p>Here is an example:</p>
+<pre><code>data:
+  matrix: {type: array, subtype: int, size: [8,8]}
+
+...
+    datasets:
+      matrix: {type: array, subtype: int, size: [3, 8, 8]}
+...
+        memory_selection:
+          size: [8, 8]
+        dataset_selection:
+          size: [1, 8, 8]
+          start: [$ii, 0, 0]
+</code></pre><p>And the graphical representation:</p>
+<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
+<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
+<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
+<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
+<h3 id="ex9-going-parallel">Ex9. Going parallel</h3>
+<p>Running the current code in parallel should already work and yield one file per process containing the local data block. In this exercise you will write one single file with parallel HDF5 whose content should be independent from the number of processes used.</p>
+<p>The <code>mpi plugin</code> was loaded to make sharing MPI communicators possible.</p>
+<p>There are several tasks in this exercise:</p>
+<ol>
+<li>Uncomment the <code>communicator</code> directive of the <a href="Decl_HDF5_plugin.html">Dec'HDF5 plugin</a> to switch to parallel I/O.</li>
+<li>Change the file name so all processes open the same file.</li>
+<li>Set the size of <code>main_field</code> in <code>datasets</code> tree to take the global matrix into account. Hint: use <code>psize</code>.</li>
+<li>Ensure the dataset selection of each process does not overlap with the others. Hint: use <code>pcoord</code>.</li>
+</ol>
+<p>Try to match the output from <code>ex9.out</code>, that should be independent from the number of processes used.</p>
+<p>Touch only the yaml file in this exercise.</p>
+<p>Here is graphical representation of the parallel I/O:</p>
+<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
+<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
+<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
+<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
 <h2 id="what-next-">What next ?</h2>
-<p>You can experiment with other <a href="compound:Plugins">plugins</a>. Why not try <a href="compound:FlowVR_plugin">FlowVR</a> for example?</p>
-<p>Take a look at the examples in the PDI repository: <code>https://gitlab.maisondelasimulation.fr/jbigot/pdi/tree/0.5/example</code></p>
+<p>You can experiment with other <a href="Plugins.html">plugins</a>. Have a look at the <a href="https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tree/master/example">PDI examples</a>.</p>
 
 	
 	

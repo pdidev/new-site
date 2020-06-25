@@ -12,7 +12,7 @@
   
   <url>
     <loc>http://pdi.julien-bigot.fr/new-site/community/</loc>
-    <lastmod>2020-06-25T10:23:21+02:00</lastmod>
+    <lastmod>2020-06-25T11:28:52+02:00</lastmod>
   </url>
   
   <url>
@@ -68,6 +68,10 @@
   </url>
   
   <url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/fti_plugin/</loc>
+  </url>
+  
+  <url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/</loc>
   </url>
   
@@ -105,7 +109,7 @@
   
   <url>
     <loc>http://pdi.julien-bigot.fr/new-site/</loc>
-    <lastmod>2020-06-25T10:23:21+02:00</lastmod>
+    <lastmod>2020-06-25T11:28:52+02:00</lastmod>
   </url>
   
   <url>
@@ -113,11 +117,11 @@
   </url>
   
   <url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</loc>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/pdi_example/</loc>
   </url>
   
   <url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/philosophy/</loc>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_s/</loc>
   </url>
   
   <url>
@@ -126,6 +130,14 @@
   
   <url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/plugins/</loc>
+  </url>
+  
+  <url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/</loc>
+  </url>
+  
+  <url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/</loc>
   </url>
   
   <url>
@@ -141,10 +153,6 @@
   </url>
   
   <url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/</loc>
-  </url>
-  
-  <url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_r/</loc>
   </url>
   
@@ -157,7 +165,15 @@
   </url>
   
   <url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_base/referenced/</loc>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/</loc>
+  </url>
+  
+  <url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/</loc>
+  </url>
+  
+  <url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/</loc>
   </url>
   
   <url>
@@ -166,6 +182,10 @@
   
   <url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_kind/</loc>
+  </url>
+  
+  <url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</loc>
   </url>
   
   <url>

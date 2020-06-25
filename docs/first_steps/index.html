@@ -21,23 +21,29 @@
 <link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
 
 <title>First steps with PDI | PDI</title><meta property="og:title" content="First steps with PDI" />
-<meta property="og:description" content="Here we will introduce you to the PDI functions and what you should expect them to do.
-Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets." />
+<meta property="og:description" content="Yaml language Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:
+ Scalar - is a single value. List - is an array of values. Map - consist of mulitple keys and values.  Indentation level indicates the level in the tree.
+Here is an example:
+tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} The blue nodes are map values, yellow are lists and pink are scalars." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/first_steps/" />
 
 <meta itemprop="name" content="First steps with PDI">
-<meta itemprop="description" content="Here we will introduce you to the PDI functions and what you should expect them to do.
-Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets.">
+<meta itemprop="description" content="Yaml language Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:
+ Scalar - is a single value. List - is an array of values. Map - consist of mulitple keys and values.  Indentation level indicates the level in the tree.
+Here is an example:
+tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} The blue nodes are map values, yellow are lists and pink are scalars.">
 
-<meta itemprop="wordCount" content="1075">
+<meta itemprop="wordCount" content="1234">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="First steps with PDI"/>
-<meta name="twitter:description" content="Here we will introduce you to the PDI functions and what you should expect them to do.
-Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets."/>
+<meta name="twitter:description" content="Yaml language Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:
+ Scalar - is a single value. List - is an array of values. Map - consist of mulitple keys and values.  Indentation level indicates the level in the tree.
+Here is an example:
+tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} The blue nodes are map values, yellow are lists and pink are scalars."/>
 
 
 
@@ -175,6 +181,12 @@ Hello Event As mentioned in Specification tree we have to provide specification 
       
       
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-new-sitedocsfirst_steps" href="/new-site/docs/first_steps/">First steps with PDI</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsfti_plugin" href="/new-site/docs/fti_plugin/">FTI plugin</a>
       
       
       
@@ -566,6 +578,29 @@ Hello Event As mentioned in Specification tree we have to provide specification 
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/pointer_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Pointer_datatype</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdipointer_datatype">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/new-site/docs/ref/pdi/record_datatype/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Record_datatype</a>
   </li>
   <ul>
@@ -658,52 +693,6 @@ Hello Event As mentioned in Specification tree we have to provide specification 
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi/ref_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_base</a>
-  </li>
-  <ul>
-    <li class="collapse " id="new-sitedocsrefpdiref_base">
-      
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi/ref_base/referenced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced</a>
-  </li>
-  <ul>
-    <li class="collapse " id="new-sitedocsrefpdiref_basereferenced">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/new-site/docs/ref/pdi/ref_r/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Ref_r</a>
   </li>
   <ul>
@@ -755,6 +744,75 @@ Hello Event As mentioned in Specification tree we have to provide specification 
   <ul>
     <li class="collapse " id="new-sitedocsrefpdiref_w">
       
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference_base</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_base">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_buffer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_buffer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_buffer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/new-site/docs/ref/pdi/reference_base/referenced_data/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referenced_data</a>
+  </li>
+  <ul>
+    <li class="collapse " id="new-sitedocsrefpdireference_basereferenced_data">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -825,10 +883,10 @@ Hello Event As mentioned in Specification tree we have to provide specification 
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/new-site/docs/ref/pdi_errhandler_t/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_t</a>
+    <a  href="/new-site/docs/ref/pdi_errhandler_s/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PDI_errhandler_s</a>
   </li>
   <ul>
-    <li class="collapse " id="new-sitedocsrefpdi_errhandler_t">
+    <li class="collapse " id="new-sitedocsrefpdi_errhandler_s">
       
       
       
@@ -916,7 +974,7 @@ Hello Event As mentioned in Specification tree we have to provide specification 
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocshands_on" href="/new-site/docs/hands_on/">Hands-on tutorial</a>
       
       
       
@@ -928,19 +986,31 @@ Hello Event As mentioned in Specification tree we have to provide specification 
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsinstallation" href="/new-site/docs/installation/">Installation of PDI source distribution</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsphilosophy" href="/new-site/docs/philosophy/">Philosophy of PDI</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspdi_example" href="/new-site/docs/pdi_example/">PDI example</a>
       
       
       
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsplugins" href="/new-site/docs/plugins/">Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocspycall_plugin" href="/new-site/docs/pycall_plugin/">Pycall plugin</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-new-sitedocsset_value_plugin" href="/new-site/docs/set_value_plugin/">Set_value plugin</a>
       
       
       
@@ -1000,22 +1070,21 @@ Hello Event As mentioned in Specification tree we have to provide specification 
 
 
 
-<div id="TableOfContents"><ul>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#yaml-language">Yaml language</a></li>
+    <li><a href="#hello-event">Hello Event</a>
+      <ul>
+        <li><a href="#hello-data">Hello Data</a></li>
+        <li><a href="#hello-access">Hello Access</a></li>
+        <li><a href="#hello-multi-expose">Hello multi expose</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
-<li><a href="#member-types-list">Member Types</a><li>
 
-
-
-
-
-
-<li><a href="#detailed-documentation">Detailed Documentation</a><li>
-<ul>
-
-</ul>
-
-</li></div>
 
 
 
@@ -1054,8 +1123,40 @@ Hello Event As mentioned in Specification tree we have to provide specification 
 	<h1>First steps with PDI</h1>
     
 	       
-	<p>Here we will introduce you to the PDI functions and what you should expect them to do.</p>
-<h2 id="hello-event">Hello Event</h2>
+	<h2 id="yaml-language">Yaml language</h2>
+<p>Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:</p>
+<ol>
+<li>Scalar - is a single value.</li>
+<li>List - is an array of values.</li>
+<li>Map - consist of mulitple keys and values.</li>
+</ol>
+<p>Indentation level indicates the level in the tree.</p>
+<p>Here is an example:</p>
+<pre><code>tree_1:
+  array_1:
+    - scalar_1
+    - scalar_2
+  array_2: [1, 2, 3]
+tree_2: {subtree_1: scalar_1, subtree_2: scalar_2}
+</code></pre><p><img src="/docs/imgs/yaml_example.jpg" alt="Visualization of the yaml tree\."></p>
+<p>The blue nodes are map values, yellow are lists and pink are scalars. As can be seen, the list and map can be defined in both ways (in one line and multiple lines).</p>
+<p>The PDI_init function gets as parameter a tree with <code>logging</code>, <code>data</code>, <code>metadata</code> and <code>plugins</code> maps defined in its root. User can define its own values in yaml and pass to PDI only the subtree:</p>
+<pre><code>duration: 0.75
+size: [64, 64]
+parallelism: { height: 4, width: 4 }
+
+# only the following config will be passed to PDI
+pdi_subtree:
+  metadata:
+    iteration:   int
+  data:
+    main_field: double
+  plugins:
+    decl_hdf5:
+       ...
+</code></pre><pre><code>PC_tree_t root = PC_parse_path(&quot;example.yaml&quot;);
+PDI_init(PC_get(root, &quot;pdi_subtree&quot;));
+</code></pre><h2 id="hello-event">Hello Event</h2>
 <p>As mentioned in <a href="member:Concepts_1Specification_tree">Specification tree</a> we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use <a href="compound:trace_plugin">Trace plugin</a>, which is very simple plugin that just prints every information it gets. Let's create a specification tree named <code>hello_event.yml</code> that will load trace plugin:</p>
 <pre><code>plugins:
   trace: ~
@@ -1072,7 +1173,7 @@ int main(int argc, char* argv[]) {
 </code></pre><p>Let's analyze what happens in each line. Firstly we have <a href="member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0">PDI_init()</a> function which take parameter of type <code>PC_tree_t</code>. It's a tree structure parsed from some YAML file, in our case we parse it with <code>paraconf</code> library build in PDI. To parse a file we need to call <code>PC_parse_path</code> function passing file path as argument. The next step is to call an event in PDI named &quot;Hello World Event&quot;. At the end we have to call <a href="member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969">PDI_finalize()</a>. The output from this program is presented below:</p>
 <pre><code>[PDI][Trace-plugin][10:25:28] *** info: Welcome!
 [PDI][10:25:28] *** info: Initialization successful
-[PDI][Trace-plugin][10:25:28] *** info: !!!                            named event: Hello World Event
+[PDI][Trace-plugin][10:25:28] *** info: !!! named event: Hello World Event
 [PDI][10:25:28] *** info: Finalization
 [PDI][Trace-plugin][10:25:28] *** info: Goodbye!
 </code></pre><p>The first line indicates that plugin has loaded successfully. The second is PDI message, that tells it managed to create all descriptors and load all defined plugins. Then we have message from loaded trace plugin which printed the event name it has received. The next information is from PDI and indicates that finalization has started and now it will deallocate resources. Last message is from trace plugin destructor.</p>
@@ -1114,14 +1215,16 @@ int main(int argc, char* argv[]) {
 <p>The same exact result we can achieve with <code>PDI_expose</code> which is just <code>PDI_share</code> call and right after <code>PDI_reclaim</code> is called.</p>
 <pre><code>PDI_share(&quot;world&quot;, &amp;my_world, PDI_OUT);
 PDI_reclaim(&quot;world&quot;);
-</code></pre><p>is the same a1s:</p>
+</code></pre><p>is the same as:</p>
 <pre><code>PDI_expose(&quot;world&quot;, &amp;my_world, PDI_OUT);
 </code></pre><h3 id="hello-access">Hello Access</h3>
 <p>Now we will try to access a descriptor we share with PDI. In this case we won't need any plugin. We want to define string in our <code>world_access.yml</code>:</p>
 <pre><code>data:
   my_message: {type: array, subtype: char, size: 32}
 </code></pre><p>Now let's write some simple program:</p>
-<pre><code>void print_secret_msg() {
+<pre><code>#include &lt;pdi.h&gt;
+
+void print_secret_msg() {
     char* message;
     PDI_access(&quot;my_message&quot;, (void**)&amp;message, PDI_IN);
     printf(&quot;%s\n&quot;, message);
@@ -1129,7 +1232,7 @@ PDI_reclaim(&quot;world&quot;);
 }
 
 int main(int argc, char* argv[]) {
-    PDI_init(PC_parse_path(&quot;hello_data.yml&quot;));
+    PDI_init(PC_parse_path(&quot;world_access.yml&quot;));
     char* secret_msg = &quot;Watermelon is the tastiest fruit&quot;;
     PDI_share(&quot;my_message&quot;, secret_msg, PDI_OUT);
 
@@ -1154,7 +1257,9 @@ Watermelon is the tastiest fruit
 plugin:
   trace: ~
 </code></pre><p>We have defined 3 descriptors and trace plugin. Now it's time for our application:</p>
-<pre><code>int main(int argc, char* argv[]) {
+<pre><code>#include &lt;pdi.h&gt;
+
+int main(int argc, char* argv[]) {
     PDI_init(PC_parse_path(&quot;hello_multi_expose.yml&quot;));
     int x = 0;
     float y = 0;

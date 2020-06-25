@@ -50,20 +50,22 @@
 &lt;dd&gt;Automatically installs a paraconf error-handler that ignores errors and uninstalls it on destruction.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;plugin&#34;&gt;&lt;code&gt;class Plugin&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;The class &lt;a href=&#34;%3Ccompound:namespacePDI%3E&#34;&gt;PDI&lt;/a&gt; plugins should implement.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;pointer_datatype&#34;&gt;&lt;code&gt;class Pointer_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;record_datatype&#34;&gt;&lt;code&gt;class Record_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;A &lt;a href=&#34;%3Ccompound:classPDI_1_1Record__datatype%3E&#34;&gt;Record_datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; that represents a fixed number of elements of potentially different types layed out in a specific way in memory.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;ref&#34;&gt;&lt;code&gt;typedef Ref&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;ref_any&#34;&gt;&lt;code&gt;class Ref_any&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;A dynamically typed reference to data with automatic memory management and read/write locking semantic.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;ref_base&#34;&gt;&lt;code&gt;class Ref_base&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A common base for all references, whatever their access privileges in order to ensure they share the same Data_content and can access each others.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;ref_r&#34;&gt;&lt;code&gt;typedef Ref_r&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;ref_rw&#34;&gt;&lt;code&gt;typedef Ref_rw&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;ref_w&#34;&gt;&lt;code&gt;typedef Ref_w&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;reference_base&#34;&gt;&lt;code&gt;class Reference_base&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A common base for all references, whatever their access privileges.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;scalar_datatype&#34;&gt;&lt;code&gt;class Scalar_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;scalar_kind&#34;&gt;&lt;code&gt;enum Scalar_kind&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -77,6 +79,12 @@
 &lt;dd&gt;Iterates and apply the provided function to all elements of a PC list.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#each&#34;&gt;&lt;code&gt;each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Iterates and apply the provided function to all elements of a PC mapping.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#is_list&#34;&gt;&lt;code&gt;is_list&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks if the tree is a list.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#is_map&#34;&gt;&lt;code&gt;is_map&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks if the tree is a map.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#is_scalar&#34;&gt;&lt;code&gt;is_scalar&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks if the tree is a scalar.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#len&#34;&gt;&lt;code&gt;len&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#len&#34;&gt;&lt;code&gt;len&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -112,11 +120,11 @@
     </item>
     
     <item>
-      <title>Docs: PDI_errhandler_t struct reference</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</link>
+      <title>Docs: PDI_errhandler_s struct reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_s/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</guid>
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_s/</guid>
       <description>
         
         
