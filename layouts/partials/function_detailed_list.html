@@ -1,35 +1,38 @@
-
-
 {{ range $name, $content := . }}{{ range where $content "visibility" "public" }}
 {{ $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
 {{ $full_url := (delimit (slice .name | append $param_types) " ") | anchorize }}
-<article class="memitem td-content">
+<article class="td-content member-function">
 
-<header class="memproto"><h1 id="{{ $full_url }}">{{.name }}</h1>
-<code>{{ .defined.result.type }} {{.name }} ( {{ with .defined.parameters }}{{ $n_params := len . }} {{ $id := 0 }}{{ range $name, $param := . }} {{ $id = (add $id 1) }} {{ $param.defined.type }} {{ $param.name }}{{if lt $id $n_params}}, {{end }}{{ end }} {{ end }} )</code>
-</header>
+<h3 id="{{ $full_url }}" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">{{ .defined.result.type }}</span> <span class="nf">{{.name }}</nf> ( {{ with .defined.parameters }}{{ $n_params := len . }} {{ $id := 0 }}{{ range $name, $param := . }} {{ $id = (add $id 1) }} <span class="kt">{{ $param.defined.type }}</span> <a href="#{{ $full_url }}-_-{{ $param.name }}"><var class="nv">{{ $param.name }}</var></a>{{if lt $id $n_params}}, {{end }}{{ end }} {{ end }} )</code></h3>
+
+{{ with .briefdescription }}{{ . | markdownify }}{{ end }}
 
 {{ with .defined.parameters }}
-<h1>Parameters</h1>
-<dl>
+<h4>Parameters</h4>
+<dl class="parameters">
 {{ range $name, $param := . }}
-<dt id="{{ $full_url }}-_-{{ $param.name }}"><code>{{ $name }}</code></dt>
+<dt><h5 id="{{ $full_url }}-_-{{ $param.name }}" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">{{ $name }}</var></code></h5></dt>
 <dd>{{ $param.briefdescription | markdownify }}{{ $param.detaileddescription | markdownify }}</dd>
 {{ end }}
 </dl>
 {{ end }}
 
-{{ with .defined.result }}{{ if .type }}{{ if or .briefdescription .detaileddescription }}
-<h1>Result</h1>
-{{ with .briefdescription }}{{ . | markdownify }}{{ end }}
-{{ with .detaileddescription }}{{ . | markdownify  }}{{ end }}
-
-{{ end }}{{ end }}{{ end }}
-
-<h1>Description</h1>
+{{ with .defined.result }}{{ if and .type (or .briefdescription .detaileddescription) }}
+<h4>Result</h4>
+<section class="result">
 {{ with .briefdescription }}{{ . | markdownify }}{{ end }}
 {{ with .detaileddescription }}{{ . | markdownify  }}{{ end }}
 </section>
+{{ end }}{{ end }}
 
-</article><hr>
+{{ if .detaileddescription }}
+<h4>Description</h4>
+<section class="description">
+{{ with .briefdescription }}{{ . | markdownify }}{{ end }}
+{{ with .detaileddescription }}{{ . | markdownify  }}{{ end }}
+</section>
+{{ end }}
+
+</article>
 {{ end }}{{ end }}
