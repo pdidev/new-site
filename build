@@ -1,17 +1,18 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 cd "$(dirname "$0")"
 
-function do_cleanup {
-  rm -rf resources
-  rm -rf content/docs/
-  rm -rf static/docs
-  rm -rf data/docs
-  rm -rf */__pycache__/
+function finish {
+  [ -d resources ] && rm -r resources
+  [ -d resources ] && rm -rf content/docs/
+  [ -d resources ] && rm -rf static/docs
+  [ -d resources ] && rm -rf data/docs
+  [ -d resources ] && rm -rf */__pycache__/
   rmdir * 2> /dev/null
 }
-trap do_cleanup EXIT
+trap finish EXIT QUIT ABRT KILL SEGV TERM STOP
+finish
+[ -d public ] && rm -rf public/*
 
-do_cleanup 2> /dev/null
 python3 doxml/dumper.py dox/combined.xml .
-docker run -u$(id -u):$(id -g) --rm -v $(pwd):/src klakegg/hugo:0.72.0-ext-alpine $@
+docker run "-u$(id -u):$(id -g)" --rm -i -v "$(pwd):/src" klakegg/hugo:0.81.0-ext-alpine-ci

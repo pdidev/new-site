@@ -3,9 +3,9 @@ title: "PDI"
 linkTitle: "PDI"
 ---
 
-{{< blocks/cover title="PDI: the Parallel Data Interface" image_anchor="top" height="full" color="dark" >}}
+{{< blocks/cover title="PDI: the PDI Data Interface" image_anchor="top" height="full" color="dark" >}}
 <div class="mx-auto">
-	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "docs" >}}">
 		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
 	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://gitlab.maisondelasimulation.fr/jbigot/pdi">

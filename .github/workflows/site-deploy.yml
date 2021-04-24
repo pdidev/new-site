@@ -1,0 +1,27 @@
+name: site-deploy
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  site-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v2
+      with: { fetch-depth: 0, submodules: recursive }
+    - name: Checkout gh-pages
+      run: git worktree add -B gh-pages public remotes/origin/gh-pages
+    - name: Build site
+      run: ./build
+    - name: Deploy site
+      run: |
+        cd public
+        git config user.email "github-commit-hook@example.com"
+        git config user.name "Github Commit Hook"
+        git add -A .
+        git commit -a -m "Update to match ${GITHUB_SHA}"
+        git push -f
