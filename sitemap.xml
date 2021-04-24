@@ -1,219 +1,113 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/community/</loc>
-    <lastmod>2020-07-03T13:59:34+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-12-12T13:36:39+01:00</lastmod>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context_proxy/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/concepts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/datatype_template_parser/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template_uptr/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_uptr/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/deprecated/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/expression/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/first_steps/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/fti_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/hands_on/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/installation/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/iterator/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/logger_sptr/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/paraconf_wrapper/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/</loc>
-    <lastmod>2020-07-03T13:59:34+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-04-24T11:41:34+02:00</lastmod>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/pdi_example/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_s/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/plugins/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_r/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_rw/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_w/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_kind/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/spdlog/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/std/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</loc>
   </url>
-  
 </urlset>
