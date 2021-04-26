@@ -2027,44 +2027,44 @@
 	<h2 id="types-list">Types</h3>
 <dl>
 <dt>
-<a href="pdi/array_datatype">
+<a href="array_datatype">
 <p><code>class PDI::Array_datatype</code></p>
 </a>
 </dt>
 <dd>an <a href="compound:classPDI_1_1Array__datatype">Array_datatype</a> is a <a href="compound:classPDI_1_1Datatype">Datatype</a> that represents an array: i.e storage of multiple elements of the same type continuously in memory.</dd>
 <dt>
-<a href="pdi/callbacks">
+<a href="callbacks">
 <p><code>class PDI::Callbacks</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/config_error">
+<a href="config_error">
 <p><code>class PDI::Config_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/context">
+<a href="context">
 <p><code>class PDI::Context</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/context_proxy">
+<a href="context_proxy">
 <p><code>class PDI::Context_proxy</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/data_descriptor">
+<a href="data_descriptor">
 <p><code>class PDI::Data_descriptor</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/datatype">
+<a href="datatype">
 <p><code>class PDI::Datatype</code></p>
 </a>
 </dt>
 <dd>A <a href="compound:classPDI_1_1Datatype">Datatype</a> is a <a href="compound:classPDI_1_1Datatype__template">Datatype_template</a> that accepts no argument.</dd>
 <dt>
-<a href="pdi/datatype_template">
+<a href="datatype_template">
 <p><code>class PDI::Datatype_template</code></p>
 </a>
 </dt>
@@ -2075,17 +2075,17 @@
 <p><code>typedef PDI::Datatype_uptr</code></p>
 </dt>
 <dt>
-<a href="pdi/error">
+<a href="error">
 <p><code>class PDI::Error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/expression">
+<a href="expression">
 <p><code>class PDI::Expression</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/impl_error">
+<a href="impl_error">
 <p><code>class PDI::Impl_error</code></p>
 </a>
 </dt>
@@ -2094,29 +2094,29 @@
 </dt>
 <dd>A shared pointer to a logger instance.</dd>
 <dt>
-<a href="pdi/paraconf_wrapper">
+<a href="paraconf_wrapper">
 <p><code>struct PDI::Paraconf_wrapper</code></p>
 </a>
 </dt>
 <dd>Automatically installs a paraconf error-handler that ignores errors and uninstalls it on destruction.</dd>
 <dt>
-<a href="pdi/plugin">
+<a href="plugin">
 <p><code>class PDI::Plugin</code></p>
 </a>
 </dt>
 <dd>The class <a href="compound:namespacePDI">PDI</a> plugins should implement.</dd>
 <dt>
-<a href="pdi/plugin_error">
+<a href="plugin_error">
 <p><code>class PDI::Plugin_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/pointer_datatype">
+<a href="pointer_datatype">
 <p><code>class PDI::Pointer_datatype</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/record_datatype">
+<a href="record_datatype">
 <p><code>class PDI::Record_datatype</code></p>
 </a>
 </dt>
@@ -2125,7 +2125,7 @@
 <p><code>typedef PDI::Ref</code></p>
 </dt>
 <dt>
-<a href="pdi/ref_any">
+<a href="ref_any">
 <p><code>class PDI::Ref_any</code></p>
 </a>
 </dt>
@@ -2140,18 +2140,18 @@
 <p><code>typedef PDI::Ref_w</code></p>
 </dt>
 <dt>
-<a href="pdi/reference_base">
+<a href="reference_base">
 <p><code>class PDI::Reference_base</code></p>
 </a>
 </dt>
 <dd>A common base for all references, whatever their access privileges.</dd>
 <dt>
-<a href="pdi/right_error">
+<a href="right_error">
 <p><code>class PDI::Right_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/scalar_datatype">
+<a href="scalar_datatype">
 <p><code>class PDI::Scalar_datatype</code></p>
 </a>
 </dt>
@@ -2160,70 +2160,89 @@
 </dt>
 <dd>Different possible interpretations for a scalar.</dd>
 <dt>
-<a href="pdi/state_error">
+<a href="state_error">
 <p><code>class PDI::State_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/system_error">
+<a href="system_error">
 <p><code>class PDI::System_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/type_error">
+<a href="type_error">
 <p><code>class PDI::Type_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/unavailable_error">
+<a href="unavailable_error">
 <p><code>class PDI::Unavailable_error</code></p>
 </a>
 </dt>
 <dt>
-<a href="pdi/value_error">
+<a href="value_error">
 <p><code>class PDI::Value_error</code></p>
 </a>
 </dt>
 </dl>
 <h2 id="types-list">Functions</h3>
 <dl>
-<dt><a href="#configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring-"><code>Logger_sptr PDI::configure_logger ( PC_tree_t, spdlog::level::level_enum, const std::string & )</code></a></dt>
-<dd>Reads configuration tree and sets up the logger. </dd>
-<dt><a href="#each-stdfunction-voidpc_tree_t-pc_tree_t"><code>void PDI::each ( std::function< void(PC_tree_t)>, PC_tree_t )</code></a></dt>
-<dd>Iterates and apply the provided function to all elements of a PC list. </dd>
-<dt><a href="#each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t"><code>void PDI::each ( std::function< void(PC_tree_t, PC_tree_t)>, PC_tree_t )</code></a></dt>
-<dd>Iterates and apply the provided function to all elements of a PC mapping. </dd>
-<dt><a href="#each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t"><code>void PDI::each_in_omap ( std::function< void(PC_tree_t, PC_tree_t)>, PC_tree_t )</code></a></dt>
-<dd>Iterates and apply the provided function to all elements of a PC ordered mapping. </dd>
-<dt><a href="#is_list-pc_tree_t"><code>bool PDI::is_list ( PC_tree_t )</code></a></dt>
-<dd>Checks if the tree is a list. </dd>
-<dt><a href="#is_map-pc_tree_t"><code>bool PDI::is_map ( PC_tree_t )</code></a></dt>
-<dd>Checks if the tree is a map. </dd>
-<dt><a href="#is_scalar-pc_tree_t"><code>bool PDI::is_scalar ( PC_tree_t )</code></a></dt>
-<dd>Checks if the tree is a scalar. </dd>
-<dt><a href="#len-pc_tree_t"><code>int PDI::len ( PC_tree_t )</code></a></dt>
+<dt><a href="#configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring-">
+<code><span class="kt">Logger_sptr</span> <span class="nf">PDI::configure_logger</span> ( <span class="kt">PC_tree_t</span>,  <span class="kt">spdlog::level::level_enum</span>,  <span class="kt">const std::string &amp;</span> )</code></a></dt>
+<dd>Reads configuration tree and sets up the logger.</dd>
+<dt><a href="#each-stdfunction-voidpc_tree_t-pc_tree_t">
+<code><span class="kt">void</span> <span class="nf">PDI::each</span> ( <span class="kt">std::function&lt; void(PC_tree_t)&gt;</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Iterates and apply the provided function to all elements of a PC list.</dd>
+<dt><a href="#each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t">
+<code><span class="kt">void</span> <span class="nf">PDI::each</span> ( <span class="kt">std::function&lt; void(PC_tree_t, PC_tree_t)&gt;</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Iterates and apply the provided function to all elements of a PC mapping.</dd>
+<dt><a href="#each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t">
+<code><span class="kt">void</span> <span class="nf">PDI::each_in_omap</span> ( <span class="kt">std::function&lt; void(PC_tree_t, PC_tree_t)&gt;</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Iterates and apply the provided function to all elements of a PC ordered mapping.</dd>
+<dt><a href="#is_list-pc_tree_t">
+<code><span class="kt">bool</span> <span class="nf">PDI::is_list</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Checks if the tree is a list.</dd>
+<dt><a href="#is_map-pc_tree_t">
+<code><span class="kt">bool</span> <span class="nf">PDI::is_map</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Checks if the tree is a map.</dd>
+<dt><a href="#is_scalar-pc_tree_t">
+<code><span class="kt">bool</span> <span class="nf">PDI::is_scalar</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Checks if the tree is a scalar.</dd>
+<dt><a href="#len-pc_tree_t">
+<code><span class="kt">int</span> <span class="nf">PDI::len</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the length of a node. <a href="#len-pc_tree_t">More…</a></dd>
-<dt><a href="#len-int-pc_tree_t"><code>int PDI::len ( int, PC_tree_t )</code></a></dt>
+<dt><a href="#len-int-pc_tree_t">
+<code><span class="kt">int</span> <span class="nf">PDI::len</span> ( <span class="kt">int</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the length of a node. <a href="#len-int-pc_tree_t">More…</a></dd>
-<dt><a href="#opt_each-stdfunction-voidpc_tree_t-pc_tree_t"><code>void PDI::opt_each ( std::function< void(PC_tree_t)>, PC_tree_t )</code></a></dt>
-<dd>Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list. </dd>
-<dt><a href="#plugin_api_version-unsigned-long"><code>unsigned long PDI::plugin_api_version ( unsigned long )</code></a></dt>
-<dd>Checks compatibility with a plugin API. </dd>
-<dt><a href="#to_bool-pc_tree_t"><code>bool PDI::to_bool ( PC_tree_t )</code></a></dt>
+<dt><a href="#opt_each-stdfunction-voidpc_tree_t-pc_tree_t">
+<code><span class="kt">void</span> <span class="nf">PDI::opt_each</span> ( <span class="kt">std::function&lt; void(PC_tree_t)&gt;</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
+<dd>Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list.</dd>
+<dt><a href="#plugin_api_version-unsigned-long">
+<code><span class="kt">unsigned long</span> <span class="nf">PDI::plugin_api_version</span> ( <span class="kt">unsigned long</span> )</code></a></dt>
+<dd>Checks compatibility with a plugin API.</dd>
+<dt><a href="#to_bool-pc_tree_t">
+<code><span class="kt">bool</span> <span class="nf">PDI::to_bool</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the boolean value of a scalar node. <a href="#to_bool-pc_tree_t">More…</a></dd>
-<dt><a href="#to_bool-bool-pc_tree_t"><code>bool PDI::to_bool ( bool, PC_tree_t )</code></a></dt>
+<dt><a href="#to_bool-bool-pc_tree_t">
+<code><span class="kt">bool</span> <span class="nf">PDI::to_bool</span> ( <span class="kt">bool</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the boolean value of a scalar node. <a href="#to_bool-bool-pc_tree_t">More…</a></dd>
-<dt><a href="#to_double-pc_tree_t"><code>double PDI::to_double ( PC_tree_t )</code></a></dt>
+<dt><a href="#to_double-pc_tree_t">
+<code><span class="kt">double</span> <span class="nf">PDI::to_double</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the floating point value of a scalar node. <a href="#to_double-pc_tree_t">More…</a></dd>
-<dt><a href="#to_double-double-pc_tree_t"><code>double PDI::to_double ( double, PC_tree_t )</code></a></dt>
+<dt><a href="#to_double-double-pc_tree_t">
+<code><span class="kt">double</span> <span class="nf">PDI::to_double</span> ( <span class="kt">double</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the floating point value of a scalar node. <a href="#to_double-double-pc_tree_t">More…</a></dd>
-<dt><a href="#to_long-pc_tree_t"><code>long PDI::to_long ( PC_tree_t )</code></a></dt>
+<dt><a href="#to_long-pc_tree_t">
+<code><span class="kt">long</span> <span class="nf">PDI::to_long</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the int value of a scalar node. <a href="#to_long-pc_tree_t">More…</a></dd>
-<dt><a href="#to_long-long-pc_tree_t"><code>long PDI::to_long ( long, PC_tree_t )</code></a></dt>
+<dt><a href="#to_long-long-pc_tree_t">
+<code><span class="kt">long</span> <span class="nf">PDI::to_long</span> ( <span class="kt">long</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the int value of a scalar node. <a href="#to_long-long-pc_tree_t">More…</a></dd>
-<dt><a href="#to_string-pc_tree_t"><code>std::string PDI::to_string ( PC_tree_t )</code></a></dt>
+<dt><a href="#to_string-pc_tree_t">
+<code><span class="kt">std::string</span> <span class="nf">PDI::to_string</span> ( <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the string content of a scalar node. <a href="#to_string-pc_tree_t">More…</a></dd>
-<dt><a href="#to_string-const-stdstring--pc_tree_t"><code>std::string PDI::to_string ( const std::string &, PC_tree_t )</code></a></dt>
+<dt><a href="#to_string-const-stdstring--pc_tree_t">
+<code><span class="kt">std::string</span> <span class="nf">PDI::to_string</span> ( <span class="kt">const std::string &amp;</span>,  <span class="kt">PC_tree_t</span> )</code></a></dt>
 <dd>Returns the string content of a scalar node. <a href="#to_string-const-stdstring--pc_tree_t">More…</a></dd>
 </dl>
 <h2 id="variables-list">Variables</h3>
@@ -2232,6 +2251,326 @@
 <dd></dd>
 </dl>
 <h2 id="detailed-documentation">Detailed Documentation</h3>
+<article class="td-content member-function">
+<h3 id="configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring-" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">Logger_sptr</span> <span class="nf">configure_logger</nf> (    <span class="kt">PC_tree_t</span> <a href="#configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring--_-config"><var class="nv">config</var></a>,   <span class="kt">spdlog::level::level_enum</span> <a href="#configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring--_-level"><var class="nv">level</var></a>,   <span class="kt">const std::string &amp;</span> <a href="#configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring--_-name"><var class="nv">name</var></a>  )</code></h3>
+<section class="description">
+Reads configuration tree and sets up the logger.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring--_-config" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">config</var></code></h5></dt>
+<dd>configuration tree from config file</dd>
+<dt><h5 id="configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring--_-level" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">level</var></code></h5></dt>
+<dd>default level of the logger</dd>
+<dt><h5 id="configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring--_-name" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></h5></dt>
+<dd>name of the module (e.g. global, test, decl_hdf5)</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>a configured logger</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="each-stdfunction-voidpc_tree_t-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">each</nf> (    <span class="kt">std::function&lt; void(PC_tree_t)&gt;</span> <a href="#each-stdfunction-voidpc_tree_t-pc_tree_t-_-operation"><var class="nv">operation</var></a>,   <span class="kt">PC_tree_t</span> <a href="#each-stdfunction-voidpc_tree_t-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Iterates and apply the provided function to all elements of a PC list.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="each-stdfunction-voidpc_tree_t-pc_tree_t-_-operation" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">operation</var></code></h5></dt>
+<dd>the operation to apply to each element of the tree</dd>
+<dt><h5 id="each-stdfunction-voidpc_tree_t-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the tree containing the list</dd>
+</dl>
+</article>
+<article class="td-content member-function">
+<h3 id="each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">each</nf> (    <span class="kt">std::function&lt; void(PC_tree_t, PC_tree_t)&gt;</span> <a href="#each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-operation"><var class="nv">operation</var></a>,   <span class="kt">PC_tree_t</span> <a href="#each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Iterates and apply the provided function to all elements of a PC mapping.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-operation" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">operation</var></code></h5></dt>
+<dd>the operation to apply to each element of the tree</dd>
+<dt><h5 id="each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the tree containing the mapping</dd>
+</dl>
+</article>
+<article class="td-content member-function">
+<h3 id="each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">each_in_omap</nf> (    <span class="kt">std::function&lt; void(PC_tree_t, PC_tree_t)&gt;</span> <a href="#each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-operation"><var class="nv">operation</var></a>,   <span class="kt">PC_tree_t</span> <a href="#each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Iterates and apply the provided function to all elements of a PC ordered mapping.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-operation" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">operation</var></code></h5></dt>
+<dd>the operation to apply to each element of the tree</dd>
+<dt><h5 id="each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the tree containing the ordered mapping</dd>
+</dl>
+</article>
+<article class="td-content member-function">
+<h3 id="is_list-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">is_list</nf> (    <span class="kt">PC_tree_t</span> <a href="#is_list-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Checks if the tree is a list.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="is_list-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>true if tree is a list, false otherwise</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="is_map-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">is_map</nf> (    <span class="kt">PC_tree_t</span> <a href="#is_map-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Checks if the tree is a map.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="is_map-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>true if tree is a map, false otherwise</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="is_scalar-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">is_scalar</nf> (    <span class="kt">PC_tree_t</span> <a href="#is_scalar-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Checks if the tree is a scalar.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="is_scalar-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>true if tree is a scalar, false otherwise</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="len-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">int</span> <span class="nf">len</nf> (    <span class="kt">PC_tree_t</span> <a href="#len-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the length of a node. <ul>
+<li>for a sequence: the number of nodes,</li>
+<li>for a mapping: the number of pairs,</li>
+<li>for a scalar: the string length.</li>
+</ul>
+<p>throws an <a href="compound:classPDI_1_1Error">Error</a> if the provided tree is in error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="len-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the sequence or mapping</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the length</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="len-int-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">int</span> <span class="nf">len</nf> (    <span class="kt">int</span> <a href="#len-int-pc_tree_t-_-dflt"><var class="nv">dflt</var></a>,   <span class="kt">PC_tree_t</span> <a href="#len-int-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the length of a node. <ul>
+<li>for a sequence: the number of nodes,</li>
+<li>for a mapping: the number of pairs,</li>
+<li>for a scalar: the string length.</li>
+</ul>
+<p>returns the default value in case of error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="len-int-pc_tree_t-_-dflt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">dflt</var></code></h5></dt>
+<dd>the default value in case of error</dd>
+<dt><h5 id="len-int-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the sequence or mapping</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the length</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="opt_each-stdfunction-voidpc_tree_t-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">void</span> <span class="nf">opt_each</nf> (    <span class="kt">std::function&lt; void(PC_tree_t)&gt;</span> <a href="#opt_each-stdfunction-voidpc_tree_t-pc_tree_t-_-operation"><var class="nv">operation</var></a>,   <span class="kt">PC_tree_t</span> <a href="#opt_each-stdfunction-voidpc_tree_t-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="opt_each-stdfunction-voidpc_tree_t-pc_tree_t-_-operation" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">operation</var></code></h5></dt>
+<dd>the operation to apply to the elements</dd>
+<dt><h5 id="opt_each-stdfunction-voidpc_tree_t-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the tree containing the list or the single element</dd>
+</dl>
+</article>
+<article class="td-content member-function">
+<h3 id="plugin_api_version-unsigned-long" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">unsigned long</span> <span class="nf">plugin_api_version</nf> (    <span class="kt">unsigned long</span> <a href="#plugin_api_version-unsigned-long-_-expected_version"><var class="nv">expected_version</var></a>  )</code></h3>
+<section class="description">
+Checks compatibility with a plugin API.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="plugin_api_version-unsigned-long-_-expected_version" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">expected_version</var></code></h5></dt>
+<dd>the expected version of the API or 0 for no check</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the version of the API provided by <a href="compound:namespacePDI">PDI</a></p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_bool-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">to_bool</nf> (    <span class="kt">PC_tree_t</span> <a href="#to_bool-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the boolean value of a scalar node. throws an <a href="compound:classPDI_1_1Error">Error</a> if the provided tree is in error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_bool-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the boolean value of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_bool-bool-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">bool</span> <span class="nf">to_bool</nf> (    <span class="kt">bool</span> <a href="#to_bool-bool-pc_tree_t-_-dflt"><var class="nv">dflt</var></a>,   <span class="kt">PC_tree_t</span> <a href="#to_bool-bool-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the boolean value of a scalar node. returns the default value in case of error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_bool-bool-pc_tree_t-_-dflt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">dflt</var></code></h5></dt>
+<dd>the default value in case of error</dd>
+<dt><h5 id="to_bool-bool-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the boolean value of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_double-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">double</span> <span class="nf">to_double</nf> (    <span class="kt">PC_tree_t</span> <a href="#to_double-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the floating point value of a scalar node. throws an <a href="compound:classPDI_1_1Error">Error</a> if the provided tree is in error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_double-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the floating-point-valued node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the floating point value of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_double-double-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">double</span> <span class="nf">to_double</nf> (    <span class="kt">double</span> <a href="#to_double-double-pc_tree_t-_-dflt"><var class="nv">dflt</var></a>,   <span class="kt">PC_tree_t</span> <a href="#to_double-double-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the floating point value of a scalar node. returns the default value in case of error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_double-double-pc_tree_t-_-dflt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">dflt</var></code></h5></dt>
+<dd>the default value in case of error</dd>
+<dt><h5 id="to_double-double-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the floating-point-valued node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the floating point value of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_long-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">long</span> <span class="nf">to_long</nf> (    <span class="kt">PC_tree_t</span> <a href="#to_long-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the int value of a scalar node. throws an <a href="compound:classPDI_1_1Error">Error</a> if the provided tree is in error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_long-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the int-valued node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the int value of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_long-long-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">long</span> <span class="nf">to_long</nf> (    <span class="kt">long</span> <a href="#to_long-long-pc_tree_t-_-dflt"><var class="nv">dflt</var></a>,   <span class="kt">PC_tree_t</span> <a href="#to_long-long-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the int value of a scalar node. returns the default value in case of error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_long-long-pc_tree_t-_-dflt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">dflt</var></code></h5></dt>
+<dd>the default value in case of error</dd>
+<dt><h5 id="to_long-long-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the int-valued node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the int value of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_string-pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">std::string</span> <span class="nf">to_string</nf> (    <span class="kt">PC_tree_t</span> <a href="#to_string-pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the string content of a scalar node. throws an <a href="compound:classPDI_1_1Error">Error</a> if the provided tree is in error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_string-pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the content of the scalar node</p>
+</section>
+</article>
+<article class="td-content member-function">
+<h3 id="to_string-const-stdstring--pc_tree_t" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">std::string</span> <span class="nf">to_string</nf> (    <span class="kt">const std::string &amp;</span> <a href="#to_string-const-stdstring--pc_tree_t-_-dflt"><var class="nv">dflt</var></a>,   <span class="kt">PC_tree_t</span> <a href="#to_string-const-stdstring--pc_tree_t-_-tree"><var class="nv">tree</var></a>  )</code></h3>
+<section class="description">
+Returns the string content of a scalar node. returns the default value in case of error
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt><h5 id="to_string-const-stdstring--pc_tree_t-_-dflt" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">dflt</var></code></h5></dt>
+<dd>the default value in case of error</dd>
+<dt><h5 id="to_string-const-stdstring--pc_tree_t-_-tree" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">tree</var></code></h5></dt>
+<dd>the node</dd>
+</dl>
+<h4>Result</h4>
+<section class="result">
+<p>the content of the scalar node</p>
+</section>
+</article>
 
         <div class="section-index">
     
