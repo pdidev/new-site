@@ -22,7 +22,13 @@
       <description>
         
         
-        &lt;p&gt;A function that parses a PC_tree_t to create a datatype_template.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;A function that parses a PC_tree_t to create a datatype_template.&lt;/p&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
@@ -37,7 +43,13 @@
       <description>
         
         
-        &lt;p&gt;An iterator used to go through the descriptor store.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;An iterator used to go through the descriptor store.&lt;/p&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-const-iterator-&#34;&gt;&lt;code&gt;bool operator!= ( const Iterator &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;

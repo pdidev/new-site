@@ -18,28 +18,22 @@
 <link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
 
 <title>First steps with PDI | PDI</title><meta property="og:title" content="First steps with PDI" />
-<meta property="og:description" content="Yaml language Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:
- Scalar - is a single value. List - is an array of values. Map - consist of mulitple keys and values.  Indentation level indicates the level in the tree.
-Here is an example:
-tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} The blue nodes are map values, yellow are lists and pink are scalars." />
+<meta property="og:description" content="Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named hello_event.yml that will load trace plugin:
+plugins: trace: ~ Yes, that is whole specification tree." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/first_steps/" /><meta property="article:section" content="docs" />
 
 
 
 <meta itemprop="name" content="First steps with PDI">
-<meta itemprop="description" content="Yaml language Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:
- Scalar - is a single value. List - is an array of values. Map - consist of mulitple keys and values.  Indentation level indicates the level in the tree.
-Here is an example:
-tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} The blue nodes are map values, yellow are lists and pink are scalars.">
+<meta itemprop="description" content="Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named hello_event.yml that will load trace plugin:
+plugins: trace: ~ Yes, that is whole specification tree.">
 
-<meta itemprop="wordCount" content="1234">
+<meta itemprop="wordCount" content="1364">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="First steps with PDI"/>
-<meta name="twitter:description" content="Yaml language Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:
- Scalar - is a single value. List - is an array of values. Map - consist of mulitple keys and values.  Indentation level indicates the level in the tree.
-Here is an example:
-tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} The blue nodes are map values, yellow are lists and pink are scalars."/>
+<meta name="twitter:description" content="Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named hello_event.yml that will load trace plugin:
+plugins: trace: ~ Yes, that is whole specification tree."/>
 
 
 
@@ -204,108 +198,8 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
-    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdeprecated-li">
-    <a href="/new-site/docs/deprecated/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdeprecated"><span class="">Deprecated List</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-new-sitedocsfirst_steps-li">
-    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="td-sidebar-nav-active-item">First steps with PDI</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
-    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-new-sitedocsref-li">
-    <a href="/new-site/docs/ref/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">Full API reference</span></a>
+    <a href="/new-site/docs/ref/" title="PDI API reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">API reference</span></a>
     
       
       <ul class="pr-md-3 ul-2">
@@ -352,8 +246,113 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
     <a href="/new-site/docs/ref/pdi/array_datatype/" title="PDI::Array_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatype"><span class="">Array_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/index_accessor/" title="PDI::Array_datatype::Index_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor"><span class="">Index_accessor</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/slice_accessor/" title="PDI::Array_datatype::Slice_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor"><span class="">Slice_accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdicallbacks-li">
+    <a href="/new-site/docs/ref/pdi/callbacks/" title="PDI::Callbacks class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdicallbacks"><span class="">Callbacks</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiconfig_error-li">
+    <a href="/new-site/docs/ref/pdi/config_error/" title="PDI::Config_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiconfig_error"><span class="">Config_error</span></a>
     
   </li>
 
@@ -507,8 +506,38 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdidatatype-li">
     <a href="/new-site/docs/ref/pdi/datatype/" title="PDI::Datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatype"><span class="">Datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatypeaccessor_base-li">
+    <a href="/new-site/docs/ref/pdi/datatype/accessor_base/" title="PDI::Datatype::Accessor_base struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatypeaccessor_base"><span class="">Accessor_base</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -657,6 +686,31 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiimpl_error-li">
+    <a href="/new-site/docs/ref/pdi/impl_error/" title="PDI::Impl_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiimpl_error"><span class="">Impl_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdilogger_sptr-li">
     <a href="/new-site/docs/ref/pdi/logger_sptr/" title="PDI::Logger_sptr typedef reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdilogger_sptr"><span class="">Logger_sptr</span></a>
     
@@ -732,8 +786,63 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiplugin_error-li">
+    <a href="/new-site/docs/ref/pdi/plugin_error/" title="PDI::Plugin_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiplugin_error"><span class="">Plugin_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
     <a href="/new-site/docs/ref/pdi/pointer_datatype/" title="PDI::Pointer_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatype"><span class="">Pointer_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatypeaccessor-li">
+    <a href="/new-site/docs/ref/pdi/pointer_datatype/accessor/" title="PDI::Pointer_datatype::Accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatypeaccessor"><span class="">Accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -783,6 +892,31 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember-li">
     <a href="/new-site/docs/ref/pdi/record_datatype/member/" title="PDI::Record_datatype::Member class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember"><span class="">Member</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember_accessor-li">
+    <a href="/new-site/docs/ref/pdi/record_datatype/member_accessor/" title="PDI::Record_datatype::Member_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember_accessor"><span class="">Member_accessor</span></a>
     
   </li>
 
@@ -1017,6 +1151,31 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiright_error-li">
+    <a href="/new-site/docs/ref/pdi/right_error/" title="PDI::Right_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiright_error"><span class="">Right_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiscalar_datatype-li">
     <a href="/new-site/docs/ref/pdi/scalar_datatype/" title="PDI::Scalar_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiscalar_datatype"><span class="">Scalar_datatype</span></a>
     
@@ -1049,6 +1208,131 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdistate_error-li">
+    <a href="/new-site/docs/ref/pdi/state_error/" title="PDI::State_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdistate_error"><span class="">State_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdisystem_error-li">
+    <a href="/new-site/docs/ref/pdi/system_error/" title="PDI::System_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdisystem_error"><span class="">System_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpditype_error-li">
+    <a href="/new-site/docs/ref/pdi/type_error/" title="PDI::Type_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpditype_error"><span class="">Type_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiunavailable_error-li">
+    <a href="/new-site/docs/ref/pdi/unavailable_error/" title="PDI::Unavailable_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiunavailable_error"><span class="">Unavailable_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdivalue_error-li">
+    <a href="/new-site/docs/ref/pdi/value_error/" title="PDI::Value_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdivalue_error"><span class="">Value_error</span></a>
+    
+  </li>
+
+          
+        
       </ul>
     
   </li>
@@ -1073,8 +1357,8 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_s-li">
-    <a href="/new-site/docs/ref/pdi_errhandler_s/" title="PDI_errhandler_s struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_s"><span class="">PDI_errhandler_s</span></a>
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_t-li">
+    <a href="/new-site/docs/ref/pdi_errhandler_t/" title="PDI_errhandler_t struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_t"><span class="">PDI_errhandler_t</span></a>
     
   </li>
 
@@ -1184,6 +1468,106 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocschecklists-li">
+    <a href="/new-site/docs/checklists/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocschecklists"><span class="">Checklists</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
+    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-new-sitedocsfirst_steps-li">
+    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="td-sidebar-nav-active-item">First steps with PDI</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
+    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocshands_on-li">
     <a href="/new-site/docs/hands_on/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocshands_on"><span class="">Hands-on tutorial</span></a>
     
@@ -1260,7 +1644,32 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_example-li">
-    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="">PDI example</span></a>
+    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="">PDI examples</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_usage-li">
+    <a href="/new-site/docs/pdi_usage/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_usage"><span class="">PDI usage</span></a>
     
   </li>
 
@@ -1311,6 +1720,31 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspycall_plugin-li">
     <a href="/new-site/docs/pycall_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspycall_plugin"><span class="">Pycall plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsserialize_plugin-li">
+    <a href="/new-site/docs/serialize_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsserialize_plugin"><span class="">Serialize plugin</span></a>
     
   </li>
 
@@ -1409,6 +1843,31 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdecl_netcdf_plugin-li">
+    <a href="/new-site/docs/decl_netcdf_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdecl_netcdf_plugin"><span class="">The Decl&#39;NetCDF plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsflowvr_plugin-li">
     <a href="/new-site/docs/flowvr_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsflowvr_plugin"><span class="">The FlowVR plugin</span></a>
     
@@ -1466,6 +1925,31 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsyaml-li">
+    <a href="/new-site/docs/yaml/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsyaml"><span class="">YAML</span></a>
+    
+  </li>
+
+          
+        
       </ul>
     
   </li>
@@ -1499,14 +1983,10 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#yaml-language">Yaml language</a></li>
-    <li><a href="#hello-event">Hello Event</a>
-      <ul>
-        <li><a href="#hello-data">Hello Data</a></li>
-        <li><a href="#hello-access">Hello Access</a></li>
-        <li><a href="#hello-multi-expose">Hello multi expose</a></li>
-      </ul>
-    </li>
+    <li><a href="#hello-event">Hello Event</a></li>
+    <li><a href="#hello-data">Hello Data</a></li>
+    <li><a href="#hello-access">Hello Access</a></li>
+    <li><a href="#hello-multi-expose">Hello multi expose</a></li>
   </ul>
 </nav>
 
@@ -1550,53 +2030,38 @@ tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: sc
 	<h1>First steps with PDI</h1>
     
 	       
-	<h2 id="yaml-language">Yaml language</h2>
-<p>Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:</p>
-<ol>
-<li>Scalar - is a single value.</li>
-<li>List - is an array of values.</li>
-<li>Map - consist of mulitple keys and values.</li>
-</ol>
-<p>Indentation level indicates the level in the tree.</p>
-<p>Here is an example:</p>
-<pre><code>tree_1:
-  array_1:
-    - scalar_1
-    - scalar_2
-  array_2: [1, 2, 3]
-tree_2: {subtree_1: scalar_1, subtree_2: scalar_2}
-</code></pre><p><img src="/docs/imgs/yaml_example.jpg" alt="Visualization of the yaml tree\."></p>
-<p>The blue nodes are map values, yellow are lists and pink are scalars. As can be seen, the list and map can be defined in both ways (in one line and multiple lines).</p>
-<p>The PDI_init function gets as parameter a tree with <code>logging</code>, <code>data</code>, <code>metadata</code> and <code>plugins</code> maps defined in its root. User can define its own values in yaml and pass to PDI only the subtree:</p>
-<pre><code>duration: 0.75
-size: [64, 64]
-parallelism: { height: 4, width: 4 }
-
-# only the following config will be passed to PDI
-pdi_subtree:
-  metadata:
-    iteration:   int
-  data:
-    main_field: double
-  plugins:
-    decl_hdf5:
-       ...
-</code></pre><pre><code>PC_tree_t root = PC_parse_path(&quot;example.yaml&quot;);
-PDI_init(PC_get(root, &quot;pdi_subtree&quot;));
-</code></pre><h2 id="hello-event">Hello Event</h2>
+	<h2 id="hello-event">Hello Event</h2>
 <p>As mentioned in <a href="member:Concepts_1Specification_tree">Specification tree</a> we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use <a href="compound:trace_plugin">Trace plugin</a>, which is very simple plugin that just prints every information it gets. Let's create a specification tree named <code>hello_event.yml</code> that will load trace plugin:</p>
 <pre><code>plugins:
   trace: ~
 </code></pre><p>Yes, that is whole specification tree. Trace plugin prints everything, so there is no need to specify what we want it to do.</p>
-<p>We need to write a source code of our application:</p>
+<p>C source code:</p>
 <pre><code>#include &lt;pdi.h&gt;
 
 int main(int argc, char* argv[]) {
     PDI_init(PC_parse_path(&quot;hello_event.yml&quot;));
+
     PDI_event(&quot;Hello World Event&quot;);
+
     PDI_finalize();
     return 0;
 }
+</code></pre><p>Fortran source code:</p>
+<pre><code>program hello_event
+    use paraconf
+    use pdi
+    implicit none
+
+    type(PC_tree_t), target :: conf
+
+    call pc_parse_path(&quot;hello_event.yml&quot;, conf)
+    call pdi_init(conf)
+
+    call pdi_event(&quot;Hello World Event&quot;)
+
+    call pdi_finalize()
+
+end program hello_event
 </code></pre><p>Let's analyze what happens in each line. Firstly we have <a href="member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0">PDI_init()</a> function which take parameter of type <code>PC_tree_t</code>. It's a tree structure parsed from some YAML file, in our case we parse it with <code>paraconf</code> library build in PDI. To parse a file we need to call <code>PC_parse_path</code> function passing file path as argument. The next step is to call an event in PDI named &quot;Hello World Event&quot;. At the end we have to call <a href="member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969">PDI_finalize()</a>. The output from this program is presented below:</p>
 <pre><code>[PDI][Trace-plugin][10:25:28] *** info: Welcome!
 [PDI][10:25:28] *** info: Initialization successful
@@ -1604,14 +2069,15 @@ int main(int argc, char* argv[]) {
 [PDI][10:25:28] *** info: Finalization
 [PDI][Trace-plugin][10:25:28] *** info: Goodbye!
 </code></pre><p>The first line indicates that plugin has loaded successfully. The second is PDI message, that tells it managed to create all descriptors and load all defined plugins. Then we have message from loaded trace plugin which printed the event name it has received. The next information is from PDI and indicates that finalization has started and now it will deallocate resources. Last message is from trace plugin destructor.</p>
-<h3 id="hello-data">Hello Data</h3>
+<h2 id="hello-data">Hello Data</h2>
 <p>In <a href="member:First_steps_1fs_hello_event">Hello Event</a> we learned how to call an event. In this chapter we will see how to share and reclaim data.</p>
 <p>Firstly we have to create a specification tree named <code>hello_data.yml</code> with <code>data</code> and trace plugin tree declared:</p>
 <pre><code>data:
   world: int
 plugins:
   trace: ~
-</code></pre><p>We have declared trace plugin and one descriptor named <code>world</code> of integer type. Now let's write our program:</p>
+</code></pre><p>We have declared trace plugin and one descriptor named <code>world</code> of integer type.</p>
+<p>C source code:</p>
 <pre><code>#include &lt;pdi.h&gt;
 
 int main(int argc, char* argv[]) {
@@ -1626,6 +2092,28 @@ int main(int argc, char* argv[]) {
     PDI_finalize();
     return 0;
 }
+</code></pre><p>Fortran source code:</p>
+<pre><code>program hello_data
+    use paraconf
+    use pdi
+    implicit none
+
+    type(PC_tree_t),target :: conf
+    integer                :: my_world
+
+    call pc_parse_path(&quot;hello_data.yml&quot;, conf)
+    call pdi_init(conf)
+
+    my_world = 42
+    call pdi_share(&quot;world&quot;, my_world, pdi_out)
+    !variable my_world is shared with PDI
+
+    call pdi_reclaim(&quot;world&quot;);
+    !variable my_world is no longer shared with PDI
+
+    call pdi_finalize()
+
+end program hello_data
 </code></pre><p>Let's analyze new functions:</p>
 <ul>
 <li><code>PDI_share</code> shares access to the variable with PDI. The first argument is a descriptor name and indicates what data we are sharing. The second one is pointer to our variable and the last one is access direction. <code>PDI_OUT</code> means data direction from application to PDI, <code>PDI_IN</code> is a direction from PDI to the program, <code>PDI_INOUT</code> includes both directions.</li>
@@ -1640,18 +2128,30 @@ int main(int argc, char* argv[]) {
 [PDI][Trace-plugin][10:59:35] *** info: Goodbye!
 </code></pre><p>As we can see from the logs above, when we called <code>PDI_share</code> plugin gained access to the shared variable and after <code>PDI_reclaim</code> the variable has become no longer available for the plugin. The share notification gives plugin possibility to operate on data dependently what has been declared in specification tree.</p>
 <p>The same exact result we can achieve with <code>PDI_expose</code> which is just <code>PDI_share</code> call and right after <code>PDI_reclaim</code> is called.</p>
-<pre><code>PDI_share(&quot;world&quot;, &amp;my_world, PDI_OUT);
-PDI_reclaim(&quot;world&quot;);
+<p>C source code:</p>
+<pre><code>    PDI_share(&quot;world&quot;, &amp;my_world, PDI_OUT);
+    PDI_reclaim(&quot;world&quot;);
 </code></pre><p>is the same as:</p>
-<pre><code>PDI_expose(&quot;world&quot;, &amp;my_world, PDI_OUT);
-</code></pre><h3 id="hello-access">Hello Access</h3>
-<p>Now we will try to access a descriptor we share with PDI. In this case we won't need any plugin. We want to define string in our <code>world_access.yml</code>:</p>
+<pre><code>    PDI_expose(&quot;world&quot;, &amp;my_world, PDI_OUT);
+</code></pre><p>Fortran source code:</p>
+<pre><code>    call pdi_share(&quot;world&quot;, my_world, pdi_out)
+    call pdi_reclaim(&quot;world&quot;);
+</code></pre><p>is the same as:</p>
+<pre><code>    call pdi_expose(&quot;world&quot;, my_world, pdi_out)
+</code></pre><h2 id="hello-access">Hello Access</h2>
+<p>Now we will try to access a descriptor we share with PDI. In this case we won't need any plugin. We want to define int and a string in our <code>hello_access.yml</code>:</p>
 <pre><code>data:
+  my_value: int
   my_message: {type: array, subtype: char, size: 32}
-</code></pre><p>Now let's write some simple program:</p>
+</code></pre><p>C source code:</p>
 <pre><code>#include &lt;pdi.h&gt;
 
 void print_secret_msg() {
+    int* value;
+    PDI_access(&quot;my_value&quot;, (void**)&amp;value, PDI_IN);
+    printf(&quot;%d\n&quot;, *value);
+    PDI_release(&quot;my_value&quot;);
+
     char* message;
     PDI_access(&quot;my_message&quot;, (void**)&amp;message, PDI_IN);
     printf(&quot;%s\n&quot;, message);
@@ -1660,30 +2160,84 @@ void print_secret_msg() {
 
 int main(int argc, char* argv[]) {
     PDI_init(PC_parse_path(&quot;world_access.yml&quot;));
+    int my_value = 42;
+    PDI_share(&quot;my_value&quot;, &amp;my_value, PDI_OUT);
+
     char* secret_msg = &quot;Watermelon is the tastiest fruit&quot;;
     PDI_share(&quot;my_message&quot;, secret_msg, PDI_OUT);
 
     print_secret_msg();
 
     PDI_reclaim(&quot;my_message&quot;);
+    PDI_reclaim(&quot;my_value&quot;);
+
     PDI_finalize();
     return 0;
 }
+</code></pre><p>Fortran source code:</p>
+<pre><code>subroutine print_secret_msg
+  use pdi
+  implicit none
+
+  integer, pointer               :: p_val
+  character, pointer, contiguous :: p_msg(:)
+  integer                        :: msg_ranks(1)
+
+  call pdi_access(&quot;value&quot;, p_val, pdi_in)
+  print *, &quot;PDI value: &quot;, p_val
+  call pdi_release(&quot;value&quot;)
+
+  ! In case of accessing arrays, PDI_access takes additional array argument with dimensions sizes
+  msg_ranks(1) = 32
+  call pdi_access(&quot;message&quot;, p_msg, pdi_in, msg_ranks)
+  print *, &quot;PDI message: &quot;, p_msg
+  call pdi_release(&quot;message&quot;)
+  return
+end subroutine print_secret_msg
+
+program access
+  use paraconf
+  use pdi
+  implicit none
+
+  type(pc_tree_t),target  :: conf
+  integer                 :: my_value
+  character(LEN=32)      :: secret_message
+
+  call pc_parse_path(&quot;hello_access.yml&quot;, conf)
+  call pdi_init(conf)
+
+  my_value = 42
+  secret_message = &quot;Watermelon is the tastiest fruit&quot;
+  print *, &quot;My value: &quot;, my_value
+  print *, &quot;My message: &quot;, secret_message
+
+  call pdi_share(&quot;value&quot;, my_value, pdi_out)
+  call pdi_share(&quot;message&quot;, secret_message, pdi_out)
+
+  call print_secret_msg()
+
+  call pdi_reclaim(&quot;message&quot;)
+  call pdi_reclaim(&quot;value&quot;)
+  call pdi_finalize()
+end program access
 </code></pre><p>We will focus on <code>print_secret_msg</code> function. If you don't understand what happens in <code>main</code> function, please see <a href="member:First_steps_1fs_hello_data">Hello Data</a> example. <code>PDI_access</code> sets our pointer to the data location. We need to pass <code>PDI_IN</code> because data flows from PDI to our application. We also want to use <code>PDI_release</code>, because <code>PDI_reclaim</code> would end the sharing status of this descriptor and we reclaim this data later in <code>main</code> function. Output from the program:</p>
 <pre><code>[PDI][13:42:31] *** info: Initialization successful
+42
 Watermelon is the tastiest fruit
 [PDI][13:42:31] *** info: Finalization
 </code></pre><p>As you can see, we manage to access data descriptor from function only by passing its name and correct direction access.</p>
-<h3 id="hello-multi-expose">Hello multi expose</h3>
+<h2 id="hello-multi-expose">Hello multi expose</h2>
 <p>In some cases we would want to expose many descriptors at once. For this we have multi expose which shares all the given descriptors, then call given event and then reclaim all passed data. Let's look at the example.</p>
 <pre><code>data:
   my_int: int
   my_float: float
   my_string: {type: array, subtype: char, size: 32}
 
-plugin:
+plugins:
   trace: ~
-</code></pre><p>We have defined 3 descriptors and trace plugin. Now it's time for our application:</p>
+</code></pre><p>We have defined 3 descriptors and trace plugin.</p>
+<p>C source code:</p>
 <pre><code>#include &lt;pdi.h&gt;
 
 int main(int argc, char* argv[]) {
@@ -1707,7 +2261,36 @@ int main(int argc, char* argv[]) {
 <li>pointer to the data</li>
 <li>direction access As the last argument we have to pass <code>NULL</code>.</li>
 </ul>
-<p>The output of the execution:</p>
+<p>Fortran source code (have to use transaction):</p>
+<pre><code>program hello_multi_expose
+    use paraconf
+    use pdi
+    implicit none
+
+    type(PC_tree_t)   :: conf
+    integer           :: my_int
+    real              :: my_float
+    character(len=32) :: my_string
+
+    call pc_parse_path(&quot;hello_transaction.yml&quot;, conf)
+    call pdi_init(conf)
+
+    my_int = 0
+    my_float = 0
+    my_string = &quot;RGB = Really Gawky Biscuit&quot;;
+
+    call pdi_transaction_begin(&quot;event_between&quot;)
+
+    call pdi_expose(&quot;my_int&quot;, my_int, pdi_out)
+    call pdi_expose(&quot;my_float&quot;, my_float, pdi_out)
+    call pdi_expose(&quot;my_string&quot;, my_string, pdi_out)
+
+    call pdi_transaction_end()
+
+    call pdi_finalize()
+
+end program hello_multi_expose
+</code></pre><p>The output of the execution:</p>
 <pre><code>[PDI][Trace-plugin][14:14:51] *** info: Welcome!
 [PDI][14:14:51] *** info: Initialization successful
 [PDI][Trace-plugin][14:14:51] *** info: =&gt;&gt;   data becoming available in the store: my_int

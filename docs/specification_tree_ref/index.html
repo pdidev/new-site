@@ -18,25 +18,25 @@
 <link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
 
 <title>Specification tree Reference | PDI</title><meta property="og:title" content="Specification tree Reference" />
-<meta property="og:description" content="The PDI specification tree is expressed in YAML. As such, it is a tree that contains 3 distinct kinds of nodes:
- scalars, sequences, mappings.  A scalar is a leaf in the tree, represented as a string. Some form of scalars can be interpreted as a boolean, integer or floating-point valued. Simple examples of scalars include for example (see the YAML specification for the complete syntax):
- &quot;hello&quot;, world, 3, 5." />
+<meta property="og:description" content="The PDI specification tree is expressed in YAML.
+specification tree root The specification tree root is a mapping that contains the following keys:
+   key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/" /><meta property="article:section" content="docs" />
 
 
 
 <meta itemprop="name" content="Specification tree Reference">
-<meta itemprop="description" content="The PDI specification tree is expressed in YAML. As such, it is a tree that contains 3 distinct kinds of nodes:
- scalars, sequences, mappings.  A scalar is a leaf in the tree, represented as a string. Some form of scalars can be interpreted as a boolean, integer or floating-point valued. Simple examples of scalars include for example (see the YAML specification for the complete syntax):
- &quot;hello&quot;, world, 3, 5.">
+<meta itemprop="description" content="The PDI specification tree is expressed in YAML.
+specification tree root The specification tree root is a mapping that contains the following keys:
+   key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored.">
 
-<meta itemprop="wordCount" content="1819">
+<meta itemprop="wordCount" content="1915">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Specification tree Reference"/>
-<meta name="twitter:description" content="The PDI specification tree is expressed in YAML. As such, it is a tree that contains 3 distinct kinds of nodes:
- scalars, sequences, mappings.  A scalar is a leaf in the tree, represented as a string. Some form of scalars can be interpreted as a boolean, integer or floating-point valued. Simple examples of scalars include for example (see the YAML specification for the complete syntax):
- &quot;hello&quot;, world, 3, 5."/>
+<meta name="twitter:description" content="The PDI specification tree is expressed in YAML.
+specification tree root The specification tree root is a mapping that contains the following keys:
+   key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored."/>
 
 
 
@@ -201,108 +201,8 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
-    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdeprecated-li">
-    <a href="/new-site/docs/deprecated/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdeprecated"><span class="">Deprecated List</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfirst_steps-li">
-    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="">First steps with PDI</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
-    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-new-sitedocsref-li">
-    <a href="/new-site/docs/ref/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">Full API reference</span></a>
+    <a href="/new-site/docs/ref/" title="PDI API reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">API reference</span></a>
     
       
       <ul class="pr-md-3 ul-2">
@@ -349,8 +249,113 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
     <a href="/new-site/docs/ref/pdi/array_datatype/" title="PDI::Array_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatype"><span class="">Array_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/index_accessor/" title="PDI::Array_datatype::Index_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor"><span class="">Index_accessor</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/slice_accessor/" title="PDI::Array_datatype::Slice_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor"><span class="">Slice_accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdicallbacks-li">
+    <a href="/new-site/docs/ref/pdi/callbacks/" title="PDI::Callbacks class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdicallbacks"><span class="">Callbacks</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiconfig_error-li">
+    <a href="/new-site/docs/ref/pdi/config_error/" title="PDI::Config_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiconfig_error"><span class="">Config_error</span></a>
     
   </li>
 
@@ -504,8 +509,38 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdidatatype-li">
     <a href="/new-site/docs/ref/pdi/datatype/" title="PDI::Datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatype"><span class="">Datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatypeaccessor_base-li">
+    <a href="/new-site/docs/ref/pdi/datatype/accessor_base/" title="PDI::Datatype::Accessor_base struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatypeaccessor_base"><span class="">Accessor_base</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -654,6 +689,31 @@
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiimpl_error-li">
+    <a href="/new-site/docs/ref/pdi/impl_error/" title="PDI::Impl_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiimpl_error"><span class="">Impl_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdilogger_sptr-li">
     <a href="/new-site/docs/ref/pdi/logger_sptr/" title="PDI::Logger_sptr typedef reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdilogger_sptr"><span class="">Logger_sptr</span></a>
     
@@ -729,8 +789,63 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiplugin_error-li">
+    <a href="/new-site/docs/ref/pdi/plugin_error/" title="PDI::Plugin_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiplugin_error"><span class="">Plugin_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
     <a href="/new-site/docs/ref/pdi/pointer_datatype/" title="PDI::Pointer_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatype"><span class="">Pointer_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatypeaccessor-li">
+    <a href="/new-site/docs/ref/pdi/pointer_datatype/accessor/" title="PDI::Pointer_datatype::Accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatypeaccessor"><span class="">Accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -780,6 +895,31 @@
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember-li">
     <a href="/new-site/docs/ref/pdi/record_datatype/member/" title="PDI::Record_datatype::Member class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember"><span class="">Member</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember_accessor-li">
+    <a href="/new-site/docs/ref/pdi/record_datatype/member_accessor/" title="PDI::Record_datatype::Member_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember_accessor"><span class="">Member_accessor</span></a>
     
   </li>
 
@@ -1014,6 +1154,31 @@
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiright_error-li">
+    <a href="/new-site/docs/ref/pdi/right_error/" title="PDI::Right_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiright_error"><span class="">Right_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiscalar_datatype-li">
     <a href="/new-site/docs/ref/pdi/scalar_datatype/" title="PDI::Scalar_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiscalar_datatype"><span class="">Scalar_datatype</span></a>
     
@@ -1046,6 +1211,131 @@
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdistate_error-li">
+    <a href="/new-site/docs/ref/pdi/state_error/" title="PDI::State_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdistate_error"><span class="">State_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdisystem_error-li">
+    <a href="/new-site/docs/ref/pdi/system_error/" title="PDI::System_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdisystem_error"><span class="">System_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpditype_error-li">
+    <a href="/new-site/docs/ref/pdi/type_error/" title="PDI::Type_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpditype_error"><span class="">Type_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiunavailable_error-li">
+    <a href="/new-site/docs/ref/pdi/unavailable_error/" title="PDI::Unavailable_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiunavailable_error"><span class="">Unavailable_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdivalue_error-li">
+    <a href="/new-site/docs/ref/pdi/value_error/" title="PDI::Value_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdivalue_error"><span class="">Value_error</span></a>
+    
+  </li>
+
+          
+        
       </ul>
     
   </li>
@@ -1070,8 +1360,8 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_s-li">
-    <a href="/new-site/docs/ref/pdi_errhandler_s/" title="PDI_errhandler_s struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_s"><span class="">PDI_errhandler_s</span></a>
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_t-li">
+    <a href="/new-site/docs/ref/pdi_errhandler_t/" title="PDI_errhandler_t struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_t"><span class="">PDI_errhandler_t</span></a>
     
   </li>
 
@@ -1181,6 +1471,106 @@
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocschecklists-li">
+    <a href="/new-site/docs/checklists/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocschecklists"><span class="">Checklists</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
+    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfirst_steps-li">
+    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="">First steps with PDI</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
+    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocshands_on-li">
     <a href="/new-site/docs/hands_on/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocshands_on"><span class="">Hands-on tutorial</span></a>
     
@@ -1257,7 +1647,32 @@
   
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_example-li">
-    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="">PDI example</span></a>
+    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="">PDI examples</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_usage-li">
+    <a href="/new-site/docs/pdi_usage/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_usage"><span class="">PDI usage</span></a>
     
   </li>
 
@@ -1308,6 +1723,31 @@
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspycall_plugin-li">
     <a href="/new-site/docs/pycall_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspycall_plugin"><span class="">Pycall plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsserialize_plugin-li">
+    <a href="/new-site/docs/serialize_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsserialize_plugin"><span class="">Serialize plugin</span></a>
     
   </li>
 
@@ -1406,6 +1846,31 @@
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdecl_netcdf_plugin-li">
+    <a href="/new-site/docs/decl_netcdf_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdecl_netcdf_plugin"><span class="">The Decl&#39;NetCDF plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsflowvr_plugin-li">
     <a href="/new-site/docs/flowvr_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsflowvr_plugin"><span class="">The FlowVR plugin</span></a>
     
@@ -1463,6 +1928,31 @@
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsyaml-li">
+    <a href="/new-site/docs/yaml/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsyaml"><span class="">YAML</span></a>
+    
+  </li>
+
+          
+        
       </ul>
     
   </li>
@@ -1514,12 +2004,16 @@
     <li><a href="#intexpr_seq">intexpr_seq</a></li>
     <li><a href="#intexpr_or_seq">intexpr_or_seq</a></li>
     <li><a href="#logical_type">logical_type</a></li>
-    <li><a href="#member_desc">member_desc</a></li>
-    <li><a href="#members_map">members_map</a></li>
+    <li><a href="#struct_member_desc">struct_member_desc</a></li>
+    <li><a href="#record_member_desc">record_member_desc</a></li>
+    <li><a href="#struct_members_omap">struct_members_omap</a></li>
+    <li><a href="#record_members_map">record_members_map</a></li>
     <li><a href="#plugin_map">plugin_map</a></li>
     <li><a href="#real_type">real_type</a></li>
+    <li><a href="#struct_type">struct_type</a></li>
     <li><a href="#record_type">record_type</a></li>
     <li><a href="#simple_datatype">simple_datatype</a></li>
+    <li><a href="#plugin_path">plugin_path</a></li>
   </ul>
 </nav>
 
@@ -1563,45 +2057,7 @@
 	<h1>Specification tree Reference</h1>
     
 	       
-	<p>The PDI specification tree is expressed in <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>. As such, it is a tree that contains 3 distinct kinds of nodes:</p>
-<ul>
-<li>scalars,</li>
-<li>sequences,</li>
-<li>mappings.</li>
-</ul>
-<p>A <strong>scalar</strong> is a leaf in the tree, represented as a string. Some form of scalars can be interpreted as a boolean, integer or floating-point valued. Simple examples of scalars include for example (see the <a href="https://yaml.org/spec/1.2/spec.html#id2760844">YAML specification</a> for the complete syntax):</p>
-<ul>
-<li><code>&quot;hello&quot;</code>,</li>
-<li><code>world</code>,</li>
-<li><code>3</code>,</li>
-<li><code>5.7</code>.</li>
-</ul>
-<p>A <strong>sequence</strong> is an ordered list of sub-nodes (that can themselves be scalars, sequences or mappings). Two main syntaxes are available for sequences (see the <a href="https://yaml.org/spec/1.2/spec.html#id2759963">YAML specification</a> for the complete syntax).</p>
-<ul>
-<li>
-<p>in-line sequence: <code>[1, 2, 3, hello, &quot;world&quot;]</code></p>
-</li>
-<li>
-<p>multi-line sequence:</p>
-<pre><code>- 1
-- 2
-- 3
-- hello
-- world
-</code></pre></li>
-</ul>
-<p>A <strong>mapping</strong> is an unordered list of key-value pairs (whose elements can themselves be scalars, sequences or mappings). Two main syntaxes are available for mapping (see the <a href="https://yaml.org/spec/1.2/spec.html#id2759963">YAML specification</a> for the complete syntax).</p>
-<ul>
-<li>
-<p>in-line mapping: <code>{1: one, 2: &quot;two&quot;, &quot;three&quot;: 3}</code></p>
-</li>
-<li>
-<p>multi-line mapping:</p>
-<pre><code>1: one
-2: two
-&quot;three&quot;: 3
-</code></pre></li>
-</ul>
+	<p>The PDI specification tree is expressed in <a href="compound:YAML">YAML</a>.</p>
 <h2 id="specification-tree-root">specification tree root</h2>
 <p>The <em>specification tree root</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
@@ -1623,6 +2079,10 @@
 <tr>
 <td><code>&quot;plugins&quot;</code> (<em>optional</em>)</td>
 <td>a <a href="member:Specification_tree_ref_1plugin_map_node">plugin_map</a></td>
+</tr>
+<tr>
+<td><code>&quot;plugin_path&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:Specification_tree_ref_1plugin_path_map_node">plugin_path</a></td>
 </tr>
 <tr>
 <td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
@@ -1753,7 +2213,8 @@ kind: 4
 <li>a <a href="member:Specification_tree_ref_1logical_type_node">logical_type</a>,</li>
 <li>a <a href="member:Specification_tree_ref_1real_type_node">real_type</a>,</li>
 <li>a <a href="member:Specification_tree_ref_1record_type_node">record_type</a>,</li>
-<li>a <a href="member:Specification_tree_ref_1simple_datatype_node">simple_datatype</a>.</li>
+<li>a <a href="member:Specification_tree_ref_1simple_datatype_node">simple_datatype</a>,</li>
+<li>a <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a>.</li>
 </ul>
 <p>Amongst these, <a href="member:Specification_tree_ref_1simple_datatype_node">simple_datatype</a> is the only scalar. All others are dictionaries with a <code>type</code> key used for disambiguation between them. Plugins can add new options that follow the same pattern.</p>
 <p>A <em>datatype</em> represents the memory layout and interpretation for data exposed by the user in the <a href="member:Concepts_1Data_store">data store</a>.</p>
@@ -1824,7 +2285,7 @@ TERM           := ( INT_LITERAL | REFERENCE | '(' OPERATION ')' )
 
 REFERENCE      := '$' ( IREFERENCE | '{' IREFERENCE '}' )
 
-IREFERENCE     := ID ( '[' OPERATION ']' )*
+IREFERENCE     := ID ( '[' OPERATION ']' | '.' ID )*
 
 
 
@@ -1835,7 +2296,11 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </code></pre><p>The rules for evaluating an expression are close to those of BASH for example.</p>
 <p>In addition to raw text, a <code>STRING_LITERAL</code> can contain references to the string value of some data in the store as well as the result of an operation by enclosing it inside a dollar-parenthesis <code>$()</code>.</p>
 <p>An <code>OPERATION</code> can include logical and arithmetic operators grouped by parenthesis. The basic terms manipulated in an operation can be integer literals or references to the integer value of some data in the store.</p>
-<p>A <code>REFERENCE</code> is introduced by a dollar <code>$</code> sign and optionally enclosed in curly braces <code>{</code>, <code>}</code>. Its value is that of the data or metadata with the associated name. It is always a good idea to have referenced values in the metadata section as it prevents dangling references. A direct reference is possible as well as sub-references to array elements using the square brackets <code>[</code>, <code>]</code> operator.</p>
+<p>A <code>REFERENCE</code> is introduced by a dollar <code>$</code> sign and optionally enclosed in curly braces <code>{</code>, <code>}</code>. Its value is that of the data or metadata with the associated name. It is always a good idea to have referenced values in the metadata section as it prevents dangling references. Value formatting can be applied using a FMT <code>format_spec</code> string by adding a column <code>:</code> followed by the <code>format_spec</code> after a column just before the closing bracket <code>}</code> (see: <a href="https://fmt.dev/latest/syntax.html#grammar-token-format_spec">https://fmt.dev/latest/syntax.html#grammar-token-format_spec</a>). A direct reference is possible as well as sub-references to:</p>
+<ul>
+<li>array elements using the square brackets <code>[</code>, <code>]</code> operator,</li>
+<li>record member using dot <code>.</code> operator.</li>
+</ul>
 <p>The value-type of an <code>EXPRESSION</code> is as follow:</p>
 <ul>
 <li>if it's a <code>REFERENCE</code>, it has the type of the referenced data in the store,</li>
@@ -1846,7 +2311,12 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 <p><strong>Examples:</strong></p>
 <pre><code>'$my_data'
 </code></pre><pre><code>'($my_data + 3) % 6'
+</code></pre><pre><code>'${my_data.subarray[0]} * 42'
 </code></pre><pre><code>'my name is ${my_name}'
+</code></pre><pre><code>'${my_data:05d}'
+'${my_data:b}'
+'${my_data:1.5f}'
+'${my_data:&gt;15s}'
 </code></pre><h2 id="float_type">float_type</h2>
 <p>A <em>float_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
@@ -2026,8 +2496,43 @@ kind: 2
 <pre><code>type: logical
 </code></pre><pre><code>type: logical
 kind: 1
-</code></pre><h2 id="member_desc">member_desc</h2>
-<p>A <em>member_desc</em> is a <strong>mapping</strong> that contains the following keys:</p>
+</code></pre><h2 id="struct_member_desc">struct_member_desc</h2>
+<p>A <em>struct_member_desc</em> is a <strong>mapping</strong> that contains the following keys:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;type&quot;</code></td>
+<td>a <code>scalar</code>, <code>array</code>, <code>record</code> or <code>struct</code></td>
+</tr>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td><em>anything</em></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>the value associated to the <code>type</code> key identifies the <a href="member:Specification_tree_ref_1datatype_node">type</a> of this member, all other keys required for this <a href="member:Specification_tree_ref_1datatype_node">datatype</a> must be present.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre><code>type: struct
+members:
+  - my_char: char
+</code></pre><pre><code>type: struct
+members:
+  - my_long: int64
+  - my_array:
+      type: array
+      subtype: int64
+      size: [10, 10]
+</code></pre><p>See <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> for more examples.</p>
+<h2 id="record_member_desc">record_member_desc</h2>
+<p>A <em>record_member_desc</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
 <tr>
@@ -2042,7 +2547,7 @@ kind: 1
 </tr>
 <tr>
 <td><code>&quot;type&quot;</code></td>
-<td>a <code>scalar</code>, <code>array</code> or <code>record</code></td>
+<td>a <code>scalar</code>, <code>array</code>, <code>record</code> or <code>struct</code></td>
 </tr>
 <tr>
 <td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
@@ -2055,17 +2560,26 @@ kind: 1
 <li>the value associated to the <code>type</code> key identifies the <a href="member:Specification_tree_ref_1datatype_node">type</a> of this record, all other keys required for this <a href="member:Specification_tree_ref_1datatype_node">datatype</a> must be present.</li>
 </ul>
 <p><strong>Examples:</strong></p>
-<pre><code>my_char:
-      disp: 0
-      type: int64
-</code></pre><pre><code>my_array:
-  disp: 8
-  type: array
-  subtype: int64
-  size: [10, 10]
+<pre><code>type: record
+buffersize: 1
+members:
+  my_char:
+        disp: 0
+        type: char
+</code></pre><pre><code>type: record
+buffersize: 808
+members:
+  my_long:
+    disp: 0
+    type: int64
+  my_array:
+    disp: 8
+    type: array
+    subtype: int64
+    size: [10, 10]
 </code></pre><p>See <a href="member:Specification_tree_ref_1record_type_node">record_type</a> for more examples.</p>
-<h2 id="members_map">members_map</h2>
-<p>A <em>members_map</em> is a <strong>mapping</strong> that contains the following keys:</p>
+<h2 id="struct_members_omap">struct_members_omap</h2>
+<p>A <em>struct_members_omap</em> is an <strong>ordered mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
 <tr>
@@ -2076,7 +2590,27 @@ kind: 1
 <tbody>
 <tr>
 <td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
-<td>a <a href="member:Specification_tree_ref_1member_desc_node">member_desc</a></td>
+<td>a <a href="member:Specification_tree_ref_1struct_member_desc_node">struct_member_desc</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>each key identifies the name of a member and the value associated to it describes the member itself.</li>
+</ul>
+<p>See <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> for an example.</p>
+<h2 id="record_members_map">record_members_map</h2>
+<p>A <em>record_members_map</em> is a <strong>mapping</strong> that contains the following keys:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:Specification_tree_ref_1record_member_desc_node">record_member_desc</a></td>
 </tr>
 </tbody>
 </table>
@@ -2130,6 +2664,32 @@ kind: 1
 <pre><code>type: real
 </code></pre><pre><code>type: real
 kind: 8
+</code></pre><h2 id="struct_type">struct_type</h2>
+<p>A <em>struct_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;type&quot;</code></td>
+<td><code>&quot;struct&quot;</code></td>
+</tr>
+<tr>
+<td><code>&quot;members&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:Specification_tree_ref_1struct_members_omap_node">struct_members_omap</a></td>
+</tr>
+</tbody>
+</table>
+<p>A <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> represents a &quot;struct&quot;, <em>aka</em> C &quot;struct&quot;, C++ &quot;class&quot;. Buffersize and members displacemnts will be calculated by the PDI.</p>
+<p><strong>Example:</strong></p>
+<pre><code>type: struct
+members:
+  - first_int: int32
+  - seconf_int: int32
 </code></pre><h2 id="record_type">record_type</h2>
 <p>A <em>record_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
@@ -2150,14 +2710,14 @@ kind: 8
 </tr>
 <tr>
 <td><code>&quot;members&quot;</code> (<em>optional</em>)</td>
-<td>a <a href="member:Specification_tree_ref_1members_map_node">members_map</a></td>
+<td>a <a href="member:Specification_tree_ref_1record_members_map_node">record_members_map</a></td>
 </tr>
 </tbody>
 </table>
-<p>A <a href="member:Specification_tree_ref_1record_type_node">record_type</a> represents a &quot;record&quot;, <em>aka</em> C &quot;struct&quot;, C++ &quot;class&quot;, Fortran &quot;derived type&quot; where:</p>
+<p>A <a href="member:Specification_tree_ref_1record_type_node">record_type</a> represents a &quot;record&quot; where:</p>
 <ul>
 <li>the value associated to the <code>buffersize</code> key represents the overall size of the record, including potential padding,</li>
-<li>the value associated to the <code>members</code> key lists all members of the record.</li>
+<li>the value associated to the <code>members</code> key lists all members of the record with given displacements.</li>
 </ul>
 <p><strong>Example:</strong></p>
 <pre><code>type: record
@@ -2176,6 +2736,11 @@ members:
 <pre><code>&quot;my_type&quot;
 </code></pre><p>is interpreted as if it was:</p>
 <pre><code>{ type: &quot;my_type&quot; }
+</code></pre><h2 id="plugin_path">plugin_path</h2>
+<p>A path to directory where PDI should search for plugins. It can be single path:</p>
+<pre><code>plugin_path: &quot;/home/user123/plugins&quot;
+</code></pre><p>or array of paths (PDI will take first match):</p>
+<pre><code>plugin_path: [&quot;/home/user123/plugins&quot;, &quot;/usr/lib/pdi/plugins&quot;]
 </code></pre>
 	
 	

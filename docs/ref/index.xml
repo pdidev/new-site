@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PDI – Full API reference</title>
+    <title>PDI – PDI API reference</title>
     <link>http://pdi.julien-bigot.fr/new-site/docs/ref/</link>
-    <description>Recent content in Full API reference on PDI</description>
+    <description>Recent content in PDI API reference on PDI</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/index.xml" rel="self" type="application/rss+xml" />
@@ -22,113 +22,234 @@
       <description>
         
         
-        &lt;h2 id=&#34;types&#34;&gt;Types:&lt;/h2&gt;
+        &lt;h2 id=&#34;types-list&#34;&gt;Types&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;array_datatype&#34;&gt;&lt;code&gt;class Array_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;an &lt;a href=&#34;%3Ccompound:classPDI_1_1Array__datatype%3E&#34;&gt;Array_datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; that represents an array: i.e storage of multiple elements of the same type continuously in memory.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;context&#34;&gt;&lt;code&gt;class Context&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;context_proxy&#34;&gt;&lt;code&gt;class Context_proxy&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;data_descriptor&#34;&gt;&lt;code&gt;class Data_descriptor&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;datatype&#34;&gt;&lt;code&gt;class Datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype__template%3E&#34;&gt;Datatype_template&lt;/a&gt; that accepts no argument.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;datatype_template&#34;&gt;&lt;code&gt;class Datatype_template&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;datatype_template_uptr&#34;&gt;&lt;code&gt;typedef Datatype_template_uptr&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;datatype_uptr&#34;&gt;&lt;code&gt;typedef Datatype_uptr&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;error&#34;&gt;&lt;code&gt;class Error&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;expression&#34;&gt;&lt;code&gt;class Expression&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;logger_sptr&#34;&gt;&lt;code&gt;typedef Logger_sptr&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/array_datatype&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Array_datatype&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dd&gt;an &lt;a href=&#34;compound:classPDI_1_1Array__datatype&#34;&gt;Array_datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; that represents an array: i.e storage of multiple elements of the same type continuously in memory.&lt;/dd&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/callbacks&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Callbacks&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/config_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Config_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/context&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Context&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/context_proxy&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Context_proxy&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/data_descriptor&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Data_descriptor&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/datatype&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Datatype&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dd&gt;A &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype__template&#34;&gt;Datatype_template&lt;/a&gt; that accepts no argument.&lt;/dd&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/datatype_template&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Datatype_template&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Datatype_template_uptr&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Datatype_uptr&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/expression&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Expression&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/impl_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Impl_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Logger_sptr&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
 &lt;dd&gt;A shared pointer to a logger instance.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;paraconf_wrapper&#34;&gt;&lt;code&gt;struct Paraconf_wrapper&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/paraconf_wrapper&#34;&gt;
+&lt;p&gt;&lt;code&gt;struct PDI::Paraconf_wrapper&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
 &lt;dd&gt;Automatically installs a paraconf error-handler that ignores errors and uninstalls it on destruction.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;plugin&#34;&gt;&lt;code&gt;class Plugin&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;The class &lt;a href=&#34;%3Ccompound:namespacePDI%3E&#34;&gt;PDI&lt;/a&gt; plugins should implement.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;pointer_datatype&#34;&gt;&lt;code&gt;class Pointer_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;record_datatype&#34;&gt;&lt;code&gt;class Record_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A &lt;a href=&#34;%3Ccompound:classPDI_1_1Record__datatype%3E&#34;&gt;Record_datatype&lt;/a&gt; is a &lt;a href=&#34;%3Ccompound:classPDI_1_1Datatype%3E&#34;&gt;Datatype&lt;/a&gt; that represents a fixed number of elements of potentially different types layed out in a specific way in memory.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;ref&#34;&gt;&lt;code&gt;typedef Ref&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;ref_any&#34;&gt;&lt;code&gt;class Ref_any&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/plugin&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Plugin&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dd&gt;The class &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; plugins should implement.&lt;/dd&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/plugin_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Plugin_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/pointer_datatype&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Pointer_datatype&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/record_datatype&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Record_datatype&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dd&gt;A &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; that represents a fixed number of elements of potentially different types layed out in a specific way in memory.&lt;/dd&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Ref&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/ref_any&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Ref_any&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
 &lt;dd&gt;A dynamically typed reference to data with automatic memory management and read/write locking semantic.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;ref_r&#34;&gt;&lt;code&gt;typedef Ref_r&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;ref_rw&#34;&gt;&lt;code&gt;typedef Ref_rw&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;ref_w&#34;&gt;&lt;code&gt;typedef Ref_w&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;reference_base&#34;&gt;&lt;code&gt;class Reference_base&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Ref_r&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Ref_rw&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;typedef PDI::Ref_w&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/reference_base&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Reference_base&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
 &lt;dd&gt;A common base for all references, whatever their access privileges.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;scalar_datatype&#34;&gt;&lt;code&gt;class Scalar_datatype&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;scalar_kind&#34;&gt;&lt;code&gt;enum Scalar_kind&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/right_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Right_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/scalar_datatype&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Scalar_datatype&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;p&gt;&lt;code&gt;enum PDI::Scalar_kind&lt;/code&gt;&lt;/p&gt;
+&lt;/dt&gt;
 &lt;dd&gt;Different possible interpretations for a scalar.&lt;/dd&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/state_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::State_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/system_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::System_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/type_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Type_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/unavailable_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Unavailable_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dt&gt;
+&lt;a href=&#34;pdi/value_error&#34;&gt;
+&lt;p&gt;&lt;code&gt;class PDI::Value_error&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
 &lt;/dl&gt;
-&lt;h2 id=&#34;functions&#34;&gt;Functions:&lt;/h2&gt;
+&lt;h2 id=&#34;types-list&#34;&gt;Functions&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;#configure_logger&#34;&gt;&lt;code&gt;configure_logger&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Reads configuration tree and sets up the logger.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#each&#34;&gt;&lt;code&gt;each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Iterates and apply the provided function to all elements of a PC list.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#each&#34;&gt;&lt;code&gt;each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Iterates and apply the provided function to all elements of a PC mapping.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#is_list&#34;&gt;&lt;code&gt;is_list&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Checks if the tree is a list.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#is_map&#34;&gt;&lt;code&gt;is_map&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Checks if the tree is a map.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#is_scalar&#34;&gt;&lt;code&gt;is_scalar&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Checks if the tree is a scalar.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#len&#34;&gt;&lt;code&gt;len&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#len&#34;&gt;&lt;code&gt;len&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#opt_each&#34;&gt;&lt;code&gt;opt_each&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#plugin_api_version&#34;&gt;&lt;code&gt;plugin_api_version&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Checks compatibility with a plugin API.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_bool&#34;&gt;&lt;code&gt;to_bool&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the boolean value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_bool&#34;&gt;&lt;code&gt;to_bool&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the boolean value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_double&#34;&gt;&lt;code&gt;to_double&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the floating point value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_double&#34;&gt;&lt;code&gt;to_double&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the floating point value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_long&#34;&gt;&lt;code&gt;to_long&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the int value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_long&#34;&gt;&lt;code&gt;to_long&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the int value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_string&#34;&gt;&lt;code&gt;to_string&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the string content of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#to_string&#34;&gt;&lt;code&gt;to_string&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns the string content of a scalar node.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#configure_logger-pc_tree_t-spdloglevellevel_enum-const-stdstring-&#34;&gt;&lt;code&gt;Logger_sptr PDI::configure_logger ( PC_tree_t, spdlog::level::level_enum, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Reads configuration tree and sets up the logger. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#each-stdfunction-voidpc_tree_t-pc_tree_t&#34;&gt;&lt;code&gt;void PDI::each ( std::function&lt; void(PC_tree_t)&gt;, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC list. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#each-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t&#34;&gt;&lt;code&gt;void PDI::each ( std::function&lt; void(PC_tree_t, PC_tree_t)&gt;, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC mapping. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#each_in_omap-stdfunction-voidpc_tree_t-pc_tree_t-pc_tree_t&#34;&gt;&lt;code&gt;void PDI::each_in_omap ( std::function&lt; void(PC_tree_t, PC_tree_t)&gt;, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC ordered mapping. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#is_list-pc_tree_t&#34;&gt;&lt;code&gt;bool PDI::is_list ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks if the tree is a list. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#is_map-pc_tree_t&#34;&gt;&lt;code&gt;bool PDI::is_map ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks if the tree is a map. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#is_scalar-pc_tree_t&#34;&gt;&lt;code&gt;bool PDI::is_scalar ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks if the tree is a scalar. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#len-pc_tree_t&#34;&gt;&lt;code&gt;int PDI::len ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the length of a node. &lt;a href=&#34;#len-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#len-int-pc_tree_t&#34;&gt;&lt;code&gt;int PDI::len ( int, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the length of a node. &lt;a href=&#34;#len-int-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#opt_each-stdfunction-voidpc_tree_t-pc_tree_t&#34;&gt;&lt;code&gt;void PDI::opt_each ( std::function&lt; void(PC_tree_t)&gt;, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#plugin_api_version-unsigned-long&#34;&gt;&lt;code&gt;unsigned long PDI::plugin_api_version ( unsigned long )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Checks compatibility with a plugin API. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_bool-pc_tree_t&#34;&gt;&lt;code&gt;bool PDI::to_bool ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the boolean value of a scalar node. &lt;a href=&#34;#to_bool-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_bool-bool-pc_tree_t&#34;&gt;&lt;code&gt;bool PDI::to_bool ( bool, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the boolean value of a scalar node. &lt;a href=&#34;#to_bool-bool-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_double-pc_tree_t&#34;&gt;&lt;code&gt;double PDI::to_double ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the floating point value of a scalar node. &lt;a href=&#34;#to_double-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_double-double-pc_tree_t&#34;&gt;&lt;code&gt;double PDI::to_double ( double, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the floating point value of a scalar node. &lt;a href=&#34;#to_double-double-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_long-pc_tree_t&#34;&gt;&lt;code&gt;long PDI::to_long ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the int value of a scalar node. &lt;a href=&#34;#to_long-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_long-long-pc_tree_t&#34;&gt;&lt;code&gt;long PDI::to_long ( long, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the int value of a scalar node. &lt;a href=&#34;#to_long-long-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_string-pc_tree_t&#34;&gt;&lt;code&gt;std::string PDI::to_string ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the string content of a scalar node. &lt;a href=&#34;#to_string-pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#to_string-const-stdstring--pc_tree_t&#34;&gt;&lt;code&gt;std::string PDI::to_string ( const std::string &amp;, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns the string content of a scalar node. &lt;a href=&#34;#to_string-const-stdstring--pc_tree_t&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h2 id=&#34;global-variables&#34;&gt;Global variables:&lt;/h2&gt;
+&lt;h2 id=&#34;variables-list&#34;&gt;Variables&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;#undef_type&#34;&gt;&lt;code&gt;UNDEF_TYPE&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#undef_type&#34;&gt;UNDEF_TYPE&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h3&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: PDI_errhandler_s struct reference</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_s/</link>
+      <title>Docs: PDI_errhandler_t struct reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_s/</guid>
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi_errhandler_t/</guid>
       <description>
         
         
-        &lt;p&gt;Definition of an error handler.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;Definition of an error handler.&lt;/p&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
@@ -143,7 +264,13 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;types-list&#34;&gt;Types&lt;/h3&gt;
+&lt;dl&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;types-list&#34;&gt;Functions&lt;/h3&gt;
+&lt;dl&gt;
+&lt;/dl&gt;
+
       </description>
     </item>
     
@@ -156,11 +283,16 @@
       <description>
         
         
-        &lt;p&gt;STL namespace.&lt;/p&gt;
-&lt;h2 id=&#34;types&#34;&gt;Types:&lt;/h2&gt;
+        &lt;h2 id=&#34;types-list&#34;&gt;Types&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;hash__pdi__ref_any__r__w____&#34;&gt;&lt;code&gt;struct hash&amp;amp;lt; PDI::Ref_any&amp;amp;lt; R, W &amp;amp;gt; &amp;amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;
+&lt;a href=&#34;std/hash__pdi__ref_any__r__w____&#34;&gt;
+&lt;p&gt;&lt;code&gt;struct std::hash&amp;lt; PDI::Ref_any&amp;lt; R, W &amp;gt; &amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/a&gt;
+&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;types-list&#34;&gt;Functions&lt;/h3&gt;
+&lt;dl&gt;
 &lt;/dl&gt;
 
       </description>

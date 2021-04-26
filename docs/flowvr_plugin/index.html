@@ -20,7 +20,7 @@
 <title>The FlowVR plugin | PDI</title><meta property="og:title" content="The FlowVR plugin" />
 <meta property="og:description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
 Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
- component wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now only available component is module, but this can be expanded to filter and synchronizer in the future." />
+ component (optional) wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now, only available component is module and this is a default value, but this can be expanded to filter and synchronizer in the future." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/" /><meta property="article:section" content="docs" />
 
@@ -29,14 +29,14 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 <meta itemprop="name" content="The FlowVR plugin">
 <meta itemprop="description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
 Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
- component wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now only available component is module, but this can be expanded to filter and synchronizer in the future.">
+ component (optional) wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now, only available component is module and this is a default value, but this can be expanded to filter and synchronizer in the future.">
 
-<meta itemprop="wordCount" content="2286">
+<meta itemprop="wordCount" content="2293">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The FlowVR plugin"/>
 <meta name="twitter:description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
 Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
- component wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now only available component is module, but this can be expanded to filter and synchronizer in the future."/>
+ component (optional) wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now, only available component is module and this is a default value, but this can be expanded to filter and synchronizer in the future."/>
 
 
 
@@ -201,108 +201,8 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
-    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdeprecated-li">
-    <a href="/new-site/docs/deprecated/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdeprecated"><span class="">Deprecated List</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfirst_steps-li">
-    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="">First steps with PDI</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
-    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-new-sitedocsref-li">
-    <a href="/new-site/docs/ref/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">Full API reference</span></a>
+    <a href="/new-site/docs/ref/" title="PDI API reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">API reference</span></a>
     
       
       <ul class="pr-md-3 ul-2">
@@ -349,8 +249,113 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
     <a href="/new-site/docs/ref/pdi/array_datatype/" title="PDI::Array_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatype"><span class="">Array_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/index_accessor/" title="PDI::Array_datatype::Index_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor"><span class="">Index_accessor</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/slice_accessor/" title="PDI::Array_datatype::Slice_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor"><span class="">Slice_accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdicallbacks-li">
+    <a href="/new-site/docs/ref/pdi/callbacks/" title="PDI::Callbacks class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdicallbacks"><span class="">Callbacks</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiconfig_error-li">
+    <a href="/new-site/docs/ref/pdi/config_error/" title="PDI::Config_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiconfig_error"><span class="">Config_error</span></a>
     
   </li>
 
@@ -504,8 +509,38 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdidatatype-li">
     <a href="/new-site/docs/ref/pdi/datatype/" title="PDI::Datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatype"><span class="">Datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatypeaccessor_base-li">
+    <a href="/new-site/docs/ref/pdi/datatype/accessor_base/" title="PDI::Datatype::Accessor_base struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatypeaccessor_base"><span class="">Accessor_base</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -654,6 +689,31 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiimpl_error-li">
+    <a href="/new-site/docs/ref/pdi/impl_error/" title="PDI::Impl_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiimpl_error"><span class="">Impl_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdilogger_sptr-li">
     <a href="/new-site/docs/ref/pdi/logger_sptr/" title="PDI::Logger_sptr typedef reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdilogger_sptr"><span class="">Logger_sptr</span></a>
     
@@ -729,8 +789,63 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiplugin_error-li">
+    <a href="/new-site/docs/ref/pdi/plugin_error/" title="PDI::Plugin_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiplugin_error"><span class="">Plugin_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
     <a href="/new-site/docs/ref/pdi/pointer_datatype/" title="PDI::Pointer_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatype"><span class="">Pointer_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatypeaccessor-li">
+    <a href="/new-site/docs/ref/pdi/pointer_datatype/accessor/" title="PDI::Pointer_datatype::Accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatypeaccessor"><span class="">Accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -780,6 +895,31 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember-li">
     <a href="/new-site/docs/ref/pdi/record_datatype/member/" title="PDI::Record_datatype::Member class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember"><span class="">Member</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember_accessor-li">
+    <a href="/new-site/docs/ref/pdi/record_datatype/member_accessor/" title="PDI::Record_datatype::Member_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember_accessor"><span class="">Member_accessor</span></a>
     
   </li>
 
@@ -1014,6 +1154,31 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiright_error-li">
+    <a href="/new-site/docs/ref/pdi/right_error/" title="PDI::Right_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiright_error"><span class="">Right_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiscalar_datatype-li">
     <a href="/new-site/docs/ref/pdi/scalar_datatype/" title="PDI::Scalar_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiscalar_datatype"><span class="">Scalar_datatype</span></a>
     
@@ -1046,6 +1211,131 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdistate_error-li">
+    <a href="/new-site/docs/ref/pdi/state_error/" title="PDI::State_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdistate_error"><span class="">State_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdisystem_error-li">
+    <a href="/new-site/docs/ref/pdi/system_error/" title="PDI::System_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdisystem_error"><span class="">System_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpditype_error-li">
+    <a href="/new-site/docs/ref/pdi/type_error/" title="PDI::Type_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpditype_error"><span class="">Type_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiunavailable_error-li">
+    <a href="/new-site/docs/ref/pdi/unavailable_error/" title="PDI::Unavailable_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiunavailable_error"><span class="">Unavailable_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdivalue_error-li">
+    <a href="/new-site/docs/ref/pdi/value_error/" title="PDI::Value_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdivalue_error"><span class="">Value_error</span></a>
+    
+  </li>
+
+          
+        
       </ul>
     
   </li>
@@ -1070,8 +1360,8 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_s-li">
-    <a href="/new-site/docs/ref/pdi_errhandler_s/" title="PDI_errhandler_s struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_s"><span class="">PDI_errhandler_s</span></a>
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_t-li">
+    <a href="/new-site/docs/ref/pdi_errhandler_t/" title="PDI_errhandler_t struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_t"><span class="">PDI_errhandler_t</span></a>
     
   </li>
 
@@ -1181,6 +1471,106 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocschecklists-li">
+    <a href="/new-site/docs/checklists/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocschecklists"><span class="">Checklists</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
+    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfirst_steps-li">
+    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="">First steps with PDI</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
+    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocshands_on-li">
     <a href="/new-site/docs/hands_on/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocshands_on"><span class="">Hands-on tutorial</span></a>
     
@@ -1257,7 +1647,32 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_example-li">
-    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="">PDI example</span></a>
+    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="">PDI examples</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_usage-li">
+    <a href="/new-site/docs/pdi_usage/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_usage"><span class="">PDI usage</span></a>
     
   </li>
 
@@ -1308,6 +1723,31 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspycall_plugin-li">
     <a href="/new-site/docs/pycall_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspycall_plugin"><span class="">Pycall plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsserialize_plugin-li">
+    <a href="/new-site/docs/serialize_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsserialize_plugin"><span class="">Serialize plugin</span></a>
     
   </li>
 
@@ -1406,6 +1846,31 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdecl_netcdf_plugin-li">
+    <a href="/new-site/docs/decl_netcdf_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdecl_netcdf_plugin"><span class="">The Decl&#39;NetCDF plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-new-sitedocsflowvr_plugin-li">
     <a href="/new-site/docs/flowvr_plugin/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsflowvr_plugin"><span class="td-sidebar-nav-active-item">The FlowVR plugin</span></a>
     
@@ -1458,6 +1923,31 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocstrace_plugin-li">
     <a href="/new-site/docs/trace_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocstrace_plugin"><span class="">Trace plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsyaml-li">
+    <a href="/new-site/docs/yaml/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsyaml"><span class="">YAML</span></a>
     
   </li>
 
@@ -1586,7 +2076,7 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 <h3 id="flowvr-plugin-tree">FlowVR plugin tree</h3>
 <p>The root of FlowVR plugin configuration (named <code>flowvr</code>), is a dictionary that contains the following keys:</p>
 <ul>
-<li><a href="member:FlowVR_plugin_1component_node">component</a></li>
+<li><a href="member:FlowVR_plugin_1component_node">component</a> (<em>optional</em>)</li>
 <li><a href="member:FlowVR_plugin_1wait_on_data_node">wait_on_data</a> (<em>recommended</em>)</li>
 <li><a href="member:FlowVR_plugin_1wait_on_node">wait_on</a> (<em>optional</em>)</li>
 <li><a href="member:FlowVR_plugin_1status_node">status</a> (<em>optional</em>)</li>
@@ -1596,7 +2086,7 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 <li><a href="member:FlowVR_plugin_1output_ports">output_ports</a> (<em>optional</em>)</li>
 </ul>
 <h4 id="component">component</h4>
-<p>For now only available component is <code>module</code>, but this can be expanded to <code>filter</code> and <code>synchronizer</code> in the future. Configuration example:</p>
+<p>For now, only available component is <code>module</code> and this is a default value, but this can be expanded to <code>filter</code> and <code>synchronizer</code> in the future. Configuration example:</p>
 <pre><code>plugins:
   flowvr:
     component: module
@@ -1750,7 +2240,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       data: data_desc
 </code></pre><p>The user can not always predict how many data will receive. In this case <code>size</code> node type must be a name of metadata where to write the size of received payload. This metadata will hold the size of received array. The <code>size</code> property of descriptor should be divided by size of single element. Example of receiving unknown payload size:</p>
 <pre><code>metadata:
@@ -1762,7 +2252,7 @@ plugins:
   flowvr:
     ...
     input_ports:
-      port_name:
+      some_port_name:
         data: data_descriptor_name
         size: received_size
 </code></pre><p>In case that you want to send only a part of the data from descriptor you can specify it in <code>copy_data_selection</code> tree defining datatype the same way as for descriptors. Simple example:</p>
@@ -1772,7 +2262,7 @@ plugins:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       data: data_descriptor_name
       copy_data_selection:
         type: array
@@ -1794,7 +2284,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       chunks:
         - data: chunk_1_name
         - data: chunk_2_name
@@ -1906,7 +2396,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       event_button:
         KEY_UP: up
         KEY_DOWN: down
@@ -1951,7 +2441,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       event_mouse:
         POS_XY: pos_xy
         LEFT_BUTTON: left_button
@@ -1975,7 +2465,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       data: data_desc
       stamps:
         stamp_1_name: stamp_1_desc
@@ -1987,7 +2477,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       stamps:
         stamp_name:
           type: int

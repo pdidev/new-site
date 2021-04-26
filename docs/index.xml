@@ -14,6 +14,115 @@
     
     
     <item>
+      <title>Docs: Checklists</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/checklists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/checklists/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;new-patch-release&#34;&gt;New patch release&lt;/h2&gt;
+&lt;p&gt;To publish a small fix as a patch release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;make your changes based on the version branch (&lt;code&gt;v${X}.${Y}&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;change the version in &lt;code&gt;pdi/VERSION&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;change the version in &lt;code&gt;pdi/docs/Installation.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;change the version in &lt;code&gt;README.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;go over all &lt;code&gt;CHANGELOG.md&lt;/code&gt; files and mark the just released version&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;commit (or better, make a MR) in the version branch&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tag the new release: &lt;code&gt;git tag -m &amp;quot;PDI release ${VERSION}&amp;quot; -s &amp;quot;${VERSION}&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;merge the version branch into master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;in the merge commit:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;keep the content of &lt;code&gt;pdi/VERSION&lt;/code&gt; from master (next with &lt;code&gt;-alpha&lt;/code&gt; suffix)&lt;/li&gt;
+&lt;li&gt;keep the content of &lt;code&gt;README.md&lt;/code&gt; and &lt;code&gt;pdi/docs/Installation.md&lt;/code&gt; from master except with the version updated to the just released one&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;make a new commit in the version branch (&lt;code&gt;v${X}.${Y}&lt;/code&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;change the version in &lt;code&gt;pdi/VERSION&lt;/code&gt; by increasing the patch and add the &lt;code&gt;-alpha&lt;/code&gt; suffix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;push all that&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;new-minor-or-major-release&#34;&gt;New minor or major release&lt;/h2&gt;
+&lt;p&gt;To publish a new minor or major release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;start from the master branch&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;change the version in &lt;code&gt;pdi/VERSION&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;change the version in &lt;code&gt;pdi/docs/Installation.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;change the version in &lt;code&gt;README.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;go over all &lt;code&gt;CHANGELOG.md&lt;/code&gt; files and mark the just released version&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;commit these changes into a new version branch (&lt;code&gt;v${X}.${Y}&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tag the new release: &lt;code&gt;git tag -m &amp;quot;PDI release ${VERSION}&amp;quot; -s &amp;quot;${VERSION}&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;merge the version branch into master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;in the merge commit:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;change the version in &lt;code&gt;pdi/VERSION&lt;/code&gt; by increasing the minor and add the &lt;code&gt;-alpha&lt;/code&gt; suffix&lt;/li&gt;
+&lt;li&gt;add an &lt;code&gt;[Unreleased]&lt;/code&gt; section at the top of all &lt;code&gt;CHANGELOG.md&lt;/code&gt; files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;make a new commit in the version branch (&lt;code&gt;v${X}.${Y}&lt;/code&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;change the version in &lt;code&gt;pdi/VERSION&lt;/code&gt; by increasing the patch and add the &lt;code&gt;-alpha&lt;/code&gt; suffix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;push all that&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dependency-change&#34;&gt;Dependency change&lt;/h2&gt;
+&lt;p&gt;When changing the list of dependencies or just the version of one dependency:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;update &lt;code&gt;pdi/docs/Installation.md&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;update &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; distribution CMakeLists.txt as well as all CMakeLists.txt actually using it,&lt;/li&gt;
+&lt;li&gt;update the dockerfiles used for tests,&lt;/li&gt;
+&lt;li&gt;prepare the update of the spack, deb &amp;amp; RPM packages for the next version.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Core Concepts</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -35,7 +144,7 @@
 &lt;p&gt;The orchestration of these exchanges, the description of what data can be put in the store, what each handler should do with it, etc. is described in the &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;specification tree&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_schema.jpg&#34; alt=&#34;PDI structure schema&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;data-store&#34;&gt;Data store&lt;/h2&gt;
-&lt;p&gt;The data store is the mechanism offered by PDI to handle &lt;em&gt;data transfer&lt;/em&gt; between the application code and external data handlers. Data transfer is the action of making data available to another part of the code. For example, in a function call the list of parameters determines data transfer.&lt;/p&gt;
+&lt;p&gt;The data store is the mechanism provided by PDI to handle &lt;em&gt;data transfer&lt;/em&gt; between the application code and external data handlers. Data transfer is the action of making data available to another part of the code. For example, in a function call the list of parameters determines data transfer.&lt;/p&gt;
 &lt;p&gt;PDI data store is somewhat similar to a file-system or a document store with some specific properties:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;unlike in traditional file-systems, data stored in PDI store is typed, one can differentiate between a record with named members and an array for example;&lt;/li&gt;
@@ -62,7 +171,7 @@
 &lt;p&gt;To ensure minimal overhead, the PDI event subsystem is synchronous by default (like a function call). Plugins can implement other behaviors on top of that. For example, a plugin could create a thread for asynchronous execution.&lt;/p&gt;
 &lt;p&gt;This approach makes it possible to exchange data between very weakly coupled code modules. Each module can execute specific code when the required data becomes available and does not need to know which other module created it or how.&lt;/p&gt;
 &lt;h2 id=&#34;specification-tree&#34;&gt;Specification tree&lt;/h2&gt;
-&lt;p&gt;The combination of data transfer offered by the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt; and control transfer offered by the &lt;a href=&#34;member:Concepts_1Event_subsystem&#34;&gt;event subsystem&lt;/a&gt; offers the basis for weak coupling of multiple independent modules. The specification tree builds on this basis and orchestrates the interaction between the multiple modules used in an execution.&lt;/p&gt;
+&lt;p&gt;The combination of the data transfer provided by the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt; and the control transfer provided by the &lt;a href=&#34;member:Concepts_1Event_subsystem&#34;&gt;event subsystem&lt;/a&gt; offers the basis for weak coupling of multiple independent modules. The specification tree builds on this basis and orchestrates the interaction between the multiple modules used in an execution.&lt;/p&gt;
 &lt;p&gt;The specification tree is specified in a file written in the &lt;a href=&#34;https://en.wikipedia.org/wiki/YAML&#34;&gt;YAML&lt;/a&gt; format and provided to PDI at &lt;a href=&#34;member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0&#34;&gt;initialization&lt;/a&gt;. This makes it possible to change the list of modules to load and their interactions without having to recompile any code.&lt;/p&gt;
 &lt;p&gt;The specification tree structure is described in details in its &lt;a href=&#34;compound:Specification_tree_ref&#34;&gt;reference documentation&lt;/a&gt;. It contains two main subparts:&lt;/p&gt;
 &lt;ul&gt;
@@ -78,27 +187,6 @@
     </item>
     
     <item>
-      <title>Docs: Deprecated List</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/deprecated/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/deprecated/</guid>
-      <description>
-        
-        
-        &lt;dl&gt;
-&lt;dt&gt;Member &lt;a href=&#34;member:classPDI_1_1Ref__any_1ad3b23b81d198eabcf570e16baa162834&#34;&gt;PDI::Ref_any&amp;lt; R, W &amp;gt;::Ref_any&lt;/a&gt; (Ref other, size_t offset, Datatype_uptr type)&lt;/dt&gt;
-&lt;dd&gt;offset/type will be replace by datatype access sequence
-Member &lt;a href=&#34;member:group__hl__annotation_1ga39bceccdb0528be91cc79df784a161bc&#34;&gt;PDI_transaction_begin&lt;/a&gt; (const char *name)&lt;/dd&gt;
-&lt;dd&gt;the transaction part of the API is deprecated, the PDI_multi_expose function should be used instead.
-Member &lt;a href=&#34;member:group__hl__annotation_1gac11c4c2885e34660a40f789f049d3d34&#34;&gt;PDI_transaction_end&lt;/a&gt; (void)&lt;/dd&gt;
-&lt;dd&gt;the transaction part of the API is deprecated, the PDI_multi_expose function should be used instead.&lt;/dd&gt;
-&lt;/dl&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: First steps with PDI</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/first_steps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,53 +195,38 @@ Member &lt;a href=&#34;member:group__hl__annotation_1gac11c4c2885e34660a40f789f0
       <description>
         
         
-        &lt;h2 id=&#34;yaml-language&#34;&gt;Yaml language&lt;/h2&gt;
-&lt;p&gt;Yaml is used to create the specification tree of PDI. There are 3 basic values in yaml:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Scalar - is a single value.&lt;/li&gt;
-&lt;li&gt;List - is an array of values.&lt;/li&gt;
-&lt;li&gt;Map - consist of mulitple keys and values.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Indentation level indicates the level in the tree.&lt;/p&gt;
-&lt;p&gt;Here is an example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;tree_1:
-  array_1:
-    - scalar_1
-    - scalar_2
-  array_2: [1, 2, 3]
-tree_2: {subtree_1: scalar_1, subtree_2: scalar_2}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34; alt=&#34;Visualization of the yaml tree\.&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The blue nodes are map values, yellow are lists and pink are scalars. As can be seen, the list and map can be defined in both ways (in one line and multiple lines).&lt;/p&gt;
-&lt;p&gt;The PDI_init function gets as parameter a tree with &lt;code&gt;logging&lt;/code&gt;, &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;metadata&lt;/code&gt; and &lt;code&gt;plugins&lt;/code&gt; maps defined in its root. User can define its own values in yaml and pass to PDI only the subtree:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;duration: 0.75
-size: [64, 64]
-parallelism: { height: 4, width: 4 }
-
-# only the following config will be passed to PDI
-pdi_subtree:
-  metadata:
-    iteration:   int
-  data:
-    main_field: double
-  plugins:
-    decl_hdf5:
-       ...
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;PC_tree_t root = PC_parse_path(&amp;quot;example.yaml&amp;quot;);
-PDI_init(PC_get(root, &amp;quot;pdi_subtree&amp;quot;));
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hello-event&#34;&gt;Hello Event&lt;/h2&gt;
+        &lt;h2 id=&#34;hello-event&#34;&gt;Hello Event&lt;/h2&gt;
 &lt;p&gt;As mentioned in &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;Specification tree&lt;/a&gt; we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace plugin&lt;/a&gt;, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named &lt;code&gt;hello_event.yml&lt;/code&gt; that will load trace plugin:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;plugins:
   trace: ~
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yes, that is whole specification tree. Trace plugin prints everything, so there is no need to specify what we want it to do.&lt;/p&gt;
-&lt;p&gt;We need to write a source code of our application:&lt;/p&gt;
+&lt;p&gt;C source code:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
 
 int main(int argc, char* argv[]) {
     PDI_init(PC_parse_path(&amp;quot;hello_event.yml&amp;quot;));
+
     PDI_event(&amp;quot;Hello World Event&amp;quot;);
+
     PDI_finalize();
     return 0;
 }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fortran source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;program hello_event
+    use paraconf
+    use pdi
+    implicit none
+
+    type(PC_tree_t), target :: conf
+
+    call pc_parse_path(&amp;quot;hello_event.yml&amp;quot;, conf)
+    call pdi_init(conf)
+
+    call pdi_event(&amp;quot;Hello World Event&amp;quot;)
+
+    call pdi_finalize()
+
+end program hello_event
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&#39;s analyze what happens in each line. Firstly we have &lt;a href=&#34;member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0&#34;&gt;PDI_init()&lt;/a&gt; function which take parameter of type &lt;code&gt;PC_tree_t&lt;/code&gt;. It&#39;s a tree structure parsed from some YAML file, in our case we parse it with &lt;code&gt;paraconf&lt;/code&gt; library build in PDI. To parse a file we need to call &lt;code&gt;PC_parse_path&lt;/code&gt; function passing file path as argument. The next step is to call an event in PDI named &amp;quot;Hello World Event&amp;quot;. At the end we have to call &lt;a href=&#34;member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969&#34;&gt;PDI_finalize()&lt;/a&gt;. The output from this program is presented below:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[PDI][Trace-plugin][10:25:28] *** info: Welcome!
 [PDI][10:25:28] *** info: Initialization successful
@@ -161,14 +234,15 @@ int main(int argc, char* argv[]) {
 [PDI][10:25:28] *** info: Finalization
 [PDI][Trace-plugin][10:25:28] *** info: Goodbye!
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first line indicates that plugin has loaded successfully. The second is PDI message, that tells it managed to create all descriptors and load all defined plugins. Then we have message from loaded trace plugin which printed the event name it has received. The next information is from PDI and indicates that finalization has started and now it will deallocate resources. Last message is from trace plugin destructor.&lt;/p&gt;
-&lt;h3 id=&#34;hello-data&#34;&gt;Hello Data&lt;/h3&gt;
+&lt;h2 id=&#34;hello-data&#34;&gt;Hello Data&lt;/h2&gt;
 &lt;p&gt;In &lt;a href=&#34;member:First_steps_1fs_hello_event&#34;&gt;Hello Event&lt;/a&gt; we learned how to call an event. In this chapter we will see how to share and reclaim data.&lt;/p&gt;
 &lt;p&gt;Firstly we have to create a specification tree named &lt;code&gt;hello_data.yml&lt;/code&gt; with &lt;code&gt;data&lt;/code&gt; and trace plugin tree declared:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;data:
   world: int
 plugins:
   trace: ~
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We have declared trace plugin and one descriptor named &lt;code&gt;world&lt;/code&gt; of integer type. Now let&#39;s write our program:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We have declared trace plugin and one descriptor named &lt;code&gt;world&lt;/code&gt; of integer type.&lt;/p&gt;
+&lt;p&gt;C source code:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
 
 int main(int argc, char* argv[]) {
@@ -183,6 +257,28 @@ int main(int argc, char* argv[]) {
     PDI_finalize();
     return 0;
 }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fortran source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;program hello_data
+    use paraconf
+    use pdi
+    implicit none
+
+    type(PC_tree_t),target :: conf
+    integer                :: my_world
+
+    call pc_parse_path(&amp;quot;hello_data.yml&amp;quot;, conf)
+    call pdi_init(conf)
+
+    my_world = 42
+    call pdi_share(&amp;quot;world&amp;quot;, my_world, pdi_out)
+    !variable my_world is shared with PDI
+
+    call pdi_reclaim(&amp;quot;world&amp;quot;);
+    !variable my_world is no longer shared with PDI
+
+    call pdi_finalize()
+
+end program hello_data
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&#39;s analyze new functions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;PDI_share&lt;/code&gt; shares access to the variable with PDI. The first argument is a descriptor name and indicates what data we are sharing. The second one is pointer to our variable and the last one is access direction. &lt;code&gt;PDI_OUT&lt;/code&gt; means data direction from application to PDI, &lt;code&gt;PDI_IN&lt;/code&gt; is a direction from PDI to the program, &lt;code&gt;PDI_INOUT&lt;/code&gt; includes both directions.&lt;/li&gt;
@@ -197,18 +293,30 @@ int main(int argc, char* argv[]) {
 [PDI][Trace-plugin][10:59:35] *** info: Goodbye!
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As we can see from the logs above, when we called &lt;code&gt;PDI_share&lt;/code&gt; plugin gained access to the shared variable and after &lt;code&gt;PDI_reclaim&lt;/code&gt; the variable has become no longer available for the plugin. The share notification gives plugin possibility to operate on data dependently what has been declared in specification tree.&lt;/p&gt;
 &lt;p&gt;The same exact result we can achieve with &lt;code&gt;PDI_expose&lt;/code&gt; which is just &lt;code&gt;PDI_share&lt;/code&gt; call and right after &lt;code&gt;PDI_reclaim&lt;/code&gt; is called.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PDI_share(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
-PDI_reclaim(&amp;quot;world&amp;quot;);
+&lt;p&gt;C source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    PDI_share(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
+    PDI_reclaim(&amp;quot;world&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is the same as:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PDI_expose(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;hello-access&#34;&gt;Hello Access&lt;/h3&gt;
-&lt;p&gt;Now we will try to access a descriptor we share with PDI. In this case we won&#39;t need any plugin. We want to define string in our &lt;code&gt;world_access.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    PDI_expose(&amp;quot;world&amp;quot;, &amp;amp;my_world, PDI_OUT);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fortran source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    call pdi_share(&amp;quot;world&amp;quot;, my_world, pdi_out)
+    call pdi_reclaim(&amp;quot;world&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is the same as:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    call pdi_expose(&amp;quot;world&amp;quot;, my_world, pdi_out)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hello-access&#34;&gt;Hello Access&lt;/h2&gt;
+&lt;p&gt;Now we will try to access a descriptor we share with PDI. In this case we won&#39;t need any plugin. We want to define int and a string in our &lt;code&gt;hello_access.yml&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;data:
+  my_value: int
   my_message: {type: array, subtype: char, size: 32}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now let&#39;s write some simple program:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C source code:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
 
 void print_secret_msg() {
+    int* value;
+    PDI_access(&amp;quot;my_value&amp;quot;, (void**)&amp;amp;value, PDI_IN);
+    printf(&amp;quot;%d\n&amp;quot;, *value);
+    PDI_release(&amp;quot;my_value&amp;quot;);
+
     char* message;
     PDI_access(&amp;quot;my_message&amp;quot;, (void**)&amp;amp;message, PDI_IN);
     printf(&amp;quot;%s\n&amp;quot;, message);
@@ -217,30 +325,84 @@ void print_secret_msg() {
 
 int main(int argc, char* argv[]) {
     PDI_init(PC_parse_path(&amp;quot;world_access.yml&amp;quot;));
+    int my_value = 42;
+    PDI_share(&amp;quot;my_value&amp;quot;, &amp;amp;my_value, PDI_OUT);
+
     char* secret_msg = &amp;quot;Watermelon is the tastiest fruit&amp;quot;;
     PDI_share(&amp;quot;my_message&amp;quot;, secret_msg, PDI_OUT);
 
     print_secret_msg();
 
     PDI_reclaim(&amp;quot;my_message&amp;quot;);
+    PDI_reclaim(&amp;quot;my_value&amp;quot;);
+
     PDI_finalize();
     return 0;
 }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fortran source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;subroutine print_secret_msg
+  use pdi
+  implicit none
+
+  integer, pointer               :: p_val
+  character, pointer, contiguous :: p_msg(:)
+  integer                        :: msg_ranks(1)
+
+  call pdi_access(&amp;quot;value&amp;quot;, p_val, pdi_in)
+  print *, &amp;quot;PDI value: &amp;quot;, p_val
+  call pdi_release(&amp;quot;value&amp;quot;)
+
+  ! In case of accessing arrays, PDI_access takes additional array argument with dimensions sizes
+  msg_ranks(1) = 32
+  call pdi_access(&amp;quot;message&amp;quot;, p_msg, pdi_in, msg_ranks)
+  print *, &amp;quot;PDI message: &amp;quot;, p_msg
+  call pdi_release(&amp;quot;message&amp;quot;)
+  return
+end subroutine print_secret_msg
+
+program access
+  use paraconf
+  use pdi
+  implicit none
+
+  type(pc_tree_t),target  :: conf
+  integer                 :: my_value
+  character(LEN=32)      :: secret_message
+
+  call pc_parse_path(&amp;quot;hello_access.yml&amp;quot;, conf)
+  call pdi_init(conf)
+
+  my_value = 42
+  secret_message = &amp;quot;Watermelon is the tastiest fruit&amp;quot;
+  print *, &amp;quot;My value: &amp;quot;, my_value
+  print *, &amp;quot;My message: &amp;quot;, secret_message
+
+  call pdi_share(&amp;quot;value&amp;quot;, my_value, pdi_out)
+  call pdi_share(&amp;quot;message&amp;quot;, secret_message, pdi_out)
+
+  call print_secret_msg()
+
+  call pdi_reclaim(&amp;quot;message&amp;quot;)
+  call pdi_reclaim(&amp;quot;value&amp;quot;)
+  call pdi_finalize()
+end program access
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We will focus on &lt;code&gt;print_secret_msg&lt;/code&gt; function. If you don&#39;t understand what happens in &lt;code&gt;main&lt;/code&gt; function, please see &lt;a href=&#34;member:First_steps_1fs_hello_data&#34;&gt;Hello Data&lt;/a&gt; example. &lt;code&gt;PDI_access&lt;/code&gt; sets our pointer to the data location. We need to pass &lt;code&gt;PDI_IN&lt;/code&gt; because data flows from PDI to our application. We also want to use &lt;code&gt;PDI_release&lt;/code&gt;, because &lt;code&gt;PDI_reclaim&lt;/code&gt; would end the sharing status of this descriptor and we reclaim this data later in &lt;code&gt;main&lt;/code&gt; function. Output from the program:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[PDI][13:42:31] *** info: Initialization successful
+42
 Watermelon is the tastiest fruit
 [PDI][13:42:31] *** info: Finalization
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can see, we manage to access data descriptor from function only by passing its name and correct direction access.&lt;/p&gt;
-&lt;h3 id=&#34;hello-multi-expose&#34;&gt;Hello multi expose&lt;/h3&gt;
+&lt;h2 id=&#34;hello-multi-expose&#34;&gt;Hello multi expose&lt;/h2&gt;
 &lt;p&gt;In some cases we would want to expose many descriptors at once. For this we have multi expose which shares all the given descriptors, then call given event and then reclaim all passed data. Let&#39;s look at the example.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;data:
   my_int: int
   my_float: float
   my_string: {type: array, subtype: char, size: 32}
 
-plugin:
+plugins:
   trace: ~
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We have defined 3 descriptors and trace plugin. Now it&#39;s time for our application:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We have defined 3 descriptors and trace plugin.&lt;/p&gt;
+&lt;p&gt;C source code:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;pdi.h&amp;gt;
 
 int main(int argc, char* argv[]) {
@@ -264,7 +426,36 @@ int main(int argc, char* argv[]) {
 &lt;li&gt;pointer to the data&lt;/li&gt;
 &lt;li&gt;direction access As the last argument we have to pass &lt;code&gt;NULL&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The output of the execution:&lt;/p&gt;
+&lt;p&gt;Fortran source code (have to use transaction):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;program hello_multi_expose
+    use paraconf
+    use pdi
+    implicit none
+
+    type(PC_tree_t)   :: conf
+    integer           :: my_int
+    real              :: my_float
+    character(len=32) :: my_string
+
+    call pc_parse_path(&amp;quot;hello_transaction.yml&amp;quot;, conf)
+    call pdi_init(conf)
+
+    my_int = 0
+    my_float = 0
+    my_string = &amp;quot;RGB = Really Gawky Biscuit&amp;quot;;
+
+    call pdi_transaction_begin(&amp;quot;event_between&amp;quot;)
+
+    call pdi_expose(&amp;quot;my_int&amp;quot;, my_int, pdi_out)
+    call pdi_expose(&amp;quot;my_float&amp;quot;, my_float, pdi_out)
+    call pdi_expose(&amp;quot;my_string&amp;quot;, my_string, pdi_out)
+
+    call pdi_transaction_end()
+
+    call pdi_finalize()
+
+end program hello_multi_expose
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output of the execution:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[PDI][Trace-plugin][14:14:51] *** info: Welcome!
 [PDI][14:14:51] *** info: Initialization successful
 [PDI][Trace-plugin][14:14:51] *** info: =&amp;gt;&amp;gt;   data becoming available in the store: my_int
@@ -292,8 +483,8 @@ int main(int argc, char* argv[]) {
         
         &lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt; This documentation is a work in progress and does not reflect the full FTI plugin potential.&lt;/p&gt;
 &lt;p&gt;The FTI plugin enables one to perform checkpoints using FTI. FTI plugin does not support the full FTI feature set but offers a simple declarative interface to access a large subset of it.&lt;/p&gt;
-&lt;h3 id=&#34;features-and-requirements&#34;&gt;Features and requirements&lt;/h3&gt;
-&lt;h4 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h4&gt;
+&lt;h2 id=&#34;features-and-requirements&#34;&gt;Features and requirements&lt;/h2&gt;
+&lt;h3 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h3&gt;
 &lt;p&gt;FTI plugin uses a &lt;code&gt;MPI_Comm&lt;/code&gt; datatype and &lt;code&gt;MPI_COMM_WORLD&lt;/code&gt; descriptor, which are defined in &lt;code&gt;mpi&lt;/code&gt; plugin. For now it must be loaded alongside FTI plugin (as shown below).&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;pdi:
    ...
@@ -302,53 +493,66 @@ int main(int argc, char* argv[]) {
       mpi:
       fti:
          ...
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;initialization&#34;&gt;Initialization&lt;/h4&gt;
-&lt;p&gt;FTI initialization in FTI plugin is based on several rules.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;initialization&#34;&gt;Initialization&lt;/h3&gt;
+&lt;p&gt;FTI initialization in FTI plugin is based on several rules:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;if &lt;code&gt;init_on&lt;/code&gt; is specified, FTI plugin will initialize FTI on that exact event and expects the communicator and file name to be correctly available or fail otherwise,&lt;/li&gt;
-&lt;li&gt;if &lt;code&gt;init_on&lt;/code&gt; is not specified and the communicator isavailable on plugin initialization (e.g. when using &lt;code&gt;MPI_COMM_WORLD&lt;/code&gt; predefine from &lt;code&gt;mpi&lt;/code&gt; plugin), FTI plugin will try to initialize FTI (on plugin initialization) and expects file name to be correctly available or fail otherwise,&lt;/li&gt;
+&lt;li&gt;if &lt;code&gt;init_on&lt;/code&gt; is not specified and the communicator is available on plugin initialization (e.g. when using &lt;code&gt;MPI_COMM_WORLD&lt;/code&gt; predefine from &lt;code&gt;mpi&lt;/code&gt; plugin), FTI plugin will try to initialize FTI (on plugin initialization) and expects file name to be correctly available or fail otherwise,&lt;/li&gt;
 &lt;li&gt;if &lt;code&gt;init_on&lt;/code&gt; is not specified and the communicator is not available on plugin initialization, FTI plugin will try to initialize FTI on communicators descriptor exposure and expects file name to be correctly available or fail otherwise.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;predefined-descriptors&#34;&gt;Predefined descriptors&lt;/h4&gt;
-&lt;p&gt;FTI plugin loads a predefined descriptor named &lt;code&gt;FTI_COMM_WORLD&lt;/code&gt; (&lt;code&gt;FTI_COMM_WORLD_F&lt;/code&gt; for Fortran) after a successfull initialization of FTI. This descriptor is treated asmetadata. Its content can be accessed using &lt;code&gt;PDI_access&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;configuration-grammar&#34;&gt;Configuration grammar&lt;/h3&gt;
+&lt;h3 id=&#34;predefined-descriptors&#34;&gt;Predefined descriptors&lt;/h3&gt;
+&lt;p&gt;FTI plugin loads a predefined descriptor named &lt;code&gt;FTI_COMM_WORLD&lt;/code&gt; (&lt;code&gt;FTI_COMM_WORLD_F&lt;/code&gt; for Fortran) after a successfull initialization of FTI. This descriptor is treated as metadata. Its content can be accessed using &lt;code&gt;PDI_access&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;configuration-grammar&#34;&gt;Configuration grammar&lt;/h2&gt;
 &lt;p&gt;At its root, the FTI configuration is made of several nodes: &lt;code&gt;checkpoint&lt;/code&gt;, &lt;code&gt;communicator&lt;/code&gt;, &lt;code&gt;config_file&lt;/code&gt;, &lt;code&gt;dataset&lt;/code&gt;, &lt;code&gt;init_on&lt;/code&gt;, &lt;code&gt;recover_on&lt;/code&gt;, &lt;code&gt;recover_var&lt;/code&gt;, &lt;code&gt;send_file&lt;/code&gt;, &lt;code&gt;snapshot_on&lt;/code&gt; and &lt;code&gt;status&lt;/code&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;ttcheckpointtt&#34;&gt;&amp;lt;tt&amp;gt;checkpoint&amp;lt;/tt&amp;gt;&lt;/h4&gt;
-&lt;p&gt;A &lt;code&gt;checkpoint&lt;/code&gt; specifies a list of checkpoints to execute. It is specified by a key/value map that may contain following keys: &lt;code&gt;L1_on&lt;/code&gt;, &lt;code&gt;L2_on&lt;/code&gt;, &lt;code&gt;L3_on&lt;/code&gt;, &lt;code&gt;L4_on&lt;/code&gt;. Each of the keys specifies events names that trigger a specified checkpoint. Value of this key can be either string or a list of strings.&lt;/p&gt;
+&lt;h3 id=&#34;checkpoint&#34;&gt;checkpoint&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;checkpoint&lt;/code&gt; specifies a list of checkpoints to execute. It is specified by a key/value map that may contain following keys: &lt;code&gt;L1_on&lt;/code&gt;, &lt;code&gt;L2_on&lt;/code&gt;, &lt;code&gt;L3_on&lt;/code&gt;, &lt;code&gt;L4_on&lt;/code&gt;. Each of the keys specifies events names that trigger a specified checkpoint. Value of this key can be either string or a list of strings:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;L1_on&lt;/code&gt;: executes FTI L1 checkpoint on specified &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events,&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;L2_on&lt;/code&gt;: executes FTI L2 checkpoint on specified &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events,&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;L3_on&lt;/code&gt;: executes FTI L3 checkpoint on specified &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events,&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;L4_on&lt;/code&gt;: executes FTI L4 checkpoint on specified &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;ttcommunicatortt&#34;&gt;&amp;lt;tt&amp;gt;communicator&amp;lt;/tt&amp;gt;&lt;/h4&gt;
-&lt;p&gt;A &lt;code&gt;communicator&lt;/code&gt; is a string, which specifies name of descriptor containing a MPI communicator to use for FTI initialization. Additionaly, FTI plugin can write &lt;code&gt;FTI_COMM_WORLD&lt;/code&gt; into this descriptor, if it is shared with write access right. It defaults to &lt;code&gt;MPI_COMM_WORLD&lt;/code&gt;, which is a predefined descriptor from &lt;code&gt;mpi&lt;/code&gt; plugin.&lt;/p&gt;
-&lt;h4 id=&#34;ttconfig_filett&#34;&gt;&amp;lt;tt&amp;gt;config_file&amp;lt;/tt&amp;gt;&lt;/h4&gt;
+&lt;h3 id=&#34;communicator&#34;&gt;communicator&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;communicator&lt;/code&gt; is a string, which specifies name of descriptor containing a MPI communicator to use for FTI initialization. Additionally, FTI plugin can write &lt;code&gt;FTI_COMM_WORLD&lt;/code&gt; into this descriptor, if it is shared with write access right. It defaults to &lt;code&gt;MPI_COMM_WORLD&lt;/code&gt;, which is a predefined descriptor from &lt;code&gt;mpi&lt;/code&gt; plugin.&lt;/p&gt;
+&lt;h3 id=&#34;config_file&#34;&gt;config_file&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;config_file&lt;/code&gt; is a string that can contain $-expressions. Specifies the name of the FTI configuration file.&lt;/p&gt;
-&lt;h4 id=&#34;ttdatasettt&#34;&gt;&amp;lt;tt&amp;gt;dataset&amp;lt;/tt&amp;gt;&lt;/h4&gt;
+&lt;h3 id=&#34;dataset&#34;&gt;dataset&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;dataset&lt;/code&gt; is a key/value map, which keys are integers that specify datasets ids in FTI and values are names of protected descriptors. Alternatively, the map may contain a map with keys &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;size&lt;/code&gt;, where &lt;code&gt;name&lt;/code&gt; is a name of protected descriptor and &lt;code&gt;size&lt;/code&gt; is a descriptor where FTI plugin will write size of the protected descriptor when shared with write access right.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dataset:
   0: {name: variable, size: variable_size}
   1: variable2
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ttinit_ontt&#34;&gt;&amp;lt;tt&amp;gt;init_on&amp;lt;/tt&amp;gt;&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;init_on&#34;&gt;init_on&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;init_on&lt;/code&gt; is a string or a list of strings that specifies the names of the &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events that executes recovery of FTI.&lt;/p&gt;
-&lt;h4 id=&#34;ttrecover_ontt&#34;&gt;&amp;lt;tt&amp;gt;recover_on&amp;lt;/tt&amp;gt;&lt;/h4&gt;
+&lt;h3 id=&#34;recover_on&#34;&gt;recover_on&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;recover_on&lt;/code&gt; is a string or a list of strings that specifies the names of the &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events that executes recovery of FTI.&lt;/p&gt;
-&lt;h4 id=&#34;ttrecover_vartt&#34;&gt;&amp;lt;tt&amp;gt;recover_var&amp;lt;/tt&amp;gt;&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt; This feature is not yet supported.&lt;/p&gt;
-&lt;h4 id=&#34;ttsend_filett&#34;&gt;&amp;lt;tt&amp;gt;send_file&amp;lt;/tt&amp;gt;&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt; This feature is not yet supported. A &lt;code&gt;send_file&lt;/code&gt; is a key/value map or a list of key/value maps describing source and destination paths of files to send, event or list of events to trigger on and optionally name of descriptor, where will be stored status information when exposed. Example:&lt;/p&gt;
+&lt;h3 id=&#34;recover_var&#34;&gt;recover_var&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;recover_var&lt;/code&gt; is a list of maps with keys:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;on_event&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;on_event&lt;/code&gt; defines on which events the variable recovery should be done (single event or list of events)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;var&lt;/code&gt; defines IDs of variables to recover (single ID or list of IDs)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  fti:
+    recover_var:
+      - on_event: recover_test
+        var: 2
+      - on_event: [recover_arrays, dummy_event]
+        var: [0, 1]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;send_file&#34;&gt;send_file&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;send_file&lt;/code&gt; is a key/value map or a list of key/value maps describing source and destination paths of files to send, event or list of events to trigger on and optionally name of descriptor, where will be stored status information when exposed. Example:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;send_file:
   on_even: event
   file:
     src: source_path
     dest: destination_path
     status: status_descriptor
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ttsnapshot_ontt&#34;&gt;&amp;lt;tt&amp;gt;snapshot_on&amp;lt;/tt&amp;gt;&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;snapshot_on&#34;&gt;snapshot_on&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;snapshot_on&lt;/code&gt; is a string or a list of strings that specifies the names of the &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; events that executes FTI_Snapshot.&lt;/p&gt;
-&lt;h4 id=&#34;ttstatustt&#34;&gt;&amp;lt;tt&amp;gt;status&amp;lt;/tt&amp;gt;&lt;/h4&gt;
+&lt;h3 id=&#34;status&#34;&gt;status&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;status&lt;/code&gt; is a string that specifies the name of a descriptor to which FTI will write FTI_Status code when shared.&lt;/p&gt;
-&lt;h3 id=&#34;full-configuration-example&#34;&gt;full configuration example&lt;/h3&gt;
+&lt;h2 id=&#34;full-configuration-example&#34;&gt;full configuration example&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;pdi:
   metadata: # type of small values for which PDI keeps a copy
     iter: int
@@ -406,163 +610,238 @@ int main(int argc, char* argv[]) {
       <description>
         
         
-        &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-
-
-    You need to &lt;a href=&#34;Installation.html&#34;&gt;install&lt;/a&gt; PDI before proceeding with this tutorial.
-
-&lt;/div&gt;
-
-&lt;p&gt;After PDI &lt;a href=&#34;Installation.html&#34;&gt;is installed&lt;/a&gt;, you can proceed with getting the sources for the hands-on tutorial from &lt;a href=&#34;https://github.com/pdidev/tutorial&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;In this tutorial, you will build a PDI-enabled application step-by-step from a PDI-free base. You will end-up building the C version of the &lt;a href=&#34;compound:PDI_example&#34;&gt;example provided with PDI&lt;/a&gt; for the the &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace&lt;/a&gt;, &lt;a href=&#34;compound:Decl_HDF5_plugin&#34;&gt;Decl&#39;HDF5&lt;/a&gt;, and &lt;a href=&#34;compound:pycall_plugin&#34;&gt;Pycall&lt;/a&gt; plugins. Additional &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tree/master/example&#34;&gt;examples are available for the other plugins&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h3 id=&#34;pdi-installation&#34;&gt;PDI Installation&lt;/h3&gt;
+&lt;p&gt;To run this hands-on tutorial, you will of course first need to &lt;a href=&#34;compound:Installation&#34;&gt;install PDI&lt;/a&gt; and setup your environment.&lt;/p&gt;
+&lt;p&gt;On Juwels, &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; is pre-installed as part of the training2022 environment. To load it, just run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source /p/project/training2022/setup
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;setup-the-hands-on-tutorial&#34;&gt;Setup the hands-on tutorial&lt;/h3&gt;
+&lt;p&gt;Once PDI is installed, you can proceed with getting the sources for the hands-on tutorial from &lt;a href=&#34;https://github.com/pdidev/tutorial&#34;&gt;github&lt;/a&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git clone https://github.com/pdidev/tutorial.git
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Before compilation, configure the tutorial by detecting all dependencies:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd tutorial
-pdirun cmake .
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you&#39;re ready to work, &lt;strong&gt;good luck&lt;/strong&gt;!&lt;/p&gt;
-&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
-&lt;p&gt;For each exercise, once you&#39;ve modified it, you can compile it by running the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Ex4. Writing some real data
-make ex?
+cd tutorial
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;On Juwels, you can just copy the content from &lt;code&gt;${PROJECT_training2022}/PDI_tutorial&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cp -R ${PROJECT_training2022}/PDI_tutorial .
+cd PDI_tutorial
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;compilation&#34;&gt;Compilation&lt;/h3&gt;
+&lt;p&gt;Before compilation, configure the tutorial by detecting all dependencies:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cmake .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For each exercise, once you&#39;ve modified it, you can compile it by running the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make ex?
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &lt;code&gt;?&lt;/code&gt; is the number of the exercise.&lt;/p&gt;
-&lt;p&gt;Then, you can run it with the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pdirun mpirun -n 1 ./ex?
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &lt;code&gt;?&lt;/code&gt; is again the number of the exercise.&lt;/p&gt;
+&lt;h3 id=&#34;execution&#34;&gt;Execution&lt;/h3&gt;
+&lt;p&gt;In order to speedup the execution on Juwels, it&#39;s a good idea to use &lt;code&gt;salloc&lt;/code&gt; to reserve one node:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;salloc --reservation=parallel-io-day3 -N 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can run each exercise with the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;srun -n 4 ./ex?
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &lt;code&gt;?&lt;/code&gt; is the number of the exercise and 4 represents the number of MPI processes to use.&lt;/p&gt;
+&lt;p&gt;In order to generate clean logs into a file however, the command should be expanded as follow (for example for ex2.):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UCX_LOG_LEVEL=error srun -n 1 -o ex2.juwels.log -e all ./ex2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you&#39;re ready to work, &lt;strong&gt;good luck&lt;/strong&gt;!&lt;/p&gt;
+&lt;h2 id=&#34;pdi-free-code&#34;&gt;PDI-free code&lt;/h2&gt;
 &lt;h3 id=&#34;ex1-getting-started&#34;&gt;Ex1. Getting started&lt;/h3&gt;
-&lt;p&gt;Ex1. implements a simple heat equation solver using an explicit forward finite difference scheme parallelized with MPI as described in the &lt;a href=&#34;PDI_example.html&#34;&gt;PDI example&lt;/a&gt;. If you want to better understand what&#39;s going on, you should read this description before continuing.&lt;/p&gt;
-&lt;p&gt;In the exercises however, PDI will only be used to decouple I/O operations. There is no need to fully dive in the core of the solver implemented in the &lt;code&gt;iter&lt;/code&gt; and &lt;code&gt;exchange&lt;/code&gt; functions. The specification tree in the &lt;code&gt;.yml&lt;/code&gt; files and the &lt;code&gt;main&lt;/code&gt; function are the locations where all the I/O-related aspects will be handled and the only ones you will actually need to fully understand or modify.&lt;/p&gt;
+&lt;p&gt;Ex1. implements a simple heat equation solver using an explicit forward finite difference scheme parallelized with MPI. The code uses a block domain decomposition where each process holds a 2D block of data.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Locally, each process holds its local block of data with one additional element on each side for ghost zones.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34; alt=&#34;Data domain decomposition in the example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the following exercises however, PDI will only be used to decouple I/O operations. There is no need to fully dive in the core of the solver described in the &lt;a href=&#34;member:PDI_example_1heat_algorithm&#34;&gt;PDI example algorithm&lt;/a&gt; and implemented in the &lt;code&gt;iter&lt;/code&gt; and &lt;code&gt;exchange&lt;/code&gt; functions.&lt;/p&gt;
+&lt;p&gt;The specification tree in the &lt;code&gt;.yml&lt;/code&gt; files and the &lt;code&gt;main&lt;/code&gt; function are the locations where all the I/O-related aspects will be handled and the only ones you will actually need to fully understand or modify.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Examine the source code, compile it and run it. There is no input/output operations in the code yet, so you can not see any result.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This example uses the &lt;a href=&#34;https://github.com/pdidev/paraconf&#34;&gt;paraconf library&lt;/a&gt; to read its parameters in &lt;a href=&#34;https://yaml.org&#34;&gt;yaml format&lt;/a&gt; from the &lt;code&gt;ex1.yml&lt;/code&gt; file. If you&#39;ve never heard about yaml, have a quick look at &lt;a href=&#34;First_steps.html#Yaml&#34;&gt;this example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This example gets its configuration from a file in the &lt;a href=&#34;compound:YAML&#34;&gt;YAML format&lt;/a&gt;: &lt;code&gt;ex1.yml&lt;/code&gt; file. If you&#39;re not familiar with YAML, please have a look at our quick &lt;a href=&#34;compound:YAML&#34;&gt;YAML format documentation&lt;/a&gt; to understand it. The example uses the &lt;a href=&#34;https://github.com/pdidev/paraconf&#34;&gt;paraconf library&lt;/a&gt; to read this file.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Play with and understand the code parameters in &lt;code&gt;ex1.yml&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Set values in &lt;code&gt;ex1.yml&lt;/code&gt; to be able to run the code with 3 MPI processes.&lt;/li&gt;
+&lt;li&gt;Set values in &lt;code&gt;ex1.yml&lt;/code&gt; to be able to run the code with 4 MPI processes.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;srun -n 4 ./ex1
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;pdi-core--trace-plugin&#34;&gt;PDI core &amp;amp; trace plugin&lt;/h2&gt;
 &lt;h3 id=&#34;ex2-now-with-some-pdi&#34;&gt;Ex2. Now with some PDI&lt;/h3&gt;
-&lt;p&gt;Ex2. is the same code as ex1. with PDI calls added in main function. The PDI &lt;a href=&#34;tra%60PDIce_plugin.html&#34;&gt;Trace plugin&lt;/a&gt; is used to trace PDI calls.&lt;/p&gt;
+&lt;p&gt;Ex2. is the same code as that of ex1. with PDI calls added in &lt;code&gt;main&lt;/code&gt; function. In our YAML file (&lt;code&gt;ex2.yml&lt;/code&gt;), a new sub-tree has been added under the &lt;code&gt;pdi&lt;/code&gt; key. This sub-tree is the PDI specification tree passed to PDI at initialization. Here, the PDI &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace plugin&lt;/a&gt; is used to trace PDI calls.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Add the required &lt;code&gt;PDI_share&lt;/code&gt; and &lt;code&gt;PDI_reclaim&lt;/code&gt; calls to match the output of &lt;code&gt;ex2.log&lt;/code&gt; file. Change only the &lt;code&gt;ex2.c&lt;/code&gt; file. The calls for now don&#39;t need to make any logic, just match output to the &lt;code&gt;ex2.log&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Examine the source code, compile it and run it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the required &lt;code&gt;PDI_share&lt;/code&gt; and &lt;code&gt;PDI_reclaim&lt;/code&gt; calls to match the output of &lt;code&gt;ex2.log&lt;/code&gt; file (only the lines matching &lt;code&gt;[Trace-plugin]&lt;/code&gt; have been kept). You only need to change the &lt;code&gt;ex2.c&lt;/code&gt; file. You can easily check if the files are the same by running the command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex2.log &amp;lt;(grep Trace-plugin ex2.juwels.log)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 
 
-    Notice that some share/reclaim pairs come one after the other while others are interlaced. Is one better than the other? If you do not know the answer to this question, please wait until Ex5. :)
+    Notice that some share/reclaim pairs come one after the other while others are interlaced. Is one better than the other? If you do not know the answer to this question, just wait until Ex5. :)
 
 &lt;/div&gt;
 
+&lt;h2 id=&#34;declhdf5-plugin&#34;&gt;Decl&#39;HDF5 plugin&lt;/h2&gt;
 &lt;h3 id=&#34;ex3-hdf5-through-pdi&#34;&gt;Ex3. HDF5 through PDI&lt;/h3&gt;
-&lt;p&gt;Let&#39;s take the code from ex2. and make it output some HDF5 data. No need to touch the C code here, the PDI yaml file should be enough. The &lt;a href=&#34;trace_plugin.html&#34;&gt;Trace plugin&lt;/a&gt; was replaced by the &lt;a href=&#34;Decl_HDF5_plugin.html&#34;&gt;Dec&#39;HDF5 plugin&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Fill 2 sections in the yaml file:&lt;/p&gt;
+&lt;p&gt;In this exercise, the code is the same as in ex2. No need to touch the C code here, modification of the YAML file (&lt;code&gt;ex3.yml&lt;/code&gt;) should be enough.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the YAML file, compile the code and run it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace plugin&lt;/a&gt; (&lt;code&gt;trace&lt;/code&gt;) was replaced by the &lt;a href=&#34;compound:Decl_HDF5_plugin&#34;&gt;Decl&#39;HDF5 plugin&lt;/a&gt; (&lt;code&gt;decl_hdf5&lt;/code&gt;) in the specification tree. In its configuration, the &lt;code&gt;dsize&lt;/code&gt; variable is written.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Write the &lt;code&gt;psize&lt;/code&gt; and &lt;code&gt;pcoord&lt;/code&gt; variables in addition to &lt;code&gt;dsize&lt;/code&gt; to match the content expected as described in the &lt;code&gt;ex3.h5dump&lt;/code&gt; text file (use the &lt;code&gt;h5dump&lt;/code&gt; command to see the content of your HDF5 output file in the same format as the &lt;code&gt;.h5dump&lt;/code&gt; file). You can easily check if the files are the same by running the command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex3.h5dump &amp;lt;(h5dump ex3.h5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To achieve this result, you will need to fill 2 sections in the YAML file.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;The &lt;code&gt;data&lt;/code&gt; section to indicate to PDI the type of the fields that are exposed.&lt;/li&gt;
-&lt;li&gt;The &lt;code&gt;decl_hdf5&lt;/code&gt; for the configuration of &lt;a href=&#34;Decl_HDF5_plugin.html&#34;&gt;Dec&#39;HDF5 plugin&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;data&lt;/code&gt; section to indicate to PDI the &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt; type of the fields that are exposed.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;decl_hdf5&lt;/code&gt; section for the configuration of the &lt;a href=&#34;compound:Decl_HDF5_plugin&#34;&gt;Decl&#39;HDF5 plugin&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Only &lt;code&gt;dsize&lt;/code&gt; is written as of now, let&#39;s add &lt;code&gt;psize&lt;/code&gt; and &lt;code&gt;pcoord&lt;/code&gt; to match the content expected described in &lt;code&gt;ex3.href 5dump&lt;/code&gt; (use &lt;code&gt;h5dump&lt;/code&gt; command to see content of HDF5 file).&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 
 
-    If you rerun the exercise, remember to delete your old &lt;code&gt;ex3.h5&lt;/code&gt; file, because the data will not be overwritten.
+    If you relaunch the executable, remember to delete your old &lt;code&gt;ex3.h5&lt;/code&gt; file before, otherwise the data will not be changed.
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+
+
+    Since we write to the same location independently of the MPI rank, this exercise will fail if more than one MPI rank is used.
 
 &lt;/div&gt;
 
 &lt;h3 id=&#34;ex4-writing-some-real-data&#34;&gt;Ex4. Writing some real data&lt;/h3&gt;
-&lt;p&gt;In this exercise each MPI process will write its local matrix to separete HDF5 files. Touch only the yaml file again.&lt;/p&gt;
-&lt;p&gt;This time write the real 2D data contained in &lt;code&gt;main_field&lt;/code&gt; using 2 MPI processes.&lt;/p&gt;
-&lt;p&gt;Notice that a list to write multiple files was used in the decl_hdf5 section instead of a single mapping as before.&lt;/p&gt;
-&lt;p&gt;Unlike the other fields manipulated until now, the type of &lt;code&gt;main_field&lt;/code&gt; is not fully known, its size is dynamic. By moving other fields in the &lt;code&gt;metadata&lt;/code&gt; section, you can reference them from &amp;quot;$ expressions&amp;quot; in the configuration file. This can be used to specify a dynamic size for &lt;code&gt;main_field&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Unlike the other fields manipulated until now, &lt;code&gt;main_field&lt;/code&gt; is exposed multiple times. In order not to overwrite it every time it is exposed, you can add a &lt;code&gt;when&lt;/code&gt; condition to restrict its output. Only write &lt;code&gt;main_field&lt;/code&gt; at the second iteration (when &lt;code&gt;ii==1&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Set the parallelism degree to 2 in height and try to match the expected content described in &lt;code&gt;ex4.h5dump&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;ex5-introducing-events&#34;&gt;Ex5. Introducing events&lt;/h3&gt;
-&lt;p&gt;In ex4, there were 2 pieces of data to &lt;code&gt;ex4-data*.h5&lt;/code&gt;, but the file is opened and closed for each and every write. Since Decl&#39;HDF5 only sees the data appear one after the other, it does not keep the file open. Since &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt; are shared in an interlaced way, they are both available at the same time and could be written without opening the file twice. You have to use events for that.&lt;/p&gt;
-&lt;p&gt;There are 3 main tasks in this exercise:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Call PDI event named &lt;code&gt;loop&lt;/code&gt; when both &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt; are shared. With the &lt;a href=&#34;trace_plugin.html&#34;&gt;Trace plugin&lt;/a&gt;, check that the event is indeed triggered at the expected time as described in &lt;code&gt;ex5.log&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Use the &lt;code&gt;on_event&lt;/code&gt; mechanism to trigger the write of &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt;. This mechanism can be combined with a &lt;code&gt;when&lt;/code&gt; directive, in that case the write is only executed when both mechanisms agree.&lt;/li&gt;
-&lt;li&gt;Also notice the extended syntax that make it possible to write data to a dataset with a name different from the data in PDI. Use this mechanism to write main_field at iterations 1 and 2, in two distinct groups &lt;code&gt;iter1&lt;/code&gt; and &lt;code&gt;iter2&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Match the content as expected in &lt;code&gt;ex5.h5dump&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;ex6-simplifying-the-code&#34;&gt;Ex6. Simplifying the code&lt;/h3&gt;
-&lt;p&gt;As you can notice, the PDI code is quite redundant. In this exercise, you will use &lt;code&gt;PDI_expose&lt;/code&gt; and &lt;code&gt;PDI_multi_expose&lt;/code&gt; to simplify the code while keeping the exact same behaviour.&lt;/p&gt;
-&lt;p&gt;There are lots of matched &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; in the code. Replace these by &lt;code&gt;PDI_expose&lt;/code&gt; that is the exact equivalent of a &lt;code&gt;PDI_share&lt;/code&gt; followed by a matching &lt;code&gt;PDI_reclaim&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;This replacement is not possible for interlaced &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; with events in the middle. This case is however handled by &lt;code&gt;PDI_multi_expose&lt;/code&gt; call that exposes all data, then triggers an event and finally does all the reclaim in reverse order. Replace the remaining &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; by &lt;code&gt;PDI_expose&lt;/code&gt;s and &lt;code&gt;PDI_multi_expose&lt;/code&gt;s. There is one &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; you can not replace.&lt;/p&gt;
-&lt;p&gt;Touch only the C file in this exercise.&lt;/p&gt;
-&lt;p&gt;Ensure that your code keeps the exact same behaviour by comparing its trace to &lt;code&gt;ex6.log&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;ex7-writing-a-selection&#34;&gt;Ex7. Writing a selection&lt;/h3&gt;
-&lt;p&gt;In this exercise, you will only write a selection (part) of the data to the HDF5 file.&lt;/p&gt;
-&lt;p&gt;As you can notice, now the dataset is independantly described in the file. Use two directives to specify a selection from the data to write and a selection in the dataset where to write.&lt;/p&gt;
+&lt;p&gt;In this exercise each MPI process will write its local 2D array block contained in the &lt;code&gt;main_field&lt;/code&gt; variable to a separate HDF5 file. Once again, this can be done by modifying the YAML file only, no nee to touch the C file.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;memory_selection&lt;/code&gt; tells what part to take from the data.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dataset_selection&lt;/code&gt; tells where to write this part of data in file.&lt;/li&gt;
+&lt;li&gt;Examine the YAML file, compile the code and run it.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Restrict the selection to the second line from the data and write it to a one-dimensional dataset in file.&lt;/p&gt;
-&lt;p&gt;Touch only the yaml file in this exercise.&lt;/p&gt;
-&lt;p&gt;Match the expected output described in &lt;code&gt;ex7.out&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Here is an example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;data:
-  matrix: {type: array, subtype: int, size: [8,8]}
-
-...
-    datasets:
-      matrix: {type: array, subtype: int, size: 8}
-...
-        memory_selection:
-          size: [1, 8]
-          start: [4, 0]
-        dataset_selection:
-          size: 8
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The graphical representation:&lt;/p&gt;
+&lt;p&gt;Look at the number of blocks, you will have to use the correct number of MPI ranks to run the example.&lt;/p&gt;
+&lt;p&gt;Notice that in the YAML file, a list was used in the &lt;code&gt;decl_hdf5&lt;/code&gt; section with multiple write blocks instead of a single one as before in order to write to multiple files.&lt;/p&gt;
+&lt;p&gt;Also notice that this example now runs in parallel with two processes. Therefore it uses &amp;quot;$-expressions&amp;quot; to specify the file names and ensure we do not write to the same file from distinct ranks.&lt;/p&gt;
+&lt;p&gt;Unlike the other fields manipulated until now, the type of &lt;code&gt;main_field&lt;/code&gt; is not fully known, its size is dynamic. By moving other fields in the &lt;code&gt;metadata&lt;/code&gt; section, you can reference them from &amp;quot;$-expressions&amp;quot; in the configuration file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a $-expression to specify the size of &lt;code&gt;main_field&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unlike the other fields manipulated until now, &lt;code&gt;main_field&lt;/code&gt; is exposed multiple times along execution. In order not to overwrite it every time it is exposed, you need to add a &lt;code&gt;when&lt;/code&gt; condition to restrict its output.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Only write &lt;code&gt;main_field&lt;/code&gt; at the second iteration (when &lt;code&gt;ii=1&lt;/code&gt;) and match the expected content as described in &lt;code&gt;ex4.h5dump&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ex5-introducing-events&#34;&gt;Ex5. Introducing events&lt;/h3&gt;
+&lt;p&gt;In ex4., two variables were written to &lt;code&gt;ex4-data*.h5&lt;/code&gt;, but the file was opened and closed for each and every write. Since Decl&#39;HDF5 only sees the data appear one after the other, it does not keep the file open. Since &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt; are shared in an interlaced way, they are both available to PDI at the same time and could be written without opening the file twice. You have to use events for that, you will modify both the C and YAML file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the YAML file and source code.&lt;/li&gt;
+&lt;li&gt;In the C file, trigger a PDI event named &lt;code&gt;loop&lt;/code&gt; when both &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt; are shared. With the &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace plugin&lt;/a&gt;, check that the event is indeed triggered at the expected time as described in &lt;code&gt;ex5.log&lt;/code&gt; (only the lines matching &lt;code&gt;[Trace-plugin]&lt;/code&gt; have been kept).&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;on_event&lt;/code&gt; mechanism to trigger the write of &lt;code&gt;ii&lt;/code&gt; and &lt;code&gt;main_field&lt;/code&gt;. This mechanism can be combined with a &lt;code&gt;when&lt;/code&gt; directive, in that case the write is only executed when both mechanisms agree.&lt;/li&gt;
+&lt;li&gt;Also notice the extended syntax that make it possible to write data to a dataset whose name differs from the PDI variable name. Use this mechanism to write &lt;code&gt;main_field&lt;/code&gt; at iterations 1 and 2, in two distinct groups &lt;code&gt;iter1&lt;/code&gt; and &lt;code&gt;iter2&lt;/code&gt;. Your output should match the content described in &lt;code&gt;ex5.h5dump&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ex6-simplifying-the-code&#34;&gt;Ex6. Simplifying the code&lt;/h3&gt;
+&lt;p&gt;As you can notice, the PDI code is quite redundant. In this exercise, you will use &lt;code&gt;PDI_expose&lt;/code&gt; and &lt;code&gt;PDI_multi_expose&lt;/code&gt; to simplify the code while keeping the exact same behaviour. For once, there is no need to modify the YAML file here, you only need to modify the C file in this exercise.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the source code, compile it and run it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are lots of matched &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; in the code.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Replace these by &lt;code&gt;PDI_expose&lt;/code&gt; that is the exact equivalent of a &lt;code&gt;PDI_share&lt;/code&gt; followed by a matching &lt;code&gt;PDI_reclaim&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This replacement is not possible for interlaced &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; with events in the middle. This case is however handled by &lt;code&gt;PDI_multi_expose&lt;/code&gt; call that exposes all data, then triggers an event and finally does all the reclaim in reverse order.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Replace the remaining &lt;code&gt;PDI_share&lt;/code&gt;/&lt;code&gt;PDI_reclaim&lt;/code&gt; by &lt;code&gt;PDI_expose&lt;/code&gt;s and &lt;code&gt;PDI_multi_expose&lt;/code&gt;s and ensure that your code keeps the exact same behaviour by comparing its trace to &lt;code&gt;ex6.log&lt;/code&gt; (only the lines matching &lt;code&gt;[Trace-plugin]&lt;/code&gt; have been kept). You can easily check if the files are the same by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex6.log &amp;lt;(grep Trace-plugin ex6.juwels.log)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ex7-writing-a-selection&#34;&gt;Ex7. Writing a selection&lt;/h3&gt;
+&lt;p&gt;In this exercise, you will only write a selection of the 2D array in memory excluding ghosts to the HDF5 file. Once again, you only need to modify the YAML file in this exercise, no need to touch the C file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the YAML file and compile the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As you can notice, now the dataset is independently described in the file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Restrict the selection to the non-ghost part of the array in memory (excluding one element on each side). You should be able to match the expected output described in &lt;code&gt;ex7.h5dump&lt;/code&gt;. You can easily check if the files are the same by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex7.h5dump &amp;lt;(h5dump ex7-data0x0.h5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can achieve this by using the &lt;code&gt;memory_selection&lt;/code&gt; directive that specifies the selection of data from memory to write.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;ex8-writing-an-advanced-selection&#34;&gt;Ex8. Writing an advanced selection&lt;/h3&gt;
-&lt;p&gt;You can also add dimensions, write the 2D array excluding ghosts as a slab of a 3D dataset including a dimension for the time-iteration. Write iterations 1 to 3 inclusive into dimensions 0 to 2.&lt;/p&gt;
-&lt;p&gt;Touch only the yaml file in this exercise.&lt;/p&gt;
-&lt;p&gt;Match the expected output described in &lt;code&gt;ex8.h5dump&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Here is an example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;data:
-  matrix: {type: array, subtype: int, size: [8,8]}
-
-...
-    datasets:
-      matrix: {type: array, subtype: int, size: [3, 8, 8]}
-...
-        memory_selection:
-          size: [8, 8]
-        dataset_selection:
-          size: [1, 8, 8]
-          start: [$ii, 0, 0]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And the graphical representation:&lt;/p&gt;
+&lt;h3 id=&#34;ex8-selecting-on-the-dataset-size&#34;&gt;Ex8. Selecting on the dataset size&lt;/h3&gt;
+&lt;p&gt;In this exercise, you will once again change the YAML file to handle a selection in the dataset in addition to the selection in memory from the previous exercise. You will write the 2D array from the previous exercise as a slice of 3D dataset including a dimension for time. Once again, you only need to modify the YAML file in this exercise, no need to touch the C file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the YAML file and compile the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notice how the dataset is now extended with an additional dimension for three time-steps.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Write the 2D selection from &lt;code&gt;main_field&lt;/code&gt; at iterations 1 to 3 inclusive into slices at coordinate 0 to 2 of first dimension of the 3D dataset. Match the expected output described in &lt;code&gt;ex8.h5dump&lt;/code&gt;. You can easily check if the files are the same by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex8.h5dump &amp;lt;(h5dump ex8-data0x0.h5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can achieve this by using the &lt;code&gt;dataset_selection&lt;/code&gt; directive that specifies the selection where to write in the file dataset.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34; alt=&#34;graphical representation&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;parallel-declhdf5&#34;&gt;parallel Decl&#39;HDF5&lt;/h2&gt;
 &lt;h3 id=&#34;ex9-going-parallel&#34;&gt;Ex9. Going parallel&lt;/h3&gt;
-&lt;p&gt;Running the current code in parallel should already work and yield one file per process containing the local data block. In this exercise you will write one single file with parallel HDF5 whose content should be independent from the number of processes used.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;mpi plugin&lt;/code&gt; was loaded to make sharing MPI communicators possible.&lt;/p&gt;
-&lt;p&gt;There are several tasks in this exercise:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Uncomment the &lt;code&gt;communicator&lt;/code&gt; directive of the &lt;a href=&#34;Decl_HDF5_plugin.html&#34;&gt;Dec&#39;HDF5 plugin&lt;/a&gt; to switch to parallel I/O.&lt;/li&gt;
-&lt;li&gt;Change the file name so all processes open the same file.&lt;/li&gt;
-&lt;li&gt;Set the size of &lt;code&gt;main_field&lt;/code&gt; in &lt;code&gt;datasets&lt;/code&gt; tree to take the global matrix into account. Hint: use &lt;code&gt;psize&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Ensure the dataset selection of each process does not overlap with the others. Hint: use &lt;code&gt;pcoord&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Try to match the output from &lt;code&gt;ex9.out&lt;/code&gt;, that should be independent from the number of processes used.&lt;/p&gt;
-&lt;p&gt;Touch only the yaml file in this exercise.&lt;/p&gt;
-&lt;p&gt;Here is graphical representation of the parallel I/O:&lt;/p&gt;
+&lt;p&gt;Running the code from the previous exercises in parallel should already work and yield one file per process containing the local data block. In this exercise you will write one single file with parallel HDF5 whose content should be independent from the number of processes used. Once again, you only need to modify the YAML file in this exercise, no need to touch the C file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the YAML file and compile the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;mpi&lt;/code&gt; plugin was loaded to make sharing MPI communicators possible.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uncomment the &lt;code&gt;communicator&lt;/code&gt; directive of the &lt;a href=&#34;compound:Decl_HDF5_plugin&#34;&gt;Decl&#39;HDF5 plugin&lt;/a&gt; to switch to parallel I/O and change the file name so that all processes access the same file.&lt;/li&gt;
+&lt;li&gt;Set the size of the dataset to take the global (parallel) array size into account. You will need to multiply the local size by the number of processes in each dimension (use &lt;code&gt;psize&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Ensure the dataset selection of each process does not overlap with the others. You will need to make a selection in the dataset that depends on the global coordinate of the local data block (use &lt;code&gt;pcoord&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Match the output from &lt;code&gt;ex9.h5dump&lt;/code&gt;, that should be independent from the number of processes used. You can easily check if the files are the same by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex9.h5dump &amp;lt;(h5dump ex9.h5)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34; alt=&#34;graphical representation of the parallel I\/O&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34; alt=&#34;graphical representation of the parallel I\/O&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34; alt=&#34;graphical representation of the parallel I\/O&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34; alt=&#34;graphical representation of the parallel I\/O&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34; alt=&#34;graphical representation of the parallel I\/O&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pycall&#34;&gt;Pycall&lt;/h2&gt;
+&lt;h3 id=&#34;ex10-post-processing-the-data-in-python&#34;&gt;Ex10. Post-processing the data in python&lt;/h3&gt;
+&lt;p&gt;In this exercise, you will once again modify the YAML file only and use python to post-process the data in situ before writing it to HDF5. Here, you will write the square root of the raw data to HDF5 instead of the data itself.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Examine the YAML file and compile the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notice that the Decl&#39;HDF5 configuration was simplified, no memory selection is applied, the when condition disappeared. The dataset name is however explicitly specified now because it does not match the PDI variable name anymore, you will instead write a new variable exposed from python.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;pycall&lt;/code&gt; section has been added to load the &lt;a href=&#34;compound:pycall_plugin&#34;&gt;Pycall plugin&lt;/a&gt;. It executes the provided code when the &amp;quot;loop&amp;quot; event is triggered. The &lt;code&gt;with&lt;/code&gt; section specifies the variables (parameters) to pass to Python as a set of &amp;quot;$-expressions&amp;quot;. The provided code again exposes its result to PDI and multiple blocks can be chained this way.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add the missing parameter to the &lt;code&gt;with&lt;/code&gt; block to let the Python code process the data exposed in &lt;code&gt;main_field&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modify the Decl&#39;HDF5 configuration to write the new data exposed from Python.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Match the output from &lt;code&gt;ex10.h5dump&lt;/code&gt;. You can easily check if the files are the same by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diff ex10.h5dump &amp;lt;(h5dump ex10.h5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+
+
+    In a more realistic setup, one would typically not write much code in the YAML file directly, but would instead call functions specified in a &lt;code&gt;.py&lt;/code&gt; file on the side.
+
+&lt;/div&gt;
+
 &lt;h2 id=&#34;what-next-&#34;&gt;What next ?&lt;/h2&gt;
-&lt;p&gt;You can experiment with other &lt;a href=&#34;Plugins.html&#34;&gt;plugins&lt;/a&gt;. Have a look at the &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tree/master/example&#34;&gt;PDI examples&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this tutorial, you used the C API of PDI and from YAML, you used the &lt;a href=&#34;compound:trace_plugin&#34;&gt;Trace&lt;/a&gt;, &lt;a href=&#34;compound:Decl_HDF5_plugin&#34;&gt;Decl&#39;HDF5&lt;/a&gt;, and &lt;a href=&#34;compound:pycall_plugin&#34;&gt;Pycall&lt;/a&gt; plugins.&lt;/p&gt;
+&lt;p&gt;If you want to try &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; from another language (Fortran, python, ...) or if you want to experiment with other &lt;a href=&#34;compound:Plugins&#34;&gt;PDI plugins&lt;/a&gt;, have a look at the &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/tree/master/example&#34;&gt;examples provided with PDI&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -598,7 +877,7 @@ struct example_plugin : public PDI::Plugin
 
 PDI_PLUGIN(example)
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;adding-a-callback&#34;&gt;Adding a callback&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Context&#34;&gt;PDI::Context&lt;/a&gt; has a container with all the functions (callbacks) that are called when user is sharing the data (calls PDI_share). To add a new function to this container the plugin must call add_data_callback.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Context&#34;&gt;PDI::Context&lt;/a&gt; has a member with all the functions (callbacks) that are called when user is sharing the data (calls PDI_share). To add a new function to the plugin must call &lt;code&gt;callbacks().add_data_callback&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;std::function&amp;lt;void()&amp;gt; add_data_callback(const std::function&amp;lt;void(const std::string&amp;amp;, Ref)&amp;gt;&amp;amp; callback, const std::string&amp;amp; name = {}))
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first argument is the function to be called when user shares the data. If the second parameter (name) is given, the function will be called only on a specified data name. Returns a function that removes the callback from &lt;a href=&#34;compound:classPDI_1_1Context&#34;&gt;PDI::Context&lt;/a&gt; container.&lt;/p&gt;
 &lt;p&gt;Example of adding new callback:&lt;/p&gt;
@@ -612,7 +891,7 @@ struct example_plugin : public PDI::Plugin
     example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
         Plugin{ctx}
     {
-        ctx.add_data_callback([](const std::string&amp;amp; data_name, PDI::Ref ref){
+        ctx.callbacks().add_data_callback([](const std::string&amp;amp; data_name, PDI::Ref ref){
             std::cout &amp;lt;&amp;lt; &amp;quot;User has shared a data named &amp;quot; &amp;lt;&amp;lt; data_name &amp;lt;&amp;lt; std::endl;
         });
     }
@@ -652,7 +931,7 @@ struct example_plugin : public PDI::Plugin
     example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
         Plugin{ctx}
     {
-        ctx.add_data_callback([](const std::string&amp;amp; data_name, PDI::Ref ref){
+        ctx.callbacks().add_data_callback([](const std::string&amp;amp; data_name, PDI::Ref ref){
             if(PDI::Ref_rw ref_rw{ref}) {
                 //Plugin can read and write
                 int* some_integer = ref_rw.get();
@@ -681,10 +960,10 @@ struct example_plugin : public PDI::Plugin
     example_plugin(PDI::Context&amp;amp; ctx, PC_tree_t spec_tree):
         Plugin{ctx}
     {
-        ctx.add_event_callback([this](const std::string&amp;amp; event_name){
+        ctx.callbacks().add_event_callback([this](const std::string&amp;amp; event_name){
             this-&amp;gt;handle_event(event_name);
         });
-        ctx.add_event_callback([this](const std::string&amp;amp; event_name){
+        ctx.callbacks().add_event_callback([this](const std::string&amp;amp; event_name){
             this-&amp;gt;handle_special_event(event_name);
         }, &amp;quot;special_event&amp;quot;);
     }
@@ -890,15 +1169,15 @@ public:
         read_recover_tree(spec_tree);
         read_data_tree(spec_tree);
         for (const auto&amp;amp; data_path_pair : m_data_to_path_map) {
-            ctx.add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
+            ctx.callbacks().add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
                 this-&amp;gt;write_data(data_name, ref);
             }, data_path_pair.first);
-            ctx.add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
+            ctx.callbacks().add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
                 this-&amp;gt;read_data(data_name, ref);
             }, data_path_pair.first);
         }
         if (!m_can_recover_data.empty()) {
-            ctx.add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
+            ctx.callbacks().add_data_callback([this](const std::string&amp;amp; data_name, PDI::Ref ref) {
                 this-&amp;gt;can_recover(data_name, ref);
             }, m_can_recover_all_data);
         }
@@ -932,7 +1211,7 @@ public:
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 
 
-    The recommended approach to install PDI is to use the stable pre-compiled binary packages for Debian, Fedora and Ubuntu available at &lt;a href=&#34;https://github.com/pdidev/pkgs/tree/repo&#34;&gt;https://github.com/pdidev/pkgs/tree/repo&lt;/a&gt; .
+    The recommended approach to install PDI is to use the stable pre-compiled binary packages for Debian, Fedora and Ubuntu available at &lt;a href=&#34;https://github.com/pdidev/repo&#34;&gt;https://github.com/pdidev/repo&lt;/a&gt;.
 
 &lt;/div&gt;
 
@@ -948,17 +1227,15 @@ public:
 &lt;p&gt;The PDI source distribution includes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the PDI core and its bindings for Fortran and python,&lt;/li&gt;
-&lt;li&gt;all PDI plugins,&lt;/li&gt;
+&lt;li&gt;many PDI plugins,&lt;/li&gt;
 &lt;li&gt;the PDI configuration validator,&lt;/li&gt;
 &lt;li&gt;examples and tests,&lt;/li&gt;
 &lt;li&gt;most dependencies of all the above.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;downloading-pdi-source-distribution&#34;&gt;Downloading PDI source distribution&lt;/h2&gt;
-&lt;p&gt;To download the sources, have a look at the list of all releases from: &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&#34;&gt;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For example, release 0.6.1 can be downloaded by following these instructions:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/archive/0.6.1/pdi-0.6.1.tar.bz2
-tar -xjf pdi-0.6.1.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;default-installation&#34;&gt;Default installation&lt;/h2&gt;
+&lt;p&gt;To download the sources, have a look at the list of all releases at &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&#34;&gt;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For example, release 1.1.0 can be downloaded from &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/archive/1.1.0/pdi-1.1.0.tar.bz2&#34;&gt;https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/archive/1.1.0/pdi-1.1.0.tar.bz2&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;default-installation&#34;&gt;Default installation&lt;/h2&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -970,13 +1247,27 @@ tar -xjf pdi-0.6.1.tar.bz2
 
 &lt;p&gt;Installing the default PDI source distribution is fairly easy. Most dependencies are embedded in the distribution and the only required external dependencies are:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cmake.org&#34;&gt;cmake&lt;/a&gt;, version &amp;gt;= 3.5,&lt;/li&gt;
-&lt;li&gt;a C 99, C++ 14 and Fortran 95 compiler (&lt;a href=&#34;https://gcc.gnu.org/&#34;&gt;gcc&lt;/a&gt; 5.4 is tested),&lt;/li&gt;
-&lt;li&gt;a POSIX compatible OS with a &lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; and &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt; interpreter (&lt;a href=&#34;https://www.kernel.org/&#34;&gt;linux&lt;/a&gt; with &lt;a href=&#34;https://www.gnu.org/software/libc/&#34;&gt;GNU libc&lt;/a&gt; 2.27 is tested),&lt;/li&gt;
-&lt;li&gt;a MPI implementation.&lt;/li&gt;
+&lt;li&gt;a POSIX compatible OS such as GNU/linux,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cmake.org/&#34;&gt;cmake&lt;/a&gt; version 3.5 or above,&lt;/li&gt;
+&lt;li&gt;a C 99, C++ 14 and Fortran 95 compiler such as &lt;a href=&#34;https://gcc.gnu.org/&#34;&gt;gcc&lt;/a&gt; 5.4 or above,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt; interpreter (with venv), version 3.6 or above,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; interpreter,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;https://www.mpi-forum.org/&#34;&gt;MPI&lt;/a&gt; 2 implementation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For example, release 0.6.1 can be installed by following these instructions (but look for the latest release at &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&#34;&gt;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&lt;/a&gt;):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mkdir pdi-0.6.1/build &amp;amp;&amp;amp; cd pdi-0.6.1/build
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+
+
+    This list of dependecies can be further reduced by limiting the set of features compiled.
+
+&lt;/div&gt;
+
+&lt;p&gt;For example, release 1.1.0 can be installed by following these instructions (but look for the latest release at &lt;a href=&#34;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&#34;&gt;https://gitlab.maisondelasimulation.fr/pdidev/pdi/tags&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://gitlab.maisondelasimulation.fr/pdidev/pdi/-/archive/1.1.0/pdi-1.1.0.tar.bz2
+tar -xjf pdi-1.1.0.tar.bz2
+mkdir pdi-1.1.0/build
+cd pdi-1.1.0/build
 cmake -DCMAKE_INSTALL_PREFIX=/usr/ ..       # configuration
 make install   # compilation and installation
 &lt;/code&gt;&lt;/pre&gt;
@@ -1041,6 +1332,11 @@ make install   # compilation and installation
 &lt;td&gt;&lt;code&gt;CMAKE_BUILD_TYPE&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;Release&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Optimization level and debug verbosity. The possible values are &lt;code&gt;Release&lt;/code&gt; and &lt;code&gt;Debug&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PDI_PLUGIN_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;same as &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Path where to install all plugins. If not defined, will install relative to &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1158,9 +1454,9 @@ make install   # compilation and installation
 &lt;td&gt;the &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;astyle&lt;/a&gt; tool.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;USE_Bpp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;USE_Zpp&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;EMBEDDED&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;the &lt;a href=&#34;https://github.com/jbigot/zpp&#34;&gt;bpp/zpp&lt;/a&gt; preprocessor.&lt;/td&gt;
+&lt;td&gt;the &lt;a href=&#34;https://github.com/jbigot/zpp&#34;&gt;zpp&lt;/a&gt; preprocessor.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;USE_Doxygen&lt;/code&gt;&lt;/td&gt;
@@ -1214,10 +1510,73 @@ make install   # compilation and installation
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;The following flags define where to install PDI, those prefixed with &lt;code&gt;CMAKE_&lt;/code&gt; are provided and documented by the &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/module/GNUInstallDirs.html&#34;&gt;GNUInstallDirs&lt;/a&gt; cmake module.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;INSTALL_CMAKEDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PDIDATADIR/cmake&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Cmake modules.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;INSTALL_FMODDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LIBDIR/pdi/finclude/${COMPILER_VERSION}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fortran modules&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;INSTALL_PDIDATADIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DATADIR/pdi&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;INSTALL_PDIPLUGINDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LIBDIR/pdi/plugins_${PDI_VERSION}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; plugins&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CMAKE_INSTALL_BINDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;see &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/module/GNUInstallDirs.html&#34;&gt;GNUInstallDirs&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;user executables&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CMAKE_INSTALL_DATADIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;see &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/module/GNUInstallDirs.html&#34;&gt;GNUInstallDirs&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;read-only architecture-independent data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CMAKE_INSTALL_DOCDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;see &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/module/GNUInstallDirs.html&#34;&gt;GNUInstallDirs&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;documentation root&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CMAKE_INSTALL_INCLUDEDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;see &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/module/GNUInstallDirs.html&#34;&gt;GNUInstallDirs&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;C header files&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CMAKE_INSTALL_LIBDIR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;see &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/module/GNUInstallDirs.html&#34;&gt;GNUInstallDirs&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;object code libraries&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CMAKE_INSTALL_PREFIX&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;see &lt;a href=&#34;https://cmake.org/cmake/help/v3.19/variable/CMAKE_INSTALL_PREFIX.html&#34;&gt;CMake doc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Installation base&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;list-of-dependencies&#34;&gt;List of dependencies&lt;/h2&gt;
 &lt;p&gt;Here is a list of all dependencies required by one feature or another. All dependencies are provided in the distribution unless specified otherwise.&lt;/p&gt;
 &lt;p&gt;Dependencies of &lt;strong&gt;PDI&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;a POSIX compatible OS such as GNU/linux,&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://cmake.org/&#34;&gt;cmake&lt;/a&gt; version 3.5 or above (not provided)&lt;/strong&gt;,&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;a C 99 and C++ 14 compiler such as &lt;a href=&#34;https://gcc.gnu.org/&#34;&gt;gcc&lt;/a&gt; 5.4 or above (not provided)&lt;/strong&gt;,&lt;/li&gt;
 &lt;li&gt;the &lt;a href=&#34;https://github.com/pdidev/paraconf&#34;&gt;paraconf&lt;/a&gt; library version 0.4 or above,&lt;/li&gt;
@@ -1228,9 +1587,9 @@ make install   # compilation and installation
 &lt;ul&gt;
 &lt;li&gt;the &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; library,&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;a Fortran 95 compiler such as &lt;a href=&#34;https://gcc.gnu.org/&#34;&gt;gcc&lt;/a&gt; 5.4 or above (not provided)&lt;/strong&gt;,&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;a &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt; interpreter version 2.7 or above (not provided)&lt;/strong&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;a &lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt; interpreter (with venv), version 3.6 or above (not provided)&lt;/strong&gt;,&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;a &lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; interpreter (not provided)&lt;/strong&gt;,&lt;/li&gt;
-&lt;li&gt;the &lt;a href=&#34;https://github.com/jbigot/zpp&#34;&gt;bpp/zpp&lt;/a&gt; preprocessor version 0.3.0 or above.&lt;/li&gt;
+&lt;li&gt;the &lt;a href=&#34;https://github.com/jbigot/zpp&#34;&gt;zpp&lt;/a&gt; preprocessor version 0.3.0 or above.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Dependencies of &lt;strong&gt;the Decl&#39;HDF5 plugin&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -1257,7 +1616,7 @@ make install   # compilation and installation
 &lt;p&gt;Dependencies of &lt;strong&gt;the FlowVR plugin&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; library,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitlab.inria.fr/flowvr/flowvr-ex&#34;&gt;FlowVR&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitlab.inria.fr/flowvr/flowvr-ex&#34;&gt;FlowVR 2.3.2&lt;/a&gt; version or above.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Dependencies of &lt;strong&gt;the FTI plugin&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -1289,7 +1648,7 @@ make install   # compilation and installation
     </item>
     
     <item>
-      <title>Docs: PDI example</title>
+      <title>Docs: PDI examples</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/pdi_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1297,18 +1656,17 @@ make install   # compilation and installation
       <description>
         
         
-        &lt;p&gt;PDI example application can be found in repository in the &lt;code&gt;example&lt;/code&gt; directory. The source code is written in C, Fortran and Python.&lt;/p&gt;
-&lt;p&gt;The example has a single source file (for each supported programming language), but specification tree to each plugin. Just by replacing the configuration file, the example program will use different libraries and different I/O operations.&lt;/p&gt;
-&lt;p&gt;The example implements simple &lt;a href=&#34;https://en.wikipedia.org/wiki/Heat_equation&#34;&gt;Heat equation&lt;/a&gt; algorithm in 2 dimensional space.&lt;/p&gt;
-&lt;h2 id=&#34;heat-algorithm&#34;&gt;Heat algorithm&lt;/h2&gt;
-&lt;p&gt;Each element in a matrix is a point with temperature. In each iteration every cell is calculated by an weighted average of itself and neighbour cells (top, bottom, left and right):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;matrix[i][j] = 0.500 * matrix[i][j] +
-               0.125 * matrix[i-1][j] +
-               0.125 * matrix[i+1][j] +
-               0.125 * matrix[i][j-1] +
-               0.125 * matrix[i][j+1];
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To not override the cells while processing we need to create temporary matrix to save results and then move result to original matrix (&lt;code&gt;cur&lt;/code&gt; and &lt;code&gt;next&lt;/code&gt; in source file). Above calculations are written in &lt;code&gt;iter&lt;/code&gt; function.&lt;/p&gt;
-&lt;p&gt;Now we can add a MPI to our algorithm. Let&#39;s split that matrix by MPI processes. Each process will compute part of global matrix.&lt;/p&gt;
+        &lt;p&gt;The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a &lt;a href=&#34;compound:YAML&#34;&gt;YAML&lt;/a&gt; file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.&lt;/p&gt;
+&lt;p&gt;The example implements implements a simple &lt;a href=&#34;https://en.wikipedia.org/wiki/Heat_equation&#34;&gt;Heat equation&lt;/a&gt; solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions.&lt;/p&gt;
+&lt;h2 id=&#34;code-algorithm&#34;&gt;Code algorithm&lt;/h2&gt;
+&lt;p&gt;The data is stored in a 2D array in which each point represents the temperature. In every iteration, the value at the next iteration of each cell is computed by applying a cross stencil using the values of the cell and of its neighbours (top, bottom, left and right) at the current iteration:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data[i][j] = 0.500 * data[i][j]
+           + 0.125 * data[i-1][j]
+           + 0.125 * data[i+1][j]
+           + 0.125 * data[i][j-1]
+           + 0.125 * data[i][j+1];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In order not to override the cells while processing we use two arrays to store the values, one for the current iteration (&lt;code&gt;cur&lt;/code&gt; in the code) and one for the next iteration (&lt;code&gt;next&lt;/code&gt; in the code). These computations are written in the &lt;code&gt;iter&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;This code is parallelized with MPI . Let&#39;s split that matrix by MPI processes. Each process will compute part of global matrix.&lt;/p&gt;
 &lt;p&gt;For example: matrix 16 x 16 integers and 16 MPI processes gives submatrices of 4 x 4 integers for every process. We have to add to our global matrix one row above and below, column to the left and right to be able to compute border cells. In our example row on the top has some value (”x”) bigger than 0 (representing source of heat):&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;MPI processes need to exchange information about their local matrix border cells (communicate with neighbours to exchange row/column of matrix). Each MPI process will have a local matrix:&lt;/p&gt;
@@ -1367,6 +1725,68 @@ PDI_expose(&amp;quot;pcoord&amp;quot;, pcoord, PDI_OUT);
     </item>
     
     <item>
+      <title>Docs: PDI usage</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/pdi_usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/pdi_usage/</guid>
+      <description>
+        
+        
+        &lt;p&gt;After &lt;a href=&#34;compound:Installation&#34;&gt;Installation of PDI source distribution&lt;/a&gt; step, PDI must be used in the application, that is written either in C/C++, Fortran or Pyhton.&lt;/p&gt;
+&lt;h2 id=&#34;preparing-the-environment&#34;&gt;Preparing the environment&lt;/h2&gt;
+&lt;h3 id=&#34;pdi-was-installed-in-default-location&#34;&gt;PDI was installed in default location&lt;/h3&gt;
+&lt;p&gt;The library and plugins should be found without any problem, but a good approach is to make sure that all environment variables are set correctly. To do this, there are 3 options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;source pdirun&lt;/code&gt; - sets up current environment variables&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pdirun bash&lt;/code&gt; - creates new shell with environment variables set up&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pdirun command&lt;/code&gt; - runs a &lt;code&gt;command&lt;/code&gt; with all environment variables set up&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To have the environment always prepared for using PDI, the first option (&lt;code&gt;source pdirun&lt;/code&gt;) can be added to &lt;code&gt;~/.bash_profile&lt;/code&gt; file. After that, any new shell will have environment variables set up.&lt;/p&gt;
+&lt;h3 id=&#34;pdi-was-installed-in-custom-location&#34;&gt;PDI was installed in custom location&lt;/h3&gt;
+&lt;p&gt;To prepare environment in this case there are 3 options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;source PDI_path/share/pdi/env.bash&lt;/code&gt; - sets up current environment variables&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PDI_path/bin/pdirun bash&lt;/code&gt; - creates new shell with environment variables set up&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PDI_path/bin/pdirun command&lt;/code&gt; - runs a &lt;code&gt;command&lt;/code&gt; with all environment variables set up&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;where &lt;code&gt;PDI_path&lt;/code&gt; is the path where PDI was installed.&lt;/p&gt;
+&lt;p&gt;To have the environment always prepared for using PDI, the first option (&lt;code&gt;source PDI_path/share/pdi/env.bash&lt;/code&gt;) can be added to &lt;code&gt;~/.bash_profile&lt;/code&gt; file. After that, any new shell will have environment variables set up.&lt;/p&gt;
+&lt;h2 id=&#34;compilation-of-an-application&#34;&gt;Compilation of an application&lt;/h2&gt;
+&lt;p&gt;If source files (of application that uses PDI) and specification tree file are ready, the compilation step can be made. For C make sure that source files that use PDI API are including &lt;code&gt;pdi.h&lt;/code&gt; header file. For Fortran make sure that source files that use PDI API are using &lt;code&gt;PDI&lt;/code&gt; module file (&lt;code&gt;USE PDI&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;compiling-by-hand&#34;&gt;Compiling by hand&lt;/h3&gt;
+&lt;p&gt;To compile application, linker flag &lt;code&gt;-lpdi&lt;/code&gt; must be used. For C it would look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcc source_files.c -o exec_file -lpdi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For Fortran it would look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gfortran source_files.f90 -o exec_file -lpdi
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;compiling-with-cmake&#34;&gt;Compiling with cmake&lt;/h3&gt;
+&lt;p&gt;If source files (of application that uses PDI) and specification tree file are ready, the compilation step can be made.&lt;/p&gt;
+&lt;h4 id=&#34;cc-compilation&#34;&gt;C/C++ compilation&lt;/h4&gt;
+&lt;p&gt;To compile C/C++ application, cmake must find &lt;code&gt;C&lt;/code&gt; component from PDI package. Then the &lt;code&gt;PDI::PDI_C&lt;/code&gt; library must be linked to the target:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find_package(PDI REQUIRED COMPONENTS C)
+
+add_executable(exec_file source_files.c)
+target_link_libraries(exec_file PDI::PDI_C)
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;fortran-compilation&#34;&gt;Fortran compilation&lt;/h4&gt;
+&lt;p&gt;To compile Fortran application, cmake must find &lt;code&gt;f90&lt;/code&gt; component from PDI package. Then the &lt;code&gt;PDI::PDI_f90&lt;/code&gt; library must be linked to the target:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find_package(PDI REQUIRED COMPONENTS f90)
+
+add_executable(exec_file source_files.c)
+target_link_libraries(exec_file PDI::PDI_f90)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;running-an-application&#34;&gt;Running an application&lt;/h2&gt;
+&lt;p&gt;PDI is a shared library. That means that all environment variables must be set not only on compilation, but also when running the program.&lt;/p&gt;
+&lt;p&gt;Every used plugin in application needs to be found by PDI. It will search for plugins in 4 steps (it will use the first plugin found):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;PDI_PLUGIN_PATH&lt;/code&gt; environment variable that is colon separated list with paths,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;plugin_path&lt;/code&gt; subtree in specification tree: &lt;a href=&#34;member:Specification_tree_ref_1plugin_path_map_node&#34;&gt;plugin_path&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;Relative path of used PDI shared object &lt;code&gt;libpdi.so&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LD_LIBRARY_PATH&lt;/code&gt; environment variable that is colon separated list.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Plugins</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1388,6 +1808,10 @@ PDI_expose(&amp;quot;pcoord&amp;quot;, pcoord, PDI_OUT);
 &lt;td&gt;Read and write data from HDF5 files in a declarative way.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;compound:Decl_NetCDF_plugin&#34;&gt;Decl&#39;NetCDF plugin&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Read and write data from NetCDF files in a declarative way.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;compound:FlowVR_plugin&#34;&gt;FlowVR plugin&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Write FlowVR modules without knowing any specific FlowVR API calls.&lt;/td&gt;
 &lt;/tr&gt;
@@ -1397,7 +1821,11 @@ PDI_expose(&amp;quot;pcoord&amp;quot;, pcoord, PDI_OUT);
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;compound:user_code_plugin&#34;&gt;user-code plugin&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Call your function on event or when data becomes available&lt;/td&gt;
+&lt;td&gt;Call your function on event or when data becomes available.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;compound:serialize_plugin&#34;&gt;serialize plugin&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Serializes and deserializes shared data.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;compound:set_value_plugin&#34;&gt;set_value plugin&lt;/a&gt;&lt;/td&gt;
@@ -1449,8 +1877,8 @@ PDI_expose(&amp;quot;pcoord&amp;quot;, pcoord, PDI_OUT);
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;plugin-tree&#34;&gt;Plugin tree&lt;/h3&gt;
 &lt;p&gt;The root of plugin configuration (named &lt;code&gt;pycall&lt;/code&gt;), is a dictionary that contains the following keys:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;on_event&lt;/li&gt;
-&lt;li&gt;on_data&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:pycall_plugin_1pycall_on_event&#34;&gt;on_event&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:pycall_plugin_1pycall_on_data&#34;&gt;on_data&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;on_event&#34;&gt;on_event&lt;/h3&gt;
 &lt;p&gt;This option allows to execute written python code when specific event is called.&lt;/p&gt;
@@ -1514,6 +1942,74 @@ printf(&amp;quot; * [C] now I see     $a = [%d %d %d]\n&amp;quot;, a[0], a[1], a
     </item>
     
     <item>
+      <title>Docs: Serialize plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Serialize plugin allows to serialize shared data. The plugin will convert all arrays from sparse to dense and dereference all pointers.&lt;/p&gt;
+&lt;p&gt;The serialized data will be shared as long the user data is shared.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In case of the share with &lt;code&gt;PDI_OUT&lt;/code&gt;: plugin will serialize and share serialized data on &lt;code&gt;PDI_share&lt;/code&gt; of given descriptor.&lt;/li&gt;
+&lt;li&gt;In case of the share with &lt;code&gt;PDI_IN&lt;/code&gt;: plugin will deserialize data on &lt;code&gt;PDI_reclaim&lt;/code&gt; of given descriptor (to be sure that the serialized data have been writen to buffer by other plugin (e.g. done on event)).&lt;/li&gt;
+&lt;li&gt;In case of the share with &lt;code&gt;PDI_INOUT&lt;/code&gt;: plugin will do step 1. on &lt;code&gt;PDI_share&lt;/code&gt; and step 2. on &lt;code&gt;PDI_reclaim&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;configuration-grammar&#34;&gt;Configuration grammar&lt;/h2&gt;
+&lt;p&gt;The serialize configuration is made of only:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;data name to serialize&lt;/td&gt;
+&lt;td&gt;serialized data name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Here is an example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  sparse_array:
+    type: array
+    subtype: int
+    size: 8
+    start: 2
+    subsize: 4
+plugins:
+  serialize:
+    sparse_array: dense_array
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;On each &lt;code&gt;sparse_array&lt;/code&gt; data share, the plugin will share serialized data under the &lt;code&gt;dense_array&lt;/code&gt; name. The &lt;code&gt;dense_array&lt;/code&gt; will be of type:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: array
+subtype: int
+size: 4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Another example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  pointer_to_sparse_array:
+    type: pointer
+    subtype:
+      type: array
+      subtype: int
+      size: 8
+      start: 2
+      subsize: 4
+plugins:
+  serialize:
+    pointer_to_sparse_array: dense_array
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;On each &lt;code&gt;pointer_to_sparse_array&lt;/code&gt; data share, the plugin will share serialized data under the &lt;code&gt;dense_array&lt;/code&gt; name. The &lt;code&gt;dense_array&lt;/code&gt; again will be of type:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: array
+subtype: int
+size: 4
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Set_value plugin</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1523,11 +2019,13 @@ printf(&amp;quot; * [C] now I see     $a = [%d %d %d]\n&amp;quot;, a[0], a[1], a
         
         
         &lt;p&gt;The Set_value plugin allows setting values to data and metadata descriptors from the yaml file.&lt;/p&gt;
-&lt;p&gt;There are 3 main features:&lt;/p&gt;
+&lt;p&gt;Here are main features of the plugins:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Share data - plugin will share new allocated data with given values&lt;/li&gt;
+&lt;li&gt;Release data - plugin will release shared data&lt;/li&gt;
 &lt;li&gt;Expose data - plugin will expose new allocated data with given values&lt;/li&gt;
 &lt;li&gt;Set data - plugin will set given values to the already shared data&lt;/li&gt;
+&lt;li&gt;Calling an event - plugin will call an event&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;configuration-grammar&#34;&gt;Configuration grammar&lt;/h2&gt;
 &lt;p&gt;At its root, the Set_value configuration is made of:&lt;/p&gt;
@@ -1551,6 +2049,10 @@ printf(&amp;quot; * [C] now I see     $a = [%d %d %d]\n&amp;quot;, a[0], a[1], a
 &lt;td&gt;&lt;code&gt;&amp;quot;on_data&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
 &lt;td&gt;an &lt;a href=&#34;member:set_value_plugin_1on_data_map_node&#34;&gt;on_data&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;on_finalize&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a list of &lt;a href=&#34;member:set_value_plugin_1value_operation&#34;&gt;value operation&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;on_init&#34;&gt;on_init&lt;/h3&gt;
@@ -1561,6 +2063,8 @@ printf(&amp;quot; * [C] now I see     $a = [%d %d %d]\n&amp;quot;, a[0], a[1], a
       - set: ... # value_list
       - share: ... # value_list
       - expose: ... # value_list
+      - release: ... # value_list
+      - event: ... # value
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;on_event&#34;&gt;on_event&lt;/h3&gt;
 &lt;p&gt;Specifies a map of events that will trigger the values set. &lt;code&gt;on_event&lt;/code&gt; is a map with event name as a key and &lt;a href=&#34;member:set_value_plugin_1value_operation&#34;&gt;value operation&lt;/a&gt; list as map value.&lt;/p&gt;
 &lt;table&gt;
@@ -1584,10 +2088,14 @@ printf(&amp;quot; * [C] now I see     $a = [%d %d %d]\n&amp;quot;, a[0], a[1], a
         - set: ... # value_list
         - share: ... # value_list
         - expose: ... # value_list
+        - release: ... # value_list
+        - event: ... # value
       event_2_name:
         - set: ... # value_list
         - share: ... # value_list
         - expose: ... # value_list
+        - release: ... # value_list
+        - event: ... # value
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;on_data&#34;&gt;on_data&lt;/h3&gt;
 &lt;p&gt;Specifies a map of data that on share will trigger the values set. &lt;code&gt;on_data&lt;/code&gt; is a map with data/metadata name as a key and &lt;a href=&#34;member:set_value_plugin_1value_operation&#34;&gt;value operation&lt;/a&gt; as map value.&lt;/p&gt;
 &lt;table&gt;
@@ -1615,12 +2123,26 @@ plugins:
         - set: ... # value_list
         - share: ... # value_list
         - expose: ... # value_list
+        - release: ... # value_list
+        - event: ... # value
       metadata_1_name:
         - set: ... # value_list
         - share: ... # value_list
         - expose: ... # value_list
+        - release: ... # value_list
+        - event: ... # value
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;on_finalize&#34;&gt;on_finalize&lt;/h3&gt;
+&lt;p&gt;Specifies a list of operation to do in &lt;a href=&#34;member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969&#34;&gt;PDI_finalize&lt;/a&gt; function. &lt;code&gt;on_finalize&lt;/code&gt; is a list of &lt;a href=&#34;member:set_value_plugin_1value_operation&#34;&gt;value operation&lt;/a&gt; s.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  set_value:
+    on_finalize:
+      - set: ... # value_list
+      - share: ... # value_list
+      - expose: ... # value_list
+      - release: ... # value_list
+      - event: ... # value
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;value-operation&#34;&gt;value operation&lt;/h3&gt;
-&lt;p&gt;Defines what operation to do with given &lt;a href=&#34;member:set_value_plugin_1value_list&#34;&gt;value list&lt;/a&gt;. The order of the operation is important and will be called in the same order as defined in yaml file.&lt;/p&gt;
+&lt;p&gt;A value operation is specified as a key-value pair (a &lt;strong&gt;mapping&lt;/strong&gt; whose content is a single key-value pair). It defines an operation to execute inside a &lt;a href=&#34;member:set_value_plugin_1value_list&#34;&gt;value list&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1641,10 +2163,18 @@ plugins:
 &lt;td&gt;&lt;code&gt;&amp;quot;expose&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
 &lt;td&gt;a &lt;a href=&#34;member:set_value_plugin_1value_list&#34;&gt;value list&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;release&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a list with data to release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;event&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;an event name to call&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;Share warning&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Share is always done with read and write rights. Plugin allocates memory by &lt;code&gt;malloc&lt;/code&gt;. If you reclaim the data, you should free it with &lt;code&gt;free&lt;/code&gt; instruction. If you don&#39;t reclaim or release data, plugin will try to release all descriptors that has shared before (failure is not an error, so user can reclaim the shared data).&lt;/p&gt;
+&lt;p&gt;Share is always done with read and write rights. Plugin allocates memory by &lt;code&gt;malloc&lt;/code&gt;. If you reclaim the data, you should free it with &lt;code&gt;free&lt;/code&gt; instruction.&lt;/p&gt;
 &lt;h3 id=&#34;value-list&#34;&gt;value list&lt;/h3&gt;
 &lt;p&gt;Is a list of the&lt;/p&gt;
 &lt;ul&gt;
@@ -1771,6 +2301,8 @@ plugins:
           - record_data:
             - scalar_data: 3
             - array_data: [1, 2, 3]
+    on_finalize:
+      - release: [record_data]
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;using-old-values-to-set-new&#34;&gt;Using old values to set new&lt;/h2&gt;
 &lt;h3 id=&#34;increment-value&#34;&gt;Increment value&lt;/h3&gt;
 &lt;p&gt;The set_value plugin allows to use the old values to set new values, you can use even the same descriptor, for example to increment a scalar.&lt;/p&gt;
@@ -1792,6 +2324,8 @@ plugins:
         - set:
           - value_int: &amp;quot;$value_int + 1&amp;quot;
           - int_array: [&amp;quot;$int_array[0] + 1&amp;quot;, &amp;quot;$int_array[1] + 1&amp;quot;, &amp;quot;$int_array[2] + 1&amp;quot;]
+    on_finalize:
+      - release: [value_int, int_array]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After calling &lt;code&gt;init&lt;/code&gt; and &lt;code&gt;increment&lt;/code&gt; event, &lt;code&gt;value_int&lt;/code&gt; will be equal 1, and &lt;code&gt;int_array&lt;/code&gt; to [2, 3, 4].&lt;/p&gt;
 &lt;h3 id=&#34;getting-old-value&#34;&gt;Getting old value&lt;/h3&gt;
 &lt;p&gt;The new value is set at the end of processing the whole descriptors. This means, that if you want to update the array element depending on other element, the old value will be set:&lt;/p&gt;
@@ -1842,45 +2376,7 @@ plugins:
       <description>
         
         
-        &lt;p&gt;The PDI specification tree is expressed in &lt;a href=&#34;https://en.wikipedia.org/wiki/YAML&#34;&gt;YAML&lt;/a&gt;. As such, it is a tree that contains 3 distinct kinds of nodes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;scalars,&lt;/li&gt;
-&lt;li&gt;sequences,&lt;/li&gt;
-&lt;li&gt;mappings.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A &lt;strong&gt;scalar&lt;/strong&gt; is a leaf in the tree, represented as a string. Some form of scalars can be interpreted as a boolean, integer or floating-point valued. Simple examples of scalars include for example (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2760844&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;quot;hello&amp;quot;&lt;/code&gt;,&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;world&lt;/code&gt;,&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;3&lt;/code&gt;,&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;5.7&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A &lt;strong&gt;sequence&lt;/strong&gt; is an ordered list of sub-nodes (that can themselves be scalars, sequences or mappings). Two main syntaxes are available for sequences (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;in-line sequence: &lt;code&gt;[1, 2, 3, hello, &amp;quot;world&amp;quot;]&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;multi-line sequence:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 1
-- 2
-- 3
-- hello
-- world
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A &lt;strong&gt;mapping&lt;/strong&gt; is an unordered list of key-value pairs (whose elements can themselves be scalars, sequences or mappings). Two main syntaxes are available for mapping (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;in-line mapping: &lt;code&gt;{1: one, 2: &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;: 3}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;multi-line mapping:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1: one
-2: two
-&amp;quot;three&amp;quot;: 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;p&gt;The PDI specification tree is expressed in &lt;a href=&#34;compound:YAML&#34;&gt;YAML&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;specification-tree-root&#34;&gt;specification tree root&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;specification tree root&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
 &lt;table&gt;
@@ -1902,6 +2398,10 @@ plugins:
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;plugins&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
 &lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1plugin_map_node&#34;&gt;plugin_map&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;plugin_path&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1plugin_path_map_node&#34;&gt;plugin_path&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
@@ -2032,7 +2532,8 @@ kind: 4
 &lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1logical_type_node&#34;&gt;logical_type&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1real_type_node&#34;&gt;real_type&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt;,&lt;/li&gt;
-&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1simple_datatype_node&#34;&gt;simple_datatype&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1simple_datatype_node&#34;&gt;simple_datatype&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;a &lt;a href=&#34;member:Specification_tree_ref_1struct_type_node&#34;&gt;struct_type&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Amongst these, &lt;a href=&#34;member:Specification_tree_ref_1simple_datatype_node&#34;&gt;simple_datatype&lt;/a&gt; is the only scalar. All others are dictionaries with a &lt;code&gt;type&lt;/code&gt; key used for disambiguation between them. Plugins can add new options that follow the same pattern.&lt;/p&gt;
 &lt;p&gt;A &lt;em&gt;datatype&lt;/em&gt; represents the memory layout and interpretation for data exposed by the user in the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt;.&lt;/p&gt;
@@ -2103,7 +2604,7 @@ TERM           := ( INT_LITERAL | REFERENCE | &#39;(&#39; OPERATION &#39;)&#39; 
 
 REFERENCE      := &#39;$&#39; ( IREFERENCE | &#39;{&#39; IREFERENCE &#39;}&#39; )
 
-IREFERENCE     := ID ( &#39;[&#39; OPERATION &#39;]&#39; )*
+IREFERENCE     := ID ( &#39;[&#39; OPERATION &#39;]&#39; | &#39;.&#39; ID )*
 
 
 
@@ -2114,7 +2615,11 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The rules for evaluating an expression are close to those of BASH for example.&lt;/p&gt;
 &lt;p&gt;In addition to raw text, a &lt;code&gt;STRING_LITERAL&lt;/code&gt; can contain references to the string value of some data in the store as well as the result of an operation by enclosing it inside a dollar-parenthesis &lt;code&gt;$()&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;An &lt;code&gt;OPERATION&lt;/code&gt; can include logical and arithmetic operators grouped by parenthesis. The basic terms manipulated in an operation can be integer literals or references to the integer value of some data in the store.&lt;/p&gt;
-&lt;p&gt;A &lt;code&gt;REFERENCE&lt;/code&gt; is introduced by a dollar &lt;code&gt;$&lt;/code&gt; sign and optionally enclosed in curly braces &lt;code&gt;{&lt;/code&gt;, &lt;code&gt;}&lt;/code&gt;. Its value is that of the data or metadata with the associated name. It is always a good idea to have referenced values in the metadata section as it prevents dangling references. A direct reference is possible as well as sub-references to array elements using the square brackets &lt;code&gt;[&lt;/code&gt;, &lt;code&gt;]&lt;/code&gt; operator.&lt;/p&gt;
+&lt;p&gt;A &lt;code&gt;REFERENCE&lt;/code&gt; is introduced by a dollar &lt;code&gt;$&lt;/code&gt; sign and optionally enclosed in curly braces &lt;code&gt;{&lt;/code&gt;, &lt;code&gt;}&lt;/code&gt;. Its value is that of the data or metadata with the associated name. It is always a good idea to have referenced values in the metadata section as it prevents dangling references. Value formatting can be applied using a FMT &lt;code&gt;format_spec&lt;/code&gt; string by adding a column &lt;code&gt;:&lt;/code&gt; followed by the &lt;code&gt;format_spec&lt;/code&gt; after a column just before the closing bracket &lt;code&gt;}&lt;/code&gt; (see: &lt;a href=&#34;https://fmt.dev/latest/syntax.html#grammar-token-format_spec&#34;&gt;https://fmt.dev/latest/syntax.html#grammar-token-format_spec&lt;/a&gt;). A direct reference is possible as well as sub-references to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;array elements using the square brackets &lt;code&gt;[&lt;/code&gt;, &lt;code&gt;]&lt;/code&gt; operator,&lt;/li&gt;
+&lt;li&gt;record member using dot &lt;code&gt;.&lt;/code&gt; operator.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The value-type of an &lt;code&gt;EXPRESSION&lt;/code&gt; is as follow:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;if it&#39;s a &lt;code&gt;REFERENCE&lt;/code&gt;, it has the type of the referenced data in the store,&lt;/li&gt;
@@ -2125,7 +2630,12 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
 &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&#39;$my_data&#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&#39;($my_data + 3) % 6&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&#39;${my_data.subarray[0]} * 42&#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&#39;my name is ${my_name}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&#39;${my_data:05d}&#39;
+&#39;${my_data:b}&#39;
+&#39;${my_data:1.5f}&#39;
+&#39;${my_data:&amp;gt;15s}&#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;float_type&#34;&gt;float_type&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;float_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
 &lt;table&gt;
@@ -2305,8 +2815,43 @@ kind: 2
 &lt;pre&gt;&lt;code&gt;type: logical
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: logical
 kind: 1
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;member_desc&#34;&gt;member_desc&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;member_desc&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;struct_member_desc&#34;&gt;struct_member_desc&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;struct_member_desc&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;code&gt;scalar&lt;/code&gt;, &lt;code&gt;array&lt;/code&gt;, &lt;code&gt;record&lt;/code&gt; or &lt;code&gt;struct&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;anything&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;type&lt;/code&gt; key identifies the &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;type&lt;/a&gt; of this member, all other keys required for this &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt; must be present.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: struct
+members:
+  - my_char: char
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: struct
+members:
+  - my_long: int64
+  - my_array:
+      type: array
+      subtype: int64
+      size: [10, 10]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See &lt;a href=&#34;member:Specification_tree_ref_1struct_type_node&#34;&gt;struct_type&lt;/a&gt; for more examples.&lt;/p&gt;
+&lt;h2 id=&#34;record_member_desc&#34;&gt;record_member_desc&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;record_member_desc&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2321,7 +2866,7 @@ kind: 1
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;a &lt;code&gt;scalar&lt;/code&gt;, &lt;code&gt;array&lt;/code&gt; or &lt;code&gt;record&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;code&gt;scalar&lt;/code&gt;, &lt;code&gt;array&lt;/code&gt;, &lt;code&gt;record&lt;/code&gt; or &lt;code&gt;struct&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
@@ -2334,17 +2879,26 @@ kind: 1
 &lt;li&gt;the value associated to the &lt;code&gt;type&lt;/code&gt; key identifies the &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;type&lt;/a&gt; of this record, all other keys required for this &lt;a href=&#34;member:Specification_tree_ref_1datatype_node&#34;&gt;datatype&lt;/a&gt; must be present.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;my_char:
-      disp: 0
-      type: int64
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;my_array:
-  disp: 8
-  type: array
-  subtype: int64
-  size: [10, 10]
+&lt;pre&gt;&lt;code&gt;type: record
+buffersize: 1
+members:
+  my_char:
+        disp: 0
+        type: char
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: record
+buffersize: 808
+members:
+  my_long:
+    disp: 0
+    type: int64
+  my_array:
+    disp: 8
+    type: array
+    subtype: int64
+    size: [10, 10]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt; for more examples.&lt;/p&gt;
-&lt;h2 id=&#34;members_map&#34;&gt;members_map&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;members_map&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;h2 id=&#34;struct_members_omap&#34;&gt;struct_members_omap&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;struct_members_omap&lt;/em&gt; is an &lt;strong&gt;ordered mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2355,7 +2909,27 @@ kind: 1
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
-&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1member_desc_node&#34;&gt;member_desc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1struct_member_desc_node&#34;&gt;struct_member_desc&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;each key identifies the name of a member and the value associated to it describes the member itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See &lt;a href=&#34;member:Specification_tree_ref_1struct_type_node&#34;&gt;struct_type&lt;/a&gt; for an example.&lt;/p&gt;
+&lt;h2 id=&#34;record_members_map&#34;&gt;record_members_map&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;record_members_map&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;.*&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1record_member_desc_node&#34;&gt;record_member_desc&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2409,6 +2983,32 @@ kind: 1
 &lt;pre&gt;&lt;code&gt;type: real
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;type: real
 kind: 8
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;struct_type&#34;&gt;struct_type&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;struct_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;struct&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;members&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1struct_members_omap_node&#34;&gt;struct_members_omap&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1struct_type_node&#34;&gt;struct_type&lt;/a&gt; represents a &amp;quot;struct&amp;quot;, &lt;em&gt;aka&lt;/em&gt; C &amp;quot;struct&amp;quot;, C++ &amp;quot;class&amp;quot;. Buffersize and members displacemnts will be calculated by the PDI.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type: struct
+members:
+  - first_int: int32
+  - seconf_int: int32
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;record_type&#34;&gt;record_type&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;record_type&lt;/em&gt; is a &lt;strong&gt;mapping&lt;/strong&gt; that contains the following keys:&lt;/p&gt;
 &lt;table&gt;
@@ -2429,14 +3029,14 @@ kind: 8
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;members&amp;quot;&lt;/code&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/td&gt;
-&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1members_map_node&#34;&gt;members_map&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;a &lt;a href=&#34;member:Specification_tree_ref_1record_members_map_node&#34;&gt;record_members_map&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt; represents a &amp;quot;record&amp;quot;, &lt;em&gt;aka&lt;/em&gt; C &amp;quot;struct&amp;quot;, C++ &amp;quot;class&amp;quot;, Fortran &amp;quot;derived type&amp;quot; where:&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;member:Specification_tree_ref_1record_type_node&#34;&gt;record_type&lt;/a&gt; represents a &amp;quot;record&amp;quot; where:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the value associated to the &lt;code&gt;buffersize&lt;/code&gt; key represents the overall size of the record, including potential padding,&lt;/li&gt;
-&lt;li&gt;the value associated to the &lt;code&gt;members&lt;/code&gt; key lists all members of the record.&lt;/li&gt;
+&lt;li&gt;the value associated to the &lt;code&gt;members&lt;/code&gt; key lists all members of the record with given displacements.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;type: record
@@ -2455,6 +3055,11 @@ members:
 &lt;pre&gt;&lt;code&gt;&amp;quot;my_type&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is interpreted as if it was:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{ type: &amp;quot;my_type&amp;quot; }
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;plugin_path&#34;&gt;plugin_path&lt;/h2&gt;
+&lt;p&gt;A path to directory where PDI should search for plugins. It can be single path:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugin_path: &amp;quot;/home/user123/plugins&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or array of paths (PDI will take first match):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugin_path: [&amp;quot;/home/user123/plugins&amp;quot;, &amp;quot;/usr/lib/pdi/plugins&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
@@ -2477,7 +3082,7 @@ members:
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;file&lt;/code&gt;: a string that can contain $-expressions and specified the name of the file this &lt;code&gt;FILE_DESC&lt;/code&gt; refers to.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;write&lt;/code&gt;: a &lt;code&gt;DATA_SECTION&lt;/code&gt; that defaults to an empty one. This &lt;code&gt;DATA_SECTION&lt;/code&gt; describes writes to execute.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;write&lt;/code&gt;: a &lt;code&gt;DATA_SECTION&lt;/code&gt; that defaults to an empty one. This &lt;code&gt;DATA_SECTION&lt;/code&gt; describes reads to execute.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;read&lt;/code&gt;: a &lt;code&gt;DATA_SECTION&lt;/code&gt; that defaults to an empty one. This &lt;code&gt;DATA_SECTION&lt;/code&gt; describes reads to execute.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;on_event&lt;/code&gt;: a string identifying an event when the whole file is accessed. If not specified, each data is written when it is exposed and the file is opened and closed every time.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;when&lt;/code&gt;: a $-expression specifying a default condition to test before executing the reads and writes of this &lt;code&gt;FILE_DESC&lt;/code&gt;. This can be replaced by a more specific condition inside the &lt;code&gt;DATA_SECTION&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;communicator&lt;/code&gt;: a $-expression referencing a MPI communicator to use for HDF5 parallel synchronized reads and writes. It defaults to MPI_COMM_SELF which stands for sequential writes. In case of data-triggered (vs. event-triggered) reads and writes, this can be replaced inside the &lt;code&gt;DATA_SECTION&lt;/code&gt;.&lt;/li&gt;
@@ -2486,24 +3091,53 @@ members:
 &lt;h3 id=&#34;ttdata_sectiontt&#34;&gt;&amp;lt;tt&amp;gt;DATA_SECTION&amp;lt;/tt&amp;gt;&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;DATA_SECTION&lt;/code&gt; describes a set of I/O (read or write) to execute. A data section can take multiple forms:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;a list of strings, each being the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write&lt;/li&gt;
-&lt;li&gt;a key-value map where each key is the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write and the value is either a single &lt;code&gt;DATA_IO_DESC&lt;/code&gt; or a list of &lt;code&gt;DATA_IO_DESC&lt;/code&gt;s describing the I/O (read or write) to execute.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a list of strings, each being either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write in a dataset with the same name ( e.g. &lt;code&gt;data&lt;/code&gt;, where &lt;code&gt;data&lt;/code&gt; is both a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data and the HDF5 dataset name)&lt;/li&gt;
+&lt;li&gt;the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write in an attribute of the same name preceded by a &lt;code&gt;#&lt;/code&gt; and the name of the dataset or datagroup to which the attribute applies ( e.g. &lt;code&gt;dset#attr&lt;/code&gt;, where &lt;code&gt;attr&lt;/code&gt; is both a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data and the HDF5 attribute name applied to the &lt;code&gt;dset&lt;/code&gt; dataset)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a key-value map where each key is the name of a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; data to write and the value is either a single &lt;code&gt;DATA_IO_DESC&lt;/code&gt; or a list of &lt;code&gt;DATA_IO_DESC&lt;/code&gt;s describing the I/O (read or write) to execute.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The first case behaves as if each data had its &lt;code&gt;DATA_IO_DESC&lt;/code&gt; specified with all default values.&lt;/p&gt;
 &lt;h3 id=&#34;ttdata_io_desctt&#34;&gt;&amp;lt;tt&amp;gt;DATA_IO_DESC&amp;lt;/tt&amp;gt;&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;DATA_IO_DESC&lt;/code&gt; is a key-velue map describing one I/O (read or write) to execute. All keys are optional and have default values. The possible values for the keys are as follow:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;dataset&lt;/code&gt;: a $-expression identifying the name of the dataset to access in the file. If not specified this defaults to the name of the data. On writing, if the dataset does not exist in the file and is not specified in the &lt;code&gt;FILE_DESC&lt;/code&gt; then a dataset with the same size as the memory selection is automatically created.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;attribute&lt;/code&gt;: a $-expression identifying the path of the attribute to access in the file. The path is specified as a &lt;code&gt;/&lt;/code&gt;-separated path to the object on which the attribute is set (a dataset or a datagroup) followed by a &lt;code&gt;#&lt;/code&gt; sign and the name of the attribute itself (e.g. &lt;code&gt;group/dset#attr&lt;/code&gt;). If the &lt;code&gt;attribute&lt;/code&gt; key is specified, then only the &lt;code&gt;when&lt;/code&gt; key can also be specified, no other key can be present.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;size_of&lt;/code&gt;: a $-expression identifying the path of the dataset that size should be written to data descriptor.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;when&lt;/code&gt;: a $-expression specifying a condition to test before executing the I/O operation (read or write). This defaults to the value specified in the &lt;code&gt;FILE_DESC&lt;/code&gt; if present or to unconditional I/O otherwise.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;communicator&lt;/code&gt;: a $-expression referencing a MPI communicator to use for HDF5 parallel synchronized I/O operation (read or write). Specifying communicator at this level is incompatible with event-triggered (vs. data-triggered) This defaults to the value specified in the &lt;code&gt;FILE_DESC&lt;/code&gt; if present or to sequential (MPI_COMM_SELF) I/O otherwise.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;memory_selection&lt;/code&gt;: a &lt;code&gt;SELECTION_DESC&lt;/code&gt; specifying the selection of data in memory to read or write. It defaults to selecting the whole data.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;dataset_selection&lt;/code&gt;: a &lt;code&gt;SELECTION_DESC&lt;/code&gt; specifying the selection of data in the file data to write or read. This is only valid if the&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;attributes&lt;/code&gt;: a key-value map specifying the set of attributes to read from (respectively, write to) the file when the associated dataset is read (respectively, written). Each key is the name of an attribute of the dataset. Each value is a $-expression (evaluated when the dataset is accessed) specifying the value to the attribute.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;ttselection_desctt&#34;&gt;&amp;lt;tt&amp;gt;SELECTION_DESC&amp;lt;/tt&amp;gt;&lt;/h3&gt;
 &lt;p&gt;A &lt;code&gt;SELECTION_DESC&lt;/code&gt; is a key-value map that describes the selection of a subset of data from a larger set. All keys are optional and have default values. The possible values for the keys are as follow:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;size&lt;/code&gt; is either a single $-expression or a list of $-expressions. It describes the size of the selection in each dimension. If not specified, it defaults to the dimension of the whole data.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;start&lt;/code&gt; is either a single $-expression or a list of $-expressions. It describes the number of point to skip in each dimension. If not specified it defaults to 0 in all dimensions. In practice, it can only be specified if &lt;code&gt;size&lt;/code&gt; is also.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;size&lt;/code&gt; is either a single $-expression or a list of $-expressions. It describes the size of the selection in each dimension.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;start&lt;/code&gt; is either a single $-expression or a list of $-expressions. It describes the number of point to skip at the beginning in each dimension.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Memory selection default values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the &lt;code&gt;size&lt;/code&gt; is not specified, it defaults to size of the whole data in each dimension.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;start&lt;/code&gt; is not specified it defaults to 0 in all dimensions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dataset selection default values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If the &lt;code&gt;size&lt;/code&gt; is not specified:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if the number of dimensions match that of the memory, the size defaults to that of the memory,&lt;/li&gt;
+&lt;li&gt;otherwise, the size default to the whole dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the &lt;code&gt;start&lt;/code&gt; is not specified it defaults to 0 in all dimensions.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;full-configuration-example&#34;&gt;full configuration example&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;metadata: # small values for which PDI keeps a copy
@@ -2541,8 +3175,541 @@ plugins:
           dataset_selection:
             size:  [1, $width-2, $width-2] # number of elements to transfer in each dimension, must amount to the same number as the memory selection (default: size of memory slab)
             start: [$iter, 0, 0]           # coordinate of the start point in the file relative to the dataset (default: 0 in each dimensions)
+          attributes:
+            size: ($width-2)*($width-2)
+            width: $width-2
+            height: $width-2
     read: # a list or map of data to read, similar to write (default: empty)
       - another_value
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: The Decl&#39;NetCDF plugin</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/decl_netcdf_plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/decl_netcdf_plugin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The Decl&#39;NetCDF plugin was created to read from and write to NetCDF files in a declarative way.&lt;/p&gt;
+&lt;p&gt;Decl&#39;NetCDF plugin allows you to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Read/write data as NetCDF variables from/to NetCDF file.&lt;/li&gt;
+&lt;li&gt;Define groups in the NetCDF file. Groups can be nested.&lt;/li&gt;
+&lt;li&gt;Read/write variables and groups attributes. &lt;strong&gt;Automatically read and written when openning the file.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Execute input/output operations on event.&lt;/li&gt;
+&lt;li&gt;Execute input/output operations on data share (when the event is not defined).&lt;/li&gt;
+&lt;li&gt;Define &lt;code&gt;UNLIMITED&lt;/code&gt; dimension and dimensions names.&lt;/li&gt;
+&lt;li&gt;Read/write only part of NetCDF variable by hyperslab definition.&lt;/li&gt;
+&lt;li&gt;Read/write in parallel mode using MPI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;configuration-elements&#34;&gt;Configuration elements&lt;/h2&gt;
+&lt;p&gt;The root of Decl&#39;NetCDF plugin configuration (named &lt;code&gt;decl_netcdf&lt;/code&gt;), is a dictionary or a list of dictionaries that contains the following subtrees:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_file&#34;&gt;file subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;communicator&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_comm&#34;&gt;communicator subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;on_event&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_on_event&#34;&gt;on_event subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;groups&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_groups&#34;&gt;groups subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;variables&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_variables&#34;&gt;variables subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;write&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_write&#34;&gt;write subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;read&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_read&#34;&gt;read subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;&amp;quot;file_name.nc&amp;quot;&amp;quot;
+    write: ...
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    - file: &amp;quot;&amp;quot;file_name.nc&amp;quot;&amp;quot;
+      write: ...
+    - file: &amp;quot;file_name_2.nc&amp;quot;
+      write: ...
+    - file: &amp;quot;&amp;quot;file_name.nc&amp;quot;&amp;quot;
+      read: ...
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;file-subtree&#34;&gt;file subtree&lt;/h3&gt;
+&lt;p&gt;Defines name (path) of the input/output file.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string containing filename (can have &lt;code&gt;$-expressions&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name_${i}.nc&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;communicator-subtree&#34;&gt;communicator subtree&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+
+
+    Feature not tested yet
+
+&lt;/div&gt;
+
+&lt;p&gt;Enables parallel NetCDF input/output. Defines communicator to use on read/write (all processes must have the same communicator and filename).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;communicator&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$-expression&lt;/code&gt; to valid MPI_comm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;&amp;quot;file_name.nc&amp;quot;&amp;quot;
+    communicator: $MPI_COMM_WORLD
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;on_event-subtree&#34;&gt;on_event subtree&lt;/h3&gt;
+&lt;p&gt;Defines on which events the plugin reads/writes data from/to NetCDF file. The value can be either single event name or the array of events names (both examples presented below).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;on_event&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string or array of string that cointain event names&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    on_event: &amp;quot;event&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    on_event: [&amp;quot;event_1&amp;quot;, &amp;quot;event_2&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;when-subtree&#34;&gt;when subtree&lt;/h3&gt;
+&lt;p&gt;Defines the condition on which plugin will execute input/output operation on the file.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;when&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$-expression&lt;/code&gt; condition evalueated to boolean value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    when: &amp;quot;$i &amp;lt; 10&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;groups-subtree&#34;&gt;groups subtree&lt;/h3&gt;
+&lt;p&gt;Defines groups in the NetCDF file. Mainly used to read/write attributes values of the groups.&lt;/p&gt;
+&lt;p&gt;If group won&#39;t have any attributes, this subtree can be omitted. Decl&#39;NetCDF plugin will create group by default for every variable.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;groups&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Map of &lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_groups_name&#34;&gt;group name subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    groups:
+      group1:
+        attributes:
+          attr1:
+            value: $value1
+          attr2:
+            value: $value2
+      group1/group2:
+        attributes:
+          attr1:
+            value: $value3
+          attr2:
+            value: $value4
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;group-name-subtree&#34;&gt;group name subtree&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name (path) of the group&lt;/td&gt;
+&lt;td&gt;Map with &lt;code&gt;attribute&lt;/code&gt; key with value as map of &lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_attr&#34;&gt;attribute subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;variables-subtree&#34;&gt;variables subtree&lt;/h3&gt;
+&lt;p&gt;Defines variables in the NetCDF file. Mainly used to define dimensions names and read/write attributes of the variable.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If no dimensions names are defined, the plugin will give them arbitrary names.&lt;/li&gt;
+&lt;li&gt;If the data type of variable differs from the one in descriptor this subtree is mandatory. It also allows to define &lt;code&gt;UNLIMITED&lt;/code&gt; dimension (size of dimension must be then set to &lt;code&gt;0&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;If the variable is in group it has to be define in the variable name (&lt;code&gt;/&lt;/code&gt; group notation: &lt;code&gt;group_name/varaibale_name&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;This subtree can be omitted. In this case, the name of NetCDF variable will be the same as the name of the descriptor and have the same type and no attributes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;variable path&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_variables_value&#34;&gt;variable definition subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    variables:
+      group1/group2/variable_name:
+        type: array
+        subtype: double
+        size: [0, $value, $value] # 0 -&amp;gt; UNLIMITED dimension
+        dimensions: [&amp;quot;time&amp;quot;, &amp;quot;height&amp;quot;, &amp;quot;width&amp;quot;]
+        attributes:
+          attr1: $value
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;variable-definition-subtree&#34;&gt;variable definition subtree&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;type&lt;/td&gt;
+&lt;td&gt;type of variable (defined the same way as other types in PDI)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dimensions&lt;/td&gt;
+&lt;td&gt;array of dimensions names of variable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;attributes&lt;/td&gt;
+&lt;td&gt;Map of &lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_attr&#34;&gt;attribute subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;attribute-subtree&#34;&gt;attribute subtree&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;attribute name&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$-expression&lt;/code&gt; value to be written as attribute&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;write-subtree&#34;&gt;write subtree&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;write&lt;/code&gt; subtree can have 2 definitions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Just a name of descriptor to write or the list of descriptors names to write to file. In this case the name of NetCDF variable will be the same as the name of the descriptor and have the same type and no attributes.&lt;/p&gt;
+&lt;p&gt;Configuration examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    write: data_name
+#-------------------------------------
+plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    write: [data_name_1, data_name_2]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dictionary, with key as descriptor name and value as following subtree:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;when&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_io_when&#34;&gt;read/write when subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;variable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;variable name to write (may be defined in &lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_variables&#34;&gt;variables subtree&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;variable_selection&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_var_selection&#34;&gt;subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  int_submatrix_11:
+    type: array
+    subtype: int
+    size: [4, 4]
+
+plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    variables:
+        integer_matrix:
+          type: array
+          subtype: int
+          size: [8, 8]
+          dimensions: [&amp;quot;height&amp;quot;, &amp;quot;width&amp;quot;]
+    write:
+      int_submatrix_11:
+        when: $i &amp;lt; 10
+        variable: integer_matrix
+        variable_selection:  # select bottom-left submatrix 4x4
+          start: [4, 4]
+          subsize: [4, 4]
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;subtree&#34;&gt;subtree&lt;/h4&gt;
+&lt;p&gt;Defines the part of file NetCDF variable where from read/to write the data. The hyperslab will be created from given &lt;code&gt;start&lt;/code&gt; and &lt;code&gt;subsize&lt;/code&gt; (&lt;code&gt;count&lt;/code&gt;) lists.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;start&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;list specifying start index for each dimension&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;subsize&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;list specifying count for each dimension&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;readwrite-when-subtree&#34;&gt;read/write when subtree&lt;/h4&gt;
+&lt;p&gt;Defines the condition on which plugin will read/write specific variable.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;when&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$-expression&lt;/code&gt; condition evalueated to boolean value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;read-subtree&#34;&gt;read subtree&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;read&lt;/code&gt; subtree can have 2 definitions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Just a name of descriptor to read or the list of descriptors names to read to file. In this case the name of NetCDF variable must be the same as the name of the descriptor and have the same type and no attributes will be read.&lt;/p&gt;
+&lt;p&gt;Configuration examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    read: data_name
+#-------------------------------------
+plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    read: [data_name_1, data_name_2]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dictionary, with key as descriptor name and value as following subtree:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;when&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_io_when&#34;&gt;read/write when subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;variable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;variable name to read (may be defined in &lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_variables&#34;&gt;variables subtree&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;variable_selection&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;member:Decl_NetCDF_plugin_1decl_netcdf_var_selection&#34;&gt;subtree&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Configuration example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data:
+  int_submatrix_11:
+    type: array
+    subtype: int
+    size: [4, 4]
+
+plugins:
+  decl_netcdf:
+    file: &amp;quot;file_name.nc&amp;quot;
+    variables:
+        integer_matrix:
+          type: array
+          subtype: int
+          size: [8, 8]
+    read:
+      int_submatrix_11:
+        when: $i &amp;lt; 10
+        variable: integer_matrix
+        variable_selection:  # select bottom-left submatrix 4x4
+          start: [4, 4]
+          subsize: [4, 4]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;full-yaml-example&#34;&gt;Full yaml example&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;metadata:
+  var_attr: float
+  group1_attr: float
+  group1_data_attr: float
+data:
+  int_submatrix_top:
+    type: array
+    subtype: int
+    size: [4, 8]
+  int_submatrix_bottom:
+    type: array
+    subtype: int
+    size: [4, 8]
+plugins:
+  decl_netcdf:
+    - file: &amp;quot;example.nc&amp;quot;
+      on_event: &amp;quot;write&amp;quot;
+      groups:
+        group_1:
+          attributes:
+            some_attr: $group1_attr
+        group_1/data:
+          attributes:
+            some_attr: $group1_data_attr
+      variables:
+        group_1/data/int_matrix:
+          type: array
+          subtype: int
+          size: [8, 8]
+          dimensions: [&amp;quot;height&amp;quot;, &amp;quot;width&amp;quot;]
+          attributes:
+            custom_attr: $var_attr
+      write:
+        int_submatrix_top:
+          variable: group_1/data/int_matrix
+          variable_selection:
+            start: [0, 0]
+            subsize: [4, 8]
+        int_submatrix_bottom:
+          variable: group_1/data/int_matrix
+          variable_selection:
+            start: [4, 0]
+            subsize: [4, 8]
+    - file: &amp;quot;example.nc&amp;quot;
+      on_event: &amp;quot;read&amp;quot;
+      groups:
+        group_1/data:
+          attributes:
+            some_attr: $custom_attr
+      variables:
+        group_1/data/int_matrix:
+          type: array
+          subtype: int
+          size: [8, 8]
+          dimensions: [&amp;quot;height&amp;quot;, &amp;quot;width&amp;quot;]
+          attributes:
+            custom_attr: $var_attr
+      read:
+        int_submatrix_top:
+          variable: group_1/data/int_matrix
+          variable_selection:
+            start: [0, 0]
+            subsize: [4, 8]
+        int_submatrix_bottom:
+          variable: group_1/data/int_matrix
+          variable_selection:
+            start: [4, 0]
+            subsize: [4, 8]
 &lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
@@ -2561,7 +3728,7 @@ plugins:
 &lt;h3 id=&#34;flowvr-plugin-tree&#34;&gt;FlowVR plugin tree&lt;/h3&gt;
 &lt;p&gt;The root of FlowVR plugin configuration (named &lt;code&gt;flowvr&lt;/code&gt;), is a dictionary that contains the following keys:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1component_node&#34;&gt;component&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1component_node&#34;&gt;component&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1wait_on_data_node&#34;&gt;wait_on_data&lt;/a&gt; (&lt;em&gt;recommended&lt;/em&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1wait_on_node&#34;&gt;wait_on&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1status_node&#34;&gt;status&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
@@ -2571,7 +3738,7 @@ plugins:
 &lt;li&gt;&lt;a href=&#34;member:FlowVR_plugin_1output_ports&#34;&gt;output_ports&lt;/a&gt; (&lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;component&#34;&gt;component&lt;/h4&gt;
-&lt;p&gt;For now only available component is &lt;code&gt;module&lt;/code&gt;, but this can be expanded to &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;synchronizer&lt;/code&gt; in the future. Configuration example:&lt;/p&gt;
+&lt;p&gt;For now, only available component is &lt;code&gt;module&lt;/code&gt; and this is a default value, but this can be expanded to &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;synchronizer&lt;/code&gt; in the future. Configuration example:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;plugins:
   flowvr:
     component: module
@@ -2725,7 +3892,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       data: data_desc
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The user can not always predict how many data will receive. In this case &lt;code&gt;size&lt;/code&gt; node type must be a name of metadata where to write the size of received payload. This metadata will hold the size of received array. The &lt;code&gt;size&lt;/code&gt; property of descriptor should be divided by size of single element. Example of receiving unknown payload size:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;metadata:
@@ -2737,7 +3904,7 @@ plugins:
   flowvr:
     ...
     input_ports:
-      port_name:
+      some_port_name:
         data: data_descriptor_name
         size: received_size
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In case that you want to send only a part of the data from descriptor you can specify it in &lt;code&gt;copy_data_selection&lt;/code&gt; tree defining datatype the same way as for descriptors. Simple example:&lt;/p&gt;
@@ -2747,7 +3914,7 @@ plugins:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       data: data_descriptor_name
       copy_data_selection:
         type: array
@@ -2769,7 +3936,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       chunks:
         - data: chunk_1_name
         - data: chunk_2_name
@@ -2881,7 +4048,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       event_button:
         KEY_UP: up
         KEY_DOWN: down
@@ -2926,7 +4093,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       event_mouse:
         POS_XY: pos_xy
         LEFT_BUTTON: left_button
@@ -2950,7 +4117,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       data: data_desc
       stamps:
         stamp_1_name: stamp_1_desc
@@ -2962,7 +4129,7 @@ flowvr:
 flowvr:
   ...
   output_ports:
-    port_name:
+    some_port_name:
       stamps:
         stamp_name:
           type: int
@@ -3770,6 +4937,116 @@ plugins:
 &lt;p&gt;Each line starting by &lt;code&gt;&amp;lt;&amp;lt;= data stop being available in the store&lt;/code&gt; means a piece of data is being removed from the store.&lt;/p&gt;
 &lt;p&gt;Each line starting by &lt;code&gt;!!! named event&lt;/code&gt; means a named event has been emitted.&lt;/p&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: YAML</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/yaml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/yaml/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;yaml-format&#34;&gt;YAML Format&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/YAML&#34;&gt;YAML&lt;/a&gt; is the format used to write PDI specification tree. A YAML file is a text format file that represents a tree.&lt;/p&gt;
+&lt;p&gt;For example, the following file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tree_1:
+  array_1:
+    - scalar_1
+    - scalar_2
+  array_2: [1, 2, 3]
+tree_2: {subtree_1: scalar_1, subtree_2: scalar_2}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Represents the following tree:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34; alt=&#34;Graphical representation of the YAML Tree&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34; alt=&#34;Graphical representation of the YAML Tree&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34; alt=&#34;Graphical representation of the YAML Tree&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34; alt=&#34;Graphical representation of the YAML Tree&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This tree contains the following kinds of nodes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;scalars,&lt;/li&gt;
+&lt;li&gt;sequences,&lt;/li&gt;
+&lt;li&gt;mappings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;scalar-element&#34;&gt;Scalar element&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;scalar&lt;/strong&gt; is a leaf in the tree, represented as a string. Some forms of scalars can be interpreted as boolean, integer or floating-point valued. Simple examples of scalars include (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2760844&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;hello&amp;quot;&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;world&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5.7&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Scalars are represented in pink in the graphical representation.&lt;/p&gt;
+&lt;h3 id=&#34;sequence-sub-tree&#34;&gt;Sequence sub-tree&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;sequence&lt;/strong&gt; is an ordered list of sub-nodes (that can themselves be scalars, sequences, mappings, ...). Two variants of the syntax are available for sequences (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in-line sequence: &lt;code&gt;[1, 2, 3, hello, &amp;quot;world&amp;quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;multi-line sequence:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 1
+- 2
+- 3
+- hello
+- world
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sequences are represented in yellow in the graphical representation.&lt;/p&gt;
+&lt;h3 id=&#34;mapping-sub-tree&#34;&gt;Mapping sub-tree&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;mapping&lt;/strong&gt; is an unordered list of key-value pairs (whose elements can themselves be scalars, sequences, mappings, ...). There can be no duplicates in the keys and the order in which the pairs are specified has no impact. Two variants of the syntax are available for mapping (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in-line mapping: &lt;code&gt;{1: one, 2: &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;: 3}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;multi-line mapping:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1: one
+2: two
+&amp;quot;three&amp;quot;: 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mapping are represented in blue in the graphical representation.&lt;/p&gt;
+&lt;h3 id=&#34;yaml-advanced-elements&#34;&gt;YAML advanced elements&lt;/h3&gt;
+&lt;p&gt;In addition to the previous basic building blocks, YAML supports additional advanced elements. These advanced elements build on the basic one to provide additional meaning.&lt;/p&gt;
+&lt;h4 id=&#34;ordered-mapping-sub-tree&#34;&gt;Ordered mapping sub-tree&lt;/h4&gt;
+&lt;p&gt;An &lt;strong&gt;ordered mapping&lt;/strong&gt; is represented as a sequence of mappings containing a single key-value pair each. There can be no duplicates in the keys. The sub-nodes can be scalars, sequences or mappings. Unlike in a normal mapping, the order of elements in an ordered mapping is meaningful. Two variants of the syntax are available for ordered mapping (see the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2759963&#34;&gt;YAML specification&lt;/a&gt; for the complete syntax).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in-line ordered mapping: &lt;code&gt;[{1: one}, {2: &amp;quot;two&amp;quot;}, {&amp;quot;three&amp;quot;: 3}]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;multi-line ordered mapping:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 1: one
+- 2: two
+- &amp;quot;three&amp;quot;: 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yaml-parsing-with-paraconf&#34;&gt;YAML Parsing with Paraconf&lt;/h2&gt;
+&lt;p&gt;The PDI_init function gets as parameter a tree with &lt;code&gt;logging&lt;/code&gt;, &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;metadata&lt;/code&gt; and &lt;code&gt;plugins&lt;/code&gt; maps defined in its root. User can define its own values in yaml and pass to PDI only the subtree:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;duration: 0.75
+size: [64, 64]
+parallelism: { height: 4, width: 4 }
+
+# only the following config will be passed to PDI
+pdi_subtree:
+  metadata:
+    iteration: int
+  data:
+    main_field: double
+  plugins:
+    decl_hdf5:
+       ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PC_tree_t root = PC_parse_path(&amp;quot;example.yaml&amp;quot;);
+PDI_init(PC_get(root, &amp;quot;pdi_subtree&amp;quot;));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fortran source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type(PC_tree_t),target :: root
+
+call pc_parse_path(&amp;quot;example.yaml&amp;quot;, root)
+call pdi_init(pc_get(root, &amp;quot;pdi_subtree&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
     

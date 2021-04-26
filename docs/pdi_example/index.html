@@ -17,29 +17,23 @@
 <link rel="icon" type="image/png" href="/new-site/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/new-site/favicons/android-192x192.png" sizes="192x192">
 
-<title>PDI example | PDI</title><meta property="og:title" content="PDI example" />
-<meta property="og:description" content="PDI example application can be found in repository in the example directory. The source code is written in C, Fortran and Python.
-The example has a single source file (for each supported programming language), but specification tree to each plugin. Just by replacing the configuration file, the example program will use different libraries and different I/O operations.
-The example implements simple Heat equation algorithm in 2 dimensional space.
-Heat algorithm Each element in a matrix is a point with temperature." />
+<title>PDI examples | PDI</title><meta property="og:title" content="PDI examples" />
+<meta property="og:description" content="The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a YAML file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.
+The example implements implements a simple Heat equation solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/pdi_example/" /><meta property="article:section" content="docs" />
 
 
 
-<meta itemprop="name" content="PDI example">
-<meta itemprop="description" content="PDI example application can be found in repository in the example directory. The source code is written in C, Fortran and Python.
-The example has a single source file (for each supported programming language), but specification tree to each plugin. Just by replacing the configuration file, the example program will use different libraries and different I/O operations.
-The example implements simple Heat equation algorithm in 2 dimensional space.
-Heat algorithm Each element in a matrix is a point with temperature.">
+<meta itemprop="name" content="PDI examples">
+<meta itemprop="description" content="The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a YAML file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.
+The example implements implements a simple Heat equation solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions.">
 
-<meta itemprop="wordCount" content="621">
+<meta itemprop="wordCount" content="657">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PDI example"/>
-<meta name="twitter:description" content="PDI example application can be found in repository in the example directory. The source code is written in C, Fortran and Python.
-The example has a single source file (for each supported programming language), but specification tree to each plugin. Just by replacing the configuration file, the example program will use different libraries and different I/O operations.
-The example implements simple Heat equation algorithm in 2 dimensional space.
-Heat algorithm Each element in a matrix is a point with temperature."/>
+<meta name="twitter:title" content="PDI examples"/>
+<meta name="twitter:description" content="The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a YAML file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.
+The example implements implements a simple Heat equation solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions."/>
 
 
 
@@ -204,108 +198,8 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
-    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdeprecated-li">
-    <a href="/new-site/docs/deprecated/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdeprecated"><span class="">Deprecated List</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfirst_steps-li">
-    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="">First steps with PDI</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
-    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-new-sitedocsref-li">
-    <a href="/new-site/docs/ref/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">Full API reference</span></a>
+    <a href="/new-site/docs/ref/" title="PDI API reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsref"><span class="">API reference</span></a>
     
       
       <ul class="pr-md-3 ul-2">
@@ -352,8 +246,113 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdiarray_datatype-li">
     <a href="/new-site/docs/ref/pdi/array_datatype/" title="PDI::Array_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatype"><span class="">Array_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/index_accessor/" title="PDI::Array_datatype::Index_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeindex_accessor"><span class="">Index_accessor</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor-li">
+    <a href="/new-site/docs/ref/pdi/array_datatype/slice_accessor/" title="PDI::Array_datatype::Slice_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiarray_datatypeslice_accessor"><span class="">Slice_accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdicallbacks-li">
+    <a href="/new-site/docs/ref/pdi/callbacks/" title="PDI::Callbacks class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdicallbacks"><span class="">Callbacks</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiconfig_error-li">
+    <a href="/new-site/docs/ref/pdi/config_error/" title="PDI::Config_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiconfig_error"><span class="">Config_error</span></a>
     
   </li>
 
@@ -507,8 +506,38 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdidatatype-li">
     <a href="/new-site/docs/ref/pdi/datatype/" title="PDI::Datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatype"><span class="">Datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdidatatypeaccessor_base-li">
+    <a href="/new-site/docs/ref/pdi/datatype/accessor_base/" title="PDI::Datatype::Accessor_base struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdidatatypeaccessor_base"><span class="">Accessor_base</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -657,6 +686,31 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiimpl_error-li">
+    <a href="/new-site/docs/ref/pdi/impl_error/" title="PDI::Impl_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiimpl_error"><span class="">Impl_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdilogger_sptr-li">
     <a href="/new-site/docs/ref/pdi/logger_sptr/" title="PDI::Logger_sptr typedef reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdilogger_sptr"><span class="">Logger_sptr</span></a>
     
@@ -732,8 +786,63 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiplugin_error-li">
+    <a href="/new-site/docs/ref/pdi/plugin_error/" title="PDI::Plugin_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiplugin_error"><span class="">Plugin_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefpdipointer_datatype-li">
     <a href="/new-site/docs/ref/pdi/pointer_datatype/" title="PDI::Pointer_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatype"><span class="">Pointer_datatype</span></a>
+    
+      
+      <ul class="pr-md-3 ul-4">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdipointer_datatypeaccessor-li">
+    <a href="/new-site/docs/ref/pdi/pointer_datatype/accessor/" title="PDI::Pointer_datatype::Accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdipointer_datatypeaccessor"><span class="">Accessor</span></a>
+    
+  </li>
+
+          
+        
+      </ul>
     
   </li>
 
@@ -783,6 +892,31 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember-li">
     <a href="/new-site/docs/ref/pdi/record_datatype/member/" title="PDI::Record_datatype::Member class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember"><span class="">Member</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdirecord_datatypemember_accessor-li">
+    <a href="/new-site/docs/ref/pdi/record_datatype/member_accessor/" title="PDI::Record_datatype::Member_accessor class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdirecord_datatypemember_accessor"><span class="">Member_accessor</span></a>
     
   </li>
 
@@ -1017,6 +1151,31 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiright_error-li">
+    <a href="/new-site/docs/ref/pdi/right_error/" title="PDI::Right_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiright_error"><span class="">Right_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiscalar_datatype-li">
     <a href="/new-site/docs/ref/pdi/scalar_datatype/" title="PDI::Scalar_datatype class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiscalar_datatype"><span class="">Scalar_datatype</span></a>
     
@@ -1049,6 +1208,131 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdistate_error-li">
+    <a href="/new-site/docs/ref/pdi/state_error/" title="PDI::State_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdistate_error"><span class="">State_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdisystem_error-li">
+    <a href="/new-site/docs/ref/pdi/system_error/" title="PDI::System_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdisystem_error"><span class="">System_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpditype_error-li">
+    <a href="/new-site/docs/ref/pdi/type_error/" title="PDI::Type_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpditype_error"><span class="">Type_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdiunavailable_error-li">
+    <a href="/new-site/docs/ref/pdi/unavailable_error/" title="PDI::Unavailable_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdiunavailable_error"><span class="">Unavailable_error</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdivalue_error-li">
+    <a href="/new-site/docs/ref/pdi/value_error/" title="PDI::Value_error class reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdivalue_error"><span class="">Value_error</span></a>
+    
+  </li>
+
+          
+        
       </ul>
     
   </li>
@@ -1073,8 +1357,8 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_s-li">
-    <a href="/new-site/docs/ref/pdi_errhandler_s/" title="PDI_errhandler_s struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_s"><span class="">PDI_errhandler_s</span></a>
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefpdi_errhandler_t-li">
+    <a href="/new-site/docs/ref/pdi_errhandler_t/" title="PDI_errhandler_t struct reference" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefpdi_errhandler_t"><span class="">PDI_errhandler_t</span></a>
     
   </li>
 
@@ -1184,6 +1468,106 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocschecklists-li">
+    <a href="/new-site/docs/checklists/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocschecklists"><span class="">Checklists</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsconcepts-li">
+    <a href="/new-site/docs/concepts/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsconcepts"><span class="">Core Concepts</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfirst_steps-li">
+    <a href="/new-site/docs/first_steps/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfirst_steps"><span class="">First steps with PDI</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsfti_plugin-li">
+    <a href="/new-site/docs/fti_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsfti_plugin"><span class="">FTI plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocshands_on-li">
     <a href="/new-site/docs/hands_on/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocshands_on"><span class="">Hands-on tutorial</span></a>
     
@@ -1260,7 +1644,32 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-new-sitedocspdi_example-li">
-    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="td-sidebar-nav-active-item">PDI example</span></a>
+    <a href="/new-site/docs/pdi_example/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_example"><span class="td-sidebar-nav-active-item">PDI examples</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspdi_usage-li">
+    <a href="/new-site/docs/pdi_usage/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspdi_usage"><span class="">PDI usage</span></a>
     
   </li>
 
@@ -1311,6 +1720,31 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocspycall_plugin-li">
     <a href="/new-site/docs/pycall_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocspycall_plugin"><span class="">Pycall plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsserialize_plugin-li">
+    <a href="/new-site/docs/serialize_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsserialize_plugin"><span class="">Serialize plugin</span></a>
     
   </li>
 
@@ -1409,6 +1843,31 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   
   
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsdecl_netcdf_plugin-li">
+    <a href="/new-site/docs/decl_netcdf_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsdecl_netcdf_plugin"><span class="">The Decl&#39;NetCDF plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsflowvr_plugin-li">
     <a href="/new-site/docs/flowvr_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsflowvr_plugin"><span class="">The FlowVR plugin</span></a>
     
@@ -1461,6 +1920,31 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
   
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocstrace_plugin-li">
     <a href="/new-site/docs/trace_plugin/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocstrace_plugin"><span class="">Trace plugin</span></a>
+    
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-new-sitedocsyaml-li">
+    <a href="/new-site/docs/yaml/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__page" id="m-new-sitedocsyaml"><span class="">YAML</span></a>
     
   </li>
 
@@ -1526,7 +2010,7 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/pdi_example/">PDI example</a>
+	<a href="http://pdi.julien-bigot.fr/new-site/docs/pdi_example/">PDI examples</a>
 </li>
 
 	</ol>
@@ -1534,21 +2018,20 @@ Heat algorithm Each element in a matrix is a point with temperature."/>
 
             
 <div class="td-content">
-	<h1>PDI example</h1>
+	<h1>PDI examples</h1>
     
 	       
-	<p>PDI example application can be found in repository in the <code>example</code> directory. The source code is written in C, Fortran and Python.</p>
-<p>The example has a single source file (for each supported programming language), but specification tree to each plugin. Just by replacing the configuration file, the example program will use different libraries and different I/O operations.</p>
-<p>The example implements simple <a href="https://en.wikipedia.org/wiki/Heat_equation">Heat equation</a> algorithm in 2 dimensional space.</p>
-<h2 id="heat-algorithm">Heat algorithm</h2>
-<p>Each element in a matrix is a point with temperature. In each iteration every cell is calculated by an weighted average of itself and neighbour cells (top, bottom, left and right):</p>
-<pre><code>matrix[i][j] = 0.500 * matrix[i][j] +
-               0.125 * matrix[i-1][j] +
-               0.125 * matrix[i+1][j] +
-               0.125 * matrix[i][j-1] +
-               0.125 * matrix[i][j+1];
-</code></pre><p>To not override the cells while processing we need to create temporary matrix to save results and then move result to original matrix (<code>cur</code> and <code>next</code> in source file). Above calculations are written in <code>iter</code> function.</p>
-<p>Now we can add a MPI to our algorithm. Let's split that matrix by MPI processes. Each process will compute part of global matrix.</p>
+	<p>The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a <a href="compound:YAML">YAML</a> file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.</p>
+<p>The example implements implements a simple <a href="https://en.wikipedia.org/wiki/Heat_equation">Heat equation</a> solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions.</p>
+<h2 id="code-algorithm">Code algorithm</h2>
+<p>The data is stored in a 2D array in which each point represents the temperature. In every iteration, the value at the next iteration of each cell is computed by applying a cross stencil using the values of the cell and of its neighbours (top, bottom, left and right) at the current iteration:</p>
+<pre><code>data[i][j] = 0.500 * data[i][j]
+           + 0.125 * data[i-1][j]
+           + 0.125 * data[i+1][j]
+           + 0.125 * data[i][j-1]
+           + 0.125 * data[i][j+1];
+</code></pre><p>In order not to override the cells while processing we use two arrays to store the values, one for the current iteration (<code>cur</code> in the code) and one for the next iteration (<code>next</code> in the code). These computations are written in the <code>iter</code> function.</p>
+<p>This code is parallelized with MPI . Let's split that matrix by MPI processes. Each process will compute part of global matrix.</p>
 <p>For example: matrix 16 x 16 integers and 16 MPI processes gives submatrices of 4 x 4 integers for every process. We have to add to our global matrix one row above and below, column to the left and right to be able to compute border cells. In our example row on the top has some value (”x”) bigger than 0 (representing source of heat):</p>
 <p><img src="/docs/imgs/heat_global_matrix.jpg" alt=""></p>
 <p>MPI processes need to exchange information about their local matrix border cells (communicate with neighbours to exchange row/column of matrix). Each MPI process will have a local matrix:</p>

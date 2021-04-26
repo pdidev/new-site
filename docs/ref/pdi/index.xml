@@ -22,7 +22,20 @@
       <description>
         
         
-        &lt;p&gt;an &lt;a href=&#34;compound:classPDI_1_1Array__datatype&#34;&gt;Array_datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; that represents an array: i.e storage of multiple elements of the same type continuously in memory.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;an &lt;a href=&#34;compound:classPDI_1_1Array__datatype&#34;&gt;Array_datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; that represents an array: i.e storage of multiple elements of the same type continuously in memory.&lt;/p&gt;
+&lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;index_accessor&#34;&gt;&lt;code&gt;class Index_accessor&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Accessor to get single element from array.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;slice_accessor&#34;&gt;&lt;code&gt;class Slice_accessor&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Accessor to get a slice of an array, returns array of the same subtype.&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#array_datatype-size_t-size_t-size_t-datatype_uptr&#34;&gt;&lt;code&gt; Array_datatype ( size_t, size_t, size_t, Datatype_uptr )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -61,6 +74,8 @@
 &lt;dd&gt;Number of elements the array can store. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#start&#34;&gt;&lt;code&gt;size_t start ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;id of the first actual element of the array &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; subaccess_by_iterators ( void *, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates datatype of subtype and returns it with a moved pointer. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#subsize&#34;&gt;&lt;code&gt;size_t subsize ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Number of actual elements in the array. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#subtype&#34;&gt;&lt;code&gt;const Datatype &amp;amp; subtype ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -270,6 +285,24 @@ This should not deallocate the memory.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subaccess_by_iterators&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates datatype of subtype and returns it with a moved pointer.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the pointer to the data&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the begin of remaining accessors&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the end of remaining accessors&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;pointer moved by offset and new datatype&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;subsize&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;size_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subsize&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Number of actual elements in the array.&lt;/p&gt;
@@ -292,56 +325,54 @@ This should not deallocate the memory.
     </item>
     
     <item>
-      <title>Docs: PDI::Context class reference</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/</link>
+      <title>Docs: PDI::Callbacks class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/</guid>
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/</guid>
       <description>
         
         
         &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;datatype_template_parser&#34;&gt;&lt;code&gt;typedef Datatype_template_parser&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A function that parses a PC\_tree\_t to create a datatype\_template\.
-&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;iterator&#34;&gt;&lt;code&gt;class Iterator&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;An iterator used to go through the descriptor store\.
-&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
 &lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#callbacks-context-&#34;&gt;&lt;code&gt; Callbacks ( Context &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dt&gt;&lt;a href=&#34;#add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_data_callback ( const std::function&lt; void(const std::string &amp;, Ref)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Adds new data callback to context. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser&#34;&gt;&lt;code&gt;void add_datatype ( const std::string &amp;, Datatype_template_parser )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Adds new datatype parser to the context. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#add_data_remove_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_data_remove_callback ( const std::function&lt; void(const std::string &amp;, Ref)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Adds new data callback to context. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_empty_desc_access_callback ( const std::function&lt; void(const std::string &amp;)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Adds new empty desc access callback to context. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_event_callback ( const std::function&lt; void(const std::string &amp;)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Adds new event callback to context. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#add_init_callback-const-stdfunction-void-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_init_callback ( const std::function&lt; void()&gt; &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Adds new init callback to context. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#begin&#34;&gt;&lt;code&gt;Iterator begin ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns an iterator on the first descriptor. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#datatype-pc_tree_t&#34;&gt;&lt;code&gt;Datatype_template_uptr datatype ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Creates a new datatype template from a paraconf-style config. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#desc-const-stdstring-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; desc ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#desc-const-stdstring-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#desc-const-char-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; desc ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#desc-const-char-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#end&#34;&gt;&lt;code&gt;Iterator end ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Returns an iterator past the last descriptor. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#event-const-char-&#34;&gt;&lt;code&gt;void event ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Triggers a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; &amp;quot;event&amp;quot;. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#finalize_and_exit&#34;&gt;&lt;code&gt;void finalize_and_exit ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dt&gt;&lt;a href=&#34;#logger&#34;&gt;&lt;code&gt;Logger_sptr logger ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dt&gt;&lt;a href=&#34;#operator-const-stdstring-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; operator[] ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#operator-const-stdstring-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#operator-const-char-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; operator[] ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#operator-const-char-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#context&#34;&gt;&lt;code&gt; ~Context ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#call_data_callbacks-const-stdstring--ref&#34;&gt;&lt;code&gt;void call_data_callbacks ( const std::string &amp;, Ref )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Calls data callbacks. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#call_data_remove_callbacks-const-stdstring--ref&#34;&gt;&lt;code&gt;void call_data_remove_callbacks ( const std::string &amp;, Ref )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Calls data remove callbacks. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#call_empty_desc_access_callbacks-const-stdstring-&#34;&gt;&lt;code&gt;void call_empty_desc_access_callbacks ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Calls empty desc callbacks. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#call_event_callbacks-const-stdstring-&#34;&gt;&lt;code&gt;void call_event_callbacks ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Calls event callbacks. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#call_init_callbacks&#34;&gt;&lt;code&gt;void call_init_callbacks ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Calls init callbacks. &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;callbacks-context-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Callbacks&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Context &amp;amp;&lt;/span&gt; &lt;a href=&#34;#callbacks-context--_-ctx&#34;&gt;&lt;var class=&#34;nv&#34;&gt;ctx&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;callbacks-context--_-ctx&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;ctx&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;std::function&amp;lt; void()&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_data_callback&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::function&amp;lt; void(const std::string &amp;amp;, Ref)&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-callback&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
@@ -359,16 +390,20 @@ This should not deallocate the memory.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;add_datatype-const-stdstring--datatype_template_parser&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_datatype&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser-_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Datatype_template_parser&lt;/span&gt; &lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser-_-parser&#34;&gt;&lt;var class=&#34;nv&#34;&gt;parser&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Adds new datatype parser to the context.&lt;/p&gt;
+&lt;h3 id=&#34;add_data_remove_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::function&amp;lt; void()&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_data_remove_callback&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::function&amp;lt; void(const std::string &amp;amp;, Ref)&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_data_remove_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-callback&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_data_remove_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Adds new data callback to context.&lt;/p&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_datatype-const-stdstring--datatype_template_parser-_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;name of the datatype to add&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_datatype-const-stdstring--datatype_template_parser-_-parser&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;parser&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;function that creates new datatype_template from PC_tree_t&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;add_data_remove_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-callback&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;function to call when data is reclaimed/released&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;add_data_remove_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the name of the data on which call the callback, if not specified it&#39;s called on any data&lt;/dd&gt;
 &lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;function that removes callback&lt;/p&gt;
+&lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -417,9 +452,191 @@ This should not deallocate the memory.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;call_data_callbacks-const-stdstring--ref&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;call_data_callbacks&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#call_data_callbacks-const-stdstring--ref-_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;a href=&#34;#call_data_callbacks-const-stdstring--ref-_-ref&#34;&gt;&lt;var class=&#34;nv&#34;&gt;ref&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Calls data callbacks.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;call_data_callbacks-const-stdstring--ref-_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;name of the shared descriptor&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;call_data_callbacks-const-stdstring--ref-_-ref&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;ref&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;shared reference&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;call_data_remove_callbacks-const-stdstring--ref&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;call_data_remove_callbacks&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#call_data_remove_callbacks-const-stdstring--ref-_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;a href=&#34;#call_data_remove_callbacks-const-stdstring--ref-_-ref&#34;&gt;&lt;var class=&#34;nv&#34;&gt;ref&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Calls data remove callbacks.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;call_data_remove_callbacks-const-stdstring--ref-_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;name of the descriptor that will be reclaimed/released&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;call_data_remove_callbacks-const-stdstring--ref-_-ref&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;ref&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;reference that will be reclaimed/released&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;call_empty_desc_access_callbacks-const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;call_empty_desc_access_callbacks&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#call_empty_desc_access_callbacks-const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Calls empty desc callbacks.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;call_empty_desc_access_callbacks-const-stdstring--_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;name of the accessed descriptor&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;call_event_callbacks-const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;call_event_callbacks&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#call_event_callbacks-const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Calls event callbacks.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;call_event_callbacks-const-stdstring--_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;name of the event&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;call_init_callbacks&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;call_init_callbacks&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Calls init callbacks.&lt;/p&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::Config_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/config_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/config_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#config_error-args--const-s--pc_tree_t&#34;&gt;&lt;code&gt; Config_error ( Args &amp;&amp;..., const S &amp;, PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#config_error-config_error-&#34;&gt;&lt;code&gt; Config_error ( Config_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#config_error-const-config_error-&#34;&gt;&lt;code&gt; Config_error ( const Config_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;config_error-args--const-s--pc_tree_t&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Config_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#config_error-args--const-s--pc_tree_t-_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#config_error-args--const-s--pc_tree_t-_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;PC_tree_t&lt;/span&gt; &lt;a href=&#34;#config_error-args--const-s--pc_tree_t-_-tree&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;config_error-args--const-s--pc_tree_t-_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;config_error-args--const-s--pc_tree_t-_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;config_error-args--const-s--pc_tree_t-_-tree&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;config_error-config_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Config_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Config_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#config_error-config_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;config_error-config_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;config_error-const-config_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Config_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Config_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#config_error-const-config_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;config_error-const-config_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::Context class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;datatype_template_parser&#34;&gt;&lt;code&gt;typedef Datatype_template_parser&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;A function that parses a PC_tree_t to create a datatype_template.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;iterator&#34;&gt;&lt;code&gt;class Iterator&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;An iterator used to go through the descriptor store.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser&#34;&gt;&lt;code&gt;void add_datatype ( const std::string &amp;, Datatype_template_parser )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Adds new datatype parser to the context. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#begin&#34;&gt;&lt;code&gt;Iterator begin ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns an iterator on the first descriptor. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#callbacks&#34;&gt;&lt;code&gt;Callbacks &amp;amp; callbacks ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;compound:classPDI_1_1Callbacks&#34;&gt;Callbacks&lt;/a&gt; of the context. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#datatype-pc_tree_t&#34;&gt;&lt;code&gt;Datatype_template_uptr datatype ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates a new datatype template from a paraconf-style config. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#desc-const-stdstring-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; desc ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#desc-const-stdstring-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#desc-const-char-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; desc ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#desc-const-char-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#end&#34;&gt;&lt;code&gt;Iterator end ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns an iterator past the last descriptor. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#event-const-char-&#34;&gt;&lt;code&gt;void event ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Triggers a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; &amp;quot;event&amp;quot;. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#finalize_and_exit&#34;&gt;&lt;code&gt;void finalize_and_exit ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Finalizes &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; and exits application. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#logger&#34;&gt;&lt;code&gt;Logger_sptr logger ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Logger getter. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-stdstring-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; operator[] ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#operator-const-stdstring-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-char-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; operator[] ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Accesses the descriptor for a specific name. &lt;a href=&#34;#operator-const-char-&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#context&#34;&gt;&lt;code&gt; ~Context ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;add_datatype-const-stdstring--datatype_template_parser&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_datatype&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser-_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Datatype_template_parser&lt;/span&gt; &lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser-_-parser&#34;&gt;&lt;var class=&#34;nv&#34;&gt;parser&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Adds new datatype parser to the context.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;add_datatype-const-stdstring--datatype_template_parser-_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;name of the datatype to add&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;add_datatype-const-stdstring--datatype_template_parser-_-parser&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;parser&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;function that creates new datatype_template from PC_tree_t&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;Iterator&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;begin&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Returns an iterator on the first descriptor.&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;callbacks&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Callbacks &amp;amp;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;callbacks&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Callbacks&#34;&gt;Callbacks&lt;/a&gt; of the context.&lt;/p&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;context callbacks&lt;/p&gt;
+&lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;datatype-pc_tree_t&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -483,10 +700,16 @@ Might be uninitialized
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;finalize_and_exit&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;finalize_and_exit&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Finalizes &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; and exits application.&lt;/p&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;logger&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;Logger_sptr&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;logger&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Logger getter.&lt;/p&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;logger&lt;/p&gt;
+&lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;operator-const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -535,21 +758,21 @@ Might be uninitialized
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#context_proxy-context--pc_tree_t-stdstring&#34;&gt;&lt;code&gt; Context_proxy ( Context &amp;, PC_tree_t, std::string )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dt&gt;&lt;a href=&#34;#add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_data_callback ( const std::function&lt; void(const std::string &amp;, Ref)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Adds new data callback to context. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser&#34;&gt;&lt;code&gt;void add_datatype ( const std::string &amp;, Datatype_template_parser )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;a href=&#34;member:classPDI_1_1Context_1a49ae5a3b3cb8d97b0f61e6a3dd9b0fd6&#34;&gt;Context::add_datatype&lt;/a&gt; proxy for plugins. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_empty_desc_access_callback ( const std::function&lt; void(const std::string &amp;)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Adds new empty desc access callback to context. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_event_callback ( const std::function&lt; void(const std::string &amp;)&gt; &amp;, const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Adds new event callback to context. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#add_init_callback-const-stdfunction-void-&#34;&gt;&lt;code&gt;std::function&amp;lt; void()&amp;gt; add_init_callback ( const std::function&lt; void()&gt; &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Adds new init callback to context. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#begin&#34;&gt;&lt;code&gt;Iterator begin ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;a href=&#34;member:classPDI_1_1Context_1af3cc6b4e8ecd9bc50b933527ccd5af19&#34;&gt;Context::begin&lt;/a&gt; proxy for plugins. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#callbacks&#34;&gt;&lt;code&gt;Callbacks &amp;amp; callbacks ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;member:classPDI_1_1Context_1ab1739cf4e3bfde11d5271b305fa17e20&#34;&gt;Context::callbacks&lt;/a&gt; proxy for plugins. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#datatype-pc_tree_t&#34;&gt;&lt;code&gt;Datatype_template_uptr datatype ( PC_tree_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;a href=&#34;member:classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b&#34;&gt;Context::datatype&lt;/a&gt; proxy for plugins. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#desc-const-stdstring-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; desc ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -561,6 +784,7 @@ Might be uninitialized
 &lt;dt&gt;&lt;a href=&#34;#event-const-char-&#34;&gt;&lt;code&gt;void event ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;a href=&#34;member:classPDI_1_1Context_1afb530384d29404ab88a3c4210d03f19d&#34;&gt;Context::event&lt;/a&gt; proxy for plugins. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#finalize_and_exit&#34;&gt;&lt;code&gt;void finalize_and_exit ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Finalizes &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; and exits application. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#logger&#34;&gt;&lt;code&gt;Logger_sptr logger ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns local logger. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-const-stdstring-&#34;&gt;&lt;code&gt;Data_descriptor &amp;amp; operator[] ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -585,22 +809,6 @@ Might be uninitialized
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;std::function&amp;lt; void()&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_data_callback&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::function&amp;lt; void(const std::string &amp;amp;, Ref)&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-callback&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Adds new data callback to context.&lt;/p&gt;
-&lt;h4&gt;Parameters&lt;/h4&gt;
-&lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-callback&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;function to call when data is being available&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_data_callback-const-stdfunction-voidconst-stdstring--ref--const-stdstring--_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;the name of the data on which call the callback, if not specified it&#39;s called on any data&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h4&gt;Result&lt;/h4&gt;
-&lt;section class=&#34;result&#34;&gt;
-&lt;p&gt;function that removes callback&lt;/p&gt;
-&lt;/section&gt;
-&lt;/article&gt;
-&lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;add_datatype-const-stdstring--datatype_template_parser&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_datatype&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser-_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Datatype_template_parser&lt;/span&gt; &lt;a href=&#34;#add_datatype-const-stdstring--datatype_template_parser-_-parser&#34;&gt;&lt;var class=&#34;nv&#34;&gt;parser&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;member:classPDI_1_1Context_1a49ae5a3b3cb8d97b0f61e6a3dd9b0fd6&#34;&gt;Context::add_datatype&lt;/a&gt; proxy for plugins.&lt;/p&gt;
@@ -613,55 +821,14 @@ Might be uninitialized
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;std::function&amp;lt; void()&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_empty_desc_access_callback&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::function&amp;lt; void(const std::string &amp;amp;)&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-callback&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Adds new empty desc access callback to context.&lt;/p&gt;
-&lt;h4&gt;Parameters&lt;/h4&gt;
-&lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-callback&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;function to call when event is called&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_empty_desc_access_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;the name of the data on which call the callback, if not specified it&#39;s called on any data&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h4&gt;Result&lt;/h4&gt;
-&lt;section class=&#34;result&#34;&gt;
-&lt;p&gt;function that removes callback&lt;/p&gt;
-&lt;/section&gt;
-&lt;/article&gt;
-&lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;std::function&amp;lt; void()&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_event_callback&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::function&amp;lt; void(const std::string &amp;amp;)&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-callback&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Adds new event callback to context.&lt;/p&gt;
-&lt;h4&gt;Parameters&lt;/h4&gt;
-&lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-callback&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;function to call when event is called&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_event_callback-const-stdfunction-voidconst-stdstring---const-stdstring--_-name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;the name of the event on which call the callback, if not specified it&#39;s called on any event&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h4&gt;Result&lt;/h4&gt;
-&lt;section class=&#34;result&#34;&gt;
-&lt;p&gt;function that removes callback&lt;/p&gt;
-&lt;/section&gt;
-&lt;/article&gt;
-&lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;add_init_callback-const-stdfunction-void-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;std::function&amp;lt; void()&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_init_callback&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::function&amp;lt; void()&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#add_init_callback-const-stdfunction-void--_-callback&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Adds new init callback to context.&lt;/p&gt;
-&lt;h4&gt;Parameters&lt;/h4&gt;
-&lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;add_init_callback-const-stdfunction-void--_-callback&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;callback&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;function to call when data and metadata are loaded&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h4&gt;Result&lt;/h4&gt;
-&lt;section class=&#34;result&#34;&gt;
-&lt;p&gt;function that removes callback&lt;/p&gt;
-&lt;/section&gt;
-&lt;/article&gt;
-&lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;Iterator&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;begin&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;member:classPDI_1_1Context_1af3cc6b4e8ecd9bc50b933527ccd5af19&#34;&gt;Context::begin&lt;/a&gt; proxy for plugins.&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;callbacks&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Callbacks &amp;amp;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;callbacks&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;member:classPDI_1_1Context_1ab1739cf4e3bfde11d5271b305fa17e20&#34;&gt;Context::callbacks&lt;/a&gt; proxy for plugins.&lt;/p&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;datatype-pc_tree_t&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -711,6 +878,7 @@ Might be uninitialized
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;finalize_and_exit&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;finalize_and_exit&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Finalizes &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; and exits application.&lt;/p&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;logger&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -755,7 +923,13 @@ Might be uninitialized
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#default_type-datatype_template_uptr&#34;&gt;&lt;code&gt;void default_type ( Datatype_template_uptr )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Set the datatype template used to type raw pointers shared through this descriptor. &lt;/dd&gt;
@@ -903,12 +1077,23 @@ Releases ownership of a data shared with &lt;a href=&#34;compound:namespacePDI&#
       <description>
         
         
-        &lt;p&gt;A &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype__template&#34;&gt;Datatype_template&lt;/a&gt; that accepts no argument.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;A &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype__template&#34;&gt;Datatype_template&lt;/a&gt; that accepts no argument.&lt;/p&gt;
 &lt;p&gt;It represents the memory layout of data and supports some simple operations on it:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;accessing its content&lt;/li&gt;
 &lt;li&gt;cloning and destruction&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;accessor_base&#34;&gt;&lt;code&gt;struct Accessor_base&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Base class for datatype accesssors, that allow to get pointer to subtype.&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#alignment&#34;&gt;&lt;code&gt;size_t alignment ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -937,6 +1122,12 @@ Releases ownership of a data shared with &lt;a href=&#34;compound:namespacePDI&#
 &lt;dd&gt;Test for equality. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#simple&#34;&gt;&lt;code&gt;bool simple ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Tells if data can be copied as bytes (if type is dense) and doesn&#39;t need a destroyer. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subaccess-const-accessor_base--void-&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; subaccess ( const Accessor_base &amp;, void * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates datatype of subtype and returns it with a moved pointer. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subaccess-const-stdvector-stdunique_ptr-accessor_base---void-&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; subaccess ( const std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt; &amp;, void * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates datatype of subtype and returns it with a moved pointer. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; subaccess_by_iterators ( void *, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates datatype of subtype and returns it with a moved pointer. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#datatype&#34;&gt;&lt;code&gt; ~Datatype ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
@@ -1088,6 +1279,56 @@ This should not deallocate the memory.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subaccess-const-accessor_base--void-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subaccess&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Accessor_base &amp;amp;&lt;/span&gt; &lt;a href=&#34;#subaccess-const-accessor_base--void--_-accessor&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessor&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#subaccess-const-accessor_base--void--_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates datatype of subtype and returns it with a moved pointer.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess-const-accessor_base--void--_-accessor&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessor&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;accessor to get subtype of datatype&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess-const-accessor_base--void--_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the pointer to the data&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;pointer with offset and new datatype&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subaccess-const-stdvector-stdunique_ptr-accessor_base---void-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subaccess&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#subaccess-const-stdvector-stdunique_ptr-accessor_base---void--_-accessors&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessors&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#subaccess-const-stdvector-stdunique_ptr-accessor_base---void--_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates datatype of subtype and returns it with a moved pointer.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess-const-stdvector-stdunique_ptr-accessor_base---void--_-accessors&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessors&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;accessors to get nested subtype of datatype&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess-const-stdvector-stdunique_ptr-accessor_base---void--_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the pointer to the data&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;pointer with offset and new datatype&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subaccess_by_iterators&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates datatype of subtype and returns it with a moved pointer.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the pointer to the data&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the begin of remaining accessors&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the end of remaining accessors&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;pointer moved by offset and new datatype&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;datatype&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;~Datatype&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;/article&gt;
@@ -1104,7 +1345,13 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#clone&#34;&gt;&lt;code&gt;Datatype_template_uptr clone ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Creates a new datatype as an exact copy of this one. &lt;/dd&gt;
@@ -1167,7 +1414,13 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
     </item>
@@ -1181,7 +1434,13 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
     </item>
@@ -1195,43 +1454,69 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;#error-const-args--pdi_status_t-const-char-&#34;&gt;&lt;code&gt; Error ( const Args &amp;..., PDI_status_t, const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#error-pdi_status_t&#34;&gt;&lt;code&gt; Error ( PDI_status_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; error without a message. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#error-args--pdi_status_t-const-s-&#34;&gt;&lt;code&gt; Error ( Args &amp;&amp;..., PDI_status_t, const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Creates a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; error. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#error-pdi_status_t-const-char-&#34;&gt;&lt;code&gt; Error ( PDI_status_t, const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; error. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#status&#34;&gt;&lt;code&gt;PDI_status_t status ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns status of the error. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#what&#34;&gt;&lt;code&gt;const char * what ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;error-const-args--pdi_status_t-const-char-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Args &amp;amp;...&lt;/span&gt; &lt;a href=&#34;#error-const-args--pdi_status_t-const-char--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;PDI_status_t&lt;/span&gt; &lt;a href=&#34;#error-const-args--pdi_status_t-const-char--_-errcode&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const char *&lt;/span&gt; &lt;a href=&#34;#error-const-args--pdi_status_t-const-char--_-fmt&#34;&gt;&lt;var class=&#34;nv&#34;&gt;fmt&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;error-pdi_status_t&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;PDI_status_t&lt;/span&gt; &lt;a href=&#34;#error-pdi_status_t-_-errcode&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; error without a message.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;error-pdi_status_t-_-errcode&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the error code of the error to create&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;error-args--pdi_status_t-const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#error-args--pdi_status_t-const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;PDI_status_t&lt;/span&gt; &lt;a href=&#34;#error-args--pdi_status_t-const-s--_-errcode&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#error-args--pdi_status_t-const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Creates a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; error.&lt;/p&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;error-const-args--pdi_status_t-const-char--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;h5 id=&#34;error-args--pdi_status_t-const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
 &lt;dd&gt;the python-style parameters for the message&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;error-const-args--pdi_status_t-const-char--_-errcode&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;h5 id=&#34;error-args--pdi_status_t-const-s--_-errcode&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
 &lt;dd&gt;the error code of the error to create&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;error-const-args--pdi_status_t-const-char--_-fmt&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;fmt&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;h5 id=&#34;error-args--pdi_status_t-const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
 &lt;dd&gt;an errror message as a python-style format&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;error-pdi_status_t-const-char-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;PDI_status_t&lt;/span&gt; &lt;a href=&#34;#error-pdi_status_t-const-char--_-errcode&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const char *&lt;/span&gt; &lt;a href=&#34;#error-pdi_status_t-const-char--_-fmt&#34;&gt;&lt;var class=&#34;nv&#34;&gt;fmt&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;PDI_status_t&lt;/span&gt; &lt;a href=&#34;#error-pdi_status_t-const-char--_-errcode&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const char *&lt;/span&gt; &lt;a href=&#34;#error-pdi_status_t-const-char--_-message&#34;&gt;&lt;var class=&#34;nv&#34;&gt;message&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates a &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; error.&lt;/p&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
 &lt;dt&gt;&lt;h5 id=&#34;error-pdi_status_t-const-char--_-errcode&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;errcode&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;error-pdi_status_t-const-char--_-fmt&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;fmt&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;/dd&gt;
+&lt;dd&gt;the error code of the error to create&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;error-pdi_status_t-const-char--_-message&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;message&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;an errror message&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;status&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;PDI_status_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;status&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Returns status of the error.&lt;/p&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;status of the error&lt;/p&gt;
+&lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;what&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -1250,7 +1535,13 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#expression&#34;&gt;&lt;code&gt; Expression ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Builds an empty expression. &lt;a href=&#34;#expression&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
@@ -1270,6 +1561,16 @@ This should not deallocate the memory.
 &lt;dd&gt;Builds an expression that is parsed from PC_tree_t. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-bool&#34;&gt;&lt;code&gt; operator bool ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Checks whether this is an empty expression. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-expression-&#34;&gt;&lt;code&gt;Expression operator% ( const Expression &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Modulo operator of an expression. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-expression-&#34;&gt;&lt;code&gt;Expression operator* ( const Expression &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Multiplication operator of an expression. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-expression-&#34;&gt;&lt;code&gt;Expression operator&amp;#43; ( const Expression &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Summation operator of an expression. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator--const-expression-&#34;&gt;&lt;code&gt;Expression operator- ( const Expression &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Subtraction operator of an expression. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-expression-&#34;&gt;&lt;code&gt;Expression operator/ ( const Expression &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Division operator of an expression. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-const-expression-&#34;&gt;&lt;code&gt;Expression &amp;amp; operator= ( const Expression &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Copies an expression. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-expression-&#34;&gt;&lt;code&gt;Expression &amp;amp; operator= ( Expression &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -1353,7 +1654,7 @@ OPERATION      := TERM ( OPERATOR TERM )&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;TERM           := ( INT_LITERAL | REFERENCE | &amp;lsquo;(&amp;rsquo; OPERATION &amp;lsquo;)&amp;rsquo; )&lt;/p&gt;
 &lt;p&gt;REFERENCE      := &amp;lsquo;$&amp;rsquo; ( IREFERENCE | &amp;lsquo;{&amp;rsquo; IREFERENCE &amp;lsquo;}&amp;rsquo; )&lt;/p&gt;
-&lt;p&gt;IREFERENCE     := ID ( &amp;lsquo;[&amp;rsquo; OPERATION &amp;lsquo;]&amp;rsquo; )*&lt;/p&gt;
+&lt;p&gt;IREFERENCE     := ID ( &amp;lsquo;[&amp;rsquo; OPERATION &amp;lsquo;]&amp;rsquo; | &amp;lsquo;.&amp;rsquo; ID )*&lt;/p&gt;
 &lt;p&gt;INT_LITERAL ~= (0x)? [0-9]+ ( .  )
 ID          ~= [a-zA-Z_][a-zA-Z0-9_]*
 CHAR        ~= [^$\]
@@ -1396,7 +1697,7 @@ OPERATION      := TERM ( OPERATOR TERM )&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;TERM           := ( INT_LITERAL | REFERENCE | &amp;lsquo;(&amp;rsquo; OPERATION &amp;lsquo;)&amp;rsquo; )&lt;/p&gt;
 &lt;p&gt;REFERENCE      := &amp;lsquo;$&amp;rsquo; ( IREFERENCE | &amp;lsquo;{&amp;rsquo; IREFERENCE &amp;lsquo;}&amp;rsquo; )&lt;/p&gt;
-&lt;p&gt;IREFERENCE     := ID ( &amp;lsquo;[&amp;rsquo; OPERATION &amp;lsquo;]&amp;rsquo; )*&lt;/p&gt;
+&lt;p&gt;IREFERENCE     := ID ( &amp;lsquo;[&amp;rsquo; OPERATION &amp;lsquo;]&amp;rsquo; | &amp;lsquo;.&amp;rsquo; ID )*&lt;/p&gt;
 &lt;p&gt;INT_LITERAL ~= (0x)? [0-9]+ ( .  )
 ID          ~= [a-zA-Z_][a-zA-Z0-9_]*
 CHAR        ~= [^$\]
@@ -1438,6 +1739,76 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
 &lt;h3 id=&#34;operator-bool&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator bool&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Checks whether this is an empty expression.&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-expression-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Expression&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator%&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Expression &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator-const-expression--_-expr&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Modulo operator of an expression.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-expression--_-expr&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the expression to use modulo&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Expression&#34;&gt;Expression&lt;/a&gt; as a result of modulo&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-expression-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Expression&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator*&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Expression &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator-const-expression--_-expr&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Multiplication operator of an expression.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-expression--_-expr&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the expression to multiply&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Expression&#34;&gt;Expression&lt;/a&gt; as a result of multiplication&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-expression-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Expression&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator&amp;#43;&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Expression &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator-const-expression--_-expr&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Summation operator of an expression.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-expression--_-expr&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the expression to add&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Expression&#34;&gt;Expression&lt;/a&gt; as a result of sum&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator--const-expression-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Expression&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator-&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Expression &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator--const-expression--_-expr&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Subtraction operator of an expression.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator--const-expression--_-expr&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the expression to subtract&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Expression&#34;&gt;Expression&lt;/a&gt; as a result of subtraction&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-expression-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Expression&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator/&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Expression &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator-const-expression--_-expr&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Division operator of an expression.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-expression--_-expr&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expr&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the expression to divide&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Expression&#34;&gt;Expression&lt;/a&gt; as a result of division&lt;/p&gt;
+&lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;operator-const-expression-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -1549,6 +1920,61 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
     </item>
     
     <item>
+      <title>Docs: PDI::Impl_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/impl_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/impl_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#impl_error-args--const-s-&#34;&gt;&lt;code&gt; Impl_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#impl_error-impl_error-&#34;&gt;&lt;code&gt; Impl_error ( Impl_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#impl_error-const-impl_error-&#34;&gt;&lt;code&gt; Impl_error ( const Impl_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;impl_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Impl_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#impl_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#impl_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;impl_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;impl_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;impl_error-impl_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Impl_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Impl_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#impl_error-impl_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;impl_error-impl_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;impl_error-const-impl_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Impl_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Impl_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#impl_error-const-impl_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;impl_error-const-impl_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: PDI::Logger_sptr typedef reference</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/logger_sptr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1557,7 +1983,13 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
       <description>
         
         
-        &lt;p&gt;A shared pointer to a logger instance.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;A shared pointer to a logger instance.&lt;/p&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
@@ -1572,7 +2004,13 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
       <description>
         
         
-        &lt;p&gt;Automatically installs a paraconf error-handler that ignores errors and uninstalls it on destruction.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;Automatically installs a paraconf error-handler that ignores errors and uninstalls it on destruction.&lt;/p&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#paraconf_wrapper&#34;&gt;&lt;code&gt; Paraconf_wrapper ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -1600,7 +2038,13 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
       <description>
         
         
-        &lt;p&gt;The class &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; plugins should implement.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;The class &lt;a href=&#34;compound:namespacePDI&#34;&gt;PDI&lt;/a&gt; plugins should implement.&lt;/p&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#plugin-const-plugin-&#34;&gt;&lt;code&gt; Plugin ( const Plugin &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -1654,6 +2098,61 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
     </item>
     
     <item>
+      <title>Docs: PDI::Plugin_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/plugin_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/plugin_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#plugin_error-args--const-s-&#34;&gt;&lt;code&gt; Plugin_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#plugin_error-plugin_error-&#34;&gt;&lt;code&gt; Plugin_error ( Plugin_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#plugin_error-const-plugin_error-&#34;&gt;&lt;code&gt; Plugin_error ( const Plugin_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;plugin_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Plugin_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#plugin_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#plugin_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;plugin_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;plugin_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;plugin_error-plugin_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Plugin_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Plugin_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#plugin_error-plugin_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;plugin_error-plugin_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;plugin_error-const-plugin_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Plugin_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Plugin_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#plugin_error-const-plugin_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;plugin_error-const-plugin_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: PDI::Pointer_datatype class reference</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1662,7 +2161,18 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;accessor&#34;&gt;&lt;code&gt;class Accessor&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;compound:classPDI_1_1Pointer__datatype_1_1Accessor&#34;&gt;Accessor&lt;/a&gt; for pointer datatype.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#pointer_datatype-datatype_uptr&#34;&gt;&lt;code&gt; Pointer_datatype ( Datatype_uptr )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dt&gt;&lt;a href=&#34;#pointer_datatype-stdfunction-void-void--const-void--stdfunction-voidvoid--datatype_uptr&#34;&gt;&lt;code&gt; Pointer_datatype ( std::function&lt; void *(void *, const void *)&gt;, std::function&lt; void(void *)&gt;, Datatype_uptr )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -1695,6 +2205,10 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+-*/%]
 &lt;dd&gt;Test for equality. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#simple&#34;&gt;&lt;code&gt;bool simple ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Tells if data can be copied as bytes (if type is dense) and doesn&#39;t need a destroyer. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; subaccess_by_iterators ( void *, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates datatype of subtype and returns it with a moved pointer. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subtype&#34;&gt;&lt;code&gt;const Datatype &amp;amp; subtype ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Type of the pointed element. &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
@@ -1879,6 +2393,33 @@ This should not deallocate the memory.
 &lt;p&gt;true if data has trivial copier and destroyer, false otherwise&lt;/p&gt;
 &lt;/section&gt;
 &lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subaccess_by_iterators&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates datatype of subtype and returns it with a moved pointer.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the pointer to the data&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the begin of remaining accessors&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the end of remaining accessors&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;pointer moved by offset and new datatype&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subtype&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;const Datatype &amp;amp;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subtype&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Type of the pointed element.&lt;/p&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;the type of the pointed element&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
 
       </description>
     </item>
@@ -1892,13 +2433,20 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;p&gt;A &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; that represents a fixed number of elements of potentially different types layed out in a specific way in memory.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;A &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt; is a &lt;a href=&#34;compound:classPDI_1_1Datatype&#34;&gt;Datatype&lt;/a&gt; that represents a fixed number of elements of potentially different types layed out in a specific way in memory.&lt;/p&gt;
 &lt;p&gt;Each element is given a name to access it.&lt;/p&gt;
 &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;member&#34;&gt;&lt;code&gt;class Member&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A [Member]( &amp;lt;compound:classPDI_1_1Record__datatype_1_1Member&amp;gt; ) is one of the elements inside a [Record\_datatype]( &amp;lt;compound:classPDI_1_1Record__datatype&amp;gt; )\.
-&lt;/dd&gt;
+&lt;dd&gt;A &lt;a href=&#34;compound:classPDI_1_1Record__datatype_1_1Member&#34;&gt;Member&lt;/a&gt; is one of the elements inside a &lt;a href=&#34;compound:classPDI_1_1Record__datatype&#34;&gt;Record_datatype&lt;/a&gt;.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;member_accessor&#34;&gt;&lt;code&gt;class Member_accessor&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;compound:classPDI_1_1Record__datatype_1_1Member&#34;&gt;Member&lt;/a&gt; accessor for record datatype.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
@@ -1934,6 +2482,8 @@ This should not deallocate the memory.
 &lt;dd&gt;Test for equality. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#simple&#34;&gt;&lt;code&gt;bool simple ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Tells if data can be copied as bytes (if type is dense) and doesn&#39;t need a destroyer. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; subaccess_by_iterators ( void *, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates datatype of subtype and returns it with a moved pointer. &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
@@ -2109,6 +2659,24 @@ This should not deallocate the memory.
 &lt;p&gt;true if data has trivial copier and destroyer, false otherwise&lt;/p&gt;
 &lt;/section&gt;
 &lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;subaccess_by_iterators&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates datatype of subtype and returns it with a moved pointer.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;the pointer to the data&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the begin of remaining accessors&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;subaccess_by_iterators-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-_-remaining_end&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;iterator to the end of remaining accessors&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;pointer moved by offset and new datatype&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
 
       </description>
     </item>
@@ -2122,7 +2690,13 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
     </item>
@@ -2136,7 +2710,13 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;p&gt;A dynamically typed reference to data with automatic memory management and read/write locking semantic.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;A dynamically typed reference to data with automatic memory management and read/write locking semantic.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Ref__any&#34;&gt;Ref_any&lt;/a&gt; is a smart pointer that features:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a dynamic type system,&lt;/li&gt;
@@ -2160,8 +2740,10 @@ As of now, and unlike std::shared_ptr, the lock system can not be relied upon in
 &lt;dd&gt;Moves an existing reference. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#ref_any-void--stdfunction-voidvoid--bool-datatype_uptr-bool&#34;&gt;&lt;code&gt; Ref_any ( void *, std::function&lt; void(void *)&gt;, bool, Datatype_uptr, bool )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Creates a reference to currently unreferenced data. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#ref_any-size_t-ref-datatype_uptr&#34;&gt;&lt;code&gt; Ref_any ( size_t, Ref, Datatype_uptr )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Creates a subreference from reference. &lt;a href=&#34;#ref_any-size_t-ref-datatype_uptr&#34;&gt;More…&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#ref_any-const-datatypeaccessor_base--ref&#34;&gt;&lt;code&gt; Ref_any ( const Datatype::Accessor_base &amp;, Ref )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates a subreference from reference. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#ref_any-const-stdvector-stdunique_ptr-datatypeaccessor_base---ref&#34;&gt;&lt;code&gt; Ref_any ( const std::vector&lt; std::unique_ptr&lt; Datatype::Accessor_base &gt;&gt; &amp;, Ref )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates a subreference from reference. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#copy&#34;&gt;&lt;code&gt;Ref copy ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Makes a copy of the raw content behind this reference and returns a new reference. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#get&#34;&gt;&lt;code&gt;Ref_access&amp;lt; R, W &amp;gt;::type get ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -2182,10 +2764,20 @@ As of now, and unlike std::shared_ptr, the lock system can not be relied upon in
 &lt;dt&gt;&lt;a href=&#34;#operator-const-reference_base-&#34;&gt;&lt;code&gt;bool operator== ( const Reference_base &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-const-reference_base-&#34;&gt;&lt;code&gt;bool operator&amp;gt; ( const Reference_base &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dt&gt;&lt;a href=&#34;#operator-const-reference_base-&#34;&gt;&lt;code&gt;bool operator&amp;gt;= ( const Reference_base &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-stdstring-&#34;&gt;&lt;code&gt;Ref operator[] ( const std::string &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Create a sub-reference to a member in case the content behind the ref is a record. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-const-char-&#34;&gt;&lt;code&gt;Ref operator[] ( const char * )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Create a sub-reference to a member in case the content behind the ref is a record. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-stdsize_t&#34;&gt;&lt;code&gt;Ref operator[] ( std::size_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Create a sub-reference to the content at a given index in case the content behind the ref is an array. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#operator-stdpair-stdsize_t-stdsize_t-&#34;&gt;&lt;code&gt;Ref operator[] ( std::pair&lt; std::size_t, std::size_t &gt; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Create a sub-reference to the content at a given slice in case the content behind the ref is an array. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#release&#34;&gt;&lt;code&gt;void * release ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Releases ownership of the referenced raw data by nullifying all existing references. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#reset&#34;&gt;&lt;code&gt;void reset ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Nullify the reference. &lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;#scalar_value&#34;&gt;&lt;code&gt;T scalar_value ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Returns a scalar value of type T taken from the data buffer. &lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;#ref_any&#34;&gt;&lt;code&gt; ~Ref_any ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Destructor. &lt;/dd&gt;
 &lt;/dl&gt;
@@ -2254,22 +2846,28 @@ if the requested rights can not be granted, the reference is made null
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;ref_any-size_t-ref-datatype_uptr&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Ref_any&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;size_t&lt;/span&gt; &lt;a href=&#34;#ref_any-size_t-ref-datatype_uptr-_-offset&#34;&gt;&lt;var class=&#34;nv&#34;&gt;offset&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;a href=&#34;#ref_any-size_t-ref-datatype_uptr-_-other&#34;&gt;&lt;var class=&#34;nv&#34;&gt;other&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Datatype_uptr&lt;/span&gt; &lt;a href=&#34;#ref_any-size_t-ref-datatype_uptr-_-type&#34;&gt;&lt;var class=&#34;nv&#34;&gt;type&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;ref_any-const-datatypeaccessor_base--ref&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Ref_any&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Datatype::Accessor_base &amp;amp;&lt;/span&gt; &lt;a href=&#34;#ref_any-const-datatypeaccessor_base--ref-_-accessor&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessor&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;a href=&#34;#ref_any-const-datatypeaccessor_base--ref-_-other&#34;&gt;&lt;var class=&#34;nv&#34;&gt;other&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Creates a subreference from reference.&lt;/p&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;ref_any-size_t-ref-datatype_uptr-_-offset&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;offset&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;_dataoffset of the new memory address&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;ref_any-size_t-ref-datatype_uptr-_-other&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;other&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;h5 id=&#34;ref_any-const-datatypeaccessor_base--ref-_-accessor&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessor&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;accessor to use to create subreference&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;ref_any-const-datatypeaccessor_base--ref-_-other&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;other&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
 &lt;dd&gt;source reference&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;ref_any-size_t-ref-datatype_uptr-_-type&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;type&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
-&lt;dd&gt;the type of the subreferenced data&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h4&gt;Description&lt;/h4&gt;
-&lt;section class=&#34;description&#34;&gt;
-Creates a subreference from reference.
-&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;ref_any-const-stdvector-stdunique_ptr-datatypeaccessor_base---ref&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Ref_any&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::vector&amp;lt; std::unique_ptr&amp;lt; Datatype::Accessor_base &amp;gt;&amp;gt; &amp;amp;&lt;/span&gt; &lt;a href=&#34;#ref_any-const-stdvector-stdunique_ptr-datatypeaccessor_base---ref-_-accessors&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessors&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;a href=&#34;#ref_any-const-stdvector-stdunique_ptr-datatypeaccessor_base---ref-_-other&#34;&gt;&lt;var class=&#34;nv&#34;&gt;other&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Creates a subreference from reference.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;ref_any-const-stdvector-stdunique_ptr-datatypeaccessor_base---ref-_-accessors&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;accessors&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;vector of accessor to use to create subreference&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;ref_any-const-stdvector-stdunique_ptr-datatypeaccessor_base---ref-_-other&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;other&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;source reference&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;copy&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -2396,6 +2994,62 @@ Creates a subreference from reference.
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-stdstring-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator[]&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const std::string &amp;amp;&lt;/span&gt; &lt;a href=&#34;#operator-const-stdstring--_-member_name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;member_name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Create a sub-reference to a member in case the content behind the ref is a record.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-stdstring--_-member_name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;member_name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;member to make a subref for&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;created subreference&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-const-char-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator[]&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const char *&lt;/span&gt; &lt;a href=&#34;#operator-const-char--_-member_name&#34;&gt;&lt;var class=&#34;nv&#34;&gt;member_name&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Create a sub-reference to a member in case the content behind the ref is a record.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-const-char--_-member_name&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;member_name&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;member to make a subref for&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;created subreference&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-stdsize_t&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator[]&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;std::size_t&lt;/span&gt; &lt;a href=&#34;#operator-stdsize_t-_-index&#34;&gt;&lt;var class=&#34;nv&#34;&gt;index&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Create a sub-reference to the content at a given index in case the content behind the ref is an array.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-stdsize_t-_-index&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;index&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;index to make a subref for&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;created subreference&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;operator-stdpair-stdsize_t-stdsize_t-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;Ref&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator[]&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; std::size_t, std::size_t &amp;gt;&lt;/span&gt; &lt;a href=&#34;#operator-stdpair-stdsize_t-stdsize_t--_-slice&#34;&gt;&lt;var class=&#34;nv&#34;&gt;slice&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Create a sub-reference to the content at a given slice in case the content behind the ref is an array.&lt;/p&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;operator-stdpair-stdsize_t-stdsize_t--_-slice&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;slice&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;pair with start and end index&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;created subreference&lt;/p&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;release&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;release&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Releases ownership of the referenced raw data by nullifying all existing references.&lt;/p&gt;
@@ -2408,6 +3062,15 @@ Creates a subreference from reference.
 &lt;h3 id=&#34;reset&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
 &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;reset&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Nullify the reference.&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;scalar_value&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;scalar_value&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Returns a scalar value of type T taken from the data buffer.&lt;/p&gt;
+&lt;h4&gt;Result&lt;/h4&gt;
+&lt;section class=&#34;result&#34;&gt;
+&lt;p&gt;value taken from the data buffer&lt;/p&gt;
+&lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
 &lt;h3 id=&#34;ref_any&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
@@ -2427,7 +3090,13 @@ Creates a subreference from reference.
       <description>
         
         
-        &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
     </item>
@@ -2441,7 +3110,13 @@ Creates a subreference from reference.
       <description>
         
         
-        &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
     </item>
@@ -2455,7 +3130,13 @@ Creates a subreference from reference.
       <description>
         
         
-        &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
 
       </description>
     </item>
@@ -2469,16 +3150,20 @@ Creates a subreference from reference.
       <description>
         
         
-        &lt;p&gt;A common base for all references, whatever their access privileges.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;A common base for all references, whatever their access privileges.&lt;/p&gt;
 &lt;p&gt;This ensure all reference, even with different type because of differing access privileges, can access the content at this level in each other.&lt;/p&gt;
 &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;referenced_buffer&#34;&gt;&lt;code&gt;struct Referenced_buffer&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A descriptor for a buffer in which references can point\.
-&lt;/dd&gt;
+&lt;dd&gt;A descriptor for a buffer in which references can point.&lt;/dd&gt;
 &lt;dt&gt;&lt;a href=&#34;referenced_data&#34;&gt;&lt;code&gt;struct Referenced_data&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;A descriptor for data on which references can point\.
-&lt;/dd&gt;
+&lt;dd&gt;A descriptor for data on which references can point.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
@@ -2501,6 +3186,61 @@ Creates a subreference from reference.
     </item>
     
     <item>
+      <title>Docs: PDI::Right_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/right_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/right_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#right_error-args--const-s-&#34;&gt;&lt;code&gt; Right_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#right_error-right_error-&#34;&gt;&lt;code&gt; Right_error ( Right_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#right_error-const-right_error-&#34;&gt;&lt;code&gt; Right_error ( const Right_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;right_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Right_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#right_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#right_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;right_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;right_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;right_error-right_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Right_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Right_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#right_error-right_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;right_error-right_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;right_error-const-right_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Right_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Right_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#right_error-const-right_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;right_error-const-right_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: PDI::Scalar_datatype class reference</title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2509,7 +3249,13 @@ Creates a subreference from reference.
       <description>
         
         
-        &lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;#scalar_datatype-scalar_kind-size_t&#34;&gt;&lt;code&gt; Scalar_datatype ( Scalar_kind, size_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dt&gt;&lt;a href=&#34;#scalar_datatype-size_t-scalar_kind-size_t&#34;&gt;&lt;code&gt; Scalar_datatype ( size_t, Scalar_kind, size_t )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -2763,8 +3509,289 @@ This should not deallocate the memory.
       <description>
         
         
-        &lt;p&gt;Different possible interpretations for a scalar.&lt;/p&gt;
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;p&gt;Different possible interpretations for a scalar.&lt;/p&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::State_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/state_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/state_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#state_error-args--const-s-&#34;&gt;&lt;code&gt; State_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#state_error-state_error-&#34;&gt;&lt;code&gt; State_error ( State_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#state_error-const-state_error-&#34;&gt;&lt;code&gt; State_error ( const State_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;state_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;State_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#state_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#state_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;state_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;state_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;state_error-state_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;State_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;State_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#state_error-state_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;state_error-state_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;state_error-const-state_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;State_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const State_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#state_error-const-state_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;state_error-const-state_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::System_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/system_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/system_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#system_error-args--const-s-&#34;&gt;&lt;code&gt; System_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#system_error-system_error-&#34;&gt;&lt;code&gt; System_error ( System_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#system_error-const-system_error-&#34;&gt;&lt;code&gt; System_error ( const System_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;system_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;System_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#system_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#system_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;system_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;system_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;system_error-system_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;System_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;System_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#system_error-system_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;system_error-system_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;system_error-const-system_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;System_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const System_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#system_error-const-system_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;system_error-const-system_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::Type_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/type_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/type_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#type_error-args--const-s-&#34;&gt;&lt;code&gt; Type_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#type_error-type_error-&#34;&gt;&lt;code&gt; Type_error ( Type_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#type_error-const-type_error-&#34;&gt;&lt;code&gt; Type_error ( const Type_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;type_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Type_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#type_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#type_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;type_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;type_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;type_error-type_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Type_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Type_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#type_error-type_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;type_error-type_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;type_error-const-type_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Type_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Type_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#type_error-const-type_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;type_error-const-type_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::Unavailable_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/unavailable_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/unavailable_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#unavailable_error-args--const-s-&#34;&gt;&lt;code&gt; Unavailable_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#unavailable_error-unavailable_error-&#34;&gt;&lt;code&gt; Unavailable_error ( Unavailable_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#unavailable_error-const-unavailable_error-&#34;&gt;&lt;code&gt; Unavailable_error ( const Unavailable_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;unavailable_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Unavailable_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#unavailable_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#unavailable_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;unavailable_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;unavailable_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;unavailable_error-unavailable_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Unavailable_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Unavailable_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#unavailable_error-unavailable_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;unavailable_error-unavailable_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;unavailable_error-const-unavailable_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Unavailable_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Unavailable_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#unavailable_error-const-unavailable_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;unavailable_error-const-unavailable_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PDI::Value_error class reference</title>
+      <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/value_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/value_error/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;a href=&#34;#value_error-args--const-s-&#34;&gt;&lt;code&gt; Value_error ( Args &amp;&amp;..., const S &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#value_error-value_error-&#34;&gt;&lt;code&gt; Value_error ( Value_error &amp;&amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;#value_error-const-value_error-&#34;&gt;&lt;code&gt; Value_error ( const Value_error &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;value_error-args--const-s-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Value_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Args &amp;amp;&amp;amp;...&lt;/span&gt; &lt;a href=&#34;#value_error-args--const-s--_-args&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const S &amp;amp;&lt;/span&gt; &lt;a href=&#34;#value_error-args--const-s--_-format_str&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;value_error-args--const-s--_-args&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;args&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;h5 id=&#34;value_error-args--const-s--_-format_str&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;format_str&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;value_error-value_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Value_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;Value_error &amp;amp;&amp;amp;&lt;/span&gt; &lt;a href=&#34;#value_error-value_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;value_error-value_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
+&lt;article class=&#34;td-content member-function&#34;&gt;
+&lt;h3 id=&#34;value_error-const-value_error-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;kt&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Value_error&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;const Value_error &amp;amp;&lt;/span&gt; &lt;a href=&#34;#value_error-const-value_error--_-&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Parameters&lt;/h4&gt;
+&lt;dl class=&#34;parameters&#34;&gt;
+&lt;dt&gt;&lt;h5 id=&#34;value_error-const-value_error--_-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/article&gt;
 
       </description>
     </item>
