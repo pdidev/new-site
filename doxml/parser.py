@@ -70,20 +70,20 @@ class Doxml:
         self.pages = {}
         self.root_namespace = Namespace()
         self.ids = {}
-        for compounddef in self.tree.findall('compounddef[@kind="class"]'):
+        for compounddef in self.tree.findall('compounddef[@kind="class"][@language="C++"]'):
             self.parse_definition(compounddef, self.parse_class, nametag='compoundname', out=self.root_namespace.types)
-        for compounddef in self.tree.findall('compounddef[@kind="struct"]'):
+        for compounddef in self.tree.findall('compounddef[@kind="struct"][@language="C++"]'):
             self.parse_definition(compounddef, self.parse_class, nametag='compoundname', out=self.root_namespace.types)
-        for compounddef in self.tree.findall('compounddef[@kind="union"]'):
+        for compounddef in self.tree.findall('compounddef[@kind="union"][@language="C++"]'):
             pass
-        for compounddef in self.tree.findall('compounddef[@kind="type"]'):
+        for compounddef in self.tree.findall('compounddef[@kind="type"][@language="C++"]'):
             pass
-        for compounddef in self.tree.findall('compounddef[@kind="namespace"]'):
+        for compounddef in self.tree.findall('compounddef[@kind="namespace"][@language="C++"]'):
             if '@' not in compounddef.findtext('compoundname'):
                 self.parse_namespace(compounddef)
         for compounddef in self.tree.findall('compounddef[@kind="group"]'):
             pass
-        for compounddef in self.tree.findall('compounddef[@kind="example"]'):
+        for compounddef in self.tree.findall('compounddef[@kind="example"][@language="C++"]'):
             pass
         for compounddef in self.tree.findall('compounddef[@kind="page"]'):
             self.parse_page(compounddef)

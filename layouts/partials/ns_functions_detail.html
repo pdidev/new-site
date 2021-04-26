@@ -1,0 +1,50 @@
+{{ $nsroot := .root }}
+{{ $nspath := slice }}
+{{ with .nspath }}{{ $nspath = . }}{{ end }}
+{{ $nsname := (append $nsroot $nspath) }}
+
+{{ with .defined.functions }}
+{{   range $name, $content := . }}{{ range $content }}
+{{     $fullname := (delimit (append $name $nsname )  "::" ) }}
+{{     $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
+{{     $fullpath := (delimit (append (printf "#%s" (anchorize (delimit (slice .name | append $param_types) " " ) ) ) (apply (apply $nspath "lower" "." ) "replaceRE" "[^a-z0-9]" "_" "." ) ) "/" ) }}
+
+
+
+{{ $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
+{{ $full_url := (delimit (slice .name | append $param_types) " ") | anchorize }}
+<article class="td-content member-function">
+
+<h3 id="{{ $full_url }}" class="chroma"><code class="language-C++" data-lang="C++">
+<span class="kt">{{ .defined.result.type }}</span> <span class="nf">{{.name }}</nf> ( {{ with .defined.parameters }}{{ $n_params := len . }} {{ $id := 0 }}{{ range $name, $param := . }} {{ $id = (add $id 1) }} <span class="kt">{{ $param.defined.type }}</span> <a href="#{{ $full_url }}-_-{{ $param.name }}"><var class="nv">{{ $param.name }}</var></a>{{if lt $id $n_params}}, {{end }}{{ end }} {{ end }} )</code></h3>
+
+
+{{ if or .detaileddescription .briefdescription }}
+<section class="description">
+{{ with .briefdescription }}{{ . | markdownify }}{{ end }}
+{{- with .detaileddescription }} {{ . | markdownify  }}{{ end }}
+</section>
+{{ end }}
+
+{{ with .defined.parameters }}
+<h4>Parameters</h4>
+<dl class="parameters">
+{{ range $name, $param := . }}
+<dt><h5 id="{{ $full_url }}-_-{{ $param.name }}" class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">{{ $name }}</var></code></h5></dt>
+<dd>{{ $param.briefdescription | markdownify }}{{ $param.detaileddescription | markdownify }}</dd>
+{{ end }}
+</dl>
+{{ end }}
+
+{{ with .defined.result }}{{ if and .type (or .briefdescription .detaileddescription) }}
+<h4>Result</h4>
+<section class="result">
+{{ with .briefdescription }}{{ . | markdownify }}{{ end }}
+{{ with .detaileddescription }}{{ . | markdownify  }}{{ end }}
+</section>
+{{ end }}{{ end }}
+
+</article>
+
+{{   end }}{{ end }}
+{{ end }}

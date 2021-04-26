@@ -1,0 +1,25 @@
+{{ $ns_name := slice }}
+{{ with .Get 0 }}{{ $ns_name = split . "." }}{{ end }}
+{{ $ns_data := $.Site.Data.docs.doxdata }}
+{{ range $ns_name }}{{ $ns_data = (index $ns_data.namespaces . ).defined }}{{ end }}
+
+{{ with (dict "root" $ns_name "defined" $ns_data) }}
+<h2 id="types-list">Types</h3>
+<dl>
+{{ partial "ns_types" . }}
+</dl>
+
+<h2 id="types-list">Functions</h3>
+<dl>
+{{ partial "ns_functions" . }}
+</dl>
+
+{{ with .defined.variables }}
+<h2 id="variables-list">Variables</h3>
+{{ partial "variable_list" . }}
+{{ end }}
+
+<h2 id="detailed-documentation">Detailed Documentation</h3>
+{{ partial "ns_functions_detail" . }}
+
+{{ end }}

@@ -1,7 +1,7 @@
 {{ $ns_def := dict }}
 
 {{ $ns_data := $.Site.Data.docs.doxdata }}
-{{ with .Page.Params.doc_path }}
+{{ with .Get 0 }}
 {{   range ($ns := (split . ".")) }}
 {{     if and (isset $ns_data "namespaces") (isset (index $ns_data "namespaces") .) }}
 {{       $ns_def = (index $ns_data "namespaces" .) }}
@@ -24,7 +24,7 @@
 <dl>
 {{ range $name, $content := . }}
 <dt><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}"><code>{{ $content.defined.kind }} {{ $name }}</code></a></dt>
-<dd>{{ with $content.briefdescription }}{{ . }}{{ end }}</dd>
+<dd>{{ with $content.briefdescription | markdownify }}{{ . }}{{ end }}</dd>
 {{ end }}
 </dl>
 {{ end }}

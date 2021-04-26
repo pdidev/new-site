@@ -21,13 +21,13 @@ def dump_class(outdir, path, cls):
     data = {
         'linkTitle': cls.name,
         'title': "::".join(path)+" "+cls.defined.kind+" reference",
-        'doc_path': ".".join(path),
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
         yaml.dump(data, outfile)
         print("---", file=outfile)
         print("{{% class %}}", file=outfile)
+        print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
     try:
         for sub_cls in cls.defined.types.values():
             dump_class(outdir, path+[sub_cls.name], sub_cls)
@@ -40,7 +40,6 @@ def dump_ns(outdir, path, ns):
     data = {
         'linkTitle': ns.name,
         'title': "::".join(path)+" namespace reference",
-        'doc_path': ".".join(path),
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
@@ -48,6 +47,7 @@ def dump_ns(outdir, path, ns):
         print("---", file=outfile)
         print("{{% namespace \""+".".join(path)+"\" %}}", file=outfile)
     for sub_ns in ns.defined.namespaces.values():
+        print('namespaces: in ',path,' : ',sub_ns.name)
         dump_ns(outdir, path+[sub_ns.name], sub_ns)
     for sub_cls in ns.defined.types.values():
         dump_class(outdir, path+[sub_cls.name], sub_cls)
@@ -55,14 +55,14 @@ def dump_ns(outdir, path, ns):
 def dump_root_ns(outdir, ns):
     os.makedirs(outdir, exist_ok=True)
     data = {
-        'title': "Full API reference",
-        'doc_path': "",
+        'title': "PDI API reference",
+        'linkTitle': "API reference",
     }
     with open(os.path.join(outdir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
         yaml.dump(data, outfile)
         print("---", file=outfile)
-        print("{{% namespace %}}", file=outfile)
+        print("{{% namespace "" %}}", file=outfile)
     for sub_ns in ns.namespaces.values():
         dump_ns(outdir, [sub_ns.name], sub_ns)
     for sub_cls in ns.types.values():

@@ -4,10 +4,10 @@ cd "$(dirname "$0")"
 
 function finish {
   [ -d resources ] && rm -r resources
-  [ -d resources ] && rm -rf content/docs/
-  [ -d resources ] && rm -rf static/docs
-  [ -d resources ] && rm -rf data/docs
-  [ -d resources ] && rm -rf */__pycache__/
+  [ -d content/docs/ ] && rm -rf content/docs/
+  [ -d static/docs ] && rm -rf static/docs
+  [ -d data/docs ] && rm -rf data/docs
+  find . -name __pycache__ -type d -prune -execdir rm -rf __pycache__ ';'
   rmdir * 2> /dev/null
 }
 trap finish EXIT QUIT ABRT KILL SEGV TERM STOP
