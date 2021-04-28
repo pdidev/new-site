@@ -1,4 +1,0 @@
-{{ range $name, $content := . }}
-{{ with $name }}<a href="#{{ . | urlize }}">{{ . }}</a>{{ end }}
-{{ with $content }}:   {{ .briefdescription | markdownify }}{{ end }}
-{{ end }}

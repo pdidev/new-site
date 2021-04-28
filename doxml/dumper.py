@@ -17,18 +17,18 @@ def page_name(name):
 
 def dump_class(outdir, path, cls):
     dir = os.path.join(outdir, *[re.sub(r'[^a-zA-Z0-9]', '_', n) for n in path])
-    os.makedirs(dir, exist_ok=True)
     data = {
         'linkTitle': cls.name,
-        'title': "::".join(path)+" "+cls.defined.kind+" reference",
+        #'title': "::".join(path)+" "+cls.defined.kind+" reference",
     }
-    with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
-        print("---", file=outfile)
-        yaml.dump(data, outfile)
-        print("---", file=outfile)
-        print("{{% class %}}", file=outfile)
-        print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
     try:
+        if cls.defined.kind in ['class', 'struct']:
+            os.makedirs(dir, exist_ok=True)
+            with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
+                print("---", file=outfile)
+                yaml.dump(data, outfile)
+                print("---", file=outfile)
+                print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
         for sub_cls in cls.defined.types.values():
             dump_class(outdir, path+[sub_cls.name], sub_cls)
     except:
@@ -39,7 +39,7 @@ def dump_ns(outdir, path, ns):
     os.makedirs(dir, exist_ok=True)
     data = {
         'linkTitle': ns.name,
-        'title': "::".join(path)+" namespace reference",
+        #'title': "::".join(path)+" namespace reference",
     }
     with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)
@@ -55,8 +55,8 @@ def dump_ns(outdir, path, ns):
 def dump_root_ns(outdir, ns):
     os.makedirs(outdir, exist_ok=True)
     data = {
-        'title': "PDI API reference",
-        'linkTitle': "API reference",
+        #'title': "C++ API reference",
+        'linkTitle': "C++ API reference",
     }
     with open(os.path.join(outdir, '_index.md'), mode='w') as outfile:
         print("---", file=outfile)

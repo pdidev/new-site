@@ -1,56 +1,59 @@
+{{ if .Scratch.Get "selftoc" }}
+
+{{- /* CONSTANTS */ -}}
+{{- $FS_ROOT  := (slice "docs" "ref") }}
+
+{{- /* PARAMETERS */ -}}
+{{- $def       := . -}}
+{{- $name      := $def.name -}}
+{{- $data      := $def.defined -}}
+{{- $namespace := $def.namespace -}}
+
+{{- /* DERIVED */ -}}
+{{- $fullname  := $namespace | append $name -}}
+
+{{- /* LOCAL */ -}}
+
+
 {{ partial "page-meta-links.html" . }}
 {{ if not .Params.notoc }}
 
-{{ if .Page.Params.doc_path }}
-
-{{ $ns_data := $.Site.Data.docs.doxdata }}
-{{ with .Page.Params.doc_path }}
-{{   range ($ns := (split . ".")) }}
-{{     if and (isset $ns_data "namespaces") (isset (index $ns_data "namespaces") .) }}
-{{       $ns_data = (index $ns_data "namespaces" .) }}
-{{       $ns_data = (index $ns_data "defined") }}
-{{     else if and (isset $ns_data "types") (isset (index $ns_data "types") .) }}
-{{       $ns_data = (index $ns_data "types" .) }}
-{{       $ns_data = (index $ns_data "defined") }}
-{{     end }}
-{{   end }}
-{{ end }}
-
-{{ with $ns_data }}
 <div id="TableOfContents"><ul>
 
-{{ with .types }}
+{{   with .types }}
 <li><a href="#member-types-list">Member Types</a><li>
-{{ end }}
+{{   end }}
 
-{{ with .functions }}
+{{   with .functions }}
 <li><a href="#member-functions-list">Member Functions</a><li>
-{{ end }}
+{{   end }}
 
-{{ with .variables }}{{ with where . "visibility" "public" }}
+{{   with .variables }}{{ with where . "visibility" "public" }}
 <li><a href="#member-variables-list">Member Variables</a><li>
-{{ end }}{{ end }}
+{{   end }}{{ end }}
 
 <li><a href="#detailed-documentation">Detailed Documentation</a><li>
 <ul>
-{{ range $name, $content := .functions }}{{ range where $content "visibility" "public" }}
-{{ $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
+{{   range $name, $content := .functions }}{{ range where $content "visibility" "public" }}
+{{     $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
 {{ $full_url := (delimit (slice .name | append $param_types) " ") | anchorize }}
 <li><a href="#{{$full_url}}">{{.name }}</a><li>
-{{ end }}{{ end }}
+{{   end }}{{ end }}
 </ul>
 
 </li></div>
 {{ end }}
 
-{{ else }}
 
+{{- else -}}
+
+{{ partial "page-meta-links.html" . }}
+{{ if not .Params.notoc }}
 {{ with .TableOfContents }}
 {{ if ge (len .) 200 }}
 {{ . }}
 {{ end }}
 {{ end }}
-
 {{ end }}
 
-{{ end }}
+{{- end -}}

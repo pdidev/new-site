@@ -73,6 +73,8 @@ algolia_docsearch = true
 # Enable Lunr.js offline search
 offlineSearch = true
 
+ref_root = "docs/ref"
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
@@ -86,21 +88,21 @@ navbar_logo = true
 # Set to true to disable the About link in the site footer
 footer_about_disable = true
 
-[[params.versions]]
-  version = "git master"
-  url = "/master/"
+#[[params.versions]]
+  #version = "git master"
+  #url = "/master/"
 
-[[params.versions]]
-  version = "latest release (0.5.1)"
-  url = "/"
+#[[params.versions]]
+  #version = "latest release (0.5.1)"
+  #url = "/"
 
-[[params.versions]]
-  version = "release 0.5.0"
-  url = "/0.5.0/"
+#[[params.versions]]
+  #version = "release 0.5.0"
+  #url = "/0.5.0/"
 
-[[params.versions]]
-  version = "release 0.4.1"
-  url = "/0.4.1/"
+#[[params.versions]]
+  #version = "release 0.4.1"
+  #url = "/0.4.1/"
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.

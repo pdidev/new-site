@@ -1,45 +1,26 @@
-{{ $ns_def := dict }}
+{{- /* CONSTANTS */ -}}
+{{- $FS_ROOT  := (slice "docs" "ref") }}
 
-{{ $ns_data := $.Site.Data.docs.doxdata }}
-{{ with .Get 0 }}
-{{   range ($ns := (split . ".")) }}
-{{     if and (isset $ns_data "namespaces") (isset (index $ns_data "namespaces") .) }}
-{{       $ns_def = (index $ns_data "namespaces" .) }}
-{{       $ns_data = (index $ns_def "defined") }}
-{{     else if and (isset $ns_data "types") (isset (index $ns_data "types") .) }}
-{{       $ns_def = (index $ns_data "types" .) }}
-{{       $ns_data = (index $ns_def "defined") }}
-{{     end }}
-{{   end }}
-{{ end }}
+{{- /* PARAMETERS */ -}}
+{{- $fullname  := split (.Get 0) "." -}}
+{{- $namespace := $fullname | first (add (len $fullname) -1) -}}
+{{- $name      := (index (last 1 $fullname) 0) -}}
 
-{{ with $ns_def.briefdescription }}{{ . | markdownify }}{{ end }}
+{{- /* DERIVED */ -}}
+{{- $data := site.Data.docs.doxdata -}}
+{{- $def  := dict -}}
+{{- range $fullname -}}
+{{-   if isset $data.namespaces . -}}
+{{-     $def  = (index $data.namespaces . ) -}}
+{{-   else if isset $data.types . -}}
+{{-     $def  = (index $data.types . ) -}}
+{{-   else -}}
+{{-     errorf "Unable to find namespace %s at %s" $fullname . -}}
+{{-   end -}}
+{{-   $data = $def.defined -}}
+{{- end -}}
 
-{{ with $ns_def.detaileddescription }}{{ . | markdownify  }}{{ end }}
+{{- /* LOCAL */ -}}
 
-{{ with $ns_data }}
 
-{{ with .types }}
-<h2 id="member-types-list">Member Types</h2>
-<dl>
-{{ range $name, $content := . }}
-<dt><a href="{{ $name | lower | replaceRE "[^a-z0-9]" "_" }}"><code>{{ $content.defined.kind }} {{ $name }}</code></a></dt>
-<dd>{{ with $content.briefdescription | markdownify }}{{ . }}{{ end }}</dd>
-{{ end }}
-</dl>
-{{ end }}
-
-{{ with .functions }}
-<h2 id="member-functions-list">Member Functions</h2>
-{{ partial "function_list.html" . }}
-{{ end }}
-
-{{ with .variables }}{{ with where . "visibility" "public" }}
-<h2 id="member-variables-list">Member Variables</h2>
-{{ partial "variable_list.html" . }}
-{{ end }}{{ end }}
-
-<h2 id="detailed-documentation">Detailed Documentation</h2>
-{{ partial "function_detailed_list" .functions }}
-
-{{ end }}
+{{ partial "type_desc" ($def | merge (dict "namespace" $namespace ) ) }}

@@ -1,0 +1,96 @@
+{{- /* CONSTANTS */ -}}
+{{- $FS_ROOT  := (slice "docs" "ref") }}
+
+{{- /* PARAMETERS */ -}}
+{{- $def       := . -}}
+{{- $data      := $def.defined -}}
+{{- $namespace := $def.namespace -}}
+
+{{- /* DERIVED */ -}}
+{{- $fullname  := $namespace -}}
+
+{{- /* LOCAL */ -}}
+
+{{ with $fullname }}
+<h1>
+<code class="chroma language-C++" data-lang="C++">
+<span class="kn">namespace</span>
+<span class="nn">{{ delimit $fullname "::" }}<span>
+</code> reference</h1>
+{{ else }}
+<h1>C++ API reference</h1>
+{{ end }}
+
+
+
+{{- if or $def.briefdescription $def.detaileddescription -}}
+<h2 id="description">Description</h2>
+{{ with $def.briefdescription }}{{ . | markdownify }}{{ end -}}
+{{- with $def.detaileddescription }} {{ . | markdownify  }}{{ end }}
+{{ end }}
+
+
+
+{{- if or
+         $data.namespaces
+         $data.types
+         $data.functions
+         $data.variables
+         -}}
+<h2 id="content-list">Content</h2>
+{{- end -}}
+
+{{ with $data.namespaces }}
+<h3 id="namespaces-list">Namespaces</h3>
+<dl>
+{{   range $name, $content := . }}
+<dt>{{ partial "namespace" ($content | merge (dict "namespace" $fullname ) ) }}</dt>
+{{     with $content.briefdescription | markdownify }}<dd>{{ . }}</dd>{{ end }}
+{{   end }}
+</dl>
+{{ end }}
+
+{{ with $data.types }}
+<h3 id="types-list">Types</h3>
+<dl>
+{{   range $name, $content := . }}
+<dt>{{ partial "type" ($content | merge (dict "namespace" $fullname ) ) }}</dt>
+{{     with $content.briefdescription | markdownify }}<dd>{{ . }}</dd>{{ end }}
+{{   end }}
+</dl>
+{{ end }}
+
+{{ with $data.variables }}
+<h3 id="variables-list">Variables</h3>
+<dl>
+{{   range $name, $content := . }}
+<dt>{{ partial "variable" ($content | merge (dict "namespace" $fullname) ) }}</dt>
+{{     with $content.briefdescription | markdownify }}<dd>{{ . }}</dd>{{ end }}
+{{   end }}
+</dl>
+{{ end }}
+
+{{ with $data.functions }}
+<h3 id="functions-list">Functions</h3>
+<dl>
+{{   range $name, $content := . }}{{ range $content }}
+<dt>{{ partial "function" (. | merge (dict "namespace" $fullname ) ) }}</dt>
+{{     with .briefdescription | markdownify }}<dd>{{ . }}</dd>{{ end }}
+{{   end }}{{ end }}
+</dl>
+{{ end }}
+
+
+
+{{- if or
+         $data.functions
+         -}}
+<h2 id="detailed-documentation">Documentation</h2>
+{{- end -}}
+
+{{ with $data.functions }}
+<h3 id="functions-doc">Functions</h2>
+{{   range $name, $content := . }}{{ range $content }}
+{{     partial "function_desc" (. | merge (dict "namespace" $fullname ) ) }}
+{{   end }}{{ end }}
+{{ end }}
