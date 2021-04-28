@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -29,7 +29,7 @@ The example implements implements a simple Heat equation solver using an explici
 <meta itemprop="description" content="The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a YAML file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.
 The example implements implements a simple Heat equation solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions.">
 
-<meta itemprop="wordCount" content="657">
+<meta itemprop="wordCount" content="627">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PDI examples"/>
 <meta name="twitter:description" content="The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a YAML file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.
@@ -41,8 +41,8 @@ The example implements implements a simple Heat equation solver using an explici
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1775,38 +1775,46 @@ The example implements implements a simple Heat equation solver using an explici
 <p>The example implements implements a simple <a href="https://en.wikipedia.org/wiki/Heat_equation">Heat equation</a> solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions.</p>
 <h2 id="code-algorithm">Code algorithm</h2>
 <p>The data is stored in a 2D array in which each point represents the temperature. In every iteration, the value at the next iteration of each cell is computed by applying a cross stencil using the values of the cell and of its neighbours (top, bottom, left and right) at the current iteration:</p>
-<pre><code>data[i][j] = 0.500 * data[i][j]
-           + 0.125 * data[i-1][j]
-           + 0.125 * data[i+1][j]
-           + 0.125 * data[i][j-1]
-           + 0.125 * data[i][j+1];
-</code></pre><p>In order not to override the cells while processing we use two arrays to store the values, one for the current iteration (<code>cur</code> in the code) and one for the next iteration (<code>next</code> in the code). These computations are written in the <code>iter</code> function.</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.500</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+           <span class="o">+</span> <span class="mf">0.125</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+           <span class="o">+</span> <span class="mf">0.125</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+           <span class="o">+</span> <span class="mf">0.125</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+           <span class="o">+</span> <span class="mf">0.125</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+</code></pre></div><p>In order not to override the cells while processing we use two arrays to store the values, one for the current iteration (<code>cur</code> in the code) and one for the next iteration (<code>next</code> in the code). These computations are written in the <code>iter</code> function.</p>
 <p>This code is parallelized with MPI . Let's split that matrix by MPI processes. Each process will compute part of global matrix.</p>
 <p>For example: matrix 16 x 16 integers and 16 MPI processes gives submatrices of 4 x 4 integers for every process. We have to add to our global matrix one row above and below, column to the left and right to be able to compute border cells. In our example row on the top has some value (”x”) bigger than 0 (representing source of heat):</p>
-<p><img src="/docs/imgs/heat_global_matrix.jpg" alt=""></p>
+
+<figure>
+    <img src="/docs/imgs/heat_global_matrix.jpg"/> 
+</figure>
+
 <p>MPI processes need to exchange information about their local matrix border cells (communicate with neighbours to exchange row/column of matrix). Each MPI process will have a local matrix:</p>
-<p><img src="/docs/imgs/heat_local_matrix.jpg" alt=""></p>
+
+<figure>
+    <img src="/docs/imgs/heat_local_matrix.jpg"/> 
+</figure>
+
 <p>All the communications instructions are written in <code>exchange</code> function.</p>
 <h2 id="pdi-integration">PDI integration</h2>
 <p>Now, when we know the algorithm, we can focus on analysing <code>decl_hdf5.yaml</code> specification tree. Fisrt 3 maps defined will not be seen to PDI:</p>
-<pre><code>duration: 0.75
-datasize: [60, 12]
-parallelism: { height: 3, width: 1 }
-</code></pre><ul>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="m">0.75</span><span class="w">
+</span><span class="w"></span><span class="nt">datasize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="nt">parallelism</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">height: 3, width</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>}<span class="w">
+</span></code></pre></div><ul>
 <li><code>duration</code> is the value in seconds how long the application will run.</li>
 <li><code>datasize</code> is size of our global matrix.</li>
 <li><code>parallelism</code> defines the number of MPI processes in each dimension.</li>
 </ul>
 <p>Next, we have defined <code>data</code> and <code>metadata</code>:</p>
-<pre><code>pdi:
-  metadata:
-    iter:   int
-    dsize:  { size: 2, type: array, subtype: int }
-    psize:  { size: 2, type: array, subtype: int }
-    pcoord: { size: 2, type: array, subtype: int }
-  data:
-    main_field: { size: [ '$dsize[0]', '$dsize[1]' ], type: array, subtype: double }
-</code></pre><p>In source file we will extract the <code>pdi</code> map and pass it as PDI_init argument.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">pdi</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">iter</span><span class="p">:</span><span class="w">   </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">dsize</span><span class="p">:</span><span class="w">  </span>{<span class="w"> </span><span class="nt">size: 2, type: array, subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int }</span><span class="w">
+</span><span class="w">    </span><span class="nt">psize</span><span class="p">:</span><span class="w">  </span>{<span class="w"> </span><span class="nt">size: 2, type: array, subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int }</span><span class="w">
+</span><span class="w">    </span><span class="nt">pcoord</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">size: 2, type: array, subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int }</span><span class="w">
+</span><span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">main_field</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">size: [ &#39;$dsize[0]&#39;, &#39;$dsize[1]&#39; ], type: array, subtype</span><span class="p">:</span><span class="w"> </span><span class="l">double }</span><span class="w">
+</span></code></pre></div><p>In source file we will extract the <code>pdi</code> map and pass it as PDI_init argument.</p>
 <ul>
 <li><code>iter</code> will hold the current iteration number.</li>
 <li><code>dsize</code> will hold the size of local matrix of each MPI process.</li>
@@ -1815,25 +1823,25 @@ parallelism: { height: 3, width: 1 }
 <li><code>main_filed</code> is the local matrix for each process.</li>
 </ul>
 <p>Let's take a closer look at C source code.</p>
-<pre><code>PDI_init(PC_get(conf, &quot;.pdi&quot;));
-</code></pre><p>As mentioned before, we extract the <code>pdi</code> subtree and pass it to PDI_init.</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_get</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="s">&#34;.pdi&#34;</span><span class="p">));</span>
+</code></pre></div><p>As mentioned before, we extract the <code>pdi</code> subtree and pass it to PDI_init.</p>
 <p>We did not defined <code>mpi_comm</code> data in yaml, so this line will have no effect:</p>
-<pre><code>PDI_expose(&quot;mpi_comm&quot;, &amp;main_comm, PDI_INOUT);
-</code></pre><p>The same goes for all PDI calls with data we didn't defined.</p>
-<pre><code>int dsize[2];
-PC_int(PC_get(conf, &quot;.datasize[0]&quot;), &amp;longval); dsize[0] = longval;
-PC_int(PC_get(conf, &quot;.datasize[1]&quot;), &amp;longval); dsize[1] = longval;
-</code></pre><p>Here we are reading global matrix size from specification tree. Similar with parallelism and duration.</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;mpi_comm&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">main_comm</span><span class="p">,</span> <span class="n">PDI_INOUT</span><span class="p">);</span>
+</code></pre></div><p>The same goes for all PDI calls with data we didn't defined.</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="kt">int</span> <span class="n">dsize</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">PC_int</span><span class="p">(</span><span class="n">PC_get</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="s">&#34;.datasize[0]&#34;</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">longval</span><span class="p">);</span> <span class="n">dsize</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">longval</span><span class="p">;</span>
+<span class="n">PC_int</span><span class="p">(</span><span class="n">PC_get</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="s">&#34;.datasize[1]&#34;</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">longval</span><span class="p">);</span> <span class="n">dsize</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">longval</span><span class="p">;</span>
+</code></pre></div><p>Here we are reading global matrix size from specification tree. Similar with parallelism and duration.</p>
 <p>After calculating the local matrix sizes and coordinates, we expose them:</p>
-<pre><code>PDI_expose(&quot;dsize&quot;, dsize, PDI_OUT);
-PDI_expose(&quot;psize&quot;, psize, PDI_OUT);
-PDI_expose(&quot;pcoord&quot;, pcoord, PDI_OUT);
-</code></pre><p>At the beginning of each iteration, we call multiexpose:</p>
-<pre><code>PDI_multi_expose(&quot;newiter&quot;,
-                &quot;iter&quot;, &amp;ii, PDI_INOUT,
-                &quot;main_field&quot;, cur, PDI_INOUT,
-                NULL);
-</code></pre><p>Above instruction will share <code>iter</code> and <code>main_field</code>, call <code>newiter</code> event and then reclaim <code>main_field</code> and <code>iter</code>. This is the place when plugins will read/write our data.</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;dsize&#34;</span><span class="p">,</span> <span class="n">dsize</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;psize&#34;</span><span class="p">,</span> <span class="n">psize</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;pcoord&#34;</span><span class="p">,</span> <span class="n">pcoord</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+</code></pre></div><p>At the beginning of each iteration, we call multiexpose:</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="n">PDI_multi_expose</span><span class="p">(</span><span class="s">&#34;newiter&#34;</span><span class="p">,</span>
+                <span class="s">&#34;iter&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ii</span><span class="p">,</span> <span class="n">PDI_INOUT</span><span class="p">,</span>
+                <span class="s">&#34;main_field&#34;</span><span class="p">,</span> <span class="n">cur</span><span class="p">,</span> <span class="n">PDI_INOUT</span><span class="p">,</span>
+                <span class="nb">NULL</span><span class="p">);</span>
+</code></pre></div><p>Above instruction will share <code>iter</code> and <code>main_field</code>, call <code>newiter</code> event and then reclaim <code>main_field</code> and <code>iter</code>. This is the place when plugins will read/write our data.</p>
 <p>We have covered the logic behind the PDI example. Now you can start the <a href="compound:Hands_on">Hands-on tutorial</a>.</p>
 
 	

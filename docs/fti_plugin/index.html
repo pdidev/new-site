@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ Features and requirements Dependencies FTI plugin uses a MPI_Comm datatype and M
 The FTI plugin enables one to perform checkpoints using FTI. FTI plugin does not support the full FTI feature set but offers a simple declarative interface to access a large subset of it.
 Features and requirements Dependencies FTI plugin uses a MPI_Comm datatype and MPI_COMM_WORLD descriptor, which are defined in mpi plugin. For now it must be loaded alongside FTI plugin (as shown below).">
 
-<meta itemprop="wordCount" content="818">
+<meta itemprop="wordCount" content="702">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="FTI plugin"/>
 <meta name="twitter:description" content="WARNING This documentation is a work in progress and does not reflect the full FTI plugin potential.
@@ -44,8 +44,8 @@ Features and requirements Dependencies FTI plugin uses a MPI_Comm datatype and M
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1806,14 +1806,14 @@ Features and requirements Dependencies FTI plugin uses a MPI_Comm datatype and M
 <h2 id="features-and-requirements">Features and requirements</h2>
 <h3 id="dependencies">Dependencies</h3>
 <p>FTI plugin uses a <code>MPI_Comm</code> datatype and <code>MPI_COMM_WORLD</code> descriptor, which are defined in <code>mpi</code> plugin. For now it must be loaded alongside FTI plugin (as shown below).</p>
-<pre><code>pdi:
-   ...
-
-   plugins:
-      mpi:
-      fti:
-         ...
-</code></pre><h3 id="initialization">Initialization</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">pdi</span><span class="p">:</span><span class="w">
+</span><span class="w">   </span><span class="l">...</span><span class="w">
+</span><span class="w">
+</span><span class="w">   </span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">mpi</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">fti</span><span class="p">:</span><span class="w">
+</span><span class="w">         </span><span class="l">...</span><span class="w">
+</span></code></pre></div><h3 id="initialization">Initialization</h3>
 <p>FTI initialization in FTI plugin is based on several rules:</p>
 <ul>
 <li>if <code>init_on</code> is specified, FTI plugin will initialize FTI on that exact event and expects the communicator and file name to be correctly available or fail otherwise,</li>
@@ -1838,10 +1838,10 @@ Features and requirements Dependencies FTI plugin uses a MPI_Comm datatype and M
 <p>A <code>config_file</code> is a string that can contain $-expressions. Specifies the name of the FTI configuration file.</p>
 <h3 id="dataset">dataset</h3>
 <p>A <code>dataset</code> is a key/value map, which keys are integers that specify datasets ids in FTI and values are names of protected descriptors. Alternatively, the map may contain a map with keys <code>name</code> and <code>size</code>, where <code>name</code> is a name of protected descriptor and <code>size</code> is a descriptor where FTI plugin will write size of the protected descriptor when shared with write access right.</p>
-<pre><code>dataset:
-  0: {name: variable, size: variable_size}
-  1: variable2
-</code></pre><h3 id="init_on">init_on</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">dataset</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">0</span><span class="p">:</span><span class="w"> </span>{<span class="nt">name: variable, size</span><span class="p">:</span><span class="w"> </span><span class="l">variable_size}</span><span class="w">
+</span><span class="w">  </span><span class="nt">1</span><span class="p">:</span><span class="w"> </span><span class="l">variable2</span><span class="w">
+</span></code></pre></div><h3 id="init_on">init_on</h3>
 <p>A <code>init_on</code> is a string or a list of strings that specifies the names of the <a href="compound:namespacePDI">PDI</a> events that executes recovery of FTI.</p>
 <h3 id="recover_on">recover_on</h3>
 <p>A <code>recover_on</code> is a string or a list of strings that specifies the names of the <a href="compound:namespacePDI">PDI</a> events that executes recovery of FTI.</p>
@@ -1853,71 +1853,71 @@ Features and requirements Dependencies FTI plugin uses a MPI_Comm datatype and M
 </ul>
 <p><code>on_event</code> defines on which events the variable recovery should be done (single event or list of events)</p>
 <p><code>var</code> defines IDs of variables to recover (single ID or list of IDs)</p>
-<pre><code>plugins:
-  fti:
-    recover_var:
-      - on_event: recover_test
-        var: 2
-      - on_event: [recover_arrays, dummy_event]
-        var: [0, 1]
-</code></pre><h3 id="send_file">send_file</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">fti</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">recover_var</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="l">recover_test</span><span class="w">
+</span><span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">recover_arrays, dummy_event]</span><span class="w">
+</span><span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id="send_file">send_file</h3>
 <p>A <code>send_file</code> is a key/value map or a list of key/value maps describing source and destination paths of files to send, event or list of events to trigger on and optionally name of descriptor, where will be stored status information when exposed. Example:</p>
-<pre><code>send_file:
-  on_even: event
-  file:
-    src: source_path
-    dest: destination_path
-    status: status_descriptor
-</code></pre><h3 id="snapshot_on">snapshot_on</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">send_file</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">on_even</span><span class="p">:</span><span class="w"> </span><span class="l">event</span><span class="w">
+</span><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">source_path</span><span class="w">
+</span><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">destination_path</span><span class="w">
+</span><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">status_descriptor</span><span class="w">
+</span></code></pre></div><h3 id="snapshot_on">snapshot_on</h3>
 <p>A <code>snapshot_on</code> is a string or a list of strings that specifies the names of the <a href="compound:namespacePDI">PDI</a> events that executes FTI_Snapshot.</p>
 <h3 id="status">status</h3>
 <p>A <code>status</code> is a string that specifies the name of a descriptor to which FTI will write FTI_Status code when shared.</p>
 <h2 id="full-configuration-example">full configuration example</h2>
-<pre><code>pdi:
-  metadata: # type of small values for which PDI keeps a copy
-    iter: int
-    size:  { size: 2, type: int }
-  data: # type of values for which PDI does not keep a copy
-    fti_status: int
-    array_size: int64
-    file_name: {size: 64, type: array, subtype: char}
-    file_status: int
-    file1_status: int
-    file2_status: int
-    main_array: { size: ['$size[0]', '$size[1]'], type: array, subtype: double }
-
-  plugins:
-    mpi:
-    fti:
-      config_file: fti_config.ini
-      communicator: MPI_COMM_WORLD
-      init_on: fti_init_event
-      status: fti_status
-      dataset:
-        0: {name: main_array, size: array_size}
-        1: iter
-      snapshot_on: snapshot_event
-      recover_on: recover_event
-      checkpoint:
-        L1_on: ckpt_l1_event
-        L2_on: [ckpt_l2_1_event, ckpt_l2_2_event]
-        L3_on: [ckpt_l3_1_event, ckpt_l3_2_event]
-        L4_on: ckpt_l4_event
-      send_file:
-        - on_event: send_one_file
-          file:
-            src: ./$file_name
-            dest: ./somewhere_else/$file_name
-            status: file_status
-        - on_event: [send_two_files_first_event, send_two_files_second_event]
-          file:
-            - src: ./file1
-              dest: ./somewhere_else/file1
-              status: file1_status
-            - src: ./file2
-              dest: ./somewhere_else/file2
-              status: file2_status
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">pdi</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="c"># type of small values for which PDI keeps a copy</span><span class="w">
+</span><span class="w">    </span><span class="nt">iter</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w">  </span>{<span class="w"> </span><span class="nt">size: 2, type</span><span class="p">:</span><span class="w"> </span><span class="l">int }</span><span class="w">
+</span><span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="c"># type of values for which PDI does not keep a copy</span><span class="w">
+</span><span class="w">    </span><span class="nt">fti_status</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">array_size</span><span class="p">:</span><span class="w"> </span><span class="l">int64</span><span class="w">
+</span><span class="w">    </span><span class="nt">file_name</span><span class="p">:</span><span class="w"> </span>{<span class="nt">size: 64, type: array, subtype</span><span class="p">:</span><span class="w"> </span><span class="l">char}</span><span class="w">
+</span><span class="w">    </span><span class="nt">file_status</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">file1_status</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">file2_status</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">main_array</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">size: [&#39;$size[0]&#39;, &#39;$size[1]&#39;], type: array, subtype</span><span class="p">:</span><span class="w"> </span><span class="l">double }</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">mpi</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">fti</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">config_file</span><span class="p">:</span><span class="w"> </span><span class="l">fti_config.ini</span><span class="w">
+</span><span class="w">      </span><span class="nt">communicator</span><span class="p">:</span><span class="w"> </span><span class="l">MPI_COMM_WORLD</span><span class="w">
+</span><span class="w">      </span><span class="nt">init_on</span><span class="p">:</span><span class="w"> </span><span class="l">fti_init_event</span><span class="w">
+</span><span class="w">      </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">fti_status</span><span class="w">
+</span><span class="w">      </span><span class="nt">dataset</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">0</span><span class="p">:</span><span class="w"> </span>{<span class="nt">name: main_array, size</span><span class="p">:</span><span class="w"> </span><span class="l">array_size}</span><span class="w">
+</span><span class="w">        </span><span class="nt">1</span><span class="p">:</span><span class="w"> </span><span class="l">iter</span><span class="w">
+</span><span class="w">      </span><span class="nt">snapshot_on</span><span class="p">:</span><span class="w"> </span><span class="l">snapshot_event</span><span class="w">
+</span><span class="w">      </span><span class="nt">recover_on</span><span class="p">:</span><span class="w"> </span><span class="l">recover_event</span><span class="w">
+</span><span class="w">      </span><span class="nt">checkpoint</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">L1_on</span><span class="p">:</span><span class="w"> </span><span class="l">ckpt_l1_event</span><span class="w">
+</span><span class="w">        </span><span class="nt">L2_on</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">ckpt_l2_1_event, ckpt_l2_2_event]</span><span class="w">
+</span><span class="w">        </span><span class="nt">L3_on</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">ckpt_l3_1_event, ckpt_l3_2_event]</span><span class="w">
+</span><span class="w">        </span><span class="nt">L4_on</span><span class="p">:</span><span class="w"> </span><span class="l">ckpt_l4_event</span><span class="w">
+</span><span class="w">      </span><span class="nt">send_file</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="l">send_one_file</span><span class="w">
+</span><span class="w">          </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">./$file_name</span><span class="w">
+</span><span class="w">            </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">./somewhere_else/$file_name</span><span class="w">
+</span><span class="w">            </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">file_status</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">send_two_files_first_event, send_two_files_second_event]</span><span class="w">
+</span><span class="w">          </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">./file1</span><span class="w">
+</span><span class="w">              </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">./somewhere_else/file1</span><span class="w">
+</span><span class="w">              </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">file1_status</span><span class="w">
+</span><span class="w">            </span>- <span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">./file2</span><span class="w">
+</span><span class="w">              </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">./somewhere_else/file2</span><span class="w">
+</span><span class="w">              </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">file2_status</span><span class="w">
+</span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001

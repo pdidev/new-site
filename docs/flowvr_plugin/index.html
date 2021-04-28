@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 Configuration elements FlowVR plugin tree The root of FlowVR plugin configuration (named flowvr), is a dictionary that contains the following keys:
  component (optional) wait_on_data (recommended) wait_on (optional) status (optional) abort_on (optional) init_on (optional) input_ports (optional) output_ports (optional)  component For now, only available component is module and this is a default value, but this can be expanded to filter and synchronizer in the future.">
 
-<meta itemprop="wordCount" content="2293">
+<meta itemprop="wordCount" content="1894">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The FlowVR plugin"/>
 <meta name="twitter:description" content="The FlowVR plugin lets you write FlowVR modules without knowing any specific FlowVR API calls. Properly created PDI configuration file allows you to care only about proper input/output calls, but this plugin does not support the full FlowVR feature set.
@@ -44,8 +44,8 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1837,118 +1837,118 @@ Configuration elements FlowVR plugin tree The root of FlowVR plugin configuratio
 </ul>
 <h4 id="component">component</h4>
 <p>For now, only available component is <code>module</code> and this is a default value, but this can be expanded to <code>filter</code> and <code>synchronizer</code> in the future. Configuration example:</p>
-<pre><code>plugins:
-  flowvr:
-    component: module
-</code></pre><h4 id="wait_on_data">wait_on_data</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span></code></pre></div><h4 id="wait_on_data">wait_on_data</h4>
 <p>The plugin will call <code>wait</code> funciton every time given descriptors will be shared with <code>PDI_IN</code> access direction. This descriptor must be an integer type and the status returned from this call will be written as a response. Configuration example:</p>
-<pre><code>data:
-  wait_desc: int
-
-plugins:
-  flowvr:
-    component: module
-    wait_on_data: wait_desc
-</code></pre><h4 id="wait_on">wait_on</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_desc</span><span class="w">
+</span></code></pre></div><h4 id="wait_on">wait_on</h4>
 <p>Defines on which events the plugin calls the <code>wait</code> function. The value can be either single event name or the array of events names (both examples presented below). This method of calling <code>wait</code> should be avoided if possible, because it's not returning the wait status. Configuration examples:</p>
-<pre><code>plugins:
-  flowvr:
-    component: module
-    wait_on: &quot;wait_event&quot;
-</code></pre><pre><code>plugins:
-  flowvr:
-    component: module
-    wait_on: [&quot;wait_event_1&quot;, &quot;wait_event_2&quot;]
-</code></pre><h4 id="status">status</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;wait_event&#34;</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;wait_event_1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;wait_event_2&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id="status">status</h4>
 <p>PDI will copy the status of the module to the given descriptor. The same as the <code>wait_on</code> it can be a single name or an array of names. Configuration example:</p>
-<pre><code>data:
-  wait_desc: int
-  status_desc: int
-
-plugins:
-  flowvr:
-    component: module
-    wait_on_data: wait_desc
-    status: status_desc
-</code></pre><h4 id="abort_on">abort_on</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">status_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_desc</span><span class="w">
+</span><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">status_desc</span><span class="w">
+</span></code></pre></div><h4 id="abort_on">abort_on</h4>
 <p>Defines on which events the plugin calls the <code>abort</code> function which will stop the flowvr application. The value can be either single event name or the array of events names. Configuration examples:</p>
-<pre><code>data:
-  wait_desc: int
-
-plugins:
-  flowvr:
-   component: module
-    wait_on_data: wait_desc
-    abort_on: &quot;abort_event&quot;
-</code></pre><h4 id="init_on">init_on</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">   </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_desc</span><span class="w">
+</span><span class="w">    </span><span class="nt">abort_on</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;abort_event&#34;</span><span class="w">
+</span></code></pre></div><h4 id="init_on">init_on</h4>
 <p>Defining this subtree tells PDI that the plugin should be initialized not on <code>PDI_init</code>, but on given event.</p>
-<pre><code>data:
-  wait_desc: int
-
-plugins:
-  flowvr:
-   component: module
-    wait_on_data: wait_desc
-    init_on: &quot;init_event&quot;
-</code></pre><h4 id="parallel">parallel</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">   </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_desc</span><span class="w">
+</span><span class="w">    </span><span class="nt">init_on</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;init_event&#34;</span><span class="w">
+</span></code></pre></div><h4 id="parallel">parallel</h4>
 <p>This node can be for reading rank and size of the world, but also can be for setting this values. <code>get_rank</code> will copy process's rank to given descriptor on share, <code>get_size</code> will save the world size the same way. Example:</p>
-<pre><code>data:
-  wait_desc: int
-  rank_desc: int
-  size_desc: int
-
-plugins:
-  flowvr:
-    component: module
-    wait_on_data: wait_desc
-    parallel:
-      get_rank: rank_desc
-      get_size: size_desc
-</code></pre><p>Values (use <code>$</code> expression) from descriptors defined in <code>set_rank</code> and <code>set_size</code> will be passed to flowvr and set the environment. Setting this parameters must occur before plugin initialization. For this you need to use <code>init_on</code> event and call this event after setting rank and size.</p>
-<pre><code>data:
-  wait_desc: int
-  rank_desc: int
-  size_desc: int
-
-plugins:
-  flowvr:
-    component: module
-    wait_on_data: wait_desc
-    parallel:
-      set_rank: $rank_desc
-      set_size: $size_desc
-</code></pre><h4 id="several-modules">Several modules</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">rank_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">size_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_desc</span><span class="w">
+</span><span class="w">    </span><span class="nt">parallel</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">get_rank</span><span class="p">:</span><span class="w"> </span><span class="l">rank_desc</span><span class="w">
+</span><span class="w">      </span><span class="nt">get_size</span><span class="p">:</span><span class="w"> </span><span class="l">size_desc</span><span class="w">
+</span></code></pre></div><p>Values (use <code>$</code> expression) from descriptors defined in <code>set_rank</code> and <code>set_size</code> will be passed to flowvr and set the environment. Setting this parameters must occur before plugin initialization. For this you need to use <code>init_on</code> event and call this event after setting rank and size.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">rank_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">size_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_desc</span><span class="w">
+</span><span class="w">    </span><span class="nt">parallel</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">set_rank</span><span class="p">:</span><span class="w"> </span><span class="l">$rank_desc</span><span class="w">
+</span><span class="w">      </span><span class="nt">set_size</span><span class="p">:</span><span class="w"> </span><span class="l">$size_desc</span><span class="w">
+</span></code></pre></div><h4 id="several-modules">Several modules</h4>
 <p>Single program can run several modules at once. To make it work just create array of modules in <code>flowvr</code> tree. Configuration example:</p>
-<pre><code>data:
-  wait_1: int
-  wait_2: int
-
-flowvr:
-  - component: module
-    wait_on_data: wait_1
-    ...
-  - component: module
-    wait_on_data: wait_2
-    ...
-</code></pre><h3 id="ports">Ports</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_1</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">wait_2</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_1</span><span class="w">
+</span><span class="w">    </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l">module</span><span class="w">
+</span><span class="w">    </span><span class="nt">wait_on_data</span><span class="p">:</span><span class="w"> </span><span class="l">wait_2</span><span class="w">
+</span><span class="w">    </span><span class="l">...</span><span class="w">
+</span></code></pre></div><h3 id="ports">Ports</h3>
 <h4 id="input_ports">input_ports</h4>
 <p>Input ports are defined in <code>input_ports</code> tree. Each port is defined by name and <a href="member:FlowVR_plugin_1message">Message</a> it will receive. You can add <code>event_port: true</code> to define this as event port (non-blocking).</p>
-<pre><code>flowvr:
-  ...
-  input_ports:
-    port_name_1:
-      ...
-    port_name_2:
-      event_port: true
-      ...
-</code></pre><h4 id="output_ports">output_ports</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">port_name_1</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="l">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">port_name_2</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">event_port</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">      </span><span class="l">...</span><span class="w">
+</span></code></pre></div><h4 id="output_ports">output_ports</h4>
 <p>Output ports are defined in <code>output_ports</code> tree. Each port is defined by name and <a href="member:FlowVR_plugin_1message">Message</a> it will send.</p>
-<pre><code>flowvr:
-  ...
-  output_ports:
-    port_name_1: ...
-    port_name_2: ...
-</code></pre><h3 id="message">Message</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">port_name_1</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">port_name_2</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w">
+</span></code></pre></div><h3 id="message">Message</h3>
 <p>Flowvr message consists of payload and stamps. The <code>payload</code> is defined by user by a specific key in port definition:</p>
 <table>
 <thead>
@@ -1984,62 +1984,62 @@ flowvr:
 <li>for output port - FlowVR plugin will read from to send data</li>
 </ul>
 <p>Example of <code>data</code> in output port:</p>
-<pre><code>data:
-  data_desc: {type: array, subtype: int, size: 32}
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      data: data_desc
-</code></pre><p>The user can not always predict how many data will receive. In this case <code>size</code> node type must be a name of metadata where to write the size of received payload. This metadata will hold the size of received array. The <code>size</code> property of descriptor should be divided by size of single element. Example of receiving unknown payload size:</p>
-<pre><code>metadata:
-  received_size : int
-data:
-  data_descriptor_name: {type: array, subtype: int, size: $received_size/4}
-
-plugins:
-  flowvr:
-    ...
-    input_ports:
-      some_port_name:
-        data: data_descriptor_name
-        size: received_size
-</code></pre><p>In case that you want to send only a part of the data from descriptor you can specify it in <code>copy_data_selection</code> tree defining datatype the same way as for descriptors. Simple example:</p>
-<pre><code>data:
-  data_descriptor_name:  {type: array, subtype: int, size: [32, 32]}
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      data: data_descriptor_name
-      copy_data_selection:
-        type: array
-        subtype: int
-        size: [32, 32]
-        subsize: [30, 30]
-        start: [1, 1]
-</code></pre><h3 id="chunk-payload">Chunk payload</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">data_desc</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">32</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">data_desc</span><span class="w">
+</span></code></pre></div><p>The user can not always predict how many data will receive. In this case <code>size</code> node type must be a name of metadata where to write the size of received payload. This metadata will hold the size of received array. The <code>size</code> property of descriptor should be divided by size of single element. Example of receiving unknown payload size:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">received_size </span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">data_descriptor_name</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="l">$received_size/4}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="l">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">data_descriptor_name</span><span class="w">
+</span><span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">received_size</span><span class="w">
+</span></code></pre></div><p>In case that you want to send only a part of the data from descriptor you can specify it in <code>copy_data_selection</code> tree defining datatype the same way as for descriptors. Simple example:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">data_descriptor_name</span><span class="p">:</span><span class="w">  </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">32</span><span class="p">,</span><span class="w"> </span><span class="m">32</span><span class="p">]</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">data_descriptor_name</span><span class="w">
+</span><span class="w">      </span><span class="nt">copy_data_selection</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">        </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">32</span><span class="p">,</span><span class="w"> </span><span class="m">32</span><span class="p">]</span><span class="w">
+</span><span class="w">        </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">]</span><span class="w">
+</span><span class="w">        </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id="chunk-payload">Chunk payload</h3>
 <p>Requires <code>chunks</code> key in a port tree. This configuration means that module will send several buffers in one payload. Value of the <code>chunks</code> key is the list of <a href="member:FlowVR_plugin_1data_payload">Data payload</a>.</p>
 <hr>
 <p>WARNING</p>
 <p>After each wait, the first access to the any descriptor (that belongs to the chunks) will allocate the memory for the all descriptors. This means that all sizes (if stored as metadata) should be set before first access to any of the descriptors.</p>
 <hr>
-<pre><code>data:
-  chunk_1_name: int
-  chunk_2_name: {type: array, subtype: char, size: 255}
-  chunk_3_name: float
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      chunks:
-        - data: chunk_1_name
-        - data: chunk_2_name
-        - data: chunk_3_name
-</code></pre><h3 id="event-button-payload">Event button payload</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">chunk_1_name</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">chunk_2_name</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">255</span>}<span class="w">
+</span><span class="w">  </span><span class="nt">chunk_3_name</span><span class="p">:</span><span class="w"> </span><span class="l">float</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">chunks</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">chunk_1_name</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">chunk_2_name</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">chunk_3_name</span><span class="w">
+</span></code></pre></div><h3 id="event-button-payload">Event button payload</h3>
 <p>Requires <code>event_button</code> key in a port tree. The payload holds the values of the keyboard keys pressed during iteration.</p>
 <p>The full list of predefined keys:</p>
 <table>
@@ -2137,22 +2137,22 @@ flowvr:
 </tbody>
 </table>
 <p>Value for each key in configuration is a descriptor of integer type. You need to make sure that you are setting this descriptors with correct values on each iteration. Example of configuration with arrow buttons:</p>
-<pre><code>data:
-  up: int
-  down: int
-  left: int
-  right: int
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      event_button:
-        KEY_UP: up
-        KEY_DOWN: down
-        KEY_LEFT: left
-        KEY_RIGHT: right
-</code></pre><h3 id="event-mouse-payload">Event mouse payload</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">up</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">down</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">left</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">right</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">event_button</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">KEY_UP</span><span class="p">:</span><span class="w"> </span><span class="l">up</span><span class="w">
+</span><span class="w">        </span><span class="nt">KEY_DOWN</span><span class="p">:</span><span class="w"> </span><span class="l">down</span><span class="w">
+</span><span class="w">        </span><span class="nt">KEY_LEFT</span><span class="p">:</span><span class="w"> </span><span class="l">left</span><span class="w">
+</span><span class="w">        </span><span class="nt">KEY_RIGHT</span><span class="p">:</span><span class="w"> </span><span class="l">right</span><span class="w">
+</span></code></pre></div><h3 id="event-mouse-payload">Event mouse payload</h3>
 <p>Requires <code>event_mouse</code> key in a port tree. The payload holds the values of the mouse keys pressed and cursor position during iteration. The button state is saved in descriptors of integer type and a cursor position in an array of 2 floats.</p>
 <p>Available keys in <code>event_mouse</code> tree:</p>
 <table>
@@ -2182,22 +2182,22 @@ flowvr:
 </tbody>
 </table>
 <p>Example of configuration with all keys defined:</p>
-<pre><code>data:
-  pos_xy: {type: array, subtype: float, size: 2}
-  left_button: int
-  right_button: int
-  middle_button: int
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      event_mouse:
-        POS_XY: pos_xy
-        LEFT_BUTTON: left_button
-        RIGHT_BUTTON: right_button
-        MIDDLE_BUTTON: middle_button
-</code></pre><h3 id="stamp">Stamp</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pos_xy</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: float, size</span><span class="p">:</span><span class="w"> </span><span class="m">2</span>}<span class="w">
+</span><span class="w">  </span><span class="nt">left_button</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">right_button</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">middle_button</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">event_mouse</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">POS_XY</span><span class="p">:</span><span class="w"> </span><span class="l">pos_xy</span><span class="w">
+</span><span class="w">        </span><span class="nt">LEFT_BUTTON</span><span class="p">:</span><span class="w"> </span><span class="l">left_button</span><span class="w">
+</span><span class="w">        </span><span class="nt">RIGHT_BUTTON</span><span class="p">:</span><span class="w"> </span><span class="l">right_button</span><span class="w">
+</span><span class="w">        </span><span class="nt">MIDDLE_BUTTON</span><span class="p">:</span><span class="w"> </span><span class="l">middle_button</span><span class="w">
+</span></code></pre></div><h3 id="stamp">Stamp</h3>
 <p>The <code>stamps</code> key must be defined in a port tree. The value of <code>stamps</code> is simply a map with the stamp name and descriptor name. The given descriptor must have a valid PDI type, limited to:</p>
 <ul>
 <li><code>int</code></li>
@@ -2207,32 +2207,32 @@ flowvr:
 <li><code>array of chars</code></li>
 </ul>
 <p>Example of message with <a href="member:FlowVR_plugin_1data_payload">Data payload</a> and 2 stamps:</p>
-<pre><code>data:
-  data_desc: {type: array, subtype: int, size: 256}
-  stamp_1_desc: int
-  stamp_2_desc: {type: array, subtype: float, size: 2}
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      data: data_desc
-      stamps:
-        stamp_1_name: stamp_1_desc
-        stamp_2_name: stamp_2_desc
-</code></pre><p>For output port stamp can be also define as an expression, but stamp will need type definition in this case. Example of expression stamp:</p>
-<pre><code>metadata:
-  value_desc: int
-
-flowvr:
-  ...
-  output_ports:
-    some_port_name:
-      stamps:
-        stamp_name:
-          type: int
-          expression: ($value_desc/2) * 3
-</code></pre><p>For now only int and string stamps are supported as expression.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">data_desc</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">256</span>}<span class="w">
+</span><span class="w">  </span><span class="nt">stamp_1_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">stamp_2_desc</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: float, size</span><span class="p">:</span><span class="w"> </span><span class="m">2</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">data_desc</span><span class="w">
+</span><span class="w">      </span><span class="nt">stamps</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">stamp_1_name</span><span class="p">:</span><span class="w"> </span><span class="l">stamp_1_desc</span><span class="w">
+</span><span class="w">        </span><span class="nt">stamp_2_name</span><span class="p">:</span><span class="w"> </span><span class="l">stamp_2_desc</span><span class="w">
+</span></code></pre></div><p>For output port stamp can be also define as an expression, but stamp will need type definition in this case. Example of expression stamp:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">value_desc</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">flowvr</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_port_name</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">stamps</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">stamp_name</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">          </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l">($value_desc/2) * 3</span><span class="w">
+</span></code></pre></div><p>For now only int and string stamps are supported as expression.</p>
 <h2 id="reading-and-writing-data-examples">Reading and writing data examples</h2>
 <p>FlowVR plugin uses 2 ways to handle data reading and writing:</p>
 <ol>
@@ -2240,155 +2240,155 @@ flowvr:
 <li>Copy the data from shared memory to descriptor - needs the data copy (convenient for small messages or sparse data types).</li>
 </ol>
 <h3 id="read-data-from-flowvr-message-by-access-the-shared-memory">Read data from FlowVR message by access the shared memory</h3>
-<pre><code>data:
-  text_shr: {type: array, subtype: char, size: 4}
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">text_shr</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">4</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">text_shr</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span><span class="o">*</span> <span class="n">text_shr</span><span class="p">;</span>
+<span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;text_shr&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">text_shr</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
 
-...
-    input_ports:
-      text:
-        data: text_shr
-</code></pre><pre><code>char* text_shr;
-PDI_access(&quot;text_shr&quot;, (void**)&amp;text_shr, PDI_IN);
+<span class="c1">// do something with text_shr or copy data to local buffer
+</span><span class="c1"></span>
+<span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;text_shr&#34;</span><span class="p">);</span> <span class="c1">// really important to release descriptors
+</span></code></pre></div><h3 id="write-data-from-flowvr-message-by-access-the-shared-memory">Write data from FlowVR message by access the shared memory</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">text_shr</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">4</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">text_shr</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span><span class="o">*</span> <span class="n">text_shr</span><span class="p">;</span>
+<span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;text_shr&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">text_shr</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
 
-// do something with text_shr or copy data to local buffer
-
-PDI_release(&quot;text_shr&quot;); // really important to release descriptors
-</code></pre><h3 id="write-data-from-flowvr-message-by-access-the-shared-memory">Write data from FlowVR message by access the shared memory</h3>
-<pre><code>data:
-  text_shr: {type: array, subtype: char, size: 4}
-
-...
-    output_ports:
-      text:
-        data: text_shr
-</code></pre><pre><code>char* text_shr;
-PDI_access(&quot;text_shr&quot;, (void**)&amp;text_shr, PDI_OUT);
-
-// do something with text_shr or copy data from local buffer
-
-PDI_release(&quot;text_shr&quot;); // really important to release descriptors
-</code></pre><h3 id="read-data-from-flowvr-message-by-copy-from-the-shared-memory">Read data from FlowVR message by copy from the shared memory</h3>
-<pre><code>data:
-  text: {type: array, subtype: char, size: 4}
-
-...
-    input_ports:
-      text:
-        data: text
-</code></pre><pre><code>char text[4];
-PDI_expose(&quot;text&quot;, text, PDI_IN);
-</code></pre><h3 id="write-data-to-flowvr-message-by-copy-to-the-shared-memory">Write data to FlowVR message by copy to the shared memory</h3>
-<pre><code>data:
-  text: {type: array, subtype: char, size: 4}
-
-...
-    output_ports:
-      text:
-        data: text
-</code></pre><pre><code>char text[4];
-PDI_expose(&quot;text&quot;, text, PDI_OUT);
-</code></pre><h3 id="write-data-to-flowvr-message-by-copy-the-subset-of-data-to-the-shared-memory">Write data to FlowVR message by copy the subset of data to the shared memory</h3>
-<pre><code>data:
-  my_array: {type: array, subtype: int, size: [20, 20]}
-
-...
-    output_ports:
-      text:
-        data: my_array
-        copy_data_selection: {type: array, subtype: int, size: [20, 20], subsize: [10, 10], start: [0, 0]}
-</code></pre><pre><code>int my_array[400];
-PDI_expose(&quot;my_array&quot;, my_array, PDI_OUT); // copies only 100 elements
-</code></pre><h2 id="and-writing-stamps-examples">and writing stamps examples</h2>
+<span class="c1">// do something with text_shr or copy data from local buffer
+</span><span class="c1"></span>
+<span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;text_shr&#34;</span><span class="p">);</span> <span class="c1">// really important to release descriptors
+</span></code></pre></div><h3 id="read-data-from-flowvr-message-by-copy-from-the-shared-memory">Read data from FlowVR message by copy from the shared memory</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">4</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">text</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;text&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+</code></pre></div><h3 id="write-data-to-flowvr-message-by-copy-to-the-shared-memory">Write data to FlowVR message by copy to the shared memory</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">4</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">text</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;text&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+</code></pre></div><h3 id="write-data-to-flowvr-message-by-copy-the-subset-of-data-to-the-shared-memory">Write data to FlowVR message by copy the subset of data to the shared memory</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">my_array</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">]</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l">my_array</span><span class="w">
+</span><span class="w">        </span><span class="nt">copy_data_selection</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size: [20, 20], subsize: [10, 10], start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span>}<span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">400</span><span class="p">];</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;my_array&#34;</span><span class="p">,</span> <span class="n">my_array</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span> <span class="c1">// copies only 100 elements
+</span></code></pre></div><h2 id="and-writing-stamps-examples">and writing stamps examples</h2>
 <p>Stamps are always copied from descriptor to flowvr message.</p>
 <h3 id="read-stamp-from-flowvr-message">Read stamp from FlowVR message</h3>
-<pre><code>data:
-  stamp_it: int
-...
-    input_ports:
-      text:
-        stamps:
-          it: stamp_it
-</code></pre><pre><code>int stamp_it = some_value;
-PDI_expose(&quot;stamp_it&quot;, &amp;stamp_it, PDI_IN);
-</code></pre><h3 id="write-stamp-from-flowvr-message">Write stamp from FlowVR message</h3>
-<pre><code>data:
-  user_stamp: int
-
-...
-    output_ports:
-      text:
-        stamps:
-          user_defined_stamp: user_stamp
-</code></pre><pre><code>int user_stamp = some_value;
-PDI_expose(&quot;user_stamp&quot;, &amp;user_stamp, PDI_OUT);
-</code></pre><h2 id="reading-and-writing-mouse-and-button-event-examples">Reading and writing mouse and button event examples</h2>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">stamp_it</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">stamps</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">it</span><span class="p">:</span><span class="w"> </span><span class="l">stamp_it</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">stamp_it</span> <span class="o">=</span> <span class="n">some_value</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;stamp_it&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stamp_it</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+</code></pre></div><h3 id="write-stamp-from-flowvr-message">Write stamp from FlowVR message</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">user_stamp</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">stamps</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">user_defined_stamp</span><span class="p">:</span><span class="w"> </span><span class="l">user_stamp</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">user_stamp</span> <span class="o">=</span> <span class="n">some_value</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;user_stamp&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">user_stamp</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+</code></pre></div><h2 id="reading-and-writing-mouse-and-button-event-examples">Reading and writing mouse and button event examples</h2>
 <h3 id="write-mouse-event-from-flowvr-message">Write mouse event from FlowVR message</h3>
-<pre><code>data:
-  pos_xy: {type: array, subtype: float, size: 2}
-  left_button: int
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pos_xy</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: float, size</span><span class="p">:</span><span class="w"> </span><span class="m">2</span>}<span class="w">
+</span><span class="w">  </span><span class="nt">left_button</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">keysOut</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">event_mouse</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">POS_XY</span><span class="p">:</span><span class="w"> </span><span class="l">pos_xy</span><span class="w">
+</span><span class="w">          </span><span class="nt">LEFT_BUTTON</span><span class="p">:</span><span class="w"> </span><span class="l">left_button</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">float</span> <span class="n">pos_xy</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">x_pos</span><span class="p">,</span> <span class="n">y_pos</span><span class="p">};</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;pos_xy&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">pos_xy</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
 
-...
-    output_ports:
-      keysOut:
-        event_mouse:
-          POS_XY: pos_xy
-          LEFT_BUTTON: left_button
-</code></pre><pre><code>float pos_xy[2] = {x_pos, y_pos};
-PDI_expose(&quot;pos_xy&quot;, &amp;pos_xy, PDI_OUT);
+<span class="kt">int</span> <span class="n">left_button</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;left_button&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">left_button</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+</code></pre></div><h3 id="read-mouse-event-from-flowvr-message">Read mouse event from FlowVR message</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pos_xy</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: float, size</span><span class="p">:</span><span class="w"> </span><span class="m">2</span>}<span class="w">
+</span><span class="w">  </span><span class="nt">left_button</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w"></span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">keysIn</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">event_mouse</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">POS_XY</span><span class="p">:</span><span class="w"> </span><span class="l">pos_xy</span><span class="w">
+</span><span class="w">      </span><span class="nt">LEFT_BUTTON</span><span class="p">:</span><span class="w"> </span><span class="l">left_button</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">float</span> <span class="n">pos_xy</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;pos_xy&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">pos_xy</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
 
-int left_button = 1;
-PDI_expose(&quot;left_button&quot;, &amp;left_button, PDI_OUT);
-</code></pre><h3 id="read-mouse-event-from-flowvr-message">Read mouse event from FlowVR message</h3>
-<pre><code>data:
-  pos_xy: {type: array, subtype: float, size: 2}
-  left_button: int
+<span class="kt">int</span> <span class="n">left_button</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;left_button&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">left_button</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+</code></pre></div><h3 id="write-button-event-from-flowvr-message">Write button event from FlowVR message</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">up</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">down</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">output_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">keysOut</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">event_button</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">KEY_UP</span><span class="p">:</span><span class="w"> </span><span class="l">up</span><span class="w">
+</span><span class="w">          </span><span class="nt">KEY_DOWN</span><span class="p">:</span><span class="w"> </span><span class="l">down</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">up_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;up&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">up_state</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
 
-...
-input_ports:
-  keysIn:
-    event_mouse:
-      POS_XY: pos_xy
-      LEFT_BUTTON: left_button
-</code></pre><pre><code>float pos_xy;
-PDI_expose(&quot;pos_xy&quot;, &amp;pos_xy, PDI_IN);
+<span class="kt">int</span> <span class="n">down_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">down_state</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+</code></pre></div><h3 id="read-button-event-from-flowvr-message">Read button event from FlowVR message</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">up</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">down</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">...</span><span class="w">
+</span><span class="w">    </span><span class="nt">input_ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">keysIn</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">event_button</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">KEY_UP</span><span class="p">:</span><span class="w"> </span><span class="l">up</span><span class="w">
+</span><span class="w">          </span><span class="nt">KEY_DOWN</span><span class="p">:</span><span class="w"> </span><span class="l">down</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">up_state</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;up&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">up_state</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
 
-int left_button;
-PDI_expose(&quot;left_button&quot;, &amp;left_button, PDI_IN);
-</code></pre><h3 id="write-button-event-from-flowvr-message">Write button event from FlowVR message</h3>
-<pre><code>data:
-  up: int
-  down: int
-
-...
-    output_ports:
-      keysOut:
-        event_button:
-          KEY_UP: up
-          KEY_DOWN: down
-</code></pre><pre><code>int up_state = 1;
-PDI_expose(&quot;up&quot;, &amp;up_state, PDI_OUT);
-
-int down_state = 1;
-PDI_expose(&quot;down&quot;, &amp;down_state, PDI_OUT);
-</code></pre><h3 id="read-button-event-from-flowvr-message">Read button event from FlowVR message</h3>
-<pre><code>data:
-  up: int
-  down: int
-
-...
-    input_ports:
-      keysIn:
-        event_button:
-          KEY_UP: up
-          KEY_DOWN: down
-</code></pre><pre><code>int up_state;
-PDI_expose(&quot;up&quot;, &amp;up_state, PDI_IN);
-
-int down_state;
-PDI_expose(&quot;down&quot;, &amp;down_state, PDI_IN);
-</code></pre><h2 id="flowvr-examples-reworked-for-pdi">FlowVR examples reworked for %PDI</h2>
+<span class="kt">int</span> <span class="n">down_state</span><span class="p">;</span>
+<span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">down_state</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+</code></pre></div><h2 id="flowvr-examples-reworked-for-pdi">FlowVR examples reworked for %PDI</h2>
 <p>Path to the examples:</p>
-<pre><code>pdi/build/pdi_plugin-flowvr/src/FLOWVR_PLUGIN-build/examples/
+<pre><code class="language-path" data-lang="path">pdi/build/pdi_plugin-flowvr/src/FLOWVR_PLUGIN-build/examples/
 </code></pre><p>Original flowvr source files are in directories <code>flowvr_original</code>.</p>
 <h3 id="running-the-application">Running the application</h3>
 <ol>
@@ -2454,7 +2454,11 @@ PDI_expose(&quot;down&quot;, &amp;down_state, PDI_IN);
 </li>
 </ul>
 <p><strong>Network of the application:</strong></p>
-<p><img src="/docs/imgs/tictac_net.jpg" alt=""></p>
+
+<figure>
+    <img src="/docs/imgs/tictac_net.jpg"/> 
+</figure>
+
 <h4 id="bundle-example">Bundle example</h4>
 <p>Consists of 3 modules:</p>
 <ul>
@@ -2509,7 +2513,11 @@ PDI_expose(&quot;down&quot;, &amp;down_state, PDI_IN);
 </li>
 </ul>
 <p><strong>Network of the application:</strong></p>
-<p><img src="/docs/imgs/bundle_net.jpg" alt=""></p>
+
+<figure>
+    <img src="/docs/imgs/bundle_net.jpg"/> 
+</figure>
+
 <h3 id="primes-example">Primes example</h3>
 <p>Consists of 3 modules:</p>
 <ul>
@@ -2582,7 +2590,11 @@ PDI_expose(&quot;down&quot;, &amp;down_state, PDI_IN);
 </li>
 </ul>
 <p><strong>Network of the application:</strong></p>
-<p><img src="/docs/imgs/primes_net.jpg" alt=""></p>
+
+<figure>
+    <img src="/docs/imgs/primes_net.jpg"/> 
+</figure>
+
 <h3 id="fluid-example">Fluid example</h3>
 <p>Consists of 2 modules:</p>
 <ul>
@@ -2655,7 +2667,11 @@ PDI_expose(&quot;down&quot;, &amp;down_state, PDI_IN);
 </li>
 </ul>
 <p><strong>Network of the application:</strong></p>
-<p><img src="/docs/imgs/fluid_net.jpg" alt=""></p>
+
+<figure>
+    <img src="/docs/imgs/fluid_net.jpg"/> 
+</figure>
+
 
 	
 	

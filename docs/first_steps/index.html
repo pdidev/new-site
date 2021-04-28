@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -19,7 +19,7 @@
 
 <title>First steps with PDI | PDI</title><meta property="og:title" content="First steps with PDI" />
 <meta property="og:description" content="Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named hello_event.yml that will load trace plugin:
-plugins: trace: ~ Yes, that is whole specification tree." />
+plugins:trace:~Yes, that is whole specification tree." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/first_steps/" /><meta property="article:section" content="docs" />
 
@@ -27,13 +27,13 @@ plugins: trace: ~ Yes, that is whole specification tree." />
 
 <meta itemprop="name" content="First steps with PDI">
 <meta itemprop="description" content="Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named hello_event.yml that will load trace plugin:
-plugins: trace: ~ Yes, that is whole specification tree.">
+plugins:trace:~Yes, that is whole specification tree.">
 
-<meta itemprop="wordCount" content="1364">
+<meta itemprop="wordCount" content="1338">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="First steps with PDI"/>
 <meta name="twitter:description" content="Hello Event As mentioned in Specification tree we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use Trace plugin, which is very simple plugin that just prints every information it gets. Let&#39;s create a specification tree named hello_event.yml that will load trace plugin:
-plugins: trace: ~ Yes, that is whole specification tree."/>
+plugins:trace:~Yes, that is whole specification tree."/>
 
 
 
@@ -41,8 +41,8 @@ plugins: trace: ~ Yes, that is whole specification tree."/>
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1782,37 +1782,37 @@ plugins: trace: ~ Yes, that is whole specification tree."/>
 	       
 	<h2 id="hello-event">Hello Event</h2>
 <p>As mentioned in <a href="member:Concepts_1Specification_tree">Specification tree</a> we have to provide specification tree to instruct PDI what data we will share and what to do with it. We want to show what happens on each PDI API call. We will use <a href="compound:trace_plugin">Trace plugin</a>, which is very simple plugin that just prints every information it gets. Let's create a specification tree named <code>hello_event.yml</code> that will load trace plugin:</p>
-<pre><code>plugins:
-  trace: ~
-</code></pre><p>Yes, that is whole specification tree. Trace plugin prints everything, so there is no need to specify what we want it to do.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">trace</span><span class="p">:</span><span class="w"> </span><span class="l">~</span><span class="w">
+</span></code></pre></div><p>Yes, that is whole specification tree. Trace plugin prints everything, so there is no need to specify what we want it to do.</p>
 <p>C source code:</p>
-<pre><code>#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;hello_event.yml&#34;</span><span class="p">));</span>
 
-int main(int argc, char* argv[]) {
-    PDI_init(PC_parse_path(&quot;hello_event.yml&quot;));
+    <span class="n">PDI_event</span><span class="p">(</span><span class="s">&#34;Hello World Event&#34;</span><span class="p">);</span>
 
-    PDI_event(&quot;Hello World Event&quot;);
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Fortran source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-f90" data-lang="f90"><span class="k">program </span><span class="n">hello_event</span>
+    <span class="k">use </span><span class="n">paraconf</span>
+    <span class="k">use </span><span class="n">pdi</span>
+    <span class="k">implicit none
+</span><span class="k">
+</span><span class="k">    type</span><span class="p">(</span><span class="n">PC_tree_t</span><span class="p">),</span> <span class="k">target</span> <span class="kd">::</span> <span class="n">conf</span>
 
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>Fortran source code:</p>
-<pre><code>program hello_event
-    use paraconf
-    use pdi
-    implicit none
+    <span class="k">call </span><span class="n">pc_parse_path</span><span class="p">(</span><span class="s2">&#34;hello_event.yml&#34;</span><span class="p">,</span> <span class="n">conf</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">pdi_init</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
 
-    type(PC_tree_t), target :: conf
+    <span class="k">call </span><span class="n">pdi_event</span><span class="p">(</span><span class="s2">&#34;Hello World Event&#34;</span><span class="p">)</span>
 
-    call pc_parse_path(&quot;hello_event.yml&quot;, conf)
-    call pdi_init(conf)
+    <span class="k">call </span><span class="n">pdi_finalize</span><span class="p">()</span>
 
-    call pdi_event(&quot;Hello World Event&quot;)
-
-    call pdi_finalize()
-
-end program hello_event
-</code></pre><p>Let's analyze what happens in each line. Firstly we have <a href="member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0">PDI_init()</a> function which take parameter of type <code>PC_tree_t</code>. It's a tree structure parsed from some YAML file, in our case we parse it with <code>paraconf</code> library build in PDI. To parse a file we need to call <code>PC_parse_path</code> function passing file path as argument. The next step is to call an event in PDI named &quot;Hello World Event&quot;. At the end we have to call <a href="member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969">PDI_finalize()</a>. The output from this program is presented below:</p>
+<span class="k">end program </span><span class="n">hello_event</span>
+</code></pre></div><p>Let's analyze what happens in each line. Firstly we have <a href="member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0">PDI_init()</a> function which take parameter of type <code>PC_tree_t</code>. It's a tree structure parsed from some YAML file, in our case we parse it with <code>paraconf</code> library build in PDI. To parse a file we need to call <code>PC_parse_path</code> function passing file path as argument. The next step is to call an event in PDI named &quot;Hello World Event&quot;. At the end we have to call <a href="member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969">PDI_finalize()</a>. The output from this program is presented below:</p>
 <pre><code>[PDI][Trace-plugin][10:25:28] *** info: Welcome!
 [PDI][10:25:28] *** info: Initialization successful
 [PDI][Trace-plugin][10:25:28] *** info: !!! named event: Hello World Event
@@ -1822,49 +1822,49 @@ end program hello_event
 <h2 id="hello-data">Hello Data</h2>
 <p>In <a href="member:First_steps_1fs_hello_event">Hello Event</a> we learned how to call an event. In this chapter we will see how to share and reclaim data.</p>
 <p>Firstly we have to create a specification tree named <code>hello_data.yml</code> with <code>data</code> and trace plugin tree declared:</p>
-<pre><code>data:
-  world: int
-plugins:
-  trace: ~
-</code></pre><p>We have declared trace plugin and one descriptor named <code>world</code> of integer type.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">world</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">trace</span><span class="p">:</span><span class="w"> </span><span class="l">~</span><span class="w">
+</span></code></pre></div><p>We have declared trace plugin and one descriptor named <code>world</code> of integer type.</p>
 <p>C source code:</p>
-<pre><code>#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;hello_data.yml&#34;</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">my_world</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">PDI_share</span><span class="p">(</span><span class="s">&#34;world&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">my_world</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="c1">//variable my_world is shared with PDI
+</span><span class="c1"></span>
+    <span class="n">PDI_reclaim</span><span class="p">(</span><span class="s">&#34;world&#34;</span><span class="p">);</span>
+    <span class="c1">//variable my_world is no longer shared with PDI
+</span><span class="c1"></span>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Fortran source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-f90" data-lang="f90"><span class="k">program </span><span class="n">hello_data</span>
+    <span class="k">use </span><span class="n">paraconf</span>
+    <span class="k">use </span><span class="n">pdi</span>
+    <span class="k">implicit none
+</span><span class="k">
+</span><span class="k">    type</span><span class="p">(</span><span class="n">PC_tree_t</span><span class="p">),</span><span class="k">target</span> <span class="kd">::</span> <span class="n">conf</span>
+    <span class="kt">integer</span>                <span class="kd">::</span> <span class="n">my_world</span>
 
-int main(int argc, char* argv[]) {
-    PDI_init(PC_parse_path(&quot;hello_data.yml&quot;));
-    int my_world = 42;
-    PDI_share(&quot;world&quot;, &amp;my_world, PDI_OUT);
-    //variable my_world is shared with PDI
+    <span class="k">call </span><span class="n">pc_parse_path</span><span class="p">(</span><span class="s2">&#34;hello_data.yml&#34;</span><span class="p">,</span> <span class="n">conf</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">pdi_init</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
 
-    PDI_reclaim(&quot;world&quot;);
-    //variable my_world is no longer shared with PDI
+    <span class="n">my_world</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="k">call </span><span class="n">pdi_share</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">,</span> <span class="n">my_world</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
+    <span class="c">!variable my_world is shared with PDI
+</span><span class="c"></span>
+    <span class="k">call </span><span class="n">pdi_reclaim</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">);</span>
+    <span class="c">!variable my_world is no longer shared with PDI
+</span><span class="c"></span>
+    <span class="k">call </span><span class="n">pdi_finalize</span><span class="p">()</span>
 
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>Fortran source code:</p>
-<pre><code>program hello_data
-    use paraconf
-    use pdi
-    implicit none
-
-    type(PC_tree_t),target :: conf
-    integer                :: my_world
-
-    call pc_parse_path(&quot;hello_data.yml&quot;, conf)
-    call pdi_init(conf)
-
-    my_world = 42
-    call pdi_share(&quot;world&quot;, my_world, pdi_out)
-    !variable my_world is shared with PDI
-
-    call pdi_reclaim(&quot;world&quot;);
-    !variable my_world is no longer shared with PDI
-
-    call pdi_finalize()
-
-end program hello_data
-</code></pre><p>Let's analyze new functions:</p>
+<span class="k">end program </span><span class="n">hello_data</span>
+</code></pre></div><p>Let's analyze new functions:</p>
 <ul>
 <li><code>PDI_share</code> shares access to the variable with PDI. The first argument is a descriptor name and indicates what data we are sharing. The second one is pointer to our variable and the last one is access direction. <code>PDI_OUT</code> means data direction from application to PDI, <code>PDI_IN</code> is a direction from PDI to the program, <code>PDI_INOUT</code> includes both directions.</li>
 <li><code>PDI_reclaim</code> reclaims the share which means that PDI will no longer have access to shared variable. As an argument it takes name of the descriptor.</li>
@@ -1879,99 +1879,99 @@ end program hello_data
 </code></pre><p>As we can see from the logs above, when we called <code>PDI_share</code> plugin gained access to the shared variable and after <code>PDI_reclaim</code> the variable has become no longer available for the plugin. The share notification gives plugin possibility to operate on data dependently what has been declared in specification tree.</p>
 <p>The same exact result we can achieve with <code>PDI_expose</code> which is just <code>PDI_share</code> call and right after <code>PDI_reclaim</code> is called.</p>
 <p>C source code:</p>
-<pre><code>    PDI_share(&quot;world&quot;, &amp;my_world, PDI_OUT);
-    PDI_reclaim(&quot;world&quot;);
-</code></pre><p>is the same as:</p>
-<pre><code>    PDI_expose(&quot;world&quot;, &amp;my_world, PDI_OUT);
-</code></pre><p>Fortran source code:</p>
-<pre><code>    call pdi_share(&quot;world&quot;, my_world, pdi_out)
-    call pdi_reclaim(&quot;world&quot;);
-</code></pre><p>is the same as:</p>
-<pre><code>    call pdi_expose(&quot;world&quot;, my_world, pdi_out)
-</code></pre><h2 id="hello-access">Hello Access</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c">    <span class="n">PDI_share</span><span class="p">(</span><span class="s">&#34;world&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">my_world</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="n">PDI_reclaim</span><span class="p">(</span><span class="s">&#34;world&#34;</span><span class="p">);</span>
+</code></pre></div><p>is the same as:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c">    <span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;world&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">my_world</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+</code></pre></div><p>Fortran source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-f90" data-lang="f90">    <span class="k">call </span><span class="n">pdi_share</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">,</span> <span class="n">my_world</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">pdi_reclaim</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">);</span>
+</code></pre></div><p>is the same as:</p>
+<div class="highlight"><pre class="chroma"><code class="language-f90" data-lang="f90">    <span class="k">call </span><span class="n">pdi_expose</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">,</span> <span class="n">my_world</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
+</code></pre></div><h2 id="hello-access">Hello Access</h2>
 <p>Now we will try to access a descriptor we share with PDI. In this case we won't need any plugin. We want to define int and a string in our <code>hello_access.yml</code>:</p>
-<pre><code>data:
-  my_value: int
-  my_message: {type: array, subtype: char, size: 32}
-</code></pre><p>C source code:</p>
-<pre><code>#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">my_value</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">my_message</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">32</span>}<span class="w">
+</span></code></pre></div><p>C source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">print_secret_msg</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">value</span><span class="p">;</span>
+    <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;my_value&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">value</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">value</span><span class="p">);</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;my_value&#34;</span><span class="p">);</span>
 
-void print_secret_msg() {
-    int* value;
-    PDI_access(&quot;my_value&quot;, (void**)&amp;value, PDI_IN);
-    printf(&quot;%d\n&quot;, *value);
-    PDI_release(&quot;my_value&quot;);
+    <span class="kt">char</span><span class="o">*</span> <span class="n">message</span><span class="p">;</span>
+    <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;my_message&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">message</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;my_message&#34;</span><span class="p">);</span>
+<span class="p">}</span>
 
-    char* message;
-    PDI_access(&quot;my_message&quot;, (void**)&amp;message, PDI_IN);
-    printf(&quot;%s\n&quot;, message);
-    PDI_release(&quot;my_message&quot;);
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;world_access.yml&#34;</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">my_value</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">PDI_share</span><span class="p">(</span><span class="s">&#34;my_value&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">my_value</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
 
-int main(int argc, char* argv[]) {
-    PDI_init(PC_parse_path(&quot;world_access.yml&quot;));
-    int my_value = 42;
-    PDI_share(&quot;my_value&quot;, &amp;my_value, PDI_OUT);
+    <span class="kt">char</span><span class="o">*</span> <span class="n">secret_msg</span> <span class="o">=</span> <span class="s">&#34;Watermelon is the tastiest fruit&#34;</span><span class="p">;</span>
+    <span class="n">PDI_share</span><span class="p">(</span><span class="s">&#34;my_message&#34;</span><span class="p">,</span> <span class="n">secret_msg</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
 
-    char* secret_msg = &quot;Watermelon is the tastiest fruit&quot;;
-    PDI_share(&quot;my_message&quot;, secret_msg, PDI_OUT);
+    <span class="n">print_secret_msg</span><span class="p">();</span>
 
-    print_secret_msg();
+    <span class="n">PDI_reclaim</span><span class="p">(</span><span class="s">&#34;my_message&#34;</span><span class="p">);</span>
+    <span class="n">PDI_reclaim</span><span class="p">(</span><span class="s">&#34;my_value&#34;</span><span class="p">);</span>
 
-    PDI_reclaim(&quot;my_message&quot;);
-    PDI_reclaim(&quot;my_value&quot;);
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Fortran source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-f90" data-lang="f90"><span class="k">subroutine </span><span class="n">print_secret_msg</span>
+  <span class="k">use </span><span class="n">pdi</span>
+  <span class="k">implicit none
+</span><span class="k">
+</span><span class="k">  </span><span class="kt">integer</span><span class="p">,</span> <span class="k">pointer</span>               <span class="kd">::</span> <span class="n">p_val</span>
+  <span class="kt">character</span><span class="p">,</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">contiguous</span> <span class="kd">::</span> <span class="n">p_msg</span><span class="p">(:)</span>
+  <span class="kt">integer</span>                        <span class="kd">::</span> <span class="n">msg_ranks</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>Fortran source code:</p>
-<pre><code>subroutine print_secret_msg
-  use pdi
-  implicit none
+  <span class="k">call </span><span class="n">pdi_access</span><span class="p">(</span><span class="s2">&#34;value&#34;</span><span class="p">,</span> <span class="n">p_val</span><span class="p">,</span> <span class="n">pdi_in</span><span class="p">)</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&#34;PDI value: &#34;</span><span class="p">,</span> <span class="n">p_val</span>
+  <span class="k">call </span><span class="n">pdi_release</span><span class="p">(</span><span class="s2">&#34;value&#34;</span><span class="p">)</span>
 
-  integer, pointer               :: p_val
-  character, pointer, contiguous :: p_msg(:)
-  integer                        :: msg_ranks(1)
+  <span class="c">! In case of accessing arrays, PDI_access takes additional array argument with dimensions sizes
+</span><span class="c"></span>  <span class="n">msg_ranks</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">32</span>
+  <span class="k">call </span><span class="n">pdi_access</span><span class="p">(</span><span class="s2">&#34;message&#34;</span><span class="p">,</span> <span class="n">p_msg</span><span class="p">,</span> <span class="n">pdi_in</span><span class="p">,</span> <span class="n">msg_ranks</span><span class="p">)</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&#34;PDI message: &#34;</span><span class="p">,</span> <span class="n">p_msg</span>
+  <span class="k">call </span><span class="n">pdi_release</span><span class="p">(</span><span class="s2">&#34;message&#34;</span><span class="p">)</span>
+  <span class="k">return
+</span><span class="k">end subroutine </span><span class="n">print_secret_msg</span>
 
-  call pdi_access(&quot;value&quot;, p_val, pdi_in)
-  print *, &quot;PDI value: &quot;, p_val
-  call pdi_release(&quot;value&quot;)
+<span class="k">program </span><span class="nb">access
+</span><span class="nb">  </span><span class="k">use </span><span class="n">paraconf</span>
+  <span class="k">use </span><span class="n">pdi</span>
+  <span class="k">implicit none
+</span><span class="k">
+</span><span class="k">  type</span><span class="p">(</span><span class="n">pc_tree_t</span><span class="p">),</span><span class="k">target</span>  <span class="kd">::</span> <span class="n">conf</span>
+  <span class="kt">integer</span>                 <span class="kd">::</span> <span class="n">my_value</span>
+  <span class="kt">character</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>       <span class="kd">::</span> <span class="n">secret_message</span>
 
-  ! In case of accessing arrays, PDI_access takes additional array argument with dimensions sizes
-  msg_ranks(1) = 32
-  call pdi_access(&quot;message&quot;, p_msg, pdi_in, msg_ranks)
-  print *, &quot;PDI message: &quot;, p_msg
-  call pdi_release(&quot;message&quot;)
-  return
-end subroutine print_secret_msg
+  <span class="k">call </span><span class="n">pc_parse_path</span><span class="p">(</span><span class="s2">&#34;hello_access.yml&#34;</span><span class="p">,</span> <span class="n">conf</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">pdi_init</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
 
-program access
-  use paraconf
-  use pdi
-  implicit none
+  <span class="n">my_value</span> <span class="o">=</span> <span class="mi">42</span>
+  <span class="n">secret_message</span> <span class="o">=</span> <span class="s2">&#34;Watermelon is the tastiest fruit&#34;</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&#34;My value: &#34;</span><span class="p">,</span> <span class="n">my_value</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&#34;My message: &#34;</span><span class="p">,</span> <span class="n">secret_message</span>
 
-  type(pc_tree_t),target  :: conf
-  integer                 :: my_value
-  character(LEN=32)       :: secret_message
+  <span class="k">call </span><span class="n">pdi_share</span><span class="p">(</span><span class="s2">&#34;value&#34;</span><span class="p">,</span> <span class="n">my_value</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">pdi_share</span><span class="p">(</span><span class="s2">&#34;message&#34;</span><span class="p">,</span> <span class="n">secret_message</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
 
-  call pc_parse_path(&quot;hello_access.yml&quot;, conf)
-  call pdi_init(conf)
+  <span class="k">call </span><span class="n">print_secret_msg</span><span class="p">()</span>
 
-  my_value = 42
-  secret_message = &quot;Watermelon is the tastiest fruit&quot;
-  print *, &quot;My value: &quot;, my_value
-  print *, &quot;My message: &quot;, secret_message
-
-  call pdi_share(&quot;value&quot;, my_value, pdi_out)
-  call pdi_share(&quot;message&quot;, secret_message, pdi_out)
-
-  call print_secret_msg()
-
-  call pdi_reclaim(&quot;message&quot;)
-  call pdi_reclaim(&quot;value&quot;)
-  call pdi_finalize()
-end program access
-</code></pre><p>We will focus on <code>print_secret_msg</code> function. If you don't understand what happens in <code>main</code> function, please see <a href="member:First_steps_1fs_hello_data">Hello Data</a> example. <code>PDI_access</code> sets our pointer to the data location. We need to pass <code>PDI_IN</code> because data flows from PDI to our application. We also want to use <code>PDI_release</code>, because <code>PDI_reclaim</code> would end the sharing status of this descriptor and we reclaim this data later in <code>main</code> function. Output from the program:</p>
+  <span class="k">call </span><span class="n">pdi_reclaim</span><span class="p">(</span><span class="s2">&#34;message&#34;</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">pdi_reclaim</span><span class="p">(</span><span class="s2">&#34;value&#34;</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">pdi_finalize</span><span class="p">()</span>
+<span class="k">end program </span><span class="nb">access</span>
+</code></pre></div><p>We will focus on <code>print_secret_msg</code> function. If you don't understand what happens in <code>main</code> function, please see <a href="member:First_steps_1fs_hello_data">Hello Data</a> example. <code>PDI_access</code> sets our pointer to the data location. We need to pass <code>PDI_IN</code> because data flows from PDI to our application. We also want to use <code>PDI_release</code>, because <code>PDI_reclaim</code> would end the sharing status of this descriptor and we reclaim this data later in <code>main</code> function. Output from the program:</p>
 <pre><code>[PDI][13:42:31] *** info: Initialization successful
 42
 Watermelon is the tastiest fruit
@@ -1979,68 +1979,68 @@ Watermelon is the tastiest fruit
 </code></pre><p>As you can see, we manage to access data descriptor from function only by passing its name and correct direction access.</p>
 <h2 id="hello-multi-expose">Hello multi expose</h2>
 <p>In some cases we would want to expose many descriptors at once. For this we have multi expose which shares all the given descriptors, then call given event and then reclaim all passed data. Let's look at the example.</p>
-<pre><code>data:
-  my_int: int
-  my_float: float
-  my_string: {type: array, subtype: char, size: 32}
-
-plugins:
-  trace: ~
-</code></pre><p>We have defined 3 descriptors and trace plugin.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">my_int</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">my_float</span><span class="p">:</span><span class="w"> </span><span class="l">float</span><span class="w">
+</span><span class="w">  </span><span class="nt">my_string</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: char, size</span><span class="p">:</span><span class="w"> </span><span class="m">32</span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">trace</span><span class="p">:</span><span class="w"> </span><span class="l">~</span><span class="w">
+</span></code></pre></div><p>We have defined 3 descriptors and trace plugin.</p>
 <p>C source code:</p>
-<pre><code>#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;hello_multi_expose.yml&#34;</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">z</span> <span class="o">=</span> <span class="s">&#34;RGB = Really Gawky Biscuit&#34;</span><span class="p">;</span>
 
-int main(int argc, char* argv[]) {
-    PDI_init(PC_parse_path(&quot;hello_multi_expose.yml&quot;));
-    int x = 0;
-    float y = 0;
-    char* z = &quot;RGB = Really Gawky Biscuit&quot;;
+    <span class="n">PDI_multi_expose</span><span class="p">(</span><span class="s">&#34;event_between&#34;</span><span class="p">,</span>
+                     <span class="s">&#34;my_int&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">,</span>
+                     <span class="s">&#34;my_float&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">,</span>
+                     <span class="s">&#34;my_string&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">z</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">,</span>
+                     <span class="nb">NULL</span><span class="p">);</span>
 
-    PDI_multi_expose(&quot;event_between&quot;,
-                     &quot;my_int&quot;, &amp;x, PDI_OUT,
-                     &quot;my_float&quot;, &amp;y, PDI_OUT,
-                     &quot;my_string&quot;, &amp;z, PDI_OUT,
-                     NULL);
-
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>First argument of the <code>PDI_multi_expose</code> is the event name we want to call when all the descriptors are shared. After this we pass in loop:</p>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>First argument of the <code>PDI_multi_expose</code> is the event name we want to call when all the descriptors are shared. After this we pass in loop:</p>
 <ul>
 <li>name of the descriptor</li>
 <li>pointer to the data</li>
 <li>direction access As the last argument we have to pass <code>NULL</code>.</li>
 </ul>
 <p>Fortran source code (have to use transaction):</p>
-<pre><code>program hello_multi_expose
-    use paraconf
-    use pdi
-    implicit none
+<div class="highlight"><pre class="chroma"><code class="language-f90" data-lang="f90"><span class="k">program </span><span class="n">hello_multi_expose</span>
+    <span class="k">use </span><span class="n">paraconf</span>
+    <span class="k">use </span><span class="n">pdi</span>
+    <span class="k">implicit none
+</span><span class="k">
+</span><span class="k">    type</span><span class="p">(</span><span class="n">PC_tree_t</span><span class="p">)</span>   <span class="kd">::</span> <span class="n">conf</span>
+    <span class="kt">integer</span>           <span class="kd">::</span> <span class="n">my_int</span>
+    <span class="kt">real</span>              <span class="kd">::</span> <span class="n">my_float</span>
+    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span> <span class="kd">::</span> <span class="n">my_string</span>
 
-    type(PC_tree_t)   :: conf
-    integer           :: my_int
-    real              :: my_float
-    character(len=32) :: my_string
+    <span class="k">call </span><span class="n">pc_parse_path</span><span class="p">(</span><span class="s2">&#34;hello_transaction.yml&#34;</span><span class="p">,</span> <span class="n">conf</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">pdi_init</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
 
-    call pc_parse_path(&quot;hello_transaction.yml&quot;, conf)
-    call pdi_init(conf)
+    <span class="n">my_int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">my_float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">my_string</span> <span class="o">=</span> <span class="s2">&#34;RGB = Really Gawky Biscuit&#34;</span><span class="p">;</span>
 
-    my_int = 0
-    my_float = 0
-    my_string = &quot;RGB = Really Gawky Biscuit&quot;;
+    <span class="k">call </span><span class="n">pdi_transaction_begin</span><span class="p">(</span><span class="s2">&#34;event_between&#34;</span><span class="p">)</span>
 
-    call pdi_transaction_begin(&quot;event_between&quot;)
+    <span class="k">call </span><span class="n">pdi_expose</span><span class="p">(</span><span class="s2">&#34;my_int&#34;</span><span class="p">,</span> <span class="n">my_int</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">pdi_expose</span><span class="p">(</span><span class="s2">&#34;my_float&#34;</span><span class="p">,</span> <span class="n">my_float</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">pdi_expose</span><span class="p">(</span><span class="s2">&#34;my_string&#34;</span><span class="p">,</span> <span class="n">my_string</span><span class="p">,</span> <span class="n">pdi_out</span><span class="p">)</span>
 
-    call pdi_expose(&quot;my_int&quot;, my_int, pdi_out)
-    call pdi_expose(&quot;my_float&quot;, my_float, pdi_out)
-    call pdi_expose(&quot;my_string&quot;, my_string, pdi_out)
+    <span class="k">call </span><span class="n">pdi_transaction_end</span><span class="p">()</span>
 
-    call pdi_transaction_end()
+    <span class="k">call </span><span class="n">pdi_finalize</span><span class="p">()</span>
 
-    call pdi_finalize()
-
-end program hello_multi_expose
-</code></pre><p>The output of the execution:</p>
+<span class="k">end program </span><span class="n">hello_multi_expose</span>
+</code></pre></div><p>The output of the execution:</p>
 <pre><code>[PDI][Trace-plugin][14:14:51] *** info: Welcome!
 [PDI][14:14:51] *** info: Initialization successful
 [PDI][Trace-plugin][14:14:51] *** info: =&gt;&gt;   data becoming available in the store: my_int

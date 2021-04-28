@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -29,7 +29,7 @@ Important notes  Make sure to compile your program with Wl,--export-dynamic or -
 <meta itemprop="description" content="The user-code plugin enables one to call a user-defined function when a specified event occur or certain data becomes available.
 Important notes  Make sure to compile your program with Wl,--export-dynamic or -rdynamic flag (in CMake set ENABLE_EXPORTS to TRUE using set_target_properties command) in order to generate necessary symbols. Make sure you use the proper access rights in your function in PDI_access (PDI_IN for reading, PDI_OUT for writing). Descriptor aliases enables one to use different descriptors without the need to recompile the code.">
 
-<meta itemprop="wordCount" content="1082">
+<meta itemprop="wordCount" content="998">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The user-code plugin"/>
 <meta name="twitter:description" content="The user-code plugin enables one to call a user-defined function when a specified event occur or certain data becomes available.
@@ -41,8 +41,8 @@ Important notes  Make sure to compile your program with Wl,--export-dynamic or -
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1812,30 +1812,30 @@ Important notes  Make sure to compile your program with Wl,--export-dynamic or -
 <h3 id="hello-world">Hello world!</h3>
 <p>First, we will call simple function without the use of descriptors to print &quot;Hello world!&quot; on &quot;print&quot; event.</p>
 <p>hello_world.c:</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">hello_world</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello world!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+<span class="p">}</span>
 
-void hello_world(void)
-{
-    printf(&quot;Hello world!\n&quot;);
-}
-
-int main(int argc, char* argv[])
-{
-    PC_tree_t conf = PC_parse_path(&quot;hello_world.yml&quot;);
-    PDI_init(conf);
-    PDI_event(&quot;print&quot;);
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>hello_world.yml:</p>
-<pre><code>plugins:
-    user_code:
-        on_event:
-            print:
-                hello_world: {}
-</code></pre><p>output:</p>
-<pre><code>[PDI][User-code][13:40:55] *** info: Plugin loaded successfully
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;hello_world.yml&#34;</span><span class="p">);</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">conf</span><span class="p">);</span>
+    <span class="n">PDI_event</span><span class="p">(</span><span class="s">&#34;print&#34;</span><span class="p">);</span>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>hello_world.yml:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">user_code</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">print</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">hello_world</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></code></pre></div><p>output:</p>
+<pre><code class="language-console" data-lang="console">[PDI][User-code][13:40:55] *** info: Plugin loaded successfully
 [PDI][13:40:55] *** info: Initialization successful
 Hello world!
 [PDI][13:40:55] *** info: Finalization
@@ -1843,73 +1843,73 @@ Hello world!
 </code></pre><h3 id="handling-input">Handling input</h3>
 <p>Now we will pass some input data to the function.</p>
 <p>print_number.c:</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">print_number</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">input</span><span class="p">;</span> <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;I&#39;ve got number %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">input</span><span class="p">));</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">);</span>
+<span class="p">}</span>
 
-void print_number(void)
-{
-    void* input; PDI_access(&quot;input&quot;, &amp;input, PDI_IN);
-    printf(&quot;I've got number %d.\n&quot;, *((int*)input));
-    PDI_release(&quot;input&quot;);
-}
-
-int main(int argc, char* argv[])
-{
-    PC_tree_t conf = PC_parse_path(&quot;print_number.yml&quot;);
-    PDI_init(conf);
-    int number = 42;
-    PDI_share(&quot;number&quot;, &amp;number, PDI_OUT);
-    PDI_event(&quot;print&quot;);
-    PDI_reclaim(&quot;number&quot;);
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>print_number.yml:</p>
-<pre><code>data:
-    number: int
-plugins:
-    user_code:
-        on_event:
-            print:
-                print_number: {input: $number}
-</code></pre><p>output:</p>
-<pre><code>[PDI][User-code][13:49:30] *** info: Plugin loaded successfully
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;print_number.yml&#34;</span><span class="p">);</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">conf</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">PDI_share</span><span class="p">(</span><span class="s">&#34;number&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="n">PDI_event</span><span class="p">(</span><span class="s">&#34;print&#34;</span><span class="p">);</span>
+    <span class="n">PDI_reclaim</span><span class="p">(</span><span class="s">&#34;number&#34;</span><span class="p">);</span>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>print_number.yml:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">user_code</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">print</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">print_number</span><span class="p">:</span><span class="w"> </span>{<span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l">$number}</span><span class="w">
+</span></code></pre></div><p>output:</p>
+<pre><code class="language-console" data-lang="console">[PDI][User-code][13:49:30] *** info: Plugin loaded successfully
 [PDI][13:49:30] *** info: Initialization successful
 I've got number 42.
 [PDI][13:49:30] *** info: Finalization
 [PDI][User-code][13:49:30] *** info: Closing plugin
 </code></pre><p>We can simplify this example by using <code>on_data</code> to print value of number when it is shared to PDI.</p>
 <p>print_number.c:</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">print_number</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">input</span><span class="p">;</span> <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;I&#39;ve got number %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">input</span><span class="p">));</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">);</span>
+<span class="p">}</span>
 
-void print_number(void)
-{
-    void* input; PDI_access(&quot;input&quot;, &amp;input, PDI_IN);
-    printf(&quot;I've got number %d.\n&quot;, *((int*)input));
-    PDI_release(&quot;input&quot;);
-}
-
-int main(int argc, char* argv[])
-{
-    PC_tree_t conf = PC_parse_path(&quot;print_number.yml&quot;);
-    PDI_init(conf);
-    int number = 42;
-    PDI_expose(&quot;number&quot;, &amp;number, PDI_OUT);
-    //PDI_event is no longer necessary and PDI_share/PDI_reclaim can be simplified to PDI_expose
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>print_number.yml:</p>
-<pre><code>data:
-    number: int
-plugins:
-    user_code:
-        on_data:
-            number:
-                print_number: {input: $number}
-</code></pre><p>output does not change:</p>
-<pre><code>[PDI][User-code][13:52:15] *** info: Plugin loaded successfully
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;print_number.yml&#34;</span><span class="p">);</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">conf</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;number&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="c1">//PDI_event is no longer necessary and PDI_share/PDI_reclaim can be simplified to PDI_expose
+</span><span class="c1"></span>    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>print_number.yml:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">user_code</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_data</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">number</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">print_number</span><span class="p">:</span><span class="w"> </span>{<span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l">$number}</span><span class="w">
+</span></code></pre></div><p>output does not change:</p>
+<pre><code class="language-console" data-lang="console">[PDI][User-code][13:52:15] *** info: Plugin loaded successfully
 [PDI][13:52:15] *** info: Initialization successful
 I've got number 42.
 [PDI][13:52:15] *** info: Finalization
@@ -1917,37 +1917,37 @@ I've got number 42.
 </code></pre><h3 id="handling-output">Handling output</h3>
 <p>Output handling is very similar to the input handling, the only difference are the access rights. In this example we will call <code>add_ten</code> function when <code>number</code> is shared to PDI.</p>
 <p>adding_to_number.c:</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">add_ten</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">input</span><span class="p">;</span> <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">input</span><span class="p">)</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">);</span>
+<span class="p">}</span>
 
-void add_ten(void)
-{
-    void* input; PDI_access(&quot;input&quot;, &amp;input, PDI_OUT);
-    *((int*)input) += 10;
-    PDI_release(&quot;input&quot;);
-}
-
-int main(int argc, char* argv[])
-{
-    PC_tree_t conf = PC_parse_path(&quot;adding_to_number.yml&quot;);
-    PDI_init(conf);
-    int number = 42;
-    printf(&quot;Before expose, number = %d.\n&quot;, number);
-    PDI_expose(&quot;number&quot;, &amp;number, PDI_IN);
-    printf(&quot;After expose, number = %d.\n&quot;, number);
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>adding_to_number.yml:</p>
-<pre><code>data:
-    number: int
-plugins:
-    user_code:
-        on_data:
-            number:
-                add_ten: {input: $number}
-</code></pre><p>output:</p>
-<pre><code>[PDI][User-code][13:53:51] *** info: Plugin loaded successfully
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;adding_to_number.yml&#34;</span><span class="p">);</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">conf</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Before expose, number = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+    <span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;number&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;After expose, number = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>adding_to_number.yml:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">user_code</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_data</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">number</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">add_ten</span><span class="p">:</span><span class="w"> </span>{<span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l">$number}</span><span class="w">
+</span></code></pre></div><p>output:</p>
+<pre><code class="language-console" data-lang="console">[PDI][User-code][13:53:51] *** info: Plugin loaded successfully
 [PDI][13:53:51] *** info: Initialization successful
 Before expose, number = 42.
 After expose, number = 52.
@@ -1956,51 +1956,51 @@ After expose, number = 52.
 </code></pre><h3 id="multiple-inputoutput-data">Multiple input/output data</h3>
 <p>In this example we will use multiple data in function. We will add and multiply two given numbers and return the results on event &quot;calculate&quot;.</p>
 <p>calculate.c:</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;pdi.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">sum_and_multiply</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">number1</span><span class="p">;</span> <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;number1&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number1</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">number2</span><span class="p">;</span> <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;number2&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number2</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">);</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">sum</span><span class="p">;</span>     <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;sum&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sum</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">product</span><span class="p">;</span> <span class="n">PDI_access</span><span class="p">(</span><span class="s">&#34;product&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">product</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">sum</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">number1</span><span class="p">)</span> <span class="o">+</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">number2</span><span class="p">);</span>
+    <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">product</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">number1</span><span class="p">)</span> <span class="o">*</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">number2</span><span class="p">);</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;number1&#34;</span><span class="p">);</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;number2&#34;</span><span class="p">);</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;sum&#34;</span><span class="p">);</span>
+    <span class="n">PDI_release</span><span class="p">(</span><span class="s">&#34;product&#34;</span><span class="p">);</span>
+<span class="p">}</span>
 
-void sum_and_multiply(void)
-{
-    void* number1; PDI_access(&quot;number1&quot;, &amp;number1, PDI_IN);
-    void* number2; PDI_access(&quot;number2&quot;, &amp;number2, PDI_IN);
-    void* sum;     PDI_access(&quot;sum&quot;, &amp;sum, PDI_OUT);
-    void* product; PDI_access(&quot;product&quot;, &amp;product, PDI_OUT);
-    *((int*)sum) = *((int*)number1) + *((int*)number2);
-    *((int*)product) = *((int*)number1) * *((int*)number2);
-    PDI_release(&quot;number1&quot;);
-    PDI_release(&quot;number2&quot;);
-    PDI_release(&quot;sum&quot;);
-    PDI_release(&quot;product&quot;);
-}
-
-int main(int argc, char* argv[])
-{
-    PC_tree_t conf = PC_parse_path(&quot;calculate.yml&quot;);
-    PDI_init(conf);
-    int foo = 4, bar = 5, res1 = 0, res2 = 0;
-    printf(&quot;Before calculation, foo = %d, bar = %d, res1 = %d, res2 = %d.\n&quot;, foo, bar, res1, res2);
-    PDI_multi_expose(&quot;calculate&quot;,
-        &quot;foo&quot;, &amp;foo, PDI_OUT,
-        &quot;bar&quot;, &amp;bar, PDI_OUT,
-        &quot;res1&quot;, &amp;res1, PDI_IN,
-        &quot;res2&quot;, &amp;res2, PDI_IN, NULL);
-    printf(&quot;After calculation, foo = %d, bar = %d, res1 = %d, res2 = %d.\n&quot;, foo, bar, res1, res2);
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>calculate.yml:</p>
-<pre><code>data:
-    foo: int
-    bar: int
-    res1: int
-    res2: int
-plugins:
-    user_code:
-        on_event:
-            calculate:
-                sum_and_multiply: {number1: $foo, number2: $bar, sum: $res1, product: $res2}
-</code></pre><p>output:</p>
-<pre><code>[PDI][User-code][13:58:20] *** info: Plugin loaded successfully
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;calculate.yml&#34;</span><span class="p">);</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">conf</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">foo</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">res1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Before calculation, foo = %d, bar = %d, res1 = %d, res2 = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">res1</span><span class="p">,</span> <span class="n">res2</span><span class="p">);</span>
+    <span class="n">PDI_multi_expose</span><span class="p">(</span><span class="s">&#34;calculate&#34;</span><span class="p">,</span>
+        <span class="s">&#34;foo&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">foo</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">,</span>
+        <span class="s">&#34;bar&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bar</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">,</span>
+        <span class="s">&#34;res1&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">res1</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">,</span>
+        <span class="s">&#34;res2&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">res2</span><span class="p">,</span> <span class="n">PDI_IN</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;After calculation, foo = %d, bar = %d, res1 = %d, res2 = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">res1</span><span class="p">,</span> <span class="n">res2</span><span class="p">);</span>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>calculate.yml:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">res1</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">res2</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">user_code</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">calculate</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">sum_and_multiply</span><span class="p">:</span><span class="w"> </span>{<span class="nt">number1: $foo, number2: $bar, sum: $res1, product</span><span class="p">:</span><span class="w"> </span><span class="l">$res2}</span><span class="w">
+</span></code></pre></div><p>output:</p>
+<pre><code class="language-console" data-lang="console">[PDI][User-code][13:58:20] *** info: Plugin loaded successfully
 [PDI][13:58:20] *** info: Initialization successful
 Before calculation, foo = 4, bar = 5, res1 = 0, res2 = 0.
 After calculation, foo = 4, bar = 5, res1 = 9, res2 = 20.
@@ -2113,24 +2113,24 @@ After calculation, foo = 4, bar = 5, res1 = 9, res2 = 20.
 <li>each key identifies the name of a descriptor alias, which will be available during function execution.</li>
 </ul>
 <h2 id="specification-tree-example">Specification tree example</h2>
-<pre><code>data:
-    desc1: int
-    desc2: float
-    desc3: double
-plugins:
-    user_code:
-        on_data:
-            desc1:
-                fun1: {in: $desc2, out: $desc3}
-            desc2:
-                fun2: {}
-                fun3: {out: $desc2}
-        on_event:
-            event1:
-                fun2: {}
-            event2:
-                fun4: {param1: $desc2, param2: $desc1, param3: $desc3}
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">desc1</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">desc2</span><span class="p">:</span><span class="w"> </span><span class="l">float</span><span class="w">
+</span><span class="w">    </span><span class="nt">desc3</span><span class="p">:</span><span class="w"> </span><span class="l">double</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">user_code</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_data</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">desc1</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">fun1</span><span class="p">:</span><span class="w"> </span>{<span class="nt">in: $desc2, out</span><span class="p">:</span><span class="w"> </span><span class="l">$desc3}</span><span class="w">
+</span><span class="w">            </span><span class="nt">desc2</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">fun2</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span><span class="w">                </span><span class="nt">fun3</span><span class="p">:</span><span class="w"> </span>{<span class="nt">out</span><span class="p">:</span><span class="w"> </span><span class="l">$desc2}</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">event1</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">fun2</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span><span class="w">            </span><span class="nt">event2</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">fun4</span><span class="p">:</span><span class="w"> </span>{<span class="nt">param1: $desc2, param2: $desc1, param3</span><span class="p">:</span><span class="w"> </span><span class="l">$desc3}</span><span class="w">
+</span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001

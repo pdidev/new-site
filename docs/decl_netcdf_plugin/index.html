@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ Decl&#39;NetCDF plugin allows you to:
 Decl&#39;NetCDF plugin allows you to:
  Read/write data as NetCDF variables from/to NetCDF file. Define groups in the NetCDF file. Groups can be nested. Read/write variables and groups attributes. Automatically read and written when openning the file. Execute input/output operations on event. Execute input/output operations on data share (when the event is not defined).">
 
-<meta itemprop="wordCount" content="1081">
+<meta itemprop="wordCount" content="772">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Decl&#39;NetCDF plugin"/>
 <meta name="twitter:description" content="The Decl&#39;NetCDF plugin was created to read from and write to NetCDF files in a declarative way.
@@ -44,8 +44,8 @@ Decl&#39;NetCDF plugin allows you to:
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1845,19 +1845,19 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration examples:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;&quot;file_name.nc&quot;&quot;
-    write: ...
-</code></pre><pre><code>plugins:
-  decl_netcdf:
-    - file: &quot;&quot;file_name.nc&quot;&quot;
-      write: ...
-    - file: &quot;file_name_2.nc&quot;
-      write: ...
-    - file: &quot;&quot;file_name.nc&quot;&quot;
-      read: ...
-</code></pre><h3 id="file-subtree">file subtree</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="l">file_name.nc&#34;&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">write</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="l">file_name.nc&#34;&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">write</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name_2.nc&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">write</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="l">file_name.nc&#34;&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">read</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w">
+</span></code></pre></div><h3 id="file-subtree">file subtree</h3>
 <p>Defines name (path) of the input/output file.</p>
 <table>
 <thead>
@@ -1874,10 +1874,10 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name_${i}.nc&quot;
-</code></pre><h3 id="communicator-subtree">communicator subtree</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name_${i}.nc&#34;</span><span class="w">
+</span></code></pre></div><h3 id="communicator-subtree">communicator subtree</h3>
 
 
 <div class="alert alert-primary" role="alert">
@@ -1903,11 +1903,11 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;&quot;file_name.nc&quot;&quot;
-    communicator: $MPI_COMM_WORLD
-</code></pre><h3 id="on_event-subtree">on_event subtree</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="l">file_name.nc&#34;&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">communicator</span><span class="p">:</span><span class="w"> </span><span class="l">$MPI_COMM_WORLD</span><span class="w">
+</span></code></pre></div><h3 id="on_event-subtree">on_event subtree</h3>
 <p>Defines on which events the plugin reads/writes data from/to NetCDF file. The value can be either single event name or the array of events names (both examples presented below).</p>
 <table>
 <thead>
@@ -1924,15 +1924,15 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration examples:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    on_event: &quot;event&quot;
-</code></pre><pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    on_event: [&quot;event_1&quot;, &quot;event_2&quot;]
-</code></pre><h3 id="when-subtree">when subtree</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;event&#34;</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;event_1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;event_2&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id="when-subtree">when subtree</h3>
 <p>Defines the condition on which plugin will execute input/output operation on the file.</p>
 <table>
 <thead>
@@ -1949,11 +1949,11 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    when: &quot;$i &lt; 10&quot;
-</code></pre><h3 id="groups-subtree">groups subtree</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;$i &lt; 10&#34;</span><span class="w">
+</span></code></pre></div><h3 id="groups-subtree">groups subtree</h3>
 <p>Defines groups in the NetCDF file. Mainly used to read/write attributes values of the groups.</p>
 <p>If group won't have any attributes, this subtree can be omitted. Decl'NetCDF plugin will create group by default for every variable.</p>
 <table>
@@ -1971,23 +1971,23 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    groups:
-      group1:
-        attributes:
-          attr1:
-            value: $value1
-          attr2:
-            value: $value2
-      group1/group2:
-        attributes:
-          attr1:
-            value: $value3
-          attr2:
-            value: $value4
-</code></pre><h4 id="group-name-subtree">group name subtree</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">groups</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">group1</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">attr1</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">$value1</span><span class="w">
+</span><span class="w">          </span><span class="nt">attr2</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">$value2</span><span class="w">
+</span><span class="w">      </span><span class="nt">group1/group2</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">attr1</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">$value3</span><span class="w">
+</span><span class="w">          </span><span class="nt">attr2</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">$value4</span><span class="w">
+</span></code></pre></div><h4 id="group-name-subtree">group name subtree</h4>
 <table>
 <thead>
 <tr>
@@ -2025,18 +2025,18 @@ Decl&#39;NetCDF plugin allows you to:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    variables:
-      group1/group2/variable_name:
-        type: array
-        subtype: double
-        size: [0, $value, $value] # 0 -&gt; UNLIMITED dimension
-        dimensions: [&quot;time&quot;, &quot;height&quot;, &quot;width&quot;]
-        attributes:
-          attr1: $value
-</code></pre><h4 id="variable-definition-subtree">variable definition subtree</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">variables</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">group1/group2/variable_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">        </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">double</span><span class="w">
+</span><span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="l">$value, $value]</span><span class="w"> </span><span class="c"># 0 -&gt; UNLIMITED dimension</span><span class="w">
+</span><span class="w">        </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;time&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;height&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;width&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">        </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">attr1</span><span class="p">:</span><span class="w"> </span><span class="l">$value</span><span class="w">
+</span></code></pre></div><h4 id="variable-definition-subtree">variable definition subtree</h4>
 <table>
 <thead>
 <tr>
@@ -2080,16 +2080,16 @@ Decl&#39;NetCDF plugin allows you to:
 <li>
 <p>Just a name of descriptor to write or the list of descriptors names to write to file. In this case the name of NetCDF variable will be the same as the name of the descriptor and have the same type and no attributes.</p>
 <p>Configuration examples:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    write: data_name
-#-------------------------------------
-plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    write: [data_name_1, data_name_2]
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">write</span><span class="p">:</span><span class="w"> </span><span class="l">data_name</span><span class="w">
+</span><span class="w"></span><span class="c">#-------------------------------------</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">write</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">data_name_1, data_name_2]</span><span class="w">
+</span></code></pre></div></li>
 <li>
 <p>Dictionary, with key as descriptor name and value as following subtree:</p>
 </li>
@@ -2117,29 +2117,29 @@ plugins:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>data:
-  int_submatrix_11:
-    type: array
-    subtype: int
-    size: [4, 4]
-
-plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    variables:
-        integer_matrix:
-          type: array
-          subtype: int
-          size: [8, 8]
-          dimensions: [&quot;height&quot;, &quot;width&quot;]
-    write:
-      int_submatrix_11:
-        when: $i &lt; 10
-        variable: integer_matrix
-        variable_selection:  # select bottom-left submatrix 4x4
-          start: [4, 4]
-          subsize: [4, 4]
-</code></pre><h4 id="subtree">subtree</h4>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_submatrix_11</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">variables</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">integer_matrix</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">          </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;height&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;width&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">write</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">int_submatrix_11</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">$i &lt; 10</span><span class="w">
+</span><span class="w">        </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l">integer_matrix</span><span class="w">
+</span><span class="w">        </span><span class="nt">variable_selection</span><span class="p">:</span><span class="w">  </span><span class="c"># select bottom-left submatrix 4x4</span><span class="w">
+</span><span class="w">          </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id="subtree">subtree</h4>
 <p>Defines the part of file NetCDF variable where from read/to write the data. The hyperslab will be created from given <code>start</code> and <code>subsize</code> (<code>count</code>) lists.</p>
 <table>
 <thead>
@@ -2181,16 +2181,16 @@ plugins:
 <li>
 <p>Just a name of descriptor to read or the list of descriptors names to read to file. In this case the name of NetCDF variable must be the same as the name of the descriptor and have the same type and no attributes will be read.</p>
 <p>Configuration examples:</p>
-<pre><code>plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    read: data_name
-#-------------------------------------
-plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    read: [data_name_1, data_name_2]
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">read</span><span class="p">:</span><span class="w"> </span><span class="l">data_name</span><span class="w">
+</span><span class="w"></span><span class="c">#-------------------------------------</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">read</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">data_name_1, data_name_2]</span><span class="w">
+</span></code></pre></div></li>
 <li>
 <p>Dictionary, with key as descriptor name and value as following subtree:</p>
 </li>
@@ -2218,97 +2218,97 @@ plugins:
 </tbody>
 </table>
 <p>Configuration example:</p>
-<pre><code>data:
-  int_submatrix_11:
-    type: array
-    subtype: int
-    size: [4, 4]
-
-plugins:
-  decl_netcdf:
-    file: &quot;file_name.nc&quot;
-    variables:
-        integer_matrix:
-          type: array
-          subtype: int
-          size: [8, 8]
-    read:
-      int_submatrix_11:
-        when: $i &lt; 10
-        variable: integer_matrix
-        variable_selection:  # select bottom-left submatrix 4x4
-          start: [4, 4]
-          subsize: [4, 4]
-</code></pre><h3 id="full-yaml-example">Full yaml example</h3>
-<pre><code>metadata:
-  var_attr: float
-  group1_attr: float
-  group1_data_attr: float
-data:
-  int_submatrix_top:
-    type: array
-    subtype: int
-    size: [4, 8]
-  int_submatrix_bottom:
-    type: array
-    subtype: int
-    size: [4, 8]
-plugins:
-  decl_netcdf:
-    - file: &quot;example.nc&quot;
-      on_event: &quot;write&quot;
-      groups:
-        group_1:
-          attributes:
-            some_attr: $group1_attr
-        group_1/data:
-          attributes:
-            some_attr: $group1_data_attr
-      variables:
-        group_1/data/int_matrix:
-          type: array
-          subtype: int
-          size: [8, 8]
-          dimensions: [&quot;height&quot;, &quot;width&quot;]
-          attributes:
-            custom_attr: $var_attr
-      write:
-        int_submatrix_top:
-          variable: group_1/data/int_matrix
-          variable_selection:
-            start: [0, 0]
-            subsize: [4, 8]
-        int_submatrix_bottom:
-          variable: group_1/data/int_matrix
-          variable_selection:
-            start: [4, 0]
-            subsize: [4, 8]
-    - file: &quot;example.nc&quot;
-      on_event: &quot;read&quot;
-      groups:
-        group_1/data:
-          attributes:
-            some_attr: $custom_attr
-      variables:
-        group_1/data/int_matrix:
-          type: array
-          subtype: int
-          size: [8, 8]
-          dimensions: [&quot;height&quot;, &quot;width&quot;]
-          attributes:
-            custom_attr: $var_attr
-      read:
-        int_submatrix_top:
-          variable: group_1/data/int_matrix
-          variable_selection:
-            start: [0, 0]
-            subsize: [4, 8]
-        int_submatrix_bottom:
-          variable: group_1/data/int_matrix
-          variable_selection:
-            start: [4, 0]
-            subsize: [4, 8]
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_submatrix_11</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;file_name.nc&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">variables</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">integer_matrix</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">          </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">read</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">int_submatrix_11</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">$i &lt; 10</span><span class="w">
+</span><span class="w">        </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l">integer_matrix</span><span class="w">
+</span><span class="w">        </span><span class="nt">variable_selection</span><span class="p">:</span><span class="w">  </span><span class="c"># select bottom-left submatrix 4x4</span><span class="w">
+</span><span class="w">          </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id="full-yaml-example">Full yaml example</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">var_attr</span><span class="p">:</span><span class="w"> </span><span class="l">float</span><span class="w">
+</span><span class="w">  </span><span class="nt">group1_attr</span><span class="p">:</span><span class="w"> </span><span class="l">float</span><span class="w">
+</span><span class="w">  </span><span class="nt">group1_data_attr</span><span class="p">:</span><span class="w"> </span><span class="l">float</span><span class="w">
+</span><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_submatrix_top</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_submatrix_bottom</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">decl_netcdf</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;example.nc&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;write&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">groups</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">group_1</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">some_attr</span><span class="p">:</span><span class="w"> </span><span class="l">$group1_attr</span><span class="w">
+</span><span class="w">        </span><span class="nt">group_1/data</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">some_attr</span><span class="p">:</span><span class="w"> </span><span class="l">$group1_data_attr</span><span class="w">
+</span><span class="w">      </span><span class="nt">variables</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">group_1/data/int_matrix</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">          </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;height&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;width&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">custom_attr</span><span class="p">:</span><span class="w"> </span><span class="l">$var_attr</span><span class="w">
+</span><span class="w">      </span><span class="nt">write</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">int_submatrix_top</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l">group_1/data/int_matrix</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable_selection</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">            </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">        </span><span class="nt">int_submatrix_bottom</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l">group_1/data/int_matrix</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable_selection</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">            </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;example.nc&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">on_event</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;read&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">groups</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">group_1/data</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">some_attr</span><span class="p">:</span><span class="w"> </span><span class="l">$custom_attr</span><span class="w">
+</span><span class="w">      </span><span class="nt">variables</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">group_1/data/int_matrix</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">          </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;height&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;width&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">          </span><span class="nt">attributes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">custom_attr</span><span class="p">:</span><span class="w"> </span><span class="l">$var_attr</span><span class="w">
+</span><span class="w">      </span><span class="nt">read</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">int_submatrix_top</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l">group_1/data/int_matrix</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable_selection</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">            </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span><span class="w">        </span><span class="nt">int_submatrix_bottom</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l">group_1/data/int_matrix</span><span class="w">
+</span><span class="w">          </span><span class="nt">variable_selection</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">            </span><span class="nt">subsize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001

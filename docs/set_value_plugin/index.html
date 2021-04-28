@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ Here are main features of the plugins:
 Here are main features of the plugins:
  Share data - plugin will share new allocated data with given values Release data - plugin will release shared data Expose data - plugin will expose new allocated data with given values Set data - plugin will set given values to the already shared data Calling an event - plugin will call an event  Configuration grammar At its root, the Set_value configuration is made of:">
 
-<meta itemprop="wordCount" content="1056">
+<meta itemprop="wordCount" content="749">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Set_value plugin"/>
 <meta name="twitter:description" content="The Set_value plugin allows setting values to data and metadata descriptors from the yaml file.
@@ -44,8 +44,8 @@ Here are main features of the plugins:
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1839,15 +1839,15 @@ Here are main features of the plugins:
 </table>
 <h3 id="on_init">on_init</h3>
 <p>Specifies a list of operation to do in <a href="member:group__init__final_1ga3dc660be40c93c169337e3d2692b2ed0">PDI_init</a> function. <code>on_init</code> is a list of <a href="member:set_value_plugin_1value_operation">value operation</a> s.</p>
-<pre><code>plugins:
-  set_value:
-    on_init:
-      - set: ... # value_list
-      - share: ... # value_list
-      - expose: ... # value_list
-      - release: ... # value_list
-      - event: ... # value
-</code></pre><h3 id="on_event">on_event</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_init</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">set</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">share</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value</span><span class="w">
+</span></code></pre></div><h3 id="on_event">on_event</h3>
 <p>Specifies a map of events that will trigger the values set. <code>on_event</code> is a map with event name as a key and <a href="member:set_value_plugin_1value_operation">value operation</a> list as map value.</p>
 <table>
 <thead>
@@ -1863,22 +1863,22 @@ Here are main features of the plugins:
 </tr>
 </tbody>
 </table>
-<pre><code>plugins:
-  set_value:
-    on_event:
-      event_1_name:
-        - set: ... # value_list
-        - share: ... # value_list
-        - expose: ... # value_list
-        - release: ... # value_list
-        - event: ... # value
-      event_2_name:
-        - set: ... # value_list
-        - share: ... # value_list
-        - expose: ... # value_list
-        - release: ... # value_list
-        - event: ... # value
-</code></pre><h3 id="on_data">on_data</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">event_1_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">set</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">share</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value</span><span class="w">
+</span><span class="w">      </span><span class="nt">event_2_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">set</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">share</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value</span><span class="w">
+</span></code></pre></div><h3 id="on_data">on_data</h3>
 <p>Specifies a map of data that on share will trigger the values set. <code>on_data</code> is a map with data/metadata name as a key and <a href="member:set_value_plugin_1value_operation">value operation</a> as map value.</p>
 <table>
 <thead>
@@ -1894,36 +1894,36 @@ Here are main features of the plugins:
 </tr>
 </tbody>
 </table>
-<pre><code>metadata:
-  metadata_1_name: ... # metadata_type
-data:
-  data_1_name: ...  # data_type
-plugins:
-  set_value:
-    on_data:
-      data_1_name:
-        - set: ... # value_list
-        - share: ... # value_list
-        - expose: ... # value_list
-        - release: ... # value_list
-        - event: ... # value
-      metadata_1_name:
-        - set: ... # value_list
-        - share: ... # value_list
-        - expose: ... # value_list
-        - release: ... # value_list
-        - event: ... # value
-</code></pre><h3 id="on_finalize">on_finalize</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">metadata_1_name</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># metadata_type</span><span class="w">
+</span><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">data_1_name</span><span class="p">:</span><span class="w"> </span><span class="l">... </span><span class="w"> </span><span class="c"># data_type</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_data</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">data_1_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">set</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">share</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value</span><span class="w">
+</span><span class="w">      </span><span class="nt">metadata_1_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">set</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">share</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value</span><span class="w">
+</span></code></pre></div><h3 id="on_finalize">on_finalize</h3>
 <p>Specifies a list of operation to do in <a href="member:group__init__final_1ga7995fbda2099950ed4ffc7fd4c0bb969">PDI_finalize</a> function. <code>on_finalize</code> is a list of <a href="member:set_value_plugin_1value_operation">value operation</a> s.</p>
-<pre><code>plugins:
-  set_value:
-    on_finalize:
-      - set: ... # value_list
-      - share: ... # value_list
-      - expose: ... # value_list
-      - release: ... # value_list
-      - event: ... # value
-</code></pre><h3 id="value-operation">value operation</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_finalize</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">set</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">share</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value_list</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l">...</span><span class="w"> </span><span class="c"># value</span><span class="w">
+</span></code></pre></div><h3 id="value-operation">value operation</h3>
 <p>A value operation is specified as a key-value pair (a <strong>mapping</strong> whose content is a single key-value pair). It defines an operation to execute inside a <a href="member:set_value_plugin_1value_list">value list</a>.</p>
 <table>
 <thead>
@@ -1981,13 +1981,13 @@ plugins:
 </tr>
 </tbody>
 </table>
-<pre><code>metadata:
-  scalar_name: int
-set_value:
-  on_init:
-    - expose:
-      - scalar_name: 42
-</code></pre><h3 id="array-value">array value</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">scalar_name</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w"></span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">on_init</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">scalar_name</span><span class="p">:</span><span class="w"> </span><span class="m">42</span><span class="w">
+</span></code></pre></div><h3 id="array-value">array value</h3>
 <p>Is a map of descriptor name as a key, and a list of values to set as a value:</p>
 <table>
 <thead>
@@ -2003,18 +2003,18 @@ set_value:
 </tr>
 </tbody>
 </table>
-<pre><code>metadata:
-  array_name:
-    type: array
-    size: 4
-    subtype: int
-
-plugins:
-  set_value:
-    on_init:
-      - expose:
-        - array_name: [2, 3, 4, 5]
-</code></pre><h3 id="record-value">record value</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">array_name</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_init</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">array_name</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id="record-value">record value</h3>
 <p>Is a map of descriptor name as a key, and a list of members to set as a value. Each member consist of an inner <code>value_list</code>. The order of the members is unrestricted, but the plugin will set the values to the members in the same order.</p>
 <table>
 <thead>
@@ -2030,121 +2030,121 @@ plugins:
 </tr>
 </tbody>
 </table>
-<pre><code>metadata:
-  record_name:
-    type: record
-    buffersize: 16
-    members:
-      member_1:
-        disp: 0
-        type: array
-        size: 3
-        subtype: int
-      member_2:
-        disp: 12
-        type: int
-
-set_value:
-  on_init:
-    - expose:
-      - record_name:
-          member_2: 3 # int member
-          member_1: [1, 2, 3] # array of ints member
-</code></pre><h2 id="full-configuration-example">full configuration example</h2>
-<pre><code>metadata:
-  array_size: int64
-
-data:
-  record_data:
-    type: record
-    buffersize: 36
-    members:
-      scalar_data:
-        disp: 0
-        type: int
-      array_data:
-        disp: 4
-        type: array
-        size: $array_size
-        subtype: int
-
-plugins:
-  set_value:
-    on_init:
-      - expose:
-        - array_size: 3
-      - share:
-        - record_data:
-          - scalar_data: 0
-          - array_data: [0, 0, 0]
-    on_event:
-      event_1_name:
-        - set:
-          - record_data:
-            - scalar_data: 3
-            - array_data: [1, 2, 3]
-    on_finalize:
-      - release: [record_data]
-</code></pre><h2 id="using-old-values-to-set-new">Using old values to set new</h2>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">record_name</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">record</span><span class="w">
+</span><span class="w">    </span><span class="nt">buffersize</span><span class="p">:</span><span class="w"> </span><span class="m">16</span><span class="w">
+</span><span class="w">    </span><span class="nt">members</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">member_1</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">disp</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">        </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">      </span><span class="nt">member_2</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">disp</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">on_init</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">record_name</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">member_2</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c"># int member</span><span class="w">
+</span><span class="w">          </span><span class="nt">member_1</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="c"># array of ints member</span><span class="w">
+</span></code></pre></div><h2 id="full-configuration-example">full configuration example</h2>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">array_size</span><span class="p">:</span><span class="w"> </span><span class="l">int64</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">record_data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">record</span><span class="w">
+</span><span class="w">    </span><span class="nt">buffersize</span><span class="p">:</span><span class="w"> </span><span class="m">36</span><span class="w">
+</span><span class="w">    </span><span class="nt">members</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">scalar_data</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">disp</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">      </span><span class="nt">array_data</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">disp</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">$array_size</span><span class="w">
+</span><span class="w">        </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_init</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">array_size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">share</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">record_data</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">scalar_data</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">array_data</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">event_1_name</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">set</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">record_data</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="nt">scalar_data</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">            </span>- <span class="nt">array_data</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_finalize</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">record_data]</span><span class="w">
+</span></code></pre></div><h2 id="using-old-values-to-set-new">Using old values to set new</h2>
 <h3 id="increment-value">Increment value</h3>
 <p>The set_value plugin allows to use the old values to set new values, you can use even the same descriptor, for example to increment a scalar.</p>
-<pre><code>data:
-  value_int:
-    type: int
-  int_array:
-    size: 3
-    subtype: int
-    type: array
-plugins:
-  set_value:
-    on_event:
-      init:
-        - share:
-          - value_int: 0
-          - int_array: [1, 2, 3]
-      increment:
-        - set:
-          - value_int: &quot;$value_int + 1&quot;
-          - int_array: [&quot;$int_array[0] + 1&quot;, &quot;$int_array[1] + 1&quot;, &quot;$int_array[2] + 1&quot;]
-    on_finalize:
-      - release: [value_int, int_array]
-</code></pre><p>After calling <code>init</code> and <code>increment</code> event, <code>value_int</code> will be equal 1, and <code>int_array</code> to [2, 3, 4].</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">value_int</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_array</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">init</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">share</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">value_int</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="nt">increment</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">set</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">value_int</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;$value_int + 1&#34;</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;$int_array[0] + 1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;$int_array[1] + 1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;$int_array[2] + 1&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_finalize</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">value_int, int_array]</span><span class="w">
+</span></code></pre></div><p>After calling <code>init</code> and <code>increment</code> event, <code>value_int</code> will be equal 1, and <code>int_array</code> to [2, 3, 4].</p>
 <h3 id="getting-old-value">Getting old value</h3>
 <p>The new value is set at the end of processing the whole descriptors. This means, that if you want to update the array element depending on other element, the old value will be set:</p>
-<pre><code>metadata:
-  int_array:
-    size: 3
-    subtype: int
-    type: array
-plugins:
-  set_value:
-    on_event:
-      init:
-        - expose:
-          - int_array: [0, 0, 0]
-      increment:
-        - expose:
-          - int_array: [&quot;$int_array[0] + 1&quot;, &quot;$int_array[0] + 1&quot;, &quot;$int_array[1] + 1&quot;]
-</code></pre><p>After calling <code>init</code> and <code>increment</code> event, all values in <code>int_array</code> will equal <code>1</code>. This is because the <code>int_array[0]</code> was updated after setting all the elements.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_array</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">init</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="nt">increment</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;$int_array[0] + 1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;$int_array[0] + 1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;$int_array[1] + 1&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div><p>After calling <code>init</code> and <code>increment</code> event, all values in <code>int_array</code> will equal <code>1</code>. This is because the <code>int_array[0]</code> was updated after setting all the elements.</p>
 <h3 id="getting-new-value">Getting new value</h3>
-<pre><code>metadata:
-  int_scalar: int
-  int_array:
-    size: 3
-    subtype: int
-    type: array
-plugins:
-  set_value:
-    on_event:
-      init:
-        - expose:
-          - int_scalar: 0
-          - int_array: [0, 0, 0]
-      increment:
-        - expose:
-          - int_scalar: $int_scalar+1
-          - int_array: [&quot;$int_scalar&quot;, &quot;$int_scalar&quot;, &quot;$int_scalar&quot;]
-</code></pre><p>After calling <code>init</code> and <code>increment</code> event, all values in <code>int_array</code> will equal <code>1</code>. This is because the <code>int_scalar</code> is set and then the <code>int_array</code> is updated after the <code>int_scalar</code> has a new value.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_scalar</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">int_array</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">    </span><span class="nt">subtype</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">array</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">set_value</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">init</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_scalar</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="nt">increment</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_scalar</span><span class="p">:</span><span class="w"> </span><span class="l">$int_scalar+1</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">int_array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;$int_scalar&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;$int_scalar&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;$int_scalar&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div><p>After calling <code>init</code> and <code>increment</code> event, all values in <code>int_array</code> will equal <code>1</code>. This is because the <code>int_scalar</code> is set and then the <code>int_array</code> is updated after the <code>int_scalar</code> has a new value.</p>
 
 	
 	

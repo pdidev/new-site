@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -20,7 +20,7 @@
 <title>Pycall plugin | PDI</title><meta property="og:title" content="Pycall plugin" />
 <meta property="og:description" content="The Pycall plugin allows calling python scripts from yaml file, that can work either if wanted data was shared or program calls specific event.
 Configuration Simple plugin build:
-plugins: pycall: // name of plugin on_event: // run script on event testing: // name of an event with: // data alias exec: // python code which will be executed when the event is called on_data: // run script on data share data_name: // python code which will be executed when data_name is shared Plugin tree The root of plugin configuration (named pycall), is a dictionary that contains the following keys:" />
+plugins:pycall:// name of pluginon_event:// run script on eventtesting:// name of an eventwith:// data aliasexec:// python code which will be executed when the event is calledon_data:// run script on data sharedata_name:// python code which will be executed when data_name is sharedPlugin tree The root of plugin configuration (named pycall), is a dictionary that contains the following keys:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/" /><meta property="article:section" content="docs" />
 
@@ -29,14 +29,14 @@ plugins: pycall: // name of plugin on_event: // run script on event testing: // 
 <meta itemprop="name" content="Pycall plugin">
 <meta itemprop="description" content="The Pycall plugin allows calling python scripts from yaml file, that can work either if wanted data was shared or program calls specific event.
 Configuration Simple plugin build:
-plugins: pycall: // name of plugin on_event: // run script on event testing: // name of an event with: // data alias exec: // python code which will be executed when the event is called on_data: // run script on data share data_name: // python code which will be executed when data_name is shared Plugin tree The root of plugin configuration (named pycall), is a dictionary that contains the following keys:">
+plugins:pycall:// name of pluginon_event:// run script on eventtesting:// name of an eventwith:// data aliasexec:// python code which will be executed when the event is calledon_data:// run script on data sharedata_name:// python code which will be executed when data_name is sharedPlugin tree The root of plugin configuration (named pycall), is a dictionary that contains the following keys:">
 
-<meta itemprop="wordCount" content="473">
+<meta itemprop="wordCount" content="399">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pycall plugin"/>
 <meta name="twitter:description" content="The Pycall plugin allows calling python scripts from yaml file, that can work either if wanted data was shared or program calls specific event.
 Configuration Simple plugin build:
-plugins: pycall: // name of plugin on_event: // run script on event testing: // name of an event with: // data alias exec: // python code which will be executed when the event is called on_data: // run script on data share data_name: // python code which will be executed when data_name is shared Plugin tree The root of plugin configuration (named pycall), is a dictionary that contains the following keys:"/>
+plugins:pycall:// name of pluginon_event:// run script on eventtesting:// name of an eventwith:// data aliasexec:// python code which will be executed when the event is calledon_data:// run script on data sharedata_name:// python code which will be executed when data_name is sharedPlugin tree The root of plugin configuration (named pycall), is a dictionary that contains the following keys:"/>
 
 
 
@@ -44,8 +44,8 @@ plugins: pycall: // name of plugin on_event: // run script on event testing: // 
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1790,15 +1790,15 @@ plugins: pycall: // name of plugin on_event: // run script on event testing: // 
 	<p>The Pycall plugin allows calling python scripts from yaml file, that can work either if wanted data was shared or program calls specific event.</p>
 <h2 id="configuration">Configuration</h2>
 <p>Simple plugin build:</p>
-<pre><code>plugins:
-  pycall:           // name of plugin
-    on_event:       // run script on event
-      testing:      // name of an event
-        with:       // data alias
-        exec:       // python code which will be executed when the event is called
-    on_data:        // run script on data share
-      data_name:    // python code which will be executed when data_name is shared
-</code></pre><h3 id="plugin-tree">Plugin tree</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pycall</span><span class="p">:</span><span class="w">           </span><span class="l">// name of plugin</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">       </span><span class="l">// run script on event</span><span class="w">
+</span><span class="w">      </span><span class="nt">testing</span><span class="p">:</span><span class="w">      </span><span class="l">// name of an event</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">       </span><span class="l">// data alias</span><span class="w">
+</span><span class="w">        </span><span class="nt">exec</span><span class="p">:</span><span class="w">       </span><span class="l">// python code which will be executed when the event is called</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_data</span><span class="p">:</span><span class="w">        </span><span class="l">// run script on data share</span><span class="w">
+</span><span class="w">      </span><span class="nt">data_name</span><span class="p">:</span><span class="w">    </span><span class="l">// python code which will be executed when data_name is shared</span><span class="w">
+</span></code></pre></div><h3 id="plugin-tree">Plugin tree</h3>
 <p>The root of plugin configuration (named <code>pycall</code>), is a dictionary that contains the following keys:</p>
 <ul>
 <li><a href="member:pycall_plugin_1pycall_on_event">on_event</a></li>
@@ -1806,54 +1806,54 @@ plugins: pycall: // name of plugin on_event: // run script on event testing: // 
 </ul>
 <h3 id="on_event">on_event</h3>
 <p>This option allows to execute written python code when specific event is called.</p>
-<pre><code>data: {a: {type: array, subtype: int, size: 3}}
-plugins:
-  pycall:
-    on_event:
-      testing:
-        with: { a_python: $a }
-        exec: \&quot;print(' * [P] I received    $a =',a_python); a_python[1]=7; print(' * [P] changed it to $a =',a_python);\&quot;
-</code></pre><p>In this example pycall will run script on <code>testing</code> event. In the next step in <code>with</code> section alias name for data is generated. <code>a</code> will be <code>a_python</code> for execusion of the python code. Finally <code>exec</code> contains python code that will be executed on <code>testing</code> event.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w"> </span>{<span class="nt">a</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span>}}<span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pycall</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">testing</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">a_python</span><span class="p">:</span><span class="w"> </span><span class="l">$a }</span><span class="w">
+</span><span class="w">        </span><span class="nt">exec</span><span class="p">:</span><span class="w"> </span><span class="l">\&#34;print(&#39; * [P] I received    $a =&#39;,a_python); a_python[1]=7; print(&#39; * [P] changed it to $a =&#39;,a_python);\&#34;</span><span class="w">
+</span></code></pre></div><p>In this example pycall will run script on <code>testing</code> event. In the next step in <code>with</code> section alias name for data is generated. <code>a</code> will be <code>a_python</code> for execusion of the python code. Finally <code>exec</code> contains python code that will be executed on <code>testing</code> event.</p>
 <p>There is also an option to set a list of executions:</p>
-<pre><code>data: {a: {type: array, subtype: int, size: 3}}
-plugins:
-  pycall:
-    on_event:
-      testing:
-        - exec: #some_python_script
-          with: { a: $a }
-        - exec: #some_other_python_script
-          with: { b: $a }
-</code></pre><h3 id="on_data">on_data</h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w"> </span>{<span class="nt">a</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span>}}<span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pycall</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">testing</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">exec</span><span class="p">:</span><span class="w"> </span><span class="c">#some_python_script</span><span class="w">
+</span><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l">$a }</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">exec</span><span class="p">:</span><span class="w"> </span><span class="c">#some_other_python_script</span><span class="w">
+</span><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l">$a }</span><span class="w">
+</span></code></pre></div><h3 id="on_data">on_data</h3>
 <p>This option allows to execute written python code when specific data is shared.</p>
-<pre><code>data: {a: {type: array, subtype: int, size: 3}}
-plugins:
-  pycall:
-    on_data:
-      a: print(' * [P] I received    $a =',a); a[1]=7; print(' * [P] changed it to $a =',a);\&quot;
-</code></pre><p>The <code>on_data</code> is a dictionary that contains data name with the python script that will be executed on share.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w"> </span>{<span class="nt">a</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span>}}<span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">pycall</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">on_data</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l">print(&#39; * [P] I received    $a =&#39;,a); a[1]=7; print(&#39; * [P] changed it to $a =&#39;,a);\&#34;</span><span class="w">
+</span></code></pre></div><p>The <code>on_data</code> is a dictionary that contains data name with the python script that will be executed on share.</p>
 <h2 id="examples">Examples</h2>
 <p>Full example of pycall plugin. For siplicity yaml file was included with c code in one file instead of creating separate files.</p>
 <p>Yaml file named your_file:</p>
-<pre><code>logging: trace
-    data: {a: {type: array, subtype: int, size: 3}}
-    plugins:
-      pycall:
-        on_event:
-          testing:
-            with: { a_python: $a }
-            exec: \&quot;print(' * [P] I received    $a =',a_python); a_python[1]=7; print(' * [P] changed it to $a =',a_python);\&quot;
-</code></pre><p>C++ code:</p>
-<pre><code>int a[3] = {1, 2, 3};
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">logging</span><span class="p">:</span><span class="w"> </span><span class="l">trace</span><span class="w">
+</span><span class="w">    </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span>{<span class="nt">a</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">3</span>}}<span class="w">
+</span><span class="w">    </span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">pycall</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">on_event</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">testing</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">a_python</span><span class="p">:</span><span class="w"> </span><span class="l">$a }</span><span class="w">
+</span><span class="w">            </span><span class="nt">exec</span><span class="p">:</span><span class="w"> </span><span class="l">\&#34;print(&#39; * [P] I received    $a =&#39;,a_python); a_python[1]=7; print(&#39; * [P] changed it to $a =&#39;,a_python);\&#34;</span><span class="w">
+</span></code></pre></div><p>C++ code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
 
-printf(&quot; * [C] starting with $a = [%d %d %d]\n&quot;, a[0], a[1], a[2]);
+<span class="n">printf</span><span class="p">(</span><span class="s">&#34; * [C] starting with $a = [%d %d %d]</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
 
-PDI_share(&quot;a&quot;, a, PDI_INOUT);
-PDI_event(&quot;testing&quot;);
-PDI_reclaim(&quot;a&quot;);
+<span class="n">PDI_share</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">PDI_INOUT</span><span class="p">);</span>
+<span class="n">PDI_event</span><span class="p">(</span><span class="s">&#34;testing&#34;</span><span class="p">);</span>
+<span class="n">PDI_reclaim</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">);</span>
 
-printf(&quot; * [C] now I see     $a = [%d %d %d]\n&quot;, a[0], a[1], a[2]);
-</code></pre><p>Output from the program:</p>
+<span class="n">printf</span><span class="p">(</span><span class="s">&#34; * [C] now I see     $a = [%d %d %d]</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</code></pre></div><p>Output from the program:</p>
 <pre><code> * [C] starting with $a = [1 2 3]
 [PDI][13:51:26] *** trace: Sharing `a' Ref with rights: R = true, W = true
 [PDI][13:51:26] *** trace: Calling `a' share. Callbacks to call: 0

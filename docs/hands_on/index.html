@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ On Juwels, PDI is pre-installed as part of the training2022 environment." />
 Setup PDI Installation To run this hands-on tutorial, you will of course first need to install PDI and setup your environment.
 On Juwels, PDI is pre-installed as part of the training2022 environment.">
 
-<meta itemprop="wordCount" content="2304">
+<meta itemprop="wordCount" content="2392">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hands-on tutorial"/>
 <meta name="twitter:description" content="In this tutorial, you will build a PDI-enabled application step-by-step from a PDI-free base. You will end-up building the C version of the example provided with PDI for the the Trace, Decl&#39;HDF5, and Pycall plugins. Additional examples are available for the other plugins.
@@ -44,8 +44,8 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1823,41 +1823,89 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 <h3 id="pdi-installation">PDI Installation</h3>
 <p>To run this hands-on tutorial, you will of course first need to <a href="compound:Installation">install PDI</a> and setup your environment.</p>
 <p>On Juwels, <a href="compound:namespacePDI">PDI</a> is pre-installed as part of the training2022 environment. To load it, just run:</p>
-<pre><code>source /p/project/training2022/setup
-</code></pre><h3 id="setup-the-hands-on-tutorial">Setup the hands-on tutorial</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> /p/project/training2022/setup
+</code></pre></div><h3 id="setup-the-hands-on-tutorial">Setup the hands-on tutorial</h3>
 <p>Once PDI is installed, you can proceed with getting the sources for the hands-on tutorial from <a href="https://github.com/pdidev/tutorial">github</a>:</p>
-<pre><code>git clone https://github.com/pdidev/tutorial.git
-cd tutorial
-</code></pre><p>On Juwels, you can just copy the content from <code>${PROJECT_training2022}/PDI_tutorial</code>:</p>
-<pre><code>cp -R ${PROJECT_training2022}/PDI_tutorial .
-cd PDI_tutorial
-</code></pre><h3 id="compilation">Compilation</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/pdidev/tutorial.git
+<span class="nb">cd</span> tutorial
+</code></pre></div><p>On Juwels, you can just copy the content from <code>${PROJECT_training2022}/PDI_tutorial</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp -R <span class="si">${</span><span class="nv">PROJECT_training2022</span><span class="si">}</span>/PDI_tutorial .
+<span class="nb">cd</span> PDI_tutorial
+</code></pre></div><h3 id="compilation">Compilation</h3>
 <p>Before compilation, configure the tutorial by detecting all dependencies:</p>
-<pre><code>cmake .
-</code></pre><p>For each exercise, once you've modified it, you can compile it by running the following command:</p>
-<pre><code>make ex?
-</code></pre><p>Where <code>?</code> is the number of the exercise.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cmake .
+</code></pre></div><p>For each exercise, once you've modified it, you can compile it by running the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">make ex?
+</code></pre></div><p>Where <code>?</code> is the number of the exercise.</p>
 <h3 id="execution">Execution</h3>
 <p>In order to speedup the execution on Juwels, it's a good idea to use <code>salloc</code> to reserve one node:</p>
-<pre><code>salloc --reservation=parallel-io-day3 -N 1
-</code></pre><p>You can run each exercise with the following command:</p>
-<pre><code>srun -n 4 ./ex?
-</code></pre><p>Where <code>?</code> is the number of the exercise and 4 represents the number of MPI processes to use.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">salloc --reservation<span class="o">=</span>parallel-io-day3 -N <span class="m">1</span>
+</code></pre></div><p>You can run each exercise with the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">srun -n <span class="m">4</span> ./ex?
+</code></pre></div><p>Where <code>?</code> is the number of the exercise and 4 represents the number of MPI processes to use.</p>
 <p>In order to generate clean logs into a file however, the command should be expanded as follow (for example for ex2.):</p>
-<pre><code>UCX_LOG_LEVEL=error srun -n 1 -o ex2.juwels.log -e all ./ex2
-</code></pre><p>Now you're ready to work, <strong>good luck</strong>!</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">UCX_LOG_LEVEL</span><span class="o">=</span>error srun -n <span class="m">1</span> -o ex2.juwels.log -e all ./ex2
+</code></pre></div><p>Now you're ready to work, <strong>good luck</strong>!</p>
 <h2 id="pdi-free-code">PDI-free code</h2>
 <h3 id="ex1-getting-started">Ex1. Getting started</h3>
 <p>Ex1. implements a simple heat equation solver using an explicit forward finite difference scheme parallelized with MPI. The code uses a block domain decomposition where each process holds a 2D block of data.</p>
-<p><img src="/docs/imgs/heat_global_matrix.jpg" alt="Data domain decomposition in the example"></p>
-<p><img src="/docs/imgs/heat_global_matrix.jpg" alt="Data domain decomposition in the example"></p>
-<p><img src="/docs/imgs/heat_global_matrix.jpg" alt="Data domain decomposition in the example"></p>
-<p><img src="/docs/imgs/heat_global_matrix.jpg" alt="Data domain decomposition in the example"></p>
+
+<figure>
+    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
 <p>Locally, each process holds its local block of data with one additional element on each side for ghost zones.</p>
-<p><img src="/docs/imgs/heat_local_matrix.jpg" alt="Data domain decomposition in the example"></p>
-<p><img src="/docs/imgs/heat_local_matrix.jpg" alt="Data domain decomposition in the example"></p>
-<p><img src="/docs/imgs/heat_local_matrix.jpg" alt="Data domain decomposition in the example"></p>
-<p><img src="/docs/imgs/heat_local_matrix.jpg" alt="Data domain decomposition in the example"></p>
+
+<figure>
+    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+            <h4>Data domain decomposition in the example</h4>
+        </figcaption>
+</figure>
+
 <p>In the following exercises however, PDI will only be used to decouple I/O operations. There is no need to fully dive in the core of the solver described in the <a href="member:PDI_example_1heat_algorithm">PDI example algorithm</a> and implemented in the <code>iter</code> and <code>exchange</code> functions.</p>
 <p>The specification tree in the <code>.yml</code> files and the <code>main</code> function are the locations where all the I/O-related aspects will be handled and the only ones you will actually need to fully understand or modify.</p>
 <ul>
@@ -1868,8 +1916,8 @@ cd PDI_tutorial
 <li>Play with and understand the code parameters in <code>ex1.yml</code>.</li>
 <li>Set values in <code>ex1.yml</code> to be able to run the code with 4 MPI processes.</li>
 </ul>
-<pre><code>srun -n 4 ./ex1
-</code></pre><h2 id="pdi-core--trace-plugin">PDI core &amp; trace plugin</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">srun -n <span class="m">4</span> ./ex1
+</code></pre></div><h2 id="pdi-core--trace-plugin">PDI core &amp; trace plugin</h2>
 <h3 id="ex2-now-with-some-pdi">Ex2. Now with some PDI</h3>
 <p>Ex2. is the same code as that of ex1. with PDI calls added in <code>main</code> function. In our YAML file (<code>ex2.yml</code>), a new sub-tree has been added under the <code>pdi</code> key. This sub-tree is the PDI specification tree passed to PDI at initialization. Here, the PDI <a href="compound:trace_plugin">Trace plugin</a> is used to trace PDI calls.</p>
 <ul>
@@ -1878,8 +1926,8 @@ cd PDI_tutorial
 </li>
 <li>
 <p>Add the required <code>PDI_share</code> and <code>PDI_reclaim</code> calls to match the output of <code>ex2.log</code> file (only the lines matching <code>[Trace-plugin]</code> have been kept). You only need to change the <code>ex2.c</code> file. You can easily check if the files are the same by running the command:</p>
-<pre><code>diff ex2.log &lt;(grep Trace-plugin ex2.juwels.log)
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex2.log &lt;<span class="o">(</span>grep Trace-plugin ex2.juwels.log<span class="o">)</span>
+</code></pre></div></li>
 </ul>
 
 
@@ -1900,8 +1948,8 @@ cd PDI_tutorial
 <ul>
 <li>
 <p>Write the <code>psize</code> and <code>pcoord</code> variables in addition to <code>dsize</code> to match the content expected as described in the <code>ex3.h5dump</code> text file (use the <code>h5dump</code> command to see the content of your HDF5 output file in the same format as the <code>.h5dump</code> file). You can easily check if the files are the same by running the command:</p>
-<pre><code>diff ex3.h5dump &lt;(h5dump ex3.h5)
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex3.h5dump &lt;<span class="o">(</span>h5dump ex3.h5<span class="o">)</span>
+</code></pre></div></li>
 </ul>
 <p>To achieve this result, you will need to fill 2 sections in the YAML file.</p>
 <ol>
@@ -1963,8 +2011,8 @@ cd PDI_tutorial
 <ul>
 <li>
 <p>Replace the remaining <code>PDI_share</code>/<code>PDI_reclaim</code> by <code>PDI_expose</code>s and <code>PDI_multi_expose</code>s and ensure that your code keeps the exact same behaviour by comparing its trace to <code>ex6.log</code> (only the lines matching <code>[Trace-plugin]</code> have been kept). You can easily check if the files are the same by running:</p>
-<pre><code>diff ex6.log &lt;(grep Trace-plugin ex6.juwels.log)
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex6.log &lt;<span class="o">(</span>grep Trace-plugin ex6.juwels.log<span class="o">)</span>
+</code></pre></div></li>
 </ul>
 <h3 id="ex7-writing-a-selection">Ex7. Writing a selection</h3>
 <p>In this exercise, you will only write a selection of the 2D array in memory excluding ghosts to the HDF5 file. Once again, you only need to modify the YAML file in this exercise, no need to touch the C file.</p>
@@ -1975,14 +2023,38 @@ cd PDI_tutorial
 <ul>
 <li>
 <p>Restrict the selection to the non-ghost part of the array in memory (excluding one element on each side). You should be able to match the expected output described in <code>ex7.h5dump</code>. You can easily check if the files are the same by running:</p>
-<pre><code>diff ex7.h5dump &lt;(h5dump ex7-data0x0.h5)
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex7.h5dump &lt;<span class="o">(</span>h5dump ex7-data0x0.h5<span class="o">)</span>
+</code></pre></div></li>
 </ul>
 <p>You can achieve this by using the <code>memory_selection</code> directive that specifies the selection of data from memory to write.</p>
-<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
-<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
-<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
-<p><img src="/docs/imgs/PDI_hdf5_selection.jpg" alt="graphical representation"></p>
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
 <h3 id="ex8-selecting-on-the-dataset-size">Ex8. Selecting on the dataset size</h3>
 <p>In this exercise, you will once again change the YAML file to handle a selection in the dataset in addition to the selection in memory from the previous exercise. You will write the 2D array from the previous exercise as a slice of 3D dataset including a dimension for time. Once again, you only need to modify the YAML file in this exercise, no need to touch the C file.</p>
 <ul>
@@ -1992,14 +2064,38 @@ cd PDI_tutorial
 <ul>
 <li>
 <p>Write the 2D selection from <code>main_field</code> at iterations 1 to 3 inclusive into slices at coordinate 0 to 2 of first dimension of the 3D dataset. Match the expected output described in <code>ex8.h5dump</code>. You can easily check if the files are the same by running:</p>
-<pre><code>diff ex8.h5dump &lt;(h5dump ex8-data0x0.h5)
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex8.h5dump &lt;<span class="o">(</span>h5dump ex8-data0x0.h5<span class="o">)</span>
+</code></pre></div></li>
 </ul>
 <p>You can achieve this by using the <code>dataset_selection</code> directive that specifies the selection where to write in the file dataset.</p>
-<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
-<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
-<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
-<p><img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg" alt="graphical representation"></p>
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+            <h4>graphical representation</h4>
+        </figcaption>
+</figure>
+
 <h2 id="parallel-declhdf5">parallel Decl'HDF5</h2>
 <h3 id="ex9-going-parallel">Ex9. Going parallel</h3>
 <p>Running the code from the previous exercises in parallel should already work and yield one file per process containing the local data block. In this exercise you will write one single file with parallel HDF5 whose content should be independent from the number of processes used. Once again, you only need to modify the YAML file in this exercise, no need to touch the C file.</p>
@@ -2013,11 +2109,35 @@ cd PDI_tutorial
 <li>Ensure the dataset selection of each process does not overlap with the others. You will need to make a selection in the dataset that depends on the global coordinate of the local data block (use <code>pcoord</code>).</li>
 </ul>
 <p>Match the output from <code>ex9.h5dump</code>, that should be independent from the number of processes used. You can easily check if the files are the same by running:</p>
-<pre><code>diff ex9.h5dump &lt;(h5dump ex9.h5)
-</code></pre><p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
-<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
-<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
-<p><img src="/docs/imgs/PDI_hdf5_parallel.jpg" alt="graphical representation of the parallel I\/O"></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex9.h5dump &lt;<span class="o">(</span>h5dump ex9.h5<span class="o">)</span>
+</code></pre></div>
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+            <h4>graphical representation of the parallel I\/O</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+            <h4>graphical representation of the parallel I\/O</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+            <h4>graphical representation of the parallel I\/O</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+            <h4>graphical representation of the parallel I\/O</h4>
+        </figcaption>
+</figure>
+
 <h2 id="pycall">Pycall</h2>
 <h3 id="ex10-post-processing-the-data-in-python">Ex10. Post-processing the data in python</h3>
 <p>In this exercise, you will once again modify the YAML file only and use python to post-process the data in situ before writing it to HDF5. Here, you will write the square root of the raw data to HDF5 instead of the data itself.</p>
@@ -2035,8 +2155,8 @@ cd PDI_tutorial
 </li>
 <li>
 <p>Match the output from <code>ex10.h5dump</code>. You can easily check if the files are the same by running:</p>
-<pre><code>diff ex10.h5dump &lt;(h5dump ex10.h5)
-</code></pre></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex10.h5dump &lt;<span class="o">(</span>h5dump ex10.h5<span class="o">)</span>
+</code></pre></div></li>
 </ul>
 
 

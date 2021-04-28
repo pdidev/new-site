@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -19,7 +19,7 @@
 
 <title>How to create a plugin | PDI</title><meta property="og:title" content="How to create a plugin" />
 <meta property="og:description" content="Plugin class Plugin is a class, that handles shared data and triggered events to perform an I/O operations. It is dynamically linked to the user program by PDI. Behavior of each plugin is defined by specification tree in plugins subtree.
-plugins: example: ... The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.
+plugins:example:...The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.
 The plugin has to inherit from PDI::Plugin and have a constructor with arguments PDI::Context&amp; and PC_tree_t." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/" /><meta property="article:section" content="docs" />
@@ -28,14 +28,14 @@ The plugin has to inherit from PDI::Plugin and have a constructor with arguments
 
 <meta itemprop="name" content="How to create a plugin">
 <meta itemprop="description" content="Plugin class Plugin is a class, that handles shared data and triggered events to perform an I/O operations. It is dynamically linked to the user program by PDI. Behavior of each plugin is defined by specification tree in plugins subtree.
-plugins: example: ... The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.
+plugins:example:...The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.
 The plugin has to inherit from PDI::Plugin and have a constructor with arguments PDI::Context&amp; and PC_tree_t.">
 
-<meta itemprop="wordCount" content="1186">
+<meta itemprop="wordCount" content="1126">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to create a plugin"/>
 <meta name="twitter:description" content="Plugin class Plugin is a class, that handles shared data and triggered events to perform an I/O operations. It is dynamically linked to the user program by PDI. Behavior of each plugin is defined by specification tree in plugins subtree.
-plugins: example: ... The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.
+plugins:example:...The given example will load example plugin and pass its subtree to the plugin&#39;s constructor.
 The plugin has to inherit from PDI::Plugin and have a constructor with arguments PDI::Context&amp; and PC_tree_t."/>
 
 
@@ -44,8 +44,8 @@ The plugin has to inherit from PDI::Plugin and have a constructor with arguments
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1799,333 +1799,333 @@ The plugin has to inherit from PDI::Plugin and have a constructor with arguments
 	       
 	<h2 id="plugin-class">Plugin class</h2>
 <p>Plugin is a class, that handles shared data and triggered events to perform an I/O operations. It is dynamically linked to the user program by <a href="compound:namespacePDI">PDI</a>. Behavior of each plugin is defined by specification tree in plugins subtree.</p>
-<pre><code>plugins:
-  example:
-    ...
-</code></pre><p>The given example will load example plugin and pass its subtree to the plugin's constructor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">example</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="l">...</span><span class="w">
+</span></code></pre></div><p>The given example will load example plugin and pass its subtree to the plugin's constructor.</p>
 <p>The plugin has to inherit from <a href="compound:classPDI_1_1Plugin">PDI::Plugin</a> and have a constructor with arguments <a href="compound:classPDI_1_1Context">PDI::Context</a>&amp; and PC_tree_t.</p>
 <h3 id="example-plugin">Example plugin</h3>
 <p>Example of the simplest plugin, that does nothing:</p>
-<pre><code>#include &lt;pdi/context.h&gt;
-#include &lt;pdi/paraconf_wrapper.h&gt;
-#include &lt;pdi/plugin.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;pdi/context.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/paraconf_wrapper.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/plugin.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">example_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">example_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{}</span>
+<span class="p">}</span>
 
-struct example_plugin : public PDI::Plugin
-{
-    example_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {}
-}
-
-PDI_PLUGIN(example)
-</code></pre><h3 id="adding-a-callback">Adding a callback</h3>
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</code></pre></div><h3 id="adding-a-callback">Adding a callback</h3>
 <p><a href="compound:classPDI_1_1Context">PDI::Context</a> has a member with all the functions (callbacks) that are called when user is sharing the data (calls PDI_share). To add a new function to the plugin must call <code>callbacks().add_data_callback</code>.</p>
-<pre><code>std::function&lt;void()&gt; add_data_callback(const std::function&lt;void(const std::string&amp;, Ref)&gt;&amp; callback, const std::string&amp; name = {}))
-</code></pre><p>The first argument is the function to be called when user shares the data. If the second parameter (name) is given, the function will be called only on a specified data name. Returns a function that removes the callback from <a href="compound:classPDI_1_1Context">PDI::Context</a> container.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">add_data_callback</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Ref</span><span class="p">)</span><span class="o">&gt;&amp;</span> <span class="n">callback</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span> <span class="o">=</span> <span class="p">{}))</span>
+</code></pre></div><p>The first argument is the function to be called when user shares the data. If the second parameter (name) is given, the function will be called only on a specified data name. Returns a function that removes the callback from <a href="compound:classPDI_1_1Context">PDI::Context</a> container.</p>
 <p>Example of adding new callback:</p>
-<pre><code>#include &lt;pdi/context.h&gt;
-#include &lt;pdi/paraconf_wrapper.h&gt;
-#include &lt;pdi/plugin.h&gt;
-#include &lt;pdi/ref_any.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;pdi/context.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/paraconf_wrapper.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/plugin.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/ref_any.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">example_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">example_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_data_callback</span><span class="p">([](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref</span> <span class="n">ref</span><span class="p">){</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;User has shared a data named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">data_name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct example_plugin : public PDI::Plugin
-{
-    example_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {
-        ctx.callbacks().add_data_callback([](const std::string&amp; data_name, PDI::Ref ref){
-            std::cout &lt;&lt; &quot;User has shared a data named &quot; &lt;&lt; data_name &lt;&lt; std::endl;
-        });
-    }
-}
-
-PDI_PLUGIN(example)
-</code></pre><p>If user create specification tree:</p>
-<pre><code>data:
-    some_integer: int
-
-plugins:
-    example: ~
-</code></pre><p>And a program:</p>
-<pre><code>#include &lt;pdi.h&gt;
-
-int main()
-{
-    PDI_init(PC_parse_path(&quot;spec_tree.yaml&quot;));
-    int some_integer = 0;
-    PDI_expose(&quot;some_integer&quot;, &amp;some_integer, PDI_OUT);
-    PDI_finalize();
-    return 0;
-}
-</code></pre><p>The console will display:</p>
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</code></pre></div><p>If user create specification tree:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">some_integer</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="l">~</span><span class="w">
+</span></code></pre></div><p>And a program:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;pdi.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;spec_tree.yaml&#34;</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">some_integer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PDI_expose</span><span class="p">(</span><span class="s">&#34;some_integer&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">some_integer</span><span class="p">,</span> <span class="n">PDI_OUT</span><span class="p">);</span>
+    <span class="n">PDI_finalize</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>The console will display:</p>
 <pre><code>[PDI][13:42:41] *** info: Initialization successful
 User has shared a data named some_integer
 [PDI][13:42:42] *** info: Finalization
 </code></pre><h3 id="reading-and-writing-data">Reading and writing data</h3>
 <p>Example of reading and writing data:</p>
-<pre><code>#include &lt;pdi/context.h&gt;
-#include &lt;pdi/paraconf_wrapper.h&gt;
-#include &lt;pdi/plugin.h&gt;
-#include &lt;pdi/ref_any.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;pdi/context.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/paraconf_wrapper.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/plugin.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/ref_any.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">example_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">example_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_data_callback</span><span class="p">([](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref</span> <span class="n">ref</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Ref_rw</span> <span class="n">ref_rw</span><span class="p">{</span><span class="n">ref</span><span class="p">})</span> <span class="p">{</span>
+                <span class="c1">//Plugin can read and write
+</span><span class="c1"></span>                <span class="kt">int</span><span class="o">*</span> <span class="n">some_integer</span> <span class="o">=</span> <span class="n">ref_rw</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Ref_r</span> <span class="n">ref_r</span><span class="p">{</span><span class="n">ref</span><span class="p">})</span> <span class="p">{</span>
+                <span class="c1">//Plugin can read
+</span><span class="c1"></span>                <span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">some_integer</span> <span class="o">=</span> <span class="n">ref_r</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Ref_w</span> <span class="n">ref_w</span><span class="p">{</span><span class="n">ref</span><span class="p">})</span> <span class="p">{</span>
+                <span class="c1">//Plugin can write
+</span><span class="c1"></span>                <span class="kt">int</span><span class="o">*</span> <span class="n">some_integer</span> <span class="o">=</span> <span class="n">ref_w</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">//Plugin cannot read nor write
+</span><span class="c1"></span>            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct example_plugin : public PDI::Plugin
-{
-    example_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {
-        ctx.callbacks().add_data_callback([](const std::string&amp; data_name, PDI::Ref ref){
-            if(PDI::Ref_rw ref_rw{ref}) {
-                //Plugin can read and write
-                int* some_integer = ref_rw.get();
-            } else if(PDI::Ref_r ref_r{ref}) {
-                //Plugin can read
-                const int* some_integer = ref_r.get();
-            } else if(PDI::Ref_w ref_w{ref}) {
-                //Plugin can write
-                int* some_integer = ref_w.get();
-            } else {
-                //Plugin cannot read nor write
-            }
-        });
-    }
-}
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</code></pre></div><h3 id="handling-events">Handling events</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;pdi/context.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/paraconf_wrapper.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/plugin.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/ref_any.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">example_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">example_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_event_callback</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">event_name</span><span class="p">){</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">handle_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_event_callback</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">event_name</span><span class="p">){</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">handle_special_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">);</span>
+        <span class="p">},</span> <span class="s">&#34;special_event&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">handle_event</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">event_name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Event&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">event_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;called.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
 
-PDI_PLUGIN(example)
-</code></pre><h3 id="handling-events">Handling events</h3>
-<pre><code>#include &lt;pdi/context.h&gt;
-#include &lt;pdi/paraconf_wrapper.h&gt;
-#include &lt;pdi/plugin.h&gt;
-#include &lt;pdi/ref_any.h&gt;
+    <span class="kt">void</span> <span class="nf">handle_special_event</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">event_name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Special event `&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">event_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; called.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct example_plugin : public PDI::Plugin
-{
-    example_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {
-        ctx.callbacks().add_event_callback([this](const std::string&amp; event_name){
-            this-&gt;handle_event(event_name);
-        });
-        ctx.callbacks().add_event_callback([this](const std::string&amp; event_name){
-            this-&gt;handle_special_event(event_name);
-        }, &quot;special_event&quot;);
-    }
-private:
-    void handle_event(const std::string&amp; event_name) {
-        std::cout &lt;&lt; &quot;Event&quot; &lt;&lt; event_name &lt;&lt; &quot;called.&quot; &lt;&lt; std::endl;
-    }
-
-    void handle_special_event(const std::string&amp; event_name) {
-        std::cout &lt;&lt; &quot;Special event `&quot; &lt;&lt; event_name &lt;&lt; &quot;' called.&quot; &lt;&lt; std::endl;
-    }
-}
-
-PDI_PLUGIN(example)
-</code></pre><h3 id="reading-scalar-and-array-from-specification-tree">Reading scalar and array from specification tree</h3>
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</code></pre></div><h3 id="reading-scalar-and-array-from-specification-tree">Reading scalar and array from specification tree</h3>
 <p>Specification tree:</p>
-<pre><code>plugins:
-  example:
-    scalar: some_string
-    array: [0, 1, 2]
-</code></pre><p>Reading a scalar and an array:</p>
-<pre><code>#include &lt;pdi/context.h&gt;
-#include &lt;pdi/paraconf_wrapper.h&gt;
-#include &lt;pdi/plugin.h&gt;
-#include &lt;pdi/ref_any.h&gt;
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">example</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">scalar</span><span class="p">:</span><span class="w"> </span><span class="l">some_string</span><span class="w">
+</span><span class="w">    </span><span class="nt">array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+</span></code></pre></div><p>Reading a scalar and an array:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;pdi/context.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/paraconf_wrapper.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/plugin.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/ref_any.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">example_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">example_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{</span>
+        <span class="c1">//scalar
+</span><span class="c1"></span>        <span class="n">PC_tree_t</span> <span class="n">scalar_tree</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">,</span> <span class="s">&#34;.scalar&#34;</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">string_scalar</span> <span class="o">=</span> <span class="n">PDI</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">scalar_tree</span><span class="p">);</span>
 
-struct example_plugin : public PDI::Plugin
-{
-    example_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {
-        //scalar
-        PC_tree_t scalar_tree = PC_get(spec_tree, &quot;.scalar&quot;);
-        std::string string_scalar = PDI::to_string(scalar_tree);
+        <span class="c1">//array
+</span><span class="c1"></span>        <span class="n">PC_tree_t</span> <span class="n">array_tree</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">,</span> <span class="s">&#34;.array&#34;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">array_size</span> <span class="o">=</span> <span class="n">PDI</span><span class="o">::</span><span class="n">len</span><span class="p">(</span><span class="n">array_tree</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array_size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">PC_tree_t</span> <span class="n">array_element</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">array_tree</span><span class="p">,</span> <span class="s">&#34;[%d]&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">to_long</span><span class="p">(</span><span class="n">array_element</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-        //array
-        PC_tree_t array_tree = PC_get(spec_tree, &quot;.array&quot;);
-        int array_size = PDI::len(array_tree);
-        std::vector&lt;long&gt; array;
-        for (int i = 0; i &lt; array_size; i++) {
-            PC_tree_t array_element = PC_get(array_tree, &quot;[%d]&quot;, i);
-            array.emplace_back(PDI::to_long(array_element));
-        }
-    }
-}
-
-PDI_PLUGIN(example)
-</code></pre><h3 id="reading-maps-from-specification-tree">Reading maps from specification tree</h3>
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</code></pre></div><h3 id="reading-maps-from-specification-tree">Reading maps from specification tree</h3>
 <p>Specification tree:</p>
-<pre><code>plugins:
-  example:
-    custom_subtree:
-        here: 0
-        can: 1
-        be: 2
-        any: 3
-        subtree: 4
-</code></pre><p>Reading a scalar and an array:</p>
-<pre><code>#include &lt;unordered_map&gt;
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">example</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">custom_subtree</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">here</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">        </span><span class="nt">can</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">        </span><span class="nt">be</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">        </span><span class="nt">any</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">        </span><span class="nt">subtree</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></code></pre></div><p>Reading a scalar and an array:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;pdi/context.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/paraconf_wrapper.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/plugin.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;pdi/ref_any.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">example_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">example_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">PC_tree_t</span> <span class="n">subtree</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">,</span> <span class="s">&#34;.custom_subtree&#34;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">subtree_size</span> <span class="o">=</span> <span class="n">PDI</span><span class="o">::</span><span class="n">len</span><span class="p">(</span><span class="n">subtree</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">custom_map</span><span class="p">;</span>
 
-#include &lt;pdi/context.h&gt;
-#include &lt;pdi/paraconf_wrapper.h&gt;
-#include &lt;pdi/plugin.h&gt;
-#include &lt;pdi/ref_any.h&gt;
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">subtree_size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">PC_tree_t</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">subtree</span><span class="p">,</span> <span class="s">&#34;{%d}&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">PC_tree_t</span> <span class="n">value</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">subtree</span><span class="p">,</span> <span class="s">&#34;&lt;%d&gt;&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">custom_map</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">PDI</span><span class="o">::</span><span class="n">to_long</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct example_plugin : public PDI::Plugin
-{
-    example_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {
-        PC_tree_t subtree = PC_get(spec_tree, &quot;.custom_subtree&quot;);
-        int subtree_size = PDI::len(subtree);
-        std::unordered_map&lt;std::string, long&gt; custom_map;
-
-        for (int i = 0; i &lt; subtree_size; i++) {
-            PC_tree_t key = PC_get(subtree, &quot;{%d}&quot;, i);
-            PC_tree_t value = PC_get(subtree, &quot;&lt;%d&gt;&quot;, i);
-            custom_map.emplace_back(PDI::to_string(key), PDI::to_long(value));
-        }
-    }
-}
-
-PDI_PLUGIN(example)
-</code></pre><h2 id="creating-a-true-plugin-posix-plugin">Creating a true plugin: POSIX plugin</h2>
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</code></pre></div><h2 id="creating-a-true-plugin-posix-plugin">Creating a true plugin: POSIX plugin</h2>
 <h3 id="step-1-think-what-your-plugin-will-be-for">Step 1: Think what your plugin will be for.</h3>
 <p>Simple checkpointing. Each data will be saved in separate file. User can check the status of all files at once and then recover the data.</p>
 <h3 id="step-2-prepare-your-specification-tree-schema">Step 2: Prepare your specification tree schema.</h3>
-<pre><code>data:
-  some_data: {type: array, subtype: int, size: 64}
-  can_recover_data: int
-
-plugins:
-  posix:
-    data:
-      some_data: /file_path/
-    can_recover_all: can_recover_data
-</code></pre><p>/file_path/ is a path where to save and load from some_data. can_recover_data is a flag that indicates if the recover is possible.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">some_data</span><span class="p">:</span><span class="w"> </span>{<span class="nt">type: array, subtype: int, size</span><span class="p">:</span><span class="w"> </span><span class="m">64</span>}<span class="w">
+</span><span class="w">  </span><span class="nt">can_recover_data</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">posix</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">some_data</span><span class="p">:</span><span class="w"> </span><span class="l">/file_path/</span><span class="w">
+</span><span class="w">    </span><span class="nt">can_recover_all</span><span class="p">:</span><span class="w"> </span><span class="l">can_recover_data</span><span class="w">
+</span></code></pre></div><p>/file_path/ is a path where to save and load from some_data. can_recover_data is a flag that indicates if the recover is possible.</p>
 <p>The fastest way to learn is by examples. To show how to create a plugin, we will create &quot;posix plugin&quot;. It won't do anything special, but give you a basic knowledge how to create one.</p>
 <h3 id="step-3-write-your-plugin">Step 3: Write your plugin.</h3>
 <p>Members and constructor:</p>
-<pre><code>class posix_plugin : public PDI::Plugin
-{
-    std::string m_can_recover_data;
-    std::unordered_map&lt;std::string, std::string&gt; m_data_to_path_map;
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">posix_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">m_can_recover_data</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">m_data_to_path_map</span><span class="p">;</span>
 
-public:
-    posix_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {}
-}
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">posix_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{}</span>
+<span class="p">}</span>
 
-PDI_PLUGIN(posix)
-</code></pre><p>Read recover tree:</p>
-<pre><code>void read_recover_tree(PC_tree_t spec_tree) {
-    PC_tree_t recover_tree = PC_get(spec_tree, &quot;.can_recover_all&quot;);
-    if(!PC_status(recover_tree)) {
-        m_can_recover_data = PDI::to_string(recover_tree);
-    }
-}
-</code></pre><p>Read data tree:</p>
-<pre><code>void read_data_tree(PC_tree_t spec_tree) {
-    PC_tree_t data_tree = PC_get(spec_tree, &quot;.data&quot;);
-    if (!PC_status(data_tree)) {
-        int data_tree_size = PDI::len(data_tree);
-        for (int i = 0; i &lt; data_tree_size; i++) {
-            PC_tree_t key = PC_get(data_tree, &quot;{%d}&quot;, i);
-            PC_tree_t value = PC_get(data_tree, &quot;&lt;%d&gt;&quot;, i);
-            m_data_to_path_map.emplace_back(PDI::to_string(key), PDI::to_string(value));
-        }
-    }
-}
-</code></pre><p>Create a function that writes data to temporary file and check if file was created, size is correct and then replace old file:</p>
-<pre><code>void write_data(const std::string&amp; data_name, PDI::Ref_r ref_r) {
-    if(!ref_r) {
-        return;
-    }
-    std::string tmp_path = m_data_to_path_map[data_name] + &quot;.tmp&quot;;
-    std::ofstream file{tmp_path, std::ios::binary};
-    if (ref_r.type().buffersize() == ref_r.type().datasize()) {
-        //dense data
-        file.write((const char*)ref_r.get(), ref_r.type().buffersize());
-    } else {
-        //sparse data
-        std::unique_ptr&lt;char&gt; data_copy {new char[ref_r.type().dataSize()]};
-        ref_r.type().data_to_dense_copy(data_copy.get(), ref_r.get());
-        file.write(data_copy.get(), ref_r.type().datasize());
-    }
-    file.close();
+<span class="n">PDI_PLUGIN</span><span class="p">(</span><span class="n">posix</span><span class="p">)</span>
+</code></pre></div><p>Read recover tree:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">read_recover_tree</span><span class="p">(</span><span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">recover_tree</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">,</span> <span class="s">&#34;.can_recover_all&#34;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">PC_status</span><span class="p">(</span><span class="n">recover_tree</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">m_can_recover_data</span> <span class="o">=</span> <span class="n">PDI</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">recover_tree</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Read data tree:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">read_data_tree</span><span class="p">(</span><span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">PC_tree_t</span> <span class="n">data_tree</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">,</span> <span class="s">&#34;.data&#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">PC_status</span><span class="p">(</span><span class="n">data_tree</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">data_tree_size</span> <span class="o">=</span> <span class="n">PDI</span><span class="o">::</span><span class="n">len</span><span class="p">(</span><span class="n">data_tree</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">data_tree_size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">PC_tree_t</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">data_tree</span><span class="p">,</span> <span class="s">&#34;{%d}&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">PC_tree_t</span> <span class="n">value</span> <span class="o">=</span> <span class="n">PC_get</span><span class="p">(</span><span class="n">data_tree</span><span class="p">,</span> <span class="s">&#34;&lt;%d&gt;&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">m_data_to_path_map</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">PDI</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Create a function that writes data to temporary file and check if file was created, size is correct and then replace old file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">write_data</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref_r</span> <span class="n">ref_r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ref_r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">tmp_path</span> <span class="o">=</span> <span class="n">m_data_to_path_map</span><span class="p">[</span><span class="n">data_name</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#34;.tmp&#34;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">file</span><span class="p">{</span><span class="n">tmp_path</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">};</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">buffersize</span><span class="p">()</span> <span class="o">==</span> <span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">datasize</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">//dense data
+</span><span class="c1"></span>        <span class="n">file</span><span class="p">.</span><span class="n">write</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">ref_r</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">buffersize</span><span class="p">());</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">//sparse data
+</span><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">data_copy</span> <span class="p">{</span><span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">dataSize</span><span class="p">()]};</span>
+        <span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">data_to_dense_copy</span><span class="p">(</span><span class="n">data_copy</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">ref_r</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+        <span class="n">file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data_copy</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">datasize</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 
-    //replace old file
-    struct stat status;
-    if (!stat(tmp_path.c_str(), &amp;status) &amp;&amp; status.st_size == ref_r.type().datasize()) {
-        if (!stat(m_data_to_path_map[data_name].c_str()) &amp;&amp; std::remove(m_data_to_path_map[data_name].c_str())) {
-            throw PDI::Error {PDI_ERR_SYSTEM, &quot;Cannot remove old file {}&quot;, m_data_to_path_map[data_name]};
-        }
-        if (std::rename(tmp_path.c_str(), m_data_to_path_map[data_name].c_str())) {
-            throw PDI::Error {PDI_ERR_SYSTEM, &quot;Cannot rename temporary file {}&quot;, tmp_path};
-        }
-    } else {
-        throw PDI::Error {PDI_ERR_SYSTEM, &quot;Data write not complete&quot;};
-    }
-}
-</code></pre><p>Create a function that reads data from file:</p>
-<pre><code>void read_data(const std::string&amp; data_name, PDI::Ref_w ref_w) {
-    if(!ref_w) {
-        return;
-    }
-    std::ifstream file{m_data_to_path_map[data_name], std::ios::binary};
-    if (ref_w.type().buffersize() == ref_w.type().datasize()) {
-        //dense data
-        file.read((char*)ref_w.get(), ref_w.type().buffersize());
-    } else {
-        //sparse data
-        std::unique_ptr&lt;char&gt; data_copy {new char[ref_w.type().dataSize()]};
-        file.read(data_copy.get(), ref_w.type().datasize());
-        ref_w.type().data_from_dense_copy(ref_w.get(), data_copy.get());
-    }
-}
-</code></pre><p>Handle can_recover_all data:</p>
-<pre><code>void can_recover(const std::string&amp; data_name, PDI::Ref_w ref_w) {
-    if (!ref_w) {
-        throw PDI::Error {PDI_ERR_RIGHT, &quot;Cannot write to `can_recover_all' data&quot;};
-    }
-    for (const auto&amp; data_path_pair : m_data_to_path_map) {
-        struct stat status;
-        if (stat(data_path_pair.second.c_str(), &amp;status)) {
-            *static_cast&lt;int*&gt;(ref_w.get()) = 0;
-            return;
-        }
-    }
-    *static_cast&lt;int*&gt;(ref_w.get()) = 1;
-}
-</code></pre><p>Add created functions to callbacks:</p>
-<pre><code>class posix_plugin : public PDI::Plugin
-{
-    std::string m_can_recover_data;
-    std::unordered_map&lt;std::string, std::string&gt; m_data_to_path_map;
+    <span class="c1">//replace old file
+</span><span class="c1"></span>    <span class="k">struct</span> <span class="nc">stat</span> <span class="n">status</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stat</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">status</span><span class="p">.</span><span class="n">st_size</span> <span class="o">==</span> <span class="n">ref_r</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">datasize</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stat</span><span class="p">(</span><span class="n">m_data_to_path_map</span><span class="p">[</span><span class="n">data_name</span><span class="p">].</span><span class="n">c_str</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="n">std</span><span class="o">::</span><span class="n">remove</span><span class="p">(</span><span class="n">m_data_to_path_map</span><span class="p">[</span><span class="n">data_name</span><span class="p">].</span><span class="n">c_str</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Error</span> <span class="p">{</span><span class="n">PDI_ERR_SYSTEM</span><span class="p">,</span> <span class="s">&#34;Cannot remove old file {}&#34;</span><span class="p">,</span> <span class="n">m_data_to_path_map</span><span class="p">[</span><span class="n">data_name</span><span class="p">]};</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">rename</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">m_data_to_path_map</span><span class="p">[</span><span class="n">data_name</span><span class="p">].</span><span class="n">c_str</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Error</span> <span class="p">{</span><span class="n">PDI_ERR_SYSTEM</span><span class="p">,</span> <span class="s">&#34;Cannot rename temporary file {}&#34;</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Error</span> <span class="p">{</span><span class="n">PDI_ERR_SYSTEM</span><span class="p">,</span> <span class="s">&#34;Data write not complete&#34;</span><span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Create a function that reads data from file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">read_data</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref_w</span> <span class="n">ref_w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ref_w</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">file</span><span class="p">{</span><span class="n">m_data_to_path_map</span><span class="p">[</span><span class="n">data_name</span><span class="p">],</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">};</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ref_w</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">buffersize</span><span class="p">()</span> <span class="o">==</span> <span class="n">ref_w</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">datasize</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">//dense data
+</span><span class="c1"></span>        <span class="n">file</span><span class="p">.</span><span class="n">read</span><span class="p">((</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">ref_w</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">ref_w</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">buffersize</span><span class="p">());</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">//sparse data
+</span><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">data_copy</span> <span class="p">{</span><span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">ref_w</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">dataSize</span><span class="p">()]};</span>
+        <span class="n">file</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">data_copy</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">ref_w</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">datasize</span><span class="p">());</span>
+        <span class="n">ref_w</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">data_from_dense_copy</span><span class="p">(</span><span class="n">ref_w</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">data_copy</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Handle can_recover_all data:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">can_recover</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref_w</span> <span class="n">ref_w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ref_w</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Error</span> <span class="p">{</span><span class="n">PDI_ERR_RIGHT</span><span class="p">,</span> <span class="s">&#34;Cannot write to `can_recover_all&#39; data&#34;</span><span class="p">};</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">data_path_pair</span> <span class="p">:</span> <span class="n">m_data_to_path_map</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="nc">stat</span> <span class="n">status</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">stat</span><span class="p">(</span><span class="n">data_path_pair</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">))</span> <span class="p">{</span>
+            <span class="o">*</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ref_w</span><span class="p">.</span><span class="n">get</span><span class="p">())</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="o">*</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ref_w</span><span class="p">.</span><span class="n">get</span><span class="p">())</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Add created functions to callbacks:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">posix_plugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Plugin</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">m_can_recover_data</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">m_data_to_path_map</span><span class="p">;</span>
 
-public:
-    posix_plugin(PDI::Context&amp; ctx, PC_tree_t spec_tree):
-        Plugin{ctx}
-    {
-        read_recover_tree(spec_tree);
-        read_data_tree(spec_tree);
-        for (const auto&amp; data_path_pair : m_data_to_path_map) {
-            ctx.callbacks().add_data_callback([this](const std::string&amp; data_name, PDI::Ref ref) {
-                this-&gt;write_data(data_name, ref);
-            }, data_path_pair.first);
-            ctx.callbacks().add_data_callback([this](const std::string&amp; data_name, PDI::Ref ref) {
-                this-&gt;read_data(data_name, ref);
-            }, data_path_pair.first);
-        }
-        if (!m_can_recover_data.empty()) {
-            ctx.callbacks().add_data_callback([this](const std::string&amp; data_name, PDI::Ref ref) {
-                this-&gt;can_recover(data_name, ref);
-            }, m_can_recover_all_data);
-        }
-    }
-}
-</code></pre><h3 id="next-steps">Next steps</h3>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">posix_plugin</span><span class="p">(</span><span class="n">PDI</span><span class="o">::</span><span class="n">Context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="n">spec_tree</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">Plugin</span><span class="p">{</span><span class="n">ctx</span><span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">read_recover_tree</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">);</span>
+        <span class="n">read_data_tree</span><span class="p">(</span><span class="n">spec_tree</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">data_path_pair</span> <span class="p">:</span> <span class="n">m_data_to_path_map</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_data_callback</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="o">-&gt;</span><span class="n">write_data</span><span class="p">(</span><span class="n">data_name</span><span class="p">,</span> <span class="n">ref</span><span class="p">);</span>
+            <span class="p">},</span> <span class="n">data_path_pair</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+            <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_data_callback</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="o">-&gt;</span><span class="n">read_data</span><span class="p">(</span><span class="n">data_name</span><span class="p">,</span> <span class="n">ref</span><span class="p">);</span>
+            <span class="p">},</span> <span class="n">data_path_pair</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_can_recover_data</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">ctx</span><span class="p">.</span><span class="n">callbacks</span><span class="p">().</span><span class="n">add_data_callback</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data_name</span><span class="p">,</span> <span class="n">PDI</span><span class="o">::</span><span class="n">Ref</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="o">-&gt;</span><span class="n">can_recover</span><span class="p">(</span><span class="n">data_name</span><span class="p">,</span> <span class="n">ref</span><span class="p">);</span>
+            <span class="p">},</span> <span class="n">m_can_recover_all_data</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="next-steps">Next steps</h3>
 <ol>
 <li>Compile: g++ posix.cxx -o libpdi_posix_plugin.so -lpdi -shared -fPIC -std=c++11</li>
 <li>Copy created file to path where dynamic linker can find it. For example: sudo cp libpdi_posix_plugin.so /usr/local/lib/</li>

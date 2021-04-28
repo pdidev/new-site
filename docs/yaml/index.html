@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -20,9 +20,8 @@
 <title>YAML | PDI</title><meta property="og:title" content="YAML" />
 <meta property="og:description" content="YAML Format YAML is the format used to write PDI specification tree. A YAML file is a text format file that represents a tree.
 For example, the following file:
-tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} Represents the following tree:
-This tree contains the following kinds of nodes:
- scalars, sequences, mappings.  Scalar element A scalar is a leaf in the tree, represented as a string." />
+tree_1:array_1:- scalar_1- scalar_2array_2:[1,2,3]tree_2:{subtree_1: scalar_1, subtree_2:scalar_2}Represents the following tree:
+  Graphical representation of the YAML Tree     Graphical representation of the YAML Tree     Graphical representation of the YAML Tree     Graphical representation of the YAML Tree   This tree contains the following kinds of nodes:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/yaml/" /><meta property="article:section" content="docs" />
 
@@ -31,18 +30,16 @@ This tree contains the following kinds of nodes:
 <meta itemprop="name" content="YAML">
 <meta itemprop="description" content="YAML Format YAML is the format used to write PDI specification tree. A YAML file is a text format file that represents a tree.
 For example, the following file:
-tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} Represents the following tree:
-This tree contains the following kinds of nodes:
- scalars, sequences, mappings.  Scalar element A scalar is a leaf in the tree, represented as a string.">
+tree_1:array_1:- scalar_1- scalar_2array_2:[1,2,3]tree_2:{subtree_1: scalar_1, subtree_2:scalar_2}Represents the following tree:
+  Graphical representation of the YAML Tree     Graphical representation of the YAML Tree     Graphical representation of the YAML Tree     Graphical representation of the YAML Tree   This tree contains the following kinds of nodes:">
 
-<meta itemprop="wordCount" content="465">
+<meta itemprop="wordCount" content="457">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="YAML"/>
 <meta name="twitter:description" content="YAML Format YAML is the format used to write PDI specification tree. A YAML file is a text format file that represents a tree.
 For example, the following file:
-tree_1: array_1: - scalar_1 - scalar_2 array_2: [1, 2, 3] tree_2: {subtree_1: scalar_1, subtree_2: scalar_2} Represents the following tree:
-This tree contains the following kinds of nodes:
- scalars, sequences, mappings.  Scalar element A scalar is a leaf in the tree, represented as a string."/>
+tree_1:array_1:- scalar_1- scalar_2array_2:[1,2,3]tree_2:{subtree_1: scalar_1, subtree_2:scalar_2}Represents the following tree:
+  Graphical representation of the YAML Tree     Graphical representation of the YAML Tree     Graphical representation of the YAML Tree     Graphical representation of the YAML Tree   This tree contains the following kinds of nodes:"/>
 
 
 
@@ -50,8 +47,8 @@ This tree contains the following kinds of nodes:
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1797,17 +1794,41 @@ This tree contains the following kinds of nodes:
 	<h2 id="yaml-format">YAML Format</h2>
 <p><a href="https://en.wikipedia.org/wiki/YAML">YAML</a> is the format used to write PDI specification tree. A YAML file is a text format file that represents a tree.</p>
 <p>For example, the following file:</p>
-<pre><code>tree_1:
-  array_1:
-    - scalar_1
-    - scalar_2
-  array_2: [1, 2, 3]
-tree_2: {subtree_1: scalar_1, subtree_2: scalar_2}
-</code></pre><p>Represents the following tree:</p>
-<p><img src="/docs/imgs/yaml_example.jpg" alt="Graphical representation of the YAML Tree"></p>
-<p><img src="/docs/imgs/yaml_example.jpg" alt="Graphical representation of the YAML Tree"></p>
-<p><img src="/docs/imgs/yaml_example.jpg" alt="Graphical representation of the YAML Tree"></p>
-<p><img src="/docs/imgs/yaml_example.jpg" alt="Graphical representation of the YAML Tree"></p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">tree_1</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">array_1</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">scalar_1</span><span class="w">
+</span><span class="w">    </span>- <span class="l">scalar_2</span><span class="w">
+</span><span class="w">  </span><span class="nt">array_2</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="nt">tree_2</span><span class="p">:</span><span class="w"> </span>{<span class="nt">subtree_1: scalar_1, subtree_2</span><span class="p">:</span><span class="w"> </span><span class="l">scalar_2}</span><span class="w">
+</span></code></pre></div><p>Represents the following tree:</p>
+
+<figure>
+    <img src="/docs/imgs/yaml_example.jpg"/> <figcaption>
+            <h4>Graphical representation of the YAML Tree</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/yaml_example.jpg"/> <figcaption>
+            <h4>Graphical representation of the YAML Tree</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/yaml_example.jpg"/> <figcaption>
+            <h4>Graphical representation of the YAML Tree</h4>
+        </figcaption>
+</figure>
+
+
+<figure>
+    <img src="/docs/imgs/yaml_example.jpg"/> <figcaption>
+            <h4>Graphical representation of the YAML Tree</h4>
+        </figcaption>
+</figure>
+
 <p>This tree contains the following kinds of nodes:</p>
 <ul>
 <li>scalars,</li>
@@ -1870,28 +1891,28 @@ tree_2: {subtree_1: scalar_1, subtree_2: scalar_2}
 </ul>
 <h2 id="yaml-parsing-with-paraconf">YAML Parsing with Paraconf</h2>
 <p>The PDI_init function gets as parameter a tree with <code>logging</code>, <code>data</code>, <code>metadata</code> and <code>plugins</code> maps defined in its root. User can define its own values in yaml and pass to PDI only the subtree:</p>
-<pre><code>duration: 0.75
-size: [64, 64]
-parallelism: { height: 4, width: 4 }
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="m">0.75</span><span class="w">
+</span><span class="w"></span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">64</span><span class="p">,</span><span class="w"> </span><span class="m">64</span><span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="nt">parallelism</span><span class="p">:</span><span class="w"> </span>{<span class="w"> </span><span class="nt">height: 4, width</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>}<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># only the following config will be passed to PDI</span><span class="w">
+</span><span class="w"></span><span class="nt">pdi_subtree</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">iteration</span><span class="p">:</span><span class="w"> </span><span class="l">int</span><span class="w">
+</span><span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">main_field</span><span class="p">:</span><span class="w"> </span><span class="l">double</span><span class="w">
+</span><span class="w">  </span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">decl_hdf5</span><span class="p">:</span><span class="w">
+</span><span class="w">       </span><span class="l">...</span><span class="w">
+</span></code></pre></div><p>C source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="n">PC_tree_t</span> <span class="n">root</span> <span class="o">=</span> <span class="n">PC_parse_path</span><span class="p">(</span><span class="s">&#34;example.yaml&#34;</span><span class="p">);</span>
+<span class="n">PDI_init</span><span class="p">(</span><span class="n">PC_get</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">&#34;pdi_subtree&#34;</span><span class="p">));</span>
+</code></pre></div><p>Fortran source code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Fortran" data-lang="Fortran"><span class="k">type</span><span class="p">(</span><span class="n">PC_tree_t</span><span class="p">),</span><span class="k">target</span> <span class="kd">::</span> <span class="n">root</span>
 
-# only the following config will be passed to PDI
-pdi_subtree:
-  metadata:
-    iteration: int
-  data:
-    main_field: double
-  plugins:
-    decl_hdf5:
-       ...
-</code></pre><p>C source code:</p>
-<pre><code>PC_tree_t root = PC_parse_path(&quot;example.yaml&quot;);
-PDI_init(PC_get(root, &quot;pdi_subtree&quot;));
-</code></pre><p>Fortran source code:</p>
-<pre><code>type(PC_tree_t),target :: root
-
-call pc_parse_path(&quot;example.yaml&quot;, root)
-call pdi_init(pc_get(root, &quot;pdi_subtree&quot;))
-</code></pre>
+<span class="k">call </span><span class="n">pc_parse_path</span><span class="p">(</span><span class="s2">&#34;example.yaml&#34;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="k">call </span><span class="n">pdi_init</span><span class="p">(</span><span class="n">pc_get</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&#34;pdi_subtree&#34;</span><span class="p">))</span>
+</code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001

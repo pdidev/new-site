@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ Cross-cutting concerns are the aspect of the code that are not core concerns. We
 Core concerns are the aspects of the code that fulfill its main goal. We consider as core concerns of a simulation code the aspects handled in the main loop that generate elements needed as input of the next iteration of the loop.
 Cross-cutting concerns are the aspect of the code that are not core concerns. We consider as cross-cutting concerns of a simulation code:">
 
-<meta itemprop="wordCount" content="1177">
+<meta itemprop="wordCount" content="1180">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Core Concepts"/>
 <meta name="twitter:description" content="Philosophy of PDI Similarly to aspect-oriented programming, PDI distinguishes between core concerns and cross-cutting concerns.
@@ -44,8 +44,8 @@ Cross-cutting concerns are the aspect of the code that are not core concerns. We
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1796,7 +1796,13 @@ Cross-cutting concerns are the aspect of the code that are not core concerns. We
 <p>Before using PDI, it is however a good idea to understand the three core concepts that make this possible.</p>
 <p>Each data exchange is a two-step process. The PDI-enabled application makes its data available through the <a href="member:Concepts_1Data_store">data store</a>. The <a href="member:Concepts_1Event_subsystem">event subsystem</a> then notifies interested external data handlers about this change in the store. Once notified, each data handler (implemented as a plugin) can look in the store and use the data accessible from there.</p>
 <p>The orchestration of these exchanges, the description of what data can be put in the store, what each handler should do with it, etc. is described in the <a href="member:Concepts_1Specification_tree">specification tree</a>.</p>
-<p><img src="/docs/imgs/PDI_schema.jpg" alt="PDI structure schema"></p>
+
+<figure>
+    <img src="/docs/imgs/PDI_schema.jpg"/> <figcaption>
+            <h4>PDI structure schema</h4>
+        </figcaption>
+</figure>
+
 <h2 id="data-store">Data store</h2>
 <p>The data store is the mechanism provided by PDI to handle <em>data transfer</em> between the application code and external data handlers. Data transfer is the action of making data available to another part of the code. For example, in a function call the list of parameters determines data transfer.</p>
 <p>PDI data store is somewhat similar to a file-system or a document store with some specific properties:</p>

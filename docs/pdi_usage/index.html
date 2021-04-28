@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ Preparing the environment PDI was installed in default location The library and 
 Preparing the environment PDI was installed in default location The library and plugins should be found without any problem, but a good approach is to make sure that all environment variables are set correctly. To do this, there are 3 options:
  source pdirun - sets up current environment variables pdirun bash - creates new shell with environment variables set up pdirun command - runs a command with all environment variables set up  To have the environment always prepared for using PDI, the first option (source pdirun) can be added to ~/.">
 
-<meta itemprop="wordCount" content="479">
+<meta itemprop="wordCount" content="473">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PDI usage"/>
 <meta name="twitter:description" content="After Installation of PDI source distribution step, PDI must be used in the application, that is written either in C/C&#43;&#43;, Fortran or Pyhton.
@@ -44,8 +44,8 @@ Preparing the environment PDI was installed in default location The library and 
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1815,24 +1815,24 @@ Preparing the environment PDI was installed in default location The library and 
 <p>If source files (of application that uses PDI) and specification tree file are ready, the compilation step can be made. For C make sure that source files that use PDI API are including <code>pdi.h</code> header file. For Fortran make sure that source files that use PDI API are using <code>PDI</code> module file (<code>USE PDI</code>).</p>
 <h3 id="compiling-by-hand">Compiling by hand</h3>
 <p>To compile application, linker flag <code>-lpdi</code> must be used. For C it would look like this:</p>
-<pre><code>gcc source_files.c -o exec_file -lpdi
-</code></pre><p>For Fortran it would look like this:</p>
-<pre><code>gfortran source_files.f90 -o exec_file -lpdi
-</code></pre><h3 id="compiling-with-cmake">Compiling with cmake</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gcc source_files.c -o exec_file -lpdi
+</code></pre></div><p>For Fortran it would look like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gfortran source_files.f90 -o exec_file -lpdi
+</code></pre></div><h3 id="compiling-with-cmake">Compiling with cmake</h3>
 <p>If source files (of application that uses PDI) and specification tree file are ready, the compilation step can be made.</p>
 <h4 id="cc-compilation">C/C++ compilation</h4>
 <p>To compile C/C++ application, cmake must find <code>C</code> component from PDI package. Then the <code>PDI::PDI_C</code> library must be linked to the target:</p>
-<pre><code>find_package(PDI REQUIRED COMPONENTS C)
-
-add_executable(exec_file source_files.c)
-target_link_libraries(exec_file PDI::PDI_C)
-</code></pre><h4 id="fortran-compilation">Fortran compilation</h4>
+<div class="highlight"><pre class="chroma"><code class="language-cmake" data-lang="cmake"><span class="nb">find_package</span><span class="p">(</span><span class="s">PDI</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span> <span class="s">C</span><span class="p">)</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">exec_file</span> <span class="s">source_files.c</span><span class="p">)</span><span class="err">
+</span><span class="err"></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">exec_file</span> <span class="s">PDI::PDI_C</span><span class="p">)</span><span class="err">
+</span></code></pre></div><h4 id="fortran-compilation">Fortran compilation</h4>
 <p>To compile Fortran application, cmake must find <code>f90</code> component from PDI package. Then the <code>PDI::PDI_f90</code> library must be linked to the target:</p>
-<pre><code>find_package(PDI REQUIRED COMPONENTS f90)
-
-add_executable(exec_file source_files.c)
-target_link_libraries(exec_file PDI::PDI_f90)
-</code></pre><h2 id="running-an-application">Running an application</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cmake" data-lang="cmake"><span class="nb">find_package</span><span class="p">(</span><span class="s">PDI</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span> <span class="s">f90</span><span class="p">)</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">exec_file</span> <span class="s">source_files.c</span><span class="p">)</span><span class="err">
+</span><span class="err"></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">exec_file</span> <span class="s">PDI::PDI_f90</span><span class="p">)</span><span class="err">
+</span></code></pre></div><h2 id="running-an-application">Running an application</h2>
 <p>PDI is a shared library. That means that all environment variables must be set not only on compilation, but also when running the program.</p>
 <p>Every used plugin in application needs to be found by PDI. It will search for plugins in 4 steps (it will use the first plugin found):</p>
 <ol>

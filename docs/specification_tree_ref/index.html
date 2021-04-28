@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/new-site/favicons/favicon.ico" >
@@ -31,7 +31,7 @@ specification tree root The specification tree root is a mapping that contains t
 specification tree root The specification tree root is a mapping that contains the following keys:
    key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored.">
 
-<meta itemprop="wordCount" content="1915">
+<meta itemprop="wordCount" content="1911">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Specification tree Reference"/>
 <meta name="twitter:description" content="The PDI specification tree is expressed in YAML.
@@ -44,8 +44,8 @@ specification tree root The specification tree root is a mapping that contains t
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" as="style">
-<link href="/new-site/scss/main.min.f58ec8ad74eb1037062242b8bf990817929ecc905cc370df61c237aad2861338.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
+<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1846,17 +1846,17 @@ specification tree root The specification tree root is a mapping that contains t
 <li>additional sections are ignored.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code>metadata:
-  my_metadata: int
-data:
-  my_data:
-    type: array
-    subtype: double
-    size: 5
-plugins:
-  decl_hdf5: #...
-  mpi: #...
-</code></pre><h2 id="array_type">array_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">metadata</span><span class="p">:</span>
+  <span class="n">my_metadata</span><span class="p">:</span> <span class="nb">int</span>
+<span class="n">data</span><span class="p">:</span>
+  <span class="n">my_data</span><span class="p">:</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">array</span>
+    <span class="n">subtype</span><span class="p">:</span> <span class="n">double</span>
+    <span class="n">size</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">plugins</span><span class="p">:</span>
+  <span class="n">decl_hdf5</span><span class="p">:</span> <span class="c1">#...</span>
+  <span class="n">mpi</span><span class="p">:</span> <span class="c1">#...</span>
+</code></pre></div><h2 id="array_type">array_type</h2>
 <p>A <em>array_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -1896,13 +1896,13 @@ plugins:
 <li>the value associated to the <code>start</code> key represents the index of the first element to actually use in each dimension (slicing), if specified it <strong>must</strong> have the same number of elements as <code>size</code>, this defaults to the first (0) element in each dimension.</li>
 </ul>
 <p><strong>Examples:</strong></p>
-<pre><code>type: array
-subtype: double
-size: 5
-</code></pre><pre><code>type: array
-subtype: { type: character, kind: 4 }
-size: [ '$size_1d', '$size_2d' ]
-</code></pre><h2 id="char_type">char_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">array</span>
+<span class="n">subtype</span><span class="p">:</span> <span class="n">double</span>
+<span class="n">size</span><span class="p">:</span> <span class="mi">5</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">array</span>
+<span class="n">subtype</span><span class="p">:</span> <span class="p">{</span> <span class="nb">type</span><span class="p">:</span> <span class="n">character</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="mi">4</span> <span class="p">}</span>
+<span class="n">size</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;$size_1d&#39;</span><span class="p">,</span> <span class="s1">&#39;$size_2d&#39;</span> <span class="p">]</span>
+</code></pre></div><h2 id="char_type">char_type</h2>
 <p>A <em>char_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -1920,8 +1920,8 @@ size: [ '$size_1d', '$size_2d' ]
 </table>
 <p>A <em>char_type</em> represents the C <code>char</code> datatype; it accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: char
-</code></pre><h2 id="character_type">character_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">char</span>
+</code></pre></div><h2 id="character_type">character_type</h2>
 <p>A <em>character_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -1943,10 +1943,10 @@ size: [ '$size_1d', '$size_2d' ]
 </table>
 <p>A <em>character_type_node</em> represents the Fortran <code>character</code> datatype. The value associated to the <code>kind</code> key corresponds to the Fortran <em>kind</em> parameter (<code>character(kind=...)</code>).</p>
 <p><strong>Examples:</strong></p>
-<pre><code>type: character
-</code></pre><pre><code>type: character
-kind: 4
-</code></pre><h2 id="datatype">datatype</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">character</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">character</span>
+<span class="n">kind</span><span class="p">:</span> <span class="mi">4</span>
+</code></pre></div><h2 id="datatype">datatype</h2>
 <p>A <em>datatype</em> can be <strong>any of</strong>:</p>
 <ul>
 <li>a <a href="member:Specification_tree_ref_1array_type_node">array_type</a>,</li>
@@ -1988,9 +1988,9 @@ kind: 4
 <li>each key identifies the name of a buffer exposed to PDI associated to its type.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code>my_data_1: int
-my_data_2: {type: array, subtype: double, size: 5}
-</code></pre><h2 id="double_type">double_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_data_1</span><span class="p">:</span> <span class="nb">int</span>
+<span class="n">my_data_2</span><span class="p">:</span> <span class="p">{</span><span class="nb">type</span><span class="p">:</span> <span class="n">array</span><span class="p">,</span> <span class="n">subtype</span><span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</code></pre></div><h2 id="double_type">double_type</h2>
 <p>A <em>double_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2008,17 +2008,17 @@ my_data_2: {type: array, subtype: double, size: 5}
 </table>
 <p>A <em>double_type</em> represents the C <code>double</code> type. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: double
-</code></pre><h2 id="-expression">$-expression</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">double</span>
+</code></pre></div><h2 id="-expression">$-expression</h2>
 <p>A <em>$-expression</em> is a <strong>scalar</strong> whose content matches the following grammar:</p>
-<pre><code>/* parsing as a REFERENCE is preferred over OPERATION
+<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt">/* parsing as a REFERENCE is preferred over OPERATION
    parsing as an OPERATION is preferred over STRING_LITERAL
 */
 EXPRESSION     := REFERENCE | OPERATION | STRING_LITERAL
 
-STRING_LITERAL := ( CHAR | '\' '\' | '\' '$'
+STRING_LITERAL := ( CHAR | &#39;\&#39; &#39;\&#39; | &#39;\&#39; &#39;$&#39;
                   | REFERENCE
-                  | '$' '(' OPERATION ')'
+                  | &#39;$&#39; &#39;(&#39; OPERATION &#39;)&#39;
                   )*
 
 /* The operator descending precedence order is:
@@ -2031,11 +2031,11 @@ STRING_LITERAL := ( CHAR | '\' '\' | '\' '$'
 */
 OPERATION      := TERM ( OPERATOR TERM )*
 
-TERM           := ( INT_LITERAL | REFERENCE | '(' OPERATION ')' )
+TERM           := ( INT_LITERAL | REFERENCE | &#39;(&#39; OPERATION &#39;)&#39; )
 
-REFERENCE      := '$' ( IREFERENCE | '{' IREFERENCE '}' )
+REFERENCE      := &#39;$&#39; ( IREFERENCE | &#39;{&#39; IREFERENCE &#39;}&#39; )
 
-IREFERENCE     := ID ( '[' OPERATION ']' | '.' ID )*
+IREFERENCE     := ID ( &#39;[&#39; OPERATION &#39;]&#39; | &#39;.&#39; ID )*
 
 
 
@@ -2043,7 +2043,7 @@ INT_LITERAL ~= (0x)? [0-9]+ ( \.  )
 ID          ~= [a-zA-Z_][a-zA-Z0-9_]*
 CHAR        ~= [^$\\]
 OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
-</code></pre><p>The rules for evaluating an expression are close to those of BASH for example.</p>
+</code></pre></div><p>The rules for evaluating an expression are close to those of BASH for example.</p>
 <p>In addition to raw text, a <code>STRING_LITERAL</code> can contain references to the string value of some data in the store as well as the result of an operation by enclosing it inside a dollar-parenthesis <code>$()</code>.</p>
 <p>An <code>OPERATION</code> can include logical and arithmetic operators grouped by parenthesis. The basic terms manipulated in an operation can be integer literals or references to the integer value of some data in the store.</p>
 <p>A <code>REFERENCE</code> is introduced by a dollar <code>$</code> sign and optionally enclosed in curly braces <code>{</code>, <code>}</code>. Its value is that of the data or metadata with the associated name. It is always a good idea to have referenced values in the metadata section as it prevents dangling references. Value formatting can be applied using a FMT <code>format_spec</code> string by adding a column <code>:</code> followed by the <code>format_spec</code> after a column just before the closing bracket <code>}</code> (see: <a href="https://fmt.dev/latest/syntax.html#grammar-token-format_spec">https://fmt.dev/latest/syntax.html#grammar-token-format_spec</a>). A direct reference is possible as well as sub-references to:</p>
@@ -2059,15 +2059,15 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </ul>
 <p>In addition, an integer can be interpreted as a string or as a boolean value where zero is interpreted as false and any other value as true.</p>
 <p><strong>Examples:</strong></p>
-<pre><code>'$my_data'
-</code></pre><pre><code>'($my_data + 3) % 6'
-</code></pre><pre><code>'${my_data.subarray[0]} * 42'
-</code></pre><pre><code>'my name is ${my_name}'
-</code></pre><pre><code>'${my_data:05d}'
-'${my_data:b}'
-'${my_data:1.5f}'
-'${my_data:&gt;15s}'
-</code></pre><h2 id="float_type">float_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;$my_data&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;($my_data + 3) % 6&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;${my_data.subarray[0]} * 42&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;my name is ${my_name}&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;${my_data:05d}&#39;</span>
+<span class="s1">&#39;${my_data:b}&#39;</span>
+<span class="s1">&#39;${my_data:1.5f}&#39;</span>
+<span class="s1">&#39;${my_data:&gt;15s}&#39;</span>
+</code></pre></div><h2 id="float_type">float_type</h2>
 <p>A <em>float_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2085,8 +2085,8 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <a href="member:Specification_tree_ref_1float_type_node">float_type</a> represents the C <code>float</code> type. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: float
-</code></pre><h2 id="int_type">int_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="nb">float</span>
+</code></pre></div><h2 id="int_type">int_type</h2>
 <p>A <em>int_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2104,8 +2104,8 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <a href="member:Specification_tree_ref_1int_type_node">int_type</a> represents the C <code>int</code> type. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: int
-</code></pre><h2 id="int16_type">int16_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="nb">int</span>
+</code></pre></div><h2 id="int16_type">int16_type</h2>
 <p>A <em>int16_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2123,8 +2123,8 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <a href="member:Specification_tree_ref_1int16_type_node">int16_type</a> represents the C <code>int16_t</code> type from the <code>&lt;stdtypes.h&gt;</code> header. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: int16
-</code></pre><h2 id="int32_type">int32_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">int16</span>
+</code></pre></div><h2 id="int32_type">int32_type</h2>
 <p>A <em>int32_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2142,8 +2142,8 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <a href="member:Specification_tree_ref_1int32_type_node">int32_type</a> represents the C <code>int32_t</code> type from the <code>&lt;stdtypes.h&gt;</code> header. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: int32
-</code></pre><h2 id="int64_type">int64_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">int32</span>
+</code></pre></div><h2 id="int64_type">int64_type</h2>
 <p>A <em>int64_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2161,8 +2161,8 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <em>int64_type</em> represents the C <code>int64_t</code> type from the <code>&lt;stdtypes.h&gt;</code> header. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: int64
-</code></pre><h2 id="int8_type">int8_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">int64</span>
+</code></pre></div><h2 id="int8_type">int8_type</h2>
 <p>A <em>int8_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2180,8 +2180,8 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <a href="member:Specification_tree_ref_1int8_type_node">int8_type</a> represents the C <code>int8_t</code> type from the <code>&lt;stdtypes.h&gt;</code> header. It accepts no parameter.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: int8
-</code></pre><h2 id="integer_type">integer_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">int8</span>
+</code></pre></div><h2 id="integer_type">integer_type</h2>
 <p>A <em>integer_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2203,14 +2203,14 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 </table>
 <p>A <em>integer_type</em> represents the Fortran <code>integer</code> datatype. The value associated to the <code>kind</code> key corresponds to the Fortran <em>kind</em> parameter (<code>integer(kind=...)</code>). If missing, the default kind of the Fortran implementation is used.</p>
 <p><strong>Examples:</strong></p>
-<pre><code>type: integer
-</code></pre><pre><code>type: integer
-kind: 2
-</code></pre><h2 id="intexpr_seq">intexpr_seq</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">integer</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">integer</span>
+<span class="n">kind</span><span class="p">:</span> <span class="mi">2</span>
+</code></pre></div><h2 id="intexpr_seq">intexpr_seq</h2>
 <p>A <em>intexpr_seq</em> is a <strong>sequence</strong> where each element of the sequence is a <a href="member:Specification_tree_ref_1expression_node">integer-valued $-expression</a>.</p>
 <p><strong>Example:</strong></p>
-<pre><code>[ 1, '2', '$size', '$other_size + 2' ]
-</code></pre><h2 id="intexpr_or_seq">intexpr_or_seq</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;$size&#39;</span><span class="p">,</span> <span class="s1">&#39;$other_size + 2&#39;</span> <span class="p">]</span>
+</code></pre></div><h2 id="intexpr_or_seq">intexpr_or_seq</h2>
 <p>A <em>intexpr_or_seq</em> can be <strong>any of</strong>:</p>
 <ul>
 <li>a <a href="member:Specification_tree_ref_1expression_node">integer-valued $-expression</a>,</li>
@@ -2243,10 +2243,10 @@ kind: 2
 </table>
 <p>A <em>logical_type</em> represents the Fortran <code>logical</code> datatype. The value associated to the <code>kind</code> key corresponds to the Fortran <em>kind</em> parameter (<code>logical(kind=...)</code>). If missing, the default kind of the Fortran implementation is used.</p>
 <p><strong>Examples:</strong></p>
-<pre><code>type: logical
-</code></pre><pre><code>type: logical
-kind: 1
-</code></pre><h2 id="struct_member_desc">struct_member_desc</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">logical</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">logical</span>
+<span class="n">kind</span><span class="p">:</span> <span class="mi">1</span>
+</code></pre></div><h2 id="struct_member_desc">struct_member_desc</h2>
 <p>A <em>struct_member_desc</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2270,17 +2270,17 @@ kind: 1
 <li>the value associated to the <code>type</code> key identifies the <a href="member:Specification_tree_ref_1datatype_node">type</a> of this member, all other keys required for this <a href="member:Specification_tree_ref_1datatype_node">datatype</a> must be present.</li>
 </ul>
 <p><strong>Examples:</strong></p>
-<pre><code>type: struct
-members:
-  - my_char: char
-</code></pre><pre><code>type: struct
-members:
-  - my_long: int64
-  - my_array:
-      type: array
-      subtype: int64
-      size: [10, 10]
-</code></pre><p>See <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> for more examples.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">struct</span>
+<span class="n">members</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">my_char</span><span class="p">:</span> <span class="n">char</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">struct</span>
+<span class="n">members</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">my_long</span><span class="p">:</span> <span class="n">int64</span>
+  <span class="o">-</span> <span class="n">my_array</span><span class="p">:</span>
+      <span class="nb">type</span><span class="p">:</span> <span class="n">array</span>
+      <span class="n">subtype</span><span class="p">:</span> <span class="n">int64</span>
+      <span class="n">size</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre></div><p>See <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> for more examples.</p>
 <h2 id="record_member_desc">record_member_desc</h2>
 <p>A <em>record_member_desc</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
@@ -2310,24 +2310,24 @@ members:
 <li>the value associated to the <code>type</code> key identifies the <a href="member:Specification_tree_ref_1datatype_node">type</a> of this record, all other keys required for this <a href="member:Specification_tree_ref_1datatype_node">datatype</a> must be present.</li>
 </ul>
 <p><strong>Examples:</strong></p>
-<pre><code>type: record
-buffersize: 1
-members:
-  my_char:
-        disp: 0
-        type: char
-</code></pre><pre><code>type: record
-buffersize: 808
-members:
-  my_long:
-    disp: 0
-    type: int64
-  my_array:
-    disp: 8
-    type: array
-    subtype: int64
-    size: [10, 10]
-</code></pre><p>See <a href="member:Specification_tree_ref_1record_type_node">record_type</a> for more examples.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">record</span>
+<span class="n">buffersize</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">members</span><span class="p">:</span>
+  <span class="n">my_char</span><span class="p">:</span>
+        <span class="n">disp</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="nb">type</span><span class="p">:</span> <span class="n">char</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">record</span>
+<span class="n">buffersize</span><span class="p">:</span> <span class="mi">808</span>
+<span class="n">members</span><span class="p">:</span>
+  <span class="n">my_long</span><span class="p">:</span>
+    <span class="n">disp</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">int64</span>
+  <span class="n">my_array</span><span class="p">:</span>
+    <span class="n">disp</span><span class="p">:</span> <span class="mi">8</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">array</span>
+    <span class="n">subtype</span><span class="p">:</span> <span class="n">int64</span>
+    <span class="n">size</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre></div><p>See <a href="member:Specification_tree_ref_1record_type_node">record_type</a> for more examples.</p>
 <h2 id="struct_members_omap">struct_members_omap</h2>
 <p>A <em>struct_members_omap</em> is an <strong>ordered mapping</strong> that contains the following keys:</p>
 <table>
@@ -2411,10 +2411,10 @@ members:
 </table>
 <p>A <em>real_type</em> represents the Fortran <code>real</code> datatype. The value associated to the <code>kind</code> key corresponds to the Fortran <em>kind</em> parameter (<code>real(kind=...)</code>). If missing, the default kind of the Fortran implementation is used.</p>
 <p><strong>Examples:</strong></p>
-<pre><code>type: real
-</code></pre><pre><code>type: real
-kind: 8
-</code></pre><h2 id="struct_type">struct_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">real</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">real</span>
+<span class="n">kind</span><span class="p">:</span> <span class="mi">8</span>
+</code></pre></div><h2 id="struct_type">struct_type</h2>
 <p>A <em>struct_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2436,11 +2436,11 @@ kind: 8
 </table>
 <p>A <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> represents a &quot;struct&quot;, <em>aka</em> C &quot;struct&quot;, C++ &quot;class&quot;. Buffersize and members displacemnts will be calculated by the PDI.</p>
 <p><strong>Example:</strong></p>
-<pre><code>type: struct
-members:
-  - first_int: int32
-  - seconf_int: int32
-</code></pre><h2 id="record_type">record_type</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">struct</span>
+<span class="n">members</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">first_int</span><span class="p">:</span> <span class="n">int32</span>
+  <span class="o">-</span> <span class="n">seconf_int</span><span class="p">:</span> <span class="n">int32</span>
+</code></pre></div><h2 id="record_type">record_type</h2>
 <p>A <em>record_type</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>
 <thead>
@@ -2470,16 +2470,16 @@ members:
 <li>the value associated to the <code>members</code> key lists all members of the record with given displacements.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code>type: record
-buffersize: 8
-members:
-  first_int:
-    disp: 0
-    type: int32
-  seconf_int:
-    disp: 4
-    type: int32
-</code></pre><h2 id="simple_datatype">simple_datatype</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">type</span><span class="p">:</span> <span class="n">record</span>
+<span class="n">buffersize</span><span class="p">:</span> <span class="mi">8</span>
+<span class="n">members</span><span class="p">:</span>
+  <span class="n">first_int</span><span class="p">:</span>
+    <span class="n">disp</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">int32</span>
+  <span class="n">seconf_int</span><span class="p">:</span>
+    <span class="n">disp</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">int32</span>
+</code></pre></div><h2 id="simple_datatype">simple_datatype</h2>
 <p>A <em>simple_datatype</em> is a <strong>scalar</strong>.</p>
 <p>It is interpreted as a shortcut for a mapping with a single key <code>type</code> whose value is the provided scalar and therefore another <a href="member:Specification_tree_ref_1datatype_node">datatype</a>.</p>
 <p>For example, the following value:</p>
@@ -2488,10 +2488,10 @@ members:
 <pre><code>{ type: &quot;my_type&quot; }
 </code></pre><h2 id="plugin_path">plugin_path</h2>
 <p>A path to directory where PDI should search for plugins. It can be single path:</p>
-<pre><code>plugin_path: &quot;/home/user123/plugins&quot;
-</code></pre><p>or array of paths (PDI will take first match):</p>
-<pre><code>plugin_path: [&quot;/home/user123/plugins&quot;, &quot;/usr/lib/pdi/plugins&quot;]
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugin_path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/home/user123/plugins&#34;</span><span class="w">
+</span></code></pre></div><p>or array of paths (PDI will take first match):</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">plugin_path</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/home/user123/plugins&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;/usr/lib/pdi/plugins&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
