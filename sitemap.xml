@@ -8,9 +8,9 @@
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/</loc>
   </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/</loc>
-  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/</loc>
+  </url><url>
+    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/</loc>
   </url><url>
@@ -33,12 +33,6 @@
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/</loc>
   </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/datatype_template_parser/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template_uptr/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_uptr/</loc>
-  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/expression/</loc>
@@ -60,8 +54,6 @@
     <loc>http://pdi.julien-bigot.fr/new-site/docs/installation/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/iterator/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/logger_sptr/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/</loc>
   </url><url>
@@ -92,15 +84,7 @@
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/</loc>
   </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref/</loc>
-  </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_r/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_rw/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_w/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/</loc>
   </url><url>
@@ -111,8 +95,6 @@
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/right_error/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/</loc>
-  </url><url>
-    <loc>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_kind/</loc>
   </url><url>
     <loc>http://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</loc>
   </url><url>

@@ -367,7 +367,7 @@ program access
 
   type(pc_tree_t),target  :: conf
   integer                 :: my_value
-  character(LEN=32)      :: secret_message
+  character(LEN=32)       :: secret_message
 
   call pc_parse_path(&amp;quot;hello_access.yml&amp;quot;, conf)
   call pdi_init(conf)

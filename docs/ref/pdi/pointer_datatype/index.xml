@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PDI – PDI::Pointer_datatype class reference</title>
+    <title>PDI – </title>
     <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/</link>
-    <description>Recent content in PDI::Pointer_datatype class reference on PDI</description>
+    <description>Recent content on PDI</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: PDI::Pointer_datatype::Accessor class reference</title>
+      <title>Docs: </title>
       <link>http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/accessor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,46 +22,48 @@
       <description>
         
         
-        &lt;h2 id=&#34;member-types-list&#34;&gt;Member Types&lt;/h2&gt;
+        &lt;h1&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;PDI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Pointer_datatype&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Accessor&lt;/span&gt;&lt;/code&gt; reference&lt;/h1&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;a href=&#34;compound:classPDI_1_1Pointer__datatype_1_1Accessor&#34;&gt;Accessor&lt;/a&gt; for pointer datatype.
+&lt;h2 id=&#34;content-list&#34;&gt;Content&lt;/h2&gt;
+&lt;h3 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;pdi_errhandler_t&#34;&gt;&lt;code&gt;struct PDI_errhandler_t&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Definition of an error handler.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/accessor/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-pointer_datatype-&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Datatype_uptr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;access&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vector&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_ptr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Accessor_base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;const_iterator&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;remaining_begin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vector&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_ptr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Accessor_base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;const_iterator&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;remaining_end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Pointer_datatype&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Access function for pointer datatype.&lt;/dd&gt;
+&lt;dt&gt;&lt;a href=&#34;http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/accessor/#clone&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_ptr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Accessor_base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clone&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Creates and returns clone of accessor.&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;compound:classPDI_1_1Pointer__datatype_1_1Accessor&#34;&gt;Accessor&lt;/a&gt; for pointer datatype.&lt;/p&gt;
-&lt;h2 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h2&gt;
-&lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;#access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype-&#34;&gt;&lt;code&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt; access ( void *, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator, std::vector&lt; std::unique_ptr&lt; Accessor_base &gt;&gt;::const_iterator, const Pointer_datatype &amp; )&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Access function for pointer datatype. &lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;#clone&#34;&gt;&lt;code&gt;std::unique_ptr&amp;lt; Accessor_base &amp;gt; clone ()&lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;Creates and returns clone of accessor. &lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h2 id=&#34;detailed-documentation&#34;&gt;Detailed Documentation&lt;/h2&gt;
+&lt;h2 id=&#34;detailed-documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;h3 id=&#34;member-functions-doc&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype-&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;std::pair&amp;lt; void *, Datatype_uptr &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;access&lt;/nf&gt; (    &lt;span class=&#34;kt&#34;&gt;void *&lt;/span&gt; &lt;a href=&#34;#access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-from&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-remaining_begin&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;std::vector&amp;lt; std::unique_ptr&amp;lt; Accessor_base &amp;gt;&amp;gt;::const_iterator&lt;/span&gt; &lt;a href=&#34;#access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-remaining_end&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/a&gt;,   &lt;span class=&#34;kt&#34;&gt;const Pointer_datatype &amp;amp;&lt;/span&gt; &lt;a href=&#34;#access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-type&#34;&gt;&lt;var class=&#34;nv&#34;&gt;type&lt;/var&gt;&lt;/a&gt;  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Access function for pointer datatype.&lt;/p&gt;
+&lt;h3 id=&#34;access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-pointer_datatype-&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Datatype_uptr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;access&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vector&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_ptr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Accessor_base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;const_iterator&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;remaining_begin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vector&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_ptr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Accessor_base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;const_iterator&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;remaining_end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Pointer_datatype&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Description&lt;/h4&gt;
+&lt;section class=&#34;description&#34;&gt;
+Access function for pointer datatype.
+&lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
-&lt;dt&gt;&lt;h5 id=&#34;access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-from&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;from&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;pointer to data of type datatype&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-remaining_begin&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_begin&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;iterator to the beginning of remaining accessors&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-remaining_end&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;remaining_end&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;iterator to the end of remaining accessors&lt;/dd&gt;
-&lt;dt&gt;&lt;h5 id=&#34;access-void--stdvector-stdunique_ptr-accessor_base-const_iterator-stdvector-stdunique_ptr-accessor_base-const_iterator-const-pointer_datatype--_-type&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;type&lt;/var&gt;&lt;/code&gt;&lt;/h5&gt;&lt;/dt&gt;
+&lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;type&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;a datatype to get access&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h4&gt;Result&lt;/h4&gt;
+&lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
 &lt;p&gt;string that inform what access is made&lt;/p&gt;
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;clone&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kt&#34;&gt;std::unique_ptr&amp;lt; Accessor_base &amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;clone&lt;/nf&gt; (  )&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Creates and returns clone of accessor.&lt;/p&gt;
-&lt;h4&gt;Result&lt;/h4&gt;
+&lt;h3 id=&#34;clone&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_ptr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Accessor_base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clone&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h4&gt;Description&lt;/h4&gt;
+&lt;section class=&#34;description&#34;&gt;
+Creates and returns clone of accessor.
+&lt;/section&gt;
+&lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
 &lt;p&gt;clone of accessor&lt;/p&gt;
 &lt;/section&gt;
