@@ -417,7 +417,7 @@ class Doxml:
                         line += hl.tail
             line = re.sub(r'\s*$', '', line)
             listing.append(line)
-        out.append(CodeBlock("\n".join(listing)))
+        out.append(CodeBlock("\n".join(listing), re.sub(r'^.*\.', '', node.get("filename", ""))))
 
     def doc_url_link(self, out: InlineContainer, node: ET.Element):
         subout = Link(node.get('url'))

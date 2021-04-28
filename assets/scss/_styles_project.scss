@@ -1,9 +1,49 @@
 // Code formatting.
 
 .td-content {
+	
+	@import "pygments";
+	
+	// Highlighted code.
+	.highlight  {
+		@import "solarized-dark";
+		@extend .chroma;
+		border-radius: $border-radius + 2px;
+		white-space: normal;
+		pre {
+			border-radius: $border-radius + 2px;
+			white-space: normal;
+			code {
+				white-space: pre-wrap;
+			}
+		}
+    }
+
 	// Inline code
-		@import "chroma";
-	code.chroma {
+	p code, li > code, table code {
+		@import "solarized-light";
+		@extend .chroma;
+		color: #586e75;
+		background-color: #eee8d5;
+		padding: 0.2em 0.4em;
+		margin: 0;
+		font-size: 85%;
+		word-break: normal;
+		border-radius: $border-radius;
+	}
+
+
+	// Code blocks
+	pre {
+		@import "solarized-dark";
+		@extend .chroma;
+		color: #93a1a1;
+		background-color: #002b36;
+		border-radius: $border-radius + 2px;
+		> code {
+			white-space: pre-wrap;
+			border-radius: $border-radius + 2px;
+		}
 	}
 	
 	article.member-function {
@@ -31,7 +71,7 @@
 			dd,
 			h5 {
 				margin: 0;
-			display: inline;
+				display: inline;
 			}
 		}
 	}

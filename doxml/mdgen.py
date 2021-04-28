@@ -70,10 +70,10 @@ class ThematicBreak:
 class CodeBlock:
     def __init__(self, content, lang=''):
         self._content = content
-        self._lang = content
+        self._lang = lang
     
     def render(self, indent):
-        return ( indent + '```\n' +
+        return ( indent + '```'+self._lang+'\n' +
             indent + NL_RE.sub('\n'+indent, self._content) +'\n'+
             indent + '```' )
 
@@ -158,10 +158,10 @@ class Image(InlineContainer):
         
     def render(self, indent):
         return (
-            '![' + super().render(indent) + '](' +
+            '{{< figure title="' + super().render(indent) + '" src="' +
             BRCK_RE.sub(r'\\\1', self._url) +
             ( ' "' + DQ_RE.sub(r'\\"', self._title) + '"' if self._title is not None else '' ) +
-            ' )' )
+            '" >}}' )
 
 class LineBreak:
     def render(self, indent):

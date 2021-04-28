@@ -15,4 +15,4 @@ finish
 [ -d public ] && rm -rf public/*
 
 python3 doxml/dumper.py dox/combined.xml .
-docker run -p 1315:1315 "-u$(id -u):$(id -g)" --rm -it -v "$(pwd):/src" klakegg/hugo:0.81.0-ext-alpine server --disableFastRender --i18n-warnings -p 1315 -b http://localhost/
+docker run -p 1315:1315 "-u$(id -u):$(id -g)" --rm -it -v "$(pwd):/src" klakegg/hugo:0.82.0-ext-alpine server --disableFastRender --i18n-warnings -p 1315 -b http://localhost/

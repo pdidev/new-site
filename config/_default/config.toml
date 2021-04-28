@@ -17,11 +17,10 @@ defaultContentLanguageInSubdir = false
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-# Highlighting config
-pygmentsCodeFences = true
-pygmentsUseClasses = true
 # Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 #pygmentsOptions = "linenos=table"
 # See https://help.farbox.com/pygments.html
 pygmentsStyle = "pygments"
@@ -42,7 +41,18 @@ anchor = "smart"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
 # Everything below this are Site Params
 
 [params]
