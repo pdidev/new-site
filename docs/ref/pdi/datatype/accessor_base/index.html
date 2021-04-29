@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" /><link rel="alternate" type="application/rss&#43;xml" href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/index.xml">
+<meta name="generator" content="Hugo 0.82.0" /><link rel="alternate" type="application/rss&#43;xml" href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/index.xml">
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
@@ -21,7 +21,7 @@
 <title>PDI</title><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/" />
+<meta property="og:url" content="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/" />
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
@@ -91,6 +91,30 @@
 				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
 			</li>
 			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	PDI Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/new-site">**new site** (you are here)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/master/">current development (Git master)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.1/">release version 1.1</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.0/">release version 1.0</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.6/">release version 0.6</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.5/">release version 0.5</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.4/">release version 0.4</a>
+	
+</div>
+
+			</li>
 			
 			
 		</ul>
@@ -1755,35 +1779,35 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/">C&#43;&#43; API reference</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/">C&#43;&#43; API reference</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/">PDI</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/">PDI</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/">Datatype</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/">Datatype</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/">Accessor_base</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/">Accessor_base</a>
 </li>
 
 	</ol>
@@ -1800,17 +1824,17 @@ Base class for datatype accesssors, that allow to get pointer to subtype.
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-array_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array_datatype</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-array_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array_datatype</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
 <dd>Access function for array datatype.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-pointer_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Pointer_datatype</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-pointer_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Pointer_datatype</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
 <dd>Access function for pointer datatype.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-record_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Record_datatype</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-record_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="n">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Record_datatype</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
 <dd>Access function for record datatype.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access_kind"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">access_kind</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#access_kind"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">access_kind</span> <span class="p">()</span> </code></a></dt>
 <dd>Returns access kind as string.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">></span> <span class="n">clone</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">></span> <span class="n">clone</span> <span class="p">()</span> </code></a></dt>
 <dd>Creates and returns clone of accessor.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#accessor_base"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Accessor_base</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype/accessor_base/#accessor_base"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Accessor_base</span> <span class="p">()</span> </code></a></dt>
 <dd>Destroys the accessor.</dd>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>

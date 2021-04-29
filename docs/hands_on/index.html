@@ -22,7 +22,7 @@
 Setup PDI Installation To run this hands-on tutorial, you will of course first need to install PDI and setup your environment.
 On Juwels, PDI is pre-installed as part of the training2022 environment." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/hands_on/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://pdi.julien-bigot.fr/new-site/docs/hands_on/" /><meta property="article:section" content="docs" />
 
 
 
@@ -101,6 +101,30 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
 			</li>
 			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	PDI Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/new-site">**new site** (you are here)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/master/">current development (Git master)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.1/">release version 1.1</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.0/">release version 1.0</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.6/">release version 0.6</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.5/">release version 0.5</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.4/">release version 0.4</a>
+	
+</div>
+
+			</li>
 			
 			
 		</ul>
@@ -1800,14 +1824,14 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/hands_on/">Hands-on tutorial</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/hands_on/">Hands-on tutorial</a>
 </li>
 
 	</ol>
@@ -1850,58 +1874,50 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 <h3 id="ex1-getting-started">Ex1. Getting started</h3>
 <p>Ex1. implements a simple heat equation solver using an explicit forward finite difference scheme parallelized with MPI. The code uses a block domain decomposition where each process holds a 2D block of data.</p>
 
-<figure>
-    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/heat_global_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 <p>Locally, each process holds its local block of data with one additional element on each side for ghost zones.</p>
 
-<figure>
-    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/heat_local_matrix.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg"/><figcaption>
             <h4>Data domain decomposition in the example</h4>
         </figcaption>
 </figure>
@@ -2028,29 +2044,25 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 </ul>
 <p>You can achieve this by using the <code>memory_selection</code> directive that specifies the selection of data from memory to write.</p>
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
@@ -2069,29 +2081,25 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 </ul>
 <p>You can achieve this by using the <code>dataset_selection</code> directive that specifies the selection where to write in the file dataset.</p>
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_selection_advanced.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg"/><figcaption>
             <h4>graphical representation</h4>
         </figcaption>
 </figure>
@@ -2111,29 +2119,25 @@ On Juwels, PDI is pre-installed as part of the training2022 environment."/>
 <p>Match the output from <code>ex9.h5dump</code>, that should be independent from the number of processes used. You can easily check if the files are the same by running:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff ex9.h5dump &lt;<span class="o">(</span>h5dump ex9.h5<span class="o">)</span>
 </code></pre></div>
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg"/><figcaption>
             <h4>graphical representation of the parallel I\/O</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg"/><figcaption>
             <h4>graphical representation of the parallel I\/O</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg"/><figcaption>
             <h4>graphical representation of the parallel I\/O</h4>
         </figcaption>
 </figure>
 
 
-<figure>
-    <img src="/docs/imgs/PDI_hdf5_parallel.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg"/><figcaption>
             <h4>graphical representation of the parallel I\/O</h4>
         </figcaption>
 </figure>

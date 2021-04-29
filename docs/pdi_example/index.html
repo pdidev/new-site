@@ -21,7 +21,7 @@
 <meta property="og:description" content="The example is made of a single source file (one version in each supported programming language), this file loads its configuration and PDI specification tree from a YAML file specified on the command line. Just by replacing the configuration file, the example program will use different PDI plugins, different libraries and different I/O operations.
 The example implements implements a simple Heat equation solver using an explicit forward finite difference scheme parallelized with MPI in 2 dimensions." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/pdi_example/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://pdi.julien-bigot.fr/new-site/docs/pdi_example/" /><meta property="article:section" content="docs" />
 
 
 
@@ -98,6 +98,30 @@ The example implements implements a simple Heat equation solver using an explici
 				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
 			</li>
 			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	PDI Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/new-site">**new site** (you are here)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/master/">current development (Git master)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.1/">release version 1.1</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.0/">release version 1.0</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.6/">release version 0.6</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.5/">release version 0.5</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.4/">release version 0.4</a>
+	
+</div>
+
+			</li>
 			
 			
 		</ul>
@@ -1753,14 +1777,14 @@ The example implements implements a simple Heat equation solver using an explici
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/pdi_example/">PDI examples</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/pdi_example/">PDI examples</a>
 </li>
 
 	</ol>
@@ -1784,14 +1808,12 @@ The example implements implements a simple Heat equation solver using an explici
 <p>This code is parallelized with MPI . Let's split that matrix by MPI processes. Each process will compute part of global matrix.</p>
 <p>For example: matrix 16 x 16 integers and 16 MPI processes gives submatrices of 4 x 4 integers for every process. We have to add to our global matrix one row above and below, column to the left and right to be able to compute border cells. In our example row on the top has some value (”x”) bigger than 0 (representing source of heat):</p>
 
-<figure>
-    <img src="/docs/imgs/heat_global_matrix.jpg"/> 
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg"/>
 </figure>
 
 <p>MPI processes need to exchange information about their local matrix border cells (communicate with neighbours to exchange row/column of matrix). Each MPI process will have a local matrix:</p>
 
-<figure>
-    <img src="/docs/imgs/heat_local_matrix.jpg"/> 
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg"/>
 </figure>
 
 <p>All the communications instructions are written in <code>exchange</code> function.</p>

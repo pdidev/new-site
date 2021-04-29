@@ -22,7 +22,7 @@
 Core concerns are the aspects of the code that fulfill its main goal. We consider as core concerns of a simulation code the aspects handled in the main loop that generate elements needed as input of the next iteration of the loop.
 Cross-cutting concerns are the aspect of the code that are not core concerns. We consider as cross-cutting concerns of a simulation code:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/concepts/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://pdi.julien-bigot.fr/new-site/docs/concepts/" /><meta property="article:section" content="docs" />
 
 
 
@@ -101,6 +101,30 @@ Cross-cutting concerns are the aspect of the code that are not core concerns. We
 				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
 			</li>
 			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	PDI Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/new-site">**new site** (you are here)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/master/">current development (Git master)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.1/">release version 1.1</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.0/">release version 1.0</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.6/">release version 0.6</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.5/">release version 0.5</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.4/">release version 0.4</a>
+	
+</div>
+
+			</li>
 			
 			
 		</ul>
@@ -1767,14 +1791,14 @@ Cross-cutting concerns are the aspect of the code that are not core concerns. We
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/concepts/">Core Concepts</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/concepts/">Core Concepts</a>
 </li>
 
 	</ol>
@@ -1797,8 +1821,7 @@ Cross-cutting concerns are the aspect of the code that are not core concerns. We
 <p>Each data exchange is a two-step process. The PDI-enabled application makes its data available through the <a href="member:Concepts_1Data_store">data store</a>. The <a href="member:Concepts_1Event_subsystem">event subsystem</a> then notifies interested external data handlers about this change in the store. Once notified, each data handler (implemented as a plugin) can look in the store and use the data accessible from there.</p>
 <p>The orchestration of these exchanges, the description of what data can be put in the store, what each handler should do with it, etc. is described in the <a href="member:Concepts_1Specification_tree">specification tree</a>.</p>
 
-<figure>
-    <img src="/docs/imgs/PDI_schema.jpg"/> <figcaption>
+<figure><img src="https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_schema.jpg"/><figcaption>
             <h4>PDI structure schema</h4>
         </figcaption>
 </figure>

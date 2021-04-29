@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PDI – About</title>
-    <link>http://pdi.julien-bigot.fr/new-site/docs/</link>
+    <link>https://pdi.julien-bigot.fr/new-site/docs/</link>
     <description>Recent content in About on PDI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="http://pdi.julien-bigot.fr/new-site/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://pdi.julien-bigot.fr/new-site/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Checklists</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/checklists/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/checklists/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/checklists/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/checklists/</guid>
       <description>
         
         
@@ -124,10 +124,10 @@
     
     <item>
       <title>Docs: Core Concepts</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/concepts/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/concepts/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/concepts/</guid>
       <description>
         
         
@@ -143,8 +143,7 @@
 &lt;p&gt;Each data exchange is a two-step process. The PDI-enabled application makes its data available through the &lt;a href=&#34;member:Concepts_1Data_store&#34;&gt;data store&lt;/a&gt;. The &lt;a href=&#34;member:Concepts_1Event_subsystem&#34;&gt;event subsystem&lt;/a&gt; then notifies interested external data handlers about this change in the store. Once notified, each data handler (implemented as a plugin) can look in the store and use the data accessible from there.&lt;/p&gt;
 &lt;p&gt;The orchestration of these exchanges, the description of what data can be put in the store, what each handler should do with it, etc. is described in the &lt;a href=&#34;member:Concepts_1Specification_tree&#34;&gt;specification tree&lt;/a&gt;.&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_schema.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_schema.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;PDI structure schema&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -194,10 +193,10 @@
     
     <item>
       <title>Docs: First steps with PDI</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/first_steps/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/first_steps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/first_steps/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/first_steps/</guid>
       <description>
         
         
@@ -480,10 +479,10 @@ Watermelon is the tastiest fruit
     
     <item>
       <title>Docs: FTI plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/fti_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/fti_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/fti_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/fti_plugin/</guid>
       <description>
         
         
@@ -609,10 +608,10 @@ Watermelon is the tastiest fruit
     
     <item>
       <title>Docs: Hands-on tutorial</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/hands_on/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/hands_on/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/hands_on/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/hands_on/</guid>
       <description>
         
         
@@ -648,58 +647,50 @@ Watermelon is the tastiest fruit
 &lt;h3 id=&#34;ex1-getting-started&#34;&gt;Ex1. Getting started&lt;/h3&gt;
 &lt;p&gt;Ex1. implements a simple heat equation solver using an explicit forward finite difference scheme parallelized with MPI. The code uses a block domain decomposition where each process holds a 2D block of data.&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Locally, each process holds its local block of data with one additional element on each side for ghost zones.&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Data domain decomposition in the example&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -826,29 +817,25 @@ Watermelon is the tastiest fruit
 &lt;/ul&gt;
 &lt;p&gt;You can achieve this by using the &lt;code&gt;memory_selection&lt;/code&gt; directive that specifies the selection of data from memory to write.&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -867,29 +854,25 @@ Watermelon is the tastiest fruit
 &lt;/ul&gt;
 &lt;p&gt;You can achieve this by using the &lt;code&gt;dataset_selection&lt;/code&gt; directive that specifies the selection where to write in the file dataset.&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_selection_advanced.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -909,29 +892,25 @@ Watermelon is the tastiest fruit
 &lt;p&gt;Match the output from &lt;code&gt;ex9.h5dump&lt;/code&gt;, that should be independent from the number of processes used. You can easily check if the files are the same by running:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;diff ex9.h5dump &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;h5dump ex9.h5&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation of the parallel I\/O&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation of the parallel I\/O&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation of the parallel I\/O&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/PDI_hdf5_parallel.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;graphical representation of the parallel I\/O&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -974,10 +953,10 @@ Watermelon is the tastiest fruit
     
     <item>
       <title>Docs: How to create a plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/how_to_create_plugin/</guid>
       <description>
         
         
@@ -1325,10 +1304,10 @@ User has shared a data named some_integer
     
     <item>
       <title>Docs: Installation of PDI source distribution</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/installation/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/installation/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/installation/</guid>
       <description>
         
         
@@ -1775,10 +1754,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: PDI examples</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/pdi_example/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/pdi_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/pdi_example/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/pdi_example/</guid>
       <description>
         
         
@@ -1795,14 +1774,12 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
 &lt;p&gt;This code is parallelized with MPI . Let&#39;s split that matrix by MPI processes. Each process will compute part of global matrix.&lt;/p&gt;
 &lt;p&gt;For example: matrix 16 x 16 integers and 16 MPI processes gives submatrices of 4 x 4 integers for every process. We have to add to our global matrix one row above and below, column to the left and right to be able to compute border cells. In our example row on the top has some value (”x”) bigger than 0 (representing source of heat):&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_global_matrix.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;MPI processes need to exchange information about their local matrix border cells (communicate with neighbours to exchange row/column of matrix). Each MPI process will have a local matrix:&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/heat_local_matrix.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;All the communications instructions are written in &lt;code&gt;exchange&lt;/code&gt; function.&lt;/p&gt;
@@ -1860,10 +1837,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: PDI usage</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/pdi_usage/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/pdi_usage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/pdi_usage/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/pdi_usage/</guid>
       <description>
         
         
@@ -1922,10 +1899,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: Plugins</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/plugins/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/plugins/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/plugins/</guid>
       <description>
         
         
@@ -1990,10 +1967,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: Pycall plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/pycall_plugin/</guid>
       <description>
         
         
@@ -2077,10 +2054,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: Serialize plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/serialize_plugin/</guid>
       <description>
         
         
@@ -2145,10 +2122,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: Set_value plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/set_value_plugin/</guid>
       <description>
         
         
@@ -2503,10 +2480,10 @@ make install   &lt;span class=&#34;c1&#34;&gt;# compilation and installation&lt;
     
     <item>
       <title>Docs: Specification tree Reference</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/</guid>
       <description>
         
         
@@ -3200,10 +3177,10 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
     
     <item>
       <title>Docs: The Decl&#39;HDF5 plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/decl_hdf5_plugin/</guid>
       <description>
         
         
@@ -3321,10 +3298,10 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
     
     <item>
       <title>Docs: The Decl&#39;NetCDF plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/decl_netcdf_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/decl_netcdf_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/decl_netcdf_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/decl_netcdf_plugin/</guid>
       <description>
         
         
@@ -3850,10 +3827,10 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
     
     <item>
       <title>Docs: The FlowVR plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/flowvr_plugin/</guid>
       <description>
         
         
@@ -4491,8 +4468,7 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/tictac_net.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/tictac_net.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h4 id=&#34;bundle-example&#34;&gt;Bundle example&lt;/h4&gt;
@@ -4550,8 +4526,7 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/bundle_net.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/bundle_net.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;primes-example&#34;&gt;Primes example&lt;/h3&gt;
@@ -4627,8 +4602,7 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/primes_net.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/primes_net.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;fluid-example&#34;&gt;Fluid example&lt;/h3&gt;
@@ -4704,8 +4678,7 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Network of the application:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/fluid_net.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/fluid_net.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 
@@ -4714,10 +4687,10 @@ OPERATOR    ~= [|&amp;amp;=&amp;lt;&amp;gt;+\-\*/%]
     
     <item>
       <title>Docs: The user-code plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/user_code_plugin/</guid>
       <description>
         
         
@@ -5062,10 +5035,10 @@ After calculation, foo = 4, bar = 5, res1 = 9, res2 = 20.
     
     <item>
       <title>Docs: Trace plugin</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/trace_plugin/</guid>
       <description>
         
         
@@ -5092,10 +5065,10 @@ After calculation, foo = 4, bar = 5, res1 = 9, res2 = 20.
     
     <item>
       <title>Docs: YAML</title>
-      <link>http://pdi.julien-bigot.fr/new-site/docs/yaml/</link>
+      <link>https://pdi.julien-bigot.fr/new-site/docs/yaml/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://pdi.julien-bigot.fr/new-site/docs/yaml/</guid>
+      <guid>https://pdi.julien-bigot.fr/new-site/docs/yaml/</guid>
       <description>
         
         
@@ -5110,29 +5083,25 @@ After calculation, foo = 4, bar = 5, res1 = 9, res2 = 20.
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;tree_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;{&lt;span class=&#34;nt&#34;&gt;subtree_1: scalar_1, subtree_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;scalar_2}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Represents the following tree:&lt;/p&gt;
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Graphical representation of the YAML Tree&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Graphical representation of the YAML Tree&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Graphical representation of the YAML Tree&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-&lt;figure&gt;
-    &lt;img src=&#34;http://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt; &lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;https://pdi.julien-bigot.fr/new-site/docs/imgs/yaml_example.jpg&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Graphical representation of the YAML Tree&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;

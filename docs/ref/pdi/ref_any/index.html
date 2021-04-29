@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" /><link rel="alternate" type="application/rss&#43;xml" href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/index.xml">
+<meta name="generator" content="Hugo 0.82.0" /><link rel="alternate" type="application/rss&#43;xml" href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/index.xml">
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
@@ -21,7 +21,7 @@
 <title>PDI</title><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/" />
+<meta property="og:url" content="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/" />
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
@@ -91,6 +91,30 @@
 				<a class="nav-link" href="/new-site/community/" ><span>Community</span></a>
 			</li>
 			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	PDI Versions
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/new-site">**new site** (you are here)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/master/">current development (Git master)</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.1/">release version 1.1</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/1.0/">release version 1.0</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.6/">release version 0.6</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.5/">release version 0.5</a>
+	
+	<a class="dropdown-item" href="https://pdi.julien-bigot.fr/0.4/">release version 0.4</a>
+	
+</div>
+
+			</li>
 			
 			
 		</ul>
@@ -1752,28 +1776,28 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/">Documentation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/">C&#43;&#43; API reference</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/">C&#43;&#43; API reference</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/">PDI</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/">PDI</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/">Ref_any</a>
+	<a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/">Ref_any</a>
 </li>
 
 	</ol>
@@ -1800,55 +1824,55 @@ As of now, and unlike std::shared_ptr, the lock system can not be relied upon in
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">()</span> </code></a></dt>
 <dd>Constructs a null reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Copies an existing reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-or-ow--"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span><span class="o"><</span> <span class="n">OR</span><span class="p">,</span> <span class="n">OW</span> <span class="o">></span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-or-ow--"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span><span class="o"><</span> <span class="n">OR</span><span class="p">,</span> <span class="n">OW</span> <span class="o">></span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Copies an existing reference with different privileges.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Moves an existing reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">freefunc</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">freefunc</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a reference to currently unreferenced data.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-datatypeaccessor_base-~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">&amp;</span> <span class="n">accessor</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-datatypeaccessor_base-~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">&amp;</span> <span class="n">accessor</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a subreference from reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-stdvector-stdunique_ptr-datatypeaccessor_base--~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">>></span> <span class="o">&amp;</span> <span class="n">accessors</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-stdvector-stdunique_ptr-datatypeaccessor_base--~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">>></span> <span class="o">&amp;</span> <span class="n">accessors</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a subreference from reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#copy"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="nf">copy</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#copy"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="nf">copy</span> <span class="p">()</span> </code></a></dt>
 <dd>Makes a copy of the raw content behind this reference and returns a new reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">()</span> </code></a></dt>
 <dd>Offers access to the referenced raw data, throws on null references.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get~arg~stdnothrow_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow_t</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get~arg~stdnothrow_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow_t</span> <span class="p">)</span> </code></a></dt>
 <dd>Offers access to the referenced raw data, returns null for null references.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#on_nullify~arg~stdfunction-voidref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">on_nullify</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="n">notifier</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#on_nullify~arg~stdfunction-voidref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">on_nullify</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="n">notifier</span><span class="p">)</span> </code></a></dt>
 <dd>Registers a nullification callback.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator-bool"><code  class="chroma language-C++" data-lang="C++"> <span class="k">operator</span> <span class="nf">bool</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator-bool"><code  class="chroma language-C++" data-lang="C++"> <span class="k">operator</span> <span class="nf">bool</span> <span class="p">()</span> </code></a></dt>
 <dd>Checks whether this is a null reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator-typename-ref_access-r-w-type"><code  class="chroma language-C++" data-lang="C++"> <span class="k">operator</span> <span class="k">typename</span> <span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator-typename-ref_access-r-w-type"><code  class="chroma language-C++" data-lang="C++"> <span class="k">operator</span> <span class="k">typename</span> <span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="p">()</span> </code></a></dt>
 <dd>Offers access to the referenced raw data.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">></span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">>=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">></span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">>=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to a member in case the content behind the ref is a record.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to a member in case the content behind the ref is a record.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdsize_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdsize_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to the content at a given index in case the content behind the ref is an array.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdpair-stdsize_t-stdsize_t-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="o">></span> <span class="n">slice</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdpair-stdsize_t-stdsize_t-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="o">></span> <span class="n">slice</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to the content at a given slice in case the content behind the ref is an array.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#release"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">release</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#release"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">release</span> <span class="p">()</span> </code></a></dt>
 <dd>Releases ownership of the referenced raw data by nullifying all existing references.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#reset"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">reset</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#reset"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">reset</span> <span class="p">()</span> </code></a></dt>
 <dd>Nullify the reference.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#scalar_value"><code  class="chroma language-C++" data-lang="C++"><span class="n">T</span> <span class="nf">scalar_value</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#scalar_value"><code  class="chroma language-C++" data-lang="C++"><span class="n">T</span> <span class="nf">scalar_value</span> <span class="p">()</span> </code></a></dt>
 <dd>Returns a scalar value of type T taken from the data buffer.</dd>
-<dt><a href="http://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Ref_any</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Ref_any</span> <span class="p">()</span> </code></a></dt>
 <dd>Destructor.</dd>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
