@@ -1,2 +1,2 @@
-baseURL = "http://pdi.julien-bigot.fr/new-site/"
+baseURL = "https://pdi.julien-bigot.fr/new-site/"
 enableRobotsTXT = true
