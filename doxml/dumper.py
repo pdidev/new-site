@@ -9,6 +9,13 @@ from parser import Doxml
 import cppmodel as cxx
 import mdgen as md
 
+def prune_ns(ns):
+    for sub_ns in ns.namespaces.values():
+        dump_ns(outdir, path+[sub_ns.name], sub_ns)
+    for sub_cls in ns.types.values():
+        dump_class(outdir, path+[sub_cls.name], sub_cls)
+    
+
 def page_name(name):
     name = re.sub(r'[^a-zA-Z0-9]', '_', name)
     if name == 'index':
@@ -19,17 +26,17 @@ def dump_class(outdir, path, cls):
     dir = os.path.join(outdir, *[re.sub(r'[^a-zA-Z0-9]', '_', n) for n in path])
     data = {
         'linkTitle': cls.name,
-        #'title': "::".join(path)+" "+cls.defined.kind+" reference",
+        #'title': "::".join(path)+" "+cls.kind+" reference",
     }
     try:
-        if cls.defined.kind in ['class', 'struct']:
+        if cls.kind in ['class', 'struct']:
             os.makedirs(dir, exist_ok=True)
             with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
                 print("---", file=outfile)
                 yaml.dump(data, outfile)
                 print("---", file=outfile)
                 print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
-        for sub_cls in cls.defined.types.values():
+        for sub_cls in cls.types.values():
             dump_class(outdir, path+[sub_cls.name], sub_cls)
     except:
         pass
@@ -46,10 +53,9 @@ def dump_ns(outdir, path, ns):
         yaml.dump(data, outfile)
         print("---", file=outfile)
         print("{{% namespace \""+".".join(path)+"\" %}}", file=outfile)
-    for sub_ns in ns.defined.namespaces.values():
-        print('namespaces: in ',path,' : ',sub_ns.name)
+    for sub_ns in ns.namespaces.values():
         dump_ns(outdir, path+[sub_ns.name], sub_ns)
-    for sub_cls in ns.defined.types.values():
+    for sub_cls in ns.types.values():
         dump_class(outdir, path+[sub_cls.name], sub_cls)
 
 def dump_root_ns(outdir, ns):

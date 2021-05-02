@@ -1,270 +1,190 @@
 #!/bin/env python3
 
 import yaml
+import types
+
 
 """
-A simplified C++ metamodel for documentation purpose only.
-
-We do not take into account the distinction between declaration and definition
-here.
+A very simplified C++ metamodel for documentation purpose only.
 """
 
-class Macro(yaml.YAMLObject):
+class CppElement(yaml.YAMLObject):
+    """
+    A C++ metamodel element
+    """
+    
+    yaml_tag = 'tag:yaml.org,2002:map'
+
+def documented_trait(defined=None, name=None):
+    """
+    A documented element
+    """
+    if defined is None:
+        defined = CppElement()
+    defined.briefdescription = None
+    defined.detaileddescription = None
+    defined.name = name
+    defined.location = None
+    return defined
+
+def macro_trait(defined=None):
     """
     A macro found in the C++ include files
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self):
-        self.briefdescription = None
-        self.detaileddescription = None
-        self.name = None
-        self.location = None
+    defined = documented_trait(defined)
+    defined.location = None
+    return defined
 
-def Template(Templated):
-    class TemplatedTemplate(yaml.YAMLObject, Templated):
-        """
-        A C++ template
-        """
-        
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        class Parameter(yaml.YAMLObject):
-            """
-            A type parameter as used in template 
-            """
-            
-            yaml_tag = 'tag:yaml.org,2002:map'
-            
-            def __init__(self):
-                self.default = None
-        
-        def __init__(self):
-            Templated.__init__(self)
-            self.parameters = []
-            self.templated = None
-
-class Variable(yaml.YAMLObject):
+def variable_trait(defined=None):
     """
     A variable, constant, constexpr, etc...
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self):
-        self.type = None
-        self.initializer = None
+    if defined is None:
+        defined = CppElement()
+    self.type = None
+    self.initializer = None
+    return defined
 
-class Function(yaml.YAMLObject):
+def variable_trait(defined=None):
     """
     A function
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    class Parameter(yaml.YAMLObject):
-        
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        def __init__(self):
-            self.briefdescription = None
-            self.detaileddescription = None
-            self.name = None
-            self.location = None
-            self.type = None
-            self.default_value = None
-    
-    class Result(yaml.YAMLObject):
-        
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        def __init__(self):
-            self.briefdescription = None
-            self.detaileddescription = None
-            self.type = None
-    
-    def __init__(self):
-        self.parameters = {}
-        self.result = Function.Result()
+    if defined is None:
+        defined = CppElement()
+    defined.type = None
+    defined.initializer = None
+    return defined
 
-class Enum_(yaml.YAMLObject):
+def function_trait(defined=None):
+    """
+    A function
+    """
+    if defined is None:
+        defined = CppElement()
+    defined.parameters = {}
+    defined.result = result_trait()
+    return defined
+
+def parameter_trait(defined=None):
+    """
+    A function parameter
+    """
+    defined = documented_trait(defined)
+    defined.type = None
+    defined.default_value = None
+    return defined
+    
+def result_trait(defined=None):
+    """
+    A function result
+    """
+    if defined is None:
+        defined = CppElement()
+    defined.briefdescription = None
+    defined.detaileddescription = None
+    defined.type = None
+    return defined
+
+def enum_value_trait(name=None, defined=None):
+    """
+    An enum value
+    """
+    defined = documented_trait(defined, name)
+    defined.initializer = None
+    return defined
+
+def enum_trait(defined=None):
     """
     A C++ enum
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    class Value(yaml.YAMLObject):
-        """
-        An enum value
-        """
-        
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        def __init__(self, name=None):
-            self.briefdescription = None
-            self.detaileddescription = None
-            self.name = name
-            self.location = None
-            self.initializer = None
+    if defined is None:
+        defined = CppElement()
+    defined.kind = 'enum'
+    defined.type = None
+    defined.values = []
+    defined.strongly_typed = False
+    return defined
 
-    def __init__(self):
-        self.kind = 'enum'
-        self.type = None
-        self.values = []
-        self.strongly_typed = False
-
-class TypeRef(yaml.YAMLObject):
+def typeref_trait(defined=None, type=None):
     """
     An element of C++ that references a type
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self, type=None):
-        self.kind = 'typedef'
-        self.type = type
+    if defined is None:
+        defined = CppElement()
+    defined.kind = 'typedef'
+    defined.type = type
+    return defined
 
-class ReferenceTypeRef(TypeRef):
+def member_function_trait(defined=None):
     """
-    A way to type something by referencing an existing type and adding it the 
-    C++ reference modifier (&)
+    a member function is similar to a free or static function but it has an
+    additional implicit "this" parameter.
     """
+    function_trait(defined)
+    defined.mutable = True
+    defined.virtual = 'no'
+    return defined
     
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self):
-        TypeRef.__init__(self)
+def class_definition_trait(defined=None,name=None):
+    """
+    A definition in a class, with a visibility attribute
+    """
+    defined = documented_trait(defined, name)
+    setattr(type(defined), '__getattr__', defined_reflect_get)
+    setattr(type(defined), '__setattr__', defined_reflect_set)
+    defined.visibility = 'public'
+    return defined
 
-class ConstTypeRef(TypeRef):
+def class_def_trait(defined=None,name=None):
     """
-    A way to type something by referencing an existing type and adding it the 
-    const modifier
+    A definition in a class, with a visibility attribute
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self):
-        TypeRef.__init__(self)
+    defined = documented_trait(defined, name)
+    setattr(type(defined), '__getattr__', defined_reflect_get)
+    setattr(type(defined), '__setattr__', defined_reflect_set)
+    defined.visibility = 'public'
+    return defined
 
-class PointerTypeRef(TypeRef):
-    """
-    A way to type something by referencing an existing type and adding it the 
-    pointer modifier (*)
-    """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self):
-        TypeRef.__init__(self)
-
-class RvalueReferenceTypeRef(TypeRef):
-    """
-    A way to type something by referencing an existing type and adding it the 
-    C++ rvalue-reference modifier (&&)
-    """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    def __init__(self):
-        TypeRef.__init__(self)
-
-class TemplateRef:
-    """
-    A way to type something by referencing a type template and associating
-    arguments to the template parameters, i.e. a template instanciation.
-    """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-    
-    class Argument:
-        """
-        A type argument as used is in template instanciations
-        """
-        def __init__(self):
-            self.parameter
-            self.value
-    
-    def __init__(self):
-        self.template = None
-        self.arguments = []
-
-class Class_(yaml.YAMLObject):
+def class_trait(defined=None):
     """
     A class or struct
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
+    if defined is None:
+        defined = CppElement()
+    defined.kind = 'class'
+    defined.types = {}
+    defined.functions = {}
+    defined.variables = {}
+    defined.member_functions = {}
+    defined.member_variables = {}
+    return defined
 
-    class Function(Function):
-        """
-        a Class_.Function is similar to a free or static function but it has an
-        additional implicit "this" parameter.
-        """
-        
-        def __init__(self):
-            Function.__init__(self)
-            self.mutable = True
-            self.virtual = 'no'
-    
-    class Variable(Variable):
-        """
-        a Class_.Variable is similar to a free or static variable but it depends
-        on a class instance.
-        """
-        
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        def __init__(self):
-            Variable.__init__(self)
-    
-    class Definition(yaml.YAMLObject):
-        """
-        A definition in a class, with a visibility attribute
-        """
-    
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        def __init__(self, name=None, defined=None):
-            self.briefdescription = None
-            self.detaileddescription = None
-            self.name = name
-            self.location = None
-            self.visibility = 'public'
-            self.defined = defined
+def defined_reflect_set(self, name, value):
+    if name == "defined":
+        self.__dict__ |= value.__dict__
+    else:
+        self.__dict__[name] = value
 
-    def __init__(self):
-        self.kind = 'class'
-        self.types = {}
-        self.functions = {}
-        self.variables = {}
-        self.member_functions = {}
-        self.member_variables = {}
+def defined_reflect_get(self, name):
+    if name == "defined":
+        return self
+    else:
+        raise AttributeError("'CppElement' object has no attribute '{}'".format(name))
 
-class Namespace(yaml.YAMLObject):
+def ns_def_trait(defined=None, name=None):
+    """
+    A named (namespaced) definition of a C++ element that can be referenced.
+    """
+    return documented_trait(defined, name)
+
+def namespace_trait(defined=None):
     """
     A C++ namespace
     """
-    
-    yaml_tag = 'tag:yaml.org,2002:map'
-
-    class Definition(yaml.YAMLObject):
-        """
-        A named (namespaced) definition of a C++ element that can be referenced.
-        """
-    
-        yaml_tag = 'tag:yaml.org,2002:map'
-        
-        def __init__(self, name=None, defined=None):
-            self.briefdescription = None
-            self.detaileddescription = None
-            self.name = name
-            self.location = None
-            self.defined = defined
-
-    def __init__(self):
-        self.namespaces = {}
-        self.types = {}
-        self.functions = {}
-        self.variables = {}
+    if defined is None:
+        defined = CppElement()
+    defined.namespaces = {}
+    defined.types = {}
+    defined.functions = {}
+    defined.variables = {}
+    return defined

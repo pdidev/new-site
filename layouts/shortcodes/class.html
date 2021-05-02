@@ -8,19 +8,17 @@
 
 {{- /* DERIVED */ -}}
 {{- $data := site.Data.docs.doxdata -}}
-{{- $def  := dict -}}
 {{- range $fullname -}}
-{{-   if isset $data.namespaces . -}}
-{{-     $def  = (index $data.namespaces . ) -}}
+{{-   if isset ($data.namespaces | default dict) . -}}
+{{-     $data  = (index $data.namespaces . ) -}}
 {{-   else if isset $data.types . -}}
-{{-     $def  = (index $data.types . ) -}}
+{{-     $data  = (index $data.types . ) -}}
 {{-   else -}}
-{{-     errorf "Unable to find namespace %s at %s" $fullname . -}}
+{{-     errorf "Unable to find class/namespace %s at %s" $fullname . -}}
 {{-   end -}}
-{{-   $data = $def.defined -}}
 {{- end -}}
 
 {{- /* LOCAL */ -}}
 
 
-{{ partial "type_desc" ($def | merge (dict "namespace" $namespace ) ) }}
+{{ partial "type_desc" ($data | merge (dict "namespace" $namespace ) ) }}

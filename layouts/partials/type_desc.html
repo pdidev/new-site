@@ -2,10 +2,9 @@
 {{- $FS_ROOT  := (slice "docs" "ref") }}
 
 {{- /* PARAMETERS */ -}}
-{{- $def       := . -}}
-{{- $name      := $def.name -}}
-{{- $data      := $def.defined -}}
-{{- $namespace := $def.namespace -}}
+{{- $data      := . -}}
+{{- $name      := .name -}}
+{{- $namespace := .namespace -}}
 
 {{- /* DERIVED */ -}}
 {{- $fullname  := $namespace | append $name -}}
@@ -34,10 +33,10 @@
 
 
 
-{{- if or $def.briefdescription $def.detaileddescription -}}
+{{- if or $data.briefdescription $data.detaileddescription -}}
 <h2 id="description">Description</h2>
-{{ with $def.briefdescription }}{{ . | markdownify }}{{ end -}}
-{{- with $def.detaileddescription }} {{ . | markdownify  }}{{ end }}
+{{ with $data.briefdescription }}{{ . | markdownify }}{{ end -}}
+{{- with $data.detaileddescription }} {{ . | markdownify  }}{{ end }}
 {{ end }}
 
 

@@ -2,6 +2,7 @@
 
 import xml.etree.ElementTree as ET
 import os.path
+import sys
 from hugogen import *
 from cppmodel import *
 
@@ -68,7 +69,7 @@ class Doxml:
         self.imgpath = imgpath
         self.images = []
         self.pages = {}
-        self.root_namespace = Namespace()
+        self.root_namespace = namespace_trait()
         self.ids = {}
         for compounddef in self.tree.findall('compounddef[@kind="class"][@language="C++"]'):
             self.parse_definition(compounddef, self.parse_class, nametag='compoundname', out=self.root_namespace.types)
@@ -93,9 +94,9 @@ class Doxml:
             pass
 
     def parse_namespace(self, node: ET.Element):
-        result = Namespace.Definition(defined=self.root_namespace)
+        result = self.root_namespace
         for name in node.findtext('compoundname').split('::'):
-            result = result.defined.namespaces.setdefault(name, Namespace.Definition(name, Namespace()))
+            result = result.namespaces.setdefault(name, ns_def_trait(namespace_trait(), name))
         self.ids[node.get('id')] = result
         add_if_not_empty(result, node, 'location', 'file')
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
@@ -105,24 +106,24 @@ class Doxml:
                 cl = self.ids[sn.get('refid')]
                 del self.root_namespace.types[cl.name]
                 cl.name = cl.name[len(node.findtext('compoundname'))+2:]
-                result.defined.types[cl.name] = cl
+                result.types[cl.name] = cl
             except KeyError:
                 pass
         for sn in node.findall('sectiondef[@kind="typedef"]/memberdef'):
             td = self.parse_definition(sn, self.parse_typedef)
-            result.defined.types[td.name] = td
+            result.types[td.name] = td
         for sn in node.findall('sectiondef[@kind="enum"]/memberdef'):
             en = self.parse_definition(sn, self.parse_enum)
-            result.defined.types[en.name] = en
+            result.types[en.name] = en
         for sn in node.findall('sectiondef[@kind="func"]/memberdef'):
             fn = self.parse_definition(sn, self.parse_function)
-            funclist = result.defined.functions.setdefault(fn.name, []).append(fn)
+            funclist = result.functions.setdefault(fn.name, []).append(fn)
         for sn in node.findall('sectiondef[@kind="var"]/memberdef'):
             var = self.parse_definition(sn, self.parse_variable)
-            result.defined.variables[var.name] = var
+            result.variables[var.name] = var
 
     def parse_definition(self, node: ET.Element, parse_defined, nametag='name', out=None):
-        result = self.ids.setdefault(node.get('id'), Namespace.Definition())
+        result = self.ids.setdefault(node.get('id'), ns_def_trait())
         if result.name is None:
             result.name = node.findtext(nametag)
             self.ids[node.get('id')] = result
@@ -131,17 +132,17 @@ class Doxml:
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'detaileddescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'location', 'file')
-        result.defined = parse_defined(node)
+        result = parse_defined(node, result)
         return result
 
     def parse_type(self, node: ET.Element):
         return "".join(node.itertext())
 
-    def parse_typedef(self, node: ET.Element):
-        return TypeRef(self.parse_type(node.find('type')))
+    def parse_typedef(self, node: ET.Element, defined: CppElement):
+        return typeref_trait(defined, self.parse_type(node.find('type')))
 
-    def parse_enum(self, node: ET.Element):
-        result = Enum_()
+    def parse_enum(self, node: ET.Element, defined: CppElement):
+        result = enum_trait(defined)
         if node.get('strong') == 'yes':
             result.strongly_typed = True
         add_if_not_empty(result, node, 'type', tr=lambda n: "".join(n.itertext()))
@@ -150,7 +151,7 @@ class Doxml:
         return result
 
     def parse_enum_value(self, out, node: ET.Element):
-        result = Enum_.Value()
+        result = enum_value_trait()
         result.name = node.findtext('name')
         out.values.append(result)
         self.ids[node.get('id')] = result
@@ -158,54 +159,53 @@ class Doxml:
         add_if_not_empty(result, node, 'detaileddescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'location', 'file')
 
-    def parse_function(self, node: ET.Element):
-        result = Function()
+    def parse_function(self, node: ET.Element, defined: CppElement):
+        result = function_trait(defined)
         result.result.type = self.parse_type(node.find('type'))
         for sn in node.findall('param'):
             par = self.parse_function_param(sn)
             result.parameters[par.name] = par
         for sn in node.findall('detaileddescription/para/parameterlist[@kind="param"]/parameteritem'):
-            self.parse_function_param_desc(result.parameters, sn)
+            self.parse_function_param_desc(result, sn)
         add_if_not_empty(result.result, node, 'detaileddescription/para/simplesect[@kind="return"]', key='detaileddescription', tr=lambda n: self.description(n))
         return result
 
     def parse_function_param(self, node: ET.Element):
-        result = Function.Parameter()
+        result = parameter_trait()
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'defname', key='name')
         add_if_not_empty(result, node, 'declname', key='name')
-        result.defined = Function.Parameter()
-        result.defined.type = self.parse_type(node.find('type'))
+        result.type = self.parse_type(node.find('type'))
         return result
 
     def parse_function_param_desc(self, out, node: ET.Element):
         try:
-            para = out[node.findtext('parameternamelist/parametername')]
+            para = out.parameters[node.findtext('parameternamelist/parametername')]
         except KeyError:
-            print("Warning: invalid parameter name: "+node.findtext('parameternamelist/parametername'), file=sys.stderr)
+            print("Warning: invalid parameter name: `"+node.findtext('parameternamelist/parametername')+"', not in: "+out.name+"("+", ".join(out.parameters.keys())+")", file=sys.stderr)
             return
         add_if_not_empty(para, node, 'parameterdescription', key='detaileddescription', tr=lambda n: self.description(n))
 
-    def parse_variable(self, node: ET.Element):
-        result = Variable()
+    def parse_variable(self, node: ET.Element, defined: CppElement):
+        result = variable_trait(defined)
         result.type = self.parse_type(node.find('type'))
         return result
     
-    def parse_class(self, node: ET.Element):
-        result = Class_()
+    def parse_class(self, node: ET.Element, defined: CppElement):
+        result = class_trait(defined)
         result.kind = node.get("kind")
         for sn in node.findall('innerclass'):
             try:
                 cl = self.ids[sn.get('refid')]
                 del self.ids[sn.get('refid')]
                 del self.root_namespace.types[cl.name]
-                newcl = Class_.Definition(defined=cl.defined)
+                newcl = class_definition_trait(defined=cl)
                 newcl.briefdescription = cl.briefdescription
                 newcl.detaileddescription = cl.detaileddescription
                 newcl.location = cl.location
                 cl = newcl
             except KeyError:
-                cl = Class_.Definition()
+                cl = class_definition_trait()
             cl.name = self.parse_type(sn)[len(node.findtext('compoundname'))+2:]
             self.ids[sn.get('refid')] = cl
             result.types[cl.name] = cl
@@ -230,18 +230,16 @@ class Doxml:
         return result
     
     def parse_member_definition(self, node: ET.Element, parse_defined):
-        result = Class_.Definition()
-        result.name = node.findtext('name')
+        result = parse_defined(node, class_definition_trait(name=node.findtext('name')))
         self.ids[node.get('id')] = result
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'detaileddescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'location', 'file')
         result.visibility = node.get('prot')
-        result.defined = parse_defined(node)
         return result
 
     def parse_member_function(self, node: ET.Element):
-        result = Class_.MemberFunction()
+        result = class_trait.MemberFunction()
         result.result.type = self.parse_type(node.find('type'))
         for sn in node.findall('param'):
             par = self.parse_function_param(sn)
@@ -459,3 +457,4 @@ if __name__ == '__main__':
     else:
         x = Doxml("../dox/combined.xml")
     yaml.dump(x.root_namespace, sys.stdout)
+

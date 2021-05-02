@@ -1156,6 +1156,7 @@
       <member refid="classPDI_1_1Array__datatype_1ac4160324349cf4dd13bd36e8894a61cd" prot="public" virt="virtual"><scope>PDI::Array_datatype</scope><name>destroy_data</name></member>
       <member refid="classPDI_1_1Array__datatype_1ae6d1fdc3128dd1bb1d61442c33416917" prot="public" virt="virtual"><scope>PDI::Array_datatype</scope><name>evaluate</name></member>
       <member refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" prot="public" virt="non-virtual"><scope>PDI::Array_datatype</scope><name>load_basic_datatypes</name></member>
+      <member refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" virt="non-virtual"><scope>PDI::Array_datatype</scope><name>load_user_datatypes</name></member>
       <member refid="classPDI_1_1Array__datatype_1a271c3b574d671710ea562b216df69ce9" prot="private" virt="non-virtual"><scope>PDI::Array_datatype</scope><name>m_size</name></member>
       <member refid="classPDI_1_1Array__datatype_1a12eeaa1bcb314f91e47466bdab203b1f" prot="private" virt="non-virtual"><scope>PDI::Array_datatype</scope><name>m_start</name></member>
       <member refid="classPDI_1_1Array__datatype_1a1a40db94339f9e78b03dcd3fd1d4ce21" prot="private" virt="non-virtual"><scope>PDI::Array_datatype</scope><name>m_subsize</name></member>
@@ -2113,12 +2114,12 @@
         </inbodydescription>
         <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/context.h" line="110" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
-        <type><ref refid="namespacePDI_1a90938550644cca0d8f3b8473267c3524" kindref="member">Datatype_template_uptr</ref></type>
-        <definition>virtual Datatype_template_uptr PDI::Context::datatype</definition>
+      <memberdef kind="function" id="classPDI_1_1Context_1a886658fd95d713981ac77c0b7dde31f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacePDI_1a72ea1e67c0a642bfc9cb3159a85c7a82" kindref="member">Datatype_uptr</ref></type>
+        <definition>virtual Datatype_uptr PDI::Context::datatype</definition>
         <argsstring>(PC_tree_t node)=0</argsstring>
         <name>datatype</name>
-        <reimplementedby refid="classPDI_1_1Context__proxy_1ac71f62967880f5bcd0fe095f17b3de4f">datatype</reimplementedby>
+        <reimplementedby refid="classPDI_1_1Context__proxy_1a8a175de0a92b8d42c7c142b0ff2c5697">datatype</reimplementedby>
         <param>
           <type>PC_tree_t</type>
           <declname>node</declname>
@@ -2142,7 +2143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/context.h" line="117" column="32"/>
+        <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/context.h" line="117" column="23"/>
       </memberdef>
       <memberdef kind="function" id="classPDI_1_1Context_1a49ae5a3b3cb8d97b0f61e6a3dd9b0fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -2228,7 +2229,7 @@
       <member refid="classPDI_1_1Context_1a49ae5a3b3cb8d97b0f61e6a3dd9b0fd6" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>add_datatype</name></member>
       <member refid="classPDI_1_1Context_1af3cc6b4e8ecd9bc50b933527ccd5af19" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>begin</name></member>
       <member refid="classPDI_1_1Context_1ab1739cf4e3bfde11d5271b305fa17e20" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>callbacks</name></member>
-      <member refid="classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>datatype</name></member>
+      <member refid="classPDI_1_1Context_1a886658fd95d713981ac77c0b7dde31f0" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>datatype</name></member>
       <member refid="classPDI_1_1Context_1a69e61f140cdf5555c635e160f85f3c86" prot="public" virt="non-virtual"><scope>PDI::Context</scope><name>Datatype_template_parser</name></member>
       <member refid="classPDI_1_1Context_1ad9cc865b0a004cf218c2633d3907e231" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>desc</name></member>
       <member refid="classPDI_1_1Context_1ad0b4ab8d2b8a7ff58ba260b50e968b96" prot="public" virt="pure-virtual"><scope>PDI::Context</scope><name>desc</name></member>
@@ -2454,24 +2455,24 @@
         </inbodydescription>
         <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/context_proxy.h" line="78" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classPDI_1_1Context__proxy_1ac71f62967880f5bcd0fe095f17b3de4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="namespacePDI_1a90938550644cca0d8f3b8473267c3524" kindref="member">Datatype_template_uptr</ref></type>
-        <definition>Datatype_template_uptr PDI::Context_proxy::datatype</definition>
+      <memberdef kind="function" id="classPDI_1_1Context__proxy_1a8a175de0a92b8d42c7c142b0ff2c5697" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacePDI_1a72ea1e67c0a642bfc9cb3159a85c7a82" kindref="member">Datatype_uptr</ref></type>
+        <definition>Datatype_uptr PDI::Context_proxy::datatype</definition>
         <argsstring>(PC_tree_t node) override</argsstring>
         <name>datatype</name>
-        <reimplements refid="classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b">datatype</reimplements>
+        <reimplements refid="classPDI_1_1Context_1a886658fd95d713981ac77c0b7dde31f0">datatype</reimplements>
         <param>
           <type>PC_tree_t</type>
           <declname>node</declname>
         </param>
         <briefdescription>
-<para><ref refid="classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b" kindref="member">Context::datatype</ref> proxy for plugins. </para>
+<para><ref refid="classPDI_1_1Context_1a886658fd95d713981ac77c0b7dde31f0" kindref="member">Context::datatype</ref> proxy for plugins. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/context_proxy.h" line="82" column="24"/>
+        <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/context_proxy.h" line="82" column="15"/>
       </memberdef>
       <memberdef kind="function" id="classPDI_1_1Context__proxy_1ab24dac03f6faddd05bd83b734cd1ca56" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -2561,7 +2562,7 @@
       <member refid="classPDI_1_1Context__proxy_1a2b0e1d5c7a43cd7e594eee845d97ccb1" prot="public" virt="virtual"><scope>PDI::Context_proxy</scope><name>begin</name></member>
       <member refid="classPDI_1_1Context__proxy_1a9e691045f02436bfa36aeeb2b8cb7495" prot="public" virt="virtual"><scope>PDI::Context_proxy</scope><name>callbacks</name></member>
       <member refid="classPDI_1_1Context__proxy_1a6b3641274f499c62348e00890c2efc0f" prot="public" virt="non-virtual"><scope>PDI::Context_proxy</scope><name>Context_proxy</name></member>
-      <member refid="classPDI_1_1Context__proxy_1ac71f62967880f5bcd0fe095f17b3de4f" prot="public" virt="virtual"><scope>PDI::Context_proxy</scope><name>datatype</name></member>
+      <member refid="classPDI_1_1Context__proxy_1a8a175de0a92b8d42c7c142b0ff2c5697" prot="public" virt="virtual"><scope>PDI::Context_proxy</scope><name>datatype</name></member>
       <member refid="classPDI_1_1Context_1a69e61f140cdf5555c635e160f85f3c86" prot="public" virt="non-virtual"><scope>PDI::Context_proxy</scope><name>Datatype_template_parser</name></member>
       <member refid="classPDI_1_1Context__proxy_1a468a90eb7a0e0dbc88522b51688e9ed8" prot="public" virt="virtual"><scope>PDI::Context_proxy</scope><name>desc</name></member>
       <member refid="classPDI_1_1Context__proxy_1a364d22cc3f95fdca9813c2727e54523e" prot="public" virt="virtual"><scope>PDI::Context_proxy</scope><name>desc</name></member>
@@ -3486,6 +3487,7 @@
       <member refid="classPDI_1_1Datatype_1a73bcba3fb827468daeda6ab0a4fd92b5" prot="public" virt="pure-virtual"><scope>PDI::Datatype</scope><name>destroy_data</name></member>
       <member refid="classPDI_1_1Datatype__template_1a31b2c6cd579c3100c6b03bf195aa0e80" prot="public" virt="pure-virtual"><scope>PDI::Datatype</scope><name>evaluate</name></member>
       <member refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" prot="public" virt="non-virtual"><scope>PDI::Datatype</scope><name>load_basic_datatypes</name></member>
+      <member refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" virt="non-virtual"><scope>PDI::Datatype</scope><name>load_user_datatypes</name></member>
       <member refid="classPDI_1_1Datatype_1af80638919cb31c61451d0bc6220a69e3" prot="public" virt="non-virtual"><scope>PDI::Datatype</scope><name>operator!=</name></member>
       <member refid="classPDI_1_1Datatype_1a8cdf8ed0c21b40519239290171252a5b" prot="public" virt="pure-virtual"><scope>PDI::Datatype</scope><name>operator==</name></member>
       <member refid="classPDI_1_1Datatype_1ae5f85834cbae56fca2b4cf7e7fbd0df3" prot="public" virt="pure-virtual"><scope>PDI::Datatype</scope><name>simple</name></member>
@@ -3599,6 +3601,46 @@
         </inbodydescription>
         <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h" line="59" column="13"/>
       </memberdef>
+      <memberdef kind="function" id="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PDI::Datatype_template::load_user_datatypes</definition>
+        <argsstring>(Context &amp;ctx, PC_tree_t types_tree)</argsstring>
+        <name>load_user_datatypes</name>
+        <param>
+          <type><ref refid="classPDI_1_1Context" kindref="compound">Context</ref> &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>PC_tree_t</type>
+          <declname>types_tree</declname>
+        </param>
+        <briefdescription>
+<para>Adds to the context the user defined datatypes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the context where to add the datatypes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">types_tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>with defined types </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h" line="67" column="13"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -3646,11 +3688,12 @@
         <link refid="classPDI_1_1Datatype__template"/>
       </node>
     </collaborationgraph>
-    <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h" line="34" column="1" bodyfile="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h" bodystart="35" bodyend="61"/>
+    <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h" line="34" column="1" bodyfile="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h" bodystart="35" bodyend="69"/>
     <listofallmembers>
       <member refid="classPDI_1_1Datatype__template_1a6c6cb02f6f9bab3e9fbf8826afae677a" prot="public" virt="pure-virtual"><scope>PDI::Datatype_template</scope><name>clone</name></member>
       <member refid="classPDI_1_1Datatype__template_1a31b2c6cd579c3100c6b03bf195aa0e80" prot="public" virt="pure-virtual"><scope>PDI::Datatype_template</scope><name>evaluate</name></member>
       <member refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" prot="public" virt="non-virtual"><scope>PDI::Datatype_template</scope><name>load_basic_datatypes</name></member>
+      <member refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" virt="non-virtual"><scope>PDI::Datatype_template</scope><name>load_user_datatypes</name></member>
       <member refid="classPDI_1_1Datatype__template_1a8722c4b873d42931d8e159abaa62ff27" prot="public" virt="virtual"><scope>PDI::Datatype_template</scope><name>~Datatype_template</name></member>
     </listofallmembers>
   </compounddef><compounddef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classPDI_1_1Error" kind="class" language="C++" prot="public">
@@ -6620,6 +6663,7 @@
       <member refid="classPDI_1_1Pointer__datatype_1a1b1c55a87cf7f8642729751cf36d30b6" prot="public" virt="virtual"><scope>PDI::Pointer_datatype</scope><name>destroy_data</name></member>
       <member refid="classPDI_1_1Pointer__datatype_1a0c5618604492b253bce03f9a6d6c9161" prot="public" virt="virtual"><scope>PDI::Pointer_datatype</scope><name>evaluate</name></member>
       <member refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" prot="public" virt="non-virtual"><scope>PDI::Pointer_datatype</scope><name>load_basic_datatypes</name></member>
+      <member refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" virt="non-virtual"><scope>PDI::Pointer_datatype</scope><name>load_user_datatypes</name></member>
       <member refid="classPDI_1_1Pointer__datatype_1aae8bd977ffc5a6c08e3919d143f3086a" prot="private" virt="non-virtual"><scope>PDI::Pointer_datatype</scope><name>m_copy</name></member>
       <member refid="classPDI_1_1Pointer__datatype_1a22a6a41e6c8c49dafd706743837c15be" prot="private" virt="non-virtual"><scope>PDI::Pointer_datatype</scope><name>m_destroy</name></member>
       <member refid="classPDI_1_1Pointer__datatype_1a808d9477a651d40ce155d4e4fd518d2e" prot="private" virt="non-virtual"><scope>PDI::Pointer_datatype</scope><name>m_subtype</name></member>
@@ -7179,6 +7223,7 @@
       <member refid="classPDI_1_1Record__datatype_1aca8e88ed37db5f20244637e8c69d7a61" prot="public" virt="virtual"><scope>PDI::Record_datatype</scope><name>destroy_data</name></member>
       <member refid="classPDI_1_1Record__datatype_1a974a5b925407ade93a7f2b96a0ffd528" prot="public" virt="virtual"><scope>PDI::Record_datatype</scope><name>evaluate</name></member>
       <member refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" prot="public" virt="non-virtual"><scope>PDI::Record_datatype</scope><name>load_basic_datatypes</name></member>
+      <member refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" virt="non-virtual"><scope>PDI::Record_datatype</scope><name>load_user_datatypes</name></member>
       <member refid="classPDI_1_1Record__datatype_1aef244e5b6fdb7bd88c441bf4a1a7b5f0" prot="private" virt="non-virtual"><scope>PDI::Record_datatype</scope><name>m_buffersize</name></member>
       <member refid="classPDI_1_1Record__datatype_1a6f199221aeefdb6c40463f306a00b1f3" prot="private" virt="non-virtual"><scope>PDI::Record_datatype</scope><name>m_members</name></member>
       <member refid="classPDI_1_1Record__datatype_1abc743d4a8adaeb8b630f29678f2665cf" prot="public" virt="non-virtual"><scope>PDI::Record_datatype</scope><name>members</name></member>
@@ -9590,6 +9635,7 @@
       <member refid="classPDI_1_1Scalar__datatype_1afffe6f77d615f1d570607758a62722bd" prot="public" virt="virtual"><scope>PDI::Scalar_datatype</scope><name>evaluate</name></member>
       <member refid="classPDI_1_1Scalar__datatype_1a553f70f9bdc343bc96659a31cdf19529" prot="public" virt="non-virtual"><scope>PDI::Scalar_datatype</scope><name>kind</name></member>
       <member refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" prot="public" virt="non-virtual"><scope>PDI::Scalar_datatype</scope><name>load_basic_datatypes</name></member>
+      <member refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" prot="public" virt="non-virtual"><scope>PDI::Scalar_datatype</scope><name>load_user_datatypes</name></member>
       <member refid="classPDI_1_1Scalar__datatype_1add2240fd379b86ed06bbb3c4e46f4afc" prot="private" virt="non-virtual"><scope>PDI::Scalar_datatype</scope><name>m_align</name></member>
       <member refid="classPDI_1_1Scalar__datatype_1afb898b53351417cc770961642e3b3183" prot="private" virt="non-virtual"><scope>PDI::Scalar_datatype</scope><name>m_copy</name></member>
       <member refid="classPDI_1_1Scalar__datatype_1a4c2a91a8e6a86ebefe8a0a165b1c5efd" prot="private" virt="non-virtual"><scope>PDI::Scalar_datatype</scope><name>m_dense_size</name></member>
@@ -12794,7 +12840,7 @@
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="110" refid="classPDI_1_1Context_1ab1739cf4e3bfde11d5271b305fa17e20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classPDI_1_1Callbacks" kindref="compound">Callbacks</ref>&amp;<sp/><ref refid="classPDI_1_1Context_1ab1739cf4e3bfde11d5271b305fa17e20" kindref="member">callbacks</ref>()<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="117" refid="classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespacePDI_1a90938550644cca0d8f3b8473267c3524" kindref="member">Datatype_template_uptr</ref><sp/><ref refid="classPDI_1_1Context_1af30302419766a7e4d302663c5d91636b" kindref="member">datatype</ref>(PC_tree_t<sp/>node)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117" refid="classPDI_1_1Context_1a886658fd95d713981ac77c0b7dde31f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespacePDI_1a72ea1e67c0a642bfc9cb3159a85c7a82" kindref="member">Datatype_uptr</ref><sp/><ref refid="classPDI_1_1Context_1a886658fd95d713981ac77c0b7dde31f0" kindref="member">datatype</ref>(PC_tree_t<sp/>node)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="124" refid="classPDI_1_1Context_1a49ae5a3b3cb8d97b0f61e6a3dd9b0fd6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPDI_1_1Context_1a49ae5a3b3cb8d97b0f61e6a3dd9b0fd6" kindref="member">add_datatype</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/><ref refid="classPDI_1_1Context_1a69e61f140cdf5555c635e160f85f3c86" kindref="member">Datatype_template_parser</ref><sp/>parser)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -13128,7 +13174,7 @@
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="78" refid="classPDI_1_1Context__proxy_1a23624a98f533a9da2b1584dfac18ad8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacePDI_1a9c906943ee4d374699c804e1d94facd2" kindref="member">Logger_sptr</ref><sp/><ref refid="classPDI_1_1Context__proxy_1a23624a98f533a9da2b1584dfac18ad8f" kindref="member">pdi_core_logger</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="82" refid="classPDI_1_1Context__proxy_1ac71f62967880f5bcd0fe095f17b3de4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacePDI_1a90938550644cca0d8f3b8473267c3524" kindref="member">Datatype_template_uptr</ref><sp/><ref refid="classPDI_1_1Context__proxy_1ac71f62967880f5bcd0fe095f17b3de4f" kindref="member">datatype</ref>(PC_tree_t<sp/>node)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82" refid="classPDI_1_1Context__proxy_1a8a175de0a92b8d42c7c142b0ff2c5697" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacePDI_1a72ea1e67c0a642bfc9cb3159a85c7a82" kindref="member">Datatype_uptr</ref><sp/><ref refid="classPDI_1_1Context__proxy_1a8a175de0a92b8d42c7c142b0ff2c5697" kindref="member">datatype</ref>(PC_tree_t<sp/>node)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="86" refid="classPDI_1_1Context__proxy_1ab24dac03f6faddd05bd83b734cd1ca56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPDI_1_1Context__proxy_1ab24dac03f6faddd05bd83b734cd1ca56" kindref="member">add_datatype</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/><ref refid="classPDI_1_1Context_1a69e61f140cdf5555c635e160f85f3c86" kindref="member">Datatype_template_parser</ref><sp/>parser)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -13900,12 +13946,14 @@
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="59" refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPDI_1_1Datatype__template_1aa539eee3b7312a7f1be7fd85b64b5c85" kindref="member">load_basic_datatypes</ref>(<ref refid="classPDI_1_1Context" kindref="compound">Context</ref>&amp;<sp/>ctx);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"/></codeline>
-<codeline lineno="63"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>PDI</highlight><highlight class="normal"/></codeline>
-<codeline lineno="64"><highlight class="normal"/></codeline>
-<codeline lineno="65"><highlight class="normal"/><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>PDI_DATATYPE_TEMPLATE_H_</highlight><highlight class="normal"/></codeline>
-<codeline lineno="66"><highlight class="normal"/></codeline>
+<codeline lineno="67" refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPDI_1_1Datatype__template_1ae5ffc14e8bad3f21ce30027671055f1b" kindref="member">load_user_datatypes</ref>(<ref refid="classPDI_1_1Context" kindref="compound">Context</ref>&amp;<sp/>ctx,<sp/>PC_tree_t<sp/>types_tree);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"/></codeline>
+<codeline lineno="71"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>PDI</highlight><highlight class="normal"/></codeline>
+<codeline lineno="72"><highlight class="normal"/></codeline>
+<codeline lineno="73"><highlight class="normal"/><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>PDI_DATATYPE_TEMPLATE_H_</highlight><highlight class="normal"/></codeline>
+<codeline lineno="74"><highlight class="normal"/></codeline>
     </programlisting>
     <location file="/home/anarky/data/projets/pdi/pdi/pdi/include/pdi/datatype_template.h"/>
   </compounddef><compounddef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="error_8h" kind="file" language="C++">
@@ -15139,7 +15187,7 @@
 <codeline lineno="25"><highlight class="normal"/></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(pc_tree_t),</highlight><highlight class="keywordtype">target</highlight><highlight class="normal"><sp/><sp/>::<sp/>conf</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>my_value</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(LEN=32)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>secret_message</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(LEN=32)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>secret_message</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"/></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">pc_parse_path(</highlight><highlight class="stringliteral">"hello_access.yml"</highlight><highlight class="normal">,<sp/>conf)</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">pdi_init(conf)<sp/></highlight></codeline>
@@ -31974,12 +32022,14 @@ integer</initializer>
 <codeline/>
 <codeline><highlight class="normal">|key|value|</highlight></codeline>
 <codeline><highlight class="normal">|:--|:----|</highlight></codeline>
+<codeline><highlight class="normal">|`"types"`<sp/>(*optional*)|a<sp/>\ref<sp/>types_map_node|</highlight></codeline>
 <codeline><highlight class="normal">|`"data"`<sp/>(*optional*)|a<sp/>\ref<sp/>data_map_node|</highlight></codeline>
 <codeline><highlight class="normal">|`"metadata"`<sp/>(*optional*)|a<sp/>\ref<sp/>data_map_node|</highlight></codeline>
 <codeline><highlight class="normal">|`"plugins"`<sp/>(*optional*)|a<sp/>\ref<sp/>plugin_map_node|</highlight></codeline>
 <codeline><highlight class="normal">|`"plugin_path"`<sp/>(*optional*)|a<sp/>\ref<sp/>plugin_path_map_node|</highlight></codeline>
 <codeline><highlight class="normal">|`".*"`<sp/>(*optional*)|<sp/>*anything*<sp/>|</highlight></codeline>
 <codeline/>
+<codeline><highlight class="normal">*<sp/>the<sp/>`types`<sp/>section<sp/>specifies<sp/>user-defined<sp/>datatypes</highlight></codeline>
 <codeline><highlight class="normal">*<sp/>the<sp/>`data`<sp/>and<sp/>`metadata`<sp/>sections<sp/>specify<sp/>the<sp/>type<sp/>of<sp/>the<sp/>data<sp/>in<sp/>buffers</highlight></codeline>
 <codeline><highlight class="normal">exposed<sp/>by<sp/>the<sp/>application;<sp/>for<sp/>`metadata`,<sp/>%PDI<sp/>keeps<sp/>a<sp/>copy<sp/>while<sp/>it<sp/>only</highlight></codeline>
 <codeline><highlight class="normal">keeps<sp/>references<sp/>for<sp/>`data`,</highlight></codeline>
@@ -32100,7 +32150,8 @@ integer</initializer>
 <codeline><highlight class="normal">*<sp/>a<sp/>\ref<sp/>real_type_node,</highlight></codeline>
 <codeline><highlight class="normal">*<sp/>a<sp/>\ref<sp/>record_type_node,</highlight></codeline>
 <codeline><highlight class="normal">*<sp/>a<sp/>\ref<sp/>simple_datatype_node,</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>a<sp/>\ref<sp/>struct_type_node.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>a<sp/>\ref<sp/>struct_type_node,</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>any<sp/>user-defined<sp/>datatype<sp/>name.</highlight></codeline>
 <codeline/>
 <codeline><highlight class="normal">Amongst<sp/>these,<sp/>\ref<sp/>simple_datatype_node<sp/>is<sp/>the<sp/>only<sp/>scalar.</highlight></codeline>
 <codeline><highlight class="normal">All<sp/>others<sp/>are<sp/>dictionaries<sp/>with<sp/>a<sp/>`type`<sp/>key<sp/>used<sp/>for<sp/>disambiguation<sp/>between</highlight></codeline>
@@ -32479,6 +32530,16 @@ integer</initializer>
 <codeline><highlight class="normal"><sp/><sp/>associated<sp/>to<sp/>it<sp/>describes<sp/>the<sp/>member<sp/>itself.</highlight></codeline>
 <codeline/>
 <codeline><highlight class="normal">See<sp/>\ref<sp/>struct_type_node<sp/>for<sp/>an<sp/>example.</highlight></codeline>
+<codeline/>
+<codeline><highlight class="normal">#<sp/>types_map<sp/>{#types_map_node}</highlight></codeline>
+<codeline/>
+<codeline><highlight class="normal">A<sp/>*types_map*<sp/>is<sp/>a<sp/>**mapping**<sp/>that<sp/>contains<sp/>the<sp/>following<sp/>keys:</highlight></codeline>
+<codeline><highlight class="normal">|key|value|</highlight></codeline>
+<codeline><highlight class="normal">|:--|:----|</highlight></codeline>
+<codeline><highlight class="normal">|`".*"`<sp/>(*optional*)|a<sp/>\ref<sp/>datatype_node|</highlight></codeline>
+<codeline/>
+<codeline><highlight class="normal">*<sp/>each<sp/>key<sp/>identifies<sp/>the<sp/>name<sp/>of<sp/>new<sp/>user-defined<sp/>datatype<sp/>and<sp/>the<sp/>value</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>associated<sp/>to<sp/>it<sp/>describes<sp/>the<sp/>type</highlight></codeline>
 <codeline/>
 <codeline><highlight class="normal">#<sp/>record_members_map<sp/>{#record_members_map_node}</highlight></codeline>
 <codeline/>
@@ -32919,7 +32980,7 @@ integer</initializer>
       </memberdef>
       <memberdef kind="define" id="version_8h_1a4b5fc0727221432432f65c08736ab4ab" prot="public" static="no">
         <name>PDI_VERSION_MODIF</name>
-        <initializer>"-alpha.2021-04-22.cb73696"</initializer>
+        <initializer>"-alpha.2021-04-29.c5d2e5c"</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -32972,7 +33033,7 @@ integer</initializer>
 <codeline lineno="25"><highlight class="normal"/><highlight class="preprocessor">#define<sp/><sp/><sp/><sp/><sp/><sp/>PDI_VERSION_MAJOR<sp/><sp/>1</highlight><highlight class="normal"/></codeline>
 <codeline lineno="26"><highlight class="normal"/><highlight class="preprocessor">#define<sp/><sp/><sp/><sp/><sp/><sp/>PDI_VERSION_MINOR<sp/><sp/>2</highlight><highlight class="normal"/></codeline>
 <codeline lineno="27"><highlight class="normal"/><highlight class="preprocessor">#define<sp/><sp/><sp/><sp/><sp/><sp/>PDI_VERSION_PATCH<sp/><sp/>0</highlight><highlight class="normal"/></codeline>
-<codeline lineno="28"><highlight class="normal"/><highlight class="preprocessor">#define<sp/>PDI_VERSION_MODIF<sp/>"-alpha.2021-04-22.cb73696"</highlight><highlight class="normal"/></codeline>
+<codeline lineno="28"><highlight class="normal"/><highlight class="preprocessor">#define<sp/>PDI_VERSION_MODIF<sp/>"-alpha.2021-04-29.c5d2e5c"</highlight><highlight class="normal"/></codeline>
 <codeline lineno="29"><highlight class="normal"/></codeline>
 <codeline lineno="30"><highlight class="normal"/><highlight class="preprocessor">#define<sp/>PDI_VERSION<sp/>((PDI_VERSION_MAJOR&lt;&lt;24)<sp/>+<sp/>(PDI_VERSION_MINOR&lt;&lt;16)<sp/>+<sp/>(PDI_VERSION_PATCH&lt;&lt;8))</highlight></codeline>
     </programlisting>
@@ -34231,7 +34292,7 @@ the access parameter is a binary OR of PDI_IN &amp; PDI_OUT.<itemizedlist>
 <codeline><highlight class="normal"/></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(pc_tree_t),</highlight><highlight class="keywordtype">target</highlight><highlight class="normal"><sp/><sp/>::<sp/>conf</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>my_value</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(LEN=32)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>secret_message</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(LEN=32)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>secret_message</highlight></codeline>
 <codeline><highlight class="normal"/></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">pc_parse_path(</highlight><highlight class="stringliteral">"hello_access.yml"</highlight><highlight class="normal">,<sp/>conf)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">pdi_init(conf)<sp/></highlight></codeline>
@@ -35198,9 +35259,13 @@ If the default installation fails or if you need an installation better tailored
 <sect1 id="Specification_tree_ref_1root_node">
 <title>specification tree root</title>
 <para>The <emphasis>specification tree root</emphasis> is a <bold>mapping</bold> that contains the following keys:</para>
-<para><table rows="6" cols="2"><row>
+<para><table rows="7" cols="2"><row>
 <entry thead="yes" align="left"><para>key   </para>
 </entry><entry thead="yes" align="left"><para>value    </para>
+</entry></row>
+<row>
+<entry thead="no" align="left"><para><computeroutput>"types"</computeroutput> (<emphasis>optional</emphasis>)   </para>
+</entry><entry thead="no" align="left"><para>a <ref refid="Specification_tree_ref_1types_map_node" kindref="member">types_map</ref>    </para>
 </entry></row>
 <row>
 <entry thead="no" align="left"><para><computeroutput>"data"</computeroutput> (<emphasis>optional</emphasis>)   </para>
@@ -35225,7 +35290,8 @@ If the default installation fails or if you need an installation better tailored
 </table>
 </para>
 <para><itemizedlist>
-<listitem><para>the <computeroutput>data</computeroutput> and <computeroutput>metadata</computeroutput> sections specify the type of the data in buffers exposed by the application; for <computeroutput>metadata</computeroutput>, PDI keeps a copy while it only keeps references for <computeroutput>data</computeroutput>,</para>
+<listitem><para>the <computeroutput>types</computeroutput> section specifies user-defined datatypes</para>
+</listitem><listitem><para>the <computeroutput>data</computeroutput> and <computeroutput>metadata</computeroutput> sections specify the type of the data in buffers exposed by the application; for <computeroutput>metadata</computeroutput>, PDI keeps a copy while it only keeps references for <computeroutput>data</computeroutput>,</para>
 </listitem><listitem><para>the <computeroutput>plugin</computeroutput> section specifies the list of plugins to load and their configuration,</para>
 </listitem><listitem><para>additional sections are ignored.</para>
 </listitem></itemizedlist>
@@ -35350,7 +35416,8 @@ If the default installation fails or if you need an installation better tailored
 </listitem><listitem><para>a <ref refid="Specification_tree_ref_1real_type_node" kindref="member">real_type</ref>,</para>
 </listitem><listitem><para>a <ref refid="Specification_tree_ref_1record_type_node" kindref="member">record_type</ref>,</para>
 </listitem><listitem><para>a <ref refid="Specification_tree_ref_1simple_datatype_node" kindref="member">simple_datatype</ref>,</para>
-</listitem><listitem><para>a <ref refid="Specification_tree_ref_1struct_type_node" kindref="member">struct_type</ref>.</para>
+</listitem><listitem><para>a <ref refid="Specification_tree_ref_1struct_type_node" kindref="member">struct_type</ref>,</para>
+</listitem><listitem><para>any user-defined datatype name.</para>
 </listitem></itemizedlist>
 </para>
 <para>Amongst these, <ref refid="Specification_tree_ref_1simple_datatype_node" kindref="member">simple_datatype</ref> is the only scalar. All others are dictionaries with a <computeroutput>type</computeroutput> key used for disambiguation between them. Plugins can add new options that follow the same pattern.</para>
@@ -35739,6 +35806,23 @@ If the default installation fails or if you need an installation better tailored
 </listitem></itemizedlist>
 </para>
 <para>See <ref refid="Specification_tree_ref_1struct_type_node" kindref="member">struct_type</ref> for an example.</para>
+</sect1>
+<sect1 id="Specification_tree_ref_1types_map_node">
+<title>types_map</title>
+<para>A <emphasis>types_map</emphasis> is a <bold>mapping</bold> that contains the following keys: <table rows="2" cols="2"><row>
+<entry thead="yes" align="left"><para>key   </para>
+</entry><entry thead="yes" align="left"><para>value    </para>
+</entry></row>
+<row>
+<entry thead="no" align="left"><para><computeroutput>".*"</computeroutput> (<emphasis>optional</emphasis>)   </para>
+</entry><entry thead="no" align="left"><para>a <ref refid="Specification_tree_ref_1datatype_node" kindref="member">datatype</ref>   </para>
+</entry></row>
+</table>
+</para>
+<para><itemizedlist>
+<listitem><para>each key identifies the name of new user-defined datatype and the value associated to it describes the type</para>
+</listitem></itemizedlist>
+</para>
 </sect1>
 <sect1 id="Specification_tree_ref_1record_members_map_node">
 <title>record_members_map</title>

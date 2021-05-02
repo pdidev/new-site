@@ -17,12 +17,7 @@ defaultContentLanguageInSubdir = false
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # Use the new Chroma Go highlighter in Hugo.
-pygmentsUseClassic = false
-pygmentsCodeFences = true
-pygmentsUseClasses = true
-#pygmentsOptions = "linenos=table"
-# See https://help.farbox.com/pygments.html
-pygmentsStyle = "pygments"
+#pygmentsUseClassic = false
 
 # Configure how URLs look like per section.
 [permalinks]

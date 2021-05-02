@@ -2,10 +2,9 @@
 {{- $FS_ROOT  := (slice "docs" "ref") }}
 
 {{- /* PARAMETERS */ -}}
-{{- $def       := . -}}
-{{- $name      := $def.name -}}
-{{- $data      := $def.defined -}}
-{{- $namespace := $def.namespace -}}
+{{- $data      := . -}}
+{{- $name      := .name -}}
+{{- $namespace := .namespace -}}
 
 {{- /* DERIVED */ -}}
 {{- $fullname  := $namespace | append $name -}}
@@ -15,15 +14,15 @@
 
 <article class="td-content member-function">
 
-<h3 id="{{- partial "function_id" $def -}}"><code class="chroma language-C++" data-lang="C++">
-{{- partial "function_syntax" (merge $def (dict "name" $def.name ) ) | partial "highlight" -}}
+<h3 id="{{- partial "function_id" $data -}}"><code class="chroma language-C++" data-lang="C++">
+{{- partial "function_syntax" (merge $data (dict "name" $data.name ) ) | partial "highlight" -}}
 </code></h3>
 
-{{ if or $def.briefdescription  $def.detaileddescription }}
+{{ if or $data.briefdescription  $data.detaileddescription }}
 <h4>Description</h4>
 <section class="description">
-{{ with $def.briefdescription }}{{ . | markdownify }}{{ end }}
-{{ with $def.detaileddescription }}{{ . | markdownify  }}{{ end }}
+{{ with $data.briefdescription }}{{ . | markdownify }}{{ end }}
+{{ with $data.detaileddescription }}{{ . | markdownify  }}{{ end }}
 </section>
 {{ end }}
 
