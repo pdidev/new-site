@@ -34,8 +34,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
-<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" as="style">
+<link href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1156,31 +1156,6 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefspdlog-li">
-    <a href="/new-site/docs/ref/spdlog/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefspdlog"><span class="">spdlog</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefstd-li">
     <a href="/new-site/docs/ref/std/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefstd"><span class="">std</span></a>
     
@@ -1808,7 +1783,9 @@
 	<h1></h1>
         
 	
-	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Pointer_datatype</span></code> reference</h1>
+	<h1><code class="chroma language-C++" data-lang="C++">
+<span class="k">class</span>
+<span class="nn">PDI<span class="p">::</span><span class="nc">Pointer_datatype</span></code></h1>
 <h2 id="content-list">Content</h2>
 <h3 id="member-types-list">Member Types</h3>
 <dl>
@@ -1816,66 +1793,121 @@
 </dl>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#pointer_datatype~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Pointer_datatype</span> <span class="p">(</span> <span class="n">subtype</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#pointer_datatype~arg~stdfunction-void-void--const-void-~arg~stdfunction-voidvoid-~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Pointer_datatype</span> <span class="p">(</span> <span class="n">copy</span><span class="p">,</span>  <span class="n">destroy</span><span class="p">,</span>  <span class="n">subtype</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#alignment"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">alignment</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#pointer_datatype~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Pointer_datatype</span> <span class="p">(</span>
+<span class="n">Datatype_uptr</span> <span class="nv">subtype</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#pointer_datatype~arg~stdfunction-void-void--const-void-~arg~stdfunction-voidvoid-~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Pointer_datatype</span> <span class="p">(</span>
+<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="nv">copy</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="nv">destroy</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="nv">subtype</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#alignment"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span>
+<span class="nf">alignment</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Returns the required alignment for a type.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#buffersize"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">buffersize</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#buffersize"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span>
+<span class="nf">buffersize</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Computes the data size of a type, including potentially unused memory from a sparse type.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span> <span class="nf">clone</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span>
+<span class="nf">clone</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype as an exact copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#clone_type"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">clone_type</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#clone_type"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span>
+<span class="nf">clone_type</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype as an exact copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#data_from_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_from_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#data_from_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span>
+<span class="nf">data_from_dense_copy</span> <span class="p">(</span>
+<span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">to</span> <span class="p">)</span> </code></a></dt>
 <dd>Creates a sparse deep copy of dense data.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#data_to_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_to_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#data_to_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span>
+<span class="nf">data_to_dense_copy</span> <span class="p">(</span>
+<span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">to</span> <span class="p">)</span> </code></a></dt>
 <dd>Creates a dense deep copy of data.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#datasize"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">datasize</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#datasize"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span>
+<span class="nf">datasize</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Computes the data size of a type, excluding potentially unused memory from a sparse type.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#debug_string"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">debug_string</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#debug_string"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">string</span>
+<span class="nf">debug_string</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Returns the datatype yaml representation as a string.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#dense"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="nf">dense</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#dense"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span>
+<span class="nf">dense</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Indicate if the datatype is dense or not.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#densify"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">densify</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#densify"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span>
+<span class="nf">densify</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype as the dense copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#dereference"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">dereference</span> <span class="p">()</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#destroy_data~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">destroy_data</span> <span class="p">(</span> <span class="n">ptr</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#dereference"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span>
+<span class="nf">dereference</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#destroy_data~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">destroy_data</span> <span class="p">(</span>
+<span class="kt">void</span> <span class="o">*</span> <span class="nv">ptr</span> <span class="p">)</span> </code></a></dt>
 <dd>Function used to delete the data behind the datatype.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span>
+<span class="nf">evaluate</span> <span class="p">(</span>
+<span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span> <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype by resolving the value of all metadata references.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#operator~arg~const-datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#operator~arg~const-datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span>
+<span class="nf">operator==</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="nv">other</span> <span class="p">)</span> </code></a></dt>
 <dd>Test for equality.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#simple"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="nf">simple</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#simple"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span>
+<span class="nf">simple</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Tells if data can be copied as bytes (if type is dense) and doesn't need a destroyer.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#subaccess_by_iterators~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">subaccess_by_iterators</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">remaining_begin</span><span class="p">,</span>  <span class="n">remaining_end</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#subaccess_by_iterators~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span>
+<span class="nf">subaccess_by_iterators</span> <span class="p">(</span>
+<span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_end</span> <span class="p">)</span> </code></a></dt>
 <dd>Creates datatype of subtype and returns it with a moved pointer.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#subtype"><code  class="chroma language-C++" data-lang="C++"><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="n">subtype</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/pointer_datatype/#subtype"><code  class="chroma language-C++" data-lang="C++"><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span>
+<span class="nf">subtype</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Type of the pointed element.</dd>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="pointer_datatype~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++"> <span class="n">Pointer_datatype</span> <span class="p">(</span> <span class="n">subtype</span><span class="p">)</span> </code></h3>
+<h3 id="pointer_datatype~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Pointer_datatype</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Datatype_uptr</span> <span class="nv">subtype</span></span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">subtype</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="pointer_datatype~arg~stdfunction-void-void--const-void-~arg~stdfunction-voidvoid-~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++"> <span class="n">Pointer_datatype</span> <span class="p">(</span> <span class="n">copy</span><span class="p">,</span>  <span class="n">destroy</span><span class="p">,</span>  <span class="n">subtype</span><span class="p">)</span> </code></h3>
+<h3 id="pointer_datatype~arg~stdfunction-void-void--const-void-~arg~stdfunction-voidvoid-~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Pointer_datatype</span> <span class="p">(</span>
+<span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="nv">copy</span></span><span class="p">,</span> <span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="nv">destroy</span></span><span class="p">,</span> <span class="parameter"><span class="n">Datatype_uptr</span> <span class="nv">subtype</span></span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">copy</var></code></dt>
 <dd></dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">destroy</var></code></dt>
 <dd></dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">subtype</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="alignment"><code class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">alignment</span> <span class="p">()</span> </code></h3>
+<h3 id="alignment"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">size_t</span></span>
+<span class="nf">alignment</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Returns the required alignment for a type.
@@ -1886,7 +1918,10 @@ Returns the required alignment for a type.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="buffersize"><code class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">buffersize</span> <span class="p">()</span> </code></h3>
+<h3 id="buffersize"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">size_t</span></span>
+<span class="nf">buffersize</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Computes the data size of a type, including potentially unused memory from a sparse type.
@@ -1897,7 +1932,10 @@ Computes the data size of a type, including potentially unused memory from a spa
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="clone"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span> <span class="nf">clone</span> <span class="p">()</span> </code></h3>
+<h3 id="clone"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_template_uptr</span></span>
+<span class="nf">clone</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype as an exact copy of this one.
@@ -1908,7 +1946,10 @@ Creates a new datatype as an exact copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="clone_type"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">clone_type</span> <span class="p">()</span> </code></h3>
+<h3 id="clone_type"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_uptr</span></span>
+<span class="nf">clone_type</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype as an exact copy of this one.
@@ -1919,17 +1960,24 @@ Creates a new datatype as an exact copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="data_from_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_from_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></h3>
+<h3 id="data_from_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span> <span class="o">*</span></span>
+<span class="nf">data_from_dense_copy</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span></span><span class="p">,</span> <span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">to</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a sparse deep copy of dense data.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">from</var></code></dt>
 <dd>the pointer to the copied data (dense data)</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">to</var></code></dt>
 <dd>the pointer to the allocated memory to fill (size of buffersize)</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1937,17 +1985,24 @@ Creates a sparse deep copy of dense data.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="data_to_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_to_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></h3>
+<h3 id="data_to_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span> <span class="o">*</span></span>
+<span class="nf">data_to_dense_copy</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span></span><span class="p">,</span> <span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">to</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a dense deep copy of data.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">from</var></code></dt>
 <dd>the pointer to the copied data (size of buffersize)</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">to</var></code></dt>
 <dd>the pointer to the allocated memory to fill (dense data)</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1955,7 +2010,10 @@ Creates a dense deep copy of data.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="datasize"><code class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">datasize</span> <span class="p">()</span> </code></h3>
+<h3 id="datasize"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">size_t</span></span>
+<span class="nf">datasize</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Computes the data size of a type, excluding potentially unused memory from a sparse type.
@@ -1966,7 +2024,10 @@ Computes the data size of a type, excluding potentially unused memory from a spa
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="debug_string"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">debug_string</span> <span class="p">()</span> </code></h3>
+<h3 id="debug_string"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">string</span></span>
+<span class="nf">debug_string</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Returns the datatype yaml representation as a string.
@@ -1977,7 +2038,10 @@ Returns the datatype yaml representation as a string.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="dense"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="nf">dense</span> <span class="p">()</span> </code></h3>
+<h3 id="dense"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">bool</span></span>
+<span class="nf">dense</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Indicate if the datatype is dense or not.
@@ -1988,7 +2052,10 @@ Indicate if the datatype is dense or not.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="densify"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">densify</span> <span class="p">()</span> </code></h3>
+<h3 id="densify"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_uptr</span></span>
+<span class="nf">densify</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype as the dense copy of this one.
@@ -1999,10 +2066,16 @@ Creates a new datatype as the dense copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="dereference"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">dereference</span> <span class="p">()</span> </code></h3>
+<h3 id="dereference"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_uptr</span></span>
+<span class="nf">dereference</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 </article>
 <article class="td-content member-function">
-<h3 id="destroy_data~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">destroy_data</span> <span class="p">(</span> <span class="n">ptr</span><span class="p">)</span> </code></h3>
+<h3 id="destroy_data~arg~void-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">destroy_data</span> <span class="p">(</span>
+<span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">ptr</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Function used to delete the data behind the datatype.
@@ -2010,20 +2083,27 @@ This should not deallocate the memory.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ptr</var></code></dt>
 <dd>to the data to free</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_uptr</span></span>
+<span class="nf">evaluate</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype by resolving the value of all metadata references.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
 <dd>the context in which to evaluate this template</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -2031,15 +2111,20 @@ Creates a new datatype by resolving the value of all metadata references.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-datatype-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-datatype-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">bool</span></span>
+<span class="nf">operator==</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="nv">other</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Test for equality.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></dt>
 <dd>the <a href="compound:classPDI_1_1Datatype">Datatype</a> to compare</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -2047,7 +2132,10 @@ Test for equality.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="simple"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="nf">simple</span> <span class="p">()</span> </code></h3>
+<h3 id="simple"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">bool</span></span>
+<span class="nf">simple</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Tells if data can be copied as bytes (if type is dense) and doesn't need a destroyer.
@@ -2058,19 +2146,28 @@ Tells if data can be copied as bytes (if type is dense) and doesn't need a destr
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="subaccess_by_iterators~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">subaccess_by_iterators</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">remaining_begin</span><span class="p">,</span>  <span class="n">remaining_end</span><span class="p">)</span> </code></h3>
+<h3 id="subaccess_by_iterators~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span></span>
+<span class="nf">subaccess_by_iterators</span> <span class="p">(</span>
+<span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span></span><span class="p">,</span> <span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_begin</span></span><span class="p">,</span> <span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_end</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates datatype of subtype and returns it with a moved pointer.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">from</var></code></dt>
 <dd>the pointer to the data</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">remaining_begin</var></code></dt>
 <dd>iterator to the begin of remaining accessors</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">remaining_end</var></code></dt>
 <dd>iterator to the end of remaining accessors</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -2078,7 +2175,10 @@ Creates datatype of subtype and returns it with a moved pointer.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="subtype"><code class="chroma language-C++" data-lang="C++"><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="n">subtype</span> <span class="p">()</span> </code></h3>
+<h3 id="subtype"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span></span>
+<span class="nf">subtype</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Type of the pointed element.
@@ -2107,8 +2207,6 @@ Type of the pointed element.
                     </h5>
                     <p></p>
                 </div>
-            
-        
             
         
             

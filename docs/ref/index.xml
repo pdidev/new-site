@@ -81,61 +81,109 @@
 &lt;/dl&gt;
 &lt;h3 id=&#34;functions-list&#34;&gt;Functions&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#configure_logger~arg~pc_tree_t~arg~spdloglevellevel_enum~arg~const-stdstring-&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;Logger_sptr&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;configure_logger&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#configure_logger~arg~pc_tree_t~arg~spdloglevellevel_enum~arg~const-stdstring-&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;Logger_sptr&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;configure_logger&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;spdlog&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level_enum&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Reads configuration tree and sets up the logger.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Iterates and apply the provided function to all elements of a PC list.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#each~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#each~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Iterates and apply the provided function to all elements of a PC mapping.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#each_in_omap~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;each_in_omap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#each_in_omap~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;each_in_omap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Iterates and apply the provided function to all elements of a PC ordered mapping.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#is_list~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;is_list&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#is_list~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;is_list&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Checks if the tree is a list.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#is_map~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;is_map&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#is_map~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;is_map&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Checks if the tree is a map.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#is_scalar~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;is_scalar&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#is_scalar~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;is_scalar&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Checks if the tree is a scalar.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#len~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#len~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#len~arg~int~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#len~arg~int~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the length of a node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#opt_each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;opt_each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#opt_each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;opt_each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#plugin_api_version~arg~unsigned-long&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;plugin_api_version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;expected_version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#plugin_api_version~arg~unsigned-long&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;plugin_api_version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;expected_version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Checks compatibility with a plugin API.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_bool~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_bool~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the boolean value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_bool~arg~bool~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_bool~arg~bool~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the boolean value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_double~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_double~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the floating point value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_double~arg~double~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_double~arg~double~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the floating point value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_long~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_long~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the int value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_long~arg~long~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_long~arg~long~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the int value of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_string~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_string~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the string content of a scalar node.&lt;/dd&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_string~arg~const-stdstring-~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/#to_string~arg~const-stdstring-~arg~pc_tree_t&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Returns the string content of a scalar node.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Documentation&lt;/h2&gt;
 &lt;h3 id=&#34;functions-doc&#34;&gt;Functions&lt;/h2&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;configure_logger~arg~pc_tree_t~arg~spdloglevellevel_enum~arg~const-stdstring-&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;Logger_sptr&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;configure_logger&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;configure_logger~arg~pc_tree_t~arg~spdloglevellevel_enum~arg~const-stdstring-&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;n&#34;&gt;Logger_sptr&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;configure_logger&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;config&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;spdlog&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level_enum&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;level&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;l&#34;&gt;spdlog::level::info&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;name&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Reads configuration tree and sets up the logger.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;config&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;configuration tree from config file&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;level&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;default level of the logger&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;name&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;name of the module (e.g. global, test, decl_hdf5)&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -143,57 +191,83 @@ Reads configuration tree and sets up the logger.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Iterates and apply the provided function to all elements of a PC list.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;operation&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the operation to apply to each element of the tree&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the tree containing the list&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;each~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;each~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Iterates and apply the provided function to all elements of a PC mapping.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;operation&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the operation to apply to each element of the tree&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the tree containing the mapping&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;each_in_omap~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;each_in_omap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;each_in_omap~arg~stdfunction-voidpc_tree_t-pc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;each_in_omap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Iterates and apply the provided function to all elements of a PC ordered mapping.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;operation&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the operation to apply to each element of the tree&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the tree containing the ordered mapping&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;is_list~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;is_list&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;is_list~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;is_list&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Checks if the tree is a list.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -201,15 +275,20 @@ Checks if the tree is a list.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;is_map~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;is_map&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;is_map~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;is_map&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Checks if the tree is a map.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -217,15 +296,20 @@ Checks if the tree is a map.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;is_scalar~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;is_scalar&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;is_scalar~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;is_scalar&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Checks if the tree is a scalar.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -233,7 +317,10 @@ Checks if the tree is a scalar.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;len~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;len~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the length of a node.
@@ -246,8 +333,10 @@ Returns the length of a node.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the sequence or mapping&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -255,7 +344,10 @@ Returns the length of a node.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;len~arg~int~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;len~arg~int~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the length of a node.
@@ -268,10 +360,14 @@ Returns the length of a node.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;dflt&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the default value in case of error&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the sequence or mapping&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -279,29 +375,42 @@ Returns the length of a node.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;opt_each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;opt_each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;operation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;opt_each~arg~stdfunction-voidpc_tree_t~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;opt_each&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;operation&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Iterates and apply the provided function to all elements of a PC list or directly to the provided element if it is not a list.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;operation&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the operation to apply to the elements&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the tree containing the list or the single element&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;plugin_api_version~arg~unsigned-long&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;plugin_api_version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;expected_version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;plugin_api_version~arg~unsigned-long&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;plugin_api_version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;expected_version&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;l&#34;&gt;0&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Checks compatibility with a plugin API.
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;expected_version&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the expected version of the API or 0 for no check&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -309,7 +418,10 @@ Checks compatibility with a plugin API.
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_bool~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_bool~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the boolean value of a scalar node.
@@ -317,8 +429,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -326,7 +440,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_bool~arg~bool~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_bool~arg~bool~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_bool&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the boolean value of a scalar node.
@@ -334,10 +451,14 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;dflt&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the default value in case of error&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -345,7 +466,10 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_double~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_double~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the floating point value of a scalar node.
@@ -353,8 +477,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the floating-point-valued node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -362,7 +488,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_double~arg~double~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_double~arg~double~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_double&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the floating point value of a scalar node.
@@ -370,10 +499,14 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;dflt&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the default value in case of error&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the floating-point-valued node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -381,7 +514,10 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_long~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_long~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the int value of a scalar node.
@@ -389,8 +525,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the int-valued node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -398,7 +536,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_long~arg~long~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_long~arg~long~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_long&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the int value of a scalar node.
@@ -406,10 +547,14 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;dflt&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the default value in case of error&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the int-valued node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -417,7 +562,10 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_string~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_string~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the string content of a scalar node.
@@ -425,8 +573,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -434,7 +584,10 @@ throws an &lt;a href=&#34;compound:classPDI_1_1Error&#34;&gt;Error&lt;/a&gt; if 
 &lt;/section&gt;
 &lt;/article&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;to_string~arg~const-stdstring-~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dflt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;to_string~arg~const-stdstring-~arg~pc_tree_t&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;to_string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dflt&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;n&#34;&gt;PC_tree_t&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tree&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Description&lt;/h4&gt;
 &lt;section class=&#34;description&#34;&gt;
 Returns the string content of a scalar node.
@@ -442,10 +595,14 @@ returns the default value in case of error
 &lt;/section&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;dflt&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the default value in case of error&lt;/dd&gt;
+&lt;/div&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;tree&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;the node&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;h4 class=&#34;result&#34;&gt;Result&lt;/h4&gt;
 &lt;section class=&#34;result&#34;&gt;
@@ -465,7 +622,9 @@ returns the default value in case of error
       <description>
         
         
-        &lt;h1&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;PDI_errhandler_t&lt;/span&gt;&lt;/code&gt; reference&lt;/h1&gt;
+        &lt;h1&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;
+&lt;span class=&#34;nc&#34;&gt;PDI_errhandler_t&lt;/span&gt;&lt;/code&gt;&lt;/h1&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 Definition of an error handler.
 &lt;h2 id=&#34;content-list&#34;&gt;Content&lt;/h2&gt;
@@ -480,24 +639,6 @@ Definition of an error handler.
 &lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;The function to handle the error (none if NULL)&lt;/dd&gt;
 &lt;/dl&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: </title>
-      <link>https://pdi.julien-bigot.fr/new-site/docs/ref/spdlog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pdi.julien-bigot.fr/new-site/docs/ref/spdlog/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;
-&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
-&lt;span class=&#34;kn&#34;&gt;namespace&lt;/span&gt;
-&lt;span class=&#34;nn&#34;&gt;spdlog&lt;span&gt;
-&lt;/code&gt; reference&lt;/h1&gt;
 
       </description>
     </item>

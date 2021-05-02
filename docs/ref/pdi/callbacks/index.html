@@ -34,8 +34,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
-<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" as="style">
+<link href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1156,31 +1156,6 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefspdlog-li">
-    <a href="/new-site/docs/ref/spdlog/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefspdlog"><span class="">spdlog</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefstd-li">
     <a href="/new-site/docs/ref/std/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefstd"><span class="">std</span></a>
     
@@ -1808,54 +1783,91 @@
 	<h1></h1>
         
 	
-	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Callbacks</span></code> reference</h1>
+	<h1><code class="chroma language-C++" data-lang="C++">
+<span class="k">class</span>
+<span class="nn">PDI<span class="p">::</span><span class="nc">Callbacks</span></code></h1>
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#callbacks~arg~context-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Callbacks</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_data_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_data_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#callbacks~arg~context-"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Callbacks</span> <span class="p">(</span>
+<span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_data_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span>
+<span class="nf">add_data_callback</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds new data callback to context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_data_remove_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_data_remove_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_data_remove_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span>
+<span class="nf">add_data_remove_callback</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds new data callback to context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_empty_desc_access_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_empty_desc_access_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_empty_desc_access_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span>
+<span class="nf">add_empty_desc_access_callback</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds new empty desc access callback to context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_event_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_event_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_event_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span>
+<span class="nf">add_event_callback</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds new event callback to context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_init_callback~arg~const-stdfunction-void-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_init_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#add_init_callback~arg~const-stdfunction-void-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span>
+<span class="nf">add_init_callback</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds new init callback to context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_data_callbacks~arg~const-stdstring-~arg~ref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_data_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">,</span>  <span class="n">ref</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_data_callbacks~arg~const-stdstring-~arg~ref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">call_data_callbacks</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span><span class="p">,</span> <span class="n">Ref</span> <span class="nv">ref</span> <span class="p">)</span> </code></a></dt>
 <dd>Calls data callbacks.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_data_remove_callbacks~arg~const-stdstring-~arg~ref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_data_remove_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">,</span>  <span class="n">ref</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_data_remove_callbacks~arg~const-stdstring-~arg~ref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">call_data_remove_callbacks</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span><span class="p">,</span> <span class="n">Ref</span> <span class="nv">ref</span> <span class="p">)</span> </code></a></dt>
 <dd>Calls data remove callbacks.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_empty_desc_access_callbacks~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_empty_desc_access_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_empty_desc_access_callbacks~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">call_empty_desc_access_callbacks</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Calls empty desc callbacks.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_event_callbacks~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_event_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_event_callbacks~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">call_event_callbacks</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Calls event callbacks.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_init_callbacks"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_init_callbacks</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/callbacks/#call_init_callbacks"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">call_init_callbacks</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Calls init callbacks.</dd>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="callbacks~arg~context-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Callbacks</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="callbacks~arg~context-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Callbacks</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span></span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="add_data_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_data_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="add_data_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span></span>
+<span class="nf">add_data_callback</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span></span><span class="p">,</span> <span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span>
+      <span class="p">=</span> <span class="l">{}</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds new data callback to context.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">callback</var></code></dt>
 <dd>function to call when data is being available</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>the name of the data on which call the callback, if not specified it's called on any data</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1863,17 +1875,25 @@ Adds new data callback to context.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="add_data_remove_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_data_remove_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="add_data_remove_callback~arg~const-stdfunction-voidconst-stdstring--ref-~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span></span>
+<span class="nf">add_data_remove_callback</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span></span><span class="p">,</span> <span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span>
+      <span class="p">=</span> <span class="l">{}</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds new data callback to context.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">callback</var></code></dt>
 <dd>function to call when data is reclaimed/released</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>the name of the data on which call the callback, if not specified it's called on any data</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1881,17 +1901,25 @@ Adds new data callback to context.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="add_empty_desc_access_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_empty_desc_access_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="add_empty_desc_access_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span></span>
+<span class="nf">add_empty_desc_access_callback</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span></span><span class="p">,</span> <span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span>
+      <span class="p">=</span> <span class="l">{}</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds new empty desc access callback to context.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">callback</var></code></dt>
 <dd>function to call when event is called</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>the name of the data on which call the callback, if not specified it's called on any data</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1899,17 +1927,25 @@ Adds new empty desc access callback to context.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="add_event_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_event_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">,</span>  <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="add_event_callback~arg~const-stdfunction-voidconst-stdstring--~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span></span>
+<span class="nf">add_event_callback</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span></span><span class="p">,</span> <span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span>
+      <span class="p">=</span> <span class="l">{}</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds new event callback to context.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">callback</var></code></dt>
 <dd>function to call when event is called</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>the name of the event on which call the callback, if not specified it's called on any event</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1917,15 +1953,20 @@ Adds new event callback to context.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="add_init_callback~arg~const-stdfunction-void-"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">add_init_callback</span> <span class="p">(</span> <span class="n">callback</span><span class="p">)</span> </code></h3>
+<h3 id="add_init_callback~arg~const-stdfunction-void-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span></span>
+<span class="nf">add_init_callback</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="o">&amp;</span> <span class="nv">callback</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds new init callback to context.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">callback</var></code></dt>
 <dd>function to call when data and metadata are loaded</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1933,59 +1974,86 @@ Adds new init callback to context.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="call_data_callbacks~arg~const-stdstring-~arg~ref"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_data_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">,</span>  <span class="n">ref</span><span class="p">)</span> </code></h3>
+<h3 id="call_data_callbacks~arg~const-stdstring-~arg~ref"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">call_data_callbacks</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span><span class="p">,</span> <span class="parameter"><span class="n">Ref</span> <span class="nv">ref</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Calls data callbacks.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>name of the shared descriptor</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ref</var></code></dt>
 <dd>shared reference</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="call_data_remove_callbacks~arg~const-stdstring-~arg~ref"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_data_remove_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">,</span>  <span class="n">ref</span><span class="p">)</span> </code></h3>
+<h3 id="call_data_remove_callbacks~arg~const-stdstring-~arg~ref"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">call_data_remove_callbacks</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span><span class="p">,</span> <span class="parameter"><span class="n">Ref</span> <span class="nv">ref</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Calls data remove callbacks.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>name of the descriptor that will be reclaimed/released</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ref</var></code></dt>
 <dd>reference that will be reclaimed/released</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="call_empty_desc_access_callbacks~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_empty_desc_access_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="call_empty_desc_access_callbacks~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">call_empty_desc_access_callbacks</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Calls empty desc callbacks.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>name of the accessed descriptor</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="call_event_callbacks~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_event_callbacks</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="call_event_callbacks~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">call_event_callbacks</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Calls event callbacks.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>name of the event</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="call_init_callbacks"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">call_init_callbacks</span> <span class="p">()</span> </code></h3>
+<h3 id="call_init_callbacks"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">call_init_callbacks</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Calls init callbacks.
@@ -1999,8 +2067,6 @@ Calls init callbacks.
     
     
     <hr class="panel-line">
-        
-            
         
             
         

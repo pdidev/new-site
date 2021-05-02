@@ -34,8 +34,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
-<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" as="style">
+<link href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1156,31 +1156,6 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefspdlog-li">
-    <a href="/new-site/docs/ref/spdlog/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefspdlog"><span class="">spdlog</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefstd-li">
     <a href="/new-site/docs/ref/std/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefstd"><span class="">std</span></a>
     
@@ -1818,49 +1793,73 @@
 	<h1></h1>
         
 	
-	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Array_datatype</span><span class="o">::</span><span class="n">Index_accessor</span></code> reference</h1>
+	<h1><code class="chroma language-C++" data-lang="C++">
+<span class="k">class</span>
+<span class="nn">PDI<span class="p">::</span><span class="nn">Array_datatype<span class="p">::</span><span class="nc">Index_accessor</span></code></h1>
 <h2 id="description">Description</h2>
 Accessor to get single element from array.
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/index_accessor/#index_accessor~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Index_accessor</span> <span class="p">(</span> <span class="n">index</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/index_accessor/#index_accessor~arg~size_t"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Index_accessor</span> <span class="p">(</span>
+<span class="n">size_t</span> <span class="nv">index</span> <span class="p">)</span> </code></a></dt>
 <dd>Construct a new index accessor.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/index_accessor/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-array_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">remaining_begin</span><span class="p">,</span>  <span class="n">remaining_end</span><span class="p">,</span>  <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/index_accessor/#access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-array_datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span>
+<span class="nf">access</span> <span class="p">(</span>
+<span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_end</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array_datatype</span> <span class="o">&amp;</span> <span class="nv">type</span> <span class="p">)</span> </code></a></dt>
 <dd>Access function for array datatype.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/index_accessor/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">></span> <span class="n">clone</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/array_datatype/index_accessor/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">></span>
+<span class="nf">clone</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Creates and returns clone of accessor.</dd>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="index_accessor~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Index_accessor</span> <span class="p">(</span> <span class="n">index</span><span class="p">)</span> </code></h3>
+<h3 id="index_accessor~arg~size_t"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Index_accessor</span> <span class="p">(</span>
+<span class="parameter"><span class="n">size_t</span> <span class="nv">index</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Construct a new index accessor.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">index</var></code></dt>
 <dd>index of element that will be returned</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-array_datatype-"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span> <span class="n">access</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">remaining_begin</span><span class="p">,</span>  <span class="n">remaining_end</span><span class="p">,</span>  <span class="n">type</span><span class="p">)</span> </code></h3>
+<h3 id="access~arg~void-~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~stdvector-stdunique_ptr-accessor_base-const_iterator~arg~const-array_datatype-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="o">></span></span>
+<span class="nf">access</span> <span class="p">(</span>
+<span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">from</span></span><span class="p">,</span> <span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_begin</span></span><span class="p">,</span> <span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">>>::</span><span class="n">const_iterator</span> <span class="nv">remaining_end</span></span><span class="p">,</span> <span class="parameter"><span class="k">const</span> <span class="n">Array_datatype</span> <span class="o">&amp;</span> <span class="nv">type</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Access function for array datatype.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">from</var></code></dt>
 <dd>pointer to data of type datatype</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">remaining_begin</var></code></dt>
 <dd>iterator to the beginning of remaining accessors</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">remaining_end</var></code></dt>
 <dd>iterator to the end of remaining accessors</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">type</var></code></dt>
 <dd>a datatype to get access</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1868,7 +1867,10 @@ Access function for array datatype.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="clone"><code class="chroma language-C++" data-lang="C++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">></span> <span class="n">clone</span> <span class="p">()</span> </code></h3>
+<h3 id="clone"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Accessor_base</span> <span class="o">></span></span>
+<span class="nf">clone</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates and returns clone of accessor.
@@ -1886,8 +1888,6 @@ Creates and returns clone of accessor.
     
     
     <hr class="panel-line">
-        
-            
         
             
         

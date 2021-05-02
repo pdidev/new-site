@@ -34,8 +34,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
-<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" as="style">
+<link href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1156,31 +1156,6 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefspdlog-li">
-    <a href="/new-site/docs/ref/spdlog/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefspdlog"><span class="">spdlog</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefstd-li">
     <a href="/new-site/docs/ref/std/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefstd"><span class="">std</span></a>
     
@@ -1808,7 +1783,9 @@
 	<h1></h1>
         
 	
-	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Context</span></code> reference</h1>
+	<h1><code class="chroma language-C++" data-lang="C++">
+<span class="k">class</span>
+<span class="nn">PDI<span class="p">::</span><span class="nc">Context</span></code></h1>
 <h2 id="content-list">Content</h2>
 <h3 id="member-types-list">Member Types</h3>
 <dl>
@@ -1819,57 +1796,96 @@
 </dl>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#add_datatype~arg~const-stdstring-~arg~datatype_template_parser"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">add_datatype</span> <span class="p">(</span> <span class="n">name</span><span class="p">,</span>  <span class="n">parser</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#add_datatype~arg~const-stdstring-~arg~datatype_template_parser"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">add_datatype</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span><span class="p">,</span> <span class="n">Datatype_template_parser</span> <span class="nv">parser</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds new datatype parser to the context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#begin"><code  class="chroma language-C++" data-lang="C++"><span class="n">Iterator</span> <span class="nf">begin</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#begin"><code  class="chroma language-C++" data-lang="C++"><span class="n">Iterator</span>
+<span class="nf">begin</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Returns an iterator on the first descriptor.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#callbacks"><code  class="chroma language-C++" data-lang="C++"><span class="n">Callbacks</span> <span class="o">&amp;</span> <span class="n">callbacks</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#callbacks"><code  class="chroma language-C++" data-lang="C++"><span class="n">Callbacks</span> <span class="o">&amp;</span>
+<span class="nf">callbacks</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd><a href="compound:classPDI_1_1Callbacks">Callbacks</a> of the context.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#datatype~arg~pc_tree_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">datatype</span> <span class="p">(</span> <span class="n">node</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#datatype~arg~pc_tree_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span>
+<span class="nf">datatype</span> <span class="p">(</span>
+<span class="n">PC_tree_t</span> <span class="nv">node</span> <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype template from a paraconf-style config.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#desc~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="n">desc</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#desc~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span>
+<span class="nf">desc</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Accesses the descriptor for a specific name.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#desc~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="n">desc</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#desc~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span>
+<span class="nf">desc</span> <span class="p">(</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Accesses the descriptor for a specific name.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#end"><code  class="chroma language-C++" data-lang="C++"><span class="n">Iterator</span> <span class="nf">end</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#end"><code  class="chroma language-C++" data-lang="C++"><span class="n">Iterator</span>
+<span class="nf">end</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Returns an iterator past the last descriptor.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#event~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">event</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#event~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">event</span> <span class="p">(</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Triggers a <a href="compound:namespacePDI">PDI</a> &quot;event&quot;.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#finalize_and_exit"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">finalize_and_exit</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#finalize_and_exit"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">finalize_and_exit</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Finalizes <a href="compound:namespacePDI">PDI</a> and exits application.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#logger"><code  class="chroma language-C++" data-lang="C++"><span class="n">Logger_sptr</span> <span class="nf">logger</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#logger"><code  class="chroma language-C++" data-lang="C++"><span class="n">Logger_sptr</span>
+<span class="nf">logger</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Logger getter.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#operator~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#operator~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span>
+<span class="nf">operator[]</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Accesses the descriptor for a specific name.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#operator~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#operator~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span>
+<span class="nf">operator[]</span> <span class="p">(</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="nv">name</span> <span class="p">)</span> </code></a></dt>
 <dd>Accesses the descriptor for a specific name.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#context"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Context</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/context/#context"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">~Context</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="add_datatype~arg~const-stdstring-~arg~datatype_template_parser"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">add_datatype</span> <span class="p">(</span> <span class="n">name</span><span class="p">,</span>  <span class="n">parser</span><span class="p">)</span> </code></h3>
+<h3 id="add_datatype~arg~const-stdstring-~arg~datatype_template_parser"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">add_datatype</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span><span class="p">,</span> <span class="parameter"><span class="n">Datatype_template_parser</span> <span class="nv">parser</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds new datatype parser to the context.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>name of the datatype to add</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">parser</var></code></dt>
 <dd>function that creates new datatype_template from PC_tree_t</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="begin"><code class="chroma language-C++" data-lang="C++"><span class="n">Iterator</span> <span class="nf">begin</span> <span class="p">()</span> </code></h3>
+<h3 id="begin"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Iterator</span></span>
+<span class="nf">begin</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Returns an iterator on the first descriptor.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="callbacks"><code class="chroma language-C++" data-lang="C++"><span class="n">Callbacks</span> <span class="o">&amp;</span> <span class="n">callbacks</span> <span class="p">()</span> </code></h3>
+<h3 id="callbacks"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Callbacks</span> <span class="o">&amp;</span></span>
+<span class="nf">callbacks</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 <a href="compound:classPDI_1_1Callbacks">Callbacks</a> of the context.
@@ -1880,15 +1896,20 @@ Returns an iterator on the first descriptor.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="datatype~arg~pc_tree_t"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">datatype</span> <span class="p">(</span> <span class="n">node</span><span class="p">)</span> </code></h3>
+<h3 id="datatype~arg~pc_tree_t"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_uptr</span></span>
+<span class="nf">datatype</span> <span class="p">(</span>
+<span class="parameter"><span class="n">PC_tree_t</span> <span class="nv">node</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype template from a paraconf-style config.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">node</var></code></dt>
 <dd>the configuration to read</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1896,7 +1917,10 @@ Creates a new datatype template from a paraconf-style config.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="desc~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="n">desc</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="desc~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Data_descriptor</span> <span class="o">&amp;</span></span>
+<span class="nf">desc</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Accesses the descriptor for a specific name.
@@ -1904,12 +1928,17 @@ Might be uninitialized
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="desc~arg~const-char-"><code class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="n">desc</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="desc~arg~const-char-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Data_descriptor</span> <span class="o">&amp;</span></span>
+<span class="nf">desc</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Accesses the descriptor for a specific name.
@@ -1917,38 +1946,54 @@ Might be uninitialized
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="end"><code class="chroma language-C++" data-lang="C++"><span class="n">Iterator</span> <span class="nf">end</span> <span class="p">()</span> </code></h3>
+<h3 id="end"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Iterator</span></span>
+<span class="nf">end</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Returns an iterator past the last descriptor.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="event~arg~const-char-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">event</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="event~arg~const-char-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">event</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Triggers a <a href="compound:namespacePDI">PDI</a> &quot;event&quot;.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd>the event name</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="finalize_and_exit"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">finalize_and_exit</span> <span class="p">()</span> </code></h3>
+<h3 id="finalize_and_exit"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">finalize_and_exit</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Finalizes <a href="compound:namespacePDI">PDI</a> and exits application.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="logger"><code class="chroma language-C++" data-lang="C++"><span class="n">Logger_sptr</span> <span class="nf">logger</span> <span class="p">()</span> </code></h3>
+<h3 id="logger"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Logger_sptr</span></span>
+<span class="nf">logger</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Logger getter.
@@ -1959,7 +2004,10 @@ Logger getter.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Data_descriptor</span> <span class="o">&amp;</span></span>
+<span class="nf">operator[]</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Accesses the descriptor for a specific name.
@@ -1967,12 +2015,17 @@ Might be uninitialized
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-char-"><code class="chroma language-C++" data-lang="C++"><span class="n">Data_descriptor</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">name</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-char-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Data_descriptor</span> <span class="o">&amp;</span></span>
+<span class="nf">operator[]</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="nv">name</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Accesses the descriptor for a specific name.
@@ -1980,12 +2033,17 @@ Might be uninitialized
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">name</var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="context"><code class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Context</span> <span class="p">()</span> </code></h3>
+<h3 id="context"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">~Context</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 </article>
 
         <div class="section-index">
@@ -2052,8 +2110,6 @@ Might be uninitialized
                     </h5>
                     <p></p>
                 </div>
-            
-        
             
         
             

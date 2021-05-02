@@ -34,8 +34,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
-<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" as="style">
+<link href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1156,31 +1156,6 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefspdlog-li">
-    <a href="/new-site/docs/ref/spdlog/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefspdlog"><span class="">spdlog</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefstd-li">
     <a href="/new-site/docs/ref/std/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefstd"><span class="">std</span></a>
     
@@ -1808,25 +1783,40 @@
 	<h1></h1>
         
 	
-	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Datatype_template</span></code> reference</h1>
+	<h1><code class="chroma language-C++" data-lang="C++">
+<span class="k">class</span>
+<span class="nn">PDI<span class="p">::</span><span class="nc">Datatype_template</span></code></h1>
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span> <span class="nf">clone</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span>
+<span class="nf">clone</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype as an exact copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span>
+<span class="nf">evaluate</span> <span class="p">(</span>
+<span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span> <span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype by resolving the value of all metadata references.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_basic_datatypes~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_basic_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_basic_datatypes~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">load_basic_datatypes</span> <span class="p">(</span>
+<span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds to the context the basic Array, Record, C and Fortran datatypes.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_user_datatypes~arg~context-~arg~pc_tree_t"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_user_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">,</span>  <span class="n">types_tree</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_user_datatypes~arg~context-~arg~pc_tree_t"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span>
+<span class="nf">load_user_datatypes</span> <span class="p">(</span>
+<span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span><span class="p">,</span> <span class="n">PC_tree_t</span> <span class="nv">types_tree</span> <span class="p">)</span> </code></a></dt>
 <dd>Adds to the context the user defined datatypes.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#datatype_template"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Datatype_template</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#datatype_template"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">~Datatype_template</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 <dd>Destroys the template.</dd>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="clone"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span> <span class="nf">clone</span> <span class="p">()</span> </code></h3>
+<h3 id="clone"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_template_uptr</span></span>
+<span class="nf">clone</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype as an exact copy of this one.
@@ -1837,15 +1827,20 @@ Creates a new datatype as an exact copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="n">Datatype_uptr</span></span>
+<span class="nf">evaluate</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype by resolving the value of all metadata references.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
 <dd>the context in which to evaluate this template</dd>
+</div>
 </dl>
 <h4 class="result">Result</h4>
 <section class="result">
@@ -1853,33 +1848,48 @@ Creates a new datatype by resolving the value of all metadata references.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="load_basic_datatypes~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_basic_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="load_basic_datatypes~arg~context-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">load_basic_datatypes</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds to the context the basic Array, Record, C and Fortran datatypes.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
 <dd>the context where to add the datatypes</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="load_user_datatypes~arg~context-~arg~pc_tree_t"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_user_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">,</span>  <span class="n">types_tree</span><span class="p">)</span> </code></h3>
+<h3 id="load_user_datatypes~arg~context-~arg~pc_tree_t"><code class="chroma language-C++" data-lang="C++">
+<span class="result"><span class="kt">void</span></span>
+<span class="nf">load_user_datatypes</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Context</span> <span class="o">&amp;</span> <span class="nv">ctx</span></span><span class="p">,</span> <span class="parameter"><span class="n">PC_tree_t</span> <span class="nv">types_tree</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds to the context the user defined datatypes.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
 <dd>the context where to add the datatypes</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">types_tree</var></code></dt>
 <dd>with defined types</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="datatype_template"><code class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Datatype_template</span> <span class="p">()</span> </code></h3>
+<h3 id="datatype_template"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">~Datatype_template</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Destroys the template.
@@ -1893,8 +1903,6 @@ Destroys the template.
     
     
     <hr class="panel-line">
-        
-            
         
             
         

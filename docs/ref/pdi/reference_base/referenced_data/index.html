@@ -34,8 +34,8 @@
 
 
 
-<link rel="preload" href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" as="style">
-<link href="/new-site/scss/main.min.db80ee92b0e3fc2116dfca4aa59484b426b5df8e1b70bed369d6456ba9d33d7b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" as="style">
+<link href="/new-site/scss/main.min.0cde33572d6e5d11c6894f19fec1ad6834d23ebe8c2210c6b9a65e97c92e53a3.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1156,31 +1156,6 @@
   
   
   
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-new-sitedocsrefspdlog-li">
-    <a href="/new-site/docs/ref/spdlog/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefspdlog"><span class="">spdlog</span></a>
-    
-  </li>
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-new-sitedocsrefstd-li">
     <a href="/new-site/docs/ref/std/" title="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section" id="m-new-sitedocsrefstd"><span class="">std</span></a>
     
@@ -1818,7 +1793,9 @@
 	<h1></h1>
         
 	
-	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">struct</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Reference_base</span><span class="o">::</span><span class="n">Referenced_data</span></code> reference</h1>
+	<h1><code class="chroma language-C++" data-lang="C++">
+<span class="k">struct</span>
+<span class="nn">PDI<span class="p">::</span><span class="nn">Reference_base<span class="p">::</span><span class="nc">Referenced_data</span></code></h1>
 <h2 id="description">Description</h2>
 A descriptor for data on which references can point. The content type is handled at this granularity
 <h2 id="content-list">Content</h2>
@@ -1843,74 +1820,124 @@ A descriptor for data on which references can point. The content type is handled
 </dl>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~referenced_buffer-~arg~void-~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="n">buffer</span><span class="p">,</span>  <span class="n">data</span><span class="p">,</span>  <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~referenced_buffer-~arg~void-~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="n">Referenced_buffer</span> <span class="o">*</span> <span class="nv">buffer</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="nv">data</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="nv">type</span> <span class="p">)</span> </code></a></dt>
 <dd>Constructs a new data descriptor from an already referenced buffer.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="n">data</span><span class="p">,</span>  <span class="n">freefunc</span><span class="p">,</span>  <span class="n">readable</span><span class="p">,</span>  <span class="n">type</span><span class="p">,</span>  <span class="n">writable</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="kt">void</span> <span class="o">*</span> <span class="nv">data</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="nv">freefunc</span><span class="p">,</span> <span class="kt">bool</span> <span class="nv">readable</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="nv">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="nv">writable</span> <span class="p">)</span> </code></a></dt>
 <dd>Constructs a new data descriptor.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">()</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~const-referenced_data-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~referenced_data-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Referenced_data</span> <span class="p">()</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~const-referenced_data-"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="k">const</span> <span class="n">Referenced_data</span> <span class="o">&amp;</span> <span class="nv"></span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data~arg~referenced_data-"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="n">Referenced_data</span> <span class="o">&amp;&amp;</span> <span class="nv"></span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_data/#referenced_data"><code  class="chroma language-C++" data-lang="C++">
+<span class="nf">~Referenced_data</span> <span class="p">(</span>
+ <span class="p">)</span> </code></a></dt>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="referenced_data~arg~referenced_buffer-~arg~void-~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="n">buffer</span><span class="p">,</span>  <span class="n">data</span><span class="p">,</span>  <span class="n">type</span><span class="p">)</span> </code></h3>
+<h3 id="referenced_data~arg~referenced_buffer-~arg~void-~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Referenced_buffer</span> <span class="o">*</span> <span class="nv">buffer</span></span><span class="p">,</span> <span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">data</span></span><span class="p">,</span> <span class="parameter"><span class="n">Datatype_uptr</span> <span class="nv">type</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Constructs a new data descriptor from an already referenced buffer.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">buffer</var></code></dt>
 <dd>the buffer containing the data</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">data</var></code></dt>
 <dd>the data location</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">type</var></code></dt>
 <dd>the type of the data</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_data~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="n">data</span><span class="p">,</span>  <span class="n">freefunc</span><span class="p">,</span>  <span class="n">readable</span><span class="p">,</span>  <span class="n">type</span><span class="p">,</span>  <span class="n">writable</span><span class="p">)</span> </code></h3>
+<h3 id="referenced_data~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="parameter"><span class="kt">void</span> <span class="o">*</span> <span class="nv">data</span></span><span class="p">,</span> <span class="parameter"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="nv">freefunc</span></span><span class="p">,</span> <span class="parameter"><span class="kt">bool</span> <span class="nv">readable</span></span><span class="p">,</span> <span class="parameter"><span class="n">Datatype_uptr</span> <span class="nv">type</span></span><span class="p">,</span> <span class="parameter"><span class="kt">bool</span> <span class="nv">writable</span></span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Constructs a new data descriptor.
 </section>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">data</var></code></dt>
 <dd>the data location</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">freefunc</var></code></dt>
 <dd>the function to use to free the data buffer</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">readable</var></code></dt>
 <dd>the maximum allowed access to the underlying content</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">type</var></code></dt>
 <dd>the type of the data</dd>
+</div>
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">writable</var></code></dt>
 <dd>the maximum allowed access to the underlying content</dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_data"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">()</span> </code></h3>
+<h3 id="referenced_data"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_data~arg~const-referenced_data-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="p">)</span> </code></h3>
+<h3 id="referenced_data~arg~const-referenced_data-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="parameter"><span class="k">const</span> <span class="n">Referenced_data</span> <span class="o">&amp;</span> <span class="nv"></span></span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv"></var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_data~arg~referenced_data-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_data</span> <span class="p">(</span> <span class="p">)</span> </code></h3>
+<h3 id="referenced_data~arg~referenced_data-"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">Referenced_data</span> <span class="p">(</span>
+<span class="parameter"><span class="n">Referenced_data</span> <span class="o">&amp;&amp;</span> <span class="nv"></span></span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv"></var></code></dt>
 <dd></dd>
+</div>
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_data"><code class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Referenced_data</span> <span class="p">()</span> </code></h3>
+<h3 id="referenced_data"><code class="chroma language-C++" data-lang="C++">
+<span class="result"></span>
+<span class="nf">~Referenced_data</span> <span class="p">(</span>
+ <span class="p">)</span> </code></h3>
 </article>
 
         <div class="section-index">
@@ -1920,8 +1947,6 @@ Constructs a new data descriptor.
     
     
     <hr class="panel-line">
-        
-            
         
             
         

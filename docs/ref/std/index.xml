@@ -22,20 +22,29 @@
       <description>
         
         
-        &lt;h1&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hash&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PDI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Ref_any&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;W&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt;&lt;/code&gt; reference&lt;/h1&gt;
+        &lt;h1&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;
+&lt;span class=&#34;nn&#34;&gt;std&lt;span class=&#34;p&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;hash&amp;lt; PDI::Ref_any&amp;lt; R, W &amp;gt; &amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/h1&gt;
 &lt;h2 id=&#34;content-list&#34;&gt;Content&lt;/h2&gt;
 &lt;h3 id=&#34;member-functions-list&#34;&gt;Member Functions&lt;/h3&gt;
 &lt;dl&gt;
-&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/#operator~arg~const-pdiref_any-r-w--&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;size_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;a href=&#34;https://pdi.julien-bigot.fr/new-site/docs/ref/std/hash__pdi__ref_any__r__w____/#operator~arg~const-pdiref_any-r-w--&#34;&gt;&lt;code  class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;size_t&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;operator()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PDI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Ref_any&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;W&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/a&gt;&lt;/dt&gt;
 &lt;/dl&gt;
 &lt;h2 id=&#34;detailed-documentation&#34;&gt;Documentation&lt;/h2&gt;
 &lt;h3 id=&#34;member-functions-doc&#34;&gt;Member Functions&lt;/h2&gt;
 &lt;article class=&#34;td-content member-function&#34;&gt;
-&lt;h3 id=&#34;operator~arg~const-pdiref_any-r-w--&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span class=&#34;n&#34;&gt;size_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;operator~arg~const-pdiref_any-r-w--&#34;&gt;&lt;code class=&#34;chroma language-C++&#34; data-lang=&#34;C++&#34;&gt;
+&lt;span class=&#34;result&#34;&gt;&lt;span class=&#34;n&#34;&gt;size_t&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;operator()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;parameter&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PDI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Ref_any&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;W&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;r&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/h3&gt;
 &lt;h4&gt;Parameters&lt;/h4&gt;
 &lt;dl class=&#34;parameters&#34;&gt;
+&lt;div class=&#34;parameter&#34;&gt;
 &lt;dt class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;var class=&#34;nv&#34;&gt;r&lt;/var&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;/dd&gt;
+&lt;/div&gt;
 &lt;/dl&gt;
 &lt;/article&gt;
 
