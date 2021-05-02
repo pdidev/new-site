@@ -1819,22 +1819,20 @@
         
 	
 	<h1><code class="chroma language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">PDI</span><span class="o">::</span><span class="n">Record_datatype</span><span class="o">::</span><span class="n">Member</span></code> reference</h1>
-<h2 id="description">Description</h2>
-A <a href="compound:classPDI_1_1Record__datatype_1_1Member">Member</a> is one of the elements inside a <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a>.
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#member~arg~size_t~arg~const-stdstring-~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">displacement</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#member~arg~size_t~arg~const-stdstring-~arg~datatype_uptr"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span> <span class="n">displacement</span><span class="p">,</span>  <span class="n">name</span><span class="p">,</span>  <span class="n">type</span><span class="p">)</span> </code></a></dt>
 <dd>Construct a new member.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#member~arg~const-member-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span><span class="k">const</span> <span class="n">Member</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#member~arg~const-member-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
 <dd>Construct a new member by copy.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#displacement"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">displacement</span> <span class="p">()</span> </code></a></dt>
 <dd>Access the offset or distance in byte from the <a href="compound:classPDI_1_1Record__datatype">Record_datatype</a> start.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#name"><code  class="chroma language-C++" data-lang="C++"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span> <span class="p">()</span> </code></a></dt>
 <dd>Access the name of this specific member.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#operator~arg~const-member-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Member</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#operator~arg~const-member-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span> <span class="n">rhs</span><span class="p">)</span> </code></a></dt>
 <dd>Tests another member for inequality.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#operator~arg~const-member-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Member</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#operator~arg~const-member-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">rhs</span><span class="p">)</span> </code></a></dt>
 <dd>Tests another member for equality.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/record_datatype/member/#type"><code  class="chroma language-C++" data-lang="C++"><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="n">type</span> <span class="p">()</span> </code></a></dt>
 <dd>Access the type of the contained member.</dd>
@@ -1842,7 +1840,7 @@ A <a href="compound:classPDI_1_1Record__datatype_1_1Member">Member</a> is one of
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="member~arg~size_t~arg~const-stdstring-~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">displacement</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="n">type</span><span class="p">)</span> </code></h3>
+<h3 id="member~arg~size_t~arg~const-stdstring-~arg~datatype_uptr"><code class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span> <span class="n">displacement</span><span class="p">,</span>  <span class="n">name</span><span class="p">,</span>  <span class="n">type</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Construct a new member.
@@ -1858,7 +1856,7 @@ Construct a new member.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="member~arg~const-member-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span><span class="k">const</span> <span class="n">Member</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="member~arg~const-member-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Member</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Construct a new member by copy.
@@ -1892,7 +1890,7 @@ Access the name of this specific member.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-member-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Member</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-member-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span> <span class="n">rhs</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Tests another member for inequality.
@@ -1908,7 +1906,7 @@ Tests another member for inequality.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-member-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Member</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-member-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">rhs</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Tests another member for equality.

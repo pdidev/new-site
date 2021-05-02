@@ -1812,7 +1812,7 @@
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#default_type~arg~datatype_template_uptr"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">default_type</span> <span class="p">(</span><span class="n">Datatype_template_uptr</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#default_type~arg~datatype_template_uptr"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">default_type</span> <span class="p">(</span> <span class="n">type</span><span class="p">)</span> </code></a></dt>
 <dd>Set the datatype template used to type raw pointers shared through this descriptor.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#default_type"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span> <span class="nf">default_type</span> <span class="p">()</span> </code></a></dt>
 <dd>Access the datatype template used to type raw pointers shared through this descriptor.</dd>
@@ -1820,7 +1820,7 @@
 <dd>Checks whether this descriptor is empty (contains no reference)</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#metadata"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="nf">metadata</span> <span class="p">()</span> </code></a></dt>
 <dd>Return true if the data is a metadata.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#metadata~arg~bool"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">metadata</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">metadata</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#metadata~arg~bool"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">metadata</span> <span class="p">(</span> <span class="n">metadata</span><span class="p">)</span> </code></a></dt>
 <dd>Sets whether this describes a metadata or not.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#name"><code  class="chroma language-C++" data-lang="C++"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span> <span class="p">()</span> </code></a></dt>
 <dd>Access the name of the descriptor.</dd>
@@ -1830,16 +1830,16 @@
 <dd>Return a reference to the value of the data behind this descriptor.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#release"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">release</span> <span class="p">()</span> </code></a></dt>
 <dd>Releases ownership of a data shared with <a href="compound:namespacePDI">PDI</a>.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#share~arg~void-~arg~bool~arg~bool"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">share</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">read</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">write</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#share~arg~void-~arg~bool~arg~bool"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">share</span> <span class="p">(</span> <span class="n">data</span><span class="p">,</span>  <span class="n">read</span><span class="p">,</span>  <span class="n">write</span><span class="p">)</span> </code></a></dt>
 <dd>Shares some data with <a href="compound:namespacePDI">PDI</a>.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#share~arg~bool~arg~ref~arg~bool"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">share</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">read</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">ref</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">write</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#share~arg~bool~arg~ref~arg~bool"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">share</span> <span class="p">(</span> <span class="n">read</span><span class="p">,</span>  <span class="n">ref</span><span class="p">,</span>  <span class="n">write</span><span class="p">)</span> </code></a></dt>
 <dd>Shares some data with <a href="compound:namespacePDI">PDI</a>.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/data_descriptor/#data_descriptor"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Data_descriptor</span> <span class="p">()</span> </code></a></dt>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="default_type~arg~datatype_template_uptr"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">default_type</span> <span class="p">(</span><span class="n">Datatype_template_uptr</span> <span class="n">type</span><span class="p">)</span> </code></h3>
+<h3 id="default_type~arg~datatype_template_uptr"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">default_type</span> <span class="p">(</span> <span class="n">type</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Set the datatype template used to type raw pointers shared through this descriptor.
@@ -1880,7 +1880,7 @@ Return true if the data is a metadata.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="metadata~arg~bool"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">metadata</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">metadata</span><span class="p">)</span> </code></h3>
+<h3 id="metadata~arg~bool"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">metadata</span> <span class="p">(</span> <span class="n">metadata</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Sets whether this describes a metadata or not.
@@ -1925,7 +1925,7 @@ Releases ownership of a data shared with <a href="compound:namespacePDI">PDI</a>
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="share~arg~void-~arg~bool~arg~bool"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">share</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">read</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">write</span><span class="p">)</span> </code></h3>
+<h3 id="share~arg~void-~arg~bool~arg~bool"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">share</span> <span class="p">(</span> <span class="n">data</span><span class="p">,</span>  <span class="n">read</span><span class="p">,</span>  <span class="n">write</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Shares some data with <a href="compound:namespacePDI">PDI</a>.
@@ -1941,7 +1941,7 @@ Shares some data with <a href="compound:namespacePDI">PDI</a>.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="share~arg~bool~arg~ref~arg~bool"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">share</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">read</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">ref</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">write</span><span class="p">)</span> </code></h3>
+<h3 id="share~arg~bool~arg~ref~arg~bool"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">share</span> <span class="p">(</span> <span class="n">read</span><span class="p">,</span>  <span class="n">ref</span><span class="p">,</span>  <span class="n">write</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Shares some data with <a href="compound:namespacePDI">PDI</a>.

@@ -1826,45 +1826,45 @@ As of now, and unlike std::shared_ptr, the lock system can not be relied upon in
 <dl>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">()</span> </code></a></dt>
 <dd>Constructs a null reference.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Copies an existing reference.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-or-ow--"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span><span class="o"><</span> <span class="n">OR</span><span class="p">,</span> <span class="n">OW</span> <span class="o">></span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-ref_any-or-ow--"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Copies an existing reference with different privileges.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Moves an existing reference.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">freefunc</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">data</span><span class="p">,</span>  <span class="n">freefunc</span><span class="p">,</span>  <span class="n">readable</span><span class="p">,</span>  <span class="n">type</span><span class="p">,</span>  <span class="n">writable</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a reference to currently unreferenced data.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-datatypeaccessor_base-~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">&amp;</span> <span class="n">accessor</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-datatypeaccessor_base-~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">accessor</span><span class="p">,</span>  <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a subreference from reference.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-stdvector-stdunique_ptr-datatypeaccessor_base--~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">>></span> <span class="o">&amp;</span> <span class="n">accessors</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#ref_any~arg~const-stdvector-stdunique_ptr-datatypeaccessor_base--~arg~ref"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">accessors</span><span class="p">,</span>  <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a subreference from reference.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#copy"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="nf">copy</span> <span class="p">()</span> </code></a></dt>
 <dd>Makes a copy of the raw content behind this reference and returns a new reference.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">()</span> </code></a></dt>
 <dd>Offers access to the referenced raw data, throws on null references.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get~arg~stdnothrow_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow_t</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#get~arg~stdnothrow_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">(</span> <span class="p">)</span> </code></a></dt>
 <dd>Offers access to the referenced raw data, returns null for null references.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#on_nullify~arg~stdfunction-voidref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">on_nullify</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="n">notifier</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#on_nullify~arg~stdfunction-voidref"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">on_nullify</span> <span class="p">(</span> <span class="n">notifier</span><span class="p">)</span> </code></a></dt>
 <dd>Registers a nullification callback.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator-bool"><code  class="chroma language-C++" data-lang="C++"> <span class="k">operator</span> <span class="nf">bool</span> <span class="p">()</span> </code></a></dt>
 <dd>Checks whether this is a null reference.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator-typename-ref_access-r-w-type"><code  class="chroma language-C++" data-lang="C++"> <span class="k">operator</span> <span class="k">typename</span> <span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="p">()</span> </code></a></dt>
 <dd>Offers access to the referenced raw data.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">></span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">>=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><=</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-ref_any-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">></span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-reference_base-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">>=</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-stdstring-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to a member in case the content behind the ref is a record.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">member_name</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to a member in case the content behind the ref is a record.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdsize_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdsize_t"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">index</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to the content at a given index in case the content behind the ref is an array.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdpair-stdsize_t-stdsize_t-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="o">></span> <span class="n">slice</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#operator~arg~stdpair-stdsize_t-stdsize_t-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">slice</span><span class="p">)</span> </code></a></dt>
 <dd>Create a sub-reference to the content at a given slice in case the content behind the ref is an array.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/ref_any/#release"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">release</span> <span class="p">()</span> </code></a></dt>
 <dd>Releases ownership of the referenced raw data by nullifying all existing references.</dd>
@@ -1885,7 +1885,7 @@ Constructs a null reference.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="ref_any~arg~const-ref_any-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="ref_any~arg~const-ref_any-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Copies an existing reference.
@@ -1898,7 +1898,7 @@ if the requested rights can not be granted, the reference is made null
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="ref_any~arg~const-ref_any-or-ow--"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span><span class="o"><</span> <span class="n">OR</span><span class="p">,</span> <span class="n">OW</span> <span class="o">></span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="ref_any~arg~const-ref_any-or-ow--"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Copies an existing reference with different privileges.
@@ -1911,7 +1911,7 @@ if the requested rights can not be granted, the reference is made null
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="ref_any~arg~ref_any-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="ref_any~arg~ref_any-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Moves an existing reference.
@@ -1923,7 +1923,7 @@ Moves an existing reference.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="ref_any~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">freefunc</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="n">Datatype_uptr</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">)</span> </code></h3>
+<h3 id="ref_any~arg~void-~arg~stdfunction-voidvoid-~arg~bool~arg~datatype_uptr~arg~bool"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">data</span><span class="p">,</span>  <span class="n">freefunc</span><span class="p">,</span>  <span class="n">readable</span><span class="p">,</span>  <span class="n">type</span><span class="p">,</span>  <span class="n">writable</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a reference to currently unreferenced data.
@@ -1943,7 +1943,7 @@ Creates a reference to currently unreferenced data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="ref_any~arg~const-datatypeaccessor_base-~arg~ref"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">&amp;</span> <span class="n">accessor</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="ref_any~arg~const-datatypeaccessor_base-~arg~ref"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">accessor</span><span class="p">,</span>  <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a subreference from reference.
@@ -1957,7 +1957,7 @@ Creates a subreference from reference.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="ref_any~arg~const-stdvector-stdunique_ptr-datatypeaccessor_base--~arg~ref"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o"><</span> <span class="n">Datatype</span><span class="o">::</span><span class="n">Accessor_base</span> <span class="o">>></span> <span class="o">&amp;</span> <span class="n">accessors</span><span class="p">,</span> <span class="n">Ref</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="ref_any~arg~const-stdvector-stdunique_ptr-datatypeaccessor_base--~arg~ref"><code class="chroma language-C++" data-lang="C++"> <span class="n">Ref_any</span> <span class="p">(</span> <span class="n">accessors</span><span class="p">,</span>  <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a subreference from reference.
@@ -1993,7 +1993,7 @@ Offers access to the referenced raw data, throws on null references.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="get~arg~stdnothrow_t"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow_t</span> <span class="p">)</span> </code></h3>
+<h3 id="get~arg~stdnothrow_t"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref_access</span><span class="o"><</span> <span class="n">R</span><span class="p">,</span> <span class="n">W</span> <span class="o">>::</span><span class="n">type</span> <span class="n">get</span> <span class="p">(</span> <span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Offers access to the referenced raw data, returns null for null references.
@@ -2009,7 +2009,7 @@ Offers access to the referenced raw data, returns null for null references.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="on_nullify~arg~stdfunction-voidref"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">on_nullify</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="n">Ref</span><span class="p">)</span><span class="o">></span> <span class="n">notifier</span><span class="p">)</span> </code></h3>
+<h3 id="on_nullify~arg~stdfunction-voidref"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">on_nullify</span> <span class="p">(</span> <span class="n">notifier</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Registers a nullification callback.
@@ -2035,7 +2035,7 @@ Offers access to the referenced raw data.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></dt>
@@ -2043,7 +2043,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></dt>
@@ -2051,7 +2051,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o"><=</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></dt>
@@ -2059,7 +2059,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~ref_any-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="n">Ref_any</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~ref_any-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></dt>
@@ -2067,7 +2067,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-ref_any-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-ref_any-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref_any</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">other</var></code></dt>
@@ -2075,7 +2075,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></dt>
@@ -2083,7 +2083,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">></span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">></span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></dt>
@@ -2091,7 +2091,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">>=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Reference_base</span> <span class="o">&amp;</span> <span class="n">o</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-reference_base-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">>=</span> <span class="p">(</span> <span class="n">o</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">o</var></code></dt>
@@ -2099,7 +2099,7 @@ Offers access to the referenced raw data.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">member_name</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-stdstring-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">member_name</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Create a sub-reference to a member in case the content behind the ref is a record.
@@ -2115,7 +2115,7 @@ Create a sub-reference to a member in case the content behind the ref is a recor
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-char-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">member_name</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-char-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">member_name</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Create a sub-reference to a member in case the content behind the ref is a record.
@@ -2131,7 +2131,7 @@ Create a sub-reference to a member in case the content behind the ref is a recor
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~stdsize_t"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~stdsize_t"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">index</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Create a sub-reference to the content at a given index in case the content behind the ref is an array.
@@ -2147,7 +2147,7 @@ Create a sub-reference to the content at a given index in case the content behin
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~stdpair-stdsize_t-stdsize_t-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o"><</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="o">></span> <span class="n">slice</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~stdpair-stdsize_t-stdsize_t-"><code class="chroma language-C++" data-lang="C++"><span class="n">Ref</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span> <span class="n">slice</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Create a sub-reference to the content at a given slice in case the content behind the ref is an array.

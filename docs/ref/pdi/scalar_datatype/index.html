@@ -1812,9 +1812,9 @@
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#scalar_datatype~arg~scalar_kind~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span><span class="n">Scalar_kind</span> <span class="n">kind</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#scalar_datatype~arg~size_t~arg~scalar_kind~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">align</span><span class="p">,</span> <span class="n">Scalar_kind</span> <span class="n">kind</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#scalar_datatype~arg~size_t~arg~stdfunction-void-void--const-void-~arg~size_t~arg~stdfunction-voidvoid-~arg~scalar_kind~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">align</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">copy</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">dense_size</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">destroy</span><span class="p">,</span> <span class="n">Scalar_kind</span> <span class="n">kind</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#scalar_datatype~arg~scalar_kind~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span> <span class="n">kind</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#scalar_datatype~arg~size_t~arg~scalar_kind~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span> <span class="n">align</span><span class="p">,</span>  <span class="n">kind</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#scalar_datatype~arg~size_t~arg~stdfunction-void-void--const-void-~arg~size_t~arg~stdfunction-voidvoid-~arg~scalar_kind~arg~size_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span> <span class="n">align</span><span class="p">,</span>  <span class="n">copy</span><span class="p">,</span>  <span class="n">dense_size</span><span class="p">,</span>  <span class="n">destroy</span><span class="p">,</span>  <span class="n">kind</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> </code></a></dt>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#alignment"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">alignment</span> <span class="p">()</span> </code></a></dt>
 <dd>Returns the required alignment for a type.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#buffersize"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">buffersize</span> <span class="p">()</span> </code></a></dt>
@@ -1823,9 +1823,9 @@
 <dd>Creates a new datatype as an exact copy of this one.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#clone_type"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">clone_type</span> <span class="p">()</span> </code></a></dt>
 <dd>Creates a new datatype as an exact copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#data_from_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_from_dense_copy</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">to</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#data_from_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_from_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a sparse deep copy of dense data.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#data_to_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_to_dense_copy</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">to</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#data_to_dense_copy~arg~const-void-~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_to_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a dense deep copy of data.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#datasize"><code  class="chroma language-C++" data-lang="C++"><span class="n">size_t</span> <span class="nf">datasize</span> <span class="p">()</span> </code></a></dt>
 <dd>Computes the data size of a type, excluding potentially unused memory from a sparse type.</dd>
@@ -1835,13 +1835,13 @@
 <dd>Indicate if the datatype is dense or not.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#densify"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">densify</span> <span class="p">()</span> </code></a></dt>
 <dd>Creates a new datatype as the dense copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#destroy_data~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">destroy_data</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#destroy_data~arg~void-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">destroy_data</span> <span class="p">(</span> <span class="n">ptr</span><span class="p">)</span> </code></a></dt>
 <dd>Function used to delete the data behind the datatype.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span><span class="n">Context</span> <span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype by resolving the value of all metadata references.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#kind"><code  class="chroma language-C++" data-lang="C++"><span class="n">Scalar_kind</span> <span class="nf">kind</span> <span class="p">()</span> </code></a></dt>
 <dd>Interpretation of the content.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#operator~arg~const-datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#operator~arg~const-datatype-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></a></dt>
 <dd>Test for equality.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/scalar_datatype/#simple"><code  class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="nf">simple</span> <span class="p">()</span> </code></a></dt>
 <dd>Tells if data can be copied as bytes (if type is dense) and doesn't need a destroyer.</dd>
@@ -1849,7 +1849,7 @@
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="scalar_datatype~arg~scalar_kind~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span><span class="n">Scalar_kind</span> <span class="n">kind</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">)</span> </code></h3>
+<h3 id="scalar_datatype~arg~scalar_kind~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span> <span class="n">kind</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">kind</var></code></dt>
@@ -1859,7 +1859,7 @@
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="scalar_datatype~arg~size_t~arg~scalar_kind~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">align</span><span class="p">,</span> <span class="n">Scalar_kind</span> <span class="n">kind</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">)</span> </code></h3>
+<h3 id="scalar_datatype~arg~size_t~arg~scalar_kind~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span> <span class="n">align</span><span class="p">,</span>  <span class="n">kind</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">align</var></code></dt>
@@ -1871,7 +1871,7 @@
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="scalar_datatype~arg~size_t~arg~stdfunction-void-void--const-void-~arg~size_t~arg~stdfunction-voidvoid-~arg~scalar_kind~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">align</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">copy</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">dense_size</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">></span> <span class="n">destroy</span><span class="p">,</span> <span class="n">Scalar_kind</span> <span class="n">kind</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">)</span> </code></h3>
+<h3 id="scalar_datatype~arg~size_t~arg~stdfunction-void-void--const-void-~arg~size_t~arg~stdfunction-voidvoid-~arg~scalar_kind~arg~size_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Scalar_datatype</span> <span class="p">(</span> <span class="n">align</span><span class="p">,</span>  <span class="n">copy</span><span class="p">,</span>  <span class="n">dense_size</span><span class="p">,</span>  <span class="n">destroy</span><span class="p">,</span>  <span class="n">kind</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">align</var></code></dt>
@@ -1933,7 +1933,7 @@ Creates a new datatype as an exact copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="data_from_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_from_dense_copy</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">to</span><span class="p">)</span> </code></h3>
+<h3 id="data_from_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_from_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a sparse deep copy of dense data.
@@ -1951,7 +1951,7 @@ Creates a sparse deep copy of dense data.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="data_to_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_to_dense_copy</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">from</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">to</span><span class="p">)</span> </code></h3>
+<h3 id="data_to_dense_copy~arg~const-void-~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="o">*</span> <span class="nf">data_to_dense_copy</span> <span class="p">(</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a dense deep copy of data.
@@ -2013,7 +2013,7 @@ Creates a new datatype as the dense copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="destroy_data~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">destroy_data</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> </code></h3>
+<h3 id="destroy_data~arg~void-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">destroy_data</span> <span class="p">(</span> <span class="n">ptr</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Function used to delete the data behind the datatype.
@@ -2026,7 +2026,7 @@ This should not deallocate the memory.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span><span class="n">Context</span> <span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype by resolving the value of all metadata references.
@@ -2049,7 +2049,7 @@ Interpretation of the content.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="operator~arg~const-datatype-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Datatype</span> <span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> </code></h3>
+<h3 id="operator~arg~const-datatype-"><code class="chroma language-C++" data-lang="C++"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span> <span class="p">(</span> <span class="n">other</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Test for equality.

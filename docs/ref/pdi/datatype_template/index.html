@@ -1814,10 +1814,12 @@
 <dl>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#clone"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_template_uptr</span> <span class="nf">clone</span> <span class="p">()</span> </code></a></dt>
 <dd>Creates a new datatype as an exact copy of this one.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span><span class="n">Context</span> <span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#evaluate~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a new datatype by resolving the value of all metadata references.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_basic_datatypes~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_basic_datatypes</span> <span class="p">(</span><span class="n">Context</span> <span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_basic_datatypes~arg~context-"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_basic_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></a></dt>
 <dd>Adds to the context the basic Array, Record, C and Fortran datatypes.</dd>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#load_user_datatypes~arg~context-~arg~pc_tree_t"><code  class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_user_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">,</span>  <span class="n">types_tree</span><span class="p">)</span> </code></a></dt>
+<dd>Adds to the context the user defined datatypes.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/datatype_template/#datatype_template"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Datatype_template</span> <span class="p">()</span> </code></a></dt>
 <dd>Destroys the template.</dd>
 </dl>
@@ -1835,7 +1837,7 @@ Creates a new datatype as an exact copy of this one.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span><span class="n">Context</span> <span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="evaluate~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="n">Datatype_uptr</span> <span class="nf">evaluate</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a new datatype by resolving the value of all metadata references.
@@ -1851,7 +1853,7 @@ Creates a new datatype by resolving the value of all metadata references.
 </section>
 </article>
 <article class="td-content member-function">
-<h3 id="load_basic_datatypes~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_basic_datatypes</span> <span class="p">(</span><span class="n">Context</span> <span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
+<h3 id="load_basic_datatypes~arg~context-"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_basic_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Adds to the context the basic Array, Record, C and Fortran datatypes.
@@ -1860,6 +1862,20 @@ Adds to the context the basic Array, Record, C and Fortran datatypes.
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
 <dd>the context where to add the datatypes</dd>
+</dl>
+</article>
+<article class="td-content member-function">
+<h3 id="load_user_datatypes~arg~context-~arg~pc_tree_t"><code class="chroma language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">load_user_datatypes</span> <span class="p">(</span> <span class="n">ctx</span><span class="p">,</span>  <span class="n">types_tree</span><span class="p">)</span> </code></h3>
+<h4>Description</h4>
+<section class="description">
+Adds to the context the user defined datatypes.
+</section>
+<h4>Parameters</h4>
+<dl class="parameters">
+<dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">ctx</var></code></dt>
+<dd>the context where to add the datatypes</dd>
+<dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">types_tree</var></code></dt>
+<dd>with defined types</dd>
 </dl>
 </article>
 <article class="td-content member-function">

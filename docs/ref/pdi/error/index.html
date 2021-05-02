@@ -1812,11 +1812,11 @@
 <h2 id="content-list">Content</h2>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#error~arg~pdi_status_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span><span class="n">PDI_status_t</span> <span class="n">errcode</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#error~arg~pdi_status_t"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span> <span class="n">errcode</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a <a href="compound:namespacePDI">PDI</a> error without a message.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#error~arg~args-~arg~pdi_status_t~arg~const-s-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span><span class="n">Args</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">,</span> <span class="n">PDI_status_t</span> <span class="n">errcode</span><span class="p">,</span> <span class="k">const</span> <span class="n">S</span> <span class="o">&amp;</span> <span class="n">format_str</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#error~arg~args-~arg~pdi_status_t~arg~const-s-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span> <span class="n">args</span><span class="p">,</span>  <span class="n">errcode</span><span class="p">,</span>  <span class="n">format_str</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a <a href="compound:namespacePDI">PDI</a> error.</dd>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#error~arg~pdi_status_t~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span><span class="n">PDI_status_t</span> <span class="n">errcode</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">message</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#error~arg~pdi_status_t~arg~const-char-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span> <span class="n">errcode</span><span class="p">,</span>  <span class="n">message</span><span class="p">)</span> </code></a></dt>
 <dd>Creates a <a href="compound:namespacePDI">PDI</a> error.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/error/#status"><code  class="chroma language-C++" data-lang="C++"><span class="n">PDI_status_t</span> <span class="nf">status</span> <span class="p">()</span> </code></a></dt>
 <dd>Returns status of the error.</dd>
@@ -1825,7 +1825,7 @@
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="error~arg~pdi_status_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span><span class="n">PDI_status_t</span> <span class="n">errcode</span><span class="p">)</span> </code></h3>
+<h3 id="error~arg~pdi_status_t"><code class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span> <span class="n">errcode</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a <a href="compound:namespacePDI">PDI</a> error without a message.
@@ -1837,7 +1837,7 @@ Creates a <a href="compound:namespacePDI">PDI</a> error without a message.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="error~arg~args-~arg~pdi_status_t~arg~const-s-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span><span class="n">Args</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">,</span> <span class="n">PDI_status_t</span> <span class="n">errcode</span><span class="p">,</span> <span class="k">const</span> <span class="n">S</span> <span class="o">&amp;</span> <span class="n">format_str</span><span class="p">)</span> </code></h3>
+<h3 id="error~arg~args-~arg~pdi_status_t~arg~const-s-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span> <span class="n">args</span><span class="p">,</span>  <span class="n">errcode</span><span class="p">,</span>  <span class="n">format_str</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a <a href="compound:namespacePDI">PDI</a> error.
@@ -1853,7 +1853,7 @@ Creates a <a href="compound:namespacePDI">PDI</a> error.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="error~arg~pdi_status_t~arg~const-char-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span><span class="n">PDI_status_t</span> <span class="n">errcode</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">message</span><span class="p">)</span> </code></h3>
+<h3 id="error~arg~pdi_status_t~arg~const-char-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Error</span> <span class="p">(</span> <span class="n">errcode</span><span class="p">,</span>  <span class="n">message</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Creates a <a href="compound:namespacePDI">PDI</a> error.

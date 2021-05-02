@@ -20,7 +20,7 @@
 <title>Specification tree Reference | PDI</title><meta property="og:title" content="Specification tree Reference" />
 <meta property="og:description" content="The PDI specification tree is expressed in YAML.
 specification tree root The specification tree root is a mapping that contains the following keys:
-   key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored." />
+   key value     &quot;types&quot; (optional) a types_map   &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the types section specifies user-defined datatypes the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://pdi.julien-bigot.fr/new-site/docs/specification_tree_ref/" /><meta property="article:section" content="docs" />
 
@@ -29,14 +29,14 @@ specification tree root The specification tree root is a mapping that contains t
 <meta itemprop="name" content="Specification tree Reference">
 <meta itemprop="description" content="The PDI specification tree is expressed in YAML.
 specification tree root The specification tree root is a mapping that contains the following keys:
-   key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored.">
+   key value     &quot;types&quot; (optional) a types_map   &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the types section specifies user-defined datatypes the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored.">
 
-<meta itemprop="wordCount" content="1911">
+<meta itemprop="wordCount" content="1960">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Specification tree Reference"/>
 <meta name="twitter:description" content="The PDI specification tree is expressed in YAML.
 specification tree root The specification tree root is a mapping that contains the following keys:
-   key value     &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored."/>
+   key value     &quot;types&quot; (optional) a types_map   &quot;data&quot; (optional) a data_map   &quot;metadata&quot; (optional) a data_map   &quot;plugins&quot; (optional) a plugin_map   &quot;plugin_path&quot; (optional) a plugin_path   &quot;.*&quot; (optional) anything     the types section specifies user-defined datatypes the data and metadata sections specify the type of the data in buffers exposed by the application; for metadata, PDI keeps a copy while it only keeps references for data, the plugin section specifies the list of plugins to load and their configuration, additional sections are ignored."/>
 
 
 
@@ -1785,6 +1785,7 @@ specification tree root The specification tree root is a mapping that contains t
     <li><a href="#struct_member_desc">struct_member_desc</a></li>
     <li><a href="#record_member_desc">record_member_desc</a></li>
     <li><a href="#struct_members_omap">struct_members_omap</a></li>
+    <li><a href="#types_map">types_map</a></li>
     <li><a href="#record_members_map">record_members_map</a></li>
     <li><a href="#plugin_map">plugin_map</a></li>
     <li><a href="#real_type">real_type</a></li>
@@ -1843,6 +1844,10 @@ specification tree root The specification tree root is a mapping that contains t
 </thead>
 <tbody>
 <tr>
+<td><code>&quot;types&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:Specification_tree_ref_1types_map_node">types_map</a></td>
+</tr>
+<tr>
 <td><code>&quot;data&quot;</code> (<em>optional</em>)</td>
 <td>a <a href="member:Specification_tree_ref_1data_map_node">data_map</a></td>
 </tr>
@@ -1865,6 +1870,7 @@ specification tree root The specification tree root is a mapping that contains t
 </tbody>
 </table>
 <ul>
+<li>the <code>types</code> section specifies user-defined datatypes</li>
 <li>the <code>data</code> and <code>metadata</code> sections specify the type of the data in buffers exposed by the application; for <code>metadata</code>, PDI keeps a copy while it only keeps references for <code>data</code>,</li>
 <li>the <code>plugin</code> section specifies the list of plugins to load and their configuration,</li>
 <li>additional sections are ignored.</li>
@@ -1988,7 +1994,8 @@ specification tree root The specification tree root is a mapping that contains t
 <li>a <a href="member:Specification_tree_ref_1real_type_node">real_type</a>,</li>
 <li>a <a href="member:Specification_tree_ref_1record_type_node">record_type</a>,</li>
 <li>a <a href="member:Specification_tree_ref_1simple_datatype_node">simple_datatype</a>,</li>
-<li>a <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a>.</li>
+<li>a <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a>,</li>
+<li>any user-defined datatype name.</li>
 </ul>
 <p>Amongst these, <a href="member:Specification_tree_ref_1simple_datatype_node">simple_datatype</a> is the only scalar. All others are dictionaries with a <code>type</code> key used for disambiguation between them. Plugins can add new options that follow the same pattern.</p>
 <p>A <em>datatype</em> represents the memory layout and interpretation for data exposed by the user in the <a href="member:Concepts_1Data_store">data store</a>.</p>
@@ -2372,6 +2379,25 @@ OPERATOR    ~= [|&amp;=&lt;&gt;+\-\*/%]
 <li>each key identifies the name of a member and the value associated to it describes the member itself.</li>
 </ul>
 <p>See <a href="member:Specification_tree_ref_1struct_type_node">struct_type</a> for an example.</p>
+<h2 id="types_map">types_map</h2>
+<p>A <em>types_map</em> is a <strong>mapping</strong> that contains the following keys:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;.*&quot;</code> (<em>optional</em>)</td>
+<td>a <a href="member:Specification_tree_ref_1datatype_node">datatype</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>each key identifies the name of new user-defined datatype and the value associated to it describes the type</li>
+</ul>
 <h2 id="record_members_map">record_members_map</h2>
 <p>A <em>record_members_map</em> is a <strong>mapping</strong> that contains the following keys:</p>
 <table>

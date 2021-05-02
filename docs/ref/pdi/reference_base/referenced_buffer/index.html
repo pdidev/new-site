@@ -1847,17 +1847,17 @@ A descriptor for a buffer in which references can point. Both locking and memory
 </dl>
 <h3 id="member-functions-list">Member Functions</h3>
 <dl>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer~arg~stdfunction-void~arg~bool~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">deleter</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer~arg~stdfunction-void~arg~bool~arg~bool"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span> <span class="n">deleter</span><span class="p">,</span>  <span class="n">readable</span><span class="p">,</span>  <span class="n">writable</span><span class="p">)</span> </code></a></dt>
 <dd>Constructs a new buffer descriptor.</dd>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">()</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer~arg~const-referenced_buffer-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span><span class="k">const</span> <span class="n">Referenced_buffer</span> <span class="o">&amp;</span> <span class="p">)</span> </code></a></dt>
-<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer~arg~referenced_buffer-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span><span class="n">Referenced_buffer</span> <span class="o">&amp;&amp;</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer~arg~const-referenced_buffer-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span> <span class="p">)</span> </code></a></dt>
+<dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer~arg~referenced_buffer-"><code  class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span> <span class="p">)</span> </code></a></dt>
 <dt><a href="https://pdi.julien-bigot.fr/new-site/docs/ref/pdi/reference_base/referenced_buffer/#referenced_buffer"><code  class="chroma language-C++" data-lang="C++"> <span class="o">~</span><span class="n">Referenced_buffer</span> <span class="p">()</span> </code></a></dt>
 </dl>
 <h2 id="detailed-documentation">Documentation</h2>
 <h3 id="member-functions-doc">Member Functions</h2>
 <article class="td-content member-function">
-<h3 id="referenced_buffer~arg~stdfunction-void~arg~bool~arg~bool"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o"><</span> <span class="kt">void</span><span class="p">()</span><span class="o">></span> <span class="n">deleter</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">)</span> </code></h3>
+<h3 id="referenced_buffer~arg~stdfunction-void~arg~bool~arg~bool"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span> <span class="n">deleter</span><span class="p">,</span>  <span class="n">readable</span><span class="p">,</span>  <span class="n">writable</span><span class="p">)</span> </code></h3>
 <h4>Description</h4>
 <section class="description">
 Constructs a new buffer descriptor.
@@ -1876,7 +1876,7 @@ Constructs a new buffer descriptor.
 <h3 id="referenced_buffer"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">()</span> </code></h3>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_buffer~arg~const-referenced_buffer-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span><span class="k">const</span> <span class="n">Referenced_buffer</span> <span class="o">&amp;</span> <span class="p">)</span> </code></h3>
+<h3 id="referenced_buffer~arg~const-referenced_buffer-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv"></var></code></dt>
@@ -1884,7 +1884,7 @@ Constructs a new buffer descriptor.
 </dl>
 </article>
 <article class="td-content member-function">
-<h3 id="referenced_buffer~arg~referenced_buffer-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span><span class="n">Referenced_buffer</span> <span class="o">&amp;&amp;</span> <span class="p">)</span> </code></h3>
+<h3 id="referenced_buffer~arg~referenced_buffer-"><code class="chroma language-C++" data-lang="C++"> <span class="n">Referenced_buffer</span> <span class="p">(</span> <span class="p">)</span> </code></h3>
 <h4>Parameters</h4>
 <dl class="parameters">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv"></var></code></dt>
