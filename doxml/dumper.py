@@ -10,10 +10,15 @@ import cppmodel as cxx
 import mdgen as md
 
 def prune_ns(ns):
-    for sub_ns in ns.namespaces.values():
-        dump_ns(outdir, path+[sub_ns.name], sub_ns)
-    for sub_cls in ns.types.values():
-        dump_class(outdir, path+[sub_cls.name], sub_cls)
+    result = True
+    for name, sub_ns in list(ns.namespaces.items()):
+        if prune_ns(sub_ns):
+            del ns.namespaces[name]
+        else:
+            result = False
+    if ns.types or ns.functions or ns.variables:
+        return False
+    return result
     
 
 def page_name(name):
@@ -28,18 +33,15 @@ def dump_class(outdir, path, cls):
         'linkTitle': cls.name,
         #'title': "::".join(path)+" "+cls.kind+" reference",
     }
-    try:
-        if cls.kind in ['class', 'struct']:
-            os.makedirs(dir, exist_ok=True)
-            with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
-                print("---", file=outfile)
-                yaml.dump(data, outfile)
-                print("---", file=outfile)
-                print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
+    if cls.kind in ['class', 'struct']:
+        os.makedirs(dir, exist_ok=True)
+        with open(os.path.join(dir, '_index.md'), mode='w') as outfile:
+            print("---", file=outfile)
+            yaml.dump(data, outfile)
+            print("---", file=outfile)
+            print("{{% class \""+".".join(path)+"\" %}}", file=outfile)
         for sub_cls in cls.types.values():
             dump_class(outdir, path+[sub_cls.name], sub_cls)
-    except:
-        pass
 
 def dump_ns(outdir, path, ns):
     dir = os.path.join(outdir, *path)
@@ -112,6 +114,7 @@ def dump(doxfile, outdir):
     dstdat = os.path.join(outdir, "data/docs/dox.yml")
     datadstdir = os.path.join(outdir, "data/docs/")
     os.makedirs(datadstdir, exist_ok=True)
+    prune_ns(doxdata.root_namespace)
     with open(os.path.join(datadstdir, 'doxdata.yml'), mode='w') as outf:
         yaml.dump(doxdata.root_namespace, outf)
     nsdstdir = os.path.join(outdir, "content/docs/ref/")

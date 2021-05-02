@@ -1,1 +1,1 @@
-{{- highlight (printf "%s;" (htmlUnescape .)) "C++" "" | htmlEscape | htmlUnescape | replaceRE `(?sm:&gt;)` `>` | replaceRE `(?sm:&lt;)` `<` | replaceRE `(?sm:<div\b.*?>\s*<pre\b.*?>\s*<code\b.*?>(.*)\s*<span\b.*?>\s*;\s*</span\b.*?>\s*</code\b.*?>\s*</pre\b.*?>\s*</div\b.*?>)` "$1" | safeHTML -}}
+{{- highlight (printf "%s;" (htmlUnescape .)) "C++" "" | replaceRE `(?sm:&gt;)` `>` | replaceRE `(?sm:&lt;)` `<` | replaceRE `(?sm:<div\b.*?>\s*<pre\b.*?>\s*<code\b.*?>(.*)\s*<span\b.*?>\s*;\s*</span\b.*?>\s*</code\b.*?>\s*</pre\b.*?>\s*</div\b.*?>)` "$1" | safeHTML -}}

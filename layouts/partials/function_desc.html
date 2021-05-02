@@ -15,7 +15,24 @@
 <article class="td-content member-function">
 
 <h3 id="{{- partial "function_id" $data -}}"><code class="chroma language-C++" data-lang="C++">
-{{- partial "function_syntax" (merge $data (dict "name" $data.name ) ) | partial "highlight" -}}
+<span class="result">{{- $data.result.type | partial "highlight" }}</span>
+<span class="nf">{{- $name -}}</span> <span class="p">(</span>
+{{
+with $data.parameters -}}{{-
+  $n_params := len . -}}{{-
+  $id := 0 -}}{{-
+  range $name, $param := . -}}{{-
+    $id = (add $id 1) -}}<span class="parameter">{{-
+    $param.type | partial "highlight" }} <span class="nv">{{
+    $name -}}</span>{{-
+    with $param.default_value }}
+      <span class="p">=</span> <span class="l">{{ . }}</span>{{-
+    end -}}
+    </span>{{-
+    if lt $id $n_params}}<span class="p">,</span> {{end -}}{{-
+  end -}}{{-
+end }} <span class="p">)</span> {{
+"" -}}
 </code></h3>
 
 {{ if or $data.briefdescription  $data.detaileddescription }}
@@ -30,8 +47,10 @@
 <h4>Parameters</h4>
 <dl class="parameters">
 {{ range $name, $param := . }}
+<div class="parameter">
 <dt class="chroma"><code class="language-C++" data-lang="C++"><var class="nv">{{ $name }}</var></code></dt>
 <dd>{{ $param.briefdescription | markdownify }}{{ $param.detaileddescription | markdownify }}</dd>
+</div>
 {{ end }}
 </dl>
 {{ end }}

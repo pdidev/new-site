@@ -25,8 +25,11 @@
 
 {{ with $fullname }}
 <h1><code class="chroma language-C++" data-lang="C++">
-{{- partial "highlight" (printf "%s %s" $data.kind (delimit $fullname "::") ) -}}
-</code> reference</h1>
+<span class="k">{{ $data.kind }}</span>
+{{ range $fullname | first (add (len $fullname) -1 ) -}}
+<span class="nn">{{- . -}}<span class="p">::</span>
+{{- end -}}
+<span class="nc">{{ index ($fullname | last 1)  0 }}</span></code></h1>
 {{ else }}
 <h1>C++ API reference</h1>
 {{ end }}

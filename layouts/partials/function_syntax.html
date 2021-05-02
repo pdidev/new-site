@@ -19,7 +19,7 @@ with $data.parameters -}}{{-
   $id := 0 -}}{{-
   range $name, $param := . -}}{{-
     $id = (add $id 1) -}}{{-
-    $param.defined.type }} {{
+    $param.type }} {{
     $name -}}{{-
     if lt $id $n_params}}, {{end -}}{{-
   end -}}{{-

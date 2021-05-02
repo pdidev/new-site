@@ -175,6 +175,7 @@ class Doxml:
         add_if_not_empty(result, node, 'briefdescription', tr=lambda n: self.description(n))
         add_if_not_empty(result, node, 'defname', key='name')
         add_if_not_empty(result, node, 'declname', key='name')
+        add_if_not_empty(result, node, 'defval', key='default_value')
         result.type = self.parse_type(node.find('type'))
         return result
 

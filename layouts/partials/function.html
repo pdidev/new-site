@@ -13,6 +13,19 @@
 
 
 <a href="{{ partial "function_url" $data }}"><code  class="chroma language-C++" data-lang="C++">
-{{- partial "function_syntax" $data | partial "highlight" -}}
+{{-  $data.result.type | partial "highlight" }}
+<span class="nf">{{- $name -}}</span> <span class="p">(</span>
+{{
+with $data.parameters -}}{{-
+  $n_params := len . -}}{{-
+  $id := 0 -}}{{-
+  range $name, $param := . -}}{{-
+    $id = (add $id 1) -}}{{-
+    $param.type | partial "highlight" }} <span class="nv">{{
+    $name -}}</span>{{-
+    if lt $id $n_params}}<span class="p">,</span> {{end -}}{{-
+  end -}}{{-
+end }} <span class="p">)</span> {{
+"" -}}
 </code></a>
 {{- "" -}}

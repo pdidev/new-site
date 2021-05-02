@@ -51,11 +51,17 @@
 		margin-bottom: 4rem;
 		
 		h3 {
-			font-size: $h3-font-size;
 			margin-bottom: 1rem;
+			.result:after {
+				content: '\A ';
+				white-space: pre;
+			}
+			.parameter:before {
+				content: '\A     ';
+				white-space: pre;
+			}
 		}
 		h4 {
-			font-size: $h5-font-size;
 			margin-top: 1rem;
 			margin-bottom: .5rem;
 		}
@@ -64,14 +70,17 @@
 			margin-left: 1rem;
 			margin-top: 0;
 			margin-bottom: 0;
-			
 		}
 		dl.parameters {
-			dt,
-			dd,
-			h5 {
-				margin: 0;
-				display: inline;
+			display: table;
+			div.parameter {
+				display: table-row;
+				dt, dd {
+					display: table-cell;
+				}
+				dt {
+					padding-right: .75rem;
+				}
 			}
 		}
 	}

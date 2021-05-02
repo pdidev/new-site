@@ -34,7 +34,7 @@
 <li><a href="#detailed-documentation">Detailed Documentation</a><li>
 <ul>
 {{   range $name, $content := .functions }}{{ range where $content "visibility" "public" }}
-{{     $param_types := slice }}{{ range $name, $param := .defined.parameters }}{{ $param_types = $param_types | append $param.defined.type }}{{ end }}
+{{     $param_types := slice }}{{ range $name, $param := .parameters }}{{ $param_types = $param_types | append $param.type }}{{ end }}
 {{ $full_url := (delimit (slice .name | append $param_types) " ") | anchorize }}
 <li><a href="#{{$full_url}}">{{.name }}</a><li>
 {{   end }}{{ end }}
