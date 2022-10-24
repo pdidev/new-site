@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout main
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with: { fetch-depth: 0, submodules: recursive }
     - name: Checkout gh-pages
       run: git worktree add -B gh-pages public remotes/origin/gh-pages
