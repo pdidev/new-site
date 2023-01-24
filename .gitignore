@@ -4,3 +4,4 @@ data/docs
 content/docs/
 static/docs
 __pycache__
+.hugo_build.lock

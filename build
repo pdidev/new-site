@@ -14,5 +14,16 @@ trap finish EXIT QUIT ABRT KILL SEGV TERM STOP
 finish
 [ -d public ] && rm -rf public/*
 
+IMG=klakegg/hugo:0.101.0-ext-alpine
+
+if [ "$1" = 'server' ]
+then
+  DOCKER_ARGS="${DOCKER_ARGS} -p 1313:1313 -t"
+  HUGO_ARGS="server --disableFastRender -p 1313 -b http://localhost/"
+else
+  DOCKER_ARGS="-e HUGO_ENV=production"
+#   IMG="${IMG}-ci"
+fi
+
 python3 doxml/dumper.py dox/combined.xml .
-docker run "-u$(id -u):$(id -g)" --rm -i -v "$(pwd):/src" klakegg/hugo:0.82.0-ext-alpine-ci
+docker run ${DOCKER_ARGS} --ulimit nofile=5000:5000 "-u$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd --rm -i -v "$(pwd):/src" "$IMG" ${HUGO_ARGS}
